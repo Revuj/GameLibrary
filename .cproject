@@ -93,21 +93,6 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="GameLibrary.cdt.managedbuild.target.gnu.cross.exe.988314204" name="Executable" projectType="cdt.managedbuild.target.gnu.cross.exe"/>
 	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.447704146;cdt.managedbuild.config.gnu.cross.exe.release.447704146.;cdt.managedbuild.tool.gnu.cross.c.compiler.924686000;cdt.managedbuild.tool.gnu.c.compiler.input.543268639">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.2002814106;cdt.managedbuild.config.gnu.cross.exe.debug.2002814106.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1263893368;cdt.managedbuild.tool.gnu.cpp.compiler.input.1709448966">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.447704146;cdt.managedbuild.config.gnu.cross.exe.release.447704146.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1179466044;cdt.managedbuild.tool.gnu.cpp.compiler.input.1156103848">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.2002814106;cdt.managedbuild.config.gnu.cross.exe.debug.2002814106.;cdt.managedbuild.tool.gnu.cross.c.compiler.634214541;cdt.managedbuild.tool.gnu.c.compiler.input.5907004">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
@@ -117,5 +102,20 @@
 		<configuration configurationName="Release">
 			<resource resourceType="PROJECT" workspacePath="/GameLibrary"/>
 		</configuration>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.mingw.exe.debug.1565154341;cdt.managedbuild.config.gnu.mingw.exe.debug.1565154341.;cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.debug.1734341750;cdt.managedbuild.tool.gnu.cpp.compiler.input.1798369078">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.mingw.exe.debug.1565154341;cdt.managedbuild.config.gnu.mingw.exe.debug.1565154341.;cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1893167145;cdt.managedbuild.tool.gnu.c.compiler.input.4186125">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.mingw.exe.release.350804159;cdt.managedbuild.config.gnu.mingw.exe.release.350804159.;cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.release.403104558;cdt.managedbuild.tool.gnu.cpp.compiler.input.493064017">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.mingw.exe.release.350804159;cdt.managedbuild.config.gnu.mingw.exe.release.350804159.;cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.release.2063389056;cdt.managedbuild.tool.gnu.c.compiler.input.1018935777">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 	</storageModule>
 </cproject>

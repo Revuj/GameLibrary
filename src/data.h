@@ -1,7 +1,5 @@
-#ifndef DATAH
-#define DATAH
-
-
+#ifndef DATA_H_
+#define DATA_H_
 
 class Data {
 
@@ -20,7 +18,4 @@ public:
 };
 
 
-
-
-
-#endif /* DATAH */
+#endif /* DATA_H_ */

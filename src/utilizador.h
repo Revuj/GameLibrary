@@ -1,16 +1,19 @@
+#ifndef UTILIZADOR_H_
+#define UTILIZADOR_H_
 
-
-#ifndef SRC_UTILIZADOR_H_
-#define SRC_UTILIZADOR_H_
-
+#include <iostream>
+#include "data.h"
 #include "biblioteca.h"
+
+
+using namespace std;
 
 class Utilizador {
 
 private:
 	string nome;
 	string email;
-	size_t idade;
+	unsigned int idade;
 	string morada;
 	struct Cartao_credito {
 		Data validade;
@@ -27,4 +30,4 @@ public:
 
 
 
-#endif /* SRC_UTILIZADOR_H_ */
+#endif /* UTILIZADOR_H_ */

@@ -1,16 +1,18 @@
+#ifndef BIBLIOTECA_H_
+#define BIBLIOTECA_H_
 
+#include <vector>
+using namespace std;
 
-#ifndef SRC_BIBLIOTECA_H_
-#define SRC_BIBLIOTECA_H_
-#include "titulos.h"
+class Titulo;
 
 class Biblioteca {
 
 	vector<Titulo*> titulos;
 public:
-	void adiciona_titulo(Titulo *T);
+//	void adiciona_titulo(Titulo *T);
 };
 
 
 
-#endif /* SRC_BIBLIOTECA_H_ */
+#endif /* BIBLIOTECA_H_ */

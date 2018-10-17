@@ -1,17 +1,16 @@
+#ifndef TITULO_H_
+#define TITULO_H_
 
-
-#ifndef TITULOS_H_
-#define TITULOS_H_
-
-#include "data.h"
-#include "utilizador.h"
 
 #include <string>
 #include <vector>
 
 
-using std::string;
-using std::vector;
+using namespace std;
+
+#include "utilizador.h"
+
+
 
 
 class Titulo { // abstrata?
@@ -52,7 +51,7 @@ private:
 	vector <Data> Data_em_que_jogou;
 	vector <size_t> minutos_jogados_por_data;
 	vector<string> plataformas;
-	static size_t horas_totais;
+ //	static size_t horas_totais;
 
 public:
 	Online();
@@ -62,5 +61,5 @@ public:
 
 
 
-#endif /* TITULOS_H_ */
+#endif /* TITULO_H_ */
 
