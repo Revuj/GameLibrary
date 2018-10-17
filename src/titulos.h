@@ -3,6 +3,9 @@
 #ifndef TITULOS_H_
 #define TITULOS_H_
 
+#include "data.h"
+#include "utilizador.h"
+
 #include <string>
 #include <vector>
 
@@ -11,12 +14,12 @@ using std::string;
 using std::vector;
 
 
-class Titulo {
+class Titulo { // abstrata?
 
 private:
 	string nome;
 	float preco_aquisicao;
-	// data lançamentos
+	Data data_lancamento;
 	int idade_minima, idade_maxima;
 	string plataforma;
 	string genero;
@@ -29,6 +32,33 @@ public:
 
 
 };
+
+
+class Home: public Titulo {
+
+private:
+	Data data_de_atualizacao;
+public:
+	Home();
+
+};
+
+class Online: public Titulo {
+private:
+	vector <Utilizador> utilizadores;
+	size_t valor_por_servico;
+	size_t preco_subscricao;
+	// vetores abaixo com indice correspondente
+	vector <Data> Data_em_que_jogou;
+	vector <size_t> minutos_jogados_por_data;
+	vector<string> plataformas;
+	static size_t horas_totais;
+
+public:
+	Online();
+
+};
+
 
 
 

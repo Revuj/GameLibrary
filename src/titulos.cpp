@@ -21,6 +21,9 @@ void Titulo::set_preco(float preco) {
 }
 
 
+ size_t Online:: horas_totais=0;
+
+
 
 
 
