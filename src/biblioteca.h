@@ -10,7 +10,7 @@ class Biblioteca {
 
 	vector<Titulo*> titulos;
 public:
-//	void adiciona_titulo(Titulo *T);
+	void adiciona_titulo(Titulo *T);
 };
 
 
