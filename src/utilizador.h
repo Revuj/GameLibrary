@@ -1,27 +1,34 @@
-#ifndef UTILIZADOR_H_
-#define UTILIZADOR_H_
 
-#include <iostream>
-#include "data.h"
+
+#ifndef SRC_UTILIZADOR_H_
+#define SRC_UTILIZADOR_H_
+
+
 #include "biblioteca.h"
+#include "CartaoCredito.h"
+#include <string>
 
 
-using namespace std;
 
 class Utilizador {
 
 private:
-	string nome;
-	string email;
-	unsigned int idade;
-	string morada;
-	struct Cartao_credito {
-		Data validade;
-		size_t saldo;
-
-	};
+	std::string nome;
+	std::string email;
+	size_t idade;
+	std::string morada;
+	CartaoCredito cc;
+	Biblioteca conjuntoTitulos;
 
 public:
+	Utilizador(const std::string nome="",const std::string email="",const size_t idade=0,const std::string morada="",const CartaoCredito cc=CartaoCredito(), const Biblioteca b=Biblioteca());
+	std::string getNome();
+	std::string getEmail();
+	size_t getIdade();
+	std::string getMorada();
+	CartaoCredito getCc();
+	Biblioteca getBiblioteca();
+	bool operator == (const Utilizador & U);
 
 
 };
@@ -30,4 +37,4 @@ public:
 
 
 
-#endif /* UTILIZADOR_H_ */
+#endif /* SRC_UTILIZADOR_H_ */

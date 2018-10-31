@@ -1,4 +1,4 @@
-#include "data.h"
+	#include "data.h"
 
 // construtor
 Data::Data(int dia,int mes,int ano) {
@@ -23,4 +23,9 @@ bool Data::operator<=(const Data& D1) {
     }
     else
         return true;
+}
+
+bool Data::operator == (const Data & D2)
+{
+	return (this->ano==D2.ano) && (this->mes==D2.mes) && (this->dia==D2.dia);
 }

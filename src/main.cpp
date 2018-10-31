@@ -1,9 +1,20 @@
 #include <iostream>
+#include "titulos.h"
+
 using namespace std;
-int main(void) {
+
+int main() {
+
+	cout << "oioioio" << endl;
+	Utilizador U1,u2;
+	//if
 
 
-	cout << "hello "<<endl;
+	Biblioteca B;
+
+	Data D1;
+	CartaoCredito c;
+
 
 
 
