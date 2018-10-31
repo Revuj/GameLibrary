@@ -1,7 +1,7 @@
-#ifndef SRC_BIBLIOTECA_H_
-#define SRC_BIBLIOTECA_H_
+#ifndef BIBLIOTECA_H_
+#define BIBLIOTECA_H_
 
-//#include "titulos.h"
+//#include "Titulo.h"
 
 #include <vector>
 
@@ -20,6 +20,4 @@ public:
 	bool operator==(const Biblioteca B);
 };
 
-
-
-#endif /* SRC_BIBLIOTECA_H_ */
+#endif /* BIBLIOTECA_H_ */

@@ -1,14 +1,9 @@
+#ifndef UTILIZADOR_H_
+#define UTILIZADOR_H_
 
-
-#ifndef SRC_UTILIZADOR_H_
-#define SRC_UTILIZADOR_H_
-
-
-#include "biblioteca.h"
 #include "CartaoCredito.h"
 #include <string>
-
-
+#include "Biblioteca.h"
 
 class Utilizador {
 
@@ -21,20 +16,18 @@ private:
 	Biblioteca conjuntoTitulos;
 
 public:
-	Utilizador(const std::string nome="",const std::string email="",const size_t idade=0,const std::string morada="",const CartaoCredito cc=CartaoCredito(), const Biblioteca b=Biblioteca());
+	Utilizador(const std::string nome = "", const std::string email = "",
+			const size_t idade = 0, const std::string morada = "",
+			const CartaoCredito cc = CartaoCredito(), const Biblioteca b =
+					Biblioteca());
 	std::string getNome();
 	std::string getEmail();
 	size_t getIdade();
 	std::string getMorada();
 	CartaoCredito getCc();
 	Biblioteca getBiblioteca();
-	bool operator == (const Utilizador & U);
-
+	bool operator ==(const Utilizador & U);
 
 };
 
-
-
-
-
-#endif /* SRC_UTILIZADOR_H_ */
+#endif /* UTILIZADOR_H_ */

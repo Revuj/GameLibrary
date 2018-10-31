@@ -1,32 +1,24 @@
-
 #include "CartaoCredito.h"
 
 /*
  * construtor
  */
 
-CartaoCredito::CartaoCredito(unsigned int saldo,const Data & d1)
-{
-	this->saldo=saldo;
+CartaoCredito::CartaoCredito(unsigned int saldo, const Data & d1) {
+	this->saldo = saldo;
 	this->dataDeValidade = d1;
 }
 
-unsigned int CartaoCredito::getSaldo()
-{
+unsigned int CartaoCredito::getSaldo() {
 	return this->saldo;
 }
 
-
-Data CartaoCredito:: getDataDeValidade()
-{
+Data CartaoCredito::getDataDeValidade() {
 	return this->dataDeValidade;
 }
 
-bool CartaoCredito::operator==(CartaoCredito C)
-{
-	return (this->saldo=C.saldo) && (this->dataDeValidade==C.dataDeValidade);
+bool CartaoCredito::operator==(CartaoCredito C) {
+	return (this->saldo = C.saldo) && (this->dataDeValidade == C.dataDeValidade);
 
 }
-
-
 
