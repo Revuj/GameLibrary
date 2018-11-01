@@ -1,4 +1,6 @@
 #include "Data.h"
+#include <time.h>
+
 
 // construtor
 Data::Data(int dia, int mes, int ano) {
@@ -27,6 +29,20 @@ bool Data::operator<=(const Data& D1) {
 bool Data::operator ==(const Data & D2) {
 	return (this->ano == D2.ano) && (this->mes == D2.mes)
 			&& (this->dia == D2.dia);
+}
+
+/*qualquer data pode chamar esta funcao*/
+Data Data::getDataAtual()const
+{
+	time_t theTime = time(NULL);
+	struct tm *aTime = localtime(&theTime);
+
+	int day = aTime->tm_mday;
+	int month = aTime->tm_mon + 1; // Month is 0 - 11, add 1 to get a jan-dec 1-12 concept
+	int year = aTime->tm_year + 1900;
+	return Data(day,month,year);
+
+
 }
 
 std::ostream & operator <<(std::ostream & os, const Data & data) {

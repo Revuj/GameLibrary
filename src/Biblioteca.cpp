@@ -1,10 +1,22 @@
 #include "Biblioteca.h"
 
-void Biblioteca::adiciona_titulo(Titulo *T) {
+
+void Biblioteca::adicionaTitulo(Titulo * T) {
 	titulos.push_back(T);
 }
 
-bool Biblioteca::operator==(const Biblioteca B) {
-	return this->titulos == B.titulos;
+std::vector<Titulo*> Biblioteca::getTitulos() const
+{
+	return this->titulos;
 }
+
+
+bool Biblioteca::operator==(const Biblioteca B)
+{
+	return this->titulos==B.titulos;
+}
+
+
+
+
 

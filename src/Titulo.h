@@ -19,13 +19,34 @@ private:
 	std::vector<std::string> generos;
 	std::string empresa; /*empresa que criou*/
 	std::map<std::string, std::vector<float>> precosPlataforma; /* para cada plataforma guarda um conjunto de precos*/
-
 public:
+
+	/*construtores*/
 	Titulo();
 	Titulo(std::string nome, int idadeMinima,
 			std::map<std::string, std::vector<float>> precosPlataforma,
 			std::vector<std::string> generos, std::string empresa,
 			Data dataLancamento);
+
+	/*funcoes para aceder aos membros dado*/
+	unsigned int getIdU() const;
+
+	std::string getNome() const;
+
+	Data getDataLancamento() const;
+
+	unsigned int getIdadeMinima() const;
+
+	std::vector<std::string> getGeneros() const;
+
+	std::string getEmpresa() const;
+
+	std::map<std::string, std::vector<float>> getPrecosPlataforma() const;
+
+	/*
+	 * retorna o preco total atual do titulo dado pelo somatorio do preco atual em cada plataforma que apresenta
+	 */
+	float getPrecoTitulo(std::string plataforma) const;
 
 	/*
 	 * atualiza o preco ao map precosPlataforma, caso seja um valor positivo, em todas as plataformas
@@ -54,34 +75,12 @@ public:
 	 */
 	bool operator==(const Titulo & T);
 
-	unsigned int getIdU() const {
-		return IdU;
-	}
-	;
-	std::string getNome() const {
-		return nome;
-	}
-	;
-	Data getDataLancamento() const {
-		return dataLancamento;
-	}
-	;
-	unsigned int getIdadeMinima() const {
-		return idadeMinima;
-	}
-	;
-	std::vector<std::string> getGeneros() const {
-		return generos;
-	}
-	;
-	std::string getEmpresa() const {
-		return empresa;
-	}
-	;
-	std::map<std::string, std::vector<float>> getPrecosPlataforma() const {
-		return precosPlataforma;
-	}
-	;
+	/*
+	 * calcula o desconto,comparando o preco de lancamento(o mais elevado) com o atual
+	 * @param plataforma especifica a plataforma onde queremos calcular o desconto
+	 * return um numero do tipo float no dentro do intervalo [0,100[ , lança excecao se plataforma nao existe
+	 */
+	float getDesconto(std::string plataforma);
 
 };
 
@@ -93,8 +92,8 @@ std::ostream & operator <<(std::ostream & os, const Titulo & t);
 class Home: public Titulo {
 
 private:
-	const unsigned int preco_atualizacao = 1; /* preco por download,*/
-	std::vector<Data> data_de_atualizacao; /* vetor com datas de atualizacoes, em que o seu tamanho da preco gasto em atualizacoes*/
+	const unsigned int precoAtualizacao = 1; /* preco por download,*/
+	std::vector<Data> dataDeAtualizacao; /* vetor com datas de atualizacoes, em que o seu tamanho da preco gasto em atualizacoes*/
 public:
 
 	/*
@@ -114,7 +113,28 @@ public:
 	 */
 	bool adicionaAtualizacao(const Data & D);
 
+	/*
+	 * devolve o membro dato precoatualizacao
+	 */
+	unsigned int getPrecoAtualizacao() const;
+
+	/*
+	 * devolve membro dado vetor de datas
+	 */
+	std::vector<Data> getDatas() const;
+
+	/*
+	 * devolve o gasto total em atualizacoes
+	 */
+	unsigned int getGastos() const;
+
+	/*
+	 * show datas de atualizacao
+	 */
+	void showDatasAtualizacao() const;
 };
+
+
 
 class Online: public Titulo {
 private:
@@ -125,8 +145,8 @@ private:
 	/* vetores abaixo com indice correspondente*/
 	std::vector<Data> Data_em_que_jogou; /*vetor incialmente vazio, datas podem repetir se para plataformas diferentes*/
 	std::vector<size_t> minutos_jogados_por_data; /*vetor incialmente vazio*/
-	std::vector<std::string> plataformas; /*vetor incialmente vazio*/
-	static float horas_totais; /*no final arredonda para cima*/
+	std::vector<std::string> plataformas;  /*vetor incialmente vazio*/
+	static float horasTotais; /*no final arredonda para cima*/
 
 public:
 
@@ -163,8 +183,11 @@ public:
 	 */
 	void adicionaEstaticas(const Data & D1, const size_t minutos,
 			const std::string plataforma);
+	/*
+	 * devolve o numero de horas jogadas, arredondando para cima o membro estatico horas totais
+	 */
+	unsigned int getHorasTotais();
 
 };
 
 #endif /* TITULO_H_ */
-

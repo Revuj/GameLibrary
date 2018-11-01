@@ -12,12 +12,7 @@ public:
 	}
 };
 
-std::ostream & operator <<(std::ostream & os, const PrecoInvalido & preco) {
-	os << "Tentativa de atualizar preco falhada: preco invalido = " << preco
-			<< std::endl;
-	os << "Preco devera ser maior que 0!" << std::endl;
-	return os;
-}
+std::ostream & operator <<(std::ostream & os, const PrecoInvalido & preco);
 
 //========================================================================================
 //========================================================================================
@@ -31,15 +26,59 @@ public:
 	}
 };
 
-std::ostream & operator <<(std::ostream & os,
-		const PlataformaNaoExistente & plataforma) {
-	os << "Este titulo nao esta disponivel nesta plataforma: " << plataforma
-			<< std::endl;
-	os << "Devera escolher uma plataforma existente!" << std::endl;
-	return os;
-}
+std::ostream & operator <<(std::ostream & os, const PlataformaNaoExistente & plataforma);
 
 //========================================================================================
 //========================================================================================
+
+class SaldoInsuficiente {
+private:
+	unsigned int saldo;
+public:
+	SaldoInsuficiente(unsigned int saldo) {
+		this->saldo = saldo;
+	}
+	unsigned int getSaldo() const {
+		return this->saldo;
+	}
+};
+
+std::ostream & operator <<(std::ostream & os, const SaldoInsuficiente & saldo);
+
+//========================================================================================
+//========================================================================================
+
+class CartaoInexistente {
+private:
+	std::string id;
+public:
+	CartaoInexistente(const std::string id) {
+		this->id = id;
+	}
+	std::string getId() const {
+		return this->id;
+	}
+};
+
+std::ostream & operator <<(std::ostream & os, const CartaoInexistente & cartao);
+
+//========================================================================================
+//========================================================================================
+
+class TituloJaAdicionado {
+private:
+	std::string nome;
+public:
+	TituloJaAdicionado(std::string nome) {
+		this->nome = nome;
+	}
+	std::string getNome() const {
+		return this->nome;
+	}
+};
+
+std::ostream & operator <<(std::ostream & os, const TituloJaAdicionado & titulo);
+
+
 
 #endif /* ERRO_H_ */

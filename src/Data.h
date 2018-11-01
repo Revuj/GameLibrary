@@ -32,15 +32,21 @@ public:
 	unsigned int getDia() const {
 		return dia;
 	}
-	;
+
 	unsigned int getMes() const {
 		return mes;
 	}
-	;
+
 	unsigned int getAno() const {
 		return ano;
 	}
-	;
+
+	/*
+	 * retorna a data atual
+	*/
+	Data getDataAtual()const;
+
+
 };
 
 std::ostream & operator <<(std::ostream & os, const Data & data);

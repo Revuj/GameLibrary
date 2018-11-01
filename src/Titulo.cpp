@@ -1,12 +1,15 @@
 #include "Titulo.h"
+#include "Erro.h"
 
 #include <algorithm>
+#include <cmath>
 #include <iostream>
-#include "Erro.h"
+
+
 
 /*inicializacao de variaveis static*/
 unsigned int Titulo::IdUnico = 1;
-float Online::horas_totais = 0;
+float Online::horasTotais = 0;
 
 /*
  * construtor titulo
@@ -27,6 +30,50 @@ Titulo::Titulo(std::string nome, int idadeMinima,
 	this->precosPlataforma = precosPlataforma;
 	this->dataLancamento = dataLancamento;
 
+}
+
+//========================================================================================
+//========================================================================================
+
+/*funcoes get para aceder aos membros-dado fora da classe*/
+unsigned int Titulo::getIdU() const{
+		return IdU;
+}
+
+std::string Titulo::getNome() const {
+		return nome;
+}
+
+Data Titulo::getDataLancamento() const {
+		return dataLancamento;
+}
+
+unsigned int Titulo::getIdadeMinima() const {
+		return idadeMinima;
+}
+
+std::vector<std::string> Titulo::getGeneros() const {
+		return generos;
+}
+
+std::string Titulo::getEmpresa() const {
+		return empresa;
+}
+
+std::map<std::string, std::vector<float>> Titulo::getPrecosPlataforma() const {
+		return precosPlataforma;
+}
+
+//========================================================================================
+//========================================================================================
+float Titulo::getPrecoTitulo(std::string plataforma) const
+{
+
+
+	for(auto const &precos : this->precosPlataforma)
+		return precos.second.at(precos.second.size()-1); /*preco atual da plataforma*/
+
+	throw PlataformaNaoExistente(plataforma);
 }
 
 //========================================================================================
@@ -75,10 +122,25 @@ bool Titulo::operator==(const Titulo & T) {
 	return (this->IdU == T.IdU);
 }
 
+//========================================================================================
+//========================================================================================
+float Titulo::getDesconto(std::string plataforma)
+{
+	for(auto const & precos : this->precosPlataforma)
+	{
+		if(precos.first == plataforma)
+			return ( 1- (precos.second.at(precos.second.size()-1)) / precos.second.at(0) )*100; /*divisao do preco atual com o de lançamento */
+
+	}
+	throw PlataformaNaoExistente(plataforma); /*plataforma inexistente*/
+}
+
+//========================================================================================
+//========================================================================================
 std::ostream & operator <<(std::ostream & os, const Titulo & t) {
 	os << "Titulo: " << t.getNome() << std::endl;
 	os << "Id: " << t.getIdU() << std::endl;
-	os << "Data de Lançamento: " << t.getDataLancamento() << std::endl;
+	//os << "Data de Lançamento: " << t.getDataLancamento() << std::endl; <- dame erro
 	os << "Idade Minima: " << t.getIdadeMinima() << std::endl;
 
 	os << "Generos: ";
@@ -110,14 +172,46 @@ Home::Home(std::string nome, int idadeMinima,
 //========================================================================================
 bool Home::adicionaAtualizacao(const Data & D) {
 
-	if (find(this->data_de_atualizacao.begin(), this->data_de_atualizacao.end(),
-			D) != this->data_de_atualizacao.end())
+	if (find(this->dataDeAtualizacao.begin(), this->dataDeAtualizacao.end(),
+			D) != this->dataDeAtualizacao.end())
 		return false;
 	else {
-		this->data_de_atualizacao.push_back(D);
+		this->dataDeAtualizacao.push_back(D);
 		return true;
 	}
 
+}
+
+//========================================================================================
+//========================================================================================
+unsigned int Home::getPrecoAtualizacao() const
+{
+	return this->precoAtualizacao;
+}
+
+//========================================================================================
+//========================================================================================
+std::vector<Data>Home::getDatas() const
+{
+	return this->dataDeAtualizacao;
+}
+
+//========================================================================================
+//========================================================================================
+void Home::showDatasAtualizacao() const
+{
+	for(const auto &datas : this->dataDeAtualizacao)
+	{
+		std::cout<<datas << "\n";
+	}
+
+}
+
+//========================================================================================
+//========================================================================================
+unsigned int Home::getGastos() const
+{
+	return this->dataDeAtualizacao.size()* this->precoAtualizacao;
 }
 
 //========================================================================================
@@ -163,7 +257,7 @@ void Online::adicionaEstaticas(const Data & D1, const size_t minutos,
 	for (auto data : this->Data_em_que_jogou) {
 		if (data == D1 && plataformas[indiceData] == plataforma) {
 			this->minutos_jogados_por_data[indiceData] += minutos; /*atualiza os minutos numa data*/
-			horas_totais += minutos / 60;
+			horasTotais += minutos / 60.0;
 			return;
 		}
 
@@ -172,8 +266,17 @@ void Online::adicionaEstaticas(const Data & D1, const size_t minutos,
 
 	/*se plataforma e/ou data forem diferentes adiciona uma nova estatistica*/
 	atualizaEstAux(D1, minutos, plataforma);
-	horas_totais += minutos / 60;
+	horasTotais += minutos / 60.0;
 
 	return;
 }
 
+//========================================================================================
+//========================================================================================
+unsigned int Online::getHorasTotais()
+{
+	if(horasTotais == (unsigned int)horasTotais) /*numero de horas e um inteiro*/
+		return horasTotais;
+	else
+		return (horasTotais+1.0); /*arredonda para cima*/
+}
