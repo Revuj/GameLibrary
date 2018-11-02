@@ -63,6 +63,18 @@ public:
 	void atualizaPrecoNaPlataforma(const float preco, std::string plataforma);
 
 	/*
+	 * adicona uma plataforma ao titulo e inicializa o vetor dos preços com o preço
+	 * @param preco atual
+	 */
+	void adicionaPlataforma(const float preco, std::string plataforma);
+
+	/*
+	 * remove uma plataforma
+	 * @param preco atual
+	 */
+	void removePlataforma(const float preco, std::string plataforma);
+
+	/*
 	 * devolve o preco atual do jogo na respetiva plataforma
 	 */
 

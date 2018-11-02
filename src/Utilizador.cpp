@@ -2,7 +2,7 @@
 #include "Titulo.h"
 #include <algorithm>
 #include "Erro.h"
-
+#include <vector>
 
 /*
  * construtor utilizador que atua como um construtor default
@@ -116,3 +116,39 @@ std::ostream & operator <<(std::ostream & os, const Utilizador & u)
 	return os;
 }
 
+std::vector<std::string> Utilizador::PlataformaPreferida() const {
+	std::vector<Titulo *> titulos=conjuntoTitulos.getTitulos();
+	std::vector<std::string> plataformas;
+	for(auto i: titulos){
+		std::map<std::string, std::vector<float>> p = i->getPrecosPlataforma();
+		for (const auto &s : p)
+		   plataformas.push_back(s.first);
+	}
+
+	std::map<std::string, int> m;
+
+	for (size_t i = 0; i < plataformas.size(); i++)
+	   {
+	     std::map<std::string, int>::iterator it = m.find(plataformas[i]);
+
+	      if (it == m.end())
+	        m[plataformas[i]]= 1;
+
+	      else
+	        m[plataformas[i]] += 1;
+	     }
+
+	std::vector<std::string> plataformasPreferidas;
+	int max=1;
+	for(auto it=m.cbegin();it!=m.cend();it++){
+		if (it ->second > max)
+		    {
+				plataformasPreferidas.clear();
+		        max = it->second;
+		        plataformasPreferidas.push_back(it->first);
+		    }
+		else if(it->second == max)
+			plataformasPreferidas.push_back(it->first);
+	}
+	return plataformasPreferidas;
+}

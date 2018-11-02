@@ -41,6 +41,16 @@ public:
 	 */
 	void AdicionaTitulo(Titulo * T,std::string plataforma, CartaoCredito & c);
 
+	/*
+	 * verifica a plataforma preferida do utilizador
+	 */
+	std::vector<std::string> PlataformaPreferida() const;
+
+	/*
+	 * retorna valor gasto pelo utilizador
+	 */
+	float getGastos() const;
+
 };
 
 std::ostream & operator <<(std::ostream & os, const Utilizador & u);

@@ -106,6 +106,27 @@ void Titulo::atualizaPrecoNaPlataforma(const float preco,
 
 //========================================================================================
 //========================================================================================
+
+void Titulo::adicionaPlataforma(const float preco, std::string plataforma){
+	if(precosPlataforma.find(plataforma)!=precosPlataforma.end())
+		throw (PlataformaJaExistente(plataforma));
+	std::vector<float> price;
+	price.push_back(preco);
+	precosPlataforma[plataforma]=price;
+}
+
+//========================================================================================
+//========================================================================================
+
+void Titulo::removePlataforma(const float preco, std::string plataforma){
+	std::map<std::string,std::vector<float>>::iterator it=precosPlataforma.find(plataforma);
+	if(it==precosPlataforma.end())
+		throw (PlataformaNaoExistente(plataforma));
+	else precosPlataforma.erase (it);
+}
+
+//========================================================================================
+//========================================================================================
 float Titulo::getPrecoAtual(std::string plataforma) const {
 	for (const auto & plat : precosPlataforma) {
 		if (plat.first == plataforma)
