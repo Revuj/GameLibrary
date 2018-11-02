@@ -18,13 +18,14 @@ private:
 	unsigned int idadeMinima;
 	std::vector<std::string> generos;
 	std::string empresa; /*empresa que criou*/
-	std::map<std::string, std::vector<float>> precosPlataforma; /* para cada plataforma guarda um conjunto de precos*/
+	std::string plataforma;
+	float price;
+	std::vector<float> price_history;
 public:
 
 	/*construtores*/
 	Titulo();
-	Titulo(std::string nome, int idadeMinima,
-			std::map<std::string, std::vector<float>> precosPlataforma,
+	Titulo(std::string nome, int idadeMinima, std::string plataforma, float price,
 			std::vector<std::string> generos, std::string empresa,
 			Data dataLancamento);
 
@@ -41,44 +42,18 @@ public:
 
 	std::string getEmpresa() const;
 
-	std::map<std::string, std::vector<float>> getPrecosPlataforma() const;
+	std::string getPlataforma() const {return plataforma;}
+
+	float getPrice() const;
+	
+	std::vector<float> getPriceHistory() const;
 
 	/*
-	 * retorna o preco total atual do titulo dado pelo somatorio do preco atual em cada plataforma que apresenta
-	 */
-	float getPrecoTitulo(std::string plataforma) const;
-
-	/*
-	 * atualiza o preco ao map precosPlataforma, caso seja um valor positivo, em todas as plataformas
+	 * atualiza o preco 
 	 * @param preco preco atual
 	 * return true ou false mediante o valor passado (false se menor ou igual a 0)
 	 */
 	void atualizaPreco(const float preco);
-
-	/*
-	 * atualiza o preco ao map precosPlataforma, caso seja um valor positivo, na respetiva plataforma
-	 * @param preco preco atual
-	 * return true ou false mediante o valor passado (false se menor ou igual a 0 ou se a plataforma não existe)
-	 */
-	void atualizaPrecoNaPlataforma(const float preco, std::string plataforma);
-
-	/*
-	 * adicona uma plataforma ao titulo e inicializa o vetor dos preços com o preço
-	 * @param preco atual
-	 */
-	void adicionaPlataforma(const float preco, std::string plataforma);
-
-	/*
-	 * remove uma plataforma
-	 * @param preco atual
-	 */
-	void removePlataforma(const float preco, std::string plataforma);
-
-	/*
-	 * devolve o preco atual do jogo na respetiva plataforma
-	 */
-
-	float getPrecoAtual(std::string plataforma) const;
 
 	/*
 	 * verifica se dois titulos sao iguais
@@ -113,8 +88,7 @@ public:
 	 * vetor de datas vazio incialmente
 	 */
 
-	Home(std::string nome, int idadeMinima,
-			std::map<std::string, std::vector<float>> precosPlataforma,
+	Home(std::string nome, int idadeMinima, std::string plataforma, float price,
 			std::vector<std::string> generos, std::string empresa,
 			Data dataLancamento);
 
@@ -166,8 +140,7 @@ public:
 	 * construtor da classe Online que atua como construtor default para qualquer(quaisquer) parametro(s)
 	 * vetores incialmente vazios
 	 */
-	Online(std::string nome, int idadeMinima,
-			std::map<std::string, std::vector<float>> precosPlataforma,
+	Online(std::string nome, int idadeMinima,std::string plataforma,float price,
 			std::vector<std::string> generos, std::string empresa,
 			Data dataLancamento, bool subs, size_t pSubscricao);
 

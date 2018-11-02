@@ -17,19 +17,18 @@ float Online::horasTotais = 0;
 
 //========================================================================================
 //========================================================================================
-Titulo::Titulo(std::string nome, int idadeMinima,
-		std::map<std::string, std::vector<float>> precosPlataforma,
+Titulo::Titulo(std::string nome, int idadeMinima, std::string plataforma, float price,
 		std::vector<std::string> generos, std::string empresa,
 		Data dataLancamento) {
 
 	this->IdU = IdUnico++;
 	this->nome = nome;
 	this->idadeMinima = idadeMinima;
+	this->plataforma=plataforma;
+	this->price=price;
 	this->generos = generos;
 	this->empresa = empresa;
-	this->precosPlataforma = precosPlataforma;
 	this->dataLancamento = dataLancamento;
-
 }
 
 //========================================================================================
@@ -60,80 +59,18 @@ std::string Titulo::getEmpresa() const {
 		return empresa;
 }
 
-std::map<std::string, std::vector<float>> Titulo::getPrecosPlataforma() const {
-		return precosPlataforma;
+float Titulo::getPrice() const {
+	return price;
 }
 
-//========================================================================================
-//========================================================================================
-float Titulo::getPrecoTitulo(std::string plataforma) const
-{
-
-
-	for(auto const &precos : this->precosPlataforma)
-		return precos.second.at(precos.second.size()-1); /*preco atual da plataforma*/
-
-	throw PlataformaNaoExistente(plataforma);
+std::vector<float> Titulo::getPriceHistory() const {
+	return price_history;
 }
 
 //========================================================================================
 //========================================================================================
 void Titulo::atualizaPreco(const float preco) {
-	if (preco <= 0)
-		throw PrecoInvalido(preco);
-	else {
-		for (auto & plataforma : precosPlataforma) {
-			plataforma.second.push_back(preco);
-		}
-	}
-}
-
-//========================================================================================
-//========================================================================================
-void Titulo::atualizaPrecoNaPlataforma(const float preco,
-		std::string plataforma) {
-	if (preco <= 0)
-		throw PrecoInvalido(preco);
-	else {
-		for (auto & plat : precosPlataforma) {
-			if (plat.first == plataforma)
-				plat.second.push_back(preco);
-			return;
-		}
-		throw PlataformaNaoExistente(plataforma);
-	}
-}
-
-//========================================================================================
-//========================================================================================
-
-void Titulo::adicionaPlataforma(const float preco, std::string plataforma){
-	if(precosPlataforma.find(plataforma)!=precosPlataforma.end())
-		throw (PlataformaJaExistente(plataforma));
-	std::vector<float> price;
-	price.push_back(preco);
-	precosPlataforma[plataforma]=price;
-}
-
-//========================================================================================
-//========================================================================================
-
-void Titulo::removePlataforma(const float preco, std::string plataforma){
-	std::map<std::string,std::vector<float>>::iterator it=precosPlataforma.find(plataforma);
-	if(it==precosPlataforma.end())
-		throw (PlataformaNaoExistente(plataforma));
-	else precosPlataforma.erase (it);
-}
-
-//========================================================================================
-//========================================================================================
-float Titulo::getPrecoAtual(std::string plataforma) const {
-	for (const auto & plat : precosPlataforma) {
-		if (plat.first == plataforma)
-			return plat.second[plat.second.size() - 1];
-	}
-	throw PlataformaNaoExistente(plataforma);
-	return 0.0;
+	price=preco;
 }
 
 //========================================================================================
@@ -147,13 +84,9 @@ bool Titulo::operator==(const Titulo & T) {
 //========================================================================================
 float Titulo::getDesconto(std::string plataforma)
 {
-	for(auto const & precos : this->precosPlataforma)
-	{
-		if(precos.first == plataforma)
-			return ( 1- (precos.second.at(precos.second.size()-1)) / precos.second.at(0) )*100; /*divisao do preco atual com o de lançamento */
-
-	}
-	throw PlataformaNaoExistente(plataforma); /*plataforma inexistente*/
+	if(price_history.size()==1)
+		return 0;
+	return ( 1- (price_history.at(price_history.size()-1)) / price_history.at(0) )*100;
 }
 
 //========================================================================================
@@ -168,11 +101,7 @@ std::ostream & operator <<(std::ostream & os, const Titulo & t) {
 	for (const auto & generos : t.getGeneros())
 		os << generos << ";";
 
-	os << std::endl << "Preco de Aquisicao: " << std::endl;
-	for (const auto & plat : t.getPrecosPlataforma()) {
-		os << "-> " << plat.first << ": " << plat.second[plat.second.size() - 1]
-				<< std::endl;
-	}
+	os << std::endl << "Preco de Aquisicao: " << t.getPrice()<< std::endl;
 	return os;
 }
 
@@ -180,11 +109,10 @@ std::ostream & operator <<(std::ostream & os, const Titulo & t) {
  * classe Home, derivada da Titulo
  */
 
-Home::Home(std::string nome, int idadeMinima,
-		std::map<std::string, std::vector<float>> precosPlataforma,
+Home::Home(std::string nome, int idadeMinima, std::string plataforma, float price,
 		std::vector<std::string> generos, std::string empresa,
 		Data dataLancamento) :
-		Titulo(nome, idadeMinima, precosPlataforma, generos, empresa,
+		Titulo(nome, idadeMinima, plataforma,price, generos, empresa,
 				dataLancamento) {
 
 }
@@ -237,12 +165,11 @@ unsigned int Home::getGastos() const
 
 //========================================================================================
 //========================================================================================
-Online::Online(std::string nome, int idadeMinima,
-		std::map<std::string, std::vector<float>> precosPlataforma,
+Online::Online(std::string nome, int idadeMinima,std::string plataforma,float price,
 		std::vector<std::string> generos, std::string empresa,
 		Data dataLancamento, bool subs, size_t pSubscricao) :
-		Titulo(nome, idadeMinima, precosPlataforma, generos, empresa,
-				dataLancamento) {
+		Titulo(nome, idadeMinima, plataforma,price, generos, empresa,
+						dataLancamento) {
 	this->subscricaoFixa = subs;
 	this->precoSubscricao = pSubscricao;
 }
@@ -301,3 +228,4 @@ unsigned int Online::getHorasTotais()
 	else
 		return (horasTotais+1.0); /*arredonda para cima*/
 }
+

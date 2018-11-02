@@ -31,15 +31,15 @@ int main() {
 
 	cout << d2.getDataAtual()<<endl;/*data atual*/
 
-	Titulo t1("testeGame", 5, precosPlataforma1, generos1, "Square Enix", d1);
+	/*Titulo t1("testeGame", 5, precosPlataforma1, generos1, "Square Enix", d1);
 
 
 	//////////
 	//JOGO 2//
 	//////////
-	Home t2 ("testeGame2", 10, precosPlataforma1, generos1, "Capcom", d1);
+	//Home t2 ("testeGame2", 10, precosPlataforma1, generos1, "Capcom", d1);
 	t2.adicionaAtualizacao(d1);
-	t2.adicionaAtualizacao(d1); /*nao e adicionada*/
+	t2.adicionaAtualizacao(d1); //nao e adicionada
 
 
 
@@ -56,12 +56,12 @@ int main() {
 
 
 	cout << t1;
-	cout << t1.getDesconto("Nintendo") << "%"<<endl; /*preco mais caro esta em ultimo, preco de lancamento*/
+	cout << t1.getDesconto("Nintendo") << "%"<<endl; //preco mais caro esta em ultimo, preco de lancamento
 
 	Online t3 ("testeGame", 5, precosPlataforma1, generos1, "Square Enix", d1,true,10);
 	t3.adicionaEstaticas(d1,70,"Nintendo");
 	t3.adicionaEstaticas(d1,30,"PlayStation");
-	t3.adicionaEstaticas(d1,21,"Nintendo"); /*arredonda para tres horas*/
+	t3.adicionaEstaticas(d1,21,"Nintendo"); //arredonda para tres horas
 	cout<<"horas totais: "<<t3.getHorasTotais()<<endl;
 
 
@@ -79,10 +79,8 @@ int main() {
 	u1.adicionaCartaoCredito(c1);
 
 	cout << u1 << endl;
-
+*/
 
 
 	return 0;
 }
-
-

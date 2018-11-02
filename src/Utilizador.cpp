@@ -79,10 +79,10 @@ void Utilizador::AdicionaTitulo(Titulo * T,std::string plataforma, CartaoCredito
 		{
 			if (cartao == c)
 			{
-				if (cartao.getSaldo() >= T->getPrecoAtual(plataforma)) //ver se o saldo para comprar o titulo é suficiente
+				if (cartao.getSaldo() >= T->getPrice()) //ver se o saldo para comprar o titulo é suficiente
 				{
 					this->conjuntoTitulos.adicionaTitulo(T);
-					c.removeQuantia(T->getPrecoAtual(plataforma)); //retira dinheiro do cartao
+					c.removeQuantia(T->getPrice()); //retira dinheiro do cartao
 				}
 				else
 					throw SaldoInsuficiente(cartao.getSaldo());
@@ -120,9 +120,7 @@ std::vector<std::string> Utilizador::PlataformaPreferida() const {
 	std::vector<Titulo *> titulos=conjuntoTitulos.getTitulos();
 	std::vector<std::string> plataformas;
 	for(auto i: titulos){
-		std::map<std::string, std::vector<float>> p = i->getPrecosPlataforma();
-		for (const auto &s : p)
-		   plataformas.push_back(s.first);
+		plataformas.push_back(i->getPlataforma());
 	}
 
 	std::map<std::string, int> m;
@@ -152,3 +150,4 @@ std::vector<std::string> Utilizador::PlataformaPreferida() const {
 	}
 	return plataformasPreferidas;
 }
+
