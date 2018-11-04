@@ -79,5 +79,12 @@ public:
 
 std::ostream & operator <<(std::ostream & os, const TituloJaAdicionado & titulo);
 
+class PlataformaJaExistente{
+	std::string plataforma;
+public:
+	PlataformaJaExistente(std::string plataforma):plataforma(plataforma){}
+	std::string getPlataforma() const {return plataforma;}
+};
+
 
 #endif /* ERRO_H_ */

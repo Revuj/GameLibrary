@@ -71,28 +71,23 @@ bool Utilizador::adicionaCartaoCredito(const CartaoCredito & C)
 void Utilizador::AdicionaTitulo(Titulo * T,std::string plataforma, CartaoCredito & c)
 {
 /* comparar data de valdiade do cartao e a data atual(ver funcoes)*/
-
-	//nao encontra esse titulo, se encontrar throw titulo ja existente
-	if (find( this->conjuntoTitulos.getTitulos().begin(), this->conjuntoTitulos.getTitulos().begin(), T ) != this->conjuntoTitulos.getTitulos().end())
+	for (const auto & cartao : this->cc)
 	{
-		for (const auto & cartao : this->cc)
+		if (cartao == c)
 		{
-			if (cartao == c)
+			if (cartao.getSaldo() >= T->getPrecoAtual(plataforma)) //ver se o saldo para comprar o titulo é suficiente
 			{
-				if (cartao.getSaldo() >= T->getPrice()) //ver se o saldo para comprar o titulo é suficiente
-				{
-					this->conjuntoTitulos.adicionaTitulo(T);
-					c.removeQuantia(T->getPrice()); //retira dinheiro do cartao
-				}
-				else
-					throw SaldoInsuficiente(cartao.getSaldo());
+				std::vector<std::string> p;
+				p.push_back(plataforma);
+				this->conjuntoTitulos.adicionaTitulo(T,p);
+				c.removeQuantia(T->getPrecoAtual(plataforma)); //retira dinheiro do cartao
 			}
 			else
-				throw CartaoInexistente(c.getId());
+				throw SaldoInsuficiente(cartao.getSaldo());
 		}
-	}
-	else
-		throw TituloJaAdicionado(T->getNome());
+		else
+			throw CartaoInexistente(c.getId());
+		}
 }
 
 std::ostream & operator <<(std::ostream & os, const Utilizador & u)
@@ -117,11 +112,8 @@ std::ostream & operator <<(std::ostream & os, const Utilizador & u)
 }
 
 std::vector<std::string> Utilizador::PlataformaPreferida() const {
-	std::vector<Titulo *> titulos=conjuntoTitulos.getTitulos();
-	std::vector<std::string> plataformas;
-	for(auto i: titulos){
-		plataformas.push_back(i->getPlataforma());
-	}
+
+	std::vector<std::string> plataformas=conjuntoTitulos.getPlataformas();
 
 	std::map<std::string, int> m;
 
