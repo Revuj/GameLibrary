@@ -4,12 +4,11 @@
 #include <vector>
 #include <map>
 #include <string>
-
 class Titulo;
 
 class Biblioteca {
 
-	std::map<Titulo *,std::vector<std::string>> titulos;
+	std::map<Titulo*,std::vector<std::string>> titulos;
 public:
 	/*
 	 * adicona um titulo ao map titulos caso já exista adiciona as plataformas novas
@@ -32,6 +31,9 @@ public:
 	 */
 	bool operator==(const Biblioteca B);
 
-	float getGastos() const;
-
+	std::map<Titulo*,std::vector<std::string>> getBiblioteca() const{return titulos;}
 };
+
+
+
+#endif /* SRC_BIBLIOTECA_H_ */

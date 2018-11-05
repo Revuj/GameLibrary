@@ -34,16 +34,6 @@ bool Biblioteca::operator==(const Biblioteca B)
 	return this->titulos==B.titulos;
 }
 
-float Biblioteca::getGastos() const{
-	float total=0;
-	for (auto& titulo : titulos){
-		std::vector<std::string> p;
-		p=titulo.second;
-		//total += titulo.first->getGastos(p);
-	}
-	return total;
-}
-
 
 
 

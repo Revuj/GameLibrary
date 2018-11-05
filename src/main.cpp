@@ -31,28 +31,18 @@ int main() {
 
 	cout << d2.getDataAtual()<<endl;/*data atual*/
 
-	/*Titulo t1("testeGame", 5, precosPlataforma1, generos1, "Square Enix", d1);
+	Online t1("testeGame", 5, precosPlataforma1, generos1, "Square Enix", d1,true,1);
 
 
 	//////////
 	//JOGO 2//
 	//////////
-	//Home t2 ("testeGame2", 10, precosPlataforma1, generos1, "Capcom", d1);
+	Home t2 ("testeGame2", 10, precosPlataforma1, generos1, "Capcom", d1);
 	t2.adicionaAtualizacao(d1);
 	t2.adicionaAtualizacao(d1); //nao e adicionada
 
 
-
-
-	cout << "gastos:";
-	cout << t2.getGastos()<<"€"<<endl;
-	t2.adicionaAtualizacao(d2);
-	cout << "gastos:";
-	cout << t2.getGastos()<<"€"<<endl;
-	cout << "datas de atualizacao"<<endl;
-	t2.showDatasAtualizacao();
-
-
+	vector<string> plataformas={"Nintendo","PlayStation"};
 
 
 	cout << t1;
@@ -69,8 +59,8 @@ int main() {
 
 	Biblioteca b1;
 
-	b1.adicionaTitulo(&t1);
-	b1.adicionaTitulo(&t2);
+	b1.adicionaTitulo(&t1,plataformas);
+	b1.adicionaTitulo(&t2,plataformas);
 
 	CartaoCredito c1(100, d3, "1234");
 
@@ -78,8 +68,15 @@ int main() {
 
 	u1.adicionaCartaoCredito(c1);
 
+	cout << "gastos:";
+	cout << u1.getGastos()<<"€"<<endl;
+	t2.adicionaAtualizacao(d2);
+	cout << "gastos:";
+	cout << u1.getGastos()<<"€"<<endl;
+	cout << "datas de atualizacao"<<endl;
+	t2.showDatasAtualizacao();
+
 	cout << u1 << endl;
-*/
 
 
 	return 0;

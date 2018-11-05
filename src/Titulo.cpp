@@ -35,32 +35,8 @@ Titulo::Titulo(std::string nome, int idadeMinima,
  //========================================================================================
 
  /*funcoes get para aceder aos membros-dado fora da classe*/
-unsigned int Titulo::getIdU() const{
- 		return IdU;
- }
-
 std::string Titulo::getNome() const {
  		return nome;
- }
-
-Data Titulo::getDataLancamento() const {
- 		return dataLancamento;
- }
-
-unsigned int Titulo::getIdadeMinima() const {
- 		return idadeMinima;
- }
-
-std::vector<std::string> Titulo::getGeneros() const {
- 		return generos;
- }
-
-std::string Titulo::getEmpresa() const {
- 		return empresa;
- }
-
-std::map<std::string, std::vector<float>> Titulo::getPrecosPlataforma() const {
- 		return precosPlataforma;
  }
 
 //========================================================================================
@@ -151,27 +127,20 @@ float Titulo::getPrecoAtual(std::string plataforma) const {
  	throw PlataformaNaoExistente(plataforma); /*plataforma inexistente*/
  }
 
- float Titulo::getGastos(std::vector<std::string>& plataformas){
-	 float total=0;
-	 for(auto i: plataformas)
-		 total+=getPrecoAtual(i);
-	 return total;
- }
-
  //========================================================================================
  //========================================================================================
  std::ostream & operator <<(std::ostream & os, const Titulo & t) {
- 	os << "Titulo: " << t.getNome() << std::endl;
- 	os << "Id: " << t.getIdU() << std::endl;
+ 	os << "Titulo: " << t.nome << std::endl;
+ 	os << "Id: " << t.IdU << "/n";
  	//os << "Data de Lançamento: " << t.getDataLancamento() << std::endl; <- dame erro
- 	os << "Idade Minima: " << t.getIdadeMinima() << std::endl;
+ 	os << "Idade Minima: " << t.idadeMinima << "\n";
 
  	os << "Generos: ";
- 	for (const auto & generos : t.getGeneros())
+ 	for (const auto & generos : t.generos)
  		os << generos << ";";
 
  	os << std::endl << "Preco de Aquisicao: " << std::endl;
- 	for (const auto & plat : t.getPrecosPlataforma()) {
+ 	for (const auto & plat : t.precosPlataforma) {
  		os << "-> " << plat.first << ": " << plat.second[plat.second.size() - 1]
  				<< std::endl;
  	}
@@ -232,10 +201,12 @@ float Titulo::getPrecoAtual(std::string plataforma) const {
 
  //========================================================================================
  //========================================================================================
- float Home::getGastos(std::vector<std::string>& plataformas)
+ float Home::getGastos(const std::vector<std::string>& plataformas)
  {
- 	float total= dataDeAtualizacao.size()* this->precoAtualizacao;
- 	return total + Titulo::getGastos(plataformas);
+ 	float total = dataDeAtualizacao.size()* this->precoAtualizacao;
+	 for(auto i: plataformas)
+		 total+=getPrecoAtual(i);
+ 	return total;
  }
 
  //========================================================================================
@@ -304,3 +275,15 @@ float Titulo::getPrecoAtual(std::string plataforma) const {
 	else
 		return (horasTotais+1.0); /*arredonda para cima*/
 }
+
+
+ float Online::getGastos(const std::vector<std::string>& plataformas)
+ {
+	 float total=0;
+	 if(subscricaoFixa)
+		 total+=precoSubscricao;
+	 else total += (precoSubscricao*horasTotais);
+	 for(auto i: plataformas)
+		 total+=getPrecoAtual(i);
+	 return total;
+ }

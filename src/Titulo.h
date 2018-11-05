@@ -1,4 +1,4 @@
-#ifndef TITULO_H_
+ #ifndef TITULO_H_
  #define TITULO_H_
 
  #include <iostream>
@@ -6,11 +6,10 @@
  #include <vector>
  #include <map>
  #include "Data.h"
- #include "Utilizador.h"
+#include "Utilizador.h"
 
  class Titulo {
-
- private:
+protected:
  	static unsigned int IdUnico; /*começa em 1 */
  	unsigned int IdU;
  	std::string nome;
@@ -30,19 +29,9 @@
  			Data dataLancamento);
 
  	/*funcoes para aceder aos membros dado*/
- 	unsigned int getIdU() const;
 
  	std::string getNome() const;
 
- 	Data getDataLancamento() const;
-
- 	unsigned int getIdadeMinima() const;
-
- 	std::vector<std::string> getGeneros() const;
-
- 	std::string getEmpresa() const;
-
- 	std::map<std::string, std::vector<float>> getPrecosPlataforma() const;
 
  	/*
  	 * retorna o preco total atual do titulo dado pelo somatorio do preco atual em cada plataforma que apresenta
@@ -92,14 +81,10 @@
  	 */
  	float getDesconto(std::string plataforma);
 
- 	virtual float getGastos(std::vector<std::string>& plataformas);
+ 	virtual float getGastos(const std::vector<std::string>& plataformas)=0;
 
+ 	friend std::ostream & operator <<(std::ostream & os, const Titulo & t);
  };
-
- /*
-  * mostra no ecra o Titulo e os respetivos atributos
-  */
- std::ostream & operator <<(std::ostream & os, const Titulo & t);
 
  class Home: public Titulo {
 
@@ -140,7 +125,7 @@
  	 */
  	void showDatasAtualizacao() const;
 
- 	float getGastos(std::vector<std::string>& plataformas);
+ 	float getGastos(const std::vector<std::string>& plataformas);
  };
 
 
@@ -197,7 +182,7 @@
  	 */
  	unsigned int getHorasTotais();
 
- 	float getGastos(std::vector<std::string>& plataformas);
+ 	float getGastos(const std::vector<std::string>& plataformas);
  };
 
 #endif /* TITULO_H_ */

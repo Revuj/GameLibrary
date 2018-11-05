@@ -143,3 +143,11 @@ std::vector<std::string> Utilizador::PlataformaPreferida() const {
 	return plataformasPreferidas;
 }
 
+float Utilizador::getGastos() const{
+	float total=0;
+	std::map<Titulo*,std::vector<std::string>> titulos=conjuntoTitulos.getBiblioteca();
+	for (auto& titulo : titulos){
+		total += titulo.first->getGastos(titulo.second);
+	}
+	return total;
+}
