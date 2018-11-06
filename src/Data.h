@@ -20,31 +20,39 @@ public:
 	 * @param D1 data com que se compara o objeto atual
 	 * return verdade se o objeto for  menor ou igual que D1
 	 */
-	bool operator<=(const Data& D1);
+
+	 Data & setDia(const unsigned int dia);
+
+	 Data & setMes(const unsigned int mes);
+
+	 Data & setAno(const unsigned int ano);
+
+	 unsigned int getDia() const;
+
+	 unsigned int getMes() const;
+
+	 unsigned int getAno() const;
+
+	 /*
+	  * Calcula a diferença de duas datas, em dias
+	  * @param data data com que se compara o objeto atual
+	  * return o valor calculado
+	  */
+	 unsigned int diferencaEntreDatas(const Data & data);
+
+	 bool operator<=(const Data& D1) const;
 
 	/*
 	 * overload do operador == que compara duas data
 	 * @param D1 data com que se compara o objeto atual
 	 * return true se iguais senao falso
 	 */
-	bool operator ==(const Data & D1);
+	 bool operator ==(const Data & D1) const;
 
-	unsigned int getDia() const {
-		return dia;
-	}
 
-	unsigned int getMes() const {
-		return mes;
-	}
 
-	unsigned int getAno() const {
-		return ano;
-	}
 
-	/*
-	 * retorna a data atual
-	*/
-	Data getDataAtual()const;
+
 
 
 };

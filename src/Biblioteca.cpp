@@ -6,7 +6,7 @@ void Biblioteca::adicionaTitulo(Titulo * T,const std::vector<std::string>& plata
 	if(titulos.find(T)==titulos.end())
 		titulos[T]=plataforma;
 	else {
-		std::vector<std::string> p=titulos.at(T);
+		std::vector<std::string> p=titulos[T];
 		p.insert(plataforma.end(),plataforma.begin(),plataforma.end());
 		std::sort(p.begin(), p.end());
 		p.erase(std::unique(p.begin(), p.end()), p.end());

@@ -29,8 +29,6 @@ int main() {
 	precosPlataforma1["PlayStation"] = precosPlayStation;
 
 
-	cout << d2.getDataAtual()<<endl;/*data atual*/
-
 	Online t1("testeGame", 5, precosPlataforma1, generos1, "Square Enix", d1,true,1);
 
 
@@ -78,6 +76,9 @@ int main() {
 
 	cout << u1 << endl;
 
+	cout << endl << endl << endl;
+
+	cout << d2.diferencaEntreDatas(d1) << endl;
 
 	return 0;
 }

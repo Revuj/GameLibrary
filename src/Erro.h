@@ -31,6 +31,20 @@ std::ostream & operator <<(std::ostream & os, const PlataformaNaoExistente & pla
 //========================================================================================
 //========================================================================================
 
+class PlataformaJaExistente{
+	std::string plataforma;
+public:
+	PlataformaJaExistente(std::string plataforma) {
+		this->plataforma = plataforma;
+	}
+	std::string getPlataforma() const {
+		return this->plataforma;}
+};
+
+std::ostream & operator <<(std::ostream & os, const PlataformaJaExistente & plataforma);
+//========================================================================================
+//========================================================================================
+
 class SaldoInsuficiente {
 private:
 	unsigned int saldo;
@@ -65,6 +79,40 @@ std::ostream & operator <<(std::ostream & os, const CartaoInexistente & cartao);
 //========================================================================================
 //========================================================================================
 
+class CartaoJaExistente {
+private:
+	std::string id;
+public:
+	CartaoJaExistente(const std::string id) {
+		this->id = id;
+	}
+	std::string getId() const {
+		return this->id;
+	}
+};
+
+std::ostream & operator <<(std::ostream & os, const CartaoJaExistente & cartao);
+
+//========================================================================================
+//========================================================================================
+
+class CartaoInvalido {
+private:
+	std::string id;
+public:
+	CartaoInvalido(const std::string id) {
+		this->id = id;
+	}
+	std::string getId() const {
+		return this->id;
+	}
+};
+
+std::ostream & operator <<(std::ostream & os, const CartaoInvalido & cartao);
+
+//========================================================================================
+//========================================================================================
+
 class TituloJaAdicionado {
 private:
 	std::string nome;
@@ -79,12 +127,9 @@ public:
 
 std::ostream & operator <<(std::ostream & os, const TituloJaAdicionado & titulo);
 
-class PlataformaJaExistente{
-	std::string plataforma;
-public:
-	PlataformaJaExistente(std::string plataforma):plataforma(plataforma){}
-	std::string getPlataforma() const {return plataforma;}
-};
+//========================================================================================
+//========================================================================================
+
 
 
 #endif /* ERRO_H_ */

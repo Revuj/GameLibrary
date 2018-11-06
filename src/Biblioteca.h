@@ -11,7 +11,7 @@ class Biblioteca {
 	std::map<Titulo*,std::vector<std::string>> titulos;
 public:
 	/*
-	 * adicona um titulo ao map titulos caso já exista adiciona as plataformas novas
+	 * adicona um titulo ao map titulos. caso já exista adiciona as plataformas novas
 	 */
 	void adicionaTitulo(Titulo * T,const std::vector<std::string>& plataforma);
 
