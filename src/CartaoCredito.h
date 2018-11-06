@@ -25,6 +25,8 @@ public:
 	 */
 	std::string getId()const;
 
+	void atualizaDataDeValidade();
+
 	/*
 	 * compara dois cartoes
 	 * @param C cartao de credito a comparar com o objeto atual
@@ -40,7 +42,10 @@ public:
 	 * remove quantia ao saldo do Cartão de Crédito
 	 */
 	void removeQuantia(float quantia);
+
 };
+
+std::ostream & operator <<(std::ostream & os, const CartaoCredito & cartao);
 
 
 

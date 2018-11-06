@@ -1,7 +1,8 @@
 #include <iostream>
 
 #include "Titulo.h"
-
+#include "Banco.h"
+#include "Erro.h"
 using namespace std;
 
 int main() {
@@ -76,9 +77,48 @@ int main() {
 
 	cout << u1 << endl;
 
-	cout << endl << endl << endl;
-
+	cout << "Difference between date 2 and date 1: ";
 	cout << d2.diferencaEntreDatas(d1) << endl;
+	cout << "Difference between date 2 and date 3: ";
+	cout << d2.diferencaEntreDatas(d3) << endl;
+
+	Data d4(30,12,2018);
+	Data d5(2, 5, 2021);
+	Data d6(3, 10, 2022);
+
+	CartaoCredito c2(50, d4, "2345");
+	CartaoCredito c3(70, d5, "3456");
+	CartaoCredito c4(500, d6, "4568");
+
+	cout << c1 << endl;
+	cout << c2 << endl;
+	cout << c3 << endl;
+	cout << c4 << endl;
+
+	vector<CartaoCredito> cartoes1 = {c1, c2, c3};
+
+	Banco banco1;
+
+	try
+	{
+		banco1.adicionaCartoesCredito(cartoes1);
+	}
+	catch(CartaoJaExistente & error)
+	{
+		cout << error << endl;
+	}
+	catch(CartaoInvalido & error)
+	{
+		cout << error << endl;
+	}
+
+	banco1.adicionaCartaoCredito(c4);
+
+	banco1.atualizaCartao(c2);
+
+	cout << c2 << endl;
+
+	cout << banco1 << endl;
 
 	return 0;
 }

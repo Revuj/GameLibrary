@@ -1,7 +1,8 @@
 #include "Erro.h"
-#include "banco.h"
 #include <time.h>
 #include <algorithm>
+#include "Banco.h"
+#include "iomanip"
 
 
 
@@ -26,6 +27,11 @@ Data Banco::getDataAtual() const
 	return this->atual;
 }
 
+std::vector<CartaoCredito> Banco::getCartoesCredito() const
+{
+	return this->CartoesDeCredito;
+}
+
 bool Banco::isDataValida(const CartaoCredito & C) const
 {
 		if (atual <= C.getDataDeValidade())
@@ -44,26 +50,53 @@ void Banco::adicionaCartaoCredito(const CartaoCredito & C)
 	if(!isDataValida(C))
 		throw CartaoInvalido(C.getId());
 
-
+	this->CartoesDeCredito.push_back(C);
 }
 
-void Banco::atualizaDataCartao(const CartaoCredito & C)
+void Banco::adicionaCartoesCredito(const std::vector <CartaoCredito> & cartoes)
+{
+	for (auto const & cartao : cartoes)
+	{
+		adicionaCartaoCredito(cartao);
+	}
+}
+
+void Banco::atualizaCartao(CartaoCredito & C)
 {
 	if(!isDataValida(C))
-		C.getDataDeValidade().setAno(C.getDataDeValidade().getAno()+3);
+		C.atualizaDataDeValidade();
 	else
 	{
 		if (C.getDataDeValidade().diferencaEntreDatas(this->getDataAtual()) <= 90)
-			C.getDataDeValidade().setAno(C.getDataDeValidade().getAno()+3);
+			C.atualizaDataDeValidade();
 	}
 }
 
 void Banco::atualizaCartoesCredito()
 {
-	for(auto const  & cartao : this->CartoesDeCredito)
+	for(auto & cartao : this->CartoesDeCredito)
 	{
-		atualizaDataCartao(cartao);
+		atualizaCartao(cartao);
 	}
 }
 
+#include <iostream>
+std::ostream & operator <<(std::ostream & os, const Banco & banco)
+{
+	unsigned int counter = 0;
+
+	for (const auto & cartao : banco.getCartoesCredito())
+	{
+
+		if (counter % 3 == 0)
+		{
+			os << std::endl << "Cartao " << counter + 1 << ": " <<  cartao.getId();
+		}
+		else
+			os << std::setw(15) << "Cartao " << counter + 1 << ": " <<  cartao.getId();
+
+		counter++;
+	}
+	return os;
+}
 

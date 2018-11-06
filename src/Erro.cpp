@@ -53,7 +53,7 @@ std::ostream & operator <<(std::ostream & os, const CartaoJaExistente & cartao) 
 //========================================================================================
 
 std::ostream & operator <<(std::ostream & os, const CartaoInvalido & cartao) {
-	os << "O cartao com id " << cartao.getId() << "nao e valido." << std::endl;
+	os << "O cartao com id " << cartao.getId() << " nao e valido." << std::endl;
 	os << "Por favor, tente outro cartao." << std::endl;
 	return os;
 }

@@ -31,6 +31,8 @@ public:
 	 */
 	Data getDataAtual() const;
 
+	std::vector<CartaoCredito> getCartoesCredito() const;
+
 
 	/*
 	 * ve se esta dentro da data de validade
@@ -52,26 +54,23 @@ public:
 	 * so pode ser transferido se existir mais que um cartao (pode lancar excecao)
 	 */
 
-
-
-
+	void adicionaCartoesCredito(const std::vector <CartaoCredito> & cartoes);
 
 	/*
 	 * atualiza a data de um cartao de credito, adicionando mais 3 anos de validade
 	 * atualiza se esta fora da validade ou se faltam ate 90 dias ate ao fim do prazo
 	 * @param cartao de credito a atualizar
 	 */
-	void atualizaDataCartao(const CartaoCredito &);
+	void atualizaCartao(CartaoCredito &);
 
 	/*
 	 * atualiza todos os cartoes do sistema, que tem data invalida ou que a sua validade termina dentro de 30 diasss
 	 */
 	void atualizaCartoesCredito();
 
-
-
-
 };
+
+std::ostream & operator <<(std::ostream & os, const Banco & banco);
 
 
 #endif /* SRC_BANCO_H_ */

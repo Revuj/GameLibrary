@@ -19,10 +19,16 @@ unsigned int CartaoCredito::getSaldo() const
 }
 
 
-Data CartaoCredito:: getDataDeValidade() const
+Data CartaoCredito::getDataDeValidade() const
 {
 	return this->dataDeValidade;
 }
+
+void CartaoCredito::atualizaDataDeValidade()
+{
+	this->dataDeValidade.setAno(this->dataDeValidade.getAno() + 3);
+}
+
 
 std::string CartaoCredito::getId() const
 {
@@ -45,6 +51,14 @@ void CartaoCredito::removeQuantia(float quantia)
 	if (this->saldo - quantia >= 0)
 		this->saldo -= quantia;
 	else throw SaldoInsuficiente(this->saldo);
+}
+
+std::ostream & operator <<(std::ostream & os, const CartaoCredito & cartao)
+{
+	os << "Saldo: " << cartao.getSaldo() << std::endl;
+	os << "Id: " << cartao.getId() << std::endl;
+	os << "Data de Validade: " << cartao.getDataDeValidade() << std::endl;
+	return os;
 }
 
 

@@ -2,7 +2,6 @@
 #include <time.h>
 #include <ctime>
 
-
 // construtor
 Data::Data(int dia, int mes, int ano) {
 
@@ -39,13 +38,27 @@ unsigned int Data::getAno() const {
 }
 
 unsigned int Data::diferencaEntreDatas(const Data & data) {
-    struct std::tm a = {0,0,0,this->dia, this->mes - 1,this->ano - 1900}; /* June 24, 2004 */
-    struct std::tm b = {0,0,0,data.getDia(), data.getMes() - 1 , data.getAno() - 1900}; /* July 5, 2004 */
-    std::time_t x = std::mktime(&a);
-    std::time_t y = std::mktime(&b);
 
-    unsigned int difference = std::difftime(y, x) / (60 * 60 * 24);
+	struct tm data1 = {0};
+
+    data1.tm_year = ano - 1900;
+    data1.tm_mon = mes - 1;
+    data1.tm_mday = dia;
+
+    struct tm data2 = {0};
+
+    data2.tm_year = data.getAno() - 1900;
+    data2.tm_mon = data.getMes() - 1;
+    data2.tm_mday = data.getDia();
+
+    std::time_t time1 = std::mktime(&data1);
+    std::time_t time2 = std::mktime(&data2);
+
+    const int seconds_per_day = 60*60*24;
+    unsigned int difference = abs(time1 - time2) / seconds_per_day;
+
     return difference;
+
 }
 
 bool Data::operator<=(const Data& D1) const {

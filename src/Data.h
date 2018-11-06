@@ -2,6 +2,7 @@
 #define DATA_H_
 #include <iostream>
 
+
 class Data {
 
 private:
