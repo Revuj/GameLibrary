@@ -77,6 +77,24 @@ bool Data::operator<=(const Data& D1) const {
 		return true;
 }
 
+bool Data::operator<(const Data& D1) const {
+
+	if (ano > D1.ano)
+		return false;
+	else if (ano == D1.ano) {
+
+		if (mes > D1.mes)
+			return false;
+		else if(mes==D1.mes){
+			if (dia >= D1.mes)
+				return false;
+		}
+
+		return true;
+	} else
+		return true;
+}
+
 bool Data::operator ==(const Data & D2) const {
 	return (this->ano == D2.ano) && (this->mes == D2.mes)
 			&& (this->dia == D2.dia);

@@ -43,6 +43,8 @@ public:
 
 	 bool operator<=(const Data& D1) const;
 
+	 bool operator<(const Data& D1) const;
+
 	/*
 	 * overload do operador == que compara duas data
 	 * @param D1 data com que se compara o objeto atual

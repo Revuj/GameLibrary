@@ -39,6 +39,26 @@ std::string Titulo::getNome() const {
  		return nome;
  }
 
+unsigned int Titulo::getIdU() const{
+ 		return IdU;
+ }
+
+ Data Titulo::getDataLancamento() const {
+		return dataLancamento;
+}
+
+ unsigned int Titulo::getIdadeMinima() const {
+		return idadeMinima;
+}
+
+ std::vector<std::string> Titulo::getGeneros() const {
+		return generos;
+}
+
+ std::string Titulo::getEmpresa() const {
+		return empresa;
+}
+
 //========================================================================================
 //========================================================================================
 float Titulo::getPrecoTitulo(std::string plataforma) const

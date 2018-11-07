@@ -32,6 +32,16 @@ protected:
 
  	std::string getNome() const;
 
+ 	unsigned int getIdU() const;
+
+ 	Data getDataLancamento() const;
+
+ 	unsigned int getIdadeMinima() const;
+
+ 	std::vector<std::string> getGeneros() const;
+
+ 	std::string getEmpresa() const;
+
 
  	/*
  	 * retorna o preco total atual do titulo dado pelo somatorio do preco atual em cada plataforma que apresenta
