@@ -39,7 +39,7 @@ public:
 	 * @param cartao de credito a comparar a data
 	 * return true se valida senao falsa
 	 */
-	bool isDataValida(const CartaoCredito &) const ;
+	bool isDataValida(const CartaoCredito & cartao) const ;
 
 
 	/*deve ser chamada sempre antes de associar um cartao de credito a uma pessoa para garantir que esta disponivel e dentro da validade*/
@@ -61,7 +61,7 @@ public:
 	 * atualiza se esta fora da validade ou se faltam ate 90 dias ate ao fim do prazo
 	 * @param cartao de credito a atualizar
 	 */
-	void atualizaCartao(CartaoCredito &);
+	void atualizaCartao(CartaoCredito & cartao);
 
 	/*
 	 * atualiza todos os cartoes do sistema, que tem data invalida ou que a sua validade termina dentro de 30 diasss

@@ -1,6 +1,6 @@
 #include "Biblioteca.h"
 #include <algorithm>
-
+#include "Titulo.h"
 
 void Biblioteca::adicionaTitulo(Titulo * T,const std::vector<std::string>& plataforma) {
 	if(titulos.find(T)==titulos.end())
@@ -29,11 +29,25 @@ std::vector<std::string> Biblioteca::getPlataformas() const{
 	return plataforma;
 }
 
+std::map<Titulo*,std::vector<std::string>> Biblioteca::getBiblioteca() const
+{
+	return this->titulos;
+}
+
 bool Biblioteca::operator==(const Biblioteca B)
 {
 	return this->titulos==B.titulos;
 }
 
+float Biblioteca::custoTotal() const
+{
+    float custoTotal=0;
+
+    for(const auto & titulopair : this->titulos)
+        custoTotal += titulopair.first->getGastos(titulopair.second);
+
+    return custoTotal;
+}
 
 
 

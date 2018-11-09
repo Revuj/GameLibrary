@@ -24,14 +24,19 @@ public:
 	 * retorna o conjunto de plataformas
 	 */
 	std::vector<std::string> getPlataformas() const;
+
+	std::map<Titulo*,std::vector<std::string>> getBiblioteca() const;
+
+	float custoTotal() const;
 	/*
 	 * compara duas bibliotecas
 	 * @param B biblioteca com que se compara o objeto atual
 	 * return true se a mesma senao falso
 	 */
+
 	bool operator==(const Biblioteca B);
 
-	std::map<Titulo*,std::vector<std::string>> getBiblioteca() const{return titulos;}
+
 };
 
 

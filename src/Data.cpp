@@ -3,7 +3,7 @@
 #include <ctime>
 
 // construtor
-Data::Data(int dia, int mes, int ano) {
+Data::Data(unsigned int dia, unsigned int mes, unsigned int ano) {
 
 	this->dia = dia;
 	this->mes = mes;

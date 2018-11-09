@@ -14,7 +14,7 @@ public:
 	 * @param m mes
 	 * @param a ano
 	 *  */
-	Data(int d = 1, int m = 1, int a = 2000);
+	Data(unsigned int dia = 1, unsigned int mes = 1, unsigned int ano = 2000);
 
 	/*
 	 * overload do operador <= que compara duas data
