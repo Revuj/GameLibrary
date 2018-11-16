@@ -73,34 +73,128 @@ bool comparaValor(const pair <string, unsigned int> &i1,const pair<string, unsig
 
 //ainda não está a funcionar
 /*crescent order of occurrence*/
-//void rankingDePlataformas( map<string,unsigned int> m)
-//{
-//
-//  vector<string> plataformas;
-//
-//  map<string,unsigned int>::iterator it;
-//
-//  bool vetorIncompleto=true;
-//
-//  while(vetorIncompleto)
-//  {
-//      if (!m.empty())
-//      {
-//          it=max_element(m.begin(),m.end(),comparaValor());
-//          plataformas.push_back(it->first);
-//          m.erase(it);
-//      }
-//      else
-//          vetorIncompleto=true;
-//  }
-//
-//
-//  for(size_t i =0;i < plataformas.size();i++)
-//  {
-//      cout << plataformas[i]<<endl;
-//  }
-//}
+map<string,unsigned int> sortMapByValue(map<string, unsigned int> m)
+{
+	map<string,unsigned int> sortedMap;
 
+	map<string,unsigned int>::iterator it;
+
+	unsigned int mapSize = m.size();
+	for (unsigned int i = 0; i < mapSize; i++)
+	{
+		it=max_element(m.begin(),m.end(),comparaValor);
+		sortedMap[it->first()] = it->second();
+		m.erase(it);
+	}
+	return sortedMap;
+}
+
+void rankingDeGeneros(vector<Utilizador> utilizadores)
+{
+	map <string, unsigned int> generos;
+
+	for (auto const & utilizador : utilizadores)
+	{
+		map<Titulo*,vector<string>> titulos = utilizador.getBiblioteca().getTitulos();
+
+		for (auto const & titulo : titulos)
+		{
+			vector<string> generosVector = titulo.first->getGeneros();
+
+			for (auto const & genero : generosVector)
+			{
+				generos[genero]++;
+			}
+		}
+	}
+
+	map <unsigned int, string> sortedMap = sortMapByValue(generos);
+	map<string,unsigned int>::iterator it = sortedMap.begin();
+
+
+	for (unsigned int i = 0; i < sortedMap.size(); i++)
+	{
+		cout << i + 1 << ": " << it->first << " - " << it->second << endl;
+		it++;
+	}
+}
+
+void rankingDePlataformas(vector<Utilizador> utilizadores)
+{
+	map <string, unsigned int> plataformas;
+
+	for (auto const & utilizador : utilizadores)
+	{
+		map<Titulo*,vector<string>> titulos = utilizador.getBiblioteca().getTitulos();
+
+		for (auto const & titulo : titulos)
+		{
+			for (auto const & plataforma : titulo.second)
+			{
+				plataformas[plataforma]++;
+			}
+		}
+	}
+
+	map <unsigned int, string> sortedMap = sortMapByValue(plataformas);
+	map<string,unsigned int>::iterator it = sortedMap.begin();
+
+
+	for (unsigned int i = 0; i < sortedMap.size(); i++)
+	{
+		cout << i + 1 << ": " << it->first << " - " << it->second << endl;
+		it++;
+	}
+
+
+}
+
+void rankingPorIdades(vector<Utilizador> utilizadores)
+{
+	map <string, unsigned int> faixasEtarias = {{"0 - 10", 0}, {"11 - 20", 0}, {"21 - 30", 0}, {"31 - 40", 0}, {"40+", 0}}; //existem 5 faixas etárias: 10 ou menos, 11 - 20, 21 - 30, 31- 40, 40 ou mais
+
+	for (auto const & utilizador : utilizadores)
+	{
+		unsigned int idade = utilizador.getIdade();
+
+		if (idade<= 10)
+			faixasEtarias[0]++;
+		else if (idade <= 20)
+			faixasEtarias[1]++;
+		else if (idade <= 30)
+			faixasEtarias[2]++;
+		else if (idade <= 40)
+			faixasEtarias[3]++;
+		else
+			faixasEtarias[4]++;
+	}
+
+	map <unsigned int, string> sortedMap = sortMapByValue(faixasEtarias);
+	map<string,unsigned int>::iterator it = sortedMap.begin();
+
+
+	for (unsigned int i = 0; i < sortedMap.size(); i++)
+	{
+		cout << i + 1 << ": " << it->first << " - " << it->second << endl;
+		it++;
+	}
+}
+
+void rankingDeRentabilidade(vector<Utilizador> utilizadores)
+{
+	map <string, unsigned int> rentabilidade;
+
+	for (auto const & utilizador : utilizadores)
+	{
+		map<Titulo*,vector<string>> titulos = utilizador.getBiblioteca().getTitulos();
+
+		for (auto const & titulo : titulos)
+		{
+			rentabilidade[titulo.first->getNome()] += titulo.first->getGastos();
+		}
+	}
+
+}
 
 int main() {
 
@@ -177,7 +271,7 @@ int main() {
     //JOGO 3//
     //////////
 
-    Online t3 ("testeGame", 5, precosPlataforma1, generos1, "Square Enix", d1,true,10);
+    Online t3 ("testeGame3", 5, precosPlataforma1, generos1, "Square Enix", d1,true,10);
     t3.adicionaEstaticas(d1,70,"Nintendo");
     t3.adicionaEstaticas(d1,30,"PlayStation");
     t3.adicionaEstaticas(d1,21,"Nintendo"); //arredonda para tres horas
@@ -192,7 +286,7 @@ int main() {
     Biblioteca b2;
 
     b1.adicionaTitulo(&t1,plataformas);
-    b1.adicionaTitulo(&t2,plataformas);
+//   b1.adicionaTitulo(&t2,plataformas);
 
     b2.adicionaTitulo(&t1,plataformas);
     b2.adicionaTitulo(&t2,plataformas);
@@ -264,7 +358,10 @@ int main() {
     Utilizador u2("daniel", "oi@yolo.com", 198, "Rua do Sal, 63", b2);
     vector <Utilizador> jogadores = {u1,u2};
 
-    cout << "nr medio:";
+    cout << u1 << endl;
+    cout << u2 << endl;
+
+    cout << "nr medio de titulos:";
     cout << nrMedioTitulos(jogadores)<<endl;
 
     cout << "custo medio biblioteca:";
