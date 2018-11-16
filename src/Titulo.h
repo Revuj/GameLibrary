@@ -64,6 +64,8 @@ public:
 	 */
 	float getDesconto(std::string plataforma) const;
 
+	virtual float getGastos() const = 0;
+
 	virtual float getGastos(
 			const std::vector<std::string>& plataformas) const = 0;
 
@@ -134,7 +136,7 @@ public:
 	/*
 	 * show datas de atualizacao
 	 */
-
+	float getGastos() const;
 	float getGastos(const std::vector<std::string>& plataformas) const;
 };
 std::ostream & operator <<(std::ostream & os, const Home & h); // a fazer
@@ -200,7 +202,7 @@ public:
 	 */
 	float getPrecoSubscricao() const;
 
-
+	float getGastos() const;
 	float getGastos(const std::vector<std::string>& plataformas) const;
 };
 

@@ -70,24 +70,20 @@ bool comparaValor(const pair <string, unsigned int> &i1,const pair<string, unsig
     return i1.second < i2.second;
 }
 
-
-//ainda não está a funcionar
-/*crescent order of occurrence*/
-map<string,unsigned int> sortMapByValue(map<string, unsigned int> m)
+void displayMap(map<string, unsigned int> m)
 {
-	map<string,unsigned int> sortedMap;
 
 	map<string,unsigned int>::iterator it;
-
 	unsigned int mapSize = m.size();
+
 	for (unsigned int i = 0; i < mapSize; i++)
 	{
 		it=max_element(m.begin(),m.end(),comparaValor);
-		sortedMap[it->first()] = it->second();
+		cout << i + 1 << ": " << it->first << " - " << it->second << endl;
 		m.erase(it);
 	}
-	return sortedMap;
 }
+
 
 void rankingDeGeneros(vector<Utilizador> utilizadores)
 {
@@ -95,7 +91,7 @@ void rankingDeGeneros(vector<Utilizador> utilizadores)
 
 	for (auto const & utilizador : utilizadores)
 	{
-		map<Titulo*,vector<string>> titulos = utilizador.getBiblioteca().getTitulos();
+		map<Titulo*,vector<string>> titulos = utilizador.getBiblioteca().getBiblioteca();
 
 		for (auto const & titulo : titulos)
 		{
@@ -108,15 +104,7 @@ void rankingDeGeneros(vector<Utilizador> utilizadores)
 		}
 	}
 
-	map <unsigned int, string> sortedMap = sortMapByValue(generos);
-	map<string,unsigned int>::iterator it = sortedMap.begin();
-
-
-	for (unsigned int i = 0; i < sortedMap.size(); i++)
-	{
-		cout << i + 1 << ": " << it->first << " - " << it->second << endl;
-		it++;
-	}
+	displayMap(generos);
 }
 
 void rankingDePlataformas(vector<Utilizador> utilizadores)
@@ -125,7 +113,7 @@ void rankingDePlataformas(vector<Utilizador> utilizadores)
 
 	for (auto const & utilizador : utilizadores)
 	{
-		map<Titulo*,vector<string>> titulos = utilizador.getBiblioteca().getTitulos();
+		map<Titulo*,vector<string>> titulos = utilizador.getBiblioteca().getBiblioteca();
 
 		for (auto const & titulo : titulos)
 		{
@@ -136,20 +124,12 @@ void rankingDePlataformas(vector<Utilizador> utilizadores)
 		}
 	}
 
-	map <unsigned int, string> sortedMap = sortMapByValue(plataformas);
-	map<string,unsigned int>::iterator it = sortedMap.begin();
-
-
-	for (unsigned int i = 0; i < sortedMap.size(); i++)
-	{
-		cout << i + 1 << ": " << it->first << " - " << it->second << endl;
-		it++;
-	}
+	displayMap(plataformas);
 
 
 }
 
-void rankingPorIdades(vector<Utilizador> utilizadores)
+void rankingDeIdades(vector<Utilizador> utilizadores)
 {
 	map <string, unsigned int> faixasEtarias = {{"0 - 10", 0}, {"11 - 20", 0}, {"21 - 30", 0}, {"31 - 40", 0}, {"40+", 0}}; //existem 5 faixas etárias: 10 ou menos, 11 - 20, 21 - 30, 31- 40, 40 ou mais
 
@@ -158,214 +138,219 @@ void rankingPorIdades(vector<Utilizador> utilizadores)
 		unsigned int idade = utilizador.getIdade();
 
 		if (idade<= 10)
-			faixasEtarias[0]++;
+			faixasEtarias["0-10"]++;
 		else if (idade <= 20)
-			faixasEtarias[1]++;
+			faixasEtarias["11-20"]++;
 		else if (idade <= 30)
-			faixasEtarias[2]++;
+			faixasEtarias["21-30"]++;
 		else if (idade <= 40)
-			faixasEtarias[3]++;
+			faixasEtarias["31-40"]++;
 		else
-			faixasEtarias[4]++;
+			faixasEtarias["40+"]++;
 	}
 
-	map <unsigned int, string> sortedMap = sortMapByValue(faixasEtarias);
-	map<string,unsigned int>::iterator it = sortedMap.begin();
-
-
-	for (unsigned int i = 0; i < sortedMap.size(); i++)
-	{
-		cout << i + 1 << ": " << it->first << " - " << it->second << endl;
-		it++;
-	}
+	displayMap(faixasEtarias);
 }
 
-void rankingDeRentabilidade(vector<Utilizador> utilizadores)
+void rankingDeRentabilidades(vector<Utilizador> utilizadores)
 {
 	map <string, unsigned int> rentabilidade;
 
 	for (auto const & utilizador : utilizadores)
 	{
-		map<Titulo*,vector<string>> titulos = utilizador.getBiblioteca().getTitulos();
+		map<Titulo*,vector<string>> titulos = utilizador.getBiblioteca().getBiblioteca();
 
 		for (auto const & titulo : titulos)
 		{
 			rentabilidade[titulo.first->getNome()] += titulo.first->getGastos();
 		}
 	}
-
+	displayMap(rentabilidade);
 }
 
 int main() {
 
 
-    Data d1(31, 10, 2018);
+	Data d1(31, 10, 2018);
 
-    Data d2(1,11,2018);
+	    Data d2(1,11,2018);
 
-    Data d3(20, 10, 2024);
+	    Data d3(20, 10, 2024);
 
-    /*generos por ordem alfabetica*/
+	    /*generos por ordem alfabetica*/
 
-    map<string,unsigned int> generOcorrencias;
+	    map<string,unsigned int> generOcorrencias;
 
-    generOcorrencias["Action"]=1;
-    generOcorrencias["Action-Adventure"]=1;
-    generOcorrencias["Role_playing"]=1;
-    generOcorrencias["Simulation"]=1;
-    generOcorrencias["Strategy"]=1;
-    generOcorrencias["Sports"]=1;
-    generOcorrencias["Others"]=1;
+	    generOcorrencias["Action"]=1;
+	    generOcorrencias["Action-Adventure"]=1;
+	    generOcorrencias["Role_playing"]=1;
+	    generOcorrencias["Simulation"]=1;
+	    generOcorrencias["Strategy"]=1;
+	    generOcorrencias["Sports"]=1;
+	    generOcorrencias["Others"]=1;
 
-    adicionaGenero("Action",generOcorrencias);
-    adicionaGenero("Action",generOcorrencias);
-    adicionaGenero("RPG",generOcorrencias);
-    adicionaGenero("RPG",generOcorrencias);
-    adicionaGenero("Simulation",generOcorrencias);
+	    adicionaGenero("Action",generOcorrencias);
+	    adicionaGenero("Action",generOcorrencias);
+	    adicionaGenero("RPG",generOcorrencias);
+	    adicionaGenero("RPG",generOcorrencias);
+	    adicionaGenero("Simulation",generOcorrencias);
 
-    cout << "ocorrencias:";
-    cout << generOcorrencias["RPG"]<<endl;
+	    cout << "ocorrencias:";
+	    cout << generOcorrencias["RPG"]<<endl;
 
-    cout << "_______________________________\n";
-    cout << "generos:\n";
-    for(map<string,unsigned int>::const_iterator it =generOcorrencias.begin(); it != generOcorrencias.end(); ++it)
-    {
-        std::cout << it->first << " " << it->second<< "\n";
-    }
+	    cout << "_______________________________\n";
+	    cout << "generos:\n";
+	    for(map<string,unsigned int>::const_iterator it =generOcorrencias.begin(); it != generOcorrencias.end(); ++it)
+	    {
+	        std::cout << it->first << " " << it->second<< "\n";
+	    }
 
-    cout << "_______________________________\n";
+	    cout << "_______________________________\n";
 
-    cout << "test function"<<endl;
-    //rankingDePlataformas(generOcorrencias);
-
-
-    vector<string> generos1 = { "Luta", "Acao", "RPG" };
-
-    std::map<std::string, std::vector<float>> precosPlataforma1;
-
-    vector<float> precosNintendo = { 60, 50, 40 }; /*preco mais antigo tem de ser o mais caro, preco de lancamento*/
-    precosPlataforma1["Nintendo"] = precosNintendo;
-
-    vector<float> precosPlayStation = {60 ,40, 50 };
-    precosPlataforma1["PlayStation"] = precosPlayStation;
+	    cout << "test function"<<endl;
+	    //rankingDePlataformas(generOcorrencias);
 
 
-    Online t1("testeGame", 5, precosPlataforma1, generos1, "Square Enix", d1,true,1);
-    cout << t1.getDesconto("Nintendo") << "%"<<endl; //preco mais caro esta em ultimo, preco de lancamento
-    cout << t1 << endl;
+	    vector<string> generos1 = { "Luta", "Acao", "RPG" };
 
-    //////////
-    //JOGO 2//
-    //////////
-    Home t2 ("testeGame2", 10, precosPlataforma1, generos1, "Capcom", d1);
-    t2.adicionaAtualizacao(d1);
-    t2.adicionaAtualizacao(d1); //nao e adicionada
+	    vector<string> generos2 = { "Luta", "MMO" };
 
+	    std::map<std::string, std::vector<float>> precosPlataforma1;
 
-    vector<string> plataformas={"Nintendo","PlayStation"};
-    cout << t2 << endl;
+	    vector<float> precosNintendo = { 60, 50, 40 }; /*preco mais antigo tem de ser o mais caro, preco de lancamento*/
+	    precosPlataforma1["Nintendo"] = precosNintendo;
+
+	    vector<float> precosPlayStation = {60 ,40, 50 };
+	    precosPlataforma1["PlayStation"] = precosPlayStation;
 
 
+	    Online t1("testeGame", 5, precosPlataforma1, generos1, "Square Enix", d1,true,1);
+	    cout << t1.getDesconto("Nintendo") << "%"<<endl; //preco mais caro esta em ultimo, preco de lancamento
+	    cout << t1 << endl;
 
-    //////////
-    //JOGO 3//
-    //////////
+	    //////////
+	    //JOGO 2//
+	    //////////
+	    Home t2 ("testeGame2", 10, precosPlataforma1, generos2, "Capcom", d1);
+	    t2.adicionaAtualizacao(d1);
+	    t2.adicionaAtualizacao(d1); //nao e adicionada
 
-    Online t3 ("testeGame3", 5, precosPlataforma1, generos1, "Square Enix", d1,true,10);
-    t3.adicionaEstaticas(d1,70,"Nintendo");
-    t3.adicionaEstaticas(d1,30,"PlayStation");
-    t3.adicionaEstaticas(d1,21,"Nintendo"); //arredonda para tres horas
-    cout<<"horas totais: "<<t3.getHorasTotais()<<endl;
-    cout << t3 << endl;
+
+	    vector<string> plataformas={"Nintendo","PlayStation"};
+	    cout << t2 << endl;
 
 
 
-    cout << endl << endl << endl;
+	    //////////
+	    //JOGO 3//
+	    //////////
 
-    Biblioteca b1;
-    Biblioteca b2;
-
-    b1.adicionaTitulo(&t1,plataformas);
-//   b1.adicionaTitulo(&t2,plataformas);
-
-    b2.adicionaTitulo(&t1,plataformas);
-    b2.adicionaTitulo(&t2,plataformas);
-    b2.adicionaTitulo(&t3,plataformas);
-
-
-
-    CartaoCredito c1(100, d3, "1234");
-
-    Utilizador u1("Rafa", "oioi@yolo.com", 19, "Rua do Salgueiral, 293", b1);
-
-    u1.adicionaCartaoCredito(c1);
-
-    cout << "gastos:";
-    cout << u1.getGastos()<<"€"<<endl;
-    t2.adicionaAtualizacao(d2);
-    cout << "gastos:";
-    cout << u1.getGastos()<<"€"<<endl;
-    cout << "datas de atualizacao"<<endl;
-    cout << t2 << endl;
-
-    cout << u1 << endl;
-
-    cout << "Difference between date 2 and date 1: ";
-    cout << d2.diferencaEntreDatas(d1) << endl;
-    cout << "Difference between date 2 and date 3: ";
-    cout << d2.diferencaEntreDatas(d3) << endl;
-
-    Data d4(30,12,2018);
-    Data d5(2, 5, 2021);
-    Data d6(3, 10, 2022);
-
-    CartaoCredito c2(50, d4, "2345");
-    CartaoCredito c3(70, d5, "3456");
-    CartaoCredito c4(500, d6, "4568");
-
-    cout << c1 << endl;
-    cout << c2 << endl;
-    cout << c3 << endl;
-    cout << c4 << endl;
-
-    vector<CartaoCredito> cartoes1 = {c1, c2, c3};
-
-    Banco banco1;
-
-    try
-    {
-        banco1.adicionaCartoesCredito(cartoes1);
-    }
-    catch(CartaoJaExistente & error)
-    {
-        cout << error << endl;
-    }
-    catch(CartaoInvalido & error)
-    {
-        cout << error << endl;
-    }
-
-    banco1.adicionaCartaoCredito(c4);
-
-    banco1.atualizaCartao(c2);
-
-    cout << c2 << endl;
-
-    cout << banco1 << endl;
+	    Online t3 ("testeGame3", 5, precosPlataforma1, generos1, "Square Enix", d1,true,10);
+	    t3.adicionaEstaticas(d1,70,"Nintendo");
+	    t3.adicionaEstaticas(d1,30,"PlayStation");
+	    t3.adicionaEstaticas(d1,21,"Nintendo"); //arredonda para tres horas
+	    cout<<"horas totais: "<<t3.getHorasTotais()<<endl;
+	    cout << t3 << endl;
 
 
 
-    Utilizador u2("daniel", "oi@yolo.com", 198, "Rua do Sal, 63", b2);
-    vector <Utilizador> jogadores = {u1,u2};
+	    cout << endl << endl << endl;
 
-    cout << u1 << endl;
-    cout << u2 << endl;
+	    Biblioteca b1;
+	    Biblioteca b2;
 
-    cout << "nr medio de titulos:";
-    cout << nrMedioTitulos(jogadores)<<endl;
+	    b1.adicionaTitulo(&t1,plataformas);
+	//   b1.adicionaTitulo(&t2,plataformas);
 
-    cout << "custo medio biblioteca:";
-    cout << custoMedioBiblioteca(jogadores)<<endl;
+	    b2.adicionaTitulo(&t1,plataformas);
+	    b2.adicionaTitulo(&t2,plataformas);
+	    b2.adicionaTitulo(&t3,plataformas);
+
+
+
+	    CartaoCredito c1(100, d3, "1234");
+
+	    Utilizador u1("Rafa", "oioi@yolo.com", 19, "Rua do Salgueiral, 293", b1);
+
+	    u1.adicionaCartaoCredito(c1);
+
+	    cout << "gastos:";
+	    cout << u1.getGastos()<<"€"<<endl;
+	    t2.adicionaAtualizacao(d2);
+	    cout << "gastos:";
+	    cout << u1.getGastos()<<"€"<<endl;
+	    cout << "datas de atualizacao"<<endl;
+	    cout << t2 << endl;
+
+	    cout << u1 << endl;
+
+	    cout << "Difference between date 2 and date 1: ";
+	    cout << d2.diferencaEntreDatas(d1) << endl;
+	    cout << "Difference between date 2 and date 3: ";
+	    cout << d2.diferencaEntreDatas(d3) << endl;
+
+	    Data d4(30,12,2018);
+	    Data d5(2, 5, 2021);
+	    Data d6(3, 10, 2022);
+
+	    CartaoCredito c2(50, d4, "2345");
+	    CartaoCredito c3(70, d5, "3456");
+	    CartaoCredito c4(500, d6, "4568");
+
+	    cout << c1 << endl;
+	    cout << c2 << endl;
+	    cout << c3 << endl;
+	    cout << c4 << endl;
+
+	    vector<CartaoCredito> cartoes1 = {c1, c2, c3};
+
+	    Banco banco1;
+
+	    try
+	    {
+	        banco1.adicionaCartoesCredito(cartoes1);
+	    }
+	    catch(CartaoJaExistente & error)
+	    {
+	        cout << error << endl;
+	    }
+	    catch(CartaoInvalido & error)
+	    {
+	        cout << error << endl;
+	    }
+
+	    banco1.adicionaCartaoCredito(c4);
+
+	    banco1.atualizaCartao(c2);
+
+	    cout << c2 << endl;
+
+	    cout << banco1 << endl;
+
+
+
+	    Utilizador u2("daniel", "oi@yolo.com", 198, "Rua do Sal, 63", b2);
+	    vector <Utilizador> jogadores = {u1,u2};
+
+	    cout << u1 << endl;
+	    cout << u2 << endl;
+
+	    cout << "nr medio de titulos:";
+	    cout << nrMedioTitulos(jogadores)<<endl;
+
+	    cout << "custo medio biblioteca:";
+	    cout << custoMedioBiblioteca(jogadores)<<endl;
+
+	    rankingDeGeneros(jogadores);
+	    cout << endl;
+	    rankingDePlataformas(jogadores);
+	    cout << endl;
+	    rankingDeIdades(jogadores);
+	    cout << endl;
+	    rankingDeRentabilidades(jogadores);
+	    cout << endl;
+
+
 
 
     return 0;

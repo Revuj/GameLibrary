@@ -224,6 +224,14 @@ unsigned int Titulo::getIdU() const{
 
  //========================================================================================
  //========================================================================================
+ float Home::getGastos() const
+ {
+ 	float total = dataDeAtualizacao.size()* this->precoAtualizacao;
+ 	return total;
+ }
+
+ //========================================================================================
+ //========================================================================================
  float Home::getGastos(const std::vector<std::string>& plataformas) const
  {
  	float total = dataDeAtualizacao.size()* this->precoAtualizacao;
@@ -311,6 +319,18 @@ unsigned int Titulo::getIdU() const{
  float Online::getPrecoSubscricao() const
  {
 	 return this->precoSubscricao;
+ }
+
+ //========================================================================================
+ //========================================================================================
+ float Online::getGastos() const
+ {
+	 float total=0;
+	 if(subscricaoFixa)
+		 total+=precoSubscricao;
+	 else total += (precoSubscricao*horasTotais);
+
+	 return total;
  }
  //========================================================================================
  //========================================================================================
