@@ -39,12 +39,12 @@ public:
 	 * @param plataforma onde vamos comprar titulo
 	 * return true ou false mediante se foi ou nao possivel adicionar um titulo
 	 */
-	void AdicionaTitulo(Titulo * T,std::string plataforma, CartaoCredito & c);
+	void AdicionaTitulo(Titulo * T, CartaoCredito & c);
 
 	/*
 	 * verifica a plataforma preferida do utilizador
 	 */
-	std::vector<std::string> PlataformaPreferida() const;
+	std::string PlataformaPreferida() const;
 
 	/*
 	 * retorna valor gasto pelo utilizador

@@ -68,19 +68,17 @@ bool Utilizador::adicionaCartaoCredito(const CartaoCredito & C)
 }
 
 
-void Utilizador::AdicionaTitulo(Titulo * T,std::string plataforma, CartaoCredito & c)
+void Utilizador::AdicionaTitulo(Titulo * T, CartaoCredito & c)
 {
 /* comparar data de valdiade do cartao e a data atual(ver funcoes)*/
 	for (const auto & cartao : this->cc)
 	{
 		if (cartao == c)
 		{
-			if (cartao.getSaldo() >= T->getPrecoAtual(plataforma)) //ver se o saldo para comprar o titulo é suficiente
+			if (cartao.getSaldo() >= T->getPreco()) //ver se o saldo para comprar o titulo é suficiente
 			{
-				std::vector<std::string> p;
-				p.push_back(plataforma);
-				this->conjuntoTitulos.adicionaTitulo(T,p);
-				c.removeQuantia(T->getPrecoAtual(plataforma)); //retira dinheiro do cartao
+				this->conjuntoTitulos.adicionaTitulo(T);
+				c.removeQuantia(T->getPreco()); //retira dinheiro do cartao
 			}
 			else
 				throw SaldoInsuficiente(cartao.getSaldo());
@@ -111,43 +109,34 @@ std::ostream & operator <<(std::ostream & os, const Utilizador & u)
 	return os;
 }
 
-std::vector<std::string> Utilizador::PlataformaPreferida() const {
+std::string Utilizador::PlataformaPreferida() const {
 
-	std::vector<std::string> plataformas=conjuntoTitulos.getPlataformas();
+	std::vector<std::string> plataformas;
+	std::vector<Titulo*> titulos=conjuntoTitulos.getTitulos();
 
-	std::map<std::string, int> m;
-
-	for (size_t i = 0; i < plataformas.size(); i++)
-	   {
-	     std::map<std::string, int>::iterator it = m.find(plataformas[i]);
-
-	      if (it == m.end())
-	        m[plataformas[i]]= 1;
-
-	      else
-	        m[plataformas[i]] += 1;
-	     }
-
-	std::vector<std::string> plataformasPreferidas;
-	int max=1;
-	for(auto it=m.cbegin();it!=m.cend();it++){
-		if (it ->second > max)
-		    {
-				plataformasPreferidas.clear();
-		        max = it->second;
-		        plataformasPreferidas.push_back(it->first);
-		    }
-		else if(it->second == max)
-			plataformasPreferidas.push_back(it->first);
+	for(size_t i=0;i<titulos.size();i++){
+		plataformas.push_back(titulos.at(i)->getPlataforma());
 	}
-	return plataformasPreferidas;
+
+    int max=0;
+    std::string mostvalue=plataformas[0];
+    for(size_t i=0;i<plataformas.size();i++)
+    {
+        int co = std::count(plataformas.begin(), plataformas.end(), plataformas[i]);
+        if(co > max)
+        {       max = co;
+                mostvalue = plataformas[i];
+        }
+    }
+    return mostvalue;
 }
 
 float Utilizador::getGastos() const{
 	float total=0;
-	std::map<Titulo*,std::vector<std::string>> titulos=conjuntoTitulos.getBiblioteca();
-	for (auto& titulo : titulos){
-		total += titulo.first->getGastos(titulo.second);
+	std::vector<Titulo*> titulos=conjuntoTitulos.getTitulos();
+	for (auto titulo : titulos){
+		total += titulo->getGastos();
+		total += titulo->getPreco();
 	}
 	return total;
 }

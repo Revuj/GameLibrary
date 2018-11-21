@@ -32,7 +32,7 @@ float custoMedioBiblioteca(const vector < Utilizador>& U) {
 
     for(auto const & utilizadores : U)
     {
-        custoTotal += utilizadores.getBiblioteca().custoTotal();
+        custoTotal += utilizadores.getGastos();
     }
 
     custoTotal /= U.size(); /*cada utilizador tem uma biblioteca*/
@@ -54,7 +54,7 @@ int getPos(const vector<T> & v,const T e)
      return -1; /*caso nao encontre o elemento que estamos à procura*/
 }
 
-void adicionaGenero(const string  & genero, map<string,unsigned int> & m)
+/*void adicionaGenero(const string  & genero, map<string,unsigned int> & m)
 {
     map<string,unsigned int>::iterator it =m.lower_bound(genero);
 
@@ -63,73 +63,67 @@ void adicionaGenero(const string  & genero, map<string,unsigned int> & m)
     }
     else
         m[genero]=1;
-}
+}*/
 
 bool comparaValor(const pair <string, unsigned int> &i1,const pair<string, unsigned int>& i2)
 {
     return i1.second < i2.second;
 }
 
-void displayMap(map<string, unsigned int> m)
+void displayRank(vector<string> a)
 {
+	//Não testei
+	sort(a.begin(),a.end());
+	vector<string> aux=a;
+	unique (aux.begin(), aux.end());
+	vector<int> co;
+    for(size_t i=0;i<aux.size();i++)
+    {
+        co.push_back(count(a.begin(), a.end(), aux[i]));
+    }
 
-	map<string,unsigned int>::iterator it;
-	unsigned int mapSize = m.size();
-
-	for (unsigned int i = 0; i < mapSize; i++)
-	{
-		it=max_element(m.begin(),m.end(),comparaValor);
-		cout << i + 1 << ": " << it->first << " - " << it->second << endl;
-		m.erase(it);
-	}
+    for(size_t i=0;i<aux.size();i++){
+		cout << i + 1 << ": " << aux.at(distance(co.begin(), max_element(co.begin(), co.end()))-1) <<  endl;
+		co.erase(max_element(co.begin(), co.end()));
+    }
 }
 
 
 void rankingDeGeneros(vector<Utilizador> utilizadores)
 {
-	map <string, unsigned int> generos;
+	vector<string> generos;
 
 	for (auto const & utilizador : utilizadores)
 	{
-		map<Titulo*,vector<string>> titulos = utilizador.getBiblioteca().getBiblioteca();
+		vector<Titulo*> titulos = utilizador.getBiblioteca().getTitulos();
 
 		for (auto const & titulo : titulos)
 		{
-			vector<string> generosVector = titulo.first->getGeneros();
+			vector<string> generosVector = titulo->getGeneros();
 
 			for (auto const & genero : generosVector)
 			{
-				generos[genero]++;
+				generos.push_back(genero);
 			}
 		}
 	}
 
-	displayMap(generos);
+	displayRank(generos);
 }
 
 void rankingDePlataformas(vector<Utilizador> utilizadores)
 {
-	map <string, unsigned int> plataformas;
+	vector<string> plataformas;
 
 	for (auto const & utilizador : utilizadores)
 	{
-		map<Titulo*,vector<string>> titulos = utilizador.getBiblioteca().getBiblioteca();
-
-		for (auto const & titulo : titulos)
-		{
-			for (auto const & plataforma : titulo.second)
-			{
-				plataformas[plataforma]++;
-			}
-		}
+		plataformas.push_back(utilizador.PlataformaPreferida());
 	}
 
-	displayMap(plataformas);
-
-
+	displayRank(plataformas);
 }
 
-void rankingDeIdades(vector<Utilizador> utilizadores)
+/*void rankingDeIdades(vector<Utilizador> utilizadores)
 {
 	map <string, unsigned int> faixasEtarias = {{"0 - 10", 0}, {"11 - 20", 0}, {"21 - 30", 0}, {"31 - 40", 0}, {"40+", 0}}; //existem 5 faixas etárias: 10 ou menos, 11 - 20, 21 - 30, 31- 40, 40 ou mais
 
@@ -150,9 +144,9 @@ void rankingDeIdades(vector<Utilizador> utilizadores)
 	}
 
 	displayMap(faixasEtarias);
-}
+}*/
 
-void rankingDeRentabilidades(vector<Utilizador> utilizadores)
+/*void rankingDeRentabilidades(vector<Utilizador> utilizadores)
 {
 	map <string, unsigned int> rentabilidade;
 
@@ -166,9 +160,38 @@ void rankingDeRentabilidades(vector<Utilizador> utilizadores)
 		}
 	}
 	displayMap(rentabilidade);
-}
+}*/
 
 int main() {
+
+	cout<<">>>>>>>>>>GAME LYBRARY MENU<<<<<<<<<<"<<endl<<endl;
+	bool exit=false;
+	while(!exit){
+		int option;
+		cout<<"1 - Create User"<<endl;
+		cout<<"2 - Create Game"<<endl;
+		cout<<"3 - Add game to User"<<endl;
+		cout<<"4 - List games of User"<<endl;
+		cout<<"100 - Exit"<<endl;
+		cin>>option;
+		switch(option){
+		case 1:
+			//createUser();
+			break;
+		case 2:
+			//creatGame();
+			break;
+		case 3:
+			//adicionaJogo();
+			break;
+		case 4:
+			//listGames();
+			break;
+		case 100:
+			exit=true;
+			break;
+		}
+	}
 
 
 	Data d1(31, 10, 2018);
@@ -179,7 +202,7 @@ int main() {
 
 	    /*generos por ordem alfabetica*/
 
-	    map<string,unsigned int> generOcorrencias;
+	    /*map<string,unsigned int> generOcorrencias;
 
 	    generOcorrencias["Action"]=1;
 	    generOcorrencias["Action-Adventure"]=1;
@@ -217,7 +240,7 @@ int main() {
 
 	    std::map<std::string, std::vector<float>> precosPlataforma1;
 
-	    vector<float> precosNintendo = { 60, 50, 40 }; /*preco mais antigo tem de ser o mais caro, preco de lancamento*/
+	    vector<float> precosNintendo = { 60, 50, 40 }; //preco mais antigo tem de ser o mais caro, preco de lancamento
 	    precosPlataforma1["Nintendo"] = precosNintendo;
 
 	    vector<float> precosPlayStation = {60 ,40, 50 };
@@ -351,7 +374,7 @@ int main() {
 	    cout << endl;
 
 
-
+*/
 
     return 0;
 }
