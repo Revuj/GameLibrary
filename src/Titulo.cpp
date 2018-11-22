@@ -90,8 +90,8 @@ unsigned int Titulo::getIdU() const{
  //========================================================================================
  //========================================================================================
  /*se o identificador unico for igual entao trata-se do mesmo titulo*/
- bool Titulo::operator==(const Titulo & T) {
- 	return (this->IdU == T.IdU);
+ bool Titulo::operator==(const Titulo * T) {
+ 	return (this->IdU == T->IdU);
  }
 
  //========================================================================================

@@ -3,7 +3,7 @@
 
 void Biblioteca::adicionaTitulo(Titulo * T) {
 	for (size_t i = 0; i < titulos.size(); i++) {
-		if (*titulos[i] == *T) {
+		if (titulos[i] == T) {
 			throw TituloJaAdicionado("Game already exist");
 		}
 	}

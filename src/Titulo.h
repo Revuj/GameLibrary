@@ -60,7 +60,7 @@ public:
 	 * @param T titulo com que se vai comparar o objeto atual
 	 * return true se forem iguais senao falso
 	 */
-	bool operator==(const Titulo & T);
+	bool operator==(const Titulo * T);
 };
 
 

@@ -15,6 +15,10 @@
 
 class Sistema {
 	std::vector <Utilizador> jogadores;
+	std::vector <Titulo> titulos;
+	std::vector <std::string> plataformas;
+
+
 
 	public:
 	Sistema() {};
@@ -23,6 +27,12 @@ class Sistema {
 	bool validName(const std::string nome);
 	bool validEmail(const std::string email);
 	void addUtilizador();
+	unsigned int nrMedioTitulos();
+	float custoMedioBiblioteca();
+	void rankingDeGeneros();
+	void rankingDePlataformas();
+	void rankingDeIdades();
+	void rankingDeRentabilidades();
 
 
 
