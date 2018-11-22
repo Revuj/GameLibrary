@@ -129,7 +129,32 @@ std::ostream & operator <<(std::ostream & os, const TituloJaAdicionado & titulo)
 
 //========================================================================================
 //========================================================================================
+class FicheiroNaoEncontrado {
+private:
+	const std::string info;
+public:
+	/**
+	 * @brief Construtor da classe FicheiroNaoEncontrado
+	 */
+	FicheiroNaoEncontrado(const std::string &info) :  info(info)  { }
 
+	const std::string getInfo() const { return info; }
+};
+
+/**
+ * Classe utilizada para lançar exceções do tipo Input Inválido
+ */
+class InputInvalido{
+private:
+	const std::string info;
+public:
+	/**
+	 * @brief Construtor da classe InputInvalido
+	 */
+	InputInvalido(const std::string &info) :info(info) { }
+
+	const std::string getInfo() const { return info; }
+};
 
 
 #endif /* ERRO_H_ */

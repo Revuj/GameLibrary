@@ -27,7 +27,7 @@ class Sistema {
 	//readUtilizadoresSistema();
 	bool validName(const std::string nome);
 	bool validEmail(const std::string email);
-	void addUtilizador();
+	bool addUtilizador();
 	unsigned int nrMedioTitulos();
 	float custoMedioBiblioteca();
 	void rankingDeGeneros();

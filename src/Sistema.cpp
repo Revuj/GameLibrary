@@ -56,43 +56,49 @@ bool Sistema::validEmail(const std::string email) {
 
 }
 
-void Sistema::addUtilizador() /*a incluir throws*/
+bool Sistema::addUtilizador() /*a incluir throws*/
 {
 	std::string nome;
 	std::string email;
 	std::string EMAILCHAR = "@";
 	std::string idade;
 	std::string morada;
-	std::cout << "Creating a user...  \n";
-	std::cout << "Enter a user name: ";
-	getline(std::cin, nome);
+	bool utilizadorCriado=false;
+		std::cout << "Creating a user...  \n";
+		std::cout << "Enter a user name: ";
+		getline(std::cin, nome);
 
-	std::cout << "Checking if is a valid name... \n";
-	if (validName(nome))
-		std::cout << "Valid name";
-	else
-		std::cout << "Invalid Name, try again";
+		std::cout << "Checking if is a valid name... \n";
+		if (validName(nome))
+			std::cout << "Valid name\n";
+		else{
+			std::cout << "Invalid Name, try again";
+			return false;
+		}
 
-	std::cout << "Enter your email \n";
-	getline(std::cin, email);
-	if (email.find(EMAILCHAR) == std::string::npos)
-		std::cout << "Invalid email it must contain '@' \n";
-	if (validEmail(email))
-		std::cout << "Email Valid \n";
-	else
-		std::cout << "Already exists email\n";
+		std::cout << "Enter your email \n";
+		getline(std::cin, email);
+		if (email.find(EMAILCHAR) == std::string::npos){
+			std::cout << "Invalid email it must contain '@' \n";
+			return false;
+		}
+		if (validEmail(email))
+			std::cout << "Email Valid \n";
+		else{
+			std::cout << "Already exists email\n";
+			return false;
+		}
 
-	std::cout << "Enter your age ";
-	getline(std::cin, idade);
-	std::cout << "Enter your address: ";
-	getline(std::cin, morada);
+		std::cout << "Enter your age ";
+		getline(std::cin, idade);
 
-	jogadores.push_back(Utilizador(nome, email, stoi(idade), morada));
-	//std::sort(jogadores.begin(),jogadores.end(),userNameAscend);
+		std::cout << "Enter your address: ";
+		getline(std::cin, morada);
 
-	std::cout
-			<< "Do you want to play online or do you prefer to play home? (home/online)?"
-			<< std::endl;
+		jogadores.push_back(Utilizador(nome, email, stoi(idade), morada));
+		//std::sort(jogadores.begin(),jogadores.end(),userNameAscend);
+
+		return true;
 
 }
 
