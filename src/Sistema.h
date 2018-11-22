@@ -14,13 +14,14 @@
 
 
 class Sistema {
+		public:
 	std::vector <Utilizador> jogadores;
 	std::vector <Titulo> titulos;
 	std::vector <std::string> plataformas;
 
 
 
-	public:
+	//public:
 	Sistema() {};
 	~Sistema() {};
 	//readUtilizadoresSistema();

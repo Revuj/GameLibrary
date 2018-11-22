@@ -7,6 +7,7 @@
 
 #include "Sistema.h"
 #include <algorithm>
+#include <utility>
 
 unsigned int Sistema::nrMedioTitulos() {
 
@@ -172,19 +173,46 @@ void Sistema::rankingDeIdades()
 	displayRank(faixasEtarias);
 }
 
-//void Sistema::rankingDeRentabilidades()
-//{
-//	map <string, unsigned int> rentabilidade;
-//
-//	for (auto const & utilizador : utilizadores)
-//	{
-//		map<Titulo*,vector<string>> titulos = utilizador.getBiblioteca().getBiblioteca();
-//
-//		for (auto const & titulo : titulos)
-//		{
-//			rentabilidade[titulo.first->getNome()] += titulo.first->getGastos();
-//		}
-//	}
-//
-//	displayRank(rentabilidade);
-//}
+int findPair(const std::vector<std::pair<std::string, float>> & rentabilidade, std::string nome)
+{
+	unsigned int comprimento=rentabilidade.size();
+	for(unsigned int par = 0;par < comprimento; par++) {
+		if (rentabilidade[par].first==nome) {
+			return par;
+		}
+	}
+	return -1;
+}
+
+void Sistema::rankingDeRentabilidades()
+{
+
+	std::vector<std::pair<std::string, float>> rentabilidade;
+	int pos ;
+
+
+	for (auto const & utilizador : this->jogadores)
+	{
+		std::vector<Titulo*> titulos = utilizador.getBiblioteca().getTitulos();
+
+		for (auto const & titulo : titulos)
+		{
+			pos=findPair(rentabilidade, titulo->getNome());
+			if (pos == -1)
+			{
+				rentabilidade.push_back(std::make_pair(titulo->getNome(), titulo->getGastos()));
+			}
+			else
+			{
+				rentabilidade[pos].second += titulo->getGastos();
+			}
+		}
+	}
+
+	sort(rentabilidade.begin(),rentabilidade.end(),cmpParJogoRentabilidade);
+
+	for (auto const & titulo : rentabilidade)
+	{
+		std::cout << titulo.first<< ": "<<titulo.second<<std::endl;
+	}
+}

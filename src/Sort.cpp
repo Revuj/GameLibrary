@@ -51,6 +51,10 @@ bool gameDeveloperDescend(Titulo* titulo1,Titulo* titulo2){
 	return titulo1->getEmpresa() > titulo2->getEmpresa();
 }
 
+bool cmpParJogoRentabilidade(const std::pair<std::string,float> & p1,const std::pair<std::string,float> & p2){
+	return p1.second > p2.second;
+}
+
 
 
 

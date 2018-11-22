@@ -17,4 +17,6 @@ bool gameAgeDescend(Titulo* titulo1,Titulo* titulo2);
 bool gameDeveloperAscend(Titulo* titulo1,Titulo* titulo2);
 bool gameDeveloperDescend(Titulo* titulo1,Titulo* titulo2);
 
+bool cmpParJogoRentabilidade(const std::pair<std::string,float> & p1,const std::pair<std::string,float> & p2);
+
 #endif /* SORT_H_ */

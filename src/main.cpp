@@ -3,6 +3,7 @@
 #include "Titulo.h"
 #include "Banco.h"
 #include "Erro.h"
+#include "Sistema.h"
 
 
 #include <algorithm>
@@ -11,6 +12,11 @@ using namespace std;
 int main() {
 
 	cout<<">>>>>>>>>>GAME LYBRARY MENU<<<<<<<<<<"<<endl<<endl;
+//	Sistema s1;
+//	Utilizador j;
+//	Utilizador n;
+//	s1.jogadores={j,n};
+//	s1.rankingDeRentabilidades();
 	bool exit=false;
 	while(!exit){
 		int option;
