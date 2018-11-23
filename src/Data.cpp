@@ -2,7 +2,7 @@
 #include <time.h>
 #include <ctime>
 
-// construtor
+#include <algorithm>
 Data::Data(unsigned int dia, unsigned int mes, unsigned int ano) {
 
 	this->dia = dia;
@@ -11,14 +11,18 @@ Data::Data(unsigned int dia, unsigned int mes, unsigned int ano) {
 }
 
 Data::Data(std::string data) {
-	std::cout << data.substr(0,2) << std::endl;
-	std::cout << data.substr(3,2) << std::endl;
-	std::cout << data.substr(6,4) << std::endl;
-
-	this->dia = std::stoul(data.substr(0,2));
-	this->mes = std::stoul(data.substr(3,2));
-	this->ano = std::stoul(data.substr(6,4));
+	std::cout << data << std::endl;
+	std::cout << "iewjowaef" << std::endl;
+	std::string diaStr = data.substr(0,2);
+	diaStr.erase(0, std::min(diaStr.find_first_not_of('0'), diaStr.size()-1));
+	this->dia = std::stoul(diaStr, NULL, 0);
+	std::cout << "DIa:" << dia << std::endl;
+	std::string mesStr = data.substr(3,2);
+		mesStr.erase(0, std::min(mesStr.find_first_not_of('0'), mesStr.size()-1));
+	this->mes = std::stoul( mesStr, NULL, 0);
+	this->ano = std::stoul(data.substr(6,4), NULL, 0);
 }
+
 Data & Data::setDia(const unsigned int dia) {
 	this->dia = dia;
 	return *this;
@@ -112,6 +116,12 @@ bool Data::operator ==(const Data & D2) const {
 
 
 std::ostream & operator <<(std::ostream & os, const Data & data) {
-	os << data.getDia() << "/" << data.getMes() << "/" << data.getAno();
+	if (data.getDia() < 10)
+		os << "0";
+	os << data.getDia() << "/";
+	if (data.getMes() < 10)
+		os << "0";
+
+	os << data.getMes() << "/" << data.getAno();
 	return os;
 }
