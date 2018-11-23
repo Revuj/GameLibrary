@@ -15,7 +15,7 @@ std::ostream & operator <<(std::ostream & os, const PlataformaNaoExistente & pla
 	os << "Devera escolher uma plataforma existente!" << std::endl;
 	return os;
 }
-
+ 
 //========================================================================================
 //========================================================================================
 

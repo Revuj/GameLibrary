@@ -3,11 +3,13 @@
 
 #include "Titulo.h"
 
-bool userNameAscend(Utilizador* user1,Utilizador* user2);
-bool userNameDescend(Utilizador* user1,Utilizador* user2);
-bool userAgeAscend(Utilizador* user1,Utilizador* user2);
-bool userAgeDescend(Utilizador* user1,Utilizador* user2);
-
+bool userNameAscend(Utilizador& user1,Utilizador& user2);
+bool userNameDescend(Utilizador& user1,Utilizador& user2);
+bool userAgeAscend(Utilizador& user1,Utilizador& user2);
+bool userAgeDescend(Utilizador& user1,Utilizador& user2);
+bool userNumberGamesAscend(Utilizador& user1,Utilizador& user2);
+bool userNumberGamesDescend(Utilizador& user1,Utilizador& user2);
+ 
 bool gameIdAscend(Titulo* titulo1,Titulo* titulo2);
 bool gameIdDescend(Titulo* titulo1,Titulo* titulo2);
 bool gameReleaseAscend(Titulo* titulo1,Titulo* titulo2);

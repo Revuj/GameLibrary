@@ -156,42 +156,68 @@ bool Sistema::addUtilizador() /*a incluir throws*/
 	std::string EMAILCHAR = "@";
 	std::string idade;
 	std::string morada;
-	bool utilizadorCriado=false;
-		std::cout << "Creating a user...  \n";
-		std::cout << "Enter a user name: ";
-		getline(std::cin, nome);
- 		std::cout << "Checking if is a valid name... \n";
-		if (validName(nome))
-			std::cout << "Valid name\n";
-		else{
-			std::cout << "Invalid Name, try again";
-			return false;
-		}
- 		std::cout << "Enter your email \n";
-		getline(std::cin, email);
-		if (email.find(EMAILCHAR) == std::string::npos){
-			std::cout << "Invalid email it must contain '@' \n";
-			return false;
-		}
-		if (validEmail(email))
-			std::cout << "Email Valid \n";
-		else{
-			std::cout << "Already exists email\n";
-			return false;
-		}
- 		std::cout << "Enter your age ";
-		getline(std::cin, idade);
- 		std::cout << "Enter your address: ";
-		getline(std::cin, morada);
- 		jogadores.push_back(Utilizador(nome, email, stoi(idade), morada));
-		//std::sort(jogadores.begin(),jogadores.end(),userNameAscend);
- 		return true;
+	std::cout << "Creating a user...  \n";
+	std::cout << "Enter a user name: ";
+	getline(std::cin, nome);
+
+	std::cout << "Checking if is a valid name... \n";
+	if (validName(nome))
+		std::cout << "Valid name\n";
+	else{
+		std::cout << "Invalid Name, try again";
+		return false;
+	}
+
+	std::cout << "Enter your email \n";
+	getline(std::cin, email);
+	if (email.find(EMAILCHAR) == std::string::npos){
+		std::cout << "Invalid email it must contain '@' \n";
+		return false;
+	}
+	if (validEmail(email))
+		std::cout << "Email Valid \n";
+	else{
+		std::cout << "Already exists email\n";
+		return false;
+	}
+
+	std::cout << "Enter your age ";
+	getline(std::cin, idade);
+
+	std::cout << "Enter your address: ";
+	getline(std::cin, morada);
+
+	jogadores.push_back(Utilizador(nome, email, stoi(idade), morada));
 
 
- }
+	return true;
 
+}
 
+bool Sistema::ordenarUtilizadores(std::string tipo,bool ascend){
+	if(tipo=="idade"){
+		if(ascend)
+			std::sort(jogadores.begin(),jogadores.end(),userAgeAscend);
+		else std::sort(jogadores.begin(),jogadores.end(),userAgeDescend);
+	}
 
+	if(tipo=="nome"){
+		if(ascend)
+			std::sort(jogadores.begin(),jogadores.end(),userNameAscend);
+		else std::sort(jogadores.begin(),jogadores.end(),userNameDescend);
+	}
+	if(tipo=="jogos"){
+		if(ascend)
+			std::sort(jogadores.begin(),jogadores.end(),userNumberGamesAscend);
+		else std::sort(jogadores.begin(),jogadores.end(),userNumberGamesDescend);
+	}
+	return true;
+}
+
+Utilizador Sistema::pesquisaUtilizador(std::string nome){
+	auto it=jogadores.end();
+	//it=std::find(jogadores.begin(),jogadores.end())
+}
 void displayRank(std::vector<std::string> a)
 {
 

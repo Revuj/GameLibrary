@@ -1,19 +1,25 @@
 #include "Sort.h"
 
-bool userNameAscend(Utilizador* user1,Utilizador* user2){
-	return user1->getNome() < user2->getNome();
+bool userNameAscend(Utilizador& user1,Utilizador& user2){
+	return user1.getNome() < user2.getNome();
 }
 
-bool userNameDescend(Utilizador* user1,Utilizador* user2){
-	return user1->getNome() > user2->getNome();
+bool userNameDescend(Utilizador& user1,Utilizador& user2){
+	return user1.getNome() > user2.getNome();
 }
 
-bool userAgeAscend(Utilizador* user1,Utilizador* user2){
-	return user1->getIdade() < user2->getIdade();
+bool userAgeAscend(Utilizador& user1,Utilizador& user2){
+	return user1.getIdade() < user2.getIdade();
 }
 
-bool userAgeDescend(Utilizador* user1,Utilizador* user2){
-	return user1->getIdade() > user2->getIdade();
+bool userAgeDescend(Utilizador& user1,Utilizador& user2){
+	return user1.getIdade() > user2.getIdade();
+}
+bool userNumberGamesAscend(Utilizador& user1,Utilizador& user2){
+	return user1.getBiblioteca().getTitulos().size() < user2.getBiblioteca().getTitulos().size();
+}
+bool userNumberGamesDescend(Utilizador& user1,Utilizador& user2){
+	return user1.getBiblioteca().getTitulos().size() > user2.getBiblioteca().getTitulos().size(); 
 }
 
 

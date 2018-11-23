@@ -153,7 +153,7 @@ public:
 	 */
 	InputInvalido(const std::string &info) :info(info) { }
 
-	const std::string getInfo() const { return info; }
+	const std::string getInfo() const { return info; } 
 };
 
 

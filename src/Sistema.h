@@ -31,6 +31,8 @@ class Sistema {
 	bool validName(const std::string nome);
 	bool validEmail(const std::string email);
 	bool addUtilizador();
+	bool ordenarUtilizadores(std::string tipo,bool ascend);
+	Utilizador pesquisaUtilizador(std::string nome);
 	unsigned int nrMedioTitulos();
 	float custoMedioBiblioteca();
 	void rankingDeGeneros();

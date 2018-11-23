@@ -92,11 +92,64 @@ void printMainMenu(){
 	std::cout << "4. Sair" << std::endl << std::endl;
 }
 
+void printOrdenacoMenu(){
+	// Draw the header
+	printHeader("Ordenar Utilizadores");
+
+	// Draw the options
+	std::cout << "1. Idade crescente" << std::endl;
+	std::cout << "2. Nome crescente" << std::endl;
+	std::cout << "3. Numero jogos crescente" << std::endl;
+	std::cout << "4. Idade decrescente" << std::endl;
+	std::cout << "5. Idade decrescente" << std::endl;
+	std::cout << "6. Numero jogos decrescente" << std::endl;
+	std::cout << "7. Sair" << std::endl << std::endl;
+}
+
 void adicionarUtilizador(Sistema &sistema){
 	bool utilizadorAdicionado=false;
 	while(!utilizadorAdicionado){
-		sistema.addUtilizador();
+		utilizadorAdicionado=sistema.addUtilizador();
 	}
+}
+
+void ordenaUtilizadores(Sistema& sistema){
+	int opt;
+	while(true){
+		printOrdenacoMenu();
+
+		try{
+			opt = getOption(1,7);
+		}
+		catch(InputInvalido &e){
+			std::cout << "\n" << e.getInfo();
+			continue;	// Ir para o proximo loop , pedir nova opcao
+		}
+
+		if (opt == 1)
+			sistema.ordenarUtilizadores("idade",true);
+		else if (opt == 2)
+			sistema.ordenarUtilizadores("nome",true);
+		else if (opt == 3)
+			sistema.ordenarUtilizadores("jogos",true);
+		else if (opt == 3)
+			sistema.ordenarUtilizadores("idade",false);
+		else if (opt == 3)
+			sistema.ordenarUtilizadores("nome",false);
+		else if (opt == 3)
+			sistema.ordenarUtilizadores("jogos",false);
+		else
+			break;	// opt = 7, o utilizador quer sair
+	}
+}
+
+void pesquisaUtilizador(Sistema &sistema){
+	string nome;
+	cout << "Enter a user name: ";
+	getline(std::cin, nome);
+
+	sistema.pesquisaUtilizador(nome);
+	printUserMenu();
 }
 
 
@@ -135,9 +188,8 @@ int main() {
 			ordenaUtilizadores(sistema);
 		else if (opt == 3)
 			pesquisaUtilizador(sistema);
-
 		else
-			break;	// opt = 5, o utilizador quer sair
+			break;	// opt = 4, o utilizador quer sair
 	}
 
     return 0;
