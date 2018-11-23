@@ -6,14 +6,80 @@
  */
 
 #include "Sistema.h"
-#include "Utilizador.h"
-#include <algorithm>
 #include <utility>
 #include <iostream>
 #include <sstream>
+#include <algorithm>
+#include "Titulo.h"
+
+
+bool userNameAscend(Utilizador& user1,Utilizador& user2){
+	return user1.getNome() < user2.getNome();
+}
+
+bool userNameDescend(Utilizador& user1,Utilizador& user2){
+	return user1.getNome() > user2.getNome();
+}
+
+bool userAgeAscend(Utilizador& user1,Utilizador& user2){
+	return user1.getIdade() < user2.getIdade();
+}
+
+bool userAgeDescend(Utilizador& user1,Utilizador& user2){
+	return user1.getIdade() > user2.getIdade();
+}
+bool userNumberGamesAscend(Utilizador& user1,Utilizador& user2){
+	return user1.getBiblioteca().getTitulos().size() < user2.getBiblioteca().getTitulos().size();
+}
+bool userNumberGamesDescend(Utilizador& user1,Utilizador& user2){
+	return user1.getBiblioteca().getTitulos().size() > user2.getBiblioteca().getTitulos().size();
+}
+
+
+
+
+bool gameIdAscend(Titulo* titulo1,Titulo* titulo2){
+	return titulo1->getIdU() < titulo2->getIdU();
+}
+
+bool gameIdDescend(Titulo* titulo1,Titulo* titulo2){
+	return titulo1->getIdU() > titulo2->getIdU();
+}
+
+bool gameReleaseAscend(Titulo* titulo1,Titulo* titulo2){
+	return titulo1->getDataLancamento() < titulo2->getDataLancamento();
+}
+
+bool gameReleaseDescend(Titulo* titulo1,Titulo* titulo2){
+	return !(titulo1->getDataLancamento() <= titulo2->getDataLancamento());
+}
+
+bool gameAgeAscend(Titulo* titulo1,Titulo* titulo2){
+	return titulo1->getIdadeMinima() < titulo2->getIdadeMinima();
+}
+
+bool gameAgeDescend(Titulo* titulo1,Titulo* titulo2){
+	return titulo1->getIdadeMinima() > titulo2->getIdadeMinima();
+}
+
+bool gameDeveloperAscend(Titulo* titulo1,Titulo* titulo2){
+	return titulo1->getEmpresa() < titulo2->getEmpresa();
+}
+
+bool gameDeveloperDescend(Titulo* titulo1,Titulo* titulo2){
+	return titulo1->getEmpresa() > titulo2->getEmpresa();
+}
+
+bool cmpParJogoRentabilidade(const std::pair<std::string,float> & p1,const std::pair<std::string,float> & p2){
+	return p1.second > p2.second;
+}
+
+
+
+
 
 Sistema::~Sistema(){
-	for (auto titulo:titulos) 
+	for (auto titulo:titulos)
 		delete titulo;
 }
 
@@ -30,7 +96,7 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 	idade = std::stoul(idadeStr);
 
 	Biblioteca B;
-	while (!f.eof()) 
+	while (!f.eof())
 	{
 		std::string tipoDeJogo;
 		std::string nomeDoJogo;
@@ -65,14 +131,14 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 
 			getline(f, titulo);
 			tituloSs << titulo;
-			while (tituloSs >> preco) 
+			while (tituloSs >> preco)
 			{
 				price_history.push_back(preco);
 			}
 
 			getline(f, titulo);
 			tituloSs << titulo;
-			while (tituloSs >> genero) 
+			while (tituloSs >> genero)
 			{
 				generos.push_back(genero);
 			}
@@ -82,14 +148,14 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 				ptr =  new Online(nomeDoJogo, idadeMinima, plataforma, 0, generos, empresa, d, true, precoSubs);
 			else
 				ptr =  new Online(nomeDoJogo, idadeMinima, plataforma, 0, generos, empresa, d, false, precoSubs);
-			
+
 			bool fim=false;
 			std::string data;
 			unsigned int minutos;
 			while(true){
 				if(fim) break;
-				
-				else 
+
+				else
 				if(tituloSs>>data>>minutos){
 					getline(f, titulo);
 					tituloSs << titulo;
@@ -106,12 +172,12 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 		{
 			Home *ptr;
 			tituloSs >> tipoDeJogo >> nomeDoJogo >> idadeMinima >> plataforma >>  empresa >> dataStr;
-			
+
 			Data d (dataStr);
 
 			getline(f, titulo);
 			tituloSs << titulo;
-			while (tituloSs >> preco) 
+			while (tituloSs >> preco)
 			{
 				price_history.push_back(preco);
 			}
@@ -235,7 +301,7 @@ void Sistema::saveUtilizadores() {
 				file<<std::endl;
 			}
 		}
-		
+
 		file.close();
 	}
 }

@@ -146,7 +146,7 @@ void pesquisaUtilizador(Sistema &sistema){
 	cout << "Enter a user name: ";
 	getline(std::cin, nome);
 
-	sistema.pesquisaUtilizador(nome);
+//	sistema.pesquisaUtilizador(nome);
 	printUserMenu();
 }
 

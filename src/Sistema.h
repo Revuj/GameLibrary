@@ -9,11 +9,8 @@
 #define SRC_SISTEMA_H_
 
 #include "Utilizador.h"
-#include "Sort.h"
-#include <algorithm>
 #include <string>
 #include <fstream>
-
 
 
 class Sistema {
