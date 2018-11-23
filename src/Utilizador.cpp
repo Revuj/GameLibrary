@@ -57,7 +57,7 @@ bool Utilizador::operator ==(const Utilizador & U) // a modificar, provavelmente
 bool Utilizador::adicionaCartaoCredito(const CartaoCredito & C)
 {
 	/*se nao existe, acrescenta*/
-	if( find(this->cc.begin(),this->cc.end(),C) != cc.end())
+	if( find(this->cc.begin(),this->cc.end(),C) == cc.end())
 	{
 		this->cc.push_back(C);
 		return true;
@@ -75,7 +75,7 @@ void Utilizador::AdicionaTitulo(Titulo * T, CartaoCredito & c)
 	{
 		if (cartao == c)
 		{
-			if (cartao.getSaldo() >= T->getPreco()) //ver se o saldo para comprar o titulo é suficiente
+			if (cartao.getSaldo() >= T->getPreco()) //ver se o saldo para comprar o titulo Ã© suficiente
 			{
 				this->conjuntoTitulos.adicionaTitulo(T);
 				c.removeQuantia(T->getPreco()); //retira dinheiro do cartao
