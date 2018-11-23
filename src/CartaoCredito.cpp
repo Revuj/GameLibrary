@@ -5,7 +5,7 @@
  * construtor
  */
 
-CartaoCredito::CartaoCredito(const unsigned int saldo,const Data & d1,const std::string iD)
+CartaoCredito::CartaoCredito(const float saldo,const Data & d1,const std::string iD)
 : id(iD) /* id deve ser diferente de todos os cartoes*/
 {
 	this->saldo=saldo;
@@ -13,7 +13,7 @@ CartaoCredito::CartaoCredito(const unsigned int saldo,const Data & d1,const std:
 
 }
 
-unsigned int CartaoCredito::getSaldo() const
+float CartaoCredito::getSaldo() const
 {
 	return this->saldo;
 }

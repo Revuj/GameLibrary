@@ -11,13 +11,13 @@
 
 class CartaoCredito {
 private:
-	unsigned int saldo;
+	float saldo;
 	Data dataDeValidade;
 	const std::string id; /*string de numeros que identificam o cartao, membro dado nao mutavel*/
 
 public:
-	CartaoCredito (const unsigned int = 0,const Data& = Data(),const std::string=""); /* construtor que atua que tambem atua como construtor default*/
-	unsigned int getSaldo() const;
+	CartaoCredito (const float saldo= 0,const Data& d1= Data(),const std::string iD=""); /* construtor que atua que tambem atua como construtor default*/
+	float getSaldo() const;
 	Data getDataDeValidade() const;
 
 	/*
@@ -34,20 +34,17 @@ public:
 	 */
 	bool operator==(const CartaoCredito &C) const ;
 	/*
-	 * adiciona quantia ao saldo do Cartão de Crédito
+	 * adiciona quantia ao saldo do Cartï¿½o de Crï¿½dito
 	 */
 	void adicionaQuantia(float quantia);
 
 	/*
-	 * remove quantia ao saldo do Cartão de Crédito
+	 * remove quantia ao saldo do Cartï¿½o de Crï¿½dito
 	 */
 	void removeQuantia(float quantia);
 
 };
 
 std::ostream & operator <<(std::ostream & os, const CartaoCredito & cartao);
-
-
-
 
 #endif /* SRC_CARTAOCREDITO_H_ */
