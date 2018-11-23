@@ -197,7 +197,7 @@ void ordenaJogosUtilizador(Sistema &sistema,Utilizador& u){
 		else if (opt == 7)
 			sistema.ordenaTitulosUtilizador(u,"empresa",true);
 		else if (opt == 8)
-			sistema.ordenaTitulosUtilizador(u,"idade",false);
+			sistema.ordenaTitulosUtilizador(u,"empresa",false);
 		else
 			break;	// opt = 9, o utilizador quer sair
 	}
