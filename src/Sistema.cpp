@@ -298,25 +298,14 @@ bool Sistema::addUtilizador() /*a incluir throws*/
 	std::cout << "Enter a user name: ";
 	getline(std::cin, nome);
 
-	std::cout << "Checking if is a valid name... \n";
-	if (validName(nome))
-		std::cout << "Valid name\n";
-	else{
-		std::cout << "Invalid Name, try again";
-		return false;
-	}
-
-	std::cout << "Enter your email \n";
-	getline(std::cin, email);
-	if (email.find(EMAILCHAR) == std::string::npos){
-		std::cout << "Invalid email it must contain '@' \n";
-		return false;
-	}
-	if (validEmail(email))
-		std::cout << "Email Valid \n";
-	else{
-		std::cout << "Already exists email\n";
-		return false;
+	bool validEmail=false;
+	while(!validEmail){
+		std::cout << "Enter your email \n";
+		getline(std::cin, email);
+		if (email.find(EMAILCHAR) == std::string::npos){
+			std::cout << "Invalid email it must contain '@' \n";
+		}
+		else validEmail=true;
 	}
 
 	std::cout << "Enter your age ";

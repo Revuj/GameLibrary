@@ -49,22 +49,6 @@ void printWelcomeMenu(){
 	std::cout << std::endl << std::endl;
 }
 
-std::string lerFicheiroUtilizadores(){
-	std::string ficheiroUtilizadores;
-	std::cout << "\nIndique o nome do ficheiro de utilizadores: ";
-	getline(std::cin, ficheiroUtilizadores);
-
-	return ficheiroUtilizadores;
-}
-
-std::string lerFicheiroJogos(){
-	std::string ficheiroJogos;
-	std::cout << "\nIndique o nome do ficheiro de utilizadores: ";
-	getline(std::cin, ficheiroJogos);
-
-	return ficheiroJogos;
-}
-
 void printHeader(const std::string &header){
 	unsigned int headerSize = 80;
 	unsigned int headerLeftSpaces = (headerSize - header.size()) / 2;
@@ -100,6 +84,20 @@ void printOrdenacoMenu(){
 	std::cout << "1. Idade crescente" << std::endl;
 	std::cout << "2. Nome crescente" << std::endl;
 	std::cout << "3. Numero jogos crescente" << std::endl;
+	std::cout << "4. Idade decrescente" << std::endl;
+	std::cout << "5. Idade decrescente" << std::endl;
+	std::cout << "6. Numero jogos decrescente" << std::endl;
+	std::cout << "7. Sair" << std::endl << std::endl;
+}
+
+void printUserMenu(){
+	// Draw the header
+	printHeader("Menu Utilizador");
+
+	// Draw the options
+	std::cout << "1. Adicionar título" << std::endl;
+	std::cout << "2. Adicionar cartao de credito" << std::endl;
+	std::cout << "3. " << std::endl;
 	std::cout << "4. Idade decrescente" << std::endl;
 	std::cout << "5. Idade decrescente" << std::endl;
 	std::cout << "6. Numero jogos decrescente" << std::endl;
@@ -149,23 +147,13 @@ void pesquisaUtilizador(Sistema &sistema){
 	getline(std::cin, nome);
 
 	sistema.pesquisaUtilizador(nome);
-//	printUserMenu();
+	printUserMenu();
 }
 
 
 int main() {
 	printWelcomeMenu();
-	std::string ficheiroUtilizadores,ficheiroJogos;
-	ficheiroUtilizadores=lerFicheiroUtilizadores();
-	ficheiroJogos=lerFicheiroJogos();
-	Sistema sistema/*(ficheiroUtilizadores,ficheiroJogos)*/;
-	try{	// Ler info dos ficheiros e verificar que nao ha erros na sua abertura
-		//sistema.openFiles();
-	}
-	catch(FicheiroNaoEncontrado &e){
-		std::cerr << e.getInfo();
-		return 1;
-	}
+	Sistema sistema;
 
 	int opt;
 
@@ -191,13 +179,6 @@ int main() {
 		else
 			break;	// opt = 4, o utilizador quer sair
 	}
-
-	Sistema S;
-
-	S.readUtilizadores();
-
-	std::cout << "oi" << std::endl;
-
 
     return 0;
 }
