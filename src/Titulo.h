@@ -49,6 +49,8 @@ public:
 
 	std::vector<float> getHistorialPreco() const;
 
+	void setHistoricoPreco(std::vector<float>& precos) const;
+
 	float getDesconto() const;
 
 	virtual float getGastos() const = 0;
@@ -105,6 +107,7 @@ public:
 	 */
 	float getGastos() const;
 };
+
 std::ostream & operator <<(std::ostream & os, const Home & h); // a fazer
 
 class Online: public Titulo {
@@ -131,6 +134,10 @@ public:
 	std::vector<Data> getDatasJogo() const;
 
 	std::vector<unsigned int> getMinutosJogo() const;
+
+	void setMinutosJogo(std::vector<unsigned int>& minutosjogo);
+
+	void setDatasJogo(std::vector<Data>& datasJogo);
 	/*
 	 * adiciona um utilizador caso ele nao exista
 	 * @param U utilizador a adicionar

@@ -83,6 +83,10 @@ unsigned int Titulo::getIdU() const{
  	return ( 1- getPrecoBase() / getPreco() )*100; /*divisao do preco atual com o de lan�amento */
  }
 
+ void Titulo::setHistoricoPreco(std::vector<float>& precos) const{
+	 historico_preco=precos;
+ }
+
  //========================================================================================
  //========================================================================================
  void Titulo::setPreco(const float preco) {
@@ -204,6 +208,14 @@ std::vector<Data> Online::getDatasJogo() const{
 
 std::vector<unsigned int> Online::getMinutosJogo() const{
 	return minutosJogadosPorData;
+}
+
+void Online::setMinutosJogo(std::vector<unsigned int>& minutosjogo){
+	minutosJogadosPorData=minutosjogo;
+}
+
+void Online::setDatasJogo(std::vector<Data>& datasJogo){
+	datasEmQueJogou=datasJogo;
 }
 
  //========================================================================================

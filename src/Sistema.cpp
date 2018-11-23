@@ -26,18 +26,18 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 	idade = std::stoul(idadeStr);
 
 	Biblioteca B;
-	Titulo * ptr;
-	while (!f.eof())
+	while (!f.eof()) 
 	{
 		std::string tipoDeJogo;
 		std::string nomeDoJogo;
-		std::string idadeMinimaStr;
+		float idadeMinima;
 		std::string plataforma;
-		std::string precoStr;
+		float preco;
 		std::string genero=".";
 		std::string empresa;
 		std::string dataStr;
 		std::vector<std::string> generos;
+		std::vector<float>price_history;
 		std::string subscricao;
 		std::string precoSubsStr;
 
@@ -45,49 +45,88 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 
 		tituloSs << titulo;
 
-		tituloSs >> tipoDeJogo >> nomeDoJogo >> idadeMinimaStr >> plataforma >> precoStr >> empresa >> dataStr;
-
-		std::cout << tituloSs.str() << std::endl;
-
-		unsigned int idadeMinima = std::stoul(idadeMinimaStr);
-		float preco = std::stof(precoStr);
-
-		Data d (dataStr);
+		tituloSs >> tipoDeJogo;
 
 		tituloSs.str(std::string());
 
 	//arranjar maneira para receber os generos!!!
 		if (tipoDeJogo == "Online")
 		{
+			Online *ptr;
+			std::vector<Data> datasJogo;
+			std::vector<unsigned int> minutosJogados;
+			tituloSs >> tipoDeJogo >> nomeDoJogo >> idadeMinima >> plataforma >> empresa >> dataStr >> subscricao >> precoSubsStr;
 
-			tituloSs >> tipoDeJogo >> nomeDoJogo >> idadeMinimaStr >> plataforma >> precoStr >>  empresa >> dataStr >> subscricao >> precoSubsStr;
+			Data d (dataStr);
 
-			while (genero != "*") 
+			getline(f, titulo);
+			tituloSs << titulo;
+			while (tituloSs >> preco) 
 			{
-				tituloSs >> genero;
+				price_history.push_back(preco);
+			}
+
+			getline(f, titulo);
+			tituloSs << titulo;
+			while (tituloSs >> genero) 
+			{
 				generos.push_back(genero);
 			}
 
 			unsigned int precoSubs = std::stof(precoSubsStr);
 			if (subscricao == "fixa")
-				ptr =  new Online(nomeDoJogo, idadeMinima, plataforma, preco, generos, empresa, d, true, precoSubs);
+				ptr =  new Online(nomeDoJogo, idadeMinima, plataforma, 0, generos, empresa, d, true, precoSubs);
 			else
-				ptr =  new Online(nomeDoJogo, idadeMinima, plataforma, preco, generos, empresa, d, false, precoSubs);
+				ptr =  new Online(nomeDoJogo, idadeMinima, plataforma, 0, generos, empresa, d, false, precoSubs);
+			
+			bool fim=false;
+			std::string data;
+			unsigned int minutos;
+			while(true){
+				if(fim) break;
+				
+				else 
+				if(tituloSs>>data>>minutos){
+					getline(f, titulo);
+					tituloSs << titulo;
+					datasJogo.push_back(Data(data));
+					minutosJogados.push_back(minutos);
+				}
+			}
+			ptr->setHistoricoPreco(price_history);
+			ptr->setDatasJogo(datasJogo);
+			ptr->setMinutosJogo(minutosJogados);
+			B.adicionaTitulo(ptr);
 		}
 		else
 		{
-			tituloSs >> tipoDeJogo >> nomeDoJogo >> idadeMinimaStr >> plataforma >> precoStr >>  empresa >> dataStr;
+			Home *ptr;
+			tituloSs >> tipoDeJogo >> nomeDoJogo >> idadeMinima >> plataforma >>  empresa >> dataStr;
+			
+			Data d (dataStr);
 
-			while (genero != "*")
+			getline(f, titulo);
+			tituloSs << titulo;
+			while (tituloSs >> preco) 
 			{
-				tituloSs >> genero;
+				price_history.push_back(preco);
+			}
+
+			getline(f, titulo);
+			tituloSs << titulo;
+			while (tituloSs >> genero)
+			{
 				generos.push_back(genero);
 			}
 
 			ptr =  new Home(nomeDoJogo, idadeMinima, plataforma, preco, generos, empresa, d);
+			std::string data;
+			while(tituloSs>>data){
+				ptr->adicionaAtualizacao(Data(data));
+			}
+			B.adicionaTitulo(ptr);
 		}
 
-		B.adicionaTitulo(ptr);
 	}
 
 	Utilizador U(nome, mail, idade, localidade, B);
@@ -144,18 +183,19 @@ void Sistema::saveUtilizadores() {
 				std::vector<Data> datasJogo=online->getDatasJogo();
 				std::vector<unsigned int> minutosJogados=online->getMinutosJogo();
 				float horastotais=online->getHorasTotais();
-				file<<tipoDeJogo<<" "<<nome<<" "<<idadeMinima<<" "<<plataforma<<" ( ";
+				file<<tipoDeJogo<<" "<<nome<<" "<<idadeMinima<<" "<<plataforma<<" ";
+
+				file<<empresa<<" "<<data<<" "<<subscricao<<" "<<precoSubs<<std::endl;
 				for(const auto &i:preco)
 				{
 					file<<i<<" ";
 				}
-
-				file<<") "<<empresa<<" "<<data<<" "<<subscricao<<" "<<precoSubs<<std::endl;
+				file<<std::endl;
 				for(const auto &i:genero)
 				{
 					file<<i<<" ";
 				}
-				file<<"*"<<std::endl;
+				file<<std::endl;
 				unsigned int sizeDataJogo=datasJogo.size();
 				for(unsigned int i=0;i<sizeDataJogo;i++){
 					file<<datasJogo[i]<<" "<<minutosJogados[i]<<std::endl;
