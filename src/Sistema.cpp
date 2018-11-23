@@ -11,6 +11,7 @@
 #include <sstream>
 #include <algorithm>
 #include "Titulo.h"
+#include <vector>
 
 
 bool userNameAscend(Utilizador& user1,Utilizador& user2){
@@ -84,16 +85,33 @@ Sistema::~Sistema(){
 }
 
 void Sistema::readFileUtilizadores(std::ifstream & f) {
-	std::string nome, mail, idadeStr, localidade, titulo;
+	std::string nome, mail, idadeStr, localidade, titulo, cartao, dataCartao, idCartao;
+	float saldo;
 	unsigned int idade;
-	std::stringstream tituloSs;
+	std::stringstream tituloSs, cartaoSs;
+	std::vector<CartaoCredito> cartoes;
 
 	getline(f, nome);
 	getline(f, mail);
 	getline(f, idadeStr);
 	getline(f, localidade);
 
-	idade = std::stoul(idadeStr);
+	getline(f, cartao);
+
+	while (cartao != "")
+	{
+		cartaoSs << cartao;
+		std::cout << cartaoSs.str() << "oi" << std::endl;
+		cartaoSs >> saldo >> dataCartao >> idCartao;
+		cartoes.push_back(CartaoCredito(saldo, Data(dataCartao), idCartao));
+		getline(f, cartao);
+		cartaoSs.str(std::string());
+		cartaoSs.clear();
+	}
+
+	std::cout << "im here" << std::endl;
+
+	idade = std::stoul(idadeStr, NULL, 0);
 
 	Biblioteca B;
 	while (!f.eof())
@@ -117,17 +135,21 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 
 		tituloSs >> tipoDeJogo;
 
-		tituloSs.str(std::string());
+		std::cout << tituloSs.str() << std::endl;
 
 	//arranjar maneira para receber os generos!!!
+		std::cout << tipoDeJogo << std::endl;
 		if (tipoDeJogo == "Online")
 		{
 			Online *ptr;
 			std::vector<Data> datasJogo;
 			std::vector<unsigned int> minutosJogados;
-			tituloSs >> tipoDeJogo >> nomeDoJogo >> idadeMinima >> plataforma >> empresa >> dataStr >> subscricao >> precoSubsStr;
-
+			tituloSs >> nomeDoJogo >> idadeMinima >> plataforma >> empresa >> dataStr >> subscricao >> precoSubsStr;
+			std::cout << "DataOnline: " << dataStr << std::endl;
 			Data d (dataStr);
+
+			tituloSs.str(std::string());
+			tituloSs.clear();
 
 			getline(f, titulo);
 			tituloSs << titulo;
@@ -136,12 +158,19 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 				price_history.push_back(preco);
 			}
 
+			tituloSs.str(std::string());
+			tituloSs.clear();
+
 			getline(f, titulo);
 			tituloSs << titulo;
+
 			while (tituloSs >> genero)
 			{
 				generos.push_back(genero);
 			}
+
+			tituloSs.str(std::string());
+			tituloSs.clear();
 
 			unsigned int precoSubs = std::stof(precoSubsStr);
 			if (subscricao == "fixa")
@@ -156,11 +185,14 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 				if(fim) break;
 
 				else
-				if(tituloSs>>data>>minutos){
+				{
 					getline(f, titulo);
 					tituloSs << titulo;
+				while(tituloSs>>data>>minutos){
 					datasJogo.push_back(Data(data));
 					minutosJogados.push_back(minutos);
+				}
+				fim = true;
 				}
 			}
 			ptr->setHistoricoPreco(price_history);
@@ -171,9 +203,12 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 		else
 		{
 			Home *ptr;
-			tituloSs >> tipoDeJogo >> nomeDoJogo >> idadeMinima >> plataforma >>  empresa >> dataStr;
-
+			tituloSs >> nomeDoJogo >> idadeMinima >> plataforma >> empresa >> dataStr;
+			std::cout << "DataHome: " << dataStr << std::endl;
 			Data d (dataStr);
+
+			tituloSs.str(std::string());
+			tituloSs.clear();
 
 			getline(f, titulo);
 			tituloSs << titulo;
@@ -181,33 +216,61 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 			{
 				price_history.push_back(preco);
 			}
+			tituloSs.str(std::string());
+			tituloSs.clear();
 
 			getline(f, titulo);
 			tituloSs << titulo;
+			std::cout << "Generoewdawe: " << tituloSs.str() << std::endl;
 			while (tituloSs >> genero)
 			{
+				std::cout << genero << std::endl;
 				generos.push_back(genero);
 			}
 
+			tituloSs.str(std::string());
+			tituloSs.clear();
+
+
 			ptr =  new Home(nomeDoJogo, idadeMinima, plataforma, preco, generos, empresa, d);
 			std::string data;
+			getline(f, titulo);
+			tituloSs << titulo;
+
 			while(tituloSs>>data){
 				ptr->adicionaAtualizacao(Data(data));
 			}
+
+			std::cout << *ptr << std::endl;
 			B.adicionaTitulo(ptr);
+			ptr->setHistoricoPreco(price_history);
 		}
+		tituloSs.str(std::string());
+		tituloSs.clear();
 
 	}
 
+	std::cout << nome << " " << mail << " " << idade << " " << localidade << std::endl;
 	Utilizador U(nome, mail, idade, localidade, B);
-	std::cout << U << std::endl;
+
+	for (const auto & c : cartoes)
+	{
+		std::cout << "cartao: " << c.getId() << std::endl;
+		U.adicionaCartaoCredito(c);
+	}
 
 	this->jogadores.push_back(U);
+
+	std::cout << U << std::endl;
+
+
 }
 
 void Sistema::readUtilizadores() {
 
-	for(int i=1;i<2;i++)
+	unsigned int i = 1;
+
+	while (true)
 	{
 	std::ifstream file;
 	file.open("Utilizador" + std::to_string(i) + ".txt");
@@ -215,26 +278,39 @@ void Sistema::readUtilizadores() {
 			 {
 				 readFileUtilizadores(file);
 				 file.close();
+				 i++;
 			 }
-			 //else
-				 //throw
+			 else
+				 break;
 	}
 
 }
 
 void Sistema::saveUtilizadores() {
 
-	for(int i=0;i<jogadores.size();i++)
+	for(int i=0;i< jogadores.size();i++)
 	{
-		std::ofstream file("Utilizador" + std::to_string(i++) + ".txt");
+		std::cout << "oi" << std::endl;
+		std::ofstream file("Utilizador" + std::to_string(i + 1) + ".txt");
 		std::string nome=jogadores.at(i).getNome();
 		std::string mail=jogadores.at(i).getEmail();
 		unsigned int idade=jogadores.at(i).getIdade();
 		std::string localidade=jogadores.at(i).getMorada();
+		std::vector<CartaoCredito> cartoes = jogadores.at(i).getCc();
+
 		file<<nome<<std::endl<<mail<<std::endl<<idade<<std::endl<<localidade<<std::endl;
 		std::vector<Titulo*> titulos=jogadores.at(i).getBiblioteca().getTitulos();
+
+		for (const auto & cartao : cartoes)
+		{
+			file << cartao.getSaldo() << " " << cartao.getDataDeValidade() << " " << cartao.getId() << std::endl;
+		}
+
+		file << std::endl;
+
 		for(size_t i = 0; i < titulos.size(); i++)
 		{
+			std::cout << "ola" << std::endl;
 			Online* online=dynamic_cast<Online*>(titulos.at(i));
 			if(online != NULL){
 				std::string tipoDeJogo="Online";
@@ -252,53 +328,78 @@ void Sistema::saveUtilizadores() {
 				float precoSubs=online->getPrecoSubscricao();
 				std::vector<Data> datasJogo=online->getDatasJogo();
 				std::vector<unsigned int> minutosJogados=online->getMinutosJogo();
-				float horastotais=online->getHorasTotais();
-				file<<tipoDeJogo<<" "<<nome<<" "<<idadeMinima<<" "<<plataforma<<" ";
+				file<<tipoDeJogo<<" "<<nomeDoJogo<<" "<<idadeMinima<<" "<<plataforma<<" ";
 
 				file<<empresa<<" "<<data<<" "<<subscricao<<" "<<precoSubs<<std::endl;
-				for(const auto &i:preco)
+				for(unsigned int i = 0; i < preco.size(); i++)
 				{
-					file<<i<<" ";
-				}
-				file<<std::endl;
-				for(const auto &i:genero)
-				{
-					file<<i<<" ";
-				}
-				file<<std::endl;
-				unsigned int sizeDataJogo=datasJogo.size();
-				for(unsigned int i=0;i<sizeDataJogo;i++){
-					file<<datasJogo[i]<<" "<<minutosJogados[i]<<std::endl;
-				}
-				file<<horastotais;
-			}
-			else {
-				Home* home=dynamic_cast<Home*>(titulos.at(i));
-				std::string tipoDeJogo="Home";
-				std::string nomeDoJogo=online->getNome();
-				unsigned int idadeMinima=online->getIdadeMinima();
-				std::string plataforma=online->getPlataforma();
-				std::vector<float> preco = online->getHistorialPreco();
-				std::vector<std::string> genero=online->getGeneros();
-				std::string empresa=online->getEmpresa();
-				Data data=online->getDataLancamento();
-				std::vector<Data> datasAtualizacao=home->getDatas();
-				file<<tipoDeJogo<<" "<<nome<<" "<<idadeMinima<<" "<<plataforma<<" ( ";
-				for(const auto &i:preco)
-				{
-					file<<i<<" ";
+					if (i == preco.size() - 1)
+						file << preco[i] << std::endl;
+					else
+						file<< preco[i] <<" ";
 				}
 
-				file<<") "<<empresa<<" "<<data<<std::endl;
-				for(const auto &i:genero)
+
+				for(unsigned int i = 0; i < genero.size(); i++)
 				{
-					file<<i<<" ";
+					if (i == genero.size() - 1)
+						file << genero[i] << std::endl;
+					else
+						file<< genero[i] <<" ";
 				}
-				file<<"*"<<std::endl;
-				for(const auto &i: datasAtualizacao){
-					file<<i<<" ";
+
+				for(unsigned int i = 0; i < datasJogo.size(); i++)
+				{
+					if (i == datasJogo.size() - 1)
+						file << datasJogo[i] << " " << minutosJogados[i];
+					else
+						file << datasJogo[i] << " " << minutosJogados[i] << " ";
 				}
-				file<<std::endl;
+
+				if (i != titulos.size() - 1)
+					file << std::endl;
+			}
+			else {
+				std::cout << "hello" << std::endl;
+				Home* home=dynamic_cast<Home*>(titulos.at(i));
+				std::string tipoDeJogo="Home";
+				std::string nomeDoJogo=home->getNome();
+				unsigned int idadeMinima=home->getIdadeMinima();
+				std::string plataforma=home->getPlataforma();
+				std::vector<float> preco = home->getHistorialPreco();
+				std::vector<std::string> genero=home->getGeneros();
+				std::string empresa=home->getEmpresa();
+				Data data=home->getDataLancamento();
+				std::vector<Data> datasAtualizacao=home->getDatas();
+				file<<tipoDeJogo<<" "<<nomeDoJogo<<" "<<idadeMinima<<" "<<plataforma <<" " << empresa << " " << data << std::endl;
+				for(unsigned int i = 0; i < preco.size(); i++)
+				{
+					if (i == preco.size() - 1)
+						file << preco[i] << std::endl;
+					else
+						file<< preco[i] <<" ";
+				}
+
+
+				for(unsigned int i = 0; i < genero.size(); i++)
+				{
+					if (i == genero.size() - 1)
+						file << genero[i] << std::endl;
+					else
+						file<< genero[i] <<" ";
+				}
+
+				for(unsigned int i = 0; i < datasAtualizacao.size(); i++)
+				{
+					if (i == datasAtualizacao.size() - 1)
+						file << datasAtualizacao[i];
+					else
+						file<< datasAtualizacao[i] <<" ";
+				}
+
+				if (i != titulos.size() - 1)
+					file << std::endl;
+
 			}
 		}
 
@@ -380,7 +481,7 @@ bool Sistema::addUtilizador() /*a incluir throws*/
 	std::cout << "Enter your address: ";
 	getline(std::cin, morada);
 
-	jogadores.push_back(Utilizador(nome, email, stoul(idade, NULL, 0), morada));
+	jogadores.push_back(Utilizador(nome, email, std::stoul(idade, NULL, 0), morada));
 
 	return true;
 
