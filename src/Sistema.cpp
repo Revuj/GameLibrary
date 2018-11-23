@@ -10,17 +10,23 @@
 #include <algorithm>
 #include <utility>
 #include <iostream>
+#include <sstream>
 
 
 void Sistema::readFile(std::ifstream & f) {
-	std::string nome, mail, idade, localidade, titulo;
+	std::string nome, mail, idadeStr, localidade, titulo;
+	unsigned int idade;
 	std::stringstream tituloSs;
 
 	getline(f, nome);
 	getline(f, mail);
+	getline(f, idadeStr);
 	getline(f, localidade);
 
+//	idade = std::stoul(idadeStr);
+
 	Biblioteca B;
+	Titulo * ptr;
 	while (!f.eof())
 	{
 		std::string tipoDeJogo;
@@ -31,7 +37,6 @@ void Sistema::readFile(std::ifstream & f) {
 		std::string genero;
 		std::string empresa;
 		std::string dataStr;
-		std::string genero;
 		std::vector<std::string> generos;
 		std::string subscricao;
 		std::string precoSubsStr;
@@ -40,54 +45,63 @@ void Sistema::readFile(std::ifstream & f) {
 
 		tituloSs << titulo;
 
-		tituloSs >> tipoDeJogo >> nomeDoJogo >> idadeMinimaStr >> plataforma >> precoStr >> genero >> empresa >> dataStr;
+		tituloSs >> tipoDeJogo >> nomeDoJogo >> idadeMinimaStr >> plataforma >> precoStr >> empresa >> dataStr;
+
+		std::cout << tituloSs.str() << std::endl;
 
 		unsigned int idadeMinima = std::stoul(idadeMinimaStr);
 		float preco = std::stof(precoStr);
 
-		Data d(dataStr);
+		Data d (dataStr);
 
-		if (tipoDeJogo == "Online")
-		{
+		tituloSs.str(std::string());
 
-			tituloSs >> tipoDeJogo >> nomeDoJogo >> idadeMinimaStr >> plataforma >> precoStr >>  empresa >> dataStr >> subscricao >> precoSubsStr;
-
-			while (genero != "*")
-			{
-				tituloSs >> genero;
-				generos.push_back(genero);
-			}
-
-			unsigned int precoSubs = std::stof(precoSubsStr);
-			if (subscricao == "fixa")
-				Online * t(nomeDoJogo, idadeMinima, plataforma, preco, generos, empresa, d, true, precoSubs);
-			else
-				Online * t(nomeDoJogo, idadeMinima, plataforma, preco, generos, empresa, f, true, precoSubs);
-
-		}
-		else
-		{
-			tituloSs >> tipoDeJogo >> nomeDoJogo >> idadeMinimaStr >> plataforma >> precoStr >>  empresa >> dataStr;
-
-			while (genero != "*")
-			{
-				tituloSs >> genero;
-				generos.push_back(genero);
-			}
-
-			Home * t(nomeDoJogo, idadeMinima, plataforma, preco, generos, empresa, d);
-		}
-
-//		B.adicionaTitulo(t);
 	}
 
-	Utilizador U(nome, mail, idade, localidade, B);
-	this->jogadores.push_back(U);
+	//arranjar maneira para receber os generos!!!
+//		if (tipoDeJogo == "Online")
+//		{
+//
+//			tituloSs >> tipoDeJogo >> nomeDoJogo >> idadeMinimaStr >> plataforma >> precoStr >>  empresa >> dataStr >> subscricao >> precoSubsStr;
+//
+//			while (genero != "*") -> isto tá errado
+//			{
+//				tituloSs >> genero;
+//				generos.push_back(genero);
+//			}
+//
+//			unsigned int precoSubs = std::stof(precoSubsStr);
+//			if (subscricao == "fixa")
+//				ptr =  new Online(nomeDoJogo, idadeMinima, plataforma, preco, generos, empresa, d, true, precoSubs);
+//			else
+//				ptr =  new Online(nomeDoJogo, idadeMinima, plataforma, preco, generos, empresa, d, false, precoSubs);
+//
+//		}
+//		else
+//		{
+//			tituloSs >> tipoDeJogo >> nomeDoJogo >> idadeMinimaStr >> plataforma >> precoStr >>  empresa >> dataStr;
+//
+//			while (genero != "*")
+//			{
+//				tituloSs >> genero;
+//				generos.push_back(genero);
+//			}
+//
+//			ptr =  new Home(nomeDoJogo, idadeMinima, plataforma, preco, generos, empresa, d);
+//		}
+//
+//		B.adicionaTitulo(ptr);
+//	}
+//
+//	Utilizador U(nome, mail, idade, localidade, B);
+//	std::cout << U << std::endl;
+//
+//	this->jogadores.push_back(U);
 }
 
 void Sistema::readUtilizadores() {
 
-	for(int i=1;i<4;i++)
+	for(int i=1;i<2;i++)
 	{
 	std::ifstream file;
 	file.open("Utilizador" + std::to_string(i) + ".txt");
@@ -96,8 +110,8 @@ void Sistema::readUtilizadores() {
 				 readFile(file);
 				 file.close();
 			 }
-			 else
-			 printf ("Could not open the file\n");
+			 //else
+				 //throw
 	}
 
 }
@@ -187,7 +201,7 @@ bool Sistema::addUtilizador() /*a incluir throws*/
 	std::cout << "Enter your address: ";
 	getline(std::cin, morada);
 
-	jogadores.push_back(Utilizador(nome, email, stoi(idade), morada));
+	//jogadores.push_back(Utilizador(nome, email, stoul(idade, NULL, 0), morada));
 
 
 	return true;
@@ -337,4 +351,19 @@ void Sistema::rankingDeRentabilidades()
 	{
 		std::cout << titulo.first<< ": "<<titulo.second<<std::endl;
 	}
+}
+
+std::vector <Utilizador> Sistema::getJogadores()
+{
+	return this->jogadores;
+}
+
+std::vector <Titulo *> Sistema::getTitulos()
+{
+	return this->titulos;
+}
+
+std::vector <std::string> Sistema::getPlataformas()
+{
+	return this->plataformas;
 }

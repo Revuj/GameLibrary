@@ -2,6 +2,6 @@ Joao Varela
 up2010203@fe.up.pt
 19
 Rua do Salgueiral, Porto
-Home Jogo1 9 Nintendo 59 Luta Abelha&Co 22/11/2018
-Online Jogo2 4 PlayStation 69 Rafa&Co 15/8/2014
-Online Jogo3 18 Xbox 49 Vitor&Co 31/10/2016
+Home Jogo1 9 Nintendo 59 Abelha&Co 22/11/2018 estrategia guerra *
+Online Jogo2 4 PlayStation 69 Rafa&Co 15/8/2014 fixa 20 luta acao *
+Online Jogo3 18 Xbox 49 Vitor&Co 31/10/2016 variavel 2 aventura rpg *

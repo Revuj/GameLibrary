@@ -29,6 +29,4 @@ public:
 	bool operator==(const Biblioteca B);
 };
 
-
-
 #endif /* SRC_BIBLIOTECA_H_ */

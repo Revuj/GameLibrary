@@ -16,14 +16,14 @@
 
 
 class Sistema {
-		public:
+private:
 	std::vector <Utilizador> jogadores;
-	std::vector <Titulo> titulos;
+	std::vector <Titulo *> titulos;
 	std::vector <std::string> plataformas;
 
 
 
-	//public:
+public:
 	Sistema() {};
 	~Sistema() {};
 	void readFile(std::ifstream & file);
@@ -39,6 +39,9 @@ class Sistema {
 	void rankingDePlataformas();
 	void rankingDeIdades();
 	void rankingDeRentabilidades();
+	std::vector <Utilizador> getJogadores();
+	std::vector <Titulo *> getTitulos();
+	std::vector <std::string> getPlataformas();
 
 
 

@@ -149,48 +149,55 @@ void pesquisaUtilizador(Sistema &sistema){
 	getline(std::cin, nome);
 
 	sistema.pesquisaUtilizador(nome);
-	printUserMenu();
+//	printUserMenu();
 }
 
 
 int main() {
-	printWelcomeMenu();
-	std::string ficheiroUtilizadores,ficheiroJogos;
-	ficheiroUtilizadores=lerFicheiroUtilizadores();
-	ficheiroJogos=lerFicheiroJogos();
-	Sistema sistema(ficheiroUtilizadores,ficheiroJogos);
-	try{	// Ler info dos ficheiros e verificar que nao ha erros na sua abertura
-		sistema.openFiles();
-	}
-	catch(FicheiroNaoEncontrado &e){
-		std::cerr << e.getInfo();
-		return 1;
-	}
+//	printWelcomeMenu();
+//	std::string ficheiroUtilizadores,ficheiroJogos;
+//	ficheiroUtilizadores=lerFicheiroUtilizadores();
+//	ficheiroJogos=lerFicheiroJogos();
+//	Sistema sistema(ficheiroUtilizadores,ficheiroJogos);
+//	try{	// Ler info dos ficheiros e verificar que nao ha erros na sua abertura
+////		sistema.openFiles();
+//	}
+//	catch(FicheiroNaoEncontrado &e){
+//		std::cerr << e.getInfo();
+//		return 1;
+//	}
+//
+//	int opt;
+//
+//	// Perguntar ao utilizador o que quer fazer até este indicar que deseja sair
+//	while(true){
+//		printMainMenu();
+//
+//		// Pedir opcao ao utilizador e verificar se nao houve erro de input
+//		try{
+//			opt = getOption(1,4);
+//		}
+//		catch(InputInvalido &e){
+//			std::cout << "\n" << e.getInfo();
+//			continue;	// Ir para o proximo loop , pedir nova opcao
+//		}
+//
+//		if (opt == 1)
+//			adicionarUtilizador(sistema);
+//		else if (opt == 2)
+//			ordenaUtilizadores(sistema);
+//		else if (opt == 3)
+//			pesquisaUtilizador(sistema);
+//		else
+//			break;	// opt = 4, o utilizador quer sair
+//	}
 
-	int opt;
+	Sistema S;
 
-	// Perguntar ao utilizador o que quer fazer até este indicar que deseja sair
-	while(true){
-		printMainMenu();
+	S.readUtilizadores();
 
-		// Pedir opcao ao utilizador e verificar se nao houve erro de input
-		try{
-			opt = getOption(1,4);
-		}
-		catch(InputInvalido &e){
-			std::cout << "\n" << e.getInfo();
-			continue;	// Ir para o proximo loop , pedir nova opcao
-		}
+	std::cout << "oi" << std::endl;
 
-		if (opt == 1)
-			adicionarUtilizador(sistema);
-		else if (opt == 2)
-			ordenaUtilizadores(sistema);
-		else if (opt == 3)
-			pesquisaUtilizador(sistema);
-		else
-			break;	// opt = 4, o utilizador quer sair
-	}
 
     return 0;
 }
