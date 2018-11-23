@@ -4,73 +4,81 @@
 #include "CartaoCredito.h"
 #include <vector>
 
-/*tirar a funcao data atual de data e colocar aqui*/
-/*
- * quando um cartao de um utilizador for removido, remove lo aqui na mesma
- * nao deixar remover se so tiver um cartao e lancar excecao
+/**
+ * Banco que contem os cartoes de credito dos utilizadores.
  */
-
-
-/*classe banco armazena na sua base de dados todos os cartoes e serve para fazer a verificacao da sua validade */
 class Banco
 {
-	std::vector<CartaoCredito> CartoesDeCredito;
-	Data atual;
+	std::vector<CartaoCredito> CartoesDeCredito; /**< vector que contem os cartoes de credito*/
+	Data atual; /**< data atual */
 
 public:
 
+	/**
+	 * @brief Construtor da classe Banco
+	 */
+	Banco();
 
-	Banco(); /*construtor*/
-	~Banco(); /*destrutor*/
+	/**
+	 * @brief Destrutor da class Banco
+	 */
 
-	void setDataAtual(); /*onde e feito o set do dia de hoje, atualiza a data a cada compilacao*/
+	~Banco();
 
-	/*
-	 * chamar esta funcao depois de setData que incializa o objeto com a data da ultima compilacao
+	/**
+	 * @brief atualiza a data, para a data atual
+	 */
+	void setDataAtual();
+
+	/**
+	 * @brief devolve a data atual
 	 *
 	 */
 	Data getDataAtual() const;
 
+	/**
+	 * @brief Permite obter os cartoes de credito dos utilizadores
+	 * @return Retorna o vetor de cartoes de credito
+	 */
 	std::vector<CartaoCredito> getCartoesCredito() const;
 
 
-	/*
-	 * ve se esta dentro da data de validade
-	 * @param cartao de credito a comparar a data
-	 * return true se valida senao falsa
+	/**
+	 * @brief Verifica se uma data e valida
+	 * @param cartao - cartao de credito cuja data vai ser verificada
+	 * @return retorna true se a data for valida, ou false de outra forma
 	 */
 	bool isDataValida(const CartaoCredito & cartao) const ;
 
 
-	/*deve ser chamada sempre antes de associar um cartao de credito a uma pessoa para garantir que esta disponivel e dentro da validade*/
-	void adicionaCartaoCredito(const CartaoCredito &);
-
-	/*
-	 * remove e adiciona quantia estao na classe cartaocredito mas poderiam ser aplicadas aqui(ja aplicada na claase cartacredito)?
+	/**
+	 * @brief Adiciona um cartao de credito ao banco
+	 * @param cartao - cartao de credito a adicionar
 	 */
+	void adicionaCartaoCredito(const CartaoCredito & cartao);
 
-	/*
-	 * a funcao transferir dinheiro entre cartoes de credito deve ser feita no mesmo sitio das funcoes que adicionam quantia e remove?
-	 * so pode ser transferido se existir mais que um cartao (pode lancar excecao)
+
+	/**
+	 * @brief Adiciona um vector de cartoes de credito ao banco
+	 * @param cartoes - vector de cartoes de credito a adicionar ao banco
 	 */
-
 	void adicionaCartoesCredito(const std::vector <CartaoCredito> & cartoes);
 
-	/*
-	 * atualiza a data de um cartao de credito, adicionando mais 3 anos de validade
-	 * atualiza se esta fora da validade ou se faltam ate 90 dias ate ao fim do prazo
-	 * @param cartao de credito a atualizar
+	/**
+	 * @brief Atualiza a data de um cartao de credito, adicionando mais 3 anos de validade, se esta fora da validade ou se faltam ate 90 dias ate ao fim do prazo
+	 * @param cartao - cartao de credito a atualizar
 	 */
 	void atualizaCartao(CartaoCredito & cartao);
 
-	/*
-	 * atualiza todos os cartoes do sistema, que tem data invalida ou que a sua validade termina dentro de 30 diasss
+	/**
+	 * @brief Atualiza todos os cartoes do sistema
 	 */
 	void atualizaCartoesCredito();
 
 };
 
 std::ostream & operator <<(std::ostream & os, const Banco & banco);
+
 
 
 #endif /* SRC_BANCO_H_ */
