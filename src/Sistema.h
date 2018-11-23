@@ -22,7 +22,7 @@ private:
 	std::vector <std::string> plataformas;
 public:
 	Sistema() {};
-	~Sistema() {for (size_t i=0;i<titulos.size();i++) delete titulos.at(i);}
+	~Sistema();
 	void readFileUtilizadores(std::ifstream & file);
 	void readUtilizadores();
 	void saveUtilizadores();

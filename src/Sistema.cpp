@@ -12,6 +12,10 @@
 #include <iostream>
 #include <sstream>
 
+Sistema::~Sistema(){
+	for (auto titulo:titulos) 
+		delete titulo;
+}
 
 void Sistema::readFileUtilizadores(std::ifstream & f) {
 	std::string nome, mail, idadeStr, localidade, titulo;

@@ -83,7 +83,7 @@ unsigned int Titulo::getIdU() const{
  	return ( 1- getPrecoBase() / getPreco() )*100; /*divisao do preco atual com o de lan�amento */
  }
 
- void Titulo::setHistoricoPreco(std::vector<float>& precos) const{
+ void Titulo::setHistoricoPreco(const std::vector<float>& precos) {
 	 historico_preco=precos;
  }
 
@@ -217,18 +217,6 @@ void Online::setMinutosJogo(std::vector<unsigned int>& minutosjogo){
 void Online::setDatasJogo(std::vector<Data>& datasJogo){
 	datasEmQueJogou=datasJogo;
 }
-
- //========================================================================================
- //========================================================================================
- bool Online::adicionaUtilizador(const Utilizador &U) {
- 	if (find(this->utilizadores.begin(), this->utilizadores.end(), U)
- 			!= this->utilizadores.end())
- 		return false;
- 	else {
- 		this->utilizadores.push_back(U);
- 		return true;
- 	}
- }
 
  //========================================================================================
  //========================================================================================

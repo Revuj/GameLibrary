@@ -49,7 +49,7 @@ public:
 
 	std::vector<float> getHistorialPreco() const;
 
-	void setHistoricoPreco(std::vector<float>& precos) const;
+	void setHistoricoPreco(const std::vector<float>& precos);
 
 	float getDesconto() const;
 
@@ -112,7 +112,6 @@ std::ostream & operator <<(std::ostream & os, const Home & h); // a fazer
 
 class Online: public Titulo {
 private:
-	std::vector<Utilizador> utilizadores; /*vetor incialmente vazio*/
 	/*valor por servico ou preco por subscricao*/
 	bool subscricaoFixa; /*falso corresponde a subscricao variavel*/
 	float precoSubscricao; /*preco da subscricao escolhida*/
@@ -138,12 +137,6 @@ public:
 	void setMinutosJogo(std::vector<unsigned int>& minutosjogo);
 
 	void setDatasJogo(std::vector<Data>& datasJogo);
-	/*
-	 * adiciona um utilizador caso ele nao exista
-	 * @param U utilizador a adicionar
-	 * return true se foi possivel adiciona-lo
-	 */
-	bool adicionaUtilizador(const Utilizador &U);
 	/*
 	 * adiciona aos 3 vetores os habitos gaming de uma certa data, funcao a usar em adicionaEstatisticas
 	 * @param D1 data em que jogou
