@@ -31,42 +31,51 @@ public:
 
 	/**
 	 * @brief Permite obter o nome do utilizador 
+	 * @return Retorna o nome do utilizador
 	 */
 	std::string getNome() const;
 	
 	/**
 	 * @brief Permite obter o email do utilizador 
+	 * @return Retorna o email do utilizador
 	 */
 	std::string getEmail() const;
 	
 	/**
-	 * @brief Permite obter a idade do utilizador 
+	 * @brief Permite obter a idade do utilizador
+	 * @return Retorna a idade do utilizador 
 	 */
 	size_t getIdade() const;
 	
 	/**
 	 * @brief Permite obter a morada do utilizador
+	 * @return Retorna string com morada do utilizador
 	 */
 	std::string getMorada() const;
 
 	/**
 	 * @brief Permite obter o vetor de cartoes de credito do utilizador 
+	 * @return Retorna o vetor de cartoes de credito do utilizador
 	 */
 	std::vector<CartaoCredito> getCc() const;
 
 	/**
 	 * @brief Permite obter a biblioteca do utilizador 
+	 * @return Retorna a biblioteca do utilizador
 	 */
 	Biblioteca getBiblioteca() const;
 
 	/**
-	 * @brief Overload do operador de igualdade para a classe Utilizador 
+	 * @brief Overload do operador de igualdade para a classe Utilizador
+	 * @param U - Utilizador a ser comparado
+	 * @return Retorna verdadeiro se os utilizadores forem iguais, caso contrário retorna falso
 	 */
 	bool operator ==(const Utilizador & U);
 	
 	/**
 	 * @brief Adiciona um cartao de credito caso este ainda nao exista
 	 * @param C - cartao de credito
+	 * @return Retorna verdadeiro se adicionar o cartao de credito, caso contrário retorna falso
 	 */
 	bool adicionaCartaoCredito(const CartaoCredito & C);
 
@@ -79,15 +88,18 @@ public:
 
 	/**
 	 * @brief Calcula o preco total da biblioteca do utilizador
+	 * @return Retorna o preco total da biblioteca
 	 */
 	float getGastos() const;
 
 };
 
+/**
+* @brief Overload do operador de inserção para a classe Utilizador
+* @param os - Stream passada por referência para a qual será efetuada a escrita
+* @param u - Utilizador a ser enviado para a stream
+* @return Retorna referência de stream de output
+*/
 std::ostream & operator <<(std::ostream & os, const Utilizador & u);
-
-
-
-
 
 #endif /* UTILIZADOR_H_ */
