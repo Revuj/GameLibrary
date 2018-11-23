@@ -74,9 +74,13 @@ unsigned int Titulo::getIdU() const{
 	 return historico_preco.at(0);
  }
 
+ std::vector<float> Titulo::getHistorialPreco() const{
+	 return historico_preco;
+ }
+
  float Titulo::getDesconto() const
  {
- 	return ( 1- getPrecoBase() / getPreco() )*100; /*divisao do preco atual com o de lançamento */
+ 	return ( 1- getPrecoBase() / getPreco() )*100; /*divisao do preco atual com o de lanï¿½amento */
  }
 
  //========================================================================================
@@ -100,7 +104,7 @@ unsigned int Titulo::getIdU() const{
  {
  	os << "Titulo: " << this->nome << std::endl;
  	os << "Id: " << this->IdU << "/n";
- 	os << "Data de Lançamento: " << this->dataLancamento << std::endl;
+ 	os << "Data de Lanï¿½amento: " << this->dataLancamento << std::endl;
  	os << "Idade Minima: " << this->idadeMinima << "\n";
 
  	os << "Generos: ";
@@ -169,7 +173,7 @@ unsigned int Titulo::getIdU() const{
 	 }
 
 	 os << std::endl << "Preco por atualizacao: ";
-	 os << h.getPrecoAtualizacao() << "€";
+	 os << h.getPrecoAtualizacao() << "ï¿½";
 	 return os;
  }
 
@@ -287,4 +291,3 @@ unsigned int Titulo::getIdU() const{
 
 	 return os;
  }
-

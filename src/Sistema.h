@@ -8,7 +8,7 @@
 #ifndef SRC_SISTEMA_H_
 #define SRC_SISTEMA_H_
 #include "Utilizador.h"
-#include "sort.h"
+#include "Sort.h"
 #include <algorithm>
 #include<string>
 #include <fstream>
@@ -20,14 +20,12 @@ private:
 	std::vector <Utilizador> jogadores;
 	std::vector <Titulo *> titulos;
 	std::vector <std::string> plataformas;
-
-
-
 public:
 	Sistema() {};
-	~Sistema() {};
-	void readFile(std::ifstream & file);
+	~Sistema() {for (size_t i=0;i<titulos.size();i++) delete titulos.at(i);}
+	void readFileUtilizadores(std::ifstream & file);
 	void readUtilizadores();
+	void saveUtilizadores();
 	bool validName(const std::string nome);
 	bool validEmail(const std::string email);
 	bool addUtilizador();

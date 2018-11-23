@@ -9,7 +9,7 @@
 
 class Titulo {
 protected:
-	static unsigned int IdUnico; /*começa em 1 */
+	static unsigned int IdUnico; /*comeï¿½a em 1 */
 	unsigned int IdU;
 	std::string nome;
 	Data dataLancamento;
@@ -46,6 +46,8 @@ public:
 	float getPreco() const;
 
 	float getPrecoBase() const;
+
+	std::vector<float> getHistorialPreco() const;
 
 	float getDesconto() const;
 
@@ -113,7 +115,7 @@ private:
 	float precoSubscricao; /*preco da subscricao escolhida*/
 	/* vetores abaixo com indice correspondente*/
 	std::vector<Data> datasEmQueJogou; /*vetor incialmente vazio, datas podem repetir se para plataformas diferentes*/
-	std::vector<size_t> minutosJogadosPorData; /*vetor incialmente vazio*/
+	std::vector<unsigned int> minutosJogadosPorData; /*vetor incialmente vazio*/
 	static float horasTotais; /*no final arredonda para cima*/
 
 public:
@@ -124,7 +126,7 @@ public:
 	Online(std::string nome, int idadeMinima,
 				std::string plataforma,float preco,
 				std::vector<std::string> generos, std::string empresa,
-				Data dataLancamento, bool subs, size_t pSubscricao);
+				Data dataLancamento, bool subs, float pSubscricao);
 
 	/*
 	 * adiciona um utilizador caso ele nao exista
@@ -142,7 +144,7 @@ public:
 	void atualizaEstAux(const Data & D1, const size_t minutos);
 
 	/*
-	 * adicionar estaticas relativas aos habitos de gaming, atualiza os 3 ultimos vetores, cuja ordem é crucial e atualiza horas_totais
+	 * adicionar estaticas relativas aos habitos de gaming, atualiza os 3 ultimos vetores, cuja ordem ï¿½ crucial e atualiza horas_totais
 	 * @param D1 data em que jogou, podendo jogar mais que uma vez ao dia,na mesma plataforma ou nao
 	 * @param minutos tempo que jogou
 	 * @param plataforma plataforma onde jogou

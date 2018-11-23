@@ -8,7 +8,6 @@ class Data {
 
 private:
 	unsigned int dia, mes, ano;
-
 public:
 	/* construtor com valores por default
 	 * @param d dia
@@ -37,7 +36,7 @@ public:
 	 unsigned int getAno() const;
 
 	 /*
-	  * Calcula a diferença de duas datas, em dias
+	  * Calcula a diferenï¿½a de duas datas, em dias
 	  * @param data data com que se compara o objeto atual
 	  * return o valor calculado
 	  */
@@ -53,13 +52,6 @@ public:
 	 * return true se iguais senao falso
 	 */
 	 bool operator ==(const Data & D1) const;
-
-
-
-
-
-
-
 };
 
 std::ostream & operator <<(std::ostream & os, const Data & data);
