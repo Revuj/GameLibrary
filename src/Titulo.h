@@ -69,7 +69,7 @@ public:
 class Home: public Titulo {
 
 private:
-	const unsigned int precoAtualizacao = 1; /* preco por download,*/
+	static const unsigned int precoAtualizacao; /* preco por download,*/
 	std::vector<Data> dataDeAtualizacao; /* vetor com datas de atualizacoes, em que o seu tamanho da preco gasto em atualizacoes*/
 public:
 
@@ -116,7 +116,7 @@ private:
 	/* vetores abaixo com indice correspondente*/
 	std::vector<Data> datasEmQueJogou; /*vetor incialmente vazio, datas podem repetir se para plataformas diferentes*/
 	std::vector<unsigned int> minutosJogadosPorData; /*vetor incialmente vazio*/
-	static float horasTotais; /*no final arredonda para cima*/
+	float horasTotais; /*no final arredonda para cima*/
 
 public:
 	/*
@@ -128,13 +128,15 @@ public:
 				std::vector<std::string> generos, std::string empresa,
 				Data dataLancamento, bool subs, float pSubscricao);
 
+	std::vector<Data> getDatasJogo() const;
+
+	std::vector<unsigned int> getMinutosJogo() const;
 	/*
 	 * adiciona um utilizador caso ele nao exista
 	 * @param U utilizador a adicionar
 	 * return true se foi possivel adiciona-lo
 	 */
 	bool adicionaUtilizador(const Utilizador &U);
-
 	/*
 	 * adiciona aos 3 vetores os habitos gaming de uma certa data, funcao a usar em adicionaEstatisticas
 	 * @param D1 data em que jogou
@@ -142,7 +144,6 @@ public:
 	 * @param plataforma plataforma onde jogou
 	 */
 	void atualizaEstAux(const Data & D1, const size_t minutos);
-
 	/*
 	 * adicionar estaticas relativas aos habitos de gaming, atualiza os 3 ultimos vetores, cuja ordem � crucial e atualiza horas_totais
 	 * @param D1 data em que jogou, podendo jogar mais que uma vez ao dia,na mesma plataforma ou nao
@@ -153,7 +154,7 @@ public:
 	/*
 	 * devolve o numero de horas jogadas, arredondando para cima o membro estatico horas totais
 	 */
-	unsigned int getHorasTotais() const;
+	float getHorasTotais() const;
 
 	/*
 	 * devolve o booleano que indica se o jogo tem uma subscricao fixa ou variavel

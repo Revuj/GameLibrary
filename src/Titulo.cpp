@@ -8,7 +8,7 @@
 
  /*inicializacao de variaveis static*/
 unsigned int Titulo::IdUnico = 1;
-float Online::horasTotais = 0;
+const unsigned int Home::precoAtualizacao=1;
 
  /*
   * construtor titulo
@@ -190,12 +190,21 @@ unsigned int Titulo::getIdU() const{
  Online::Online(std::string nome, int idadeMinima,
 			std::string plataforma,float preco,
 			std::vector<std::string> generos, std::string empresa,
-			Data dataLancamento, bool subs, size_t pSubscricao) :
+			Data dataLancamento, bool subs, float pSubscricao) :
  		Titulo(nome, idadeMinima, plataforma,preco, generos, empresa,
  				dataLancamento) {
  	this->subscricaoFixa = subs;
  	this->precoSubscricao = pSubscricao;
+	horasTotais=0;
  }
+
+std::vector<Data> Online::getDatasJogo() const{
+	return datasEmQueJogou;
+}
+
+std::vector<unsigned int> Online::getMinutosJogo() const{
+	return minutosJogadosPorData;
+}
 
  //========================================================================================
  //========================================================================================
@@ -240,7 +249,7 @@ unsigned int Titulo::getIdU() const{
 
  //========================================================================================
  //========================================================================================
- unsigned int Online::getHorasTotais() const
+ float Online::getHorasTotais() const
  {
  	if(horasTotais == (unsigned int)horasTotais) /*numero de horas e um inteiro*/
 		return horasTotais;

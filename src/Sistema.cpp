@@ -141,19 +141,26 @@ void Sistema::saveUtilizadores() {
 					subscricao="fixa";
 				else subscricao="variavel";
 				float precoSubs=online->getPrecoSubscricao();
+				std::vector<Data> datasJogo=online->getDatasJogo();
+				std::vector<unsigned int> minutosJogados=online->getMinutosJogo();
+				float horastotais=online->getHorasTotais();
 				file<<tipoDeJogo<<" "<<nome<<" "<<idadeMinima<<" "<<plataforma<<" ( ";
-				for(size_t i = 0; i < preco.size(); i++)
+				for(const auto &i:preco)
 				{
-					file<<preco.at(i)<<" ";
+					file<<i<<" ";
 				}
 
-				file<<") "<<empresa<<" "<<data<<" "<<subscricao<<" "<<precoSubs<<" ";
-				for(size_t i = 0; i < genero.size(); i++)
+				file<<") "<<empresa<<" "<<data<<" "<<subscricao<<" "<<precoSubs<<std::endl;
+				for(const auto &i:genero)
 				{
-					file<<genero.at(i)<<" ";
+					file<<i<<" ";
 				}
 				file<<"*"<<std::endl;
-				
+				unsigned int sizeDataJogo=datasJogo.size();
+				for(unsigned int i=0;i<sizeDataJogo;i++){
+					file<<datasJogo[i]<<" "<<minutosJogados[i]<<std::endl;
+				}
+				file<<horastotais;
 			}
 			else {
 				Home* home=dynamic_cast<Home*>(titulos.at(i));
@@ -165,24 +172,28 @@ void Sistema::saveUtilizadores() {
 				std::vector<std::string> genero=online->getGeneros();
 				std::string empresa=online->getEmpresa();
 				Data data=online->getDataLancamento();
+				std::vector<Data> datasAtualizacao=home->getDatas();
 				file<<tipoDeJogo<<" "<<nome<<" "<<idadeMinima<<" "<<plataforma<<" ( ";
-				for(size_t i = 0; i < preco.size(); i++)
+				for(const auto &i:preco)
 				{
-					file<<preco.at(i)<<" ";
+					file<<i<<" ";
 				}
 
-				file<<") "<<empresa<<" "<<data<<" "<<subscricao<<" "<<precoSubs<<" ";
-				for(size_t i = 0; i < genero.size(); i++)
+				file<<") "<<empresa<<" "<<data<<std::endl;
+				for(const auto &i:genero)
 				{
-					file<<genero.at(i)<<" ";
+					file<<i<<" ";
 				}
 				file<<"*"<<std::endl;
+				for(const auto &i: datasAtualizacao){
+					file<<i<<" ";
+				}
+				file<<std::endl;
 			}
 		}
 		
 		file.close();
 	}
-
 }
 
 unsigned int Sistema::nrMedioTitulos() {
@@ -270,8 +281,7 @@ bool Sistema::addUtilizador() /*a incluir throws*/
 	std::cout << "Enter your address: ";
 	getline(std::cin, morada);
 
-	//jogadores.push_back(Utilizador(nome, email, stoul(idade, NULL, 0), morada));
-
+	jogadores.push_back(Utilizador(nome, email, stoul(idade, NULL, 0), morada));
 
 	return true;
 
