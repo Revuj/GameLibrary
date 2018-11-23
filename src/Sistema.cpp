@@ -78,7 +78,7 @@ void Sistema::readFile(std::ifstream & f) {
 			Home * t(nomeDoJogo, idadeMinima, plataforma, preco, generos, empresa, d);
 		}
 
-		B.adicionaTitulo(t);
+//		B.adicionaTitulo(t);
 	}
 
 	Utilizador U(nome, mail, idade, localidade, B);
