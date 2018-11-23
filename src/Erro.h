@@ -3,129 +3,127 @@
 
 #include <iostream>
 
-class PrecoInvalido {
+/**
+ * Classe Erro utilizada para tratamento de exceções no decorrer do programa.
+ */
+class Erro {
 private:
-	float preco;
+	const std::string info;		/**< Informação do erro que ocorreu aquando uma exceção */
 public:
-	PrecoInvalido(float preco) {
-		this->preco = preco;
-	}
+	/**
+	 * @brief Construtor da classe Erro
+	 * @param info - Descrição do tipo de erro que aconteceu aquando o lancamento de uma exceção
+	 */
+	Erro(const std::string &info) : info(info) {}
+
+	/**
+	 * @brief Permite obter a descrição do Erro
+	 * @return Retorna a descrição do Erro
+	 */
+	const std::string getInfo() const { return info; }
 };
 
-std::ostream & operator <<(std::ostream & os, const PrecoInvalido & preco);
-
 //========================================================================================
 //========================================================================================
 
-class PlataformaNaoExistente {
-private:
-	std::string plataforma;
+/**
+ * Classe utilizada para lançar exceções do tipo Data Inválida
+ */
+class DataInvalida : public Erro {
 public:
-	PlataformaNaoExistente(std::string plataforma) {
-		this->plataforma = plataforma;
-	}
+	/**
+	 * @brief Construtor da classe DataInvalida
+	 */
+	DataInvalida(const std::string &info) : Erro(info) { }
 };
 
-std::ostream & operator <<(std::ostream & os, const PlataformaNaoExistente & plataforma);
-
 //========================================================================================
 //========================================================================================
 
-class PlataformaJaExistente{
-	std::string plataforma;
+class PrecoInvalido:public Erro {
 public:
-	PlataformaJaExistente(std::string plataforma) {
-		this->plataforma = plataforma;
-	}
-	std::string getPlataforma() const {
-		return this->plataforma;}
+	/**
+	 * @brief Construtor da classe PrecoInvalido
+	 */
+	PrecoInvalido(const std::string &info) : Erro(info) { }
 };
 
-std::ostream & operator <<(std::ostream & os, const PlataformaJaExistente & plataforma);
 //========================================================================================
 //========================================================================================
 
-class SaldoInsuficiente {
-private:
-	unsigned int saldo;
+class PlataformaNaoExistente:public Erro {
 public:
-	SaldoInsuficiente(unsigned int saldo) {
-		this->saldo = saldo;
-	}
-	unsigned int getSaldo() const {
-		return this->saldo;
-	}
+	/**
+	 * @brief Construtor da classe PlataformaNaoExistente
+	 */
+	PlataformaNaoExistente(const std::string &info) : Erro(info) { }
 };
 
-std::ostream & operator <<(std::ostream & os, const SaldoInsuficiente & saldo);
-
 //========================================================================================
 //========================================================================================
 
-class CartaoInexistente {
-private:
-	std::string id;
+class PlataformaJaExistente : public Erro{
 public:
-	CartaoInexistente(const std::string id) {
-		this->id = id;
-	}
-	std::string getId() const {
-		return this->id;
-	}
+	/**
+	 * @brief Construtor da classe PlataformaJaExistente
+	 */
+	PlataformaJaExistente(const std::string &info) : Erro(info) { }
 };
 
-std::ostream & operator <<(std::ostream & os, const CartaoInexistente & cartao);
-
 //========================================================================================
 //========================================================================================
 
-class CartaoJaExistente {
-private:
-	std::string id;
+class SaldoInsuficiente : public Erro{
 public:
-	CartaoJaExistente(const std::string id) {
-		this->id = id;
-	}
-	std::string getId() const {
-		return this->id;
-	}
+	/**
+	 * @brief Construtor da classe SaldoInsuficiente
+	 */
+	SaldoInsuficiente(const std::string &info) : Erro(info) { }
 };
 
-std::ostream & operator <<(std::ostream & os, const CartaoJaExistente & cartao);
-
 //========================================================================================
 //========================================================================================
 
-class CartaoInvalido {
-private:
-	std::string id;
+class CartaoInexistente : public Erro {
 public:
-	CartaoInvalido(const std::string id) {
-		this->id = id;
-	}
-	std::string getId() const {
-		return this->id;
-	}
+	/**
+	 * @brief Construtor da classe CartaoInexistente
+	 */
+	CartaoInexistente(const std::string &info) : Erro(info) { }
 };
 
-std::ostream & operator <<(std::ostream & os, const CartaoInvalido & cartao);
-
 //========================================================================================
 //========================================================================================
 
-class TituloJaAdicionado {
-private:
-	std::string nome;
+class CartaoJaExistente : public Erro {
 public:
-	TituloJaAdicionado(std::string nome) {
-		this->nome = nome;
-	}
-	std::string getNome() const {
-		return this->nome;
-	}
+	/**
+	 * @brief Construtor da classe CartaoJaExistente
+	 */
+	CartaoJaExistente(const std::string &info) : Erro(info) { }
 };
 
-std::ostream & operator <<(std::ostream & os, const TituloJaAdicionado & titulo);
+//========================================================================================
+//========================================================================================
+
+class CartaoInvalido : public Erro {
+public:
+	/**
+	 * @brief Construtor da classe CartaoInvalido
+	 */
+	CartaoInvalido(const std::string &info) : Erro(info) { }
+};
+
+//========================================================================================
+//========================================================================================
+
+class TituloJaAdicionado : public Erro {
+public:
+	/**
+	 * @brief Construtor da classe TituloJaAdicionado
+	 */
+	TituloJaAdicionado(const std::string &info) : Erro(info) { }
+};
 
 //========================================================================================
 //=======================================================================================
@@ -133,17 +131,12 @@ std::ostream & operator <<(std::ostream & os, const TituloJaAdicionado & titulo)
 /**
  * Classe utilizada para lan�ar exce��es do tipo Input Inv�lido
  */
-class InputInvalido{
-private:
-	const std::string info;
+class InputInvalido : public Erro {
 public:
 	/**
 	 * @brief Construtor da classe InputInvalido
 	 */
-	InputInvalido(const std::string &info) :info(info) { }
-
-	const std::string getInfo() const { return info; } 
+	InputInvalido(const std::string &info) : Erro(info) { }
 };
-
 
 #endif /* ERRO_H_ */
