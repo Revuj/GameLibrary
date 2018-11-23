@@ -15,6 +15,7 @@ public:
 	 * @param a ano
 	 *  */
 	Data(unsigned int dia = 1, unsigned int mes = 1, unsigned int ano = 2000);
+	Data(std::string data);
 
 	/*
 	 * overload do operador <= que compara duas data

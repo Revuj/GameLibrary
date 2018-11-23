@@ -6,8 +6,101 @@
  */
 
 #include "Sistema.h"
+#include "Utilizador.h"
 #include <algorithm>
 #include <utility>
+#include <iostream>
+
+
+void Sistema::readFile(std::ifstream & f) {
+	std::string nome, mail, idade, localidade, titulo;
+	std::stringstream tituloSs;
+
+	getline(f, nome);
+	getline(f, mail);
+	getline(f, localidade);
+
+	Biblioteca B;
+	while (!f.eof())
+	{
+		std::string tipoDeJogo;
+		std::string nomeDoJogo;
+		std::string idadeMinimaStr;
+		std::string plataforma;
+		std::string precoStr;
+		std::string genero;
+		std::string empresa;
+		std::string dataStr;
+		std::string genero;
+		std::vector<std::string> generos;
+		std::string subscricao;
+		std::string precoSubsStr;
+
+		getline(f, titulo);
+
+		tituloSs << titulo;
+
+		tituloSs >> tipoDeJogo >> nomeDoJogo >> idadeMinimaStr >> plataforma >> precoStr >> genero >> empresa >> dataStr;
+
+		unsigned int idadeMinima = std::stoul(idadeMinimaStr);
+		float preco = std::stof(precoStr);
+
+		Data d(dataStr);
+
+		if (tipoDeJogo == "Online")
+		{
+
+			tituloSs >> tipoDeJogo >> nomeDoJogo >> idadeMinimaStr >> plataforma >> precoStr >>  empresa >> dataStr >> subscricao >> precoSubsStr;
+
+			while (genero != "*")
+			{
+				tituloSs >> genero;
+				generos.push_back(genero);
+			}
+
+			unsigned int precoSubs = std::stof(precoSubsStr);
+			if (subscricao == "fixa")
+				Online * t(nomeDoJogo, idadeMinima, plataforma, preco, generos, empresa, d, true, precoSubs);
+			else
+				Online * t(nomeDoJogo, idadeMinima, plataforma, preco, generos, empresa, f, true, precoSubs);
+
+		}
+		else
+		{
+			tituloSs >> tipoDeJogo >> nomeDoJogo >> idadeMinimaStr >> plataforma >> precoStr >>  empresa >> dataStr;
+
+			while (genero != "*")
+			{
+				tituloSs >> genero;
+				generos.push_back(genero);
+			}
+
+			Home * t(nomeDoJogo, idadeMinima, plataforma, preco, generos, empresa, d);
+		}
+
+		B.adicionaTitulo(t);
+	}
+
+	Utilizador U(nome, mail, idade, localidade, B);
+	this->jogadores.push_back(U);
+}
+
+void Sistema::readUtilizadores() {
+
+	for(int i=1;i<4;i++)
+	{
+	std::ifstream file;
+	file.open("Utilizador" + std::to_string(i) + ".txt");
+			 if (!file.fail())
+			 {
+				 readFile(file);
+				 file.close();
+			 }
+			 else
+			 printf ("Could not open the file\n");
+	}
+
+}
 
 unsigned int Sistema::nrMedioTitulos() {
 
@@ -67,16 +160,14 @@ bool Sistema::addUtilizador() /*a incluir throws*/
 		std::cout << "Creating a user...  \n";
 		std::cout << "Enter a user name: ";
 		getline(std::cin, nome);
-
-		std::cout << "Checking if is a valid name... \n";
+ 		std::cout << "Checking if is a valid name... \n";
 		if (validName(nome))
 			std::cout << "Valid name\n";
 		else{
 			std::cout << "Invalid Name, try again";
 			return false;
 		}
-
-		std::cout << "Enter your email \n";
+ 		std::cout << "Enter your email \n";
 		getline(std::cin, email);
 		if (email.find(EMAILCHAR) == std::string::npos){
 			std::cout << "Invalid email it must contain '@' \n";
@@ -88,19 +179,18 @@ bool Sistema::addUtilizador() /*a incluir throws*/
 			std::cout << "Already exists email\n";
 			return false;
 		}
-
-		std::cout << "Enter your age ";
+ 		std::cout << "Enter your age ";
 		getline(std::cin, idade);
-
-		std::cout << "Enter your address: ";
+ 		std::cout << "Enter your address: ";
 		getline(std::cin, morada);
-
-		jogadores.push_back(Utilizador(nome, email, stoi(idade), morada));
+ 		jogadores.push_back(Utilizador(nome, email, stoi(idade), morada));
 		//std::sort(jogadores.begin(),jogadores.end(),userNameAscend);
+ 		return true;
 
-		return true;
 
-}
+ }
+
+
 
 void displayRank(std::vector<std::string> a)
 {

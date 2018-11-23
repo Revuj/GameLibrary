@@ -10,6 +10,11 @@ Data::Data(unsigned int dia, unsigned int mes, unsigned int ano) {
 	this->ano = ano;
 }
 
+Data::Data(std::string data) {
+	this->dia = stoi(data.substr(0,2));
+	this->mes = stoi(data.substr(3,2));
+	this->ano = stoi(data.substr(6,4));
+}
 Data & Data::setDia(const unsigned int dia) {
 	this->dia = dia;
 	return *this;

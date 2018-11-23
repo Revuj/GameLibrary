@@ -11,6 +11,8 @@
 #include "sort.h"
 #include <algorithm>
 #include<string>
+#include <fstream>
+
 
 
 class Sistema {
@@ -24,7 +26,8 @@ class Sistema {
 	//public:
 	Sistema() {};
 	~Sistema() {};
-	//readUtilizadoresSistema();
+	void readFile(std::ifstream & file);
+	void readUtilizadores();
 	bool validName(const std::string nome);
 	bool validEmail(const std::string email);
 	bool addUtilizador();
@@ -42,6 +45,7 @@ class Sistema {
 
 
 };
+
 
 
 
