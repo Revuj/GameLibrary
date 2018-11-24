@@ -7,62 +7,136 @@
 #include "Data.h"
 #include "Utilizador.h"
 
+/**
+ * Titulo que foi declarado no Sistema
+ */
 class Titulo {
 protected:
-	static unsigned int IdUnico; /*come�a em 1 */
-	unsigned int IdU;
-	std::string nome;
-	Data dataLancamento;
-	unsigned int idadeMinima;
-	std::vector<std::string> generos;
-	std::string empresa; /*empresa que criou*/
-	std::string plataforma;
-	std::vector<float> historico_preco;
+	static unsigned int IdUnico; /**< Variavel static para defenir o ID do titulo */
+	unsigned int IdU;	/**< Identificador do titulo */
+	std::string nome;/**< Nome do titulo */
+	Data dataLancamento;/**< Data de lancamento do titulo */
+	unsigned int idadeMinima;/**< Idade minima necessaria para se jogar o titulo */
+	std::vector<std::string> generos;/**< Vetor com os genneros atribuidos ao titulo */
+	std::string empresa; /**< Empresa que criou o titulo */
+	std::string plataforma;/**< Plataforma do titulo */
+	std::vector<float> historico_preco;/**< Historico de precos */
 public:
-	/*construtores*/
+	/**
+	 * @brief Construtor da classe Titulo
+	 * @param nome - Nome atribuido ao titulo
+	 * @param idadeMinima - Idade minima atribuida ao titulo
+	 * @param plataforma - Plataforma atribuida ao titulo
+	 * @param preco - Preco base adicionado ao historico de precos
+	 * @param generos - Generos atribuidos ao titulo
+	 * @param empresa - Empresa atribuida ao titulo
+	 * @param dataLancamenot - Data atribuida ao titulo
+	 */
 	Titulo(std::string nome, int idadeMinima,
 			std::string plataforma,float preco,
 			std::vector<std::string> generos, std::string empresa,
 			Data dataLancamento);
 
-	/*destrutor*/
+	/**
+	 * @brief Destrutor da classe Titulo
+	 */
 	virtual ~Titulo();
 
-	/*funcoes para aceder aos membros dado*/
+	/**
+	 * @brief Permite obter o nome do titulo 
+	 * @return Retorna o nome do titulo
+	 */
 	std::string getNome() const;
 
+	/**
+	 * @brief Permite obter o identificador do titulo 
+	 * @return Retorna o identificador do titulo
+	 */
 	unsigned int getIdU() const;
 
+	/**
+	 * @brief Permite obter a data de lancamento do titulo 
+	 * @return Retorna a data de lancamento do titulo
+	 */
 	Data getDataLancamento() const;
 
+	/**
+	 * @brief Permite obter a idade minima do titulo 
+	 * @return Retorna a idade minima do titulo
+	 */
 	unsigned int getIdadeMinima() const;
 
+	/**
+	 * @brief Permite obter os generos do titulo 
+	 * @return Retorna um vetor com os generos do titulo
+	 */
 	std::vector<std::string> getGeneros() const;
 
+	/**
+	 * @brief Permite obter a empresa do titulo 
+	 * @return Retorna a empresa do titulo
+	 */
 	std::string getEmpresa() const;
 
+	/**
+	 * @brief Permite obter a plataforma do titulo 
+	 * @return Retorna a plataforma do titulo
+	 */
 	std::string getPlataforma() const;
 
+	/**
+	 * @brief Permite obter o preco atual do titulo 
+	 * @return Retorna o preco atual do titulo
+	 */
 	float getPreco() const;
 
+	/**
+	 * @brief Permite obter o preco base do titulo 
+	 * @return Retorna o preco base do titulo
+	 */
 	float getPrecoBase() const;
 
+	/**
+	 * @brief Permite obter o historico de precos do titulo 
+	 * @return Retorna um vetor com todos os precos do titulo
+	 */
 	std::vector<float> getHistorialPreco() const;
 
+	/**
+	 * @brief Permite atualizar o historico de precos do titulo 
+	 * @param precos - vetor com os precos para atribuir ao titulo
+	 */
 	void setHistoricoPreco(const std::vector<float>& precos);
-
+	
+	/**
+	 * @brief Permite obter o desconto do titulo em percentagem 
+	 * @return Retorna o desconto do titulo
+	 */
 	float getDesconto() const;
 
+	/**
+	 * @brief Método puramente virtual que permite obter o gastos num titulo. A implementação encontra-se nas classes derivadas: Home e Online
+	 * @return Retorna os gastos no titulo consoante o seu tipo 
+	 */
 	virtual float getGastos() const = 0;
 
+	/**
+	 * @brief Adiciona um novo preco ao historico de precos
+	 * @param preco - preco a adicionar ao historico de precos
+	 */
 	void setPreco(const float preco);
 
+	/**
+	 * @brief Permite obter o desconto do titulo em percentagem 
+	 * @return Retorna o desconto do titulo
+	 * @param os - Stream passada por referência para a qual será efetuada a escrita
+	 */
 	std::ostream & showTitulo(std::ostream & os) const;
 
-	/*
-	 * verifica se dois titulos sao iguais
-	 * @param T titulo com que se vai comparar o objeto atual
-	 * return true se forem iguais senao falso
+	/**
+	 * @brief Verifica se dois titulos sao iguais
+	 * @param T - titulo com que se vai comparar o objeto atual
+	 * @return true se forem iguais senao falso
 	 */
 	bool operator==(const Titulo * T);
 };
