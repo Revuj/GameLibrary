@@ -47,10 +47,8 @@ Biblioteca Utilizador::getBiblioteca() const {
 bool Utilizador::operator ==(const Utilizador & U) // a modificar, provavelmente
 
 		{
-	return (this->nome == U.nome) && (this->morada == U.morada)
-			&& (this->idade == U.idade) && (this->email == U.email)
-			&& (this->conjuntoTitulos == U.conjuntoTitulos)
-			&& (this->cc == U.cc);
+	return (this->nome == U.nome) && (this->email == U.email);
+
 }
 
 

@@ -139,4 +139,12 @@ public:
 	InputInvalido(const std::string &info) : Erro(info) { }
 };
 
+class UtilizadorInexistente : public Erro {
+public:
+	/**
+		 * @brief Construtor da classe InputInvalido
+		 */
+	UtilizadorInexistente(const std::string &info) : Erro(info) { }
+};
+
 #endif /* ERRO_H_ */

@@ -28,11 +28,11 @@ public:
 	bool validEmail(const std::string email);
 	bool addUtilizador();
 	bool ordenarUtilizadores(std::string tipo,bool ascend);
-	Utilizador pesquisaUtilizador(std::string nome);
+	Utilizador pesquisaUtilizador(std::string nome, std::string email);
 	unsigned int nrMedioTitulos();
 	float custoMedioBiblioteca();
 	void rankingDeGeneros();
-	void rankingDePlataformas();
+	void rankingDePlataformas()const;
 	void rankingDeIdades();
 	void rankingDeRentabilidades();
 	std::vector <Utilizador> getJogadores();

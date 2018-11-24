@@ -288,7 +288,7 @@ void Sistema::readUtilizadores() {
 
 void Sistema::saveUtilizadores() {
 
-	for(int i=0;i< jogadores.size();i++)
+	for(unsigned int i=0;i< jogadores.size();i++)
 	{
 		std::cout << "oi" << std::endl;
 		std::ofstream file("Utilizador" + std::to_string(i + 1) + ".txt");
@@ -507,9 +507,12 @@ bool Sistema::ordenarUtilizadores(std::string tipo,bool ascend){
 	return true;
 }
 
-Utilizador Sistema::pesquisaUtilizador(std::string nome){
-	auto it=jogadores.end();
-	//it=std::find(jogadores.begin(),jogadores.end())
+Utilizador Sistema::pesquisaUtilizador(std::string nome, std::string email){
+	for(const auto utilizador : this->jogadores) {
+		if (utilizador.getEmail()==email && utilizador.getNome()==nome)
+			return utilizador;
+	}
+	throw(UtilizadorInexistente("O utilizador de nome "+ nome+ " e email "+email+" nao existe"));
 }
 void displayRank(std::vector<std::string> a)
 {
@@ -552,7 +555,7 @@ void Sistema::rankingDeGeneros()
 	displayRank(generos);
 }
 
-void Sistema::rankingDePlataformas()
+void Sistema::rankingDePlataformas() const
 {
 	std::vector<std::string> plataformas;
 
