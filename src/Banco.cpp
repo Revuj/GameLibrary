@@ -48,9 +48,6 @@ void Banco::adicionaCartaoCredito(const CartaoCredito & C)
 	if (find(this->CartoesDeCredito.begin(),this->CartoesDeCredito.end(),C) != this->CartoesDeCredito.end())
 		throw CartaoJaExistente(C.getId());
 
-	if(!isDataValida(C))
-		throw CartaoInvalido(C.getId());
-
 	this->CartoesDeCredito.push_back(C);
 }
 

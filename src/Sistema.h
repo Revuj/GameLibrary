@@ -9,6 +9,7 @@
 #define SRC_SISTEMA_H_
 
 #include "Utilizador.h"
+#include "Banco.h"
 #include <string>
 #include <fstream>
 
@@ -18,6 +19,7 @@ private:
 	std::vector <Utilizador> jogadores;
 	std::vector <Titulo *> titulos;
 	std::vector <std::string> plataformas;
+	Banco banco;
 public:
 	Sistema() {};
 	~Sistema();

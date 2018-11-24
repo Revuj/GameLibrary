@@ -107,6 +107,7 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 		cartaoSs.clear();
 	}
 
+	banco.adicionaCartoesCredito(cartoes);
 	std::cout << "im here" << std::endl;
 
 	idade = std::stoul(idadeStr, NULL, 0);
