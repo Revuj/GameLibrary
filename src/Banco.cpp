@@ -1,6 +1,7 @@
 #include "Erro.h"
 #include <time.h>
 #include <algorithm>
+#include <iostream>
 #include "Banco.h"
 #include "iomanip"
 
@@ -80,7 +81,7 @@ void Banco::atualizaCartoesCredito()
 	}
 }
 
-#include <iostream>
+
 std::ostream & operator <<(std::ostream & os, const Banco & banco)
 {
 	unsigned int counter = 0;

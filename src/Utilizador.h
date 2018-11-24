@@ -92,6 +92,8 @@ public:
 	 */
 	float getGastos() const;
 
+	std::string PlataformaPreferida() const ;
+
 };
 
 /**

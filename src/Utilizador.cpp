@@ -81,7 +81,7 @@ void Utilizador::AdicionaTitulo(Titulo * T, CartaoCredito & c)
 				c.removeQuantia(T->getPreco()); //retira dinheiro do cartao
 			}
 			else
-				throw SaldoInsuficiente(cartao.getSaldo());
+				throw SaldoInsuficiente(std::to_string(cartao.getSaldo()));
 		}
 		else
 			throw CartaoInexistente(c.getId());

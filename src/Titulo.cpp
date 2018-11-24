@@ -2,6 +2,7 @@
 #include "Erro.h"
 #include <algorithm>
 #include <cmath>
+#include<string>
 #include <iostream>
 
 
@@ -91,7 +92,7 @@ unsigned int Titulo::getIdU() const{
  //========================================================================================
  void Titulo::setPreco(const float preco) {
  	if (preco <= 0)
- 		throw PrecoInvalido(preco);
+ 		throw PrecoInvalido(std::to_string(preco));
  	else historico_preco.push_back(preco);
  }
 
