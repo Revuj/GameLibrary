@@ -1,0 +1,10 @@
+Home Jogo1 9 Nintendo Abelha&Co 22/11/2018
+70 60 50
+estrategia guerra
+20/01/2019 02/03/2019
+Online Jogo2 4 PlayStation Rafa&Co 15/08/12 fixa 20
+60 40
+luta acao
+Online Jogo3 18 Xbox Vitor&Co 31/10/2016 variavel 2
+50
+aventura rpg
