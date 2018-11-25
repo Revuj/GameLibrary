@@ -140,29 +140,29 @@ void adicionarUtilizador(Sistema &sistema) {
 
 std::string lerData(std::string data) {
 
-	// Verificar se está no formato válido (DD/MM/AAAA)
+	// Verificar se estÃ¡ no formato vÃ¡lido (DD/MM/AAAA)
 	if (data.size() != 10)			// Verificar se a data tem o tamanho correto
 		throw(DataInvalida("Data Invalida!"));
 	else if ((data.at(2) != '/') || (data.at(5) != '/'))// Verificar se dia, mes e ano estao separados por um traco
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(0) < '0') || (data.at(0) > '9'))// Verificar se Dx é um digito
+	else if ((data.at(0) < '0') || (data.at(0) > '9'))// Verificar se Dx Ã© um digito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(1) < '0') || (data.at(1) > '9'))// Verificar se xD é um digito
+	else if ((data.at(1) < '0') || (data.at(1) > '9'))// Verificar se xD Ã© um digito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(3) < '0') || (data.at(3) > '9'))// Verificar se Mx é um digito
+	else if ((data.at(3) < '0') || (data.at(3) > '9'))// Verificar se Mx Ã© um digito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(4) < '0') || (data.at(4) > '9'))// Verificar se xM é um digito
+	else if ((data.at(4) < '0') || (data.at(4) > '9'))// Verificar se xM Ã© um digito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(6) < '0') || (data.at(6) > '9'))// Verificar se Axxx é um dígito
+	else if ((data.at(6) < '0') || (data.at(6) > '9'))// Verificar se Axxx Ã© um dÃ­gito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(7) < '0') || (data.at(7) > '9'))// Verificar se xAxx é um dígito
+	else if ((data.at(7) < '0') || (data.at(7) > '9'))// Verificar se xAxx Ã© um dÃ­gito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(8) < '0') || (data.at(8) > '9'))// Verificar se xxAx é um dígito
+	else if ((data.at(8) < '0') || (data.at(8) > '9'))// Verificar se xxAx Ã© um dÃ­gito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(9) < '0') || (data.at(9) > '9'))// Verificar se xxxA é um dígito
+	else if ((data.at(9) < '0') || (data.at(9) > '9'))// Verificar se xxxA Ã© um dÃ­gito
 		throw(DataInvalida("Data Invalida!"));
 
-	// Verificar se a data segue os padrões normais de datas
+	// Verificar se a data segue os padrÃµes normais de datas
 	int dia = stoi(data.substr(0, 2));
 	int mes = stoi(data.substr(3, 2));
 	int ano = stoi(data.substr(6, 4));
@@ -192,12 +192,12 @@ std::string lerData(std::string data) {
 	case 2:															// Fevereiro
 		if ((dia < 0) || (dia > 29))
 			throw(DataInvalida("Data Incorreta!"));
-		else if ((dia == 29) && (ano % 4 != 0))	// Se o dia for 29 de Fevereiro e o ano não for bissexto -> erro
+		else if ((dia == 29) && (ano % 4 != 0))	// Se o dia for 29 de Fevereiro e o ano nÃ£o for bissexto -> erro
 			throw(DataInvalida("Data Incorreta!"));
 		break;
 	}
 
-	// Data válidade
+	// Data vÃ¡lidade
 	return data;
 }
 
@@ -242,7 +242,7 @@ void adicionarJogo(Sistema &sistema) {
 		std::cin >> preco;
 	}
 
-	// Limpar a stream mesmo que não tenha ocorrido qualquer erro, para garantir que está sempre limpa e vazia
+	// Limpar a stream mesmo que nÃ£o tenha ocorrido qualquer erro, para garantir que estÃ¡ sempre limpa e vazia
 	std::cin.ignore(1000, '\n');
 
 	int idadeMinima;
@@ -360,7 +360,7 @@ void ordenaJogosUtilizador(Sistema &sistema, Utilizador& u) {
 	int opt;
 	std::vector<Titulo *> titulos;
 
-	// Perguntar ao utilizador o que quer fazer atï¿½ este indicar que deseja sair
+	// Perguntar ao utilizador o que quer fazer atÃ¯Â¿Â½ este indicar que deseja sair
 	while (true) {
 		printDisplayTitulosMenu();
 
@@ -399,7 +399,7 @@ void ordenaJogosUtilizador(Sistema &sistema, Utilizador& u) {
 void displayTitulos(Sistema &sistema) {
 	int opt;
 
-	// Perguntar ao utilizador o que quer fazer atï¿½ este indicar que deseja sair
+	// Perguntar ao utilizador o que quer fazer atÃ¯Â¿Â½ este indicar que deseja sair
 	while (true) {
 		printDisplayTitulosMenu();
 
@@ -733,7 +733,7 @@ int main() {
 
 	int opt;
 
-	// Perguntar ao utilizador o que quer fazer atï¿½ este indicar que deseja sair
+	// Perguntar ao utilizador o que quer fazer atÃ¯Â¿Â½ este indicar que deseja sair
 	while (true) {
 		printMainMenu();
 
@@ -768,4 +768,34 @@ int main() {
 	sistema.saveTitulos();
 
 	return 0;
+}
+
+#include <iomanip>
+std::string Sistema:: displayTitulosPorTipo() const
+{
+	std::vector<Titulo*> onlines;
+	std::vector <Titulo*> homes;
+
+	for(const auto & titulo: this->titulos) {
+		if (dynamic_cast<Online*>(titulo) != NULL)
+			homes.push_back(titulo);
+		else
+			homes.push_back(titulo);
+	}
+
+	unsigned int numero = std::max(onlines.size(),homes.size());
+	std::stringstream resultado;
+	resultado<< "Titulos: "<<std::endl;
+	resultado <<"Online"<<std::setw(10)<<"Home"<<std::endl;
+
+	for(unsigned int i=0; i< numero ;i++)
+	{
+		if(i < onlines.size())
+			resultado << onlines[i]->getNome();
+		resultado << std::setw(10);
+		if(i < homes.size())
+			resultado << homes[i]->getNome();
+		resultado << std::endl;
+	}
+	return resultado.str();
 }
