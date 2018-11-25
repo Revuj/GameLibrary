@@ -30,7 +30,7 @@ public:
 	 * @param preco - Preco base adicionado ao historico de precos
 	 * @param generos - Generos atribuidos ao titulo
 	 * @param empresa - Empresa atribuida ao titulo
-	 * @param dataLancamenot - Data atribuida ao titulo
+	 * @param dataLancamento - Data atribuida ao titulo
 	 */
 	Titulo(std::string nome, unsigned idadeMinima,
 			std::string plataforma,float preco,
@@ -141,104 +141,149 @@ public:
 	bool operator==(const Titulo * T);
 };
 
+
+/**
+ * Home derivada de Titulo
+ */
 class Home: public Titulo {
 
 private:
-	static const unsigned int precoAtualizacao; /* preco por download,*/
-	std::vector<Data> dataDeAtualizacao; /* vetor com datas de atualizacoes, em que o seu tamanho da preco gasto em atualizacoes*/
+	static const unsigned int precoAtualizacao; /**< preco por download*/
+	std::vector<Data> dataDeAtualizacao; /**< vetor com datas de atualizacoes */
 public:
 
-	/*
-	 * construtor da classe Home que atua como construtor default para qualquer(quaisquer) parametro(s)
-	 * vetor de datas vazio incialmente
+	/**
+	 * @brief construtor da classe Home
+	 * @param nome - Nome atribuido ao titulo
+	 * @param idadeMinima - Idade minima atribuida ao titulo
+	 * @param plataforma - Plataforma atribuida ao titulo
+	 * @param preco - Preco base adicionado ao historico de precos
+	 * @param generos - Generos atribuidos ao titulo
+	 * @param empresa - Empresa atribuida ao titulo
+	 * @param dataLancamento - Data atribuida ao titulo
 	 */
-
 	Home(std::string nome, int idadeMinima,
 				std::string plataforma,float preco,
 				std::vector<std::string> generos, std::string empresa,
 				Data dataLancamento);
 
-	/*
-	 * funcao adiciona uma data ao vetor data_de_atualizacao, assumindo que ha no maximo uma por dia
-	 * @param D data em que houve uma atualizacao
-	 * return verdade ou falso se for possivel adicionar ao vetor a data
+	/**
+	 * @brief Adiciona uma data ao vetor data_de_atualizacao
+	 * @param D - data em que houve uma atualizacao
+	 * @return Retorna verdade ou falso se for possivel adicionar ao vetor a data
 	 */
 	bool adicionaAtualizacao(const Data & D);
 
-	/*
-	 * devolve o membro dato precoatualizacao
+	/**
+	 * @brief Devolve o preco por atualizacao
+	 * @return Retorna o membro dato precoatualizacao
 	 */
 	unsigned int getPrecoAtualizacao() const;
 
-	/*
-	 * devolve membro dado vetor de datas
+	/**
+	 * @brief Devolve membro dado vetor de datas
+	 * @return Retorna vetor de datas de atualizacao
 	 */
 	std::vector<Data> getDatas() const;
 
-	/*
-	 * show datas de atualizacao
+	/**
+	 * @brief Devolve os gastos associados as atualizacoes
+	 * @return Retorna os gastos
 	 */
 	float getGastos() const;
 };
 
 std::ostream & operator <<(std::ostream & os, const Home & h); // a fazer
 
+/**
+ * Online derivada de Titulo
+ */
 class Online: public Titulo {
 private:
-	/*valor por servico ou preco por subscricao*/
-	bool subscricaoFixa; /*falso corresponde a subscricao variavel*/
-	float precoSubscricao; /*preco da subscricao escolhida*/
-	/* vetores abaixo com indice correspondente*/
-	std::vector<Data> datasEmQueJogou; /*vetor incialmente vazio, datas podem repetir se para plataformas diferentes*/
-	std::vector<unsigned int> minutosJogadosPorData; /*vetor incialmente vazio*/
-	float horasTotais; /*no final arredonda para cima*/
+	bool subscricaoFixa; /**<falso corresponde a subscricao variavel*/
+	float precoSubscricao; /**<preco da subscricao escolhida*/
+	std::vector<Data> datasEmQueJogou; /**<vetor das datas em que o utilizador jogou*/
+	std::vector<unsigned int> minutosJogadosPorData; /**<vetor com minutos jogados num dia*/
+	float horasTotais; /**<horas totais jogadas*/
 
 public:
-	/*
-	 * construtor da classe Online que atua como construtor default para qualquer(quaisquer) parametro(s)
-	 * vetores incialmente vazios
+	/**
+	 * @brief construtor da classe Online
+	 * @param nome - Nome atribuido ao titulo
+	 * @param idadeMinima - Idade minima atribuida ao titulo
+	 * @param plataforma - Plataforma atribuida ao titulo
+	 * @param preco - Preco base adicionado ao historico de precos
+	 * @param generos - Generos atribuidos ao titulo
+	 * @param empresa - Empresa atribuida ao titulo
+	 * @param dataLancamento - Data atribuida ao titulo
+	 * @param subs - Subscricao fixa ou variavel
+	 * @param - Preco da subscricao escolhida
 	 */
 	Online(std::string nome, int idadeMinima,
 				std::string plataforma,float preco,
 				std::vector<std::string> generos, std::string empresa,
 				Data dataLancamento, bool subs, float pSubscricao);
 
+	/**
+	 * @brief Devolve as datas jogadas
+	 * @return Vetor com datas jogadas
+	 */
 	std::vector<Data> getDatasJogo() const;
 
+	/**
+	 * @brief Devolve os minutos jogados por data
+	 * @return Vetor com minutos jogados por data
+	 */
 	std::vector<unsigned int> getMinutosJogo() const;
 
+	/**
+	 * @brief Altera os minutos jogados por data
+	 * @param minutosjogo - Vetor com minutos jogados por data
+	 */
 	void setMinutosJogo(std::vector<unsigned int>& minutosjogo);
 
+	/**
+	 * @brief Altera as datas jogadas
+	 * @param datasJogo - Vetor com datas jogadas
+	 */
 	void setDatasJogo(std::vector<Data>& datasJogo);
-	/*
-	 * adiciona aos 3 vetores os habitos gaming de uma certa data, funcao a usar em adicionaEstatisticas
-	 * @param D1 data em que jogou
-	 * @param minutos tempo que jogou
-	 * @param plataforma plataforma onde jogou
+	
+	/**
+	 * @brief Adiciona aos 3 vetores os habitos gaming de uma certa data, funcao a usar em adicionaEstatisticas
+	 * @param D1 - data em que jogou
+	 * @param minutos - tempo que jogou
 	 */
 	void atualizaEstAux(const Data & D1, const size_t minutos);
-	/*
-	 * adicionar estaticas relativas aos habitos de gaming, atualiza os 3 ultimos vetores, cuja ordem � crucial e atualiza horas_totais
-	 * @param D1 data em que jogou, podendo jogar mais que uma vez ao dia,na mesma plataforma ou nao
-	 * @param minutos tempo que jogou
-	 * @param plataforma plataforma onde jogou
+	
+	/**
+	 * @brief Adicionar estaticas relativas aos habitos de gaming, atualiza os 3 ultimos vetores, cuja ordem � crucial e atualiza horas_totais
+	 * @param D1 - data em que jogou, podendo jogar mais que uma vez ao dia,na mesma plataforma ou nao
+	 * @param minutos - tempo que jogou
 	 */
 	void adicionaEstatisticas(const Data & D1, const size_t minutos);
-	/*
-	 * devolve o numero de horas jogadas, arredondando para cima o membro estatico horas totais
+	
+	/**
+	 * @brief Devolve o numero de horas jogadas, arredondando para cima o membro estatico horas totais
+	 * @return Retorna o numero de horas totais
 	 */
 	float getHorasTotais() const;
 
-	/*
-	 * devolve o booleano que indica se o jogo tem uma subscricao fixa ou variavel
+	/**
+	 * @brief Devolve o booleano que indica se o jogo tem uma subscricao fixa ou variavel
+	 * @return Retorna boolenao consoante o tipo de subscricao
 	 */
 	bool getSubscricao() const;
 
-	/*
-	 * devolve o preco por subscricao
+	/**
+	 * @brief Devolve o preco por subscricao
+	 * @return Retorna o preco de subscricao
 	 */
 	float getPrecoSubscricao() const;
 
+	/**
+	 * @brief Devolve os gastos associadas a subscricao
+	 * @return Retorna os gastos
+	 */
 	float getGastos() const;
 };
 

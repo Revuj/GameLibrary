@@ -91,7 +91,7 @@ unsigned int Titulo::getIdU() const{
  //========================================================================================
  //========================================================================================
  void Titulo::setPreco(const float preco) {
- 	if (preco <= 0)
+ 	if (preco <= 0 || preco>=historico_preco[historico_preco.size()-1])
  		throw PrecoInvalido(std::to_string(preco));
  	else historico_preco.push_back(preco);
  }

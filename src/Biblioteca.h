@@ -6,26 +6,29 @@
 #include "Erro.h"
 class Titulo;
 
+/**
+ * Bibloteca que foi declarado no Utilizador
+ */
 class Biblioteca {
 
-	std::vector<Titulo*> titulos;
+	std::vector<Titulo*> titulos;/**< Vetor de titulos da biblioteca */
 public:
-	/*
-	 * adicona um titulo ao map titulos. caso já exista adiciona as plataformas novas
+	/**
+	 * @brief Adicona um titulo a biblioteca
+	 * @param T - Titulo a adicionar 
 	 */
 	void adicionaTitulo(Titulo * T);
 
-	/*
-	 * retorna o conjunto de titulos
+	/**
+	 * @brief Devolve o vetor de titulos
+	 * @return Retorna vetor de titulos da biblioteca
 	 */
 	std::vector<Titulo*> getTitulos() const;
 
-	/*
-	 * compara duas bibliotecas
-	 * @param B biblioteca com que se compara o objeto atual
-	 * return true se a mesma senao falso
+	/**
+	 * @brief Overload do operador de igualdade
+	 * @param B - Biblioteca a ser comparada
 	 */
-
 	bool operator==(const Biblioteca B);
 };
 

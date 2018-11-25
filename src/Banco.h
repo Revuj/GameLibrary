@@ -22,7 +22,6 @@ public:
 	/**
 	 * @brief Destrutor da class Banco
 	 */
-
 	~Banco();
 
 	/**
@@ -31,8 +30,8 @@ public:
 	void setDataAtual();
 
 	/**
-	 * @brief devolve a data atual
-	 *
+	 * @brief Devolve a data atual
+	 * @return Retorna a data atual
 	 */
 	Data getDataAtual() const;
 
@@ -78,7 +77,5 @@ public:
 };
 
 std::ostream & operator <<(std::ostream & os, const Banco & banco);
-
-
 
 #endif /* SRC_BANCO_H_ */
