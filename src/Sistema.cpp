@@ -1,10 +1,3 @@
-/*
- * Sistema.cpp
- *
- *  Created on: 21/11/2018
- *      Author: revuj
- */
-
 #include "Sistema.h"
 #include <utility>
 #include <iostream>
@@ -262,7 +255,7 @@ void Sistema::readUtilizadores() {
 
 }
 
-void Sistema::saveUtilizadores() {
+void Sistema::saveUtilizadores() const{
 
 	for (unsigned int i = 0; i < jogadores.size(); i++) {
 		std::ofstream file("Utilizador" + std::to_string(i + 1) + ".txt");
@@ -506,7 +499,7 @@ void Sistema::readTitulos() {
 		return;
 }
 
-void Sistema::saveTitulos() {
+void Sistema::saveTitulos() const{
 
 	std::ofstream file("Titulos.txt");
 
@@ -593,7 +586,7 @@ void Sistema::saveTitulos() {
 	}
 }
 
-unsigned int Sistema::nrMedioTitulos() {
+unsigned int Sistema::nrMedioTitulos() const{
 
 	unsigned int nrTotalTitulos = 0;
 
@@ -608,7 +601,7 @@ unsigned int Sistema::nrMedioTitulos() {
 	return nrTotalTitulos;
 }
 
-float Sistema::custoMedioBiblioteca() {
+float Sistema::custoMedioBiblioteca() const{
 
 	float custoTotal = 0;
 
@@ -621,7 +614,7 @@ float Sistema::custoMedioBiblioteca() {
 }
 
 
-bool Sistema::validEmail(const std::string email) {
+bool Sistema::validEmail(const std::string email) const{
         for (const auto & utilizador : this->jogadores) {
             if (utilizador.getEmail() == email)
                 return false;
@@ -631,14 +624,14 @@ bool Sistema::validEmail(const std::string email) {
 
  }
 
-void Sistema::isValidEmail(std::string & email,bool checkafter) {
+void Sistema::isValidEmail(std::string & email,bool checkafter) const{
     const int x = 60; //random size enough to hold contents of array plus one for null terminator
     char input[x]; //array to hold input
     int sizeOf; //holds length of input array
     char* ptr = nullptr; //pointer
     char* ptr2 = nullptr; //pointer
 
-    std::cout << "Escreve o teu endereço de email \n";
+    std::cout << "Escreve o teu endereï¿½o de email \n";
     std::cin.getline(input, x);
     email = input;
     sizeOf = strlen(input);
@@ -683,14 +676,14 @@ void Sistema::isValidEmail(std::string & email,bool checkafter) {
 
 }
 
-void Sistema::saldoUtilizador(const Utilizador & u) {
+void Sistema::saldoUtilizador(const Utilizador & u) const{
 	float saldo = 0;
 		for (const auto & cartao : u.getCc())
 			saldo += cartao.getSaldo();
 	std::cout << "Saldo: " << saldo << " euros" << std::endl;
 }
 
-void Sistema::tempoJogado(const Utilizador & u) {
+void Sistema::tempoJogado(const Utilizador & u) const{
 	unsigned int horas;
 	for (const auto & titulo : u.getBiblioteca().getTitulos())
 	{
@@ -789,29 +782,17 @@ void Sistema::ordenaTitulos(std::string tipo, bool ascend){
 	displayTitulos();
 }
 
-Utilizador Sistema::pesquisaUtilizador(std::string nome, std::string email) {
-	for(const auto utilizador : this->jogadores) {
-		if (utilizador.getEmail()==email && utilizador.getNome()==nome)
-			return utilizador;
+Utilizador * Sistema::pesquisaUtilizador(std::string nome, std::string email) {
+	for(auto utilizador : this->jogadores) {
+		if (utilizador.getEmail()==email && utilizador.getNome()==nome){
+			Utilizador *u= &utilizador;
+			return u;
+		}
 	}
 	throw(UtilizadorInexistente("O utilizador de nome "+ nome+ " e email "+email+" nao existe"));
 }
 
-//void Sistema::pesquisaJogo(std::string nome,std::string plataforma,std::string empresa,float id){
-//	if(id!=0){
-//		for(const auto &i:titulos)
-//			if(i->getIdU()==id)
-//				std::cout<< i->getNome() <<std::endl;
-//	}
-//
-//	else {
-//		for(const auto &i:titulos)
-//			if(i->getNome()==nome && i->getPlataforma()==plataforma && i->getEmpresa()==empresa)
-//				std::cout<< i->getNome() <<std::endl;
-//	}
-//}
-
-Titulo * Sistema::pesquisaJogo(std::string nome,std::string plataforma) {
+Titulo *Sistema::pesquisaJogo(std::string nome,std::string plataforma) const{
 	for(const auto titulo : this->titulos) {
 		if (titulo->getNome() == nome && titulo->getPlataforma() == plataforma)
 			return titulo;
@@ -820,7 +801,7 @@ Titulo * Sistema::pesquisaJogo(std::string nome,std::string plataforma) {
 }
 
 
-std::vector<Titulo*> Sistema::ordenaTitulosUtilizador(const Utilizador & u, std::string criterio,bool ascend) {
+std::vector<Titulo*> Sistema::ordenaTitulosUtilizador(const Utilizador & u, std::string criterio,bool ascend) const{
 	std::vector<Titulo*> titulos = u.getBiblioteca().getTitulos();
 
 	if (criterio == "id")
@@ -851,31 +832,29 @@ std::vector<Titulo*> Sistema::ordenaTitulosUtilizador(const Utilizador & u, std:
 		else
 			sort(titulos.begin(), titulos.end(), gameDeveloperDescend);
 	}
-	//else throw
-
 
 	return titulos;
 }
+
 void displayRank(std::vector<std::string> a) {
 
-	sort(a.begin(), a.end());
-	std::vector<std::string> aux = a;
-	unique(aux.begin(), aux.end());
+	std::vector<std::string> aux=a;
+	sort(aux.begin(), aux.end());
+	aux.erase(std::unique(aux.begin(), aux.end()), aux.end());
+
 	std::vector<int> co;
 	for (size_t i = 0; i < aux.size(); i++) {
 		co.push_back(count(a.begin(), a.end(), aux[i]));
 	}
-
 	for (size_t i = 0; i < aux.size(); i++) {
-		std::cout << i + 1 << ": "
-				<< aux.at(
-						distance(co.begin(), max_element(co.begin(), co.end()))
-								- 1) << std::endl;
-		co.erase(max_element(co.begin(), co.end()));
+		int maxElementIndex = std::max_element(co.begin(),co.end()) - co.begin();
+		std::cout<<(i+1)<<": "<<aux[maxElementIndex]<<" Ocorrencias: "<< co[maxElementIndex]<<std::endl;
+		co[maxElementIndex]=0;
 	}
+	std::cout<<std::endl<<std::endl;
 }
 
-void Sistema::rankingDeGeneros() {
+void Sistema::rankingDeGeneros() const{
 	std::vector<std::string> generos;
 
 	for (auto const & utilizador : this->jogadores) {
@@ -893,17 +872,21 @@ void Sistema::rankingDeGeneros() {
 	displayRank(generos);
 }
 
-void Sistema::rankingDePlataformas() {
+void Sistema::rankingDePlataformas() const{
 	std::vector<std::string> plataformas;
 
 	for (auto const & utilizador : this->jogadores) {
-		plataformas.push_back(utilizador.PlataformaPreferida());
+		std::vector<Titulo*> titulos = utilizador.getBiblioteca().getTitulos();
+
+		for (auto const & titulo : titulos) {
+			plataformas.push_back(titulo->getPlataforma());
+		}
 	}
 
 	displayRank(plataformas);
 }
 
-void Sistema::rankingDeIdades() {
+void Sistema::rankingDeIdades() const{
 
 	std::vector<std::string> faixasEtarias;
 
@@ -926,7 +909,7 @@ void Sistema::rankingDeIdades() {
 }
 
 int findPair(const std::vector<std::pair<std::string, float>> & rentabilidade,
-		std::string nome) {
+		std::string nome){
 	unsigned int comprimento = rentabilidade.size();
 	for (unsigned int par = 0; par < comprimento; par++) {
 		if (rentabilidade[par].first == nome) {
@@ -936,7 +919,7 @@ int findPair(const std::vector<std::pair<std::string, float>> & rentabilidade,
 	return -1;
 }
 
-void Sistema::rankingDeRentabilidades() {
+void Sistema::rankingDeRentabilidades() const{
 
 	std::vector<std::pair<std::string, float>> rentabilidade;
 	int pos;
@@ -962,33 +945,56 @@ void Sistema::rankingDeRentabilidades() {
 	}
 }
 
-std::vector<Utilizador> Sistema::getJogadores() {
+std::vector<Utilizador> Sistema::getJogadores() const{
 	return this->jogadores;
 }
 
-void Sistema::displayUtilizadores() {
+void Sistema::displayUtilizadores() const{
 	for (const auto & utilizador : this->jogadores)
 		std::cout << utilizador.getNome() << ", " << utilizador.getIdade() << ", numero de jogo: " << utilizador.getBiblioteca().getTitulos().size() << std::endl;
 }
 
-std::vector<Titulo *> Sistema::getTitulos() {
+std::vector<Titulo *> Sistema::getTitulos() const{
 	return this->titulos;
 }
 
-void Sistema::displayTitulos() {
-	for (const auto & titulo : this->titulos)
-		std::cout << titulo->getNome() << ", " << titulo->getEmpresa() << ", " << titulo->getPlataforma() << ", " << titulo->getPreco() << " euros, (desconto: " << titulo->getDesconto() << "% ), " << titulo->getDataLancamento().getAno() << ", idade minima: " << titulo->getIdadeMinima() << std::endl;
+void Sistema::displayTitulos() const
+{
+	std::vector<Titulo*> onlines;
+	std::vector<Titulo*> homes;
+
+	for(const auto & titulo: this->titulos) {
+		if (dynamic_cast<Online*>(titulo) != NULL)
+			homes.push_back(titulo);
+		else
+			onlines.push_back(titulo);
+	}
+
+	unsigned int numero = std::max(onlines.size(),homes.size());
+	std::cout<< "Titulos: "<<std::endl;
+	std::cout <<"Online"<<std::setw(10)<<"Home"<<std::endl;
+
+	for(unsigned int i=0; i< numero ;i++)
+	{
+		if(i < onlines.size())
+			std::cout <<std::setw(0 )<< onlines[i]->getNome();
+		std::cout << std::setw(10);
+		if(i < homes.size())
+			std::cout << homes[i]->getNome();
+		std::cout << std::endl;
+	}
+
 }
 
-std::vector<std::string> Sistema::getPlataformas() {
+std::vector<std::string> Sistema::getPlataformas() const{
 	return this->plataformas;
 }
 
-Banco Sistema::getBanco() {
+Banco Sistema::getBanco() const{
 	return this->banco;
 }
 
-void Sistema::dataValida(CartaoCredito & D) {
+void Sistema::dataValida(CartaoCredito & D) const{
 	if (!this->banco.isDataValida(D))
 	{
 		std::cout << "O cartao de "+D.getId()+ " tem a data invalida"<<std::endl;

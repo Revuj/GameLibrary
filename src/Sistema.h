@@ -12,6 +12,7 @@
 #include "Banco.h"
 #include <string>
 #include <fstream>
+#include <iomanip>
 
 
 class Sistema {
@@ -25,35 +26,35 @@ public:
 	~Sistema();
 	void readFileUtilizadores(std::ifstream & file);
 	void readUtilizadores();
-	void saveUtilizadores();
+	void saveUtilizadores() const;
 	void readFileTitulos(std:: ifstream & file);
 	void readTitulos();
-	void saveTitulos();
-	bool validEmail(const std::string email);
-	void isValidEmail(std::string & email,bool checkafter=false);
+	void saveTitulos() const;
+	bool validEmail(const std::string email) const;
+	void isValidEmail(std::string & email,bool checkafter=false) const;
 	void utilizadorJogar(Utilizador & u, Titulo * t, unsigned int minutos);
-	void saldoUtilizador(const Utilizador & u);
-	void tempoJogado(const Utilizador & u);
+	void saldoUtilizador(const Utilizador & u) const;
+	void tempoJogado(const Utilizador & u) const;
 	void adicionaUtilizador(const Utilizador & u);
 	void addTitulo(Titulo *titulo);
 	void ordenaUtilizadores(std::string tipo,bool ascend);
 	void ordenaTitulos(std::string tipo, bool ascend);
-	Utilizador pesquisaUtilizador(std::string nome, std::string email);
-	Titulo * pesquisaJogo(std::string nome,std::string plataforma);
-	std::vector<Titulo*> ordenaTitulosUtilizador(const Utilizador & u, std::string criterio,bool ascend);
-	unsigned int nrMedioTitulos();
-	float custoMedioBiblioteca();
-	void rankingDeGeneros();
-	void rankingDePlataformas();
-	void rankingDeIdades();
-	void rankingDeRentabilidades();
-	std::vector <Utilizador> getJogadores();
-	void displayUtilizadores();
-	std::vector <Titulo *> getTitulos();
-	void displayTitulos();
-	std::vector <std::string> getPlataformas();
-	Banco getBanco();
-	void dataValida( CartaoCredito & D);
+	Utilizador * pesquisaUtilizador(std::string nome, std::string email) ;
+	Titulo * pesquisaJogo(std::string nome,std::string plataforma) const;
+	std::vector<Titulo*> ordenaTitulosUtilizador(const Utilizador & u, std::string criterio,bool ascend) const;
+	unsigned int nrMedioTitulos() const;
+	float custoMedioBiblioteca() const;
+	void rankingDeGeneros() const;
+	void rankingDePlataformas() const;
+	void rankingDeIdades() const;
+	void rankingDeRentabilidades() const;
+	std::vector <Utilizador> getJogadores() const;
+	void displayUtilizadores() const;
+	std::vector <Titulo *> getTitulos() const;
+	void displayTitulos() const;
+	std::vector <std::string> getPlataformas() const;
+	Banco getBanco() const;
+	void dataValida( CartaoCredito & D) const;
 };
 
 

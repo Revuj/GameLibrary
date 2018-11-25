@@ -112,28 +112,6 @@ std::ostream & operator <<(std::ostream & os, const Utilizador & u)
 	return os;
 }
 
-std::string Utilizador::PlataformaPreferida() const {
-
-	std::vector<std::string> plataformas;
-	std::vector<Titulo*> titulos=conjuntoTitulos.getTitulos();
-
-	for(size_t i=0;i<titulos.size();i++){
-		plataformas.push_back(titulos.at(i)->getPlataforma());
-	}
-
-    int max=0;
-    std::string mostvalue=plataformas[0];
-    for(size_t i=0;i<plataformas.size();i++)
-    {
-        int co = std::count(plataformas.begin(), plataformas.end(), plataformas[i]);
-        if(co > max)
-        {       max = co;
-                mostvalue = plataformas[i];
-        }
-    }
-    return mostvalue;
-}
-
 float Utilizador::getGastos() const{
 	float total=0;
 	std::vector<Titulo*> titulos=conjuntoTitulos.getTitulos();
