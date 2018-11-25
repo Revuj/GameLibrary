@@ -770,32 +770,3 @@ int main() {
 	return 0;
 }
 
-#include <iomanip>
-std::string Sistema:: displayTitulosPorTipo() const
-{
-	std::vector<Titulo*> onlines;
-	std::vector <Titulo*> homes;
-
-	for(const auto & titulo: this->titulos) {
-		if (dynamic_cast<Online*>(titulo) != NULL)
-			homes.push_back(titulo);
-		else
-			homes.push_back(titulo);
-	}
-
-	unsigned int numero = std::max(onlines.size(),homes.size());
-	std::stringstream resultado;
-	resultado<< "Titulos: "<<std::endl;
-	resultado <<"Online"<<std::setw(10)<<"Home"<<std::endl;
-
-	for(unsigned int i=0; i< numero ;i++)
-	{
-		if(i < onlines.size())
-			resultado << onlines[i]->getNome();
-		resultado << std::setw(10);
-		if(i < homes.size())
-			resultado << homes[i]->getNome();
-		resultado << std::endl;
-	}
-	return resultado.str();
-}
