@@ -3,6 +3,7 @@
 #include <algorithm>
 #include "Erro.h"
 #include <vector>
+#include "Banco.h"
 
 /*
  * construtor utilizador que atua como um construtor default
@@ -62,28 +63,32 @@ bool Utilizador::adicionaCartaoCredito(const CartaoCredito & C)
 
 	}
 	else
-		return false;
+		throw(CartaoJaExistente("Cartao com id " + C.getId() + " ja existe."));
+	return false;
 }
 
 
-void Utilizador::AdicionaTitulo(Titulo * T, CartaoCredito & c)
+void Utilizador::AdicionaTitulo(Titulo * T, CartaoCredito & c,bool comprar)
 {
 /* comparar data de valdiade do cartao e a data atual(ver funcoes)*/
-	for (const auto & cartao : this->cc)
+	for (auto & cartao : this->cc)
 	{
 		if (cartao == c)
 		{
 			if (cartao.getSaldo() >= T->getPreco()) //ver se o saldo para comprar o titulo é suficiente
 			{
 				this->conjuntoTitulos.adicionaTitulo(T);
-				c.removeQuantia(T->getPreco()); //retira dinheiro do cartao
+				cartao.removeQuantia(T->getPreco()); //retira dinheiro do cartao
+				return;
 			}
 			else
-				throw SaldoInsuficiente(std::to_string(cartao.getSaldo()));
+				throw SaldoInsuficiente("Saldo insuficiente no cartao " +  c.getId() + ". Saldo: " + std::to_string(cartao.getSaldo()));
 		}
-		else
-			throw CartaoInexistente(c.getId());
-		}
+	}
+	throw CartaoInexistente(c.getId());
+
+
+
 }
 
 std::ostream & operator <<(std::ostream & os, const Utilizador & u)

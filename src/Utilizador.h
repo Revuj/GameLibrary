@@ -84,7 +84,7 @@ public:
 	 * @param T - Titulo a acrescentar
 	 * @param c - Cartao de credito para efutuar compra
  	 */
-	void AdicionaTitulo(Titulo * T, CartaoCredito & c);
+	void AdicionaTitulo(Titulo * T, CartaoCredito & c,bool comprar=false);
 
 	/**
 	 * @brief Calcula o preco total da biblioteca do utilizador

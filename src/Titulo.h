@@ -141,7 +141,6 @@ public:
 	bool operator==(const Titulo * T);
 };
 
-
 class Home: public Titulo {
 
 private:
@@ -224,7 +223,7 @@ public:
 	 * @param minutos tempo que jogou
 	 * @param plataforma plataforma onde jogou
 	 */
-	void adicionaEstaticas(const Data & D1, const size_t minutos);
+	void adicionaEstatisticas(const Data & D1, const size_t minutos);
 	/*
 	 * devolve o numero de horas jogadas, arredondando para cima o membro estatico horas totais
 	 */

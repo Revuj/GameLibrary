@@ -29,13 +29,13 @@ public:
 /**
  * Classe utilizada para lançar exceções do tipo Data Inválida
  */
-//class DataInvalida : public Erro {
-//public:
-//	/**
-//	 * @brief Construtor da classe DataInvalida
-//	 */
-//	DataInvalida(const std::string &info) : Erro(info) { }
-//};
+class DataInvalida : public Erro {
+public:
+	/**
+	 * @brief Construtor da classe DataInvalida
+	 */
+	DataInvalida(const std::string &info) : Erro(info) { }
+};
 
 //========================================================================================
 //========================================================================================
@@ -126,6 +126,18 @@ public:
 };
 
 //========================================================================================
+//========================================================================================
+
+class TituloInexistente : public Erro {
+public:
+	/**
+	 * @brief Construtor da classe TituloInexistente
+	 */
+	TituloInexistente(const std::string &info) : Erro(info) { }
+};
+
+
+//========================================================================================
 //=======================================================================================
 
 /**
@@ -145,6 +157,14 @@ public:
 		 * @brief Construtor da classe InputInvalido
 		 */
 	UtilizadorInexistente(const std::string &info) : Erro(info) { }
+};
+
+class ErroEmail: public Erro {
+public:
+    /**
+         * @brief Construtor da classe UtilizadorInexistente
+         */
+    ErroEmail(const std::string &info) : Erro(info) { }
 };
 
 #endif /* ERRO_H_ */

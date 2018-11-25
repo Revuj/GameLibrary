@@ -98,17 +98,14 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 
 	while (cartao != "") {
 		cartaoSs << cartao;
-		std::cout << cartaoSs.str() << "oi" << std::endl;
 		cartaoSs >> saldo >> dataCartao >> idCartao;
 		cartoes.push_back(CartaoCredito(saldo, Data(dataCartao), idCartao));
-		std::cout << cartoes.size() << std::endl;
 		getline(f, cartao);
 		cartaoSs.str(std::string());
 		cartaoSs.clear();
 	}
 
 	banco.adicionaCartoesCredito(cartoes);
-	std::cout << "im here" << std::endl;
 
 	idade = std::stoul(idadeStr, NULL, 0);
 
@@ -133,17 +130,13 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 
 		tituloSs >> tipoDeJogo;
 
-		std::cout << tituloSs.str() << std::endl;
-
-		//arranjar maneira para receber os generos!!!
-		std::cout << tipoDeJogo << std::endl;
 		if (tipoDeJogo == "Online") {
 			Online *ptr;
 			std::vector<Data> datasJogo;
 			std::vector<unsigned int> minutosJogados;
 			tituloSs >> nomeDoJogo >> idadeMinima >> plataforma >> empresa
 					>> dataStr >> subscricao >> precoSubsStr;
-			std::cout << "DataOnline: " << dataStr << std::endl;
+
 			Data d(dataStr);
 
 			tituloSs.str(std::string());
@@ -201,7 +194,7 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 			Home *ptr;
 			tituloSs >> nomeDoJogo >> idadeMinima >> plataforma >> empresa
 					>> dataStr;
-			std::cout << "DataHome: " << dataStr << std::endl;
+
 			Data d(dataStr);
 
 			tituloSs.str(std::string());
@@ -217,9 +210,8 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 
 			getline(f, titulo);
 			tituloSs << titulo;
-			std::cout << "Generoewdawe: " << tituloSs.str() << std::endl;
+
 			while (tituloSs >> genero) {
-				std::cout << genero << std::endl;
 				generos.push_back(genero);
 			}
 
@@ -236,7 +228,6 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 				ptr->adicionaAtualizacao(Data(data));
 			}
 
-			std::cout << *ptr << std::endl;
 			B.adicionaTitulo(ptr);
 			ptr->setHistoricoPreco(price_history);
 		}
@@ -245,19 +236,13 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 
 	}
 
-	std::cout << nome << " " << mail << " " << idade << " " << localidade
-			<< std::endl;
 	Utilizador U(nome, mail, idade, localidade, B);
 
 	for (const auto & c : cartoes) {
-		std::cout << "cartao: " << c.getId() << std::endl;
 		U.adicionaCartaoCredito(c);
 	}
 
 	this->jogadores.push_back(U);
-
-	std::cout << U << std::endl;
-
 }
 
 void Sistema::readUtilizadores() {
@@ -280,7 +265,6 @@ void Sistema::readUtilizadores() {
 void Sistema::saveUtilizadores() {
 
 	for (unsigned int i = 0; i < jogadores.size(); i++) {
-		std::cout << "oi" << std::endl;
 		std::ofstream file("Utilizador" + std::to_string(i + 1) + ".txt");
 		std::string nome = jogadores.at(i).getNome();
 		std::string mail = jogadores.at(i).getEmail();
@@ -305,7 +289,6 @@ void Sistema::saveUtilizadores() {
 		file << std::endl;
 
 		for (size_t i = 0; i < titulos.size(); i++) {
-			std::cout << "ola" << std::endl;
 			Online* online = dynamic_cast<Online*>(titulos.at(i));
 			if (online != NULL) {
 				std::string tipoDeJogo = "Online";
@@ -354,7 +337,6 @@ void Sistema::saveUtilizadores() {
 				if (i != titulos.size() - 1)
 					file << std::endl;
 			} else {
-				std::cout << "hello" << std::endl;
 				Home* home = dynamic_cast<Home*>(titulos.at(i));
 				std::string tipoDeJogo = "Home";
 				std::string nomeDoJogo = home->getNome();
@@ -394,7 +376,6 @@ void Sistema::saveUtilizadores() {
 
 			}
 		}
-		std::cout << "Success Saving!!" << std::endl;
 		file.close();
 	}
 }
@@ -423,16 +404,13 @@ void Sistema::readFileTitulos(std::ifstream & f) {
 
 		tituloSs >> tipoDeJogo;
 
-		std::cout << tituloSs.str() << std::endl;
-
-		std::cout << tipoDeJogo << std::endl;
 		if (tipoDeJogo == "Online") {
 			Online *ptr;
 			std::vector<Data> datasJogo;
 			std::vector<unsigned int> minutosJogados;
 			tituloSs >> nomeDoJogo >> idadeMinima >> plataforma >> empresa
 					>> dataStr >> subscricao >> precoSubsStr;
-			std::cout << "DataOnline: " << dataStr << std::endl;
+
 			Data d(dataStr);
 
 			tituloSs.str(std::string());
@@ -468,13 +446,11 @@ void Sistema::readFileTitulos(std::ifstream & f) {
 			this->titulos.push_back(ptr);
 			price_history.clear();
 			generos.clear();
-
-			std::cout << tituloSs.str() << std::endl;
 		} else {
 			Home *ptr;
 			tituloSs >> nomeDoJogo >> idadeMinima >> plataforma >> empresa
 					>> dataStr;
-			std::cout << "DataHome: " << dataStr << std::endl;
+
 			Data d(dataStr);
 
 			tituloSs.str(std::string());
@@ -490,9 +466,8 @@ void Sistema::readFileTitulos(std::ifstream & f) {
 
 			getline(f, titulo);
 			tituloSs << titulo;
-			std::cout << "Generoewdawe: " << tituloSs.str() << std::endl;
+
 			while (tituloSs >> genero) {
-				std::cout << genero << std::endl;
 				generos.push_back(genero);
 			}
 
@@ -509,10 +484,8 @@ void Sistema::readFileTitulos(std::ifstream & f) {
 				ptr->adicionaAtualizacao(Data(data));
 			}
 
-			std::cout << *ptr << std::endl;
 			ptr->setHistoricoPreco(price_history);
 			this->titulos.push_back(ptr);
-			std::cout << tituloSs.str() << std::endl;
 			price_history.clear();
 			generos.clear();
 		}
@@ -538,7 +511,6 @@ void Sistema::saveTitulos() {
 	std::ofstream file("Titulos.txt");
 
 	for (size_t i = 0; i < titulos.size(); i++) {
-		std::cout << "ola" << std::endl;
 		Online* online = dynamic_cast<Online*>(titulos.at(i));
 		if (online != NULL) {
 			std::string tipoDeJogo = "Online";
@@ -580,7 +552,6 @@ void Sistema::saveTitulos() {
 			if (i != titulos.size() - 1)
 				file << std::endl;
 		} else {
-			std::cout << "hello" << std::endl;
 			Home* home = dynamic_cast<Home*>(titulos.at(i));
 			std::string tipoDeJogo = "Home";
 			std::string nomeDoJogo = home->getNome();
@@ -660,87 +631,106 @@ bool Sistema::validEmail(const std::string email) {
 
  }
 
-bool Sistema::AddEmail(std::string & email) {
-	const int x = 60; //random size enough to hold contents of array plus one for null terminator
-	char input[x]; //array to hold input
-	int sizeOf; //holds length of input array
-	char* ptr = nullptr; //pointer
-	char* ptr2 = nullptr; //pointer
+void Sistema::isValidEmail(std::string & email,bool checkafter) {
+    const int x = 60; //random size enough to hold contents of array plus one for null terminator
+    char input[x]; //array to hold input
+    int sizeOf; //holds length of input array
+    char* ptr = nullptr; //pointer
+    char* ptr2 = nullptr; //pointer
 
-	std::cout << "Escreve o teu endereço de email \n";
-	std::cin.getline(input, x);
-	email = input;
-	sizeOf = strlen(input);
+    std::cout << "Escreve o teu endereço de email \n";
+    std::cin.getline(input, x);
+    email = input;
+    sizeOf = strlen(input);
 
-	for (int i = 0; i < sizeOf; i++) {
-		ptr = strstr(input, "@"); //searches input array for "@" string
-		if (ptr != nullptr) {
-			break;
-		}
-	}
+    for (int i = 0; i < sizeOf; i++) {
+        ptr = strstr(input, "@"); //searches input array for "@" string
+        if (ptr != nullptr) {
+            break;
+        }
+    }
 
-	for (int i = 0; i < sizeOf; i++) {
-		ptr2 = strstr(input, "."); //searches input array for "." string
-		if (ptr2 != nullptr && &ptr2 > &ptr) {
-			break;
-		}
-	}
+    for (int i = 0; i < sizeOf; i++) {
+        ptr2 = strstr(input, "."); //searches input array for "." string
+        if (ptr2 != nullptr && &ptr2 > &ptr) {
+            break;
+        }
+    }
 
-	if (ptr != nullptr) //validates input of "@" sign
-			{
-		if (ptr2 != 0 && &ptr2 < &ptr) {
-			if (validEmail(email)) {
-				std::cout << "Email aceite.\n";
-				return true;
-			} else {
-				std::cout << "Email ja existente.\n";
-				return false;
-			}
+    if (ptr != nullptr) //validates input of "@" sign
+            {
+        if (ptr2 != 0 && &ptr2 < &ptr) {
+        	if(!checkafter) {
+            if (validEmail(email)) {
+                return;
+            } else {
+                throw(ErroEmail("Email ja existente.\n"));
+            }
 
-		}
+            }
 
-		else {
-			std::cout << "Missing . symbol after @\n";
-			return false;
-		}
-	}
+        }
 
-	else {
-		std::cout << "Missing @ symbol\n";
-		return false;
-	}
+        else {
+            throw(ErroEmail("Falta o . depois de @\n"));
 
-}
+        }
+    }
 
-bool Sistema::addUtilizador() /*a incluir throws*/
-{
-	std::string nome;
-	std::string email;
-	std::string idade;
-	std::string morada;
-	std::cout << "Creating a user...  \n";
-	std::cout << "Enter a user name: ";
-	getline(std::cin, nome);
-
-	bool Emailvalido=false;
-
-	while(!Emailvalido){
-		Emailvalido=AddEmail(email);
-	}
-
-	std::cout << "Enter your age ";
-	getline(std::cin, idade);
-
-	std::cout << "Enter your address: ";
-	getline(std::cin, morada);
-
-	jogadores.push_back(Utilizador(nome, email, std::stoul(idade, NULL, 0), morada));
-
-	return true;
+    else {
+        throw(ErroEmail("Falta o simbolo @.\n"));
+    }
 
 }
 
-bool Sistema::ordenarUtilizadores(std::string tipo, bool ascend) {
+void Sistema::saldoUtilizador(const Utilizador & u) {
+	float saldo = 0;
+		for (const auto & cartao : u.getCc())
+			saldo += cartao.getSaldo();
+	std::cout << "Saldo: " << saldo << " euros" << std::endl;
+}
+
+void Sistema::tempoJogado(const Utilizador & u) {
+	unsigned int horas;
+	for (const auto & titulo : u.getBiblioteca().getTitulos())
+	{
+		Online* online = dynamic_cast<Online*>(titulo);
+
+		if (online != NULL)
+		{
+			horas += online->getHorasTotais();
+		}
+	}
+	std::cout << "Horas jogadas: " << horas << std::endl;
+}
+
+void Sistema::adicionaUtilizador(const Utilizador &u) {
+    this->jogadores.push_back(u);
+}
+
+void Sistema::utilizadorJogar(Utilizador & u, Titulo * t, unsigned int minutos) {
+	for(const auto titulo : u.getBiblioteca().getTitulos()) {
+		if (titulo->getNome() == t->getNome() && titulo->getPlataforma() == t->getPlataforma())
+		{
+			Online * o = dynamic_cast<Online *>(titulo);
+			o->adicionaEstatisticas(banco.getDataAtual(), minutos);
+		}
+
+	}
+}
+
+void Sistema::addTitulo(Titulo *titulo){
+	std::string nome=titulo->getNome();
+	std::string empresa=titulo->getEmpresa();
+	std::string plataforma=titulo->getPlataforma();
+	for(auto const&i:titulos){
+		if(i->getNome()==nome && i->getEmpresa()==empresa && i->getPlataforma()==plataforma)
+			throw TituloJaAdicionado("Titulo ja adicionado");
+	}
+	titulos.push_back(titulo);
+}
+
+void Sistema::ordenaUtilizadores(std::string tipo, bool ascend) {
 	if (tipo == "idade") {
 		if (ascend)
 			std::sort(jogadores.begin(), jogadores.end(), userAgeAscend);
@@ -748,13 +738,13 @@ bool Sistema::ordenarUtilizadores(std::string tipo, bool ascend) {
 			std::sort(jogadores.begin(), jogadores.end(), userAgeDescend);
 	}
 
-	if (tipo == "nome") {
+	else if (tipo == "nome") {
 		if (ascend)
 			std::sort(jogadores.begin(), jogadores.end(), userNameAscend);
 		else
 			std::sort(jogadores.begin(), jogadores.end(), userNameDescend);
 	}
-	if (tipo == "jogos") {
+	else if (tipo == "jogos") {
 		if (ascend)
 			std::sort(jogadores.begin(), jogadores.end(),
 					userNumberGamesAscend);
@@ -762,12 +752,109 @@ bool Sistema::ordenarUtilizadores(std::string tipo, bool ascend) {
 			std::sort(jogadores.begin(), jogadores.end(),
 					userNumberGamesDescend);
 	}
-	return true;
+	displayUtilizadores();
 }
 
-Utilizador Sistema::pesquisaUtilizador(std::string nome) {
-	auto it = jogadores.end();
-	//it=std::find(jogadores.begin(),jogadores.end())
+
+void Sistema::ordenaTitulos(std::string tipo, bool ascend){
+	if (tipo == "id") {
+			if (ascend)
+				std::sort(titulos.begin(), titulos.end(), gameIdAscend);
+			else
+				std::sort(titulos.begin(), titulos.end(), gameIdDescend);
+		}
+
+	else if (tipo == "data") {
+		if (ascend)
+			std::sort(titulos.begin(), titulos.end(), gameReleaseAscend);
+		else
+			std::sort(titulos.begin(), titulos.end(), gameReleaseDescend);
+	}
+
+	else if (tipo == "idade") {
+		if (ascend)
+			std::sort(titulos.begin(), titulos.end(), gameAgeAscend);
+		else
+			std::sort(titulos.begin(), titulos.end(), gameAgeDescend);
+	}
+	else if (tipo == "empresa") {
+		if (ascend)
+			std::sort(titulos.begin(), titulos.end(),
+					gameDeveloperAscend);
+		else
+			std::sort(titulos.begin(), titulos.end(),
+					gameDeveloperDescend);
+	}
+
+	displayTitulos();
+}
+
+Utilizador Sistema::pesquisaUtilizador(std::string nome, std::string email) {
+	for(const auto utilizador : this->jogadores) {
+		if (utilizador.getEmail()==email && utilizador.getNome()==nome)
+			return utilizador;
+	}
+	throw(UtilizadorInexistente("O utilizador de nome "+ nome+ " e email "+email+" nao existe"));
+}
+
+//void Sistema::pesquisaJogo(std::string nome,std::string plataforma,std::string empresa,float id){
+//	if(id!=0){
+//		for(const auto &i:titulos)
+//			if(i->getIdU()==id)
+//				std::cout<< i->getNome() <<std::endl;
+//	}
+//
+//	else {
+//		for(const auto &i:titulos)
+//			if(i->getNome()==nome && i->getPlataforma()==plataforma && i->getEmpresa()==empresa)
+//				std::cout<< i->getNome() <<std::endl;
+//	}
+//}
+
+Titulo * Sistema::pesquisaJogo(std::string nome,std::string plataforma) {
+	for(const auto titulo : this->titulos) {
+		if (titulo->getNome() == nome && titulo->getPlataforma() == plataforma)
+			return titulo;
+	}
+	throw(TituloInexistente("O titulo de nome " + nome + " na plataforma " + plataforma + " nao existe"));
+}
+
+
+std::vector<Titulo*> Sistema::ordenaTitulosUtilizador(const Utilizador & u, std::string criterio,bool ascend) {
+	std::vector<Titulo*> titulos = u.getBiblioteca().getTitulos();
+
+	if (criterio == "id")
+	{
+		if (ascend)
+			sort(titulos.begin(), titulos.end(), gameIdAscend);
+		else
+			sort(titulos.begin(), titulos.end(), gameIdDescend);
+	}
+	else if (criterio == "data")
+	{
+		if (ascend)
+			sort(titulos.begin(), titulos.end(), gameReleaseAscend);
+		else
+			sort(titulos.begin(), titulos.end(), gameReleaseDescend);
+	}
+	else if (criterio == "idade")
+	{
+		if (ascend)
+			sort(titulos.begin(), titulos.end(), gameAgeAscend);
+		else
+			sort(titulos.begin(), titulos.end(), gameAgeDescend);
+	}
+	else if (criterio == "empresa")
+	{
+		if (ascend)
+			sort(titulos.begin(), titulos.end(), gameDeveloperAscend);
+		else
+			sort(titulos.begin(), titulos.end(), gameDeveloperDescend);
+	}
+	//else throw
+
+
+	return titulos;
 }
 void displayRank(std::vector<std::string> a) {
 
@@ -879,10 +966,34 @@ std::vector<Utilizador> Sistema::getJogadores() {
 	return this->jogadores;
 }
 
+void Sistema::displayUtilizadores() {
+	for (const auto & utilizador : this->jogadores)
+		std::cout << utilizador.getNome() << ", " << utilizador.getIdade() << ", numero de jogo: " << utilizador.getBiblioteca().getTitulos().size() << std::endl;
+}
+
 std::vector<Titulo *> Sistema::getTitulos() {
 	return this->titulos;
 }
 
+void Sistema::displayTitulos() {
+	for (const auto & titulo : this->titulos)
+		std::cout << titulo->getNome() << ", " << titulo->getEmpresa() << ", " << titulo->getPlataforma() << ", " << titulo->getPreco() << " euros, (desconto: " << titulo->getDesconto() << "% ), " << titulo->getDataLancamento().getAno() << ", idade minima: " << titulo->getIdadeMinima() << std::endl;
+}
+
 std::vector<std::string> Sistema::getPlataformas() {
 	return this->plataformas;
+}
+
+Banco Sistema::getBanco() {
+	return this->banco;
+}
+
+void Sistema::dataValida(CartaoCredito & D) {
+	if (!this->banco.isDataValida(D))
+	{
+		std::cout << "O cartao de "+D.getId()+ " tem a data invalida"<<std::endl;
+		std::cout << "A atualizar automaticamente a validade do cartao, extendendo para 3 anos"<<std::endl;
+		D.atualizaDataDeValidade();
+		}
+
 }

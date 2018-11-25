@@ -30,10 +30,17 @@ public:
 	void readTitulos();
 	void saveTitulos();
 	bool validEmail(const std::string email);
-	bool AddEmail(std::string & email);
-	bool addUtilizador();
-	bool ordenarUtilizadores(std::string tipo,bool ascend);
-	Utilizador pesquisaUtilizador(std::string nome);
+	void isValidEmail(std::string & email,bool checkafter=false);
+	void utilizadorJogar(Utilizador & u, Titulo * t, unsigned int minutos);
+	void saldoUtilizador(const Utilizador & u);
+	void tempoJogado(const Utilizador & u);
+	void adicionaUtilizador(const Utilizador & u);
+	void addTitulo(Titulo *titulo);
+	void ordenaUtilizadores(std::string tipo,bool ascend);
+	void ordenaTitulos(std::string tipo, bool ascend);
+	Utilizador pesquisaUtilizador(std::string nome, std::string email);
+	Titulo * pesquisaJogo(std::string nome,std::string plataforma);
+	std::vector<Titulo*> ordenaTitulosUtilizador(const Utilizador & u, std::string criterio,bool ascend);
 	unsigned int nrMedioTitulos();
 	float custoMedioBiblioteca();
 	void rankingDeGeneros();
@@ -41,15 +48,12 @@ public:
 	void rankingDeIdades();
 	void rankingDeRentabilidades();
 	std::vector <Utilizador> getJogadores();
+	void displayUtilizadores();
 	std::vector <Titulo *> getTitulos();
+	void displayTitulos();
 	std::vector <std::string> getPlataformas();
-
-
-
-
-
-
-
+	Banco getBanco();
+	void dataValida( CartaoCredito & D);
 };
 
 

@@ -2,7 +2,8 @@ Joao Abelha
 up2567203@fe.up.pt
 19
 Areosa, Porto
-100 20/10/2005 1234
+50 20/10/2005 12345
+80 01/10/2006 12347
 
 Home Jogo4 9 PC Abelha&Co 22/11/2005
 70

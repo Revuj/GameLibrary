@@ -81,7 +81,7 @@ unsigned int Titulo::getIdU() const{
 
  float Titulo::getDesconto() const
  {
- 	return ( 1- getPrecoBase() / getPreco() )*100; /*divisao do preco atual com o de lan�amento */
+ 	return abs(( 1- getPreco() / getPrecoBase() )*100); /*divisao do preco atual com o de lan�amento */
  }
 
  void Titulo::setHistoricoPreco(const std::vector<float>& precos) {
@@ -228,7 +228,7 @@ void Online::setDatasJogo(std::vector<Data>& datasJogo){
 
  //========================================================================================
  //========================================================================================
- void Online::adicionaEstaticas(const Data & D1, const size_t minutos) {
+ void Online::adicionaEstatisticas(const Data & D1, const size_t minutos) {
 
  	unsigned int indiceData = 0;
 
