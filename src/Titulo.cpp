@@ -17,7 +17,7 @@ const unsigned int Home::precoAtualizacao=1;
 
 //========================================================================================
 //========================================================================================
-Titulo::Titulo(std::string nome, int idadeMinima,
+Titulo::Titulo(std::string nome, unsigned idadeMinima,
 		std::string plataforma,float preco,
 		std::vector<std::string> generos, std::string empresa,
 		Data dataLancamento) {

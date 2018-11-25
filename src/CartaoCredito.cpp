@@ -50,7 +50,7 @@ void CartaoCredito::removeQuantia(float quantia)
 {
 	if (this->saldo - quantia >= 0)
 		this->saldo -= quantia;
-	else throw SaldoInsuficiente(std::to_string(this->saldo));
+	else throw SaldoInsuficiente("A quantia "+std::to_string(this->saldo)+" e insuficiente");
 }
 
 std::ostream & operator <<(std::ostream & os, const CartaoCredito & cartao)

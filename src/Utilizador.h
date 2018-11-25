@@ -13,7 +13,7 @@ class Utilizador {
 private:
 	std::string nome;/**< Nome do utilizador */
 	std::string email;/**< Email do utilizador */
-	size_t idade;/**< Idade do utilizador */
+	unsigned idade;/**< Idade do utilizador */
 	std::string morada;/**< Morada do utilizador */
 	std::vector<CartaoCredito> cc;/**< Vetor com os cartoes de credito do utilizador */
 	Biblioteca conjuntoTitulos;/**< Biblioteca com todos os Titulos do utilizador */
@@ -27,7 +27,7 @@ public:
 	 * @param morada - Morada atribuido ao utilizador
 	 * @param b - Biblioteca atribuida ao utilizador
 	 */
-	Utilizador(const std::string nome = "", const std::string email = "", const size_t idade = 0, const std::string morada = "", const Biblioteca b=Biblioteca());
+	Utilizador(const std::string nome = "", const std::string email = "", const unsigned idade = 0, const std::string morada = "", const Biblioteca b=Biblioteca());
 
 	/**
 	 * @brief Permite obter o nome do utilizador 
@@ -45,7 +45,7 @@ public:
 	 * @brief Permite obter a idade do utilizador
 	 * @return Retorna a idade do utilizador 
 	 */
-	size_t getIdade() const;
+	unsigned getIdade() const;
 	
 	/**
 	 * @brief Permite obter a morada do utilizador

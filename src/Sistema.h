@@ -37,6 +37,7 @@ public:
 	void tempoJogado(const Utilizador & u) const;
 	void adicionaUtilizador(const Utilizador & u);
 	void addTitulo(Titulo *titulo);
+	void adicionaAtualizacao(std::string nome,std::string plataforma,Data& data);
 	void ordenaUtilizadores(std::string tipo,bool ascend);
 	void ordenaTitulos(std::string tipo, bool ascend);
 	Utilizador * pesquisaUtilizador(std::string nome, std::string email) ;

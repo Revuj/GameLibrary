@@ -9,7 +9,7 @@
  * construtor utilizador que atua como um construtor default
  */
 
-Utilizador::Utilizador(const std::string nome, const std::string email, const size_t idade, const std::string morada, const Biblioteca biblioteca) {
+Utilizador::Utilizador(const std::string nome, const std::string email, const unsigned idade, const std::string morada, const Biblioteca biblioteca) {
 	this->nome = nome;
 	this->email = email;
 	this->idade = idade;
@@ -28,7 +28,7 @@ std::string Utilizador::getEmail() const {
 	return this->email;
 }
 
-size_t Utilizador::getIdade() const {
+unsigned Utilizador::getIdade() const {
 	return this->idade;
 }
 
@@ -45,9 +45,8 @@ Biblioteca Utilizador::getBiblioteca() const {
 }
 
 
-bool Utilizador::operator ==(const Utilizador & U) // a modificar, provavelmente
-
-		{
+bool Utilizador::operator ==(const Utilizador & U) 
+{
 	return (this->nome == U.nome) && (this->email == U.email);
 
 }
@@ -78,7 +77,12 @@ void Utilizador::AdicionaTitulo(Titulo * T, CartaoCredito & c,bool comprar)
 			if (cartao.getSaldo() >= T->getPreco()) //ver se o saldo para comprar o titulo é suficiente
 			{
 				this->conjuntoTitulos.adicionaTitulo(T);
+				try{
 				cartao.removeQuantia(T->getPreco()); //retira dinheiro do cartao
+				}
+				catch(Erro & e){
+					std::cout<<e.getInfo()<<std::endl;
+				}
 				return;
 			}
 			else

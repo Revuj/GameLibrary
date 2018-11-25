@@ -723,6 +723,19 @@ void Sistema::addTitulo(Titulo *titulo){
 	titulos.push_back(titulo);
 }
 
+void Sistema::adicionaAtualizacao(std::string nome,std::string plataforma,Data& data){
+
+	for(const auto utilizador: jogadores){
+		std::vector<Titulo*> titulos=utilizador.getBiblioteca().getTitulos();
+		for(auto titulo: titulos){
+			if(titulo->getNome()==nome && titulo->getPlataforma()==plataforma){
+				Home* h=dynamic_cast<Home*>(titulo);
+				h->adicionaAtualizacao(data);
+			}
+		}
+	}
+}
+
 void Sistema::ordenaUtilizadores(std::string tipo, bool ascend) {
 	if (tipo == "idade") {
 		if (ascend)
@@ -972,13 +985,13 @@ void Sistema::displayTitulos() const
 
 	unsigned int numero = std::max(onlines.size(),homes.size());
 	std::cout<< "Titulos: "<<std::endl;
-	std::cout <<"Online"<<std::setw(10)<<"Home"<<std::endl;
+	std::cout <<"Online"<<std::setw(25)<<"Home"<<std::endl;
 
 	for(unsigned int i=0; i< numero ;i++)
 	{
 		if(i < onlines.size())
 			std::cout <<std::setw(0 )<< onlines[i]->getNome();
-		std::cout << std::setw(10);
+		std::cout << std::setw(25);
 		if(i < homes.size())
 			std::cout << homes[i]->getNome();
 		std::cout << std::endl;

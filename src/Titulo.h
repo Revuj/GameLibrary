@@ -32,7 +32,7 @@ public:
 	 * @param empresa - Empresa atribuida ao titulo
 	 * @param dataLancamenot - Data atribuida ao titulo
 	 */
-	Titulo(std::string nome, int idadeMinima,
+	Titulo(std::string nome, unsigned idadeMinima,
 			std::string plataforma,float preco,
 			std::vector<std::string> generos, std::string empresa,
 			Data dataLancamento);
