@@ -505,6 +505,8 @@ void Sistema::saveTitulos() const{
 	for (size_t i = 0; i < titulos.size(); i++) {
 		Online* online = dynamic_cast<Online*>(titulos.at(i));
 		if (online != NULL) {
+			if (i != 0)
+				file << std::endl;
 			std::string tipoDeJogo = "Online";
 			std::string nomeDoJogo = online->getNome();
 			unsigned int idadeMinima = online->getIdadeMinima();
@@ -540,10 +542,10 @@ void Sistema::saveTitulos() const{
 				else
 					file << genero[i] << " ";
 			}
-
-			if (i != titulos.size() - 1)
+		}
+		else {
+			if (i != 0)
 				file << std::endl;
-		} else {
 			Home* home = dynamic_cast<Home*>(titulos.at(i));
 			std::string tipoDeJogo = "Home";
 			std::string nomeDoJogo = home->getNome();
@@ -577,10 +579,6 @@ void Sistema::saveTitulos() const{
 				else
 					file << datasAtualizacao[i] << " ";
 			}
-
-			if (i != titulos.size() - 1)
-				file << std::endl;
-
 		}
 	}
 }
@@ -683,7 +681,7 @@ void Sistema::saldoUtilizador(const Utilizador * u) const{
 }
 
 void Sistema::tempoJogado(const Utilizador * u) const{
-	unsigned int horas;
+	unsigned int horas=0;
 	for (const auto & titulo : u->getBiblioteca().getTitulos())
 	{
 		Online* online = dynamic_cast<Online*>(titulo);
@@ -797,7 +795,6 @@ void Sistema::ordenaTitulos(std::string tipo, bool ascend){
 Utilizador* Sistema::pesquisaUtilizador(std::string nome, std::string email) {
 	for(size_t i=0;i<jogadores.size();i++) {
 		if (jogadores[i]->getEmail()==email && jogadores[i]->getNome()==nome){
-			std::cout << "Erro aqui" << jogadores[i]->getNome() << std::endl;
 			return jogadores[i];
 		}
 	}
@@ -806,8 +803,10 @@ Utilizador* Sistema::pesquisaUtilizador(std::string nome, std::string email) {
 
 Titulo *Sistema::pesquisaJogo(std::string nome,std::string plataforma) const{
 	for(auto titulo : this->titulos) {
-		if (titulo->getNome() == nome && titulo->getPlataforma() == plataforma)
+		if (titulo->getNome() == nome && titulo->getPlataforma() == plataforma){
+			std::cout << titulo->getNome() << ", " << titulo->getEmpresa() << ", " << titulo->getPlataforma() << ", " << titulo->getPreco() << " euros, (desconto: " << titulo->getDesconto() << "% ), " << titulo->getDataLancamento().getAno() << ", idade minima: " << titulo->getIdadeMinima() << std::endl;
 			return titulo;
+		}
 	}
 	throw(TituloInexistente("O titulo de nome " + nome + " na plataforma " + plataforma + " nao existe"));
 }
@@ -964,6 +963,7 @@ std::vector<Utilizador*> Sistema::getJogadores() const{
 void Sistema::displayUtilizadores() const{
 	for (const auto & utilizador : this->jogadores)
 		std::cout << utilizador->getNome() << ", " << utilizador->getIdade() << ", numero de jogo: " << utilizador->getBiblioteca().getTitulos().size() << std::endl;
+	std::cout<<std::endl<<std::endl;
 }
 
 std::vector<Titulo *> Sistema::getTitulos() const{
@@ -973,6 +973,7 @@ std::vector<Titulo *> Sistema::getTitulos() const{
 void Sistema::displayTitulos() const{
 	for (const auto & titulo : this->titulos)
 		std::cout << titulo->getNome() << ", " << titulo->getEmpresa() << ", " << titulo->getPlataforma() << ", " << titulo->getPreco() << " euros, (desconto: " << titulo->getDesconto() << "% ), " << titulo->getDataLancamento().getAno() << ", idade minima: " << titulo->getIdadeMinima() << std::endl;
+	std::cout << std::endl<<std::endl;
 }
 
 std::vector<std::string> Sistema::getPlataformas() const{

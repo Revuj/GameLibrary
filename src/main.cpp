@@ -132,11 +132,8 @@ void adicionarUtilizador(Sistema * sistema) {
 	std::cout << "Insere o teu enderesso: ";
 	getline(std::cin, morada);
 
-	Utilizador u(nome, email, std::stoul(idade, NULL, 0), morada);
-	sistema->adicionaUtilizador(&u);
-
-	for (const auto util : sistema->getJogadores())
-		std::cout << util->getNome() << std::endl;
+	Utilizador *u = new Utilizador(nome, email, std::stoul(idade, NULL, 0), morada);
+	sistema->adicionaUtilizador(u);
 
 	std::cout << "Utilizador guardado com sucesso!" << std::endl << std::endl;
 	return;
@@ -286,7 +283,6 @@ void adicionarJogo(Sistema * sistema) {
 				empresa, Data(data));
 		try {
 			sistema->addTitulo(home);
-			delete home;
 		} catch (TituloJaAdicionado &e) {
 			std::cout << e.getInfo();
 		}
@@ -294,7 +290,7 @@ void adicionarJogo(Sistema * sistema) {
 	} else if (tipo == "Online") {
 		std::cout << std::endl << "Tipo de subscricao ( Variavel ou Fixa ): ";
 		std::string tipoSubs;
-		getline(std::cin, tipo);
+		getline(std::cin, tipoSubs);
 		while (tipoSubs != "Variavel" && tipoSubs != "Fixa") {
 			std::cout << "Introduza um tipo de subscricao valida" << std::endl;
 			getline(std::cin, tipoSubs);
@@ -321,7 +317,6 @@ void adicionarJogo(Sistema * sistema) {
 				generos, empresa, Data(data), tipoSubscricao, precoSubscricao);
 		try {
 			sistema->addTitulo(online);
-			delete online;
 		} catch (TituloJaAdicionado &e) {
 			std::cout << "\n" << e.getInfo();
 		}
@@ -434,6 +429,7 @@ void displayTitulos(Sistema * sistema) {
 		else if (opt == 8)
 			return;
 	}
+
 }
 
 void escolheTitulo(Sistema * sistema, Utilizador *u) {
@@ -653,6 +649,7 @@ void pesquisarJogo(Sistema * sistema) {
 	try {
 		Titulo *t = sistema->pesquisaJogo(nome,plataforma);
 
+
 		std::string atual;
 
 			Home * H = dynamic_cast<Home *>(t);
@@ -743,9 +740,7 @@ int main() {
 		if (opt == 1)
 			displayTitulos(sistema);
 		else if (opt == 2)
-		{
 			adicionarUtilizador(sistema);
-		}
 		else if (opt == 3)
 			displayUtilizadores(sistema);
 		else if (opt == 4)
