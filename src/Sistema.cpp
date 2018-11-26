@@ -8,28 +8,28 @@
 #include <cctype>
 #include <cstring>
 
-bool userNameAscend(Utilizador& user1, Utilizador& user2) {
-	return user1.getNome() < user2.getNome();
+bool userNameAscend(Utilizador* user1, Utilizador* user2) {
+	return user1->getNome() < user2->getNome();
 }
 
-bool userNameDescend(Utilizador& user1, Utilizador& user2) {
-	return user1.getNome() > user2.getNome();
+bool userNameDescend(Utilizador* user1, Utilizador* user2) {
+	return user1->getNome() > user2->getNome();
 }
 
-bool userAgeAscend(Utilizador& user1, Utilizador& user2) {
-	return user1.getIdade() < user2.getIdade();
+bool userAgeAscend(Utilizador* user1, Utilizador* user2) {
+	return user1->getIdade() < user2->getIdade();
 }
 
-bool userAgeDescend(Utilizador& user1, Utilizador& user2) {
-	return user1.getIdade() > user2.getIdade();
+bool userAgeDescend(Utilizador* user1, Utilizador* user2) {
+	return user1->getIdade() > user2->getIdade();
 }
-bool userNumberGamesAscend(Utilizador& user1, Utilizador& user2) {
-	return user1.getBiblioteca().getTitulos().size()
-			< user2.getBiblioteca().getTitulos().size();
+bool userNumberGamesAscend(Utilizador* user1, Utilizador* user2) {
+	return user1->getBiblioteca().getTitulos().size()
+			< user2->getBiblioteca().getTitulos().size();
 }
-bool userNumberGamesDescend(Utilizador& user1, Utilizador& user2) {
-	return user1.getBiblioteca().getTitulos().size()
-			> user2.getBiblioteca().getTitulos().size();
+bool userNumberGamesDescend(Utilizador* user1, Utilizador* user2) {
+	return user1->getBiblioteca().getTitulos().size()
+			> user2->getBiblioteca().getTitulos().size();
 }
 
 bool gameIdAscend(Titulo* titulo1, Titulo* titulo2) {
@@ -229,10 +229,10 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 
 	}
 
-	Utilizador U(nome, mail, idade, localidade, B);
+	Utilizador * U = new Utilizador(nome, mail, idade, localidade, B);
 
 	for (const auto & c : cartoes) {
-		U.adicionaCartaoCredito(c);
+		U->adicionaCartaoCredito(c);
 	}
 
 	this->jogadores.push_back(U);
@@ -259,16 +259,16 @@ void Sistema::saveUtilizadores() const{
 
 	for (unsigned int i = 0; i < jogadores.size(); i++) {
 		std::ofstream file("Utilizador" + std::to_string(i + 1) + ".txt");
-		std::string nome = jogadores.at(i).getNome();
-		std::string mail = jogadores.at(i).getEmail();
-		unsigned int idade = jogadores.at(i).getIdade();
-		std::string localidade = jogadores.at(i).getMorada();
-		std::vector<CartaoCredito> cartoes = jogadores.at(i).getCc();
+		std::string nome = jogadores.at(i)->getNome();
+		std::string mail = jogadores.at(i)->getEmail();
+		unsigned int idade = jogadores.at(i)->getIdade();
+		std::string localidade = jogadores.at(i)->getMorada();
+		std::vector<CartaoCredito> cartoes = jogadores.at(i)->getCc();
 
 		file << nome << std::endl << mail << std::endl << idade << std::endl
 				<< localidade;
 		std::vector<Titulo*> titulos =
-				jogadores.at(i).getBiblioteca().getTitulos();
+				jogadores.at(i)->getBiblioteca().getTitulos();
 
 		if (cartoes.size() != 0) {
 			file << std::endl;
@@ -276,8 +276,7 @@ void Sistema::saveUtilizadores() const{
 				file << cartao.getSaldo() << " " << cartao.getDataDeValidade()
 						<< " " << cartao.getId() << std::endl;
 			}
-		} else
-			return;
+		}
 
 		file << std::endl;
 
@@ -591,7 +590,7 @@ unsigned int Sistema::nrMedioTitulos() const{
 	unsigned int nrTotalTitulos = 0;
 
 	for (const auto & utilizador : this->jogadores) {
-		nrTotalTitulos += utilizador.getBiblioteca().getTitulos().size();
+		nrTotalTitulos += utilizador->getBiblioteca().getTitulos().size();
 	}
 
 	double media = static_cast<double>(nrTotalTitulos) / this->jogadores.size();
@@ -606,7 +605,7 @@ float Sistema::custoMedioBiblioteca() const{
 	float custoTotal = 0;
 
 	for (const auto & utilizador : this->jogadores) {
-		custoTotal += utilizador.getGastos();
+		custoTotal += utilizador->getGastos();
 	}
 
 	custoTotal /= this->jogadores.size(); /*cada utilizador tem uma biblioteca*/
@@ -616,7 +615,7 @@ float Sistema::custoMedioBiblioteca() const{
 
 bool Sistema::validEmail(const std::string email) const{
         for (const auto & utilizador : this->jogadores) {
-            if (utilizador.getEmail() == email)
+            if (utilizador->getEmail() == email)
                 return false;
         }
 
@@ -676,16 +675,16 @@ void Sistema::isValidEmail(std::string & email,bool checkafter) const{
 
 }
 
-void Sistema::saldoUtilizador(const Utilizador & u) const{
+void Sistema::saldoUtilizador(const Utilizador * u) const{
 	float saldo = 0;
-		for (const auto & cartao : u.getCc())
+		for (const auto & cartao : u->getCc())
 			saldo += cartao.getSaldo();
 	std::cout << "Saldo: " << saldo << " euros" << std::endl;
 }
 
-void Sistema::tempoJogado(const Utilizador & u) const{
+void Sistema::tempoJogado(const Utilizador * u) const{
 	unsigned int horas;
-	for (const auto & titulo : u.getBiblioteca().getTitulos())
+	for (const auto & titulo : u->getBiblioteca().getTitulos())
 	{
 		Online* online = dynamic_cast<Online*>(titulo);
 
@@ -697,12 +696,12 @@ void Sistema::tempoJogado(const Utilizador & u) const{
 	std::cout << "Horas jogadas: " << horas << std::endl;
 }
 
-void Sistema::adicionaUtilizador(const Utilizador &u) {
+void Sistema::adicionaUtilizador(Utilizador *u) {
     this->jogadores.push_back(u);
 }
 
-void Sistema::utilizadorJogar(Utilizador & u, Titulo * t, unsigned int minutos) {
-	for(const auto titulo : u.getBiblioteca().getTitulos()) {
+void Sistema::utilizadorJogar(Utilizador * u, Titulo * t, unsigned int minutos) {
+	for(const auto titulo : u->getBiblioteca().getTitulos()) {
 		if (titulo->getNome() == t->getNome() && titulo->getPlataforma() == t->getPlataforma())
 		{
 			Online * o = dynamic_cast<Online *>(titulo);
@@ -723,10 +722,10 @@ void Sistema::addTitulo(Titulo *titulo){
 	titulos.push_back(titulo);
 }
 
-void Sistema::adicionaAtualizacao(std::string nome,std::string plataforma,Data& data){
+void Sistema::adicionaAtualizacao(std::string nome,std::string plataforma,const Data data){
 
 	for(const auto utilizador: jogadores){
-		std::vector<Titulo*> titulos=utilizador.getBiblioteca().getTitulos();
+		std::vector<Titulo*> titulos=utilizador->getBiblioteca().getTitulos();
 		for(auto titulo: titulos){
 			if(titulo->getNome()==nome && titulo->getPlataforma()==plataforma){
 				Home* h=dynamic_cast<Home*>(titulo);
@@ -795,18 +794,18 @@ void Sistema::ordenaTitulos(std::string tipo, bool ascend){
 	displayTitulos();
 }
 
-Utilizador * Sistema::pesquisaUtilizador(std::string nome, std::string email) {
-	for(auto utilizador : this->jogadores) {
-		if (utilizador.getEmail()==email && utilizador.getNome()==nome){
-			Utilizador *u= &utilizador;
-			return u;
+Utilizador* Sistema::pesquisaUtilizador(std::string nome, std::string email) {
+	for(size_t i=0;i<jogadores.size();i++) {
+		if (jogadores[i]->getEmail()==email && jogadores[i]->getNome()==nome){
+			std::cout << "Erro aqui" << jogadores[i]->getNome() << std::endl;
+			return jogadores[i];
 		}
 	}
 	throw(UtilizadorInexistente("O utilizador de nome "+ nome+ " e email "+email+" nao existe"));
 }
 
 Titulo *Sistema::pesquisaJogo(std::string nome,std::string plataforma) const{
-	for(const auto titulo : this->titulos) {
+	for(auto titulo : this->titulos) {
 		if (titulo->getNome() == nome && titulo->getPlataforma() == plataforma)
 			return titulo;
 	}
@@ -814,8 +813,8 @@ Titulo *Sistema::pesquisaJogo(std::string nome,std::string plataforma) const{
 }
 
 
-std::vector<Titulo*> Sistema::ordenaTitulosUtilizador(const Utilizador & u, std::string criterio,bool ascend) const{
-	std::vector<Titulo*> titulos = u.getBiblioteca().getTitulos();
+std::vector<Titulo*> Sistema::ordenaTitulosUtilizador(const Utilizador *u, std::string criterio,bool ascend) const{
+	std::vector<Titulo*> titulos = u->getBiblioteca().getTitulos();
 
 	if (criterio == "id")
 	{
@@ -871,7 +870,7 @@ void Sistema::rankingDeGeneros() const{
 	std::vector<std::string> generos;
 
 	for (auto const & utilizador : this->jogadores) {
-		std::vector<Titulo*> titulos = utilizador.getBiblioteca().getTitulos();
+		std::vector<Titulo*> titulos = utilizador->getBiblioteca().getTitulos();
 
 		for (auto const & titulo : titulos) {
 			std::vector<std::string> generosVector = titulo->getGeneros();
@@ -889,7 +888,7 @@ void Sistema::rankingDePlataformas() const{
 	std::vector<std::string> plataformas;
 
 	for (auto const & utilizador : this->jogadores) {
-		std::vector<Titulo*> titulos = utilizador.getBiblioteca().getTitulos();
+		std::vector<Titulo*> titulos = utilizador->getBiblioteca().getTitulos();
 
 		for (auto const & titulo : titulos) {
 			plataformas.push_back(titulo->getPlataforma());
@@ -904,7 +903,7 @@ void Sistema::rankingDeIdades() const{
 	std::vector<std::string> faixasEtarias;
 
 	for (auto const & utilizador : this->jogadores) {
-		unsigned int idade = utilizador.getIdade();
+		unsigned int idade = utilizador->getIdade();
 
 		if (idade <= 10)
 			faixasEtarias.push_back("0-10");
@@ -938,7 +937,7 @@ void Sistema::rankingDeRentabilidades() const{
 	int pos;
 
 	for (auto const & utilizador : this->jogadores) {
-		std::vector<Titulo*> titulos = utilizador.getBiblioteca().getTitulos();
+		std::vector<Titulo*> titulos = utilizador->getBiblioteca().getTitulos();
 
 		for (auto const & titulo : titulos) {
 			pos = findPair(rentabilidade, titulo->getNome());
@@ -958,45 +957,22 @@ void Sistema::rankingDeRentabilidades() const{
 	}
 }
 
-std::vector<Utilizador> Sistema::getJogadores() const{
+std::vector<Utilizador*> Sistema::getJogadores() const{
 	return this->jogadores;
 }
 
 void Sistema::displayUtilizadores() const{
 	for (const auto & utilizador : this->jogadores)
-		std::cout << utilizador.getNome() << ", " << utilizador.getIdade() << ", numero de jogo: " << utilizador.getBiblioteca().getTitulos().size() << std::endl;
+		std::cout << utilizador->getNome() << ", " << utilizador->getIdade() << ", numero de jogo: " << utilizador->getBiblioteca().getTitulos().size() << std::endl;
 }
 
 std::vector<Titulo *> Sistema::getTitulos() const{
 	return this->titulos;
 }
 
-void Sistema::displayTitulos() const
-{
-	std::vector<Titulo*> onlines;
-	std::vector<Titulo*> homes;
-
-	for(const auto & titulo: this->titulos) {
-		if (dynamic_cast<Online*>(titulo) != NULL)
-			homes.push_back(titulo);
-		else
-			onlines.push_back(titulo);
-	}
-
-	unsigned int numero = std::max(onlines.size(),homes.size());
-	std::cout<< "Titulos: "<<std::endl;
-	std::cout <<"Online"<<std::setw(25)<<"Home"<<std::endl;
-
-	for(unsigned int i=0; i< numero ;i++)
-	{
-		if(i < onlines.size())
-			std::cout <<std::setw(0 )<< onlines[i]->getNome();
-		std::cout << std::setw(25);
-		if(i < homes.size())
-			std::cout << homes[i]->getNome();
-		std::cout << std::endl;
-	}
-
+void Sistema::displayTitulos() const{
+	for (const auto & titulo : this->titulos)
+		std::cout << titulo->getNome() << ", " << titulo->getEmpresa() << ", " << titulo->getPlataforma() << ", " << titulo->getPreco() << " euros, (desconto: " << titulo->getDesconto() << "% ), " << titulo->getDataLancamento().getAno() << ", idade minima: " << titulo->getIdadeMinima() << std::endl;
 }
 
 std::vector<std::string> Sistema::getPlataformas() const{

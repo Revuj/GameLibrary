@@ -17,7 +17,7 @@
 
 class Sistema {
 private:
-	std::vector <Utilizador> jogadores;
+	std::vector <Utilizador *> jogadores;
 	std::vector <Titulo *> titulos;
 	std::vector <std::string> plataformas;
 	Banco banco;
@@ -32,24 +32,24 @@ public:
 	void saveTitulos() const;
 	bool validEmail(const std::string email) const;
 	void isValidEmail(std::string & email,bool checkafter=false) const;
-	void utilizadorJogar(Utilizador & u, Titulo * t, unsigned int minutos);
-	void saldoUtilizador(const Utilizador & u) const;
-	void tempoJogado(const Utilizador & u) const;
-	void adicionaUtilizador(const Utilizador & u);
+	void utilizadorJogar(Utilizador *u, Titulo * t, unsigned int minutos);
+	void saldoUtilizador(const Utilizador *u) const;
+	void tempoJogado(const Utilizador *u) const;
+	void adicionaUtilizador(Utilizador *u);
 	void addTitulo(Titulo *titulo);
-	void adicionaAtualizacao(std::string nome,std::string plataforma,Data& data);
+	void adicionaAtualizacao(std::string nome,std::string plataforma,Data data);
 	void ordenaUtilizadores(std::string tipo,bool ascend);
 	void ordenaTitulos(std::string tipo, bool ascend);
 	Utilizador * pesquisaUtilizador(std::string nome, std::string email) ;
 	Titulo * pesquisaJogo(std::string nome,std::string plataforma) const;
-	std::vector<Titulo*> ordenaTitulosUtilizador(const Utilizador & u, std::string criterio,bool ascend) const;
+	std::vector<Titulo*> ordenaTitulosUtilizador(const Utilizador *u, std::string criterio,bool ascend) const;
 	unsigned int nrMedioTitulos() const;
 	float custoMedioBiblioteca() const;
 	void rankingDeGeneros() const;
 	void rankingDePlataformas() const;
 	void rankingDeIdades() const;
 	void rankingDeRentabilidades() const;
-	std::vector <Utilizador> getJogadores() const;
+	std::vector <Utilizador*> getJogadores() const;
 	void displayUtilizadores() const;
 	std::vector <Titulo *> getTitulos() const;
 	void displayTitulos() const;

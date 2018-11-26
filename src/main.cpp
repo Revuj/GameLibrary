@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include "Titulo.h"
 #include "Banco.h"
@@ -65,7 +66,7 @@ void printMainMenu() {
 	std::cout << "3. Visualizar Utilizadores" << std::endl;
 	std::cout << "4. Adicionar Jogo" << std::endl;
 	std::cout << "5. Pesquisar Utilizador" << std::endl;
-//	std::cout << "6. Pesquisar Jogo" << std::endl;
+	std::cout << "6. Pesquisar Jogo" << std::endl;
 	std::cout << "7.Rankings e Estatisticas" << std::endl;
 	std::cout << "8. Sair" << std::endl << std::endl;
 }
@@ -106,7 +107,7 @@ void printDisplayTitulosMenu() {
 	std::cout << "8. Sair" << std::endl << std::endl;
 }
 
-void adicionarUtilizador(Sistema &sistema) {
+void adicionarUtilizador(Sistema * sistema) {
 
 	std::string nome;
 	std::string email;
@@ -118,7 +119,7 @@ void adicionarUtilizador(Sistema &sistema) {
 
 	while (true) {
 		try {
-			sistema.isValidEmail(email);
+			sistema->isValidEmail(email);
 		} catch (Erro &e) {
 			std::cout << e.getInfo() << std::endl;
 			continue;
@@ -131,14 +132,17 @@ void adicionarUtilizador(Sistema &sistema) {
 	std::cout << "Insere o teu enderesso: ";
 	getline(std::cin, morada);
 
-	sistema.adicionaUtilizador(
-			Utilizador(nome, email, std::stoul(idade, NULL, 0), morada));
+	Utilizador u(nome, email, std::stoul(idade, NULL, 0), morada);
+	sistema->adicionaUtilizador(&u);
+
+	for (const auto util : sistema->getJogadores())
+		std::cout << util->getNome() << std::endl;
 
 	std::cout << "Utilizador guardado com sucesso!" << std::endl << std::endl;
 	return;
 }
 
-std::string lerData(std::string data) {
+void lerData(std::string data) {
 
 	// Verificar se está no formato válido (DD/MM/AAAA)
 	if (data.size() != 10)			// Verificar se a data tem o tamanho correto
@@ -192,16 +196,16 @@ std::string lerData(std::string data) {
 	case 2:															// Fevereiro
 		if ((dia < 0) || (dia > 29))
 			throw(DataInvalida("Data Incorreta!"));
-		else if ((dia == 29) && (ano % 4 != 0))	// Se o dia for 29 de Fevereiro e o ano não for bissexto -> erro
+		else if ((dia == 29) && (ano % 4 != 0))
 			throw(DataInvalida("Data Incorreta!"));
 		break;
 	}
 
-	// Data válidade
-	return data;
+
+	return ;
 }
 
-void adicionarJogo(Sistema &sistema) {
+void adicionarJogo(Sistema * sistema) {
 	std::cout << "Adicionar um titulo \n";
 
 	std::cout << std::endl << "Tipo de Titulo (Home, Online): ";
@@ -281,7 +285,8 @@ void adicionarJogo(Sistema &sistema) {
 		Home *home = new Home(nome, idadeMinima, plataforma, preco, generos,
 				empresa, Data(data));
 		try {
-			sistema.addTitulo(home);
+			sistema->addTitulo(home);
+			delete home;
 		} catch (TituloJaAdicionado &e) {
 			std::cout << e.getInfo();
 		}
@@ -315,7 +320,8 @@ void adicionarJogo(Sistema &sistema) {
 		Online *online = new Online(nome, idadeMinima, plataforma, preco,
 				generos, empresa, Data(data), tipoSubscricao, precoSubscricao);
 		try {
-			sistema.addTitulo(online);
+			sistema->addTitulo(online);
+			delete online;
 		} catch (TituloJaAdicionado &e) {
 			std::cout << "\n" << e.getInfo();
 		}
@@ -325,7 +331,7 @@ void adicionarJogo(Sistema &sistema) {
 			<< std::endl;
 }
 
-void displayUtilizadores(Sistema& sistema) {
+void displayUtilizadores(Sistema * sistema) {
 	int opt;
 	while (true) {
 		printDisplayUtilizadoresMenu();
@@ -338,25 +344,25 @@ void displayUtilizadores(Sistema& sistema) {
 		}
 
 		if (opt == 1)
-			sistema.displayUtilizadores();
+			sistema->displayUtilizadores();
 		else if (opt == 2)
-			sistema.ordenaUtilizadores("idade", true);
+			sistema->ordenaUtilizadores("idade", true);
 		else if (opt == 3)
-			sistema.ordenaUtilizadores("idade", false);
+			sistema->ordenaUtilizadores("idade", false);
 		else if (opt == 4)
-			sistema.ordenaUtilizadores("jogos", true);
+			sistema->ordenaUtilizadores("jogos", true);
 		else if (opt == 5)
-			sistema.ordenaUtilizadores("jogos", false);
+			sistema->ordenaUtilizadores("jogos", false);
 		else if (opt == 6)
-			sistema.ordenaUtilizadores("nome", true);
+			sistema->ordenaUtilizadores("nome", true);
 		else if (opt == 7)
-			sistema.ordenaUtilizadores("nome", false);
+			sistema->ordenaUtilizadores("nome", false);
 		else
 			break;
 	}
 }
 
-void ordenaJogosUtilizador(Sistema &sistema, Utilizador& u) {
+void ordenaJogosUtilizador(Sistema * sistema, Utilizador* u) {
 	int opt;
 	std::vector<Titulo *> titulos;
 
@@ -373,21 +379,21 @@ void ordenaJogosUtilizador(Sistema &sistema, Utilizador& u) {
 		}
 
 		if (opt == 1)
-			titulos = sistema.ordenaTitulosUtilizador(u, "id", true);
+			titulos = sistema->ordenaTitulosUtilizador(u, "id", true);
 		else if (opt == 2)
-			titulos = sistema.ordenaTitulosUtilizador(u, "id", false);
+			titulos = sistema->ordenaTitulosUtilizador(u, "id", false);
 		else if (opt == 3)
-			titulos = sistema.ordenaTitulosUtilizador(u, "data", true);
+			titulos = sistema->ordenaTitulosUtilizador(u, "data", true);
 		else if (opt == 4)
-			titulos = sistema.ordenaTitulosUtilizador(u, "data", false);
+			titulos = sistema->ordenaTitulosUtilizador(u, "data", false);
 		else if (opt == 5)
-			titulos = sistema.ordenaTitulosUtilizador(u, "idade", true);
+			titulos = sistema->ordenaTitulosUtilizador(u, "idade", true);
 		else if (opt == 6)
-			titulos = sistema.ordenaTitulosUtilizador(u, "idade", false);
+			titulos = sistema->ordenaTitulosUtilizador(u, "idade", false);
 		else if (opt == 7)
-			titulos = sistema.ordenaTitulosUtilizador(u, "empresa", true);
+			titulos = sistema->ordenaTitulosUtilizador(u, "empresa", true);
 		else if (opt == 8)
-			titulos = sistema.ordenaTitulosUtilizador(u, "empresa", false);
+			titulos = sistema->ordenaTitulosUtilizador(u, "empresa", false);
 		else
 			break;	// opt = 9, o utilizador quer sair
 
@@ -396,7 +402,7 @@ void ordenaJogosUtilizador(Sistema &sistema, Utilizador& u) {
 	}
 }
 
-void displayTitulos(Sistema &sistema) {
+void displayTitulos(Sistema * sistema) {
 	int opt;
 
 	// Perguntar ao utilizador o que quer fazer atï¿½ este indicar que deseja sair
@@ -412,29 +418,28 @@ void displayTitulos(Sistema &sistema) {
 		}
 
 		if (opt == 1)
-			sistema.displayTitulos();
+			sistema->displayTitulos();
 		else if (opt == 2)
-			sistema.ordenaTitulos("data", true);
+			sistema->ordenaTitulos("data", true);
 		else if (opt == 3)
-			sistema.ordenaTitulos("data", false);
+			sistema->ordenaTitulos("data", false);
 		else if (opt == 4)
-			sistema.ordenaTitulos("idade", true);
+			sistema->ordenaTitulos("idade", true);
 		else if (opt == 5)
-			sistema.ordenaTitulos("idade", false);
+			sistema->ordenaTitulos("idade", false);
 		else if (opt == 6)
-			sistema.ordenaTitulos("empresa", true);
+			sistema->ordenaTitulos("empresa", true);
 		else if (opt == 7)
-			sistema.ordenaTitulos("empresa", false);
+			sistema->ordenaTitulos("empresa", false);
 		else if (opt == 8)
 			return;
 	}
 }
 
-void escolheTitulo(Sistema &sistema, Utilizador &u) {
+void escolheTitulo(Sistema * sistema, Utilizador *u) {
 	std::string titulo;
 	std::string plataforma;
 	std::string s;
-	Titulo * t;
 
 	while (true) {
 		std::cout << "Insira o nome do titulo" << std::endl;
@@ -443,7 +448,22 @@ void escolheTitulo(Sistema &sistema, Utilizador &u) {
 		getline(std::cin, plataforma);
 
 		try {
-			t = sistema.pesquisaJogo(titulo, plataforma);
+			Titulo * t = sistema->pesquisaJogo(titulo, plataforma);
+
+			for (auto & cartao : u->getCc()) {
+				try {
+					u->AdicionaTitulo(t, cartao);
+					sistema->dataValida(cartao);
+				} catch (Erro &e) {
+					std::cout << e.getInfo() << std::endl;
+					continue;
+				}
+				std::cout << "Adicionou o titulo " << titulo
+						<< " a biblioteca do utilizador, removendo " << t->getPreco()
+						<< " euros ao cartao " << cartao.getId() << std::endl;
+				break;
+			}
+
 		} catch (Erro &e) {
 			std::cout << e.getInfo() << std::endl;
 			std::cout
@@ -457,24 +477,9 @@ void escolheTitulo(Sistema &sistema, Utilizador &u) {
 		}
 		break;
 	}
-
-	for (auto & cartao : u.getCc()) {
-		try {
-			u.AdicionaTitulo(t, cartao);
-			sistema.dataValida(cartao);
-		} catch (Erro &e) {
-			std::cout << e.getInfo() << std::endl;
-			continue;
-		}
-		std::cout << "Adicionou o titulo " << titulo
-				<< " a biblioteca do utilizador, removendo " << t->getPreco()
-				<< " euros ao cartao " << cartao.getId() << std::endl;
-		break;
-	}
-
 }
 
-void escolheCc(Sistema &sistema, Utilizador &u) {
+void escolheCc(Sistema * sistema, Utilizador *u) {
 	std::string id;
 	std::string saldo;
 	std::string s;
@@ -487,10 +492,9 @@ void escolheCc(Sistema &sistema, Utilizador &u) {
 			std::cout << "Insira o saldo a depositar:" << std::endl;
 			getline(std::cin, saldo);
 
-			CartaoCredito c(std::stof(saldo), sistema.getBanco().getDataAtual(),
-					id);
+			CartaoCredito c(std::stof(saldo), sistema->getBanco().getDataAtual(),	id);
 			c.atualizaDataDeValidade();
-			u.adicionaCartaoCredito(c);
+			u->adicionaCartaoCredito(c);
 		} catch (Erro &e) {
 			std::cout << e.getInfo() << std::endl;
 
@@ -505,12 +509,12 @@ void escolheCc(Sistema &sistema, Utilizador &u) {
 		break;
 	}
 
-	std::cout << "O cartao com id " << id << " foi adicionado com sucesso."
+	std::cout << "O cartao foi adicionado com sucesso."
 			<< std::endl;
 
 }
 
-void utilizadorJoga(Sistema &sistema, Utilizador &u) {
+void utilizadorJoga(Sistema * sistema, Utilizador *u) {
 	std::string titulo;
 	std::string plataforma;
 	std::string s;
@@ -523,7 +527,7 @@ void utilizadorJoga(Sistema &sistema, Utilizador &u) {
 		getline(std::cin, plataforma);
 
 		try {
-			t = sistema.pesquisaJogo(titulo, plataforma);
+			t = sistema->pesquisaJogo(titulo, plataforma);
 
 			if (dynamic_cast<Online *>(t) == NULL) {
 				std::cout << "Nao e um titulo online!" << std::endl;
@@ -561,11 +565,11 @@ void utilizadorJoga(Sistema &sistema, Utilizador &u) {
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //skip bad input
 		std::cout << "Numero de horas a jogar:" << std::endl;
 	}
-	sistema.utilizadorJogar(u, t, n);
+	sistema->utilizadorJogar(u, t, n);
 	std::cout << "O utilizador jogou durante " << n << " minutos." << std::endl;
 }
 
-void menuUtilizador(Sistema &sistema, Utilizador& u) {
+void menuUtilizador(Sistema * sistema, Utilizador* u) {
 	int opt;
 
 	while (true) {
@@ -583,31 +587,30 @@ void menuUtilizador(Sistema &sistema, Utilizador& u) {
 		else if (opt == 2)
 			escolheCc(sistema, u);
 		else if (opt == 3)
-			sistema.saldoUtilizador(u);
+			sistema->saldoUtilizador(u);
 		else if (opt == 4)
 			utilizadorJoga(sistema, u);
 		else if (opt == 5)
-			sistema.tempoJogado(u);
+			sistema->tempoJogado(u);
 		else
 			break;	// opt = 5, o utilizador quer sair
 	}
 
 }
 
-void pesquisarUtilizador(Sistema &sistema) {
+void pesquisarUtilizador(Sistema * sistema) {
 
 	std::string nome;
 	std::cout << "Insere o nome de um utilizador" << std::endl;
 	getline(std::cin, nome);
 	std::string email;
-	Utilizador u;
 	std::string s;
 
 	while (true) {
 
 		while (true) {
 			try {
-				sistema.isValidEmail(email, true);
+				sistema->isValidEmail(email, true);
 			} catch (Erro &e) {
 				std::cout << e.getInfo() << std::endl;
 				continue;
@@ -616,7 +619,8 @@ void pesquisarUtilizador(Sistema &sistema) {
 		}
 
 		try {
-			u = sistema.pesquisaUtilizador(nome, email);
+			Utilizador *u = sistema->pesquisaUtilizador(nome, email);
+			menuUtilizador(sistema, u);
 		} catch (Erro &e) {
 			std::cout << e.getInfo() << std::endl;
 			std::cout
@@ -632,13 +636,13 @@ void pesquisarUtilizador(Sistema &sistema) {
 		}
 		break;
 	}
-	menuUtilizador(sistema, u);
 }
 
 
-void pesquisarJogo(Sistema &sistema) {
+void pesquisarJogo(Sistema * sistema) {
 	std::string nome;
 	std::string plataforma;
+
 
 	std::cout << std::endl << "Nome do titulo: ";
 	getline(std::cin, nome);
@@ -647,11 +651,29 @@ void pesquisarJogo(Sistema &sistema) {
 	std::getline(std::cin, plataforma);
 
 	try {
-		sistema.pesquisaJogo(nome,plataforma);
+		Titulo *t = sistema->pesquisaJogo(nome,plataforma);
+
+		std::string atual;
+
+			Home * H = dynamic_cast<Home *>(t);
+			if(H!=NULL) {
+			std::cout << "Deseja adicionar uma atualizacao (dia atual) ('s' para processar uma atualizacao /outro para nao adicionar "<<std::endl;
+			getline(std::cin,atual);
+			if(atual == "s") {
+				H->adicionaAtualizacao(sistema->getBanco().getDataAtual());
+				sistema->adicionaAtualizacao(nome,plataforma,sistema->getBanco().getDataAtual());
+				std::cout << "Atualizacao bem sucedida para o respetivo titulo"<<std::endl;
+
+				std::cout <<"Atualizacoes existentes do titulo home"<<std::endl;
+				for(const auto &datas: H->getDatas())
+					std::cout << datas <<std::endl;
+			}
+
+			}
 	} catch (TituloInexistente &e) {
 		std::cout << "\n" << e.getInfo();
+		return;
 	}
-
 }
 
 void printRankingMenu()
@@ -666,7 +688,7 @@ void printRankingMenu()
 	std::cout << "7. Sair" << std::endl;
 }
 
-void displayRankings(Sistema &sistema) {
+void displayRankings(Sistema * sistema) {
 	int opt;
 
 	while (true) {
@@ -680,17 +702,17 @@ void displayRankings(Sistema &sistema) {
 		}
 
 		if (opt == 1)
-			sistema.rankingDeGeneros();
+			sistema->rankingDeGeneros();
 		else if (opt == 2)
-			sistema.rankingDeIdades();
+			sistema->rankingDeIdades();
 		else if (opt == 3)
-			sistema.rankingDePlataformas();
+			sistema->rankingDePlataformas();
 		else if (opt == 4)
-			sistema.rankingDeRentabilidades();
+			sistema->rankingDeRentabilidades();
 		else if (opt == 5)
-			sistema.custoMedioBiblioteca();
+			std::cout << "Custo: " << sistema->custoMedioBiblioteca() << std::endl;
 		else if (opt==6)
-			sistema.nrMedioTitulos();
+			std::cout << "Numero medio de titulos: " << sistema->nrMedioTitulos() << std::endl;
 		else
 			break;	// opt = 7, o utilizador quer sair
 	}
@@ -698,10 +720,10 @@ void displayRankings(Sistema &sistema) {
 }
 int main() {
 	printWelcomeMenu();
-	Sistema sistema;
+	Sistema * sistema = new Sistema;
 
-	sistema.readUtilizadores();
-	sistema.readTitulos();
+	sistema->readUtilizadores();
+	sistema->readTitulos();
 
 
 	int opt;
@@ -721,7 +743,9 @@ int main() {
 		if (opt == 1)
 			displayTitulos(sistema);
 		else if (opt == 2)
+		{
 			adicionarUtilizador(sistema);
+		}
 		else if (opt == 3)
 			displayUtilizadores(sistema);
 		else if (opt == 4)
@@ -734,11 +758,15 @@ int main() {
 			displayRankings(sistema);
 		else {
 			std::cout << "Adeus!" << std::endl;
-			return 0;
+			break;
 		}
 	}
-	sistema.saveUtilizadores();
-	sistema.saveTitulos();
+
+
+	sistema->saveUtilizadores();
+	sistema->saveTitulos();
+
+
 
 	return 0;
 }
