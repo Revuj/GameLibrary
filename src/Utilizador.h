@@ -4,6 +4,24 @@
 #include <string>
 #include "CartaoCredito.h"
 #include "Biblioteca.h"
+#include "Titulo.h"
+#include <unordered_set>
+
+//segunda parte
+struct WishHash { //mudar
+	int operator() (const Titulo& wishlist) const {
+		return 0;
+
+	}
+
+	bool operator ()(const Titulo& wishlist1, const Titulo& wishlist2) const {
+		return true;
+	}
+};
+
+typedef std::unordered_set <Titulo,WishHash,WishHash>HashWishList;
+/////
+
 
 /**
  * Utilizador que foi declarado no Sistema
@@ -17,6 +35,10 @@ private:
 	std::string morada;/**< Morada do utilizador */
 	std::vector<CartaoCredito> cc;/**< Vetor com os cartoes de credito do utilizador */
 	Biblioteca conjuntoTitulos;/**< Biblioteca com todos os Titulos do utilizador */
+
+	/*segunda parte do trabalho*/
+	HashWishList wishList;
+
 
 public:
 	/**

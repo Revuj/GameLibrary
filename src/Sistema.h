@@ -1,10 +1,3 @@
-/*
- * Sistema.h
- *
- *  Created on: 21/11/2018
- *      Author: revuj
- */
-
 #ifndef SRC_SISTEMA_H_
 #define SRC_SISTEMA_H_
 
@@ -13,6 +6,15 @@
 #include <string>
 #include <fstream>
 #include <iomanip>
+
+/* ------------------ Bibliotecas da segunda parte do trabalho ----*/
+
+#include <set> // para usar bst
+#include "Empresa.h"
+
+/* ------------------------------------------------*/
+
+typedef std::set<Empresa> BSTEmpresa;
 
 /**
  * Classe que gere as contas dos utilizadores
@@ -23,6 +25,7 @@ private:
 	std::vector <Titulo *> titulos; /**< Conjunto de titulos disponiveis */
 	std::vector <std::string> plataformas; /**< Plataformas onde os titulos estao disponiveis */
 	Banco banco;
+	BSTEmpresa empresas;
 public:
 	/**
 	 * @brief Construtor da class Sistema

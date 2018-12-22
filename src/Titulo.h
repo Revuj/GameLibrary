@@ -5,7 +5,10 @@
 #include <string>
 #include <vector>
 #include "Data.h"
-#include "Utilizador.h"
+
+//segunda parte
+#include <queue>
+
 
 /**
  * Titulo que foi declarado no Sistema
@@ -21,6 +24,12 @@ protected:
 	std::string empresa; /**< Empresa que criou o titulo */
 	std::string plataforma;/**< Plataforma do titulo */
 	std::vector<float> historico_preco;/**< Historico de precos */
+
+
+
+
+
+
 public:
 	/**
 	 * @brief Construtor da classe Titulo
