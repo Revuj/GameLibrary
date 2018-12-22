@@ -19,7 +19,7 @@ const unsigned int Home::precoAtualizacao=1;
 //========================================================================================
 Titulo::Titulo(std::string nome, unsigned idadeMinima,
 		std::string plataforma,float preco,
-		std::vector<std::string> generos, std::string empresa,
+		std::vector<std::string> generos, Empresa empresa,
 		Data dataLancamento) {
 
 	this->IdU = IdUnico++;
@@ -59,7 +59,7 @@ unsigned int Titulo::getIdU() const{
 		return this->generos;
 }
 
- std::string Titulo::getEmpresa() const {
+Empresa Titulo::getEmpresa() const {
 		return this->empresa;
 }
 
@@ -130,7 +130,7 @@ unsigned int Titulo::getIdU() const{
 
  Home::Home(std::string nome, int idadeMinima,
 			std::string plataforma,float preco,
-			std::vector<std::string> generos, std::string empresa,
+			std::vector<std::string> generos, Empresa empresa,
 			Data dataLancamento) :
  		Titulo(nome, idadeMinima, plataforma,preco, generos, empresa,
  				dataLancamento) {
@@ -194,7 +194,7 @@ unsigned int Titulo::getIdU() const{
  //========================================================================================
  Online::Online(std::string nome, int idadeMinima,
 			std::string plataforma,float preco,
-			std::vector<std::string> generos, std::string empresa,
+			std::vector<std::string> generos, Empresa empresa,
 			Data dataLancamento, bool subs, float pSubscricao) :
  		Titulo(nome, idadeMinima, plataforma,preco, generos, empresa,
  				dataLancamento) {

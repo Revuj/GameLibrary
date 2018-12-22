@@ -17,6 +17,10 @@ std::string Empresa::getNomeEmpresa()const {
 	return this->nome;
 }
 
+std::string Empresa::getNif()const {
+	return this->Nif;
+}
+
 void Empresa::addNumero() {
 	this->numeroTitulos++;
 }
@@ -27,6 +31,10 @@ bool Empresa::operator <(const Empresa & empresa) {
 		return this->nome < empresa.getNomeEmpresa();
 	 else
 		 return this->numeroTitulos< empresa.getNumeroTitulos();
+}
+
+bool Empresa::operator == (const Empresa & empresa) {
+	return this->Nif==empresa.getNif();
 }
 
 void Empresa::criarTitulo(Titulo * t) {

@@ -8,6 +8,7 @@
 
 //segunda parte
 #include <queue>
+#include "Empresa.h"
 
 
 /**
@@ -21,9 +22,12 @@ protected:
 	Data dataLancamento;/**< Data de lancamento do titulo */
 	unsigned int idadeMinima;/**< Idade minima necessaria para se jogar o titulo */
 	std::vector<std::string> generos;/**< Vetor com os genneros atribuidos ao titulo */
-	std::string empresa; /**< Empresa que criou o titulo */
 	std::string plataforma;/**< Plataforma do titulo */
 	std::vector<float> historico_preco;/**< Historico de precos */
+
+	///// segunda parte do trabalho
+
+	Empresa empresa; /**< Empresa que criou o titulo */
 
 
 
@@ -43,7 +47,7 @@ public:
 	 */
 	Titulo(std::string nome, unsigned idadeMinima,
 			std::string plataforma,float preco,
-			std::vector<std::string> generos, std::string empresa,
+			std::vector<std::string> generos, Empresa empresa,
 			Data dataLancamento);
 
 	/**
@@ -85,7 +89,7 @@ public:
 	 * @brief Permite obter a empresa do titulo 
 	 * @return Retorna a empresa do titulo
 	 */
-	std::string getEmpresa() const;
+	Empresa getEmpresa() const;
 
 	/**
 	 * @brief Permite obter a plataforma do titulo 
@@ -173,7 +177,7 @@ public:
 	 */
 	Home(std::string nome, int idadeMinima,
 				std::string plataforma,float preco,
-				std::vector<std::string> generos, std::string empresa,
+				std::vector<std::string> generos, Empresa empresa,
 				Data dataLancamento);
 
 	/**
@@ -230,7 +234,7 @@ public:
 	 */
 	Online(std::string nome, int idadeMinima,
 				std::string plataforma,float preco,
-				std::vector<std::string> generos, std::string empresa,
+				std::vector<std::string> generos, Empresa empresa,
 				Data dataLancamento, bool subs, float pSubscricao);
 
 	/**

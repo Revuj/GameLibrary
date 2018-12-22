@@ -1,7 +1,9 @@
 #ifndef SRC_EMPRESA_H_
 #define SRC_EMPRESA_H_
-#include "Titulo.h"
 
+#include <string>
+#include <vector>
+class Titulo;
 typedef struct {
 	std::string email;
 	std::string numeroTelemovel;
@@ -17,11 +19,14 @@ private:
 
 
 public:
+	Empresa() {this->numeroTitulos=0;}
 	Empresa(std::string nome,std::string email,std::string numeroTelemovel, std::string nif);
 	std::string getNomeEmpresa() const;
 	unsigned int getNumeroTitulos() const;
+	std::string getNif()const;
 	void addNumero();
 	bool operator <(const Empresa & empresa);
+	bool operator == (const Empresa & empresa);
 	void criarTitulo(Titulo * t);
 
 
