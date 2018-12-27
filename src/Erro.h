@@ -151,20 +151,45 @@ public:
 	InputInvalido(const std::string &info) : Erro(info) { }
 };
 
+//========================================================================================
+//=======================================================================================
+
 class UtilizadorInexistente : public Erro {
 public:
 	/**
-		 * @brief Construtor da classe InputInvalido
-		 */
+	 * @brief Construtor da classe InputInvalido
+	 */
 	UtilizadorInexistente(const std::string &info) : Erro(info) { }
 };
+
+//========================================================================================
+//=======================================================================================
 
 class ErroEmail: public Erro {
 public:
     /**
-         * @brief Construtor da classe UtilizadorInexistente
-         */
+     * @brief Construtor da classe UtilizadorInexistente
+     */
     ErroEmail(const std::string &info) : Erro(info) { }
+};
+
+//========================================================================================
+//=======================================================================================
+
+class EmpresaInexistente : public Erro {
+public:
+	/**
+	 * @brief Construtor da classe InputInvalido
+	 */
+	EmpresaInexistente(const std::string &info) : Erro(info) { }
+};
+
+class EmpresaJaAdicionada : public Erro {
+public:
+	/**
+	 * @brief Construtor da classe InputInvalido
+	 */
+	EmpresaJaAdicionada(const std::string &info) : Erro(info) { }
 };
 
 #endif /* ERRO_H_ */
