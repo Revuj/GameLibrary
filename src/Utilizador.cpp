@@ -90,9 +90,34 @@ void Utilizador::AdicionaTitulo(Titulo * T, CartaoCredito & c,bool comprar)
 		}
 	}
 	throw CartaoInexistente(c.getId());
+}
 
+void Utilizador::adicionaWishList(Titulo* titulo,unsigned interesse, float probabilidade){
+	WishedTitle novo(interesse,probabilidade,titulo);
+	std::priority_queue<WishedTitle> copia=this->wishlist;
+	while(!copia.empty()){
+		WishedTitle topo=copia.top();
+		if(topo.getTitulo()->getNome()==titulo->getNome() && topo.getTitulo()->getPlataforma()==titulo->getPlataforma())
+			throw TituloJaAdicionado("O titulo ja foi adicionado");
+		copia.pop();
+	}
+	wishlist.push(novo);
+}
 
-
+WishedTitle Utilizador::getWishList(float minProbabilidade){
+	if(!this->wishlist.empty()){
+		if(wishlist.top().getProbabilidadeCompra()>minProbabilidade)
+			return wishlist.top();
+		std::priority_queue<WishedTitle> copia=this->wishlist;
+		copia.pop();
+		while(!copia.empty()){
+			WishedTitle topo=copia.top();
+			if(topo.getProbabilidadeCompra()>minProbabilidade)
+				return topo;
+			copia.pop();
+		}
+	}
+	throw TituloInexistente("Não existe nenhum titulo com probabilidade superior a " + std::to_string(minProbabilidade));
 }
 
 std::ostream & operator <<(std::ostream & os, const Utilizador & u)

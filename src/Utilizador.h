@@ -2,26 +2,11 @@
 #define UTILIZADOR_H_
 
 #include <string>
+#include <queue>
 #include "CartaoCredito.h"
 #include "Biblioteca.h"
 #include "Titulo.h"
-#include <unordered_set>
-
-//segunda parte
-struct WishHash { //mudar
-	int operator() (const Titulo& wishlist) const {
-		return 0;
-
-	}
-
-	bool operator ()(const Titulo& wishlist1, const Titulo& wishlist2) const {
-		return true;
-	}
-};
-
-typedef std::unordered_set <Titulo,WishHash,WishHash>HashWishList;
-/////
-
+#include "WishedTitle.h"
 
 /**
  * Utilizador que foi declarado no Sistema
@@ -37,7 +22,7 @@ private:
 	Biblioteca conjuntoTitulos;/**< Biblioteca com todos os Titulos do utilizador */
 
 	/*segunda parte do trabalho*/
-	HashWishList wishList;
+	std::priority_queue<WishedTitle> wishlist; /**< @brief Wishlist do utilizador  */
 
 
 public:
@@ -107,6 +92,10 @@ public:
 	 * @param c - Cartao de credito para efutuar compra
  	 */
 	void AdicionaTitulo(Titulo * T, CartaoCredito & c,bool comprar=false);
+
+	void adicionaWishList(Titulo* titulo,unsigned interesse, float probabilidade);
+
+	WishedTitle getWishList(float minProbabilidade);
 
 	/**
 	 * @brief Calcula o preco total da biblioteca do utilizador
