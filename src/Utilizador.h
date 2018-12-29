@@ -95,7 +95,9 @@ public:
 
 	void adicionaWishList(Titulo* titulo,unsigned interesse, float probabilidade);
 
-	WishedTitle getWishList(float minProbabilidade);
+	void removeWishList(Titulo *titulo);
+
+	WishedTitle getGamesWishList(float minProbabilidade);
 
 	/**
 	 * @brief Calcula o preco total da biblioteca do utilizador

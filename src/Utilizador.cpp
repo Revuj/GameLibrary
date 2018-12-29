@@ -104,7 +104,31 @@ void Utilizador::adicionaWishList(Titulo* titulo,unsigned interesse, float proba
 	wishlist.push(novo);
 }
 
-WishedTitle Utilizador::getWishList(float minProbabilidade){
+void Utilizador::removeWishList(Titulo *titulo){
+	bool removed = false;
+	std::priority_queue<WishedTitle> copia = wishlist;
+
+	while (!wishlist.empty()) wishlist.pop();
+
+	while (!copia.empty())
+	{
+		WishedTitle topo = copia.top();
+		if (topo.getTitulo()->getNome()==titulo->getNome() && topo.getTitulo()->getPlataforma()==titulo->getPlataforma()){
+			removed = true;
+			copia.pop();
+			continue;
+		}
+
+		wishlist.push(topo);
+		copia.pop();
+	}
+
+	if(!removed){
+		throw TituloInexistente("O titulo nao existe na wishlist");
+	}
+}
+
+WishedTitle Utilizador::getGamesWishList(float minProbabilidade){
 	if(!this->wishlist.empty()){
 		if(wishlist.top().getProbabilidadeCompra()>minProbabilidade)
 			return wishlist.top();

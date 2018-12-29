@@ -90,11 +90,13 @@ void printUserMenu() {
 
 	// Draw the options
 	std::cout << "1. Adicionar titulo" << std::endl;
-	std::cout << "2. Adicionar cartao de credito" << std::endl;
-	std::cout << "3. Verificar Saldo" << std::endl;
-	std::cout << "4. Jogar" << std::endl;
-	std::cout << "5. Tempo Jogado" << std::endl;
-	std::cout << "6. Sair" << std::endl;
+	std::cout << "2. Adicionar titulo a whishlist" << std::endl;
+	std::cout << "3. Comprar titulo na whishlist" << std::endl;
+	std::cout << "4. Adicionar cartao de credito" << std::endl;
+	std::cout << "5. Verificar Saldo" << std::endl;
+	std::cout << "6. Jogar" << std::endl;
+	std::cout << "7. Tempo Jogado" << std::endl;
+	std::cout << "8. Sair" << std::endl;
 }
 
 void printDisplayTitulosMenu() {
@@ -528,6 +530,82 @@ void escolheTitulo(Sistema * sistema, Utilizador *u) {
 	}
 }
 
+void adiconaWishlist(Sistema *sistema, Utilizador *u){
+	std::string titulo;
+	std::string plataforma;
+	std::string s;
+
+	while (true) {
+		std::cout << "Insira o nome do titulo" << std::endl;
+		getline(std::cin, titulo);
+		std::cout << "Insira a plataforma" << std::endl;
+		getline(std::cin, plataforma);
+
+		try {
+			Titulo * t = sistema->pesquisaJogo(titulo, plataforma);
+			unsigned interesse = getOption(1,10);
+			float probabilidade = interesse/10;
+			u->adicionaWishList(t,interesse,probabilidade);
+
+		} catch (Erro &e) {
+			std::cout << e.getInfo() << std::endl;
+			std::cout
+					<< "Deseja desistir da procura('s' para sair/ outro para continuar)?"
+					<< std::endl;
+			getline(std::cin, s);
+			if (s == "s")
+				return;
+
+			continue;
+		}
+		break;
+	}
+}
+
+void compraTituloWhisList(Sistema *sistema, Utilizador *u){
+	std::string titulo;
+	std::string plataforma;
+	std::string s;
+
+	while (true) {
+		std::cout << "Insira o nome do titulo" << std::endl;
+		getline(std::cin, titulo);
+		std::cout << "Insira a plataforma" << std::endl;
+		getline(std::cin, plataforma);
+
+		try {
+			Titulo * t = sistema->pesquisaJogo(titulo, plataforma);
+			u->removeWishList(t);
+
+			for (auto & cartao : u->getCc()) {
+				try {
+					u->AdicionaTitulo(t, cartao);
+					sistema->dataValida(cartao);
+				} catch (Erro &e) {
+					std::cout << e.getInfo() << std::endl;
+					continue;
+				}
+				std::cout << "Adicionou o titulo " << titulo
+					<< " a biblioteca do utilizador, removendo " << t->getPreco()
+					<< " euros ao cartao " << cartao.getId() << std::endl;
+				break;
+			}
+
+		} catch (Erro &e) {
+			std::cout << e.getInfo() << std::endl;
+			std::cout
+					<< "Deseja desistir da procura('s' para sair/ outro para continuar)?"
+					<< std::endl;
+			getline(std::cin, s);
+			if (s == "s")
+				return;
+
+			continue;
+		}
+		break;
+	}
+}
+
 void escolheCc(Sistema * sistema, Utilizador *u) {
 	std::string id;
 	std::string saldo;
@@ -633,13 +711,17 @@ void menuUtilizador(Sistema * sistema, Utilizador* u) {
 
 		if (opt == 1)
 			escolheTitulo(sistema, u);
-		else if (opt == 2)
-			escolheCc(sistema, u);
-		else if (opt == 3)
-			sistema->saldoUtilizador(u);
+		if (opt == 2)
+			adiconaWishlist(sistema,u);
+		if (opt == 3)
+			compraTituloWhisList(sistema, u);
 		else if (opt == 4)
-			utilizadorJoga(sistema, u);
+			escolheCc(sistema, u);
 		else if (opt == 5)
+			sistema->saldoUtilizador(u);
+		else if (opt == 6)
+			utilizadorJoga(sistema, u);
+		else if (opt == 7)
 			sistema->tempoJogado(u);
 		else
 			break;	// opt = 5, o utilizador quer sair
