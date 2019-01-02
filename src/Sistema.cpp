@@ -581,6 +581,265 @@ void Sistema::saveTitulos() const{
 	}
 }
 
+void Sistema::readFileEmpresas(std::ifstream & f) {
+	std::string nome, mail,numeroTelemovel,nif,titulo;
+	std::stringstream tituloSs;
+
+	getline(f, nome);
+	getline(f, mail);
+	getline(f, numeroTelemovel);
+	getline(f, nif);
+
+	Empresa *e= new Empresa(nome,mail,numeroTelemovel,nif);
+
+	while (!f.eof()) {
+		std::string tipoDeJogo;
+		std::string nomeDoJogo;
+		float idadeMinima;
+		std::string plataforma;
+		float preco;
+		std::string genero = ".";
+		std::string empresa;
+		std::string dataStr;
+		std::vector<std::string> generos;
+		std::vector<float> price_history;
+		std::string subscricao;
+		std::string precoSubsStr;
+
+		getline(f, titulo);
+
+		tituloSs << titulo;
+
+		tituloSs >> tipoDeJogo;
+
+		if (tipoDeJogo == "Online") {
+			Online *ptr;
+			std::vector<Data> datasJogo;
+			std::vector<unsigned int> minutosJogados;
+			tituloSs >> nomeDoJogo >> idadeMinima >> plataforma >> empresa
+					>> dataStr >> subscricao >> precoSubsStr;
+
+			Data d(dataStr);
+
+			tituloSs.str(std::string());
+			tituloSs.clear();
+
+			getline(f, titulo);
+			tituloSs << titulo;
+			while (tituloSs >> preco) {
+				price_history.push_back(preco);
+			}
+
+			tituloSs.str(std::string());
+			tituloSs.clear();
+
+			getline(f, titulo);
+			tituloSs << titulo;
+
+			while (tituloSs >> genero) {
+				generos.push_back(genero);
+			}
+
+			tituloSs.str(std::string());
+			tituloSs.clear();
+
+			unsigned int precoSubs = std::stof(precoSubsStr);
+			if (subscricao == "fixa")
+				ptr = new Online(nomeDoJogo, idadeMinima, plataforma, 0,
+						generos, empresa, d, true, precoSubs);
+			else
+				ptr = new Online(nomeDoJogo, idadeMinima, plataforma, 0,
+						generos, empresa, d, false, precoSubs);
+
+			bool fim = false;
+			std::string data;
+			unsigned int minutos;
+			while (true) {
+				if (fim)
+					break;
+
+				else {
+					getline(f, titulo);
+					tituloSs << titulo;
+					while (tituloSs >> data >> minutos) {
+						datasJogo.push_back(Data(data));
+						minutosJogados.push_back(minutos);
+					}
+					fim = true;
+				}
+			}
+			ptr->setHistoricoPreco(price_history);
+			ptr->setDatasJogo(datasJogo);
+			ptr->setMinutosJogo(minutosJogados);
+			e->criarTitulo(ptr);
+		} else {
+			Home *ptr;
+			tituloSs >> nomeDoJogo >> idadeMinima >> plataforma >> empresa
+					>> dataStr;
+
+			Data d(dataStr);
+
+			tituloSs.str(std::string());
+			tituloSs.clear();
+
+			getline(f, titulo);
+			tituloSs << titulo;
+			while (tituloSs >> preco) {
+				price_history.push_back(preco);
+			}
+			tituloSs.str(std::string());
+			tituloSs.clear();
+
+			getline(f, titulo);
+			tituloSs << titulo;
+
+			while (tituloSs >> genero) {
+				generos.push_back(genero);
+			}
+
+			tituloSs.str(std::string());
+			tituloSs.clear();
+
+			ptr = new Home(nomeDoJogo, idadeMinima, plataforma, preco, generos,
+					empresa, d);
+			std::string data;
+			getline(f, titulo);
+			tituloSs << titulo;
+
+			while (tituloSs >> data) {
+				ptr->adicionaAtualizacao(Data(data));
+			}
+			ptr->setHistoricoPreco(price_history);
+			e->criarTitulo(ptr);
+		}
+		tituloSs.str(std::string());
+		tituloSs.clear();
+	}
+
+	this->empresas.insert(e);
+}
+
+void Sistema::readEmpresas() {
+
+	unsigned int i = 1;
+
+	while (true) {
+		std::ifstream file;
+		file.open("Empresa" + std::to_string(i) + ".txt");
+		if (!file.fail()) {
+			readFileEmpresas(file);
+			file.close();
+			i++;
+		} else
+			break;
+	}
+}
+
+void Sistema::saveEmpresas(){
+	unsigned i=1;
+	for(auto empresa:this->empresas){
+		std::ofstream file("Empresa" + std::to_string(i) + ".txt");
+		i++;
+		std::string nome=empresa->getNomeEmpresa();
+		std::string mail=empresa->getContactos().email;
+		std::string numero=empresa->getContactos().numeroTelemovel;
+		std::string nif=empresa->getNif();
+		file << nome << std::endl << mail << std::endl << numero<<std::endl<<nif<<std::endl;
+
+		std::vector<Titulo*> titulos = empresa->getTitulos();
+
+		for (size_t i = 0; i < titulos.size(); i++) {
+			Online* online = dynamic_cast<Online*>(titulos.at(i));
+			if (online != NULL) {
+				std::string tipoDeJogo = "Online";
+				std::string nomeDoJogo = online->getNome();
+				unsigned int idadeMinima = online->getIdadeMinima();
+				std::string plataforma = online->getPlataforma();
+				std::vector<float> preco = online->getHistorialPreco();
+				std::vector<std::string> genero = online->getGeneros();
+				std::string empresa = online->getEmpresa();
+				Data data = online->getDataLancamento();
+				std::string subscricao;
+				if (online->getSubscricao())
+					subscricao = "fixa";
+				else
+					subscricao = "variavel";
+				float precoSubs = online->getPrecoSubscricao();
+				std::vector<Data> datasJogo = online->getDatasJogo();
+				std::vector<unsigned int> minutosJogados =
+						online->getMinutosJogo();
+				file << tipoDeJogo << " " << nomeDoJogo << " " << idadeMinima
+						<< " " << plataforma << " ";
+
+				file << empresa << " " << data << " " << subscricao << " "
+						<< precoSubs << std::endl;
+				for (unsigned int i = 0; i < preco.size(); i++) {
+					if (i == preco.size() - 1)
+						file << preco[i] << std::endl;
+					else
+						file << preco[i] << " ";
+				}
+
+				for (unsigned int i = 0; i < genero.size(); i++) {
+					if (i == genero.size() - 1)
+						file << genero[i] << std::endl;
+					else
+						file << genero[i] << " ";
+				}
+
+				for (unsigned int i = 0; i < datasJogo.size(); i++) {
+					if (i == datasJogo.size() - 1)
+						file << datasJogo[i] << " " << minutosJogados[i];
+					else
+						file << datasJogo[i] << " " << minutosJogados[i] << " ";
+				}
+
+				if (i != titulos.size() - 1)
+					file << std::endl;
+			} else {
+				Home* home = dynamic_cast<Home*>(titulos.at(i));
+				std::string tipoDeJogo = "Home";
+				std::string nomeDoJogo = home->getNome();
+				unsigned int idadeMinima = home->getIdadeMinima();
+				std::string plataforma = home->getPlataforma();
+				std::vector<float> preco = home->getHistorialPreco();
+				std::vector<std::string> genero = home->getGeneros();
+				std::string empresa = home->getEmpresa();
+				Data data = home->getDataLancamento();
+				std::vector<Data> datasAtualizacao = home->getDatas();
+				file << tipoDeJogo << " " << nomeDoJogo << " " << idadeMinima
+						<< " " << plataforma << " " << empresa << " " << data
+						<< std::endl;
+				for (unsigned int i = 0; i < preco.size(); i++) {
+					if (i == preco.size() - 1)
+						file << preco[i] << std::endl;
+					else
+						file << preco[i] << " ";
+				}
+
+				for (unsigned int i = 0; i < genero.size(); i++) {
+					if (i == genero.size() - 1)
+						file << genero[i] << std::endl;
+					else
+						file << genero[i] << " ";
+				}
+
+				for (unsigned int i = 0; i < datasAtualizacao.size(); i++) {
+					if (i == datasAtualizacao.size() - 1)
+						file << datasAtualizacao[i];
+					else
+						file << datasAtualizacao[i] << " ";
+				}
+
+				if (i != titulos.size() - 1)
+					file << std::endl;
+
+			}
+		}
+		file.close();
+	}
+}
+
 unsigned int Sistema::nrMedioTitulos() const{
 
 	unsigned int nrTotalTitulos = 0;

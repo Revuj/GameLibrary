@@ -21,6 +21,14 @@ std::string Empresa::getNif()const {
 	return this->Nif;
 }
 
+contactos Empresa::getContactos() const{
+	return this->contacto;
+}
+
+std::vector<Titulo*> Empresa::getTitulos() const{
+	return this->Titulos;
+}
+
 void Empresa::addNumero() {
 	this->numeroTitulos++;
 }

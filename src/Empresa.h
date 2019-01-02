@@ -24,6 +24,8 @@ public:
 	std::string getNomeEmpresa() const;
 	unsigned int getNumeroTitulos() const;
 	std::string getNif()const;
+	contactos getContactos() const;
+	std::vector<Titulo*> getTitulos() const;
 	void addNumero();
 	bool operator <(const Empresa & empresa);
 	bool operator == (const Empresa & empresa);

@@ -79,6 +79,12 @@ public:
 	 */
 	void saveTitulos() const;
 
+	void readFileEmpresas(std:: ifstream & file);
+
+	void readEmpresas();
+
+	void saveEmpresas();
+
 	/**
 	 * @biref Verifica se o email ja existe
 	 * @return Retorna true se o email nao existir, ainda
