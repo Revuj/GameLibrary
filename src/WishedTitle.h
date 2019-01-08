@@ -42,12 +42,16 @@ public:
 	*/
 	void setProbabilidadeCompra(float probabilidade);
 
+	void setInteresse(int interesse) {this->interesse = interesse;}
+
 	/**
 	* @brief Compara dos objetos da classe WishedTitle
 	* @param title - WishedTitle a ser comprado
 	* @return Retorna booleano representado se um objeto tem menos prioridade que outro
 	*/
 	bool operator<(const WishedTitle &title) const;
+
+	void atualizaProbabilidade();
 };
 
 #endif /* WISHEDTITLE_H_ */

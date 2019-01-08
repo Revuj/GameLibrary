@@ -74,7 +74,7 @@ void Utilizador::AdicionaTitulo(Titulo * T, CartaoCredito & c,bool comprar)
 	{
 		if (cartao == c)
 		{
-			if (cartao.getSaldo() >= T->getPreco()) //ver se o saldo para comprar o titulo é suficiente
+			if (cartao.getSaldo() >= T->getPreco()) //ver se o saldo para comprar o titulo ï¿½ suficiente
 			{
 				this->conjuntoTitulos.adicionaTitulo(T);
 				try{
@@ -92,8 +92,14 @@ void Utilizador::AdicionaTitulo(Titulo * T, CartaoCredito & c,bool comprar)
 	throw CartaoInexistente(c.getId());
 }
 
-void Utilizador::adicionaWishList(Titulo* titulo,unsigned interesse, float probabilidade){
-	WishedTitle novo(interesse,probabilidade,titulo);
+void Utilizador::adicionaWishList(Titulo* titulo,unsigned interesse){
+	WishedTitle novo(interesse,0,titulo);
+	float saldo = 0;
+	for(auto it : this->cc){
+		saldo += it.getSaldo();
+	}
+	novo.atualizaProbabilidade();
+
 	std::priority_queue<WishedTitle> copia=this->wishlist;
 	while(!copia.empty()){
 		WishedTitle topo=copia.top();
@@ -104,8 +110,9 @@ void Utilizador::adicionaWishList(Titulo* titulo,unsigned interesse, float proba
 	wishlist.push(novo);
 }
 
-void Utilizador::removeWishList(Titulo *titulo){
+bool Utilizador::removeWishList(Titulo *titulo){
 	std::priority_queue<WishedTitle> copia = wishlist;
+	bool removed=false;
 
 	while (!wishlist.empty()) wishlist.pop();
 
@@ -114,12 +121,14 @@ void Utilizador::removeWishList(Titulo *titulo){
 		WishedTitle topo = copia.top();
 		if (topo.getTitulo()->getNome()==titulo->getNome() && topo.getTitulo()->getPlataforma()==titulo->getPlataforma()){
 			copia.pop();
+			removed=true;
 			continue;
 		}
 
 		wishlist.push(topo);
 		copia.pop();
 	}
+	return removed;
 }
 
 WishedTitle Utilizador::getGamesWishList(float minProbabilidade){
@@ -172,9 +181,39 @@ float Utilizador::getGastos() const{
 void Utilizador::printPublicidade(){
 	try {
 		WishedTitle t = getGamesWishList(0.5);
-		std::cout << t.getTitulo()->getNome() << "\n";
-		std::cout << t.getTitulo()->getPreco() << "\n";
-		std::cout << t.getTitulo()->getDesconto() << "\n";
+		std::cout << "Titulo: " << t.getTitulo()->getNome() << "\n";
+		std::cout << "Preco: " << t.getTitulo()->getPreco() << "\n";
+		std::cout << "Desconto: " << t.getTitulo()->getDesconto() << "\n";
 	}
 	catch(TituloInexistente &erro){}
+}
+
+void Utilizador::atualizaInteresse(Titulo* t, unsigned int interesse){
+	std::priority_queue<WishedTitle> copia = wishlist;
+
+	while (!wishlist.empty()) wishlist.pop();
+	while (!copia.empty())
+	{
+		WishedTitle topo = copia.top();
+		if (topo.getTitulo()->getNome()==t->getNome() && topo.getTitulo()->getPlataforma()==t->getPlataforma()){
+			topo.setInteresse(interesse);
+			topo.atualizaProbabilidade();
+		}
+
+		wishlist.push(topo);
+		copia.pop();
+	}
+}
+
+void Utilizador::atualizaProbabilidades(){
+	std::priority_queue<WishedTitle> copia = wishlist;
+
+	while (!wishlist.empty()) wishlist.pop();
+	while (!copia.empty())
+	{
+		WishedTitle topo = copia.top();
+		topo.atualizaProbabilidade();
+		wishlist.push(topo);
+		copia.pop();
+	}
 }

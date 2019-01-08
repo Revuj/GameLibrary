@@ -75,14 +75,14 @@ public:
 	/**
 	 * @brief Overload do operador de igualdade para a classe Utilizador
 	 * @param U - Utilizador a ser comparado
-	 * @return Retorna verdadeiro se os utilizadores forem iguais, caso contrário retorna falso
+	 * @return Retorna verdadeiro se os utilizadores forem iguais, caso contrï¿½rio retorna falso
 	 */
 	bool operator ==(const Utilizador & U);
 	
 	/**
 	 * @brief Adiciona um cartao de credito caso este ainda nao exista
 	 * @param C - cartao de credito
-	 * @return Retorna verdadeiro se adicionar o cartao de credito, caso contrário retorna falso
+	 * @return Retorna verdadeiro se adicionar o cartao de credito, caso contrï¿½rio retorna falso
 	 */
 	bool adicionaCartaoCredito(const CartaoCredito & C);
 
@@ -93,9 +93,9 @@ public:
  	 */
 	void AdicionaTitulo(Titulo * T, CartaoCredito & c,bool comprar=false);
 
-	void adicionaWishList(Titulo* titulo,unsigned interesse, float probabilidade);
+	void adicionaWishList(Titulo* titulo,unsigned interesse);
 
-	void removeWishList(Titulo *titulo);
+	bool removeWishList(Titulo *titulo);
 
 	WishedTitle getGamesWishList(float minProbabilidade);
 
@@ -107,13 +107,16 @@ public:
 
 	void printPublicidade();
 
+	void atualizaInteresse(Titulo* t, unsigned int interesse);
+
+	void atualizaProbabilidades();
 };
 
 /**
-* @brief Overload do operador de inserção para a classe Utilizador
-* @param os - Stream passada por referência para a qual será efetuada a escrita
+* @brief Overload do operador de inserï¿½ï¿½o para a classe Utilizador
+* @param os - Stream passada por referï¿½ncia para a qual serï¿½ efetuada a escrita
 * @param u - Utilizador a ser enviado para a stream
-* @return Retorna referência de stream de output
+* @return Retorna referï¿½ncia de stream de output
 */
 std::ostream & operator <<(std::ostream & os, const Utilizador & u);
 

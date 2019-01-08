@@ -1,4 +1,5 @@
 #include "WishedTitle.h"
+#include "Titulo.h"
 
 WishedTitle::WishedTitle(unsigned interesse, float probabilidade, Titulo* title){
 	if(interesse>10){
@@ -26,6 +27,9 @@ bool WishedTitle::operator<(const WishedTitle &title) const {
 	return interesse < title.getInteresse();
 }
 
-
+void WishedTitle::atualizaProbabilidade(){
+	unsigned anuncios = this->titulo->getAnuncios(),cliques = this->titulo->getCliques();
+	this->probabilidadeCompra=(2*this->interesse+30*anuncios/(anuncios +10) + 30 * cliques /(cliques +5))/100.0;
+}
 
 

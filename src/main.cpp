@@ -101,11 +101,13 @@ void printUserMenu() {
 	// Draw the options
 	std::cout << "1. Adicionar titulo" << std::endl;
 	std::cout << "2. Adicionar titulo a whishlist" << std::endl;
-	std::cout << "3. Adicionar cartao de credito" << std::endl;
-	std::cout << "4. Verificar Saldo" << std::endl;
-	std::cout << "5. Jogar" << std::endl;
-	std::cout << "6. Tempo Jogado" << std::endl;
-	std::cout << "7. Sair" << std::endl;
+	std::cout << "3. Remover titulo da wishlsit" << std::endl;
+	std::cout << "4. Alterar interesse de jogo da wishlist" << std::endl;
+	std::cout << "5. Adicionar cartao de credito" << std::endl;
+	std::cout << "6. Verificar Saldo" << std::endl;
+	std::cout << "7. Jogar" << std::endl;
+	std::cout << "8. Tempo Jogado" << std::endl;
+	std::cout << "9. Sair" << std::endl;
 }
 
 void printDisplayTitulosMenu() {
@@ -153,29 +155,29 @@ void adicionarUtilizador(Sistema * sistema) {
 
 void lerData(std::string data) {
 
-	// Verificar se esta no formato válido (DD/MM/AAAA)
+	// Verificar se esta no formato vï¿½lido (DD/MM/AAAA)
 	if (data.size() != 10)			// Verificar se a data tem o tamanho correto
 		throw(DataInvalida("Data Invalida!"));
 	else if ((data.at(2) != '/') || (data.at(5) != '/'))// Verificar se dia, mes e ano estao separados por um traco
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(0) < '0') || (data.at(0) > '9'))// Verificar se Dx é um digito
+	else if ((data.at(0) < '0') || (data.at(0) > '9'))// Verificar se Dx ï¿½ um digito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(1) < '0') || (data.at(1) > '9'))// Verificar se xD é um digito
+	else if ((data.at(1) < '0') || (data.at(1) > '9'))// Verificar se xD ï¿½ um digito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(3) < '0') || (data.at(3) > '9'))// Verificar se Mx é um digito
+	else if ((data.at(3) < '0') || (data.at(3) > '9'))// Verificar se Mx ï¿½ um digito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(4) < '0') || (data.at(4) > '9'))// Verificar se xM é um digito
+	else if ((data.at(4) < '0') || (data.at(4) > '9'))// Verificar se xM ï¿½ um digito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(6) < '0') || (data.at(6) > '9'))// Verificar se Axxx é um dígito
+	else if ((data.at(6) < '0') || (data.at(6) > '9'))// Verificar se Axxx ï¿½ um dï¿½gito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(7) < '0') || (data.at(7) > '9'))// Verificar se xAxx é um dígito
+	else if ((data.at(7) < '0') || (data.at(7) > '9'))// Verificar se xAxx ï¿½ um dï¿½gito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(8) < '0') || (data.at(8) > '9'))// Verificar se xxAx é um dígito
+	else if ((data.at(8) < '0') || (data.at(8) > '9'))// Verificar se xxAx ï¿½ um dï¿½gito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(9) < '0') || (data.at(9) > '9'))// Verificar se xxxA é um dígito
+	else if ((data.at(9) < '0') || (data.at(9) > '9'))// Verificar se xxxA ï¿½ um dï¿½gito
 		throw(DataInvalida("Data Invalida!"));
 
-	// Verificar se a data segue os padrões normais de datas
+	// Verificar se a data segue os padrï¿½es normais de datas
 	int dia = stoi(data.substr(0, 2));
 	int mes = stoi(data.substr(3, 2));
 	int ano = stoi(data.substr(6, 4));
@@ -255,7 +257,7 @@ void adicionarJogo(Sistema * sistema, std::string nomeEmpresa) {
 		std::cin >> preco;
 	}
 
-	// Limpar a stream mesmo que não tenha ocorrido qualquer erro, para garantir que está sempre limpa e vazia
+	// Limpar a stream mesmo que nï¿½o tenha ocorrido qualquer erro, para garantir que estï¿½ sempre limpa e vazia
 	std::cin.ignore(1000, '\n');
 
 	int idadeMinima;
@@ -589,21 +591,12 @@ void adiconaWishlist(Sistema *sistema, Utilizador *u){
 			while (std::cin.fail() || std::cin.eof() || interesse < 0 || interesse > 10) {
 				std::cin.clear();
 				std::cin.ignore(1000, '\n');
-				std::cout << "Interesse invalid0! Introduza novamente." << std::endl;
+				std::cout << "Interesse invalido! Introduza novamente." << std::endl;
 				std::cout << std::endl << "Interesse (0 - 10): ";
 				std::cin >> interesse;
 			}
 			std::cin.ignore(1000, '\n');
-
-			std::vector<CartaoCredito> cc=u->getCc();
-			int saldo = 0;
-			for(auto it : cc){
-				saldo += it.getSaldo();
-			}
-			//TODO alterar formula
-			float probabilidade = 0.2*interesse+0.2*saldo;
-			u->adicionaWishList(t,interesse,probabilidade);
-
+			u->adicionaWishList(t,interesse);
 		} catch (Erro &e) {
 			std::cout << e.getInfo() << std::endl;
 			std::cout
@@ -620,7 +613,49 @@ void adiconaWishlist(Sistema *sistema, Utilizador *u){
 	}
 }
 
-void compraTituloWhisList(Sistema *sistema, Utilizador *u){
+void removerWishlist(Sistema *sistema, Utilizador *u){
+	std::string titulo;
+	std::string plataforma;
+	std::string s;
+	bool removed;
+
+	while (true) {
+		std::cout << "Insira o nome do titulo" << std::endl;
+		getline(std::cin, titulo);
+		std::cout << "Insira a plataforma" << std::endl;
+		getline(std::cin, plataforma);
+
+		try {
+			Titulo * t = sistema->pesquisaJogo(titulo, plataforma);
+			removed = u->removeWishList(t);
+		} catch (Erro &e) {
+			std::cout << e.getInfo() << std::endl;
+			std::cout
+					<< "Deseja desistir da procura('s' para sair/ outro para continuar)?"
+					<< std::endl;
+			getline(std::cin, s);
+			if (s == "s")
+				return;
+
+			continue;
+		}
+		if(!removed){
+			std::cout << "Titulo inexistente na wishlist"<<std::endl;
+			std::cout
+					<< "Deseja desistir da procura('s' para sair/ outro para continuar)?"
+					<< std::endl;
+			getline(std::cin, s);
+			if (s == "s")
+				return;
+
+			continue;
+		}
+		std::cout << "Jogo removido com sucesso!" << std::endl;
+		break;
+	}
+}
+
+void alteraInteresse(Sistema* sistema, Utilizador *u){
 	std::string titulo;
 	std::string plataforma;
 	std::string s;
@@ -633,22 +668,19 @@ void compraTituloWhisList(Sistema *sistema, Utilizador *u){
 
 		try {
 			Titulo * t = sistema->pesquisaJogo(titulo, plataforma);
-			u->removeWishList(t);
-
-			for (auto & cartao : u->getCc()) {
-				try {
-					u->AdicionaTitulo(t, cartao);
-					sistema->dataValida(cartao);
-				} catch (Erro &e) {
-					std::cout << e.getInfo() << std::endl;
-					continue;
-				}
-				std::cout << "Adicionou o titulo " << titulo
-					<< " a biblioteca do utilizador, removendo " << t->getPreco()
-					<< " euros ao cartao " << cartao.getId() << std::endl;
-				break;
+			unsigned int interesse;
+			std::cout << std::endl << "Interesse (0 - 10) ";
+			std::cin >> interesse;
+			// Verificar se foi introduzido um numero
+			while (std::cin.fail() || std::cin.eof() || interesse < 0 || interesse > 10) {
+				std::cin.clear();
+				std::cin.ignore(1000, '\n');
+				std::cout << "Interesse invalido! Introduza novamente." << std::endl;
+				std::cout << std::endl << "Interesse (0 - 10): ";
+				std::cin >> interesse;
 			}
-
+			std::cin.ignore(1000, '\n');
+			u->atualizaInteresse(t,interesse);
 		} catch (Erro &e) {
 			std::cout << e.getInfo() << std::endl;
 			std::cout
@@ -660,6 +692,7 @@ void compraTituloWhisList(Sistema *sistema, Utilizador *u){
 
 			continue;
 		}
+		std::cout << "Interesse alterado com sucesso!" << std::endl;
 		break;
 	}
 }
@@ -761,6 +794,7 @@ void printEmpresaMenu() {
 	std::cout << "3. Visualizar titulos" << std::endl;
 	std::cout << "4. Sair" << std::endl;
 }
+
 void menuEmpresa(Sistema * sistema, Empresa * empresa) {
 	int opt;
 
@@ -786,6 +820,7 @@ void menuEmpresa(Sistema * sistema, Empresa * empresa) {
 				break;	// opt = 4, o utilizador quer sair
 		}
 }
+
 void menuUtilizador(Sistema * sistema, Utilizador* u) {
 	u->printPublicidade();
 	int opt;
@@ -794,7 +829,7 @@ void menuUtilizador(Sistema * sistema, Utilizador* u) {
 		printUserMenu();
 
 		try {
-			opt = getOption(1, 7);
+			opt = getOption(1, 9);
 		} catch (InputInvalido &e) {
 			std::cout << "\n" << e.getInfo();
 			continue;
@@ -805,12 +840,16 @@ void menuUtilizador(Sistema * sistema, Utilizador* u) {
 		else if (opt == 2)
 			adiconaWishlist(sistema,u);
 		else if (opt == 3)
-			escolheCc(sistema, u);
+			removerWishlist(sistema,u);
 		else if (opt == 4)
-			sistema->saldoUtilizador(u);
+			alteraInteresse(sistema,u);
 		else if (opt == 5)
-			utilizadorJoga(sistema, u);
+			escolheCc(sistema, u);
 		else if (opt == 6)
+			sistema->saldoUtilizador(u);
+		else if (opt == 7)
+			utilizadorJoga(sistema, u);
+		else if (opt == 8)
 			sistema->tempoJogado(u);
 		else
 			break;	// opt = 7, o utilizador quer sair
