@@ -1,4 +1,4 @@
-#include "empresa.h"
+#include "Empresa.h"
 
 Empresa::Empresa(std::string nome,std::string email,std::string numeroTelemovel, std::string nif)
  	 :nome(nome),Nif(nif) {

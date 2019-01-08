@@ -141,7 +141,7 @@ WishedTitle Utilizador::getGamesWishList(float minProbabilidade){
 			copia.pop();
 		}
 	}
-	throw TituloInexistente("Não existe nenhum titulo com probabilidade superior a " + std::to_string(minProbabilidade));
+	throw TituloInexistente("Nao existe nenhum titulo com probabilidade superior a " + std::to_string(minProbabilidade));
 }
 
 std::ostream & operator <<(std::ostream & os, const Utilizador & u)
@@ -173,4 +173,14 @@ float Utilizador::getGastos() const{
 		total += titulo->getPreco();
 	}
 	return total;
+}
+
+void Utilizador::printPublicidade(){
+	try {
+		WishedTitle t = getGamesWishList(0.5);
+		std::cout << t.getTitulo()->getNome() << "\n";
+		std::cout << t.getTitulo()->getPreco() << "\n";
+		std::cout << t.getTitulo()->getDesconto() << "\n";
+	}
+	catch(TituloInexistente){}
 }

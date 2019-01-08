@@ -591,7 +591,7 @@ void Sistema::readFileEmpresas(std::ifstream & f) {
 	getline(f, nif);
 
 	Empresa *e= new Empresa(nome,mail,numeroTelemovel,nif);
-
+	
 	while (!f.eof()) {
 		std::string tipoDeJogo;
 		std::string nomeDoJogo;
@@ -672,6 +672,7 @@ void Sistema::readFileEmpresas(std::ifstream & f) {
 			ptr->setDatasJogo(datasJogo);
 			ptr->setMinutosJogo(minutosJogados);
 			e->criarTitulo(ptr);
+			this->titulos.push_back(ptr);
 		} else {
 			Home *ptr;
 			tituloSs >> nomeDoJogo >> idadeMinima >> plataforma >> empresa
@@ -711,6 +712,7 @@ void Sistema::readFileEmpresas(std::ifstream & f) {
 			}
 			ptr->setHistoricoPreco(price_history);
 			e->criarTitulo(ptr);
+			this->titulos.push_back(ptr);
 		}
 		tituloSs.str(std::string());
 		tituloSs.clear();
@@ -885,7 +887,7 @@ void Sistema::isValidEmail(std::string & email,bool checkafter) const{
     char* ptr = nullptr; //pointer
     char* ptr2 = nullptr; //pointer
 
-    std::cout << "Escreve o teu endereco de email \n";
+    std::cout << "Escreve o teu endere�o de email \n";
     std::cin.getline(input, x);
     email = input;
     sizeOf = strlen(input);
@@ -927,7 +929,6 @@ void Sistema::isValidEmail(std::string & email,bool checkafter) const{
     else {
         throw(ErroEmail("Falta o simbolo @.\n"));
     }
-
 }
 
 void Sistema::saldoUtilizador(const Utilizador * u) const{
@@ -1250,6 +1251,47 @@ void Sistema::displayTitulos() const{
 	for (const auto & titulo : this->titulos)
 		std::cout << titulo->getNome() << ", " << titulo->getEmpresa() << ", " << titulo->getPlataforma() << ", " << titulo->getPreco() << " euros, (desconto: " << titulo->getDesconto() << "% ), " << titulo->getDataLancamento().getAno() << ", idade minima: " << titulo->getIdadeMinima() << std::endl;
 	std::cout << std::endl<<std::endl;
+}
+
+void Sistema::displayEmpresas(std::string s) const{
+	if(s=="plataforma"){
+		std::cout<< "Insira a plataforma" << std::endl;
+		getline(std::cin,s);
+		for(auto it : this->empresas){
+			std::vector <Titulo*> t = it->getTitulos();
+			for(auto titulo : t){
+				if(titulo->getPlataforma() == s)
+					std::cout << it->getNomeEmpresa() << "  "<<it->getNif()<<std::endl;
+			}
+		}
+	}
+	
+	else if(s=="numero"){
+		std::cout<<"Insira o umero de titulos"<<std::endl;
+		int opt;
+		std::cin >> opt;
+
+		// Check if not a number was entered
+		if (std::cin.fail()) {
+			// Clear the cin error flags and the stream content, throw the error
+			std::cin.clear();
+			std::cin.ignore(1000, '\n');
+			throw(InputInvalido("Input Invalido!"));
+		}
+
+		// Clear the cin stream even if no error occured, to ensure the stream always stays clean
+		std::cin.ignore(1000, '\n');
+		for(auto it : this->empresas){
+			if(it->getNumeroTitulos() == opt)
+				std::cout << it->getNomeEmpresa() << "  "<<it->getNif()<<std::endl;
+		}
+	}
+
+	else {
+		for(auto it : this->empresas){
+			std::cout << it->getNomeEmpresa() << "  "<<it->getNif()<<std::endl;
+		}
+	}
 }
 
 std::vector<std::string> Sistema::getPlataformas() const{

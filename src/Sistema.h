@@ -59,7 +59,7 @@ public:
 	void readUtilizadores();
 
 	/**
-	 * Guarda todos os utilizadores do sistema em ficheiros, criando novos, se necessário
+	 * Guarda todos os utilizadores do sistema em ficheiros, criando novos, se necessï¿½rio
 	 */
 	void saveUtilizadores() const;
 
@@ -242,6 +242,8 @@ public:
 	 * @brief Mostra os titulos do sistema
 	 */
 	void displayTitulos() const;
+
+	void displayEmpresas(std::string s) const;
 
 	/**
 	 * @brief Devolve as plataformas do sistema

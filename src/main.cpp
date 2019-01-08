@@ -86,6 +86,14 @@ void printDisplayUtilizadoresMenu() {
 	std::cout << "8. Sair" << std::endl << std::endl;
 }
 
+void printDisplayEmpresasMenu(){
+		// Draw the options
+	std::cout << "1. Visualizacao simples" << std::endl;
+	std::cout << "2. Titulos numa dada plataforma" << std::endl;
+	std::cout << "3. Numero de Titulos" << std::endl;
+	std::cout << "4. Sair" << std::endl << std::endl;
+}
+
 void printUserMenu() {
 
 	// Draw the options
@@ -144,29 +152,29 @@ void adicionarUtilizador(Sistema * sistema) {
 
 void lerData(std::string data) {
 
-	// Verificar se está no formato válido (DD/MM/AAAA)
+	// Verificar se estï¿½ no formato vï¿½lido (DD/MM/AAAA)
 	if (data.size() != 10)			// Verificar se a data tem o tamanho correto
 		throw(DataInvalida("Data Invalida!"));
 	else if ((data.at(2) != '/') || (data.at(5) != '/'))// Verificar se dia, mes e ano estao separados por um traco
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(0) < '0') || (data.at(0) > '9'))// Verificar se Dx é um digito
+	else if ((data.at(0) < '0') || (data.at(0) > '9'))// Verificar se Dx ï¿½ um digito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(1) < '0') || (data.at(1) > '9'))// Verificar se xD é um digito
+	else if ((data.at(1) < '0') || (data.at(1) > '9'))// Verificar se xD ï¿½ um digito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(3) < '0') || (data.at(3) > '9'))// Verificar se Mx é um digito
+	else if ((data.at(3) < '0') || (data.at(3) > '9'))// Verificar se Mx ï¿½ um digito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(4) < '0') || (data.at(4) > '9'))// Verificar se xM é um digito
+	else if ((data.at(4) < '0') || (data.at(4) > '9'))// Verificar se xM ï¿½ um digito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(6) < '0') || (data.at(6) > '9'))// Verificar se Axxx é um dígito
+	else if ((data.at(6) < '0') || (data.at(6) > '9'))// Verificar se Axxx ï¿½ um dï¿½gito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(7) < '0') || (data.at(7) > '9'))// Verificar se xAxx é um dígito
+	else if ((data.at(7) < '0') || (data.at(7) > '9'))// Verificar se xAxx ï¿½ um dï¿½gito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(8) < '0') || (data.at(8) > '9'))// Verificar se xxAx é um dígito
+	else if ((data.at(8) < '0') || (data.at(8) > '9'))// Verificar se xxAx ï¿½ um dï¿½gito
 		throw(DataInvalida("Data Invalida!"));
-	else if ((data.at(9) < '0') || (data.at(9) > '9'))// Verificar se xxxA é um dígito
+	else if ((data.at(9) < '0') || (data.at(9) > '9'))// Verificar se xxxA ï¿½ um dï¿½gito
 		throw(DataInvalida("Data Invalida!"));
 
-	// Verificar se a data segue os padrões normais de datas
+	// Verificar se a data segue os padrï¿½es normais de datas
 	int dia = stoi(data.substr(0, 2));
 	int mes = stoi(data.substr(3, 2));
 	int ano = stoi(data.substr(6, 4));
@@ -246,7 +254,7 @@ void adicionarJogo(Sistema * sistema, std::string nomeEmpresa) {
 		std::cin >> preco;
 	}
 
-	// Limpar a stream mesmo que não tenha ocorrido qualquer erro, para garantir que está sempre limpa e vazia
+	// Limpar a stream mesmo que nï¿½o tenha ocorrido qualquer erro, para garantir que estï¿½ sempre limpa e vazia
 	std::cin.ignore(1000, '\n');
 
 	int idadeMinima;
@@ -487,6 +495,32 @@ void displayTitulos(Sistema * sistema) {
 
 }
 
+void displayEmpresas(Sistema * sistema){
+	int opt;
+
+	// Perguntar ao utilizador o que quer fazer atï¿½ este indicar que deseja sair
+	while (true) {
+		printDisplayEmpresasMenu();
+
+		// Pedir opcao ao utilizador e verificar se nao houve erro de input
+		try {
+			opt = getOption(1, 3);
+		} catch (InputInvalido &e) {
+			std::cout << "\n" << e.getInfo();
+			continue;	// Ir para o proximo loop , pedir nova opcao
+		}
+
+		if (opt == 1)
+			sistema->displayEmpresas("");
+		else if (opt == 2)
+			sistema->displayEmpresas("plataforma");
+		else if(opt==3)
+			sistema->displayEmpresas("numero");
+		else if (opt == 4)
+			return;
+	}
+}
+
 void escolheTitulo(Sistema * sistema, Utilizador *u) {
 	std::string titulo;
 	std::string plataforma;
@@ -697,6 +731,7 @@ void utilizadorJoga(Sistema * sistema, Utilizador *u) {
 }
 
 void menuUtilizador(Sistema * sistema, Utilizador* u) {
+	u->printPublicidade();
 	int opt;
 
 	while (true) {
@@ -726,7 +761,6 @@ void menuUtilizador(Sistema * sistema, Utilizador* u) {
 		else
 			break;	// opt = 5, o utilizador quer sair
 	}
-
 }
 
 void pesquisarUtilizador(Sistema * sistema) {
@@ -893,8 +927,7 @@ int main() {
 	Sistema * sistema = new Sistema;
 
 	sistema->readUtilizadores();
-	sistema->readTitulos();
-
+	sistema->readEmpresas();
 
 	int opt;
 
@@ -926,6 +959,8 @@ int main() {
 			adicionarEmpresa(sistema);
 		else if (opt == 8)
 			pesquisarEmpresa(sistema);
+		else if (opt == 9)
+			displayEmpresas(sistema);
 		else {
 			std::cout << "Adeus!" << std::endl;
 			break;
@@ -934,7 +969,7 @@ int main() {
 
 
 	sistema->saveUtilizadores();
-	sistema->saveTitulos();
+	sistema->saveEmpresas();
 
 
 

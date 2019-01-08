@@ -105,6 +105,7 @@ public:
 	 */
 	float getGastos() const;
 
+	void printPublicidade();
 
 };
 
