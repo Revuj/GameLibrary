@@ -1,4 +1,6 @@
-#include "empresa.h"
+#include "Empresa.h"
+#include "Titulo.h"
+#include <iostream>
 
 Empresa::Empresa(std::string nome,std::string email,std::string numeroTelemovel, std::string nif)
  	 :nome(nome),Nif(nif) {
@@ -51,11 +53,14 @@ void Empresa::criarTitulo(Titulo * t) {
 		if(titles==t)
 			return;//throw(EmpresaJaComTitulo(t))
 	}
+	this->numeroTitulos++;
 	this->Titulos.push_back(t);
 }
 
+void Empresa::displayTitulos() {
 
-
-
-
+	for(const auto & titulo : this->Titulos) {
+		std::cout << titulo->getNome() << ", " << titulo->getEmpresa() << ", " << titulo->getPlataforma() << ", " << titulo->getPreco() << " euros, (desconto: " << titulo->getDesconto() << "% ), " << titulo->getDataLancamento().getAno() << ", idade minima: " << titulo->getIdadeMinima() << std::endl;
+	}
+}
 

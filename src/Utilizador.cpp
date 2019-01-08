@@ -74,7 +74,7 @@ void Utilizador::AdicionaTitulo(Titulo * T, CartaoCredito & c,bool comprar)
 	{
 		if (cartao == c)
 		{
-			if (cartao.getSaldo() >= T->getPreco()) //ver se o saldo para comprar o titulo Ã© suficiente
+			if (cartao.getSaldo() >= T->getPreco()) //ver se o saldo para comprar o titulo é suficiente
 			{
 				this->conjuntoTitulos.adicionaTitulo(T);
 				try{
@@ -105,7 +105,6 @@ void Utilizador::adicionaWishList(Titulo* titulo,unsigned interesse, float proba
 }
 
 void Utilizador::removeWishList(Titulo *titulo){
-	bool removed = false;
 	std::priority_queue<WishedTitle> copia = wishlist;
 
 	while (!wishlist.empty()) wishlist.pop();
@@ -114,17 +113,12 @@ void Utilizador::removeWishList(Titulo *titulo){
 	{
 		WishedTitle topo = copia.top();
 		if (topo.getTitulo()->getNome()==titulo->getNome() && topo.getTitulo()->getPlataforma()==titulo->getPlataforma()){
-			removed = true;
 			copia.pop();
 			continue;
 		}
 
 		wishlist.push(topo);
 		copia.pop();
-	}
-
-	if(!removed){
-		throw TituloInexistente("O titulo nao existe na wishlist");
 	}
 }
 
@@ -141,7 +135,7 @@ WishedTitle Utilizador::getGamesWishList(float minProbabilidade){
 			copia.pop();
 		}
 	}
-	throw TituloInexistente("Não existe nenhum titulo com probabilidade superior a " + std::to_string(minProbabilidade));
+	throw TituloInexistente("Nao existe nenhum titulo com probabilidade superior a " + std::to_string(minProbabilidade));
 }
 
 std::ostream & operator <<(std::ostream & os, const Utilizador & u)
@@ -173,4 +167,14 @@ float Utilizador::getGastos() const{
 		total += titulo->getPreco();
 	}
 	return total;
+}
+
+void Utilizador::printPublicidade(){
+	try {
+		WishedTitle t = getGamesWishList(0.5);
+		std::cout << t.getTitulo()->getNome() << "\n";
+		std::cout << t.getTitulo()->getPreco() << "\n";
+		std::cout << t.getTitulo()->getDesconto() << "\n";
+	}
+	catch(TituloInexistente &erro){}
 }

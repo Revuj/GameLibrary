@@ -20,7 +20,7 @@ const unsigned int Home::precoAtualizacao=1;
 Titulo::Titulo(std::string nome, unsigned idadeMinima,
 		std::string plataforma,float preco,
 		std::vector<std::string> generos, std::string empresa,
-		Data dataLancamento) {
+		Data dataLancamento, unsigned int numero, unsigned int cliques) {
 
 	this->IdU = IdUnico++;
  	this->nome = nome;
@@ -30,6 +30,8 @@ Titulo::Titulo(std::string nome, unsigned idadeMinima,
  	this->plataforma = plataforma;
  	this->historico_preco.push_back(preco);
  	this->dataLancamento = dataLancamento;
+ 	this->numeroAnuncios = numero;
+ 	this->numeroCliques = cliques;
 
  }
 
@@ -71,6 +73,14 @@ std::string Titulo::getEmpresa() const {
   	return historico_preco.at(historico_preco.size()-1);
   }
 
+ unsigned int Titulo::getAnuncios() const {
+	 return this->numeroAnuncios;
+ }
+
+ unsigned int Titulo::getCliques() const {
+	 return this->numeroCliques;
+ }
+
  float Titulo::getPrecoBase() const{
 	 return historico_preco.at(0);
  }
@@ -96,6 +106,10 @@ std::string Titulo::getEmpresa() const {
  	else historico_preco.push_back(preco);
  }
 
+
+ void Titulo::adicionaAnuncios(unsigned int numero) {
+	 this->numeroAnuncios += numero;
+ }
  //========================================================================================
  //========================================================================================
  /*se o identificador unico for igual entao trata-se do mesmo titulo*/
@@ -131,9 +145,9 @@ std::string Titulo::getEmpresa() const {
  Home::Home(std::string nome, int idadeMinima,
 			std::string plataforma,float preco,
 			std::vector<std::string> generos, std::string empresa,
-			Data dataLancamento) :
+			Data dataLancamento, unsigned int numero, unsigned int cliques) :
  		Titulo(nome, idadeMinima, plataforma,preco, generos, empresa,
- 				dataLancamento) {
+ 				dataLancamento, numero, cliques) {
 
  }
 
@@ -195,9 +209,9 @@ std::string Titulo::getEmpresa() const {
  Online::Online(std::string nome, int idadeMinima,
 			std::string plataforma,float preco,
 			std::vector<std::string> generos, std::string empresa,
-			Data dataLancamento, bool subs, float pSubscricao) :
+			Data dataLancamento, unsigned int numero, unsigned int cliques, bool subs, float pSubscricao) :
  		Titulo(nome, idadeMinima, plataforma,preco, generos, empresa,
- 				dataLancamento) {
+ 				dataLancamento, numero, cliques) {
  	this->subscricaoFixa = subs;
  	this->precoSubscricao = pSubscricao;
 	horasTotais=0;

@@ -75,14 +75,14 @@ public:
 	/**
 	 * @brief Overload do operador de igualdade para a classe Utilizador
 	 * @param U - Utilizador a ser comparado
-	 * @return Retorna verdadeiro se os utilizadores forem iguais, caso contrÃ¡rio retorna falso
+	 * @return Retorna verdadeiro se os utilizadores forem iguais, caso contrário retorna falso
 	 */
 	bool operator ==(const Utilizador & U);
 	
 	/**
 	 * @brief Adiciona um cartao de credito caso este ainda nao exista
 	 * @param C - cartao de credito
-	 * @return Retorna verdadeiro se adicionar o cartao de credito, caso contrÃ¡rio retorna falso
+	 * @return Retorna verdadeiro se adicionar o cartao de credito, caso contrário retorna falso
 	 */
 	bool adicionaCartaoCredito(const CartaoCredito & C);
 
@@ -105,14 +105,15 @@ public:
 	 */
 	float getGastos() const;
 
+	void printPublicidade();
 
 };
 
 /**
-* @brief Overload do operador de inserÃ§Ã£o para a classe Utilizador
-* @param os - Stream passada por referÃªncia para a qual serÃ¡ efetuada a escrita
+* @brief Overload do operador de inserção para a classe Utilizador
+* @param os - Stream passada por referência para a qual será efetuada a escrita
 * @param u - Utilizador a ser enviado para a stream
-* @return Retorna referÃªncia de stream de output
+* @return Retorna referência de stream de output
 */
 std::ostream & operator <<(std::ostream & os, const Utilizador & u);
 

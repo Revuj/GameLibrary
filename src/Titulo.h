@@ -25,6 +25,8 @@ protected:
 	std::string empresa;
 	std::string plataforma;/**< Plataforma do titulo */
 	std::vector<float> historico_preco;/**< Historico de precos */
+	unsigned int numeroAnuncios; /** < Numero de anuncios */
+	unsigned int numeroCliques /** < Numero de cliques */;
 
 public:
 	/**
@@ -40,7 +42,7 @@ public:
 	Titulo(std::string nome, unsigned idadeMinima,
 			std::string plataforma,float preco,
 			std::vector<std::string> generos, std::string empresa,
-			Data dataLancamento);
+			Data dataLancamento, unsigned int numero, unsigned int cliques);
 
 	/**
 	 * @brief Destrutor da classe Titulo
@@ -126,10 +128,28 @@ public:
 	virtual float getGastos() const = 0;
 
 	/**
+	 * @brief Permite obter o numero de anuncios
+	 * @return Retorna o numero de anuncios
+	 */
+	unsigned int getAnuncios() const;
+
+	/**
+	 * @brief Permite obter o numero de cliques
+	 * @return Retorna o numero de cliques
+	 */
+	unsigned int getCliques() const;
+
+	/**
 	 * @brief Adiciona um novo preco ao historico de precos
 	 * @param preco - preco a adicionar ao historico de precos
 	 */
 	void setPreco(const float preco);
+
+	/**
+	 * @brief Adiciona um numero de anuncios
+	 * @param numero - numero de anuncios
+	 */
+	void adicionaAnuncios(unsigned int numero);
 
 	/**
 	 * @brief Permite obter o desconto do titulo em percentagem 
@@ -170,7 +190,7 @@ public:
 	Home(std::string nome, int idadeMinima,
 				std::string plataforma,float preco,
 				std::vector<std::string> generos, std::string empresa,
-				Data dataLancamento);
+				Data dataLancamento, unsigned int numero, unsigned int cliques);
 
 	/**
 	 * @brief Adiciona uma data ao vetor data_de_atualizacao
@@ -227,7 +247,7 @@ public:
 	Online(std::string nome, int idadeMinima,
 				std::string plataforma,float preco,
 				std::vector<std::string> generos, std::string empresa,
-				Data dataLancamento, bool subs, float pSubscricao);
+				Data dataLancamento, unsigned int numero, unsigned int cliques , bool subs, float pSubscricao);
 
 	/**
 	 * @brief Devolve as datas jogadas

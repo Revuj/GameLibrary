@@ -60,6 +60,15 @@ void printWelcomeMenu() {
 	std::cout << std::endl << std::endl;
 }
 
+
+void printDisplayEmpresasMenu(){
+		// Draw the options
+	std::cout << "1. Visualizacao simples" << std::endl;
+	std::cout << "2. Titulos numa dada plataforma" << std::endl;
+	std::cout << "3. Numero de Titulos" << std::endl;
+	std::cout << "4. Sair" << std::endl << std::endl;
+}
+
 void printMainMenu() {
 
 	std::cout << "1. Visualizar Titulos" << std::endl;
@@ -70,7 +79,8 @@ void printMainMenu() {
 	std::cout << "6. Rankings e Estatisticas" << std::endl;
 	std::cout << "7. Adicionar Empresa" << std::endl;
 	std::cout << "8. Pesquisar Empresa" << std::endl;
-	std::cout << "9. Sair" << std::endl << std::endl;
+	std::cout << "9. Visualizar Empresas" << std::endl;
+	std::cout << "10. Sair" << std::endl << std::endl;
 }
 
 void printDisplayUtilizadoresMenu() {
@@ -91,12 +101,11 @@ void printUserMenu() {
 	// Draw the options
 	std::cout << "1. Adicionar titulo" << std::endl;
 	std::cout << "2. Adicionar titulo a whishlist" << std::endl;
-	std::cout << "3. Comprar titulo na whishlist" << std::endl;
-	std::cout << "4. Adicionar cartao de credito" << std::endl;
-	std::cout << "5. Verificar Saldo" << std::endl;
-	std::cout << "6. Jogar" << std::endl;
-	std::cout << "7. Tempo Jogado" << std::endl;
-	std::cout << "8. Sair" << std::endl;
+	std::cout << "3. Adicionar cartao de credito" << std::endl;
+	std::cout << "4. Verificar Saldo" << std::endl;
+	std::cout << "5. Jogar" << std::endl;
+	std::cout << "6. Tempo Jogado" << std::endl;
+	std::cout << "7. Sair" << std::endl;
 }
 
 void printDisplayTitulosMenu() {
@@ -144,7 +153,7 @@ void adicionarUtilizador(Sistema * sistema) {
 
 void lerData(std::string data) {
 
-	// Verificar se está no formato válido (DD/MM/AAAA)
+	// Verificar se esta no formato válido (DD/MM/AAAA)
 	if (data.size() != 10)			// Verificar se a data tem o tamanho correto
 		throw(DataInvalida("Data Invalida!"));
 	else if ((data.at(2) != '/') || (data.at(5) != '/'))// Verificar se dia, mes e ano estao separados por um traco
@@ -202,7 +211,7 @@ void lerData(std::string data) {
 	}
 
 
-	return ;
+	return;
 }
 
 void adicionarJogo(Sistema * sistema, std::string nomeEmpresa) {
@@ -279,7 +288,7 @@ void adicionarJogo(Sistema * sistema, std::string nomeEmpresa) {
 
 	if (tipo == "Home") {
 		Home *home = new Home(nome, idadeMinima, plataforma, preco, generos,
-				nomeEmpresa, Data(data));
+				nomeEmpresa, Data(data), 0, 0);
 		try {
 			sistema->addTitulo(home,nomeEmpresa);
 		} catch (TituloJaAdicionado &e) {
@@ -313,7 +322,7 @@ void adicionarJogo(Sistema * sistema, std::string nomeEmpresa) {
 
 		std::cin.ignore(1000, '\n');
 		Online *online = new Online(nome, idadeMinima, plataforma, preco,
-				generos, nomeEmpresa, Data(data), tipoSubscricao, precoSubscricao);
+				generos, nomeEmpresa, Data(data), 0, 0, tipoSubscricao, precoSubscricao);
 		try {
 			sistema->addTitulo(online,nomeEmpresa);
 		} catch (TituloJaAdicionado &e) {
@@ -487,6 +496,32 @@ void displayTitulos(Sistema * sistema) {
 
 }
 
+void displayEmpresas(Sistema * sistema){
+	int opt;
+
+	// Perguntar ao utilizador o que quer fazer ate este indicar que deseja sair
+	while (true) {
+		printDisplayEmpresasMenu();
+
+		// Pedir opcao ao utilizador e verificar se nao houve erro de input
+		try {
+			opt = getOption(1, 4);
+		} catch (InputInvalido &e) {
+			std::cout << "\n" << e.getInfo();
+			continue;	// Ir para o proximo loop , pedir nova opcao
+		}
+
+		if (opt == 1)
+			sistema->displayEmpresas("");
+		else if (opt == 2)
+			sistema->displayEmpresas("plataforma");
+		else if(opt==3)
+			sistema->displayEmpresas("numero");
+		else if (opt == 4)
+			return;
+	}
+}
+
 void escolheTitulo(Sistema * sistema, Utilizador *u) {
 	std::string titulo;
 	std::string plataforma;
@@ -501,6 +536,9 @@ void escolheTitulo(Sistema * sistema, Utilizador *u) {
 		try {
 			Titulo * t = sistema->pesquisaJogo(titulo, plataforma);
 
+			if (u->getCc().size() == 0) {
+				std::cout << "O utilizador nao tem cartoes!" << std::endl;
+			}
 			for (auto & cartao : u->getCc()) {
 				try {
 					u->AdicionaTitulo(t, cartao);
@@ -543,8 +581,27 @@ void adiconaWishlist(Sistema *sistema, Utilizador *u){
 
 		try {
 			Titulo * t = sistema->pesquisaJogo(titulo, plataforma);
-			unsigned interesse = getOption(1,10);
-			float probabilidade = interesse/10;
+
+			unsigned int interesse;
+			std::cout << std::endl << "Interesse (0 - 10) ";
+			std::cin >> interesse;
+			// Verificar se foi introduzido um numero
+			while (std::cin.fail() || std::cin.eof() || interesse < 0 || interesse > 10) {
+				std::cin.clear();
+				std::cin.ignore(1000, '\n');
+				std::cout << "Interesse invalid0! Introduza novamente." << std::endl;
+				std::cout << std::endl << "Interesse (0 - 10): ";
+				std::cin >> interesse;
+			}
+			std::cin.ignore(1000, '\n');
+
+			std::vector<CartaoCredito> cc=u->getCc();
+			int saldo = 0;
+			for(auto it : cc){
+				saldo += it.getSaldo();
+			}
+			//TODO alterar formula
+			float probabilidade = 0.2*interesse+0.2*saldo;
 			u->adicionaWishList(t,interesse,probabilidade);
 
 		} catch (Erro &e) {
@@ -558,6 +615,7 @@ void adiconaWishlist(Sistema *sistema, Utilizador *u){
 
 			continue;
 		}
+		std::cout << "Jogo inserido com sucesso!" << std::endl;
 		break;
 	}
 }
@@ -696,14 +754,47 @@ void utilizadorJoga(Sistema * sistema, Utilizador *u) {
 	std::cout << "O utilizador jogou durante " << n << " minutos." << std::endl;
 }
 
+void printEmpresaMenu() {
+	// Draw the options
+	std::cout << "1. Adicionar titulo" << std::endl;
+	std::cout << "2. Visualizar contactos" << std::endl;
+	std::cout << "3. Visualizar titulos" << std::endl;
+	std::cout << "4. Sair" << std::endl;
+}
+void menuEmpresa(Sistema * sistema, Empresa * empresa) {
+	int opt;
+
+		while (true) {
+			printEmpresaMenu();
+
+			try {
+				opt = getOption(1, 4);
+			} catch (InputInvalido &e) {
+				std::cout << "\n" << e.getInfo();
+				continue;
+			}
+
+			if (opt == 1)
+				adicionarJogo(sistema,empresa->getNomeEmpresa());
+			else if (opt == 2) {
+				std::cout << "Numero de telemovel: " << empresa->getContactos().numeroTelemovel<<std::endl;
+				std::cout << "Email: " << empresa->getContactos().email << std::endl;
+			}
+			else if (opt == 3)
+				empresa->displayTitulos();
+			else
+				break;	// opt = 4, o utilizador quer sair
+		}
+}
 void menuUtilizador(Sistema * sistema, Utilizador* u) {
+	u->printPublicidade();
 	int opt;
 
 	while (true) {
 		printUserMenu();
 
 		try {
-			opt = getOption(1, 6);
+			opt = getOption(1, 7);
 		} catch (InputInvalido &e) {
 			std::cout << "\n" << e.getInfo();
 			continue;
@@ -711,20 +802,18 @@ void menuUtilizador(Sistema * sistema, Utilizador* u) {
 
 		if (opt == 1)
 			escolheTitulo(sistema, u);
-		if (opt == 2)
+		else if (opt == 2)
 			adiconaWishlist(sistema,u);
-		if (opt == 3)
-			compraTituloWhisList(sistema, u);
-		else if (opt == 4)
+		else if (opt == 3)
 			escolheCc(sistema, u);
-		else if (opt == 5)
+		else if (opt == 4)
 			sistema->saldoUtilizador(u);
-		else if (opt == 6)
+		else if (opt == 5)
 			utilizadorJoga(sistema, u);
-		else if (opt == 7)
+		else if (opt == 6)
 			sistema->tempoJogado(u);
 		else
-			break;	// opt = 5, o utilizador quer sair
+			break;	// opt = 7, o utilizador quer sair
 	}
 
 }
@@ -831,13 +920,7 @@ void pesquisarEmpresa(Sistema * sistema){
 	try {
 		Empresa *empresa=sistema->pesquisaEmpresa(nome,nif);
 		if(empresa!=NULL){
-			std::string atual;
-			std::cout << "Deseja adicionar um titulo ('s' para adicionar um titulo /outro para nao adicionar "<<std::endl;
-			getline(std::cin,atual);
-
-			if(atual == "s") {
-				adicionarJogo(sistema,nome);
-			}
+			menuEmpresa(sistema, empresa);
 		}
 	} catch (EmpresaInexistente &e) {
 		std::cout << "\n" << e.getInfo();
@@ -893,8 +976,11 @@ int main() {
 	Sistema * sistema = new Sistema;
 
 	sistema->readUtilizadores();
-	sistema->readTitulos();
+	sistema->readEmpresas();
 
+	for(auto it: sistema->getJogadores()){
+		it->printPublicidade();
+	}
 
 	int opt;
 
@@ -926,6 +1012,8 @@ int main() {
 			adicionarEmpresa(sistema);
 		else if (opt == 8)
 			pesquisarEmpresa(sistema);
+		else if (opt == 9)
+			displayEmpresas(sistema);
 		else {
 			std::cout << "Adeus!" << std::endl;
 			break;
@@ -934,7 +1022,8 @@ int main() {
 
 
 	sistema->saveUtilizadores();
-	sistema->saveTitulos();
+	sistema->saveEmpresas();
+	delete(sistema);
 
 
 

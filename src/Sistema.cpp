@@ -75,10 +75,10 @@ Sistema::~Sistema() {
 }
 
 void Sistema::readFileUtilizadores(std::ifstream & f) {
-	std::string nome, mail, idadeStr, localidade, titulo, cartao, dataCartao,
+	std::string nome, mail, idadeStr, numeroAnunciosStr, numeroCliquesStr, localidade, titulo, cartao, dataCartao,
 			idCartao;
 	float saldo;
-	unsigned int idade;
+	unsigned int idade, numeroAnuncios, numeroCliques;
 	std::stringstream tituloSs, cartaoSs;
 	std::vector<CartaoCredito> cartoes;
 
@@ -154,13 +154,19 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 			tituloSs.str(std::string());
 			tituloSs.clear();
 
+			getline(f, numeroAnunciosStr);
+			numeroAnuncios = std::stoul(numeroAnunciosStr, nullptr, 0);
+
+			getline(f, numeroCliquesStr);
+			numeroCliques = std::stoul(numeroCliquesStr, nullptr, 0);
+
 			unsigned int precoSubs = std::stof(precoSubsStr);
 			if (subscricao == "fixa")
 				ptr = new Online(nomeDoJogo, idadeMinima, plataforma, 0,
-						generos, empresa, d, true, precoSubs);
+						generos, empresa, d, numeroAnuncios, numeroCliques, true, precoSubs);
 			else
 				ptr = new Online(nomeDoJogo, idadeMinima, plataforma, 0,
-						generos, empresa, d, false, precoSubs);
+						generos, empresa, d, numeroAnuncios, numeroCliques, false, precoSubs);
 
 			bool fim = false;
 			std::string data;
@@ -211,8 +217,14 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 			tituloSs.str(std::string());
 			tituloSs.clear();
 
+			getline(f, numeroAnunciosStr);
+			numeroAnuncios = std::stoul(numeroAnunciosStr, nullptr, 0);
+
+			getline(f, numeroCliquesStr);
+			numeroCliques = std::stoul(numeroCliquesStr, nullptr, 0);
+
 			ptr = new Home(nomeDoJogo, idadeMinima, plataforma, preco, generos,
-					empresa, d);
+					empresa, d, numeroAnuncios, numeroCliques);
 			std::string data;
 			getline(f, titulo);
 			tituloSs << titulo;
@@ -319,6 +331,9 @@ void Sistema::saveUtilizadores() const{
 						file << genero[i] << " ";
 				}
 
+				file << online->getAnuncios() << std::endl;
+				file << online->getCliques() << std::endl;
+
 				for (unsigned int i = 0; i < datasJogo.size(); i++) {
 					if (i == datasJogo.size() - 1)
 						file << datasJogo[i] << " " << minutosJogados[i];
@@ -356,6 +371,9 @@ void Sistema::saveUtilizadores() const{
 						file << genero[i] << " ";
 				}
 
+				file << home->getAnuncios() << std::endl;
+				file << home->getCliques() << std::endl;
+
 				for (unsigned int i = 0; i < datasAtualizacao.size(); i++) {
 					if (i == datasAtualizacao.size() - 1)
 						file << datasAtualizacao[i];
@@ -372,218 +390,14 @@ void Sistema::saveUtilizadores() const{
 	}
 }
 
-void Sistema::readFileTitulos(std::ifstream & f) {
-
-	std::string tipoDeJogo;
-	std::string nomeDoJogo;
-	float idadeMinima;
-	std::string plataforma;
-	float preco;
-	std::string genero = ".";
-	std::string empresa;
-	std::string dataStr;
-	std::vector<std::string> generos;
-	std::vector<float> price_history;
-	std::string subscricao;
-	std::string precoSubsStr;
-	std::string titulo;
-	std::stringstream tituloSs;
-
-	while (!f.eof()) {
-		getline(f, titulo);
-
-		tituloSs << titulo;
-
-		tituloSs >> tipoDeJogo;
-
-		if (tipoDeJogo == "Online") {
-			Online *ptr;
-			std::vector<Data> datasJogo;
-			std::vector<unsigned int> minutosJogados;
-			tituloSs >> nomeDoJogo >> idadeMinima >> plataforma >> empresa
-					>> dataStr >> subscricao >> precoSubsStr;
-
-			Data d(dataStr);
-
-			tituloSs.str(std::string());
-			tituloSs.clear();
-
-			getline(f, titulo);
-			tituloSs << titulo;
-			while (tituloSs >> preco) {
-				price_history.push_back(preco);
-			}
-
-			tituloSs.str(std::string());
-			tituloSs.clear();
-
-			getline(f, titulo);
-			tituloSs << titulo;
-
-			while (tituloSs >> genero) {
-				generos.push_back(genero);
-			}
-
-			tituloSs.str(std::string());
-			tituloSs.clear();
-
-			unsigned int precoSubs = std::stof(precoSubsStr);
-			if (subscricao == "fixa")
-				ptr = new Online(nomeDoJogo, idadeMinima, plataforma, 0,
-						generos, empresa, d, true, precoSubs);
-			else
-				ptr = new Online(nomeDoJogo, idadeMinima, plataforma, 0,
-						generos, empresa, d, false, precoSubs);
-			ptr->setHistoricoPreco(price_history);
-			this->titulos.push_back(ptr);
-			price_history.clear();
-			generos.clear();
-		} else {
-			Home *ptr;
-			tituloSs >> nomeDoJogo >> idadeMinima >> plataforma >> empresa
-					>> dataStr;
-
-			Data d(dataStr);
-
-			tituloSs.str(std::string());
-			tituloSs.clear();
-
-			getline(f, titulo);
-			tituloSs << titulo;
-			while (tituloSs >> preco) {
-				price_history.push_back(preco);
-			}
-			tituloSs.str(std::string());
-			tituloSs.clear();
-
-			getline(f, titulo);
-			tituloSs << titulo;
-
-			while (tituloSs >> genero) {
-				generos.push_back(genero);
-			}
-
-			tituloSs.str(std::string());
-			tituloSs.clear();
-
-			ptr = new Home(nomeDoJogo, idadeMinima, plataforma, preco, generos,
-					empresa, d);
-			std::string data;
-			getline(f, titulo);
-			tituloSs << titulo;
-
-			while (tituloSs >> data) {
-				ptr->adicionaAtualizacao(Data(data));
-			}
-
-			ptr->setHistoricoPreco(price_history);
-			this->titulos.push_back(ptr);
-			price_history.clear();
-			generos.clear();
-		}
-		tituloSs.str(std::string());
-		tituloSs.clear();
-	}
-}
-
-void Sistema::readTitulos() {
-	std::ifstream file;
-	file.open("Titulos.txt");
-	if (!file.fail()) {
-		readFileTitulos(file);
-		file.close();
-	} else
-		return;
-}
-
-void Sistema::saveTitulos() const{
-
-	std::ofstream file("Titulos.txt");
-
-	for (size_t i = 0; i < titulos.size(); i++) {
-		Online* online = dynamic_cast<Online*>(titulos.at(i));
-		if (online != NULL) {
-			if (i != 0)
-				file << std::endl;
-			std::string tipoDeJogo = "Online";
-			std::string nomeDoJogo = online->getNome();
-			unsigned int idadeMinima = online->getIdadeMinima();
-			std::string plataforma = online->getPlataforma();
-			std::vector<float> preco = online->getHistorialPreco();
-			std::vector<std::string> genero = online->getGeneros();
-			std::string empresa = online->getEmpresa();
-			Data data = online->getDataLancamento();
-			std::string subscricao;
-			if (online->getSubscricao())
-				subscricao = "fixa";
-			else
-				subscricao = "variavel";
-			float precoSubs = online->getPrecoSubscricao();
-			std::vector<Data> datasJogo = online->getDatasJogo();
-			std::vector<unsigned int> minutosJogados =
-					online->getMinutosJogo();
-			file << tipoDeJogo << " " << nomeDoJogo << " " << idadeMinima
-					<< " " << plataforma << " ";
-
-			file << empresa << " " << data << " " << subscricao << " "
-					<< precoSubs << std::endl;
-			for (unsigned int i = 0; i < preco.size(); i++) {
-				if (i == preco.size() - 1)
-					file << preco[i] << std::endl;
-				else
-					file << preco[i] << " ";
-			}
-
-			for (unsigned int i = 0; i < genero.size(); i++) {
-				if (i == genero.size() - 1)
-					file << genero[i];
-				else
-					file << genero[i] << " ";
-			}
-		}
-		else {
-			if (i != 0)
-				file << std::endl;
-			Home* home = dynamic_cast<Home*>(titulos.at(i));
-			std::string tipoDeJogo = "Home";
-			std::string nomeDoJogo = home->getNome();
-			unsigned int idadeMinima = home->getIdadeMinima();
-			std::string plataforma = home->getPlataforma();
-			std::vector<float> preco = home->getHistorialPreco();
-			std::vector<std::string> genero = home->getGeneros();
-			std::string empresa = home->getEmpresa();
-			Data data = home->getDataLancamento();
-			std::vector<Data> datasAtualizacao = home->getDatas();
-			file << tipoDeJogo << " " << nomeDoJogo << " " << idadeMinima
-					<< " " << plataforma << " " << empresa << " " << data
-					<< std::endl;
-			for (unsigned int i = 0; i < preco.size(); i++) {
-				if (i == preco.size() - 1)
-					file << preco[i] << std::endl;
-				else
-					file << preco[i] << " ";
-			}
-
-			for (unsigned int i = 0; i < genero.size(); i++) {
-				if (i == genero.size() - 1)
-					file << genero[i] << std::endl;
-				else
-					file << genero[i] << " ";
-			}
-
-			for (unsigned int i = 0; i < datasAtualizacao.size(); i++) {
-				if (i == datasAtualizacao.size() - 1)
-					file << datasAtualizacao[i];
-				else
-					file << datasAtualizacao[i] << " ";
-			}
-		}
-	}
-}
 
 void Sistema::readFileEmpresas(std::ifstream & f) {
 	std::string nome, mail,numeroTelemovel,nif,titulo;
 	std::stringstream tituloSs;
+	std::string numeroAnunciosStr;
+	std::string numeroCliquesStr;
+	unsigned int numeroAnuncios;
+	unsigned int numeroCliques;
 
 	getline(f, nome);
 	getline(f, mail);
@@ -607,6 +421,8 @@ void Sistema::readFileEmpresas(std::ifstream & f) {
 		std::string precoSubsStr;
 
 		getline(f, titulo);
+		if (titulo == "")
+			break;
 
 		tituloSs << titulo;
 
@@ -643,13 +459,19 @@ void Sistema::readFileEmpresas(std::ifstream & f) {
 			tituloSs.str(std::string());
 			tituloSs.clear();
 
+			getline(f, numeroAnunciosStr);
+			numeroAnuncios = std::stoul(numeroAnunciosStr, nullptr, 0);
+
+			getline(f, numeroCliquesStr);
+			numeroCliques = std::stoul(numeroCliquesStr, nullptr, 0);
+
 			unsigned int precoSubs = std::stof(precoSubsStr);
 			if (subscricao == "fixa")
 				ptr = new Online(nomeDoJogo, idadeMinima, plataforma, 0,
-						generos, empresa, d, true, precoSubs);
+						generos, empresa, d, numeroAnuncios, numeroCliques, true, precoSubs);
 			else
 				ptr = new Online(nomeDoJogo, idadeMinima, plataforma, 0,
-						generos, empresa, d, false, precoSubs);
+						generos, empresa, d, numeroAnuncios, numeroCliques, false, precoSubs);
 
 			bool fim = false;
 			std::string data;
@@ -672,6 +494,7 @@ void Sistema::readFileEmpresas(std::ifstream & f) {
 			ptr->setDatasJogo(datasJogo);
 			ptr->setMinutosJogo(minutosJogados);
 			e->criarTitulo(ptr);
+			this->titulos.push_back(ptr);
 		} else {
 			Home *ptr;
 			tituloSs >> nomeDoJogo >> idadeMinima >> plataforma >> empresa
@@ -700,8 +523,14 @@ void Sistema::readFileEmpresas(std::ifstream & f) {
 			tituloSs.str(std::string());
 			tituloSs.clear();
 
+			getline(f, numeroAnunciosStr);
+			numeroAnuncios = std::stoul(numeroAnunciosStr, nullptr, 0);
+
+			getline(f, numeroCliquesStr);
+			numeroCliques = std::stoul(numeroCliquesStr, nullptr, 0);
+
 			ptr = new Home(nomeDoJogo, idadeMinima, plataforma, preco, generos,
-					empresa, d);
+					empresa, d, numeroAnuncios, numeroCliques);
 			std::string data;
 			getline(f, titulo);
 			tituloSs << titulo;
@@ -711,6 +540,7 @@ void Sistema::readFileEmpresas(std::ifstream & f) {
 			}
 			ptr->setHistoricoPreco(price_history);
 			e->criarTitulo(ptr);
+			this->titulos.push_back(ptr);
 		}
 		tituloSs.str(std::string());
 		tituloSs.clear();
@@ -734,6 +564,7 @@ void Sistema::readEmpresas() {
 			break;
 	}
 }
+
 
 void Sistema::saveEmpresas(){
 	unsigned i=1;
@@ -787,12 +618,8 @@ void Sistema::saveEmpresas(){
 						file << genero[i] << " ";
 				}
 
-				for (unsigned int i = 0; i < datasJogo.size(); i++) {
-					if (i == datasJogo.size() - 1)
-						file << datasJogo[i] << " " << minutosJogados[i];
-					else
-						file << datasJogo[i] << " " << minutosJogados[i] << " ";
-				}
+				file << online->getAnuncios() << std::endl;
+				file << online->getCliques() << std::endl;
 
 				if (i != titulos.size() - 1)
 					file << std::endl;
@@ -823,6 +650,9 @@ void Sistema::saveEmpresas(){
 					else
 						file << genero[i] << " ";
 				}
+
+				file << home->getAnuncios() << std::endl;
+				file << home->getCliques() << std::endl;
 
 				for (unsigned int i = 0; i < datasAtualizacao.size(); i++) {
 					if (i == datasAtualizacao.size() - 1)
@@ -1268,4 +1098,48 @@ void Sistema::dataValida(CartaoCredito & D) const{
 		D.atualizaDataDeValidade();
 		}
 
+}
+
+void Sistema::displayEmpresas(std::string s) const{
+	if(s=="plataforma"){
+		std::cout<< "Insira a plataforma" << std::endl;
+		getline(std::cin,s);
+		for(auto it : this->empresas){
+			std::vector <Titulo*> t = it->getTitulos();
+			for(auto titulo : t){
+				if(titulo->getPlataforma() == s) {
+					std::cout << it->getNomeEmpresa() << "  "<<it->getNif()<<std::endl;
+					break;
+				}
+			}
+		}
+	}
+
+	else if(s=="numero"){
+		std::cout<<"Insira o numero de titulos"<<std::endl;
+		int opt;
+		std::cin >> opt;
+
+		// Check if not a number was entered
+		if (std::cin.fail()) {
+			// Clear the cin error flags and the stream content, throw the error
+			std::cin.clear();
+			std::cin.ignore(1000, '\n');
+			throw(InputInvalido("Input Invalido!"));
+		}
+
+		// Clear the cin stream even if no error occured, to ensure the stream always stays clean
+		std::cin.ignore(1000, '\n');
+		for(auto it : this->empresas){
+			std::cout << it->getNumeroTitulos() << std::endl;
+			if(it->getNumeroTitulos() == (unsigned)opt)
+				std::cout << it->getNomeEmpresa() << "  "<<it->getNif()<<std::endl;
+		}
+	}
+
+	else {
+		for(auto it : this->empresas){
+			std::cout << "Empresa: " << it->getNomeEmpresa() << "; NIF: "<<it->getNif()  << "; N.º de jogos: " << it->getNumeroTitulos() <<std::endl;
+		}
+	}
 }

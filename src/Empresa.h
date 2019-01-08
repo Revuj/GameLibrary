@@ -26,6 +26,7 @@ public:
 	std::string getNif()const;
 	contactos getContactos() const;
 	std::vector<Titulo*> getTitulos() const;
+	void displayTitulos();
 	void addNumero();
 	bool operator <(const Empresa & empresa);
 	bool operator == (const Empresa & empresa);
