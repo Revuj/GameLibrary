@@ -6,10 +6,32 @@
 #include <vector>
 #include "Data.h"
 
+class Utilizador;
+
 //segunda parte
 #include <queue>
-#include "Empresa.h"
 
+#include <unordered_set>
+
+
+/* ------------------------------------------------*/
+
+struct UtilizadorPtr{
+	int operator()(const Utilizador * u1) const {
+		unsigned long hash = 5381;
+		for (char c : u1->getEmail()) {
+			if (c != '@' && c!= '.' )
+				hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
+		}
+	    return hash;
+	}
+
+	bool operator() (const Utilizador * u1, const Utilizador * u2) const {
+		return u1->getEmail() == u2->getEmail();
+	}
+};
+
+typedef std::unordered_set<Utilizador*,UtilizadorPtr,UtilizadorPtr> UserHashTable;
 
 /**
  * Titulo que foi declarado no Sistema
@@ -27,7 +49,7 @@ protected:
 	std::vector<float> historico_preco;/**< Historico de precos */
 	unsigned int numeroAnuncios; /** < Numero de anuncios */
 	unsigned int numeroCliques /** < Numero de cliques */;
-
+	UserHashTable asleepUsers;
 public:
 	/**
 	 * @brief Construtor da classe Titulo
@@ -150,6 +172,12 @@ public:
 	 * @param numero - numero de anuncios
 	 */
 	void adicionaAnuncios(unsigned int numero);
+
+	/**
+	 * @brief Adiciona um numero de cliques
+	 * @param numero - numero de cliques
+	 */
+	void adicionaCliques(unsigned int numero);
 
 	/**
 	 * @brief Permite obter o desconto do titulo em percentagem 

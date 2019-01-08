@@ -12,17 +12,6 @@
 
 #include <set> // para usar bst
 
-struct EmpresasComp
-{
-	bool operator()(Empresa *empresa1,  Empresa *empresa2) const
-	{
-		if (empresa1->getNumeroTitulos() == empresa2->getNumeroTitulos())
-			return empresa1->getNomeEmpresa() < empresa2->getNomeEmpresa();
-		return empresa1->getNumeroTitulos() < empresa2->getNumeroTitulos();
-	}
-};
-
-/* ------------------------------------------------*/
 
 typedef std::set<Empresa*,EmpresasComp> BSTEmpresa;
 

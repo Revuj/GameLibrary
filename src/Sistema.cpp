@@ -7,6 +7,7 @@
 #include <vector>
 #include <cctype>
 #include <cstring>
+#include <queue>
 
 bool userNameAscend(Utilizador* user1, Utilizador* user2) {
 	return user1->getNome() < user2->getNome();
@@ -72,14 +73,21 @@ bool cmpParJogoRentabilidade(const std::pair<std::string, float> & p1,
 Sistema::~Sistema() {
 	for (auto titulo : titulos)
 		delete titulo;
+	for (auto utilizador : this->jogadores){
+		for (auto t: utilizador->getBiblioteca().getTitulos())
+			delete(t);
+		delete(utilizador);
+	}
+	for (auto empresa:this->empresas)
+		delete(empresa);
 }
 
 void Sistema::readFileUtilizadores(std::ifstream & f) {
 	std::string nome, mail, idadeStr, numeroAnunciosStr, numeroCliquesStr, localidade, titulo, cartao, dataCartao,
-			idCartao;
+			idCartao, item, nomeTitulo, plataforma, interesseStr;
 	float saldo;
-	unsigned int idade, numeroAnuncios, numeroCliques;
-	std::stringstream tituloSs, cartaoSs;
+	unsigned int idade, numeroAnuncios, numeroCliques, interesse;
+	std::stringstream tituloSs, cartaoSs, itemSs;
 	std::vector<CartaoCredito> cartoes;
 
 	getline(f, nome);
@@ -96,6 +104,28 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 		getline(f, cartao);
 		cartaoSs.str(std::string());
 		cartaoSs.clear();
+	}
+
+	getline(f, item);
+
+	std::vector<Titulo *> items;
+	std::vector<unsigned int> interesses;
+
+	while (item != "") {
+		itemSs << item;
+		itemSs >> nomeTitulo >> plataforma >> interesse;
+
+		for (const auto & titulo : this->titulos) {
+			if (titulo->getNome() == nomeTitulo && titulo->getPlataforma() == plataforma) {
+				items.push_back(titulo);
+				interesses.push_back(interesse);
+				break;
+			}
+		}
+
+		getline(f, item);
+		itemSs.str(std::string());
+		itemSs.clear();
 	}
 
 	banco.adicionaCartoesCredito(cartoes);
@@ -247,6 +277,10 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 		U->adicionaCartaoCredito(c);
 	}
 
+	for (unsigned int i = 0; i < items.size(); i++) {
+		U->adicionaWishList(items[i], interesses[i]);
+	}
+
 	this->jogadores.push_back(U);
 }
 
@@ -288,6 +322,15 @@ void Sistema::saveUtilizadores() const{
 				file << cartao.getSaldo() << " " << cartao.getDataDeValidade()
 						<< " " << cartao.getId() << std::endl;
 			}
+		}
+
+		file << std::endl;
+
+		std::priority_queue<WishedTitle> fila = jogadores[i]->getWishList();
+
+		while (!fila.empty()) {
+			file << fila.top().getTitulo()->getNome() << " " << fila.top().getTitulo()->getPlataforma() << " " << fila.top().getInteresse() << std::endl;
+			fila.pop();
 		}
 
 		file << std::endl;

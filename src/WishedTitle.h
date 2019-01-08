@@ -51,7 +51,7 @@ public:
 	*/
 	bool operator<(const WishedTitle &title) const;
 
-	void atualizaProbabilidade();
+	void atualizaProbabilidade(float saldo);
 };
 
 #endif /* WISHEDTITLE_H_ */

@@ -23,8 +23,7 @@ private:
 
 	/*segunda parte do trabalho*/
 	std::priority_queue<WishedTitle> wishlist; /**< @brief Wishlist do utilizador  */
-
-
+	Data ultimaCompra;
 public:
 	/**
 	 * @brief Construtor da classe Utilizador
@@ -94,6 +93,8 @@ public:
 	void AdicionaTitulo(Titulo * T, CartaoCredito & c,bool comprar=false);
 
 	void adicionaWishList(Titulo* titulo,unsigned interesse);
+
+	std::priority_queue<WishedTitle> getWishList();
 
 	bool removeWishList(Titulo *titulo);
 

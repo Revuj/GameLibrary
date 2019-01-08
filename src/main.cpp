@@ -544,8 +544,13 @@ void escolheTitulo(Sistema * sistema, Utilizador *u) {
 			for (auto & cartao : u->getCc()) {
 				try {
 					u->AdicionaTitulo(t, cartao);
+					u->removeWishList(t);
 					sistema->dataValida(cartao);
-				} catch (Erro &e) {
+				}
+				catch (TituloJaAdicionado &e) {
+					throw(e);
+				}
+				catch (Erro &e) {
 					std::cout << e.getInfo() << std::endl;
 					continue;
 				}
@@ -911,7 +916,7 @@ void pesquisarJogo(Sistema * sistema) {
 
 	try {
 		Titulo *t = sistema->pesquisaJogo(nome,plataforma);
-
+		t->adicionaCliques(1);
 
 		std::string atual;
 
@@ -1014,8 +1019,8 @@ int main() {
 	printWelcomeMenu();
 	Sistema * sistema = new Sistema;
 
-	sistema->readUtilizadores();
 	sistema->readEmpresas();
+	sistema->readUtilizadores();
 
 	for(auto it: sistema->getJogadores()){
 		it->printPublicidade();

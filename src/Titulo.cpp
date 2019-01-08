@@ -110,6 +110,10 @@ std::string Titulo::getEmpresa() const {
  void Titulo::adicionaAnuncios(unsigned int numero) {
 	 this->numeroAnuncios += numero;
  }
+
+ void Titulo::adicionaCliques(unsigned int numero) {
+	 this->numeroCliques += numero;
+ }
  //========================================================================================
  //========================================================================================
  /*se o identificador unico for igual entao trata-se do mesmo titulo*/

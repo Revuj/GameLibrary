@@ -27,9 +27,9 @@ bool WishedTitle::operator<(const WishedTitle &title) const {
 	return interesse < title.getInteresse();
 }
 
-void WishedTitle::atualizaProbabilidade(){
+void WishedTitle::atualizaProbabilidade(float saldo){
 	unsigned anuncios = this->titulo->getAnuncios(),cliques = this->titulo->getCliques();
-	this->probabilidadeCompra=(2*this->interesse+30*anuncios/(anuncios +10) + 30 * cliques /(cliques +5))/100.0;
+	this->probabilidadeCompra=(2*this->interesse+30*anuncios/(anuncios +10) + 30 * cliques /(cliques +5) + saldo/(5*(saldo+this->titulo->getPreco())))/100.0;
 }
 
 
