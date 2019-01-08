@@ -122,10 +122,6 @@ void Utilizador::removeWishList(Titulo *titulo){
 		wishlist.push(topo);
 		copia.pop();
 	}
-
-	if(!removed){
-		throw TituloInexistente("O titulo nao existe na wishlist");
-	}
 }
 
 WishedTitle Utilizador::getGamesWishList(float minProbabilidade){

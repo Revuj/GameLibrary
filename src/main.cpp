@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "Titulo.h"
 #include "Banco.h"
@@ -99,12 +98,11 @@ void printUserMenu() {
 	// Draw the options
 	std::cout << "1. Adicionar titulo" << std::endl;
 	std::cout << "2. Adicionar titulo a whishlist" << std::endl;
-	std::cout << "3. Comprar titulo na whishlist" << std::endl;
-	std::cout << "4. Adicionar cartao de credito" << std::endl;
-	std::cout << "5. Verificar Saldo" << std::endl;
-	std::cout << "6. Jogar" << std::endl;
-	std::cout << "7. Tempo Jogado" << std::endl;
-	std::cout << "8. Sair" << std::endl;
+	std::cout << "3. Adicionar cartao de credito" << std::endl;
+	std::cout << "4. Verificar Saldo" << std::endl;
+	std::cout << "5. Jogar" << std::endl;
+	std::cout << "6. Tempo Jogado" << std::endl;
+	std::cout << "7. Sair" << std::endl;
 }
 
 void printDisplayTitulosMenu() {
@@ -210,7 +208,7 @@ void lerData(std::string data) {
 	}
 
 
-	return ;
+	return;
 }
 
 void adicionarJogo(Sistema * sistema, std::string nomeEmpresa) {
@@ -538,6 +536,7 @@ void escolheTitulo(Sistema * sistema, Utilizador *u) {
 			for (auto & cartao : u->getCc()) {
 				try {
 					u->AdicionaTitulo(t, cartao);
+					u->removeWishList(t);
 					sistema->dataValida(cartao);
 				} catch (Erro &e) {
 					std::cout << e.getInfo() << std::endl;
@@ -578,7 +577,13 @@ void adiconaWishlist(Sistema *sistema, Utilizador *u){
 		try {
 			Titulo * t = sistema->pesquisaJogo(titulo, plataforma);
 			unsigned interesse = getOption(1,10);
-			float probabilidade = interesse/10;
+			std::vector<CartaoCredito> cc=u->getCc();
+			int saldo = 0;
+			for(auto it : cc){
+				saldo += it.getSaldo();
+			}
+			//TODO alterar formula
+			float probabilidade = 0.2*interesse+0.2*saldo;
 			u->adicionaWishList(t,interesse,probabilidade);
 
 		} catch (Erro &e) {
@@ -738,7 +743,7 @@ void menuUtilizador(Sistema * sistema, Utilizador* u) {
 		printUserMenu();
 
 		try {
-			opt = getOption(1, 6);
+			opt = getOption(1, 7);
 		} catch (InputInvalido &e) {
 			std::cout << "\n" << e.getInfo();
 			continue;
@@ -746,17 +751,15 @@ void menuUtilizador(Sistema * sistema, Utilizador* u) {
 
 		if (opt == 1)
 			escolheTitulo(sistema, u);
-		if (opt == 2)
+		else if (opt == 2)
 			adiconaWishlist(sistema,u);
-		if (opt == 3)
-			compraTituloWhisList(sistema, u);
-		else if (opt == 4)
+		else if (opt == 3)
 			escolheCc(sistema, u);
-		else if (opt == 5)
+		else if (opt == 4)
 			sistema->saldoUtilizador(u);
-		else if (opt == 6)
+		else if (opt == 5)
 			utilizadorJoga(sistema, u);
-		else if (opt == 7)
+		else if (opt == 6)
 			sistema->tempoJogado(u);
 		else
 			break;	// opt = 5, o utilizador quer sair
@@ -872,6 +875,14 @@ void pesquisarEmpresa(Sistema * sistema){
 			if(atual == "s") {
 				adicionarJogo(sistema,nome);
 			}
+
+			std::cout << "Deseja visualizar os contactos ('s' para visualizar /outro para nao visualizar"<<std::endl;
+			getline(std::cin,atual);
+
+			if(atual == "s") {
+				std::cout << "Numero de telemovel: " << empresa->getContactos().numeroTelemovel<<std::endl;
+				std::cout << "Email: " << empresa->getContactos().email << std::endl;
+			}
 		}
 	} catch (EmpresaInexistente &e) {
 		std::cout << "\n" << e.getInfo();
@@ -929,6 +940,10 @@ int main() {
 	sistema->readUtilizadores();
 	sistema->readEmpresas();
 
+	for(auto it: sistema->getJogadores()){
+		it->printPublicidade();
+	}
+
 	int opt;
 
 	// Perguntar ao utilizador o que quer fazer at� este indicar que deseja sair
@@ -971,7 +986,7 @@ int main() {
 	sistema->saveUtilizadores();
 	sistema->saveEmpresas();
 
-
+	delete(sistema);
 
 	return 0;
 }
