@@ -1,0 +1,9 @@
+<map id="removerWishlist" name="removerWishlist">
+<area shape="rect" id="node2" href="$classSistema.html#a0fb81a4685bb24024295c89d22d6d719" title="Pesquisa um titulo. " alt="" coords="179,13,338,39"/>
+<area shape="rect" id="node3" href="$classUtilizador.html#aa47c2fe835a73a23664149ccc7fbc10f" title="Remove um titulo da wishlist. " alt="" coords="169,63,348,90"/>
+<area shape="rect" id="node8" href="$classErro.html#abfc1e9735b259d88bb97828a23164eb0" title="Permite obter a descricao do Erro. " alt="" coords="211,114,306,141"/>
+<area shape="rect" id="node4" href="$classWishedTitle.html#a9ca6e92a26bb2f319a39d5a03b0c42bd" title="Devolve o titulo. " alt="" coords="396,13,545,39"/>
+<area shape="rect" id="node6" href="$classTitulo.html#acb79279860b3404c6419697df5f860cb" title="Permite obter o nome do titulo. " alt="" coords="413,63,528,90"/>
+<area shape="rect" id="node7" href="$classTitulo.html#a2a57a31d40c5df012b3c6e2451c253dd" title="Permite obter a plataforma do titulo. " alt="" coords="399,114,542,141"/>
+<area shape="rect" id="node5" href="$classWishedTitle.html#aacaf6dfce83390dcc78f0ecd679e1de1" title="Alterar a probabilidade de compra do titulo. " alt="" coords="593,5,788,47"/>
+</map>

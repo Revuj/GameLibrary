@@ -1,0 +1,16 @@
+<map id="Sistema::saveUtilizadores" name="Sistema::saveUtilizadores">
+<area shape="rect" id="node2" href="$classTitulo.html#acb79279860b3404c6419697df5f860cb" title="Permite obter o nome do titulo. " alt="" coords="263,5,377,32"/>
+<area shape="rect" id="node3" href="$classTitulo.html#a8048db7604abd58892122c810a6794be" title="Permite obter a idade minima do titulo. " alt="" coords="243,56,397,83"/>
+<area shape="rect" id="node4" href="$classTitulo.html#a2a57a31d40c5df012b3c6e2451c253dd" title="Permite obter a plataforma do titulo. " alt="" coords="249,107,391,133"/>
+<area shape="rect" id="node5" href="$classTitulo.html#ab392d79a55b0ce556e03ad5a2fecad05" title="Permite obter o historico de precos do titulo. " alt="" coords="239,157,401,184"/>
+<area shape="rect" id="node6" href="$classTitulo.html#a09992b973f8cfe755f21ff725b2970f0" title="Permite obter os generos do titulo. " alt="" coords="255,208,385,235"/>
+<area shape="rect" id="node7" href="$classTitulo.html#a48d810fe27da41cfb726fb5680a68471" title="Permite obter a empresa do titulo. " alt="" coords="254,259,386,285"/>
+<area shape="rect" id="node8" href="$classTitulo.html#a1cb9b8c0a9dca73d5925922ccc041fa8" title="Permite obter a data de lancamento do titulo. " alt="" coords="231,309,409,336"/>
+<area shape="rect" id="node9" href="$classOnline.html#aa222489df5a1e6bcfbf5e01d95178850" title="Devolve o booleano que indica se o jogo tem uma subscricao fixa ou variavel. " alt="" coords="245,360,395,387"/>
+<area shape="rect" id="node10" href="$classOnline.html#a0f7240aa5582e10579d0719e4fa5d705" title="Devolve o preco por subscricao. " alt="" coords="228,411,412,437"/>
+<area shape="rect" id="node11" href="$classOnline.html#aa6f51a948cb5ffd2c7cbac1f1cd6023f" title="Devolve as datas jogadas. " alt="" coords="246,461,394,488"/>
+<area shape="rect" id="node12" href="$classOnline.html#a4ab18dfdaa0af23cda8f5268a9968887" title="Devolve os minutos jogados por data. " alt="" coords="241,512,399,539"/>
+<area shape="rect" id="node13" href="$classTitulo.html#ad36afe75694812eabe74af5fe32ad95b" title="Permite obter o numero de anuncios. " alt="" coords="253,563,387,589"/>
+<area shape="rect" id="node14" href="$classTitulo.html#a71d5b5985170de5612ec49c5c955f120" title="Permite obter o numero de cliques. " alt="" coords="258,613,382,640"/>
+<area shape="rect" id="node15" href="$classHome.html#a0ab7279a76525f48cb1b64b8bae98a44" title="Devolve membro dado vetor de datas. " alt="" coords="261,664,379,691"/>
+</map>

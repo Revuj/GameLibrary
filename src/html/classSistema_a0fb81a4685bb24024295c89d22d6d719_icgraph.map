@@ -1,0 +1,12 @@
+<map id="Sistema::pesquisaJogo" name="Sistema::pesquisaJogo">
+<area shape="rect" id="node2" href="$main_8cpp.html#af8f302c02e726f24c5f7ddea9cd7f17d" title="escolheTitulo" alt="" coords="226,5,325,32"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a11ccc3a4082cb5f294bc863d50fa803e" title="adiconaWishlist" alt="" coords="218,56,333,83"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#a01a46c12aa32213dc4babb7780904eba" title="removerWishlist" alt="" coords="217,107,333,133"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#aeeed8d2818f5d3d47c30b792b064f1d8" title="alteraInteresse" alt="" coords="221,157,329,184"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#aab039f6f4271b56e9ca2d1264b25f66a" title="utilizadorJoga" alt="" coords="224,208,327,235"/>
+<area shape="rect" id="node10" href="$main_8cpp.html#a84916567707f41d606bb5cbdd44d6c17" title="pesquisarJogo" alt="" coords="388,252,495,279"/>
+<area shape="rect" id="node11" href="$classSistema.html#a815b07845ef6b03247b239333fe75e28" title="Construtor da class Sistema. " alt="" coords="212,309,339,336"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a41dd1ea1b95901e643be4af34f6dcfbf" title="menuUtilizador" alt="" coords="387,132,496,159"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#ab36c65bcfd56b6a29bee851e57462ad2" title="pesquisarUtilizador" alt="" coords="544,164,677,191"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="725,201,776,228"/>
+</map>

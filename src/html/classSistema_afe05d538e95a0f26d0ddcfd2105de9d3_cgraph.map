@@ -1,0 +1,44 @@
+<map id="Sistema::readFileUtilizadores" name="Sistema::readFileUtilizadores">
+<area shape="rect" id="node2" href="$classBanco.html#a5f36ab07909fc570d158a21e2e6398f5" title="Adiciona um vector de cartoes de credito ao banco. " alt="" coords="247,377,449,404"/>
+<area shape="rect" id="node5" href="$classTitulo.html#a8ea091928732a5ff5b974e003668a778" title="Permite atualizar o historico de precos do titulo. " alt="" coords="265,225,431,252"/>
+<area shape="rect" id="node6" href="$classOnline.html#a3c0b8d3393271eabfa702629c979fb93" title="Altera as datas jogadas. " alt="" coords="274,276,422,303"/>
+<area shape="rect" id="node7" href="$classOnline.html#a71cc818cd9b8020a470efc14f636a9f9" title="Altera os minutos jogados por data. " alt="" coords="269,327,427,353"/>
+<area shape="rect" id="node8" href="$classBiblioteca.html#af10c9f23d85db8e03ae2e8b9d3e593e1" title="Adicona um titulo a biblioteca. " alt="" coords="769,664,935,691"/>
+<area shape="rect" id="node11" href="$classHome.html#a94aec68b520d98ac38c6794b5771cd53" title="Adiciona uma data ao vetor data_de_atualizacao. " alt="" coords="257,428,439,455"/>
+<area shape="rect" id="node12" href="$classUtilizador.html#ac3c7ff821739e5682a5d06d0868031ac" title="Altera a data da ultima compra. " alt="" coords="263,479,433,521"/>
+<area shape="rect" id="node14" href="$classUtilizador.html#a60b1025ffe94b9f2414f54cc94662cc9" title="Adiciona um cartao de credito caso este ainda nao exista. " alt="" coords="519,99,691,141"/>
+<area shape="rect" id="node18" href="$classUtilizador.html#a45ee0a8d988adbd537e2506d80f96cfb" title="Adiciona um novo titulo a wishlist. " alt="" coords="760,613,944,640"/>
+<area shape="rect" id="node3" href="$classBanco.html#a2ac1bb3c6a742743bcbb6dd0a312d74d" title="Adiciona um cartao de credito ao banco. " alt="" coords="507,27,703,53"/>
+<area shape="rect" id="node4" href="$classCartaoCredito.html#ab59d60e4d155e7f29aef888ea3139ee5" title="Devolve o id(string) do cartao de credito atual. " alt="" coords="782,5,922,32"/>
+<area shape="rect" id="node9" href="$classTitulo.html#acb79279860b3404c6419697df5f860cb" title="Permite obter o nome do titulo. " alt="" coords="1046,613,1161,640"/>
+<area shape="rect" id="node10" href="$classTitulo.html#a2a57a31d40c5df012b3c6e2451c253dd" title="Permite obter a plataforma do titulo. " alt="" coords="1032,664,1175,691"/>
+<area shape="rect" id="node13" href="$classUtilizador.html#abd73f24d4eb5fa0838af819e8343b1f5" title="Overload do operador de igualdade para a classe Utilizador. " alt="" coords="531,613,679,640"/>
+<area shape="rect" id="node15" href="$classUtilizador.html#ac08a744b9d9d2aca0bd22c60e0beaa83" title="Adiciona um titulo ao utilizador. " alt="" coords="521,165,688,192"/>
+<area shape="rect" id="node25" href="$classUtilizador.html#a8624e9e45e13e592e68164b0d7b2b7cd" title="Devolve a wishlist do utilizador. " alt="" coords="527,664,682,691"/>
+<area shape="rect" id="node26" href="$classUtilizador.html#aa47c2fe835a73a23664149ccc7fbc10f" title="Remove um titulo da wishlist. " alt="" coords="763,563,941,589"/>
+<area shape="rect" id="node27" href="$classUtilizador.html#a9b80c93b8e8f7716e4ab77b2e1b47071" title="Devolve o primeiro titulo da wishlist com uma probabilidade minima. " alt="" coords="1005,413,1201,440"/>
+<area shape="rect" id="node29" href="$classUtilizador.html#a2fc6ea78068d43766a6bc344a3059f61" title="Calcula o preco total da biblioteca do utilizador. " alt="" coords="532,461,677,488"/>
+<area shape="rect" id="node30" href="$classUtilizador.html#a4f3016ff86d68d548f801aa569b854dc" title="mostra no ecra as publicidades ao utilizador " alt="" coords="763,360,941,387"/>
+<area shape="rect" id="node34" href="$classUtilizador.html#a4617169b0764e48f8b95d4d8aa12bf19" title="Atualiza o interesse, num titulo. " alt="" coords="513,816,697,843"/>
+<area shape="rect" id="node38" href="$classUtilizador.html#a82b216e27c9716cce49a7b98d59445cb" title="Atualiza as probabilidades de compra para todos os titulos. " alt="" coords="497,892,712,919"/>
+<area shape="rect" id="node39" href="$Utilizador_8h.html#ac94bede207bc2b6f0bbb33fa77f6e283" title="operator\&lt;\&lt;" alt="" coords="562,259,647,285"/>
+<area shape="rect" id="node16" href="$classTitulo.html#a93725bdc2e98350e47b54fd76c0fa236" title="Permite obter o preco atual do titulo. " alt="" coords="1303,312,1417,339"/>
+<area shape="rect" id="node17" href="$classBanco.html#a0735f07636c578666068a16f6ecccd91" title="Devolve a data atual. " alt="" coords="781,107,923,133"/>
+<area shape="rect" id="node19" href="$classWishedTitle.html#a8be5446371add65ba4de2c69c84cb387" title="Atualiza a probabilidade de compra do WishedTitle. " alt="" coords="992,816,1215,843"/>
+<area shape="rect" id="node22" href="$classBiblioteca.html#a03c1ebf76a4ace4f57000bb99a87bb88" title="Devolve o vetor de titulos. " alt="" coords="1031,559,1175,585"/>
+<area shape="rect" id="node23" href="$classWishedTitle.html#a9ca6e92a26bb2f319a39d5a03b0c42bd" title="Devolve o titulo. " alt="" coords="1029,505,1178,532"/>
+<area shape="rect" id="node20" href="$classTitulo.html#ad36afe75694812eabe74af5fe32ad95b" title="Permite obter o numero de anuncios. " alt="" coords="1293,791,1427,817"/>
+<area shape="rect" id="node21" href="$classTitulo.html#a71d5b5985170de5612ec49c5c955f120" title="Permite obter o numero de cliques. " alt="" coords="1298,841,1422,868"/>
+<area shape="rect" id="node24" href="$classWishedTitle.html#aacaf6dfce83390dcc78f0ecd679e1de1" title="Alterar a probabilidade de compra do titulo. " alt="" coords="1263,498,1457,539"/>
+<area shape="rect" id="node28" href="$classWishedTitle.html#a9076a3f48cb0bbd435908c392e5041a9" title="Devolve a probabilidade de compra do titulo. " alt="" coords="1263,423,1457,465"/>
+<area shape="rect" id="node31" href="$classTitulo.html#ae7df7d468f8220fa32b2772df4c53081" title="Permite obter o desconto do titulo em percentagem. " alt="" coords="1035,261,1171,288"/>
+<area shape="rect" id="node33" href="$classTitulo.html#a8004d12b8ae0d0746b999a6411df150c" title="Adiciona um numero de anuncios. " alt="" coords="1021,363,1185,389"/>
+<area shape="rect" id="node32" href="$classTitulo.html#a5257cbaf35ad018001a7e48678795305" title="Permite obter o preco base do titulo. " alt="" coords="1288,261,1432,288"/>
+<area shape="rect" id="node35" href="$classWishedTitle.html#ae81814e2837a03f1bcbc1064da0e652e" title="WishedTitle::setInteresse" alt="" coords="767,816,937,843"/>
+<area shape="rect" id="node36" href="$classWishedTitle.html#a3acf82b03096f649740573441e1cb343" title="Compara dos objetos da classe WishedTitle. " alt="" coords="1026,727,1181,753"/>
+<area shape="rect" id="node37" href="$classWishedTitle.html#af436ada1ae78a4ffc8031863c0f21859" title="Devolve o interesse no titulo. " alt="" coords="1275,727,1445,753"/>
+<area shape="rect" id="node40" href="$classUtilizador.html#a82874cffab116aa572f58576511b0e24" title="Permite obter o nome do utilizador. " alt="" coords="783,259,921,285"/>
+<area shape="rect" id="node41" href="$classUtilizador.html#aea88bb297704762d0cccc909b8c2da54" title="Permite obter o email do utilizador. " alt="" coords="784,309,920,336"/>
+<area shape="rect" id="node42" href="$classUtilizador.html#adff93f098f9512263fcbd1cdadf20855" title="Permite obter a idade do utilizador. " alt="" coords="785,157,919,184"/>
+<area shape="rect" id="node43" href="$classUtilizador.html#aea27372a36fb8e59d2f3029464d83101" title="Permite obter a morada do utilizador. " alt="" coords="779,208,925,235"/>
+</map>

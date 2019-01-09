@@ -1,0 +1,9 @@
+<map id="adicionarEmpresa" name="adicionarEmpresa">
+<area shape="rect" id="node2" href="$classSistema.html#ac120f4aecf81933be110233f8dbf74c6" title="Verifica se o email e valido sintaticamente e verifica a sua existencia, se necessario. " alt="" coords="194,5,345,32"/>
+<area shape="rect" id="node4" href="$classErro.html#abfc1e9735b259d88bb97828a23164eb0" title="Permite obter a descricao do Erro. " alt="" coords="222,56,317,83"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a6c175a1424e435dba38c472eaf2f5535" title="is_digits" alt="" coords="234,107,305,133"/>
+<area shape="rect" id="node6" href="$classSistema.html#a41eddc54d36ac140608dd259c085ba88" title="Adiciona uma nova empresa ao sistema. " alt="" coords="180,157,359,184"/>
+<area shape="rect" id="node3" href="$classSistema.html#a0421323f2c7a5e372b54a40998ed8e69" title="Sistema::validEmail" alt="" coords="431,5,569,32"/>
+<area shape="rect" id="node7" href="$classEmpresa.html#a99bc2de98a0c0348abb74c93e6e7159e" title="Devolve o nome da empresa. " alt="" coords="407,132,593,159"/>
+<area shape="rect" id="node8" href="$classEmpresa.html#a6ab12452496ccaea5493bd2c67824f09" title="Devolve o NIF da empresa. " alt="" coords="441,183,559,209"/>
+</map>

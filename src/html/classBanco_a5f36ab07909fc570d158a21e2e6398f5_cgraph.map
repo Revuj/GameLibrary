@@ -1,0 +1,4 @@
+<map id="Banco::adicionaCartoesCredito" name="Banco::adicionaCartoesCredito">
+<area shape="rect" id="node2" href="$classBanco.html#a2ac1bb3c6a742743bcbb6dd0a312d74d" title="Adiciona um cartao de credito ao banco. " alt="" coords="256,5,452,32"/>
+<area shape="rect" id="node3" href="$classCartaoCredito.html#ab59d60e4d155e7f29aef888ea3139ee5" title="Devolve o id(string) do cartao de credito atual. " alt="" coords="500,5,640,32"/>
+</map>

@@ -1,0 +1,60 @@
+\hypertarget{Data_8h}{}\section{Data.\+h File Reference}
+\label{Data_8h}\index{Data.\+h@{Data.\+h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Data.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{Data_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Data_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classData}{Data}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{Data_8h_a8c5d8122337592237e7df36acde6a97f}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classData}{Data} \&data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Data_8h_a8c5d8122337592237e7df36acde6a97f}\label{Data_8h_a8c5d8122337592237e7df36acde6a97f}} 
+\index{Data.\+h@{Data.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Data.\+h@{Data.\+h}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classData}{Data} \&}]{data }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+118                                                              \{
+119     \textcolor{keywordflow}{if} (data.\hyperlink{classData_a459536c9351759b5697ba25456d9bd70}{getDia}() < 10)
+120         os << \textcolor{stringliteral}{"0"};
+121     os << data.\hyperlink{classData_a459536c9351759b5697ba25456d9bd70}{getDia}() << \textcolor{stringliteral}{"/"};
+122     \textcolor{keywordflow}{if} (data.\hyperlink{classData_ab991d6a069c799930899b39bef9a4662}{getMes}() < 10)
+123         os << \textcolor{stringliteral}{"0"};
+124 
+125     os << data.\hyperlink{classData_ab991d6a069c799930899b39bef9a4662}{getMes}() << \textcolor{stringliteral}{"/"} << data.\hyperlink{classData_ae19e0d5af87f94f2809ba52dae69e15b}{getAno}();
+126     \textcolor{keywordflow}{return} os;
+127 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{Data_8h_a8c5d8122337592237e7df36acde6a97f_cgraph}
+\end{center}
+\end{figure}

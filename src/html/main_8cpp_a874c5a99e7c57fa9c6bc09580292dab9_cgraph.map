@@ -1,0 +1,6 @@
+<map id="adicionarUtilizador" name="adicionarUtilizador">
+<area shape="rect" id="node2" href="$classSistema.html#ac120f4aecf81933be110233f8dbf74c6" title="Verifica se o email e valido sintaticamente e verifica a sua existencia, se necessario. " alt="" coords="198,5,349,32"/>
+<area shape="rect" id="node4" href="$classErro.html#abfc1e9735b259d88bb97828a23164eb0" title="Permite obter a descricao do Erro. " alt="" coords="226,56,321,83"/>
+<area shape="rect" id="node5" href="$classSistema.html#a51beac85364444837cd4cdff0080bad5" title="Adiciona um novo utilizador ao sistema. " alt="" coords="183,107,364,133"/>
+<area shape="rect" id="node3" href="$classSistema.html#a0421323f2c7a5e372b54a40998ed8e69" title="Sistema::validEmail" alt="" coords="412,5,551,32"/>
+</map>

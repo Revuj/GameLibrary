@@ -1,0 +1,350 @@
+\hypertarget{classBanco}{}\section{Banco Class Reference}
+\label{classBanco}\index{Banco@{Banco}}
+
+
+{\ttfamily \#include $<$Banco.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBanco_a686e51b219dc175e432e91559298b259}{Banco} ()
+\begin{DoxyCompactList}\small\item\em Construtor da classe \hyperlink{classBanco}{Banco}. \end{DoxyCompactList}\item 
+\hyperlink{classBanco_af69f9b0da3521d7c1e422f21dfd5829e}{$\sim$\+Banco} ()
+\begin{DoxyCompactList}\small\item\em Destrutor da class \hyperlink{classBanco}{Banco}. \end{DoxyCompactList}\item 
+void \hyperlink{classBanco_a227af53b49995242c06d89bb10ffc8ea}{set\+Data\+Atual} ()
+\begin{DoxyCompactList}\small\item\em atualiza a data, para a data atual \end{DoxyCompactList}\item 
+\hyperlink{classData}{Data} \hyperlink{classBanco_a0735f07636c578666068a16f6ecccd91}{get\+Data\+Atual} () const
+\begin{DoxyCompactList}\small\item\em Devolve a data atual. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classCartaoCredito}{Cartao\+Credito} $>$ \hyperlink{classBanco_a859463228f6bf63d32d70afe8efd9541}{get\+Cartoes\+Credito} () const
+\begin{DoxyCompactList}\small\item\em Permite obter os cartoes de credito dos utilizadores. \end{DoxyCompactList}\item 
+bool \hyperlink{classBanco_ac469cc9db5980081701bf9eb27a7e612}{is\+Data\+Valida} (const \hyperlink{classCartaoCredito}{Cartao\+Credito} \&cartao) const
+\begin{DoxyCompactList}\small\item\em Verifica se uma data e valida. \end{DoxyCompactList}\item 
+void \hyperlink{classBanco_a2ac1bb3c6a742743bcbb6dd0a312d74d}{adiciona\+Cartao\+Credito} (const \hyperlink{classCartaoCredito}{Cartao\+Credito} \&cartao)
+\begin{DoxyCompactList}\small\item\em Adiciona um cartao de credito ao banco. \end{DoxyCompactList}\item 
+void \hyperlink{classBanco_a5f36ab07909fc570d158a21e2e6398f5}{adiciona\+Cartoes\+Credito} (const std\+::vector$<$ \hyperlink{classCartaoCredito}{Cartao\+Credito} $>$ \&cartoes)
+\begin{DoxyCompactList}\small\item\em Adiciona um vector de cartoes de credito ao banco. \end{DoxyCompactList}\item 
+void \hyperlink{classBanco_a8c8f743903ba86129b62afbb3813e6f0}{atualiza\+Cartao} (\hyperlink{classCartaoCredito}{Cartao\+Credito} \&cartao)
+\begin{DoxyCompactList}\small\item\em Atualiza a data de um cartao de credito, adicionando mais 3 anos de validade, se esta fora da validade ou se faltam ate 90 dias ate ao fim do prazo. \end{DoxyCompactList}\item 
+void \hyperlink{classBanco_ad6f39d091c83361878bc5cfda534a49d}{atualiza\+Cartoes\+Credito} ()
+\begin{DoxyCompactList}\small\item\em Atualiza todos os cartoes do sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classBanco}{Banco} que contem os cartoes de credito dos utilizadores. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBanco_a686e51b219dc175e432e91559298b259}\label{classBanco_a686e51b219dc175e432e91559298b259}} 
+\index{Banco@{Banco}!Banco@{Banco}}
+\index{Banco@{Banco}!Banco@{Banco}}
+\subsubsection{\texorpdfstring{Banco()}{Banco()}}
+{\footnotesize\ttfamily Banco\+::\+Banco (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe \hyperlink{classBanco}{Banco}. 
+
+
+\begin{DoxyCode}
+10              \{
+11     time\_t theTime = time(NULL);
+12     \textcolor{keyword}{struct }tm *aTime = localtime(&theTime);
+13 
+14     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} dia= aTime->tm\_mday;
+15     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mes = aTime->tm\_mon + 1; \textcolor{comment}{// Month is 0 - 11, add 1 to get a jan-dec 1-12 concept}
+16     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ano = aTime->tm\_year + 1900;
+17 
+18     this->atual.\hyperlink{classData_a3e2c5356bc8d548b75c7d085f7a7c4ee}{setDia}(dia).\hyperlink{classData_ab15051ae481d89d057b22abc8152584c}{setMes}(mes).\hyperlink{classData_a8d4cfad647b590df436d8260000a2745}{setAno}(ano);
+19 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{classBanco_a686e51b219dc175e432e91559298b259_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBanco_af69f9b0da3521d7c1e422f21dfd5829e}\label{classBanco_af69f9b0da3521d7c1e422f21dfd5829e}} 
+\index{Banco@{Banco}!````~Banco@{$\sim$\+Banco}}
+\index{````~Banco@{$\sim$\+Banco}!Banco@{Banco}}
+\subsubsection{\texorpdfstring{$\sim$\+Banco()}{~Banco()}}
+{\footnotesize\ttfamily Banco\+::$\sim$\+Banco (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destrutor da class \hyperlink{classBanco}{Banco}. 
+
+
+\begin{DoxyCode}
+21               \{
+22 
+23 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBanco_a2ac1bb3c6a742743bcbb6dd0a312d74d}\label{classBanco_a2ac1bb3c6a742743bcbb6dd0a312d74d}} 
+\index{Banco@{Banco}!adiciona\+Cartao\+Credito@{adiciona\+Cartao\+Credito}}
+\index{adiciona\+Cartao\+Credito@{adiciona\+Cartao\+Credito}!Banco@{Banco}}
+\subsubsection{\texorpdfstring{adiciona\+Cartao\+Credito()}{adicionaCartaoCredito()}}
+{\footnotesize\ttfamily void Banco\+::adiciona\+Cartao\+Credito (\begin{DoxyParamCaption}\item[{const \hyperlink{classCartaoCredito}{Cartao\+Credito} \&}]{cartao }\end{DoxyParamCaption})}
+
+
+
+Adiciona um cartao de credito ao banco. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cartao} & -\/ cartao de credito a adicionar \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+46 \{
+47     \textcolor{comment}{/*ve se ja existe cartao de credito*/}
+48     \textcolor{keywordflow}{if} (find(this->CartoesDeCredito.begin(),this->CartoesDeCredito.end(),C) != this->CartoesDeCredito.end()
+      )
+49         \textcolor{keywordflow}{throw} \hyperlink{classCartaoJaExistente}{CartaoJaExistente}(C.getId());
+50 
+51     this->CartoesDeCredito.push\_back(C);
+52 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBanco_a2ac1bb3c6a742743bcbb6dd0a312d74d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBanco_a2ac1bb3c6a742743bcbb6dd0a312d74d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBanco_a5f36ab07909fc570d158a21e2e6398f5}\label{classBanco_a5f36ab07909fc570d158a21e2e6398f5}} 
+\index{Banco@{Banco}!adiciona\+Cartoes\+Credito@{adiciona\+Cartoes\+Credito}}
+\index{adiciona\+Cartoes\+Credito@{adiciona\+Cartoes\+Credito}!Banco@{Banco}}
+\subsubsection{\texorpdfstring{adiciona\+Cartoes\+Credito()}{adicionaCartoesCredito()}}
+{\footnotesize\ttfamily void Banco\+::adiciona\+Cartoes\+Credito (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classCartaoCredito}{Cartao\+Credito} $>$ \&}]{cartoes }\end{DoxyParamCaption})}
+
+
+
+Adiciona um vector de cartoes de credito ao banco. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cartoes} & -\/ vector de cartoes de credito a adicionar ao banco \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+55 \{
+56     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \textcolor{keyword}{const} & cartao : cartoes)
+57     \{
+58         \hyperlink{classBanco_a2ac1bb3c6a742743bcbb6dd0a312d74d}{adicionaCartaoCredito}(cartao);
+59     \}
+60 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBanco_a5f36ab07909fc570d158a21e2e6398f5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBanco_a5f36ab07909fc570d158a21e2e6398f5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBanco_a8c8f743903ba86129b62afbb3813e6f0}\label{classBanco_a8c8f743903ba86129b62afbb3813e6f0}} 
+\index{Banco@{Banco}!atualiza\+Cartao@{atualiza\+Cartao}}
+\index{atualiza\+Cartao@{atualiza\+Cartao}!Banco@{Banco}}
+\subsubsection{\texorpdfstring{atualiza\+Cartao()}{atualizaCartao()}}
+{\footnotesize\ttfamily void Banco\+::atualiza\+Cartao (\begin{DoxyParamCaption}\item[{\hyperlink{classCartaoCredito}{Cartao\+Credito} \&}]{cartao }\end{DoxyParamCaption})}
+
+
+
+Atualiza a data de um cartao de credito, adicionando mais 3 anos de validade, se esta fora da validade ou se faltam ate 90 dias ate ao fim do prazo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cartao} & -\/ cartao de credito a atualizar \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+63 \{
+64     \textcolor{keywordflow}{if}(!\hyperlink{classBanco_ac469cc9db5980081701bf9eb27a7e612}{isDataValida}(C))
+65         C.atualizaDataDeValidade();
+66     \textcolor{keywordflow}{else}
+67     \{
+68         \textcolor{keywordflow}{if} (C.getDataDeValidade().diferencaEntreDatas(this->\hyperlink{classBanco_a0735f07636c578666068a16f6ecccd91}{getDataAtual}()) <= 90)
+69             C.atualizaDataDeValidade();
+70     \}
+71 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBanco_a8c8f743903ba86129b62afbb3813e6f0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBanco_a8c8f743903ba86129b62afbb3813e6f0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBanco_ad6f39d091c83361878bc5cfda534a49d}\label{classBanco_ad6f39d091c83361878bc5cfda534a49d}} 
+\index{Banco@{Banco}!atualiza\+Cartoes\+Credito@{atualiza\+Cartoes\+Credito}}
+\index{atualiza\+Cartoes\+Credito@{atualiza\+Cartoes\+Credito}!Banco@{Banco}}
+\subsubsection{\texorpdfstring{atualiza\+Cartoes\+Credito()}{atualizaCartoesCredito()}}
+{\footnotesize\ttfamily void Banco\+::atualiza\+Cartoes\+Credito (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Atualiza todos os cartoes do sistema. 
+
+
+\begin{DoxyCode}
+74 \{
+75     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} & cartao : this->CartoesDeCredito)
+76     \{
+77         \hyperlink{classBanco_a8c8f743903ba86129b62afbb3813e6f0}{atualizaCartao}(cartao);
+78     \}
+79 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBanco_ad6f39d091c83361878bc5cfda534a49d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBanco_a859463228f6bf63d32d70afe8efd9541}\label{classBanco_a859463228f6bf63d32d70afe8efd9541}} 
+\index{Banco@{Banco}!get\+Cartoes\+Credito@{get\+Cartoes\+Credito}}
+\index{get\+Cartoes\+Credito@{get\+Cartoes\+Credito}!Banco@{Banco}}
+\subsubsection{\texorpdfstring{get\+Cartoes\+Credito()}{getCartoesCredito()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classCartaoCredito}{Cartao\+Credito} $>$ Banco\+::get\+Cartoes\+Credito (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter os cartoes de credito dos utilizadores. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o vetor de cartoes de credito 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+32 \{
+33     \textcolor{keywordflow}{return} this->CartoesDeCredito;
+34 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{classBanco_a859463228f6bf63d32d70afe8efd9541_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBanco_a0735f07636c578666068a16f6ecccd91}\label{classBanco_a0735f07636c578666068a16f6ecccd91}} 
+\index{Banco@{Banco}!get\+Data\+Atual@{get\+Data\+Atual}}
+\index{get\+Data\+Atual@{get\+Data\+Atual}!Banco@{Banco}}
+\subsubsection{\texorpdfstring{get\+Data\+Atual()}{getDataAtual()}}
+{\footnotesize\ttfamily \hyperlink{classData}{Data} Banco\+::get\+Data\+Atual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devolve a data atual. 
+
+\begin{DoxyReturn}{Returns}
+Retorna a data atual 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+27 \{
+28     \textcolor{keywordflow}{return} this->atual;
+29 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBanco_a0735f07636c578666068a16f6ecccd91_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBanco_ac469cc9db5980081701bf9eb27a7e612}\label{classBanco_ac469cc9db5980081701bf9eb27a7e612}} 
+\index{Banco@{Banco}!is\+Data\+Valida@{is\+Data\+Valida}}
+\index{is\+Data\+Valida@{is\+Data\+Valida}!Banco@{Banco}}
+\subsubsection{\texorpdfstring{is\+Data\+Valida()}{isDataValida()}}
+{\footnotesize\ttfamily bool Banco\+::is\+Data\+Valida (\begin{DoxyParamCaption}\item[{const \hyperlink{classCartaoCredito}{Cartao\+Credito} \&}]{cartao }\end{DoxyParamCaption}) const}
+
+
+
+Verifica se uma data e valida. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cartao} & -\/ cartao de credito cuja data vai ser verificada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retorna true se a data for valida, ou false de outra forma 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+37 \{
+38         \textcolor{keywordflow}{if} (atual <= C.getDataDeValidade())
+39             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+40         \textcolor{keywordflow}{else}
+41             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+42 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBanco_ac469cc9db5980081701bf9eb27a7e612_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBanco_ac469cc9db5980081701bf9eb27a7e612_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBanco_a227af53b49995242c06d89bb10ffc8ea}\label{classBanco_a227af53b49995242c06d89bb10ffc8ea}} 
+\index{Banco@{Banco}!set\+Data\+Atual@{set\+Data\+Atual}}
+\index{set\+Data\+Atual@{set\+Data\+Atual}!Banco@{Banco}}
+\subsubsection{\texorpdfstring{set\+Data\+Atual()}{setDataAtual()}}
+{\footnotesize\ttfamily void Banco\+::set\+Data\+Atual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+atualiza a data, para a data atual 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Banco_8h}{Banco.\+h}\item 
+\hyperlink{Banco_8cpp}{Banco.\+cpp}\end{DoxyCompactItemize}

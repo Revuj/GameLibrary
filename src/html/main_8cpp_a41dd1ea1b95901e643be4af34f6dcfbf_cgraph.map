@@ -1,0 +1,51 @@
+<map id="menuUtilizador" name="menuUtilizador">
+<area shape="rect" id="node2" href="$classUtilizador.html#a4f3016ff86d68d548f801aa569b854dc" title="mostra no ecra as publicidades ao utilizador " alt="" coords="622,63,799,90"/>
+<area shape="rect" id="node12" href="$main_8cpp.html#a1b2cb3eb63cb3b95f68b994271b23f13" title="printUserMenu" alt="" coords="191,941,298,967"/>
+<area shape="rect" id="node13" href="$main_8cpp.html#a69864162453f9299380c3c91be8fdca4" title="getOption" alt="" coords="205,991,284,1018"/>
+<area shape="rect" id="node14" href="$classErro.html#abfc1e9735b259d88bb97828a23164eb0" title="Permite obter a descricao do Erro. " alt="" coords="425,510,520,537"/>
+<area shape="rect" id="node15" href="$main_8cpp.html#af8f302c02e726f24c5f7ddea9cd7f17d" title="escolheTitulo" alt="" coords="195,662,294,689"/>
+<area shape="rect" id="node31" href="$main_8cpp.html#a11ccc3a4082cb5f294bc863d50fa803e" title="adiconaWishlist" alt="" coords="187,510,302,537"/>
+<area shape="rect" id="node37" href="$main_8cpp.html#a01a46c12aa32213dc4babb7780904eba" title="removerWishlist" alt="" coords="187,459,303,486"/>
+<area shape="rect" id="node38" href="$main_8cpp.html#aeeed8d2818f5d3d47c30b792b064f1d8" title="alteraInteresse" alt="" coords="191,409,299,435"/>
+<area shape="rect" id="node41" href="$main_8cpp.html#aa59523879399e16bcfde4f06af6ad2ff" title="escolheCc" alt="" coords="203,839,287,866"/>
+<area shape="rect" id="node44" href="$classSistema.html#aabeb8de1cc79bff9ff04d190ac3754d2" title="Mostra o saldo de um utilizador do sistema. " alt="" coords="163,738,327,765"/>
+<area shape="rect" id="node45" href="$main_8cpp.html#aab039f6f4271b56e9ca2d1264b25f66a" title="utilizadorJoga" alt="" coords="193,561,296,587"/>
+<area shape="rect" id="node49" href="$classSistema.html#a871ba21f5de12adb05106f0fcaf9d723" title="Mostra o tempo jogado por um utilizador. " alt="" coords="395,1083,551,1110"/>
+<area shape="rect" id="node3" href="$classUtilizador.html#a9b80c93b8e8f7716e4ab77b2e1b47071" title="Devolve o primeiro titulo da wishlist com uma probabilidade minima. " alt="" coords="864,13,1060,39"/>
+<area shape="rect" id="node5" href="$classWishedTitle.html#a9ca6e92a26bb2f319a39d5a03b0c42bd" title="Devolve o titulo. " alt="" coords="887,215,1037,242"/>
+<area shape="rect" id="node7" href="$classTitulo.html#acb79279860b3404c6419697df5f860cb" title="Permite obter o nome do titulo. " alt="" coords="905,345,1019,371"/>
+<area shape="rect" id="node8" href="$classTitulo.html#a93725bdc2e98350e47b54fd76c0fa236" title="Permite obter o preco atual do titulo. " alt="" coords="1161,353,1276,379"/>
+<area shape="rect" id="node9" href="$classTitulo.html#ae7df7d468f8220fa32b2772df4c53081" title="Permite obter o desconto do titulo em percentagem. " alt="" coords="894,114,1030,141"/>
+<area shape="rect" id="node11" href="$classTitulo.html#a8004d12b8ae0d0746b999a6411df150c" title="Adiciona um numero de anuncios. " alt="" coords="880,63,1044,90"/>
+<area shape="rect" id="node4" href="$classWishedTitle.html#a9076a3f48cb0bbd435908c392e5041a9" title="Devolve a probabilidade de compra do titulo. " alt="" coords="1121,5,1316,47"/>
+<area shape="rect" id="node6" href="$classWishedTitle.html#aacaf6dfce83390dcc78f0ecd679e1de1" title="Alterar a probabilidade de compra do titulo. " alt="" coords="1121,185,1316,227"/>
+<area shape="rect" id="node10" href="$classTitulo.html#a5257cbaf35ad018001a7e48678795305" title="Permite obter o preco base do titulo. " alt="" coords="1147,114,1291,141"/>
+<area shape="rect" id="node16" href="$classSistema.html#a0fb81a4685bb24024295c89d22d6d719" title="Pesquisa um titulo. " alt="" coords="393,459,552,486"/>
+<area shape="rect" id="node17" href="$classUtilizador.html#ad0ebe5ff80aa77145ec4b0ce5473102c" title="Permite obter o vetor de cartoes de credito do utilizador. " alt="" coords="413,814,533,841"/>
+<area shape="rect" id="node18" href="$classUtilizador.html#ac08a744b9d9d2aca0bd22c60e0beaa83" title="Adiciona um titulo ao utilizador. " alt="" coords="389,713,556,739"/>
+<area shape="rect" id="node23" href="$classUtilizador.html#aa47c2fe835a73a23664149ccc7fbc10f" title="Remove um titulo da wishlist. " alt="" coords="621,317,800,343"/>
+<area shape="rect" id="node24" href="$classSistema.html#a0d6da6cf391b19d37001dab66c861b93" title="Verifica se a data de um cartao de credito e valida. " alt="" coords="403,982,542,1009"/>
+<area shape="rect" id="node30" href="$classSistema.html#a59ff239e4793308c979cccf796a72f23" title="Remove os utilizadores adormecidos dos titulos para uma dada plataforma. " alt="" coords="375,662,571,689"/>
+<area shape="rect" id="node19" href="$classBiblioteca.html#af10c9f23d85db8e03ae2e8b9d3e593e1" title="Adicona um titulo a biblioteca. " alt="" coords="627,570,794,597"/>
+<area shape="rect" id="node21" href="$classBanco.html#a0735f07636c578666068a16f6ecccd91" title="Devolve a data atual. " alt="" coords="639,722,782,749"/>
+<area shape="rect" id="node22" href="$classCartaoCredito.html#ab59d60e4d155e7f29aef888ea3139ee5" title="Devolve o id(string) do cartao de credito atual. " alt="" coords="641,925,781,951"/>
+<area shape="rect" id="node20" href="$classTitulo.html#a2a57a31d40c5df012b3c6e2451c253dd" title="Permite obter a plataforma do titulo. " alt="" coords="891,418,1033,445"/>
+<area shape="rect" id="node25" href="$classBanco.html#ac469cc9db5980081701bf9eb27a7e612" title="Verifica se uma data e valida. " alt="" coords="640,979,781,1006"/>
+<area shape="rect" id="node27" href="$classCartaoCredito.html#a52daaab859e37d416c00044ef0fb2f27" title="Atualiza a data de validade para a data atual. " alt="" coords="619,1081,803,1123"/>
+<area shape="rect" id="node26" href="$classCartaoCredito.html#ab28b73bbecc20b5c23348e1172230533" title="Devolve a data de validade do cartao. " alt="" coords="875,972,1049,1013"/>
+<area shape="rect" id="node28" href="$classData.html#a8d4cfad647b590df436d8260000a2745" title="Altera o dia. " alt="" coords="913,1114,1011,1141"/>
+<area shape="rect" id="node29" href="$classData.html#ae19e0d5af87f94f2809ba52dae69e15b" title="Devolve o ano. " alt="" coords="913,1063,1011,1090"/>
+<area shape="rect" id="node32" href="$classUtilizador.html#a45ee0a8d988adbd537e2506d80f96cfb" title="Adiciona um novo titulo a wishlist. " alt="" coords="619,367,803,394"/>
+<area shape="rect" id="node33" href="$classWishedTitle.html#a8be5446371add65ba4de2c69c84cb387" title="Atualiza a probabilidade de compra do WishedTitle. " alt="" coords="851,270,1073,297"/>
+<area shape="rect" id="node36" href="$classBiblioteca.html#a03c1ebf76a4ace4f57000bb99a87bb88" title="Devolve o vetor de titulos. " alt="" coords="890,671,1034,698"/>
+<area shape="rect" id="node34" href="$classTitulo.html#ad36afe75694812eabe74af5fe32ad95b" title="Permite obter o numero de anuncios. " alt="" coords="1151,251,1286,278"/>
+<area shape="rect" id="node35" href="$classTitulo.html#a71d5b5985170de5612ec49c5c955f120" title="Permite obter o numero de cliques. " alt="" coords="1157,302,1281,329"/>
+<area shape="rect" id="node39" href="$classUtilizador.html#a4617169b0764e48f8b95d4d8aa12bf19" title="Atualiza o interesse, num titulo. " alt="" coords="381,261,565,287"/>
+<area shape="rect" id="node40" href="$classWishedTitle.html#ae81814e2837a03f1bcbc1064da0e652e" title="WishedTitle::setInteresse" alt="" coords="625,215,796,242"/>
+<area shape="rect" id="node42" href="$classSistema.html#abb768fdc8d4b8290ab4a267fc7a84a39" title="Devolve o banco do sistema. " alt="" coords="406,1033,539,1059"/>
+<area shape="rect" id="node43" href="$classUtilizador.html#a60b1025ffe94b9f2414f54cc94662cc9" title="Adiciona um cartao de credito caso este ainda nao exista. " alt="" coords="387,916,559,957"/>
+<area shape="rect" id="node46" href="$classSistema.html#a43e1d500eca075857b1c96c2e2239d55" title="Simula o &quot;jogar&quot; de um utilizador, incrementando o tempo jogado e guardando uma data do dia em que jo..." alt="" coords="391,611,554,638"/>
+<area shape="rect" id="node47" href="$classUtilizador.html#a6a128859b776bf019b5652ce61f62280" title="Permite obter a biblioteca do utilizador. " alt="" coords="631,874,791,901"/>
+<area shape="rect" id="node48" href="$classOnline.html#aac2ef3483edfaa8426363ebdd542dc38" title="Adicionar estaticas relativas aos habitos de gaming, atualiza os 3 ultimos vetores, cuja ordem � crucial e atualiza horas_totais. " alt="" coords="619,469,803,495"/>
+<area shape="rect" id="node50" href="$classOnline.html#ad0a23d2f1a2f804479ff346be0fdc686" title="Devolve o numero de horas jogadas, arredondando para cima o membro estatico horas totais..." alt="" coords="633,1147,789,1174"/>
+</map>

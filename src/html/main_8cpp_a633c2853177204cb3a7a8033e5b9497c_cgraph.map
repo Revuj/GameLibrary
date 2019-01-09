@@ -1,0 +1,17 @@
+<map id="displayUtilizadores" name="displayUtilizadores">
+<area shape="rect" id="node2" href="$main_8cpp.html#a3687e2ced7dee82b39fc1ed74674ecd5" title="printDisplayUtilizadoresMenu" alt="" coords="185,5,377,32"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a69864162453f9299380c3c91be8fdca4" title="getOption" alt="" coords="242,56,321,83"/>
+<area shape="rect" id="node4" href="$classErro.html#abfc1e9735b259d88bb97828a23164eb0" title="Permite obter a descricao do Erro. " alt="" coords="234,107,329,133"/>
+<area shape="rect" id="node5" href="$classSistema.html#ac22188d7bcfb9df24776d67900b9d7fb" title="Mostra os utilizadores do sistema. " alt="" coords="425,119,613,145"/>
+<area shape="rect" id="node6" href="$classSistema.html#ac3b36e6798c903dd0efd102d7a5dd081" title="Mostra os utilizadores de forma ordenada. " alt="" coords="188,245,375,272"/>
+<area shape="rect" id="node7" href="$Sistema_8cpp.html#ad518f0e0db218f2c049ef1d700caae5f" title="userAgeAscend" alt="" coords="462,220,577,247"/>
+<area shape="rect" id="node9" href="$Sistema_8cpp.html#a02190b2d4dada73645956850b936ad16" title="userAgeDescend" alt="" coords="458,169,581,196"/>
+<area shape="rect" id="node10" href="$Sistema_8cpp.html#a2cac2b30d054ab23d49adc954779f67d" title="userNameAscend" alt="" coords="456,372,583,399"/>
+<area shape="rect" id="node12" href="$Sistema_8cpp.html#ac0995133035c1bd2be3a18c95a2eba92" title="userNameDescend" alt="" coords="452,423,587,449"/>
+<area shape="rect" id="node13" href="$Sistema_8cpp.html#a55b7ab55cae2d4f6a03844e5cb19d2b8" title="userNumberGamesAscend" alt="" coords="430,321,609,348"/>
+<area shape="rect" id="node16" href="$Sistema_8cpp.html#a81e28a299272eebc9771023c1f78ea48" title="userNumberGamesDescend" alt="" coords="426,271,613,297"/>
+<area shape="rect" id="node8" href="$classUtilizador.html#adff93f098f9512263fcbd1cdadf20855" title="Permite obter a idade do utilizador. " alt="" coords="674,195,809,221"/>
+<area shape="rect" id="node11" href="$classUtilizador.html#a82874cffab116aa572f58576511b0e24" title="Permite obter o nome do utilizador. " alt="" coords="672,397,811,424"/>
+<area shape="rect" id="node14" href="$classUtilizador.html#a6a128859b776bf019b5652ce61f62280" title="Permite obter a biblioteca do utilizador. " alt="" coords="661,321,821,348"/>
+<area shape="rect" id="node15" href="$classBiblioteca.html#a03c1ebf76a4ace4f57000bb99a87bb88" title="Devolve o vetor de titulos. " alt="" coords="669,271,813,297"/>
+</map>

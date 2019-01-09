@@ -1,0 +1,9 @@
+<map id="WishedTitle::setInteresse" name="WishedTitle::setInteresse">
+<area shape="rect" id="node2" href="$classWishedTitle.html#a3acf82b03096f649740573441e1cb343" title="Compara dos objetos da classe WishedTitle. " alt="" coords="258,64,413,91"/>
+<area shape="rect" id="node5" href="$classWishedTitle.html#a8be5446371add65ba4de2c69c84cb387" title="Atualiza a probabilidade de compra do WishedTitle. " alt="" coords="224,148,447,175"/>
+<area shape="rect" id="node3" href="$classWishedTitle.html#af436ada1ae78a4ffc8031863c0f21859" title="Devolve o interesse no titulo. " alt="" coords="507,5,677,32"/>
+<area shape="rect" id="node4" href="$classWishedTitle.html#a9076a3f48cb0bbd435908c392e5041a9" title="Devolve a probabilidade de compra do titulo. " alt="" coords="495,57,689,98"/>
+<area shape="rect" id="node6" href="$classTitulo.html#ad36afe75694812eabe74af5fe32ad95b" title="Permite obter o numero de anuncios. " alt="" coords="525,123,659,149"/>
+<area shape="rect" id="node7" href="$classTitulo.html#a71d5b5985170de5612ec49c5c955f120" title="Permite obter o numero de cliques. " alt="" coords="530,173,654,200"/>
+<area shape="rect" id="node8" href="$classTitulo.html#a93725bdc2e98350e47b54fd76c0fa236" title="Permite obter o preco atual do titulo. " alt="" coords="535,224,649,251"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Utilizador::removeWishList" name="Utilizador::removeWishList">
+<area shape="rect" id="node2" href="$classWishedTitle.html#a9ca6e92a26bb2f319a39d5a03b0c42bd" title="Devolve o titulo. " alt="" coords="232,13,381,39"/>
+<area shape="rect" id="node4" href="$classTitulo.html#acb79279860b3404c6419697df5f860cb" title="Permite obter o nome do titulo. " alt="" coords="249,63,364,90"/>
+<area shape="rect" id="node5" href="$classTitulo.html#a2a57a31d40c5df012b3c6e2451c253dd" title="Permite obter a plataforma do titulo. " alt="" coords="235,114,378,141"/>
+<area shape="rect" id="node3" href="$classWishedTitle.html#aacaf6dfce83390dcc78f0ecd679e1de1" title="Alterar a probabilidade de compra do titulo. " alt="" coords="429,5,624,47"/>
+</map>

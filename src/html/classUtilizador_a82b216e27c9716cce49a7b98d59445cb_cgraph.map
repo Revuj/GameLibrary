@@ -1,0 +1,6 @@
+<map id="Utilizador::atualizaProbabilidades" name="Utilizador::atualizaProbabilidades">
+<area shape="rect" id="node2" href="$classWishedTitle.html#a8be5446371add65ba4de2c69c84cb387" title="Atualiza a probabilidade de compra do WishedTitle. " alt="" coords="268,56,491,83"/>
+<area shape="rect" id="node3" href="$classTitulo.html#ad36afe75694812eabe74af5fe32ad95b" title="Permite obter o numero de anuncios. " alt="" coords="539,5,673,32"/>
+<area shape="rect" id="node4" href="$classTitulo.html#a71d5b5985170de5612ec49c5c955f120" title="Permite obter o numero de cliques. " alt="" coords="544,56,668,83"/>
+<area shape="rect" id="node5" href="$classTitulo.html#a93725bdc2e98350e47b54fd76c0fa236" title="Permite obter o preco atual do titulo. " alt="" coords="549,107,663,133"/>
+</map>

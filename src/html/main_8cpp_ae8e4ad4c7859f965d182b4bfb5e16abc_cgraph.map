@@ -1,0 +1,6 @@
+<map id="displayAsleepUsers" name="displayAsleepUsers">
+<area shape="rect" id="node2" href="$main_8cpp.html#a9cdfd6b998ba8cfc497af7a303a6e330" title="printDisplayAsleepUsersMenu" alt="" coords="192,5,391,32"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a69864162453f9299380c3c91be8fdca4" title="getOption" alt="" coords="252,56,331,83"/>
+<area shape="rect" id="node4" href="$classErro.html#abfc1e9735b259d88bb97828a23164eb0" title="Permite obter a descricao do Erro. " alt="" coords="244,107,339,133"/>
+<area shape="rect" id="node5" href="$classSistema.html#a6f73ddef363e2bc3e1c36dcb0d6d6152" title="Mostra no ecra os utilizadores adormecidos consoante o conteudo da string s. " alt="" coords="194,157,389,184"/>
+</map>

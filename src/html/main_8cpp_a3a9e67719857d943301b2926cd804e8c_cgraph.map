@@ -1,0 +1,6 @@
+<map id="displayEmpresas" name="displayEmpresas">
+<area shape="rect" id="node2" href="$main_8cpp.html#a575a2b817f03c17e7943087813687578" title="printDisplayEmpresasMenu" alt="" coords="176,5,359,32"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a69864162453f9299380c3c91be8fdca4" title="getOption" alt="" coords="228,56,307,83"/>
+<area shape="rect" id="node4" href="$classErro.html#abfc1e9735b259d88bb97828a23164eb0" title="Permite obter a descricao do Erro. " alt="" coords="220,107,315,133"/>
+<area shape="rect" id="node5" href="$classSistema.html#a4380aacc310d051a753138477d8e777f" title="Mostra no ecra as empresas consoante o conteudo de s. " alt="" coords="178,157,357,184"/>
+</map>

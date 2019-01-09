@@ -1,0 +1,536 @@
+\hypertarget{Sistema_8cpp}{}\section{Sistema.\+cpp File Reference}
+\label{Sistema_8cpp}\index{Sistema.\+cpp@{Sistema.\+cpp}}
+{\ttfamily \#include \char`\"{}Sistema.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include \char`\"{}Titulo.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+Include dependency graph for Sistema.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{Sistema_8cpp_a2cac2b30d054ab23d49adc954779f67d}{user\+Name\+Ascend} (\hyperlink{classUtilizador}{Utilizador} $\ast$user1, \hyperlink{classUtilizador}{Utilizador} $\ast$user2)
+\item 
+bool \hyperlink{Sistema_8cpp_ac0995133035c1bd2be3a18c95a2eba92}{user\+Name\+Descend} (\hyperlink{classUtilizador}{Utilizador} $\ast$user1, \hyperlink{classUtilizador}{Utilizador} $\ast$user2)
+\item 
+bool \hyperlink{Sistema_8cpp_ad518f0e0db218f2c049ef1d700caae5f}{user\+Age\+Ascend} (\hyperlink{classUtilizador}{Utilizador} $\ast$user1, \hyperlink{classUtilizador}{Utilizador} $\ast$user2)
+\item 
+bool \hyperlink{Sistema_8cpp_a02190b2d4dada73645956850b936ad16}{user\+Age\+Descend} (\hyperlink{classUtilizador}{Utilizador} $\ast$user1, \hyperlink{classUtilizador}{Utilizador} $\ast$user2)
+\item 
+bool \hyperlink{Sistema_8cpp_a55b7ab55cae2d4f6a03844e5cb19d2b8}{user\+Number\+Games\+Ascend} (\hyperlink{classUtilizador}{Utilizador} $\ast$user1, \hyperlink{classUtilizador}{Utilizador} $\ast$user2)
+\item 
+bool \hyperlink{Sistema_8cpp_a81e28a299272eebc9771023c1f78ea48}{user\+Number\+Games\+Descend} (\hyperlink{classUtilizador}{Utilizador} $\ast$user1, \hyperlink{classUtilizador}{Utilizador} $\ast$user2)
+\item 
+bool \hyperlink{Sistema_8cpp_a9ebb751fccefae6ee1c4636c901cf0bc}{game\+Id\+Ascend} (\hyperlink{classTitulo}{Titulo} $\ast$titulo1, \hyperlink{classTitulo}{Titulo} $\ast$titulo2)
+\item 
+bool \hyperlink{Sistema_8cpp_a5de4e871b807cfbcd024a00f60d18ba1}{game\+Id\+Descend} (\hyperlink{classTitulo}{Titulo} $\ast$titulo1, \hyperlink{classTitulo}{Titulo} $\ast$titulo2)
+\item 
+bool \hyperlink{Sistema_8cpp_a4b576dc41b8edeb29c8f84c948c47665}{game\+Release\+Ascend} (\hyperlink{classTitulo}{Titulo} $\ast$titulo1, \hyperlink{classTitulo}{Titulo} $\ast$titulo2)
+\item 
+bool \hyperlink{Sistema_8cpp_af8a401eaa3da373780504f34a1216550}{game\+Release\+Descend} (\hyperlink{classTitulo}{Titulo} $\ast$titulo1, \hyperlink{classTitulo}{Titulo} $\ast$titulo2)
+\item 
+bool \hyperlink{Sistema_8cpp_a85fca79d7efc04e9982238e38e199154}{game\+Age\+Ascend} (\hyperlink{classTitulo}{Titulo} $\ast$titulo1, \hyperlink{classTitulo}{Titulo} $\ast$titulo2)
+\item 
+bool \hyperlink{Sistema_8cpp_a4d0cdff5caed7ad707a1f6926e301a51}{game\+Age\+Descend} (\hyperlink{classTitulo}{Titulo} $\ast$titulo1, \hyperlink{classTitulo}{Titulo} $\ast$titulo2)
+\item 
+bool \hyperlink{Sistema_8cpp_ac71c10d662fb0c03358b94519364a76e}{game\+Developer\+Ascend} (\hyperlink{classTitulo}{Titulo} $\ast$titulo1, \hyperlink{classTitulo}{Titulo} $\ast$titulo2)
+\item 
+bool \hyperlink{Sistema_8cpp_a7ce8e20323381359eed30807d3dadabd}{game\+Developer\+Descend} (\hyperlink{classTitulo}{Titulo} $\ast$titulo1, \hyperlink{classTitulo}{Titulo} $\ast$titulo2)
+\item 
+bool \hyperlink{Sistema_8cpp_a3236be9bb24a1c78a5a87e45410380de}{cmp\+Par\+Jogo\+Rentabilidade} (const std\+::pair$<$ std\+::string, float $>$ \&p1, const std\+::pair$<$ std\+::string, float $>$ \&p2)
+\item 
+void \hyperlink{Sistema_8cpp_a9a4d5048551696a97f3dfff84b4d736d}{display\+Rank} (std\+::vector$<$ std\+::string $>$ a)
+\item 
+int \hyperlink{Sistema_8cpp_a466ff65ea754156e5bfa50747f1015b4}{find\+Pair} (const std\+::vector$<$ std\+::pair$<$ std\+::string, float $>$$>$ \&rentabilidade, std\+::string nome)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Sistema_8cpp_a3236be9bb24a1c78a5a87e45410380de}\label{Sistema_8cpp_a3236be9bb24a1c78a5a87e45410380de}} 
+\index{Sistema.\+cpp@{Sistema.\+cpp}!cmp\+Par\+Jogo\+Rentabilidade@{cmp\+Par\+Jogo\+Rentabilidade}}
+\index{cmp\+Par\+Jogo\+Rentabilidade@{cmp\+Par\+Jogo\+Rentabilidade}!Sistema.\+cpp@{Sistema.\+cpp}}
+\subsubsection{\texorpdfstring{cmp\+Par\+Jogo\+Rentabilidade()}{cmpParJogoRentabilidade()}}
+{\footnotesize\ttfamily bool cmp\+Par\+Jogo\+Rentabilidade (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ std\+::string, float $>$ \&}]{p1,  }\item[{const std\+::pair$<$ std\+::string, float $>$ \&}]{p2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+69                                               \{
+70     \textcolor{keywordflow}{return} p1.second > p2.second;
+71 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_a3236be9bb24a1c78a5a87e45410380de_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Sistema_8cpp_a9a4d5048551696a97f3dfff84b4d736d}\label{Sistema_8cpp_a9a4d5048551696a97f3dfff84b4d736d}} 
+\index{Sistema.\+cpp@{Sistema.\+cpp}!display\+Rank@{display\+Rank}}
+\index{display\+Rank@{display\+Rank}!Sistema.\+cpp@{Sistema.\+cpp}}
+\subsubsection{\texorpdfstring{display\+Rank()}{displayRank()}}
+{\footnotesize\ttfamily void display\+Rank (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{a }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+1004                                          \{
+1005 
+1006     std::vector<std::string> aux=a;
+1007     sort(aux.begin(), aux.end());
+1008     aux.erase(std::unique(aux.begin(), aux.end()), aux.end());
+1009 
+1010     std::vector<int> co;
+1011     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < aux.size(); i++) \{
+1012         co.push\_back(count(a.begin(), a.end(), aux[i]));
+1013     \}
+1014     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < aux.size(); i++) \{
+1015         \textcolor{keywordtype}{int} maxElementIndex = std::max\_element(co.begin(),co.end()) - co.begin();
+1016         std::cout<<(i+1)<<\textcolor{stringliteral}{": "}<<aux[maxElementIndex]<<\textcolor{stringliteral}{" Ocorrencias: "}<< co[maxElementIndex]<<std::endl;
+1017         co[maxElementIndex]=0;
+1018     \}
+1019     std::cout<<std::endl<<std::endl;
+1020 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_a9a4d5048551696a97f3dfff84b4d736d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Sistema_8cpp_a466ff65ea754156e5bfa50747f1015b4}\label{Sistema_8cpp_a466ff65ea754156e5bfa50747f1015b4}} 
+\index{Sistema.\+cpp@{Sistema.\+cpp}!find\+Pair@{find\+Pair}}
+\index{find\+Pair@{find\+Pair}!Sistema.\+cpp@{Sistema.\+cpp}}
+\subsubsection{\texorpdfstring{find\+Pair()}{findPair()}}
+{\footnotesize\ttfamily int find\+Pair (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::pair$<$ std\+::string, float $>$$>$ \&}]{rentabilidade,  }\item[{std\+::string}]{nome }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+1077                        \{
+1078     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} comprimento = rentabilidade.size();
+1079     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} par = 0; par < comprimento; par++) \{
+1080         \textcolor{keywordflow}{if} (rentabilidade[par].first == nome) \{
+1081             \textcolor{keywordflow}{return} par;
+1082         \}
+1083     \}
+1084     \textcolor{keywordflow}{return} -1;
+1085 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_a466ff65ea754156e5bfa50747f1015b4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Sistema_8cpp_a85fca79d7efc04e9982238e38e199154}\label{Sistema_8cpp_a85fca79d7efc04e9982238e38e199154}} 
+\index{Sistema.\+cpp@{Sistema.\+cpp}!game\+Age\+Ascend@{game\+Age\+Ascend}}
+\index{game\+Age\+Ascend@{game\+Age\+Ascend}!Sistema.\+cpp@{Sistema.\+cpp}}
+\subsubsection{\texorpdfstring{game\+Age\+Ascend()}{gameAgeAscend()}}
+{\footnotesize\ttfamily bool game\+Age\+Ascend (\begin{DoxyParamCaption}\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo1,  }\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+52                                                      \{
+53     \textcolor{keywordflow}{return} titulo1->\hyperlink{classTitulo_a8048db7604abd58892122c810a6794be}{getIdadeMinima}() < titulo2->\hyperlink{classTitulo_a8048db7604abd58892122c810a6794be}{getIdadeMinima}();
+54 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{Sistema_8cpp_a85fca79d7efc04e9982238e38e199154_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_a85fca79d7efc04e9982238e38e199154_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Sistema_8cpp_a4d0cdff5caed7ad707a1f6926e301a51}\label{Sistema_8cpp_a4d0cdff5caed7ad707a1f6926e301a51}} 
+\index{Sistema.\+cpp@{Sistema.\+cpp}!game\+Age\+Descend@{game\+Age\+Descend}}
+\index{game\+Age\+Descend@{game\+Age\+Descend}!Sistema.\+cpp@{Sistema.\+cpp}}
+\subsubsection{\texorpdfstring{game\+Age\+Descend()}{gameAgeDescend()}}
+{\footnotesize\ttfamily bool game\+Age\+Descend (\begin{DoxyParamCaption}\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo1,  }\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+56                                                       \{
+57     \textcolor{keywordflow}{return} titulo1->\hyperlink{classTitulo_a8048db7604abd58892122c810a6794be}{getIdadeMinima}() > titulo2->\hyperlink{classTitulo_a8048db7604abd58892122c810a6794be}{getIdadeMinima}();
+58 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{Sistema_8cpp_a4d0cdff5caed7ad707a1f6926e301a51_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_a4d0cdff5caed7ad707a1f6926e301a51_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Sistema_8cpp_ac71c10d662fb0c03358b94519364a76e}\label{Sistema_8cpp_ac71c10d662fb0c03358b94519364a76e}} 
+\index{Sistema.\+cpp@{Sistema.\+cpp}!game\+Developer\+Ascend@{game\+Developer\+Ascend}}
+\index{game\+Developer\+Ascend@{game\+Developer\+Ascend}!Sistema.\+cpp@{Sistema.\+cpp}}
+\subsubsection{\texorpdfstring{game\+Developer\+Ascend()}{gameDeveloperAscend()}}
+{\footnotesize\ttfamily bool game\+Developer\+Ascend (\begin{DoxyParamCaption}\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo1,  }\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+60                                                            \{
+61     \textcolor{keywordflow}{return} titulo1->\hyperlink{classTitulo_a48d810fe27da41cfb726fb5680a68471}{getEmpresa}() < titulo2->\hyperlink{classTitulo_a48d810fe27da41cfb726fb5680a68471}{getEmpresa}();
+62 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{Sistema_8cpp_ac71c10d662fb0c03358b94519364a76e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_ac71c10d662fb0c03358b94519364a76e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Sistema_8cpp_a7ce8e20323381359eed30807d3dadabd}\label{Sistema_8cpp_a7ce8e20323381359eed30807d3dadabd}} 
+\index{Sistema.\+cpp@{Sistema.\+cpp}!game\+Developer\+Descend@{game\+Developer\+Descend}}
+\index{game\+Developer\+Descend@{game\+Developer\+Descend}!Sistema.\+cpp@{Sistema.\+cpp}}
+\subsubsection{\texorpdfstring{game\+Developer\+Descend()}{gameDeveloperDescend()}}
+{\footnotesize\ttfamily bool game\+Developer\+Descend (\begin{DoxyParamCaption}\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo1,  }\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+64                                                             \{
+65     \textcolor{keywordflow}{return} !(titulo1->\hyperlink{classTitulo_a48d810fe27da41cfb726fb5680a68471}{getEmpresa}() < titulo2->\hyperlink{classTitulo_a48d810fe27da41cfb726fb5680a68471}{getEmpresa}());
+66 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{Sistema_8cpp_a7ce8e20323381359eed30807d3dadabd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_a7ce8e20323381359eed30807d3dadabd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Sistema_8cpp_a9ebb751fccefae6ee1c4636c901cf0bc}\label{Sistema_8cpp_a9ebb751fccefae6ee1c4636c901cf0bc}} 
+\index{Sistema.\+cpp@{Sistema.\+cpp}!game\+Id\+Ascend@{game\+Id\+Ascend}}
+\index{game\+Id\+Ascend@{game\+Id\+Ascend}!Sistema.\+cpp@{Sistema.\+cpp}}
+\subsubsection{\texorpdfstring{game\+Id\+Ascend()}{gameIdAscend()}}
+{\footnotesize\ttfamily bool game\+Id\+Ascend (\begin{DoxyParamCaption}\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo1,  }\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+36                                                     \{
+37     \textcolor{keywordflow}{return} titulo1->\hyperlink{classTitulo_af8fed6503c1c528ac3bfdbb182fce0b6}{getIdU}() < titulo2->\hyperlink{classTitulo_af8fed6503c1c528ac3bfdbb182fce0b6}{getIdU}();
+38 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{Sistema_8cpp_a9ebb751fccefae6ee1c4636c901cf0bc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_a9ebb751fccefae6ee1c4636c901cf0bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Sistema_8cpp_a5de4e871b807cfbcd024a00f60d18ba1}\label{Sistema_8cpp_a5de4e871b807cfbcd024a00f60d18ba1}} 
+\index{Sistema.\+cpp@{Sistema.\+cpp}!game\+Id\+Descend@{game\+Id\+Descend}}
+\index{game\+Id\+Descend@{game\+Id\+Descend}!Sistema.\+cpp@{Sistema.\+cpp}}
+\subsubsection{\texorpdfstring{game\+Id\+Descend()}{gameIdDescend()}}
+{\footnotesize\ttfamily bool game\+Id\+Descend (\begin{DoxyParamCaption}\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo1,  }\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+40                                                      \{
+41     \textcolor{keywordflow}{return} titulo1->\hyperlink{classTitulo_af8fed6503c1c528ac3bfdbb182fce0b6}{getIdU}() > titulo2->\hyperlink{classTitulo_af8fed6503c1c528ac3bfdbb182fce0b6}{getIdU}();
+42 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{Sistema_8cpp_a5de4e871b807cfbcd024a00f60d18ba1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_a5de4e871b807cfbcd024a00f60d18ba1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Sistema_8cpp_a4b576dc41b8edeb29c8f84c948c47665}\label{Sistema_8cpp_a4b576dc41b8edeb29c8f84c948c47665}} 
+\index{Sistema.\+cpp@{Sistema.\+cpp}!game\+Release\+Ascend@{game\+Release\+Ascend}}
+\index{game\+Release\+Ascend@{game\+Release\+Ascend}!Sistema.\+cpp@{Sistema.\+cpp}}
+\subsubsection{\texorpdfstring{game\+Release\+Ascend()}{gameReleaseAscend()}}
+{\footnotesize\ttfamily bool game\+Release\+Ascend (\begin{DoxyParamCaption}\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo1,  }\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+44                                                          \{
+45     \textcolor{keywordflow}{return} titulo1->\hyperlink{classTitulo_a1cb9b8c0a9dca73d5925922ccc041fa8}{getDataLancamento}() < titulo2->
+      \hyperlink{classTitulo_a1cb9b8c0a9dca73d5925922ccc041fa8}{getDataLancamento}();
+46 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_a4b576dc41b8edeb29c8f84c948c47665_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_a4b576dc41b8edeb29c8f84c948c47665_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Sistema_8cpp_af8a401eaa3da373780504f34a1216550}\label{Sistema_8cpp_af8a401eaa3da373780504f34a1216550}} 
+\index{Sistema.\+cpp@{Sistema.\+cpp}!game\+Release\+Descend@{game\+Release\+Descend}}
+\index{game\+Release\+Descend@{game\+Release\+Descend}!Sistema.\+cpp@{Sistema.\+cpp}}
+\subsubsection{\texorpdfstring{game\+Release\+Descend()}{gameReleaseDescend()}}
+{\footnotesize\ttfamily bool game\+Release\+Descend (\begin{DoxyParamCaption}\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo1,  }\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+48                                                           \{
+49     \textcolor{keywordflow}{return} !(titulo1->\hyperlink{classTitulo_a1cb9b8c0a9dca73d5925922ccc041fa8}{getDataLancamento}() <= titulo2->
+      \hyperlink{classTitulo_a1cb9b8c0a9dca73d5925922ccc041fa8}{getDataLancamento}());
+50 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_af8a401eaa3da373780504f34a1216550_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_af8a401eaa3da373780504f34a1216550_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Sistema_8cpp_ad518f0e0db218f2c049ef1d700caae5f}\label{Sistema_8cpp_ad518f0e0db218f2c049ef1d700caae5f}} 
+\index{Sistema.\+cpp@{Sistema.\+cpp}!user\+Age\+Ascend@{user\+Age\+Ascend}}
+\index{user\+Age\+Ascend@{user\+Age\+Ascend}!Sistema.\+cpp@{Sistema.\+cpp}}
+\subsubsection{\texorpdfstring{user\+Age\+Ascend()}{userAgeAscend()}}
+{\footnotesize\ttfamily bool user\+Age\+Ascend (\begin{DoxyParamCaption}\item[{\hyperlink{classUtilizador}{Utilizador} $\ast$}]{user1,  }\item[{\hyperlink{classUtilizador}{Utilizador} $\ast$}]{user2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+20                                                          \{
+21     \textcolor{keywordflow}{return} user1->\hyperlink{classUtilizador_adff93f098f9512263fcbd1cdadf20855}{getIdade}() < user2->\hyperlink{classUtilizador_adff93f098f9512263fcbd1cdadf20855}{getIdade}();
+22 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{Sistema_8cpp_ad518f0e0db218f2c049ef1d700caae5f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_ad518f0e0db218f2c049ef1d700caae5f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Sistema_8cpp_a02190b2d4dada73645956850b936ad16}\label{Sistema_8cpp_a02190b2d4dada73645956850b936ad16}} 
+\index{Sistema.\+cpp@{Sistema.\+cpp}!user\+Age\+Descend@{user\+Age\+Descend}}
+\index{user\+Age\+Descend@{user\+Age\+Descend}!Sistema.\+cpp@{Sistema.\+cpp}}
+\subsubsection{\texorpdfstring{user\+Age\+Descend()}{userAgeDescend()}}
+{\footnotesize\ttfamily bool user\+Age\+Descend (\begin{DoxyParamCaption}\item[{\hyperlink{classUtilizador}{Utilizador} $\ast$}]{user1,  }\item[{\hyperlink{classUtilizador}{Utilizador} $\ast$}]{user2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+24                                                           \{
+25     \textcolor{keywordflow}{return} user1->\hyperlink{classUtilizador_adff93f098f9512263fcbd1cdadf20855}{getIdade}() > user2->\hyperlink{classUtilizador_adff93f098f9512263fcbd1cdadf20855}{getIdade}();
+26 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{Sistema_8cpp_a02190b2d4dada73645956850b936ad16_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_a02190b2d4dada73645956850b936ad16_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Sistema_8cpp_a2cac2b30d054ab23d49adc954779f67d}\label{Sistema_8cpp_a2cac2b30d054ab23d49adc954779f67d}} 
+\index{Sistema.\+cpp@{Sistema.\+cpp}!user\+Name\+Ascend@{user\+Name\+Ascend}}
+\index{user\+Name\+Ascend@{user\+Name\+Ascend}!Sistema.\+cpp@{Sistema.\+cpp}}
+\subsubsection{\texorpdfstring{user\+Name\+Ascend()}{userNameAscend()}}
+{\footnotesize\ttfamily bool user\+Name\+Ascend (\begin{DoxyParamCaption}\item[{\hyperlink{classUtilizador}{Utilizador} $\ast$}]{user1,  }\item[{\hyperlink{classUtilizador}{Utilizador} $\ast$}]{user2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+12                                                           \{
+13     \textcolor{keywordflow}{return} user1->\hyperlink{classUtilizador_a82874cffab116aa572f58576511b0e24}{getNome}() < user2->\hyperlink{classUtilizador_a82874cffab116aa572f58576511b0e24}{getNome}();
+14 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{Sistema_8cpp_a2cac2b30d054ab23d49adc954779f67d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_a2cac2b30d054ab23d49adc954779f67d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Sistema_8cpp_ac0995133035c1bd2be3a18c95a2eba92}\label{Sistema_8cpp_ac0995133035c1bd2be3a18c95a2eba92}} 
+\index{Sistema.\+cpp@{Sistema.\+cpp}!user\+Name\+Descend@{user\+Name\+Descend}}
+\index{user\+Name\+Descend@{user\+Name\+Descend}!Sistema.\+cpp@{Sistema.\+cpp}}
+\subsubsection{\texorpdfstring{user\+Name\+Descend()}{userNameDescend()}}
+{\footnotesize\ttfamily bool user\+Name\+Descend (\begin{DoxyParamCaption}\item[{\hyperlink{classUtilizador}{Utilizador} $\ast$}]{user1,  }\item[{\hyperlink{classUtilizador}{Utilizador} $\ast$}]{user2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+16                                                            \{
+17     \textcolor{keywordflow}{return} user1->\hyperlink{classUtilizador_a82874cffab116aa572f58576511b0e24}{getNome}() > user2->\hyperlink{classUtilizador_a82874cffab116aa572f58576511b0e24}{getNome}();
+18 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{Sistema_8cpp_ac0995133035c1bd2be3a18c95a2eba92_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_ac0995133035c1bd2be3a18c95a2eba92_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Sistema_8cpp_a55b7ab55cae2d4f6a03844e5cb19d2b8}\label{Sistema_8cpp_a55b7ab55cae2d4f6a03844e5cb19d2b8}} 
+\index{Sistema.\+cpp@{Sistema.\+cpp}!user\+Number\+Games\+Ascend@{user\+Number\+Games\+Ascend}}
+\index{user\+Number\+Games\+Ascend@{user\+Number\+Games\+Ascend}!Sistema.\+cpp@{Sistema.\+cpp}}
+\subsubsection{\texorpdfstring{user\+Number\+Games\+Ascend()}{userNumberGamesAscend()}}
+{\footnotesize\ttfamily bool user\+Number\+Games\+Ascend (\begin{DoxyParamCaption}\item[{\hyperlink{classUtilizador}{Utilizador} $\ast$}]{user1,  }\item[{\hyperlink{classUtilizador}{Utilizador} $\ast$}]{user2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+27                                                                  \{
+28     \textcolor{keywordflow}{return} user1->\hyperlink{classUtilizador_a6a128859b776bf019b5652ce61f62280}{getBiblioteca}().\hyperlink{classBiblioteca_a03c1ebf76a4ace4f57000bb99a87bb88}{getTitulos}().size()
+29             < user2->\hyperlink{classUtilizador_a6a128859b776bf019b5652ce61f62280}{getBiblioteca}().\hyperlink{classBiblioteca_a03c1ebf76a4ace4f57000bb99a87bb88}{getTitulos}().size();
+30 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_a55b7ab55cae2d4f6a03844e5cb19d2b8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_a55b7ab55cae2d4f6a03844e5cb19d2b8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Sistema_8cpp_a81e28a299272eebc9771023c1f78ea48}\label{Sistema_8cpp_a81e28a299272eebc9771023c1f78ea48}} 
+\index{Sistema.\+cpp@{Sistema.\+cpp}!user\+Number\+Games\+Descend@{user\+Number\+Games\+Descend}}
+\index{user\+Number\+Games\+Descend@{user\+Number\+Games\+Descend}!Sistema.\+cpp@{Sistema.\+cpp}}
+\subsubsection{\texorpdfstring{user\+Number\+Games\+Descend()}{userNumberGamesDescend()}}
+{\footnotesize\ttfamily bool user\+Number\+Games\+Descend (\begin{DoxyParamCaption}\item[{\hyperlink{classUtilizador}{Utilizador} $\ast$}]{user1,  }\item[{\hyperlink{classUtilizador}{Utilizador} $\ast$}]{user2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+31                                                                   \{
+32     \textcolor{keywordflow}{return} user1->\hyperlink{classUtilizador_a6a128859b776bf019b5652ce61f62280}{getBiblioteca}().\hyperlink{classBiblioteca_a03c1ebf76a4ace4f57000bb99a87bb88}{getTitulos}().size()
+33             > user2->\hyperlink{classUtilizador_a6a128859b776bf019b5652ce61f62280}{getBiblioteca}().\hyperlink{classBiblioteca_a03c1ebf76a4ace4f57000bb99a87bb88}{getTitulos}().size();
+34 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_a81e28a299272eebc9771023c1f78ea48_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sistema_8cpp_a81e28a299272eebc9771023c1f78ea48_icgraph}
+\end{center}
+\end{figure}

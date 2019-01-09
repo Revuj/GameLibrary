@@ -1,0 +1,118 @@
+\hypertarget{classBiblioteca}{}\section{Biblioteca Class Reference}
+\label{classBiblioteca}\index{Biblioteca@{Biblioteca}}
+
+
+{\ttfamily \#include $<$Biblioteca.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classBiblioteca_af10c9f23d85db8e03ae2e8b9d3e593e1}{adiciona\+Titulo} (\hyperlink{classTitulo}{Titulo} $\ast$T)
+\begin{DoxyCompactList}\small\item\em Adicona um titulo a biblioteca. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classTitulo}{Titulo} $\ast$ $>$ \hyperlink{classBiblioteca_a03c1ebf76a4ace4f57000bb99a87bb88}{get\+Titulos} () const
+\begin{DoxyCompactList}\small\item\em Devolve o vetor de titulos. \end{DoxyCompactList}\item 
+bool \hyperlink{classBiblioteca_a962423a2d93507ad7348e9b8c83eb1b8}{operator==} (const \hyperlink{classBiblioteca}{Biblioteca} B)
+\begin{DoxyCompactList}\small\item\em Overload do operador de igualdade. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Bibloteca que foi declarado no \hyperlink{classUtilizador}{Utilizador} 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBiblioteca_af10c9f23d85db8e03ae2e8b9d3e593e1}\label{classBiblioteca_af10c9f23d85db8e03ae2e8b9d3e593e1}} 
+\index{Biblioteca@{Biblioteca}!adiciona\+Titulo@{adiciona\+Titulo}}
+\index{adiciona\+Titulo@{adiciona\+Titulo}!Biblioteca@{Biblioteca}}
+\subsubsection{\texorpdfstring{adiciona\+Titulo()}{adicionaTitulo()}}
+{\footnotesize\ttfamily void Biblioteca\+::adiciona\+Titulo (\begin{DoxyParamCaption}\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{T }\end{DoxyParamCaption})}
+
+
+
+Adicona um titulo a biblioteca. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & -\/ \hyperlink{classTitulo}{Titulo} a adicionar \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+5                                           \{
+6     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < titulos.size(); i++) \{
+7         \textcolor{keywordflow}{if} (titulos[i]->getNome() == T->\hyperlink{classTitulo_acb79279860b3404c6419697df5f860cb}{getNome}() && titulos[i]->getPlataforma() == T->
+      \hyperlink{classTitulo_a2a57a31d40c5df012b3c6e2451c253dd}{getPlataforma}()) \{
+8             \textcolor{keywordflow}{throw} \hyperlink{classTituloJaAdicionado}{TituloJaAdicionado}(\textcolor{stringliteral}{"Jogo ja adicionado"});
+9         \}
+10     \}
+11     titulos.push\_back(T);
+12 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classBiblioteca_af10c9f23d85db8e03ae2e8b9d3e593e1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBiblioteca_af10c9f23d85db8e03ae2e8b9d3e593e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBiblioteca_a03c1ebf76a4ace4f57000bb99a87bb88}\label{classBiblioteca_a03c1ebf76a4ace4f57000bb99a87bb88}} 
+\index{Biblioteca@{Biblioteca}!get\+Titulos@{get\+Titulos}}
+\index{get\+Titulos@{get\+Titulos}!Biblioteca@{Biblioteca}}
+\subsubsection{\texorpdfstring{get\+Titulos()}{getTitulos()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classTitulo}{Titulo} $\ast$ $>$ Biblioteca\+::get\+Titulos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devolve o vetor de titulos. 
+
+\begin{DoxyReturn}{Returns}
+Retorna vetor de titulos da biblioteca 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+15 \{
+16     \textcolor{keywordflow}{return} titulos;
+17 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBiblioteca_a03c1ebf76a4ace4f57000bb99a87bb88_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classBiblioteca_a962423a2d93507ad7348e9b8c83eb1b8}\label{classBiblioteca_a962423a2d93507ad7348e9b8c83eb1b8}} 
+\index{Biblioteca@{Biblioteca}!operator==@{operator==}}
+\index{operator==@{operator==}!Biblioteca@{Biblioteca}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Biblioteca\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classBiblioteca}{Biblioteca}}]{B }\end{DoxyParamCaption})}
+
+
+
+Overload do operador de igualdade. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em B} & -\/ \hyperlink{classBiblioteca}{Biblioteca} a ser comparada \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+20 \{
+21     \textcolor{keywordflow}{return} this->titulos==B.titulos;
+22 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Biblioteca_8h}{Biblioteca.\+h}\item 
+\hyperlink{Biblioteca_8cpp}{Biblioteca.\+cpp}\end{DoxyCompactItemize}

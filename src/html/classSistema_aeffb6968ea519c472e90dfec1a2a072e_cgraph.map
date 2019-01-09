@@ -1,0 +1,8 @@
+<map id="Sistema::readEmpresas" name="Sistema::readEmpresas">
+<area shape="rect" id="node2" href="$classSistema.html#a00f929e5b2ca1dcc821edb14f9de5a24" title="Le as empresas de um ficheiro. " alt="" coords="216,107,399,133"/>
+<area shape="rect" id="node3" href="$classTitulo.html#a8ea091928732a5ff5b974e003668a778" title="Permite atualizar o historico de precos do titulo. " alt="" coords="454,5,621,32"/>
+<area shape="rect" id="node4" href="$classOnline.html#a3c0b8d3393271eabfa702629c979fb93" title="Altera as datas jogadas. " alt="" coords="463,56,611,83"/>
+<area shape="rect" id="node5" href="$classOnline.html#a71cc818cd9b8020a470efc14f636a9f9" title="Altera os minutos jogados por data. " alt="" coords="458,107,617,133"/>
+<area shape="rect" id="node6" href="$classEmpresa.html#a3c6eb96c694dcb6db1e402d6db1c439a" title="Adiciona um titulo novo a empresa. " alt="" coords="468,157,607,184"/>
+<area shape="rect" id="node7" href="$classHome.html#a94aec68b520d98ac38c6794b5771cd53" title="Adiciona uma data ao vetor data_de_atualizacao. " alt="" coords="447,208,628,235"/>
+</map>

@@ -1,0 +1,26 @@
+<map id="Titulo::getPlataforma" name="Titulo::getPlataforma">
+<area shape="rect" id="node2" href="$classBiblioteca.html#af10c9f23d85db8e03ae2e8b9d3e593e1" title="Adicona um titulo a biblioteca. " alt="" coords="196,226,363,252"/>
+<area shape="rect" id="node12" href="$classSistema.html#af25036f1b2d4abc30447c45f3c3237b8" title="Guarda todos os utilizadores do sistema em ficheiros, criando novos, se necessario. " alt="" coords="1101,226,1276,252"/>
+<area shape="rect" id="node13" href="$classSistema.html#ada4619fbedcb5a07d807545caebd5c57" title="Guarda todas as empresas do sistema num ficheiro. " alt="" coords="1106,124,1271,151"/>
+<area shape="rect" id="node14" href="$classSistema.html#a43e1d500eca075857b1c96c2e2239d55" title="Simula o &quot;jogar&quot; de um utilizador, incrementando o tempo jogado e guardando uma data do dia em que jo..." alt="" coords="421,23,584,50"/>
+<area shape="rect" id="node16" href="$classSistema.html#a1136080a3cf835831bf94908d419ae42" title="Adiciona um novo titulo ao sistema. " alt="" coords="437,546,568,572"/>
+<area shape="rect" id="node20" href="$classUtilizador.html#a45ee0a8d988adbd537e2506d80f96cfb" title="Adiciona um novo titulo a wishlist. " alt="" coords="411,276,595,303"/>
+<area shape="rect" id="node22" href="$classUtilizador.html#aa47c2fe835a73a23664149ccc7fbc10f" title="Remove um titulo da wishlist. " alt="" coords="413,440,592,467"/>
+<area shape="rect" id="node24" href="$classUtilizador.html#a4617169b0764e48f8b95d4d8aa12bf19" title="Atualiza o interesse, num titulo. " alt="" coords="411,327,595,354"/>
+<area shape="rect" id="node3" href="$classSistema.html#afe05d538e95a0f26d0ddcfd2105de9d3" title="Le um utilizador de um ficheiro. " alt="" coords="860,226,1053,252"/>
+<area shape="rect" id="node7" href="$classUtilizador.html#ac08a744b9d9d2aca0bd22c60e0beaa83" title="Adiciona um titulo ao utilizador. " alt="" coords="419,386,586,412"/>
+<area shape="rect" id="node4" href="$classSistema.html#a187636be859f6a6dd7427cb781cd11a5" title="Invoca as funcoes necessarias para ler os utilizadores guardados nos ficheiros. " alt="" coords="1103,276,1275,303"/>
+<area shape="rect" id="node6" href="$classSistema.html#a815b07845ef6b03247b239333fe75e28" title="Construtor da class Sistema. " alt="" coords="1324,200,1451,227"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1362,276,1413,303"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#af8f302c02e726f24c5f7ddea9cd7f17d" title="escolheTitulo" alt="" coords="678,444,777,471"/>
+<area shape="rect" id="node11" href="$classUtilizador.html#ac3c7ff821739e5682a5d06d0868031ac" title="Altera a data da ultima compra. " alt="" coords="643,378,812,420"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#a41dd1ea1b95901e643be4af34f6dcfbf" title="menuUtilizador" alt="" coords="902,386,1011,412"/>
+<area shape="rect" id="node10" href="$main_8cpp.html#ab36c65bcfd56b6a29bee851e57462ad2" title="pesquisarUtilizador" alt="" coords="1122,546,1255,572"/>
+<area shape="rect" id="node15" href="$main_8cpp.html#aab039f6f4271b56e9ca2d1264b25f66a" title="utilizadorJoga" alt="" coords="676,23,779,50"/>
+<area shape="rect" id="node17" href="$main_8cpp.html#af223924a460aa7610e351d33b9105191" title="adicionarJogo" alt="" coords="676,596,779,623"/>
+<area shape="rect" id="node18" href="$main_8cpp.html#a175192136cbe59d60bb80a1cd975fb68" title="menuEmpresa" alt="" coords="903,596,1010,623"/>
+<area shape="rect" id="node19" href="$main_8cpp.html#ab5d3bc5e7f94dade3058f2afb385c8a4" title="pesquisarEmpresa" alt="" coords="1123,596,1254,623"/>
+<area shape="rect" id="node21" href="$main_8cpp.html#a11ccc3a4082cb5f294bc863d50fa803e" title="adiconaWishlist" alt="" coords="670,276,785,303"/>
+<area shape="rect" id="node23" href="$main_8cpp.html#a01a46c12aa32213dc4babb7780904eba" title="removerWishlist" alt="" coords="669,495,785,522"/>
+<area shape="rect" id="node25" href="$main_8cpp.html#aeeed8d2818f5d3d47c30b792b064f1d8" title="alteraInteresse" alt="" coords="673,327,781,354"/>
+</map>

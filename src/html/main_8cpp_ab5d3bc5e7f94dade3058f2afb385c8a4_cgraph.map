@@ -1,0 +1,16 @@
+<map id="pesquisarEmpresa" name="pesquisarEmpresa">
+<area shape="rect" id="node2" href="$main_8cpp.html#a6c175a1424e435dba38c472eaf2f5535" title="is_digits" alt="" coords="240,5,311,32"/>
+<area shape="rect" id="node3" href="$classSistema.html#a1f22677c42afd48be088f2eca428dede" title="Pesquisa uma empresa. " alt="" coords="184,56,367,83"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a175192136cbe59d60bb80a1cd975fb68" title="menuEmpresa" alt="" coords="222,284,329,311"/>
+<area shape="rect" id="node7" href="$classErro.html#abfc1e9735b259d88bb97828a23164eb0" title="Permite obter a descricao do Erro. " alt="" coords="667,259,762,285"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a28b549948b369d4db7a926ec0cfd6e77" title="printEmpresaMenu" alt="" coords="443,157,573,184"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a69864162453f9299380c3c91be8fdca4" title="getOption" alt="" coords="469,208,547,235"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#af223924a460aa7610e351d33b9105191" title="adicionarJogo" alt="" coords="457,309,559,336"/>
+<area shape="rect" id="node13" href="$classEmpresa.html#a99bc2de98a0c0348abb74c93e6e7159e" title="Devolve o nome da empresa. " alt="" coords="415,360,601,387"/>
+<area shape="rect" id="node14" href="$classEmpresa.html#a19396f860d9b17f94bd262ba093d76eb" title="Devolve os contactos da empresa. " alt="" coords="428,411,588,437"/>
+<area shape="rect" id="node15" href="$classEmpresa.html#af067f4d00a5ceb8816a607164916d2e1" title="Mostra os titulos da empresa no ecra. " alt="" coords="427,461,589,488"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#afdd4f73eaf1ae01f9f045850fe275884" title="lerData" alt="" coords="683,309,747,336"/>
+<area shape="rect" id="node10" href="$classSistema.html#a1136080a3cf835831bf94908d419ae42" title="Adiciona um novo titulo ao sistema. " alt="" coords="649,360,780,387"/>
+<area shape="rect" id="node11" href="$classTitulo.html#acb79279860b3404c6419697df5f860cb" title="Permite obter o nome do titulo. " alt="" coords="842,335,957,361"/>
+<area shape="rect" id="node12" href="$classTitulo.html#a2a57a31d40c5df012b3c6e2451c253dd" title="Permite obter a plataforma do titulo. " alt="" coords="828,385,971,412"/>
+</map>

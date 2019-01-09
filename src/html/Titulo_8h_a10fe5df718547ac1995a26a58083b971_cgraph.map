@@ -1,0 +1,6 @@
+<map id="operator&lt;&lt;" name="operator&lt;&lt;">
+<area shape="rect" id="node2" href="$classTitulo.html#ab31e1d801062a75abdb10664de23d897" title="Permite obter o desconto do titulo em percentagem. " alt="" coords="168,5,293,32"/>
+<area shape="rect" id="node4" href="$classOnline.html#aa222489df5a1e6bcfbf5e01d95178850" title="Devolve o booleano que indica se o jogo tem uma subscricao fixa ou variavel. " alt="" coords="155,56,306,83"/>
+<area shape="rect" id="node5" href="$classOnline.html#a0f7240aa5582e10579d0719e4fa5d705" title="Devolve o preco por subscricao. " alt="" coords="139,107,323,133"/>
+<area shape="rect" id="node3" href="$classTitulo.html#a93725bdc2e98350e47b54fd76c0fa236" title="Permite obter o preco atual do titulo. " alt="" coords="371,5,485,32"/>
+</map>

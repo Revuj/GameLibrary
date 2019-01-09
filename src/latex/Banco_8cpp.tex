@@ -1,0 +1,58 @@
+\hypertarget{Banco_8cpp}{}\section{Banco.\+cpp File Reference}
+\label{Banco_8cpp}\index{Banco.\+cpp@{Banco.\+cpp}}
+{\ttfamily \#include \char`\"{}Erro.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}Banco.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}iomanip\char`\"{}}\newline
+Include dependency graph for Banco.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Banco_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{Banco_8cpp_a9d2904b201aee340b229060e9d93420d}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classBanco}{Banco} \&banco)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Banco_8cpp_a9d2904b201aee340b229060e9d93420d}\label{Banco_8cpp_a9d2904b201aee340b229060e9d93420d}} 
+\index{Banco.\+cpp@{Banco.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Banco.\+cpp@{Banco.\+cpp}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classBanco}{Banco} \&}]{banco }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+83 \{
+84     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} counter = 0;
+85 
+86     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} & cartao : banco.\hyperlink{classBanco_a859463228f6bf63d32d70afe8efd9541}{getCartoesCredito}())
+87     \{
+88 
+89         \textcolor{keywordflow}{if} (counter % 3 == 0)
+90         \{
+91             os << std::endl << \textcolor{stringliteral}{"Cartao "} << counter + 1 << \textcolor{stringliteral}{": "} <<  cartao.getId();
+92         \}
+93         \textcolor{keywordflow}{else}
+94             os << std::setw(15) << \textcolor{stringliteral}{"Cartao "} << counter + 1 << \textcolor{stringliteral}{": "} <<  cartao.getId();
+95 
+96         counter++;
+97     \}
+98     \textcolor{keywordflow}{return} os;
+99 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{Banco_8cpp_a9d2904b201aee340b229060e9d93420d_cgraph}
+\end{center}
+\end{figure}

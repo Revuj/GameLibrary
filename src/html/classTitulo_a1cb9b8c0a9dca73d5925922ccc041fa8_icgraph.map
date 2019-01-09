@@ -1,0 +1,13 @@
+<map id="Titulo::getDataLancamento" name="Titulo::getDataLancamento">
+<area shape="rect" id="node2" href="$Sistema_8cpp.html#a4b576dc41b8edeb29c8f84c948c47665" title="gameReleaseAscend" alt="" coords="236,31,383,57"/>
+<area shape="rect" id="node10" href="$Sistema_8cpp.html#af8a401eaa3da373780504f34a1216550" title="gameReleaseDescend" alt="" coords="232,81,387,108"/>
+<area shape="rect" id="node11" href="$classSistema.html#af25036f1b2d4abc30447c45f3c3237b8" title="Guarda todos os utilizadores do sistema em ficheiros, criando novos, se necessario. " alt="" coords="453,183,627,209"/>
+<area shape="rect" id="node12" href="$classSistema.html#ada4619fbedcb5a07d807545caebd5c57" title="Guarda todas as empresas do sistema num ficheiro. " alt="" coords="457,132,623,159"/>
+<area shape="rect" id="node3" href="$classSistema.html#a6dcecc2ca65f6fdedd042c7431d5ea19" title="Mostra os titulos de forma ordenada. " alt="" coords="462,31,618,57"/>
+<area shape="rect" id="node8" href="$classSistema.html#aade841c0c281c63fe922834e228049cd" title="Ordena os titulos de um utilizador. " alt="" coords="435,81,645,108"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a5e58c15f905db107f320734a18f4e40d" title="displayTitulos" alt="" coords="717,5,820,32"/>
+<area shape="rect" id="node7" href="$classSistema.html#a815b07845ef6b03247b239333fe75e28" title="Construtor da class Sistema. " alt="" coords="705,107,832,133"/>
+<area shape="rect" id="node5" href="$classEmpresa.html#aff124b958356c479ab50ddf4cf302193" title="Construtor por default da classe empresa. " alt="" coords="892,5,1027,32"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="934,157,985,184"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#aec6f563871c737f7e128ea66836a2be5" title="ordenaJogosUtilizador" alt="" coords="693,56,844,83"/>
+</map>

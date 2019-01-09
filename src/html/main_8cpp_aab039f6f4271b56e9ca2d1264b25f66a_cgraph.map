@@ -1,0 +1,12 @@
+<map id="utilizadorJoga" name="utilizadorJoga">
+<area shape="rect" id="node2" href="$classSistema.html#a0fb81a4685bb24024295c89d22d6d719" title="Pesquisa um titulo. " alt="" coords="158,31,317,57"/>
+<area shape="rect" id="node3" href="$classErro.html#abfc1e9735b259d88bb97828a23164eb0" title="Permite obter a descricao do Erro. " alt="" coords="190,81,285,108"/>
+<area shape="rect" id="node4" href="$classSistema.html#a43e1d500eca075857b1c96c2e2239d55" title="Simula o &quot;jogar&quot; de um utilizador, incrementando o tempo jogado e guardando uma data do dia em que jo..." alt="" coords="156,132,319,159"/>
+<area shape="rect" id="node5" href="$classUtilizador.html#a6a128859b776bf019b5652ce61f62280" title="Permite obter a biblioteca do utilizador. " alt="" coords="379,5,539,32"/>
+<area shape="rect" id="node6" href="$classBiblioteca.html#a03c1ebf76a4ace4f57000bb99a87bb88" title="Devolve o vetor de titulos. " alt="" coords="387,56,531,83"/>
+<area shape="rect" id="node7" href="$classTitulo.html#acb79279860b3404c6419697df5f860cb" title="Permite obter o nome do titulo. " alt="" coords="401,107,516,133"/>
+<area shape="rect" id="node8" href="$classTitulo.html#a2a57a31d40c5df012b3c6e2451c253dd" title="Permite obter a plataforma do titulo. " alt="" coords="387,157,530,184"/>
+<area shape="rect" id="node9" href="$classOnline.html#aac2ef3483edfaa8426363ebdd542dc38" title="Adicionar estaticas relativas aos habitos de gaming, atualiza os 3 ultimos vetores, cuja ordem � crucial e atualiza horas_totais. " alt="" coords="367,208,551,235"/>
+<area shape="rect" id="node11" href="$classBanco.html#a0735f07636c578666068a16f6ecccd91" title="Devolve a data atual. " alt="" coords="387,259,530,285"/>
+<area shape="rect" id="node10" href="$classOnline.html#a1796bfbb1c3210f26ca8e1cddc61d830" title="Adiciona aos 3 vetores os habitos gaming de uma certa data, funcao a usar em adicionaEstatisticas. " alt="" coords="599,208,753,235"/>
+</map>

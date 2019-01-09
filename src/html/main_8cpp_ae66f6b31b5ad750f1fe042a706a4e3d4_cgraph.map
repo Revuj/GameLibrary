@@ -1,0 +1,51 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$main_8cpp.html#a89a9bf7f76b270a3a9fc783b4009586c" title="printWelcomeMenu" alt="" coords="136,253,271,280"/>
+<area shape="rect" id="node3" href="$classSistema.html#aeffb6968ea519c472e90dfec1a2a072e" title="Invoca as funcoes necessarias para ler as empresas guardadas nos ficheiros. " alt="" coords="122,468,285,495"/>
+<area shape="rect" id="node6" href="$classSistema.html#a187636be859f6a6dd7427cb781cd11a5" title="Invoca as funcoes necessarias para ler os utilizadores guardados nos ficheiros. " alt="" coords="117,355,289,381"/>
+<area shape="rect" id="node8" href="$classSistema.html#acb9f4d8c3ee7d1a24f8784c379f660df" title="Devolve os utilizadores do sistema. " alt="" coords="125,1471,281,1497"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#af9dce1973196a5934ee5ec20ea417324" title="printMainMenu" alt="" coords="150,1521,257,1548"/>
+<area shape="rect" id="node10" href="$classSistema.html#a265736b1b095448d7343b199a1ade7e5" title="Atualiza os utilizadores adormecidos de todos os utilizadores. " alt="" coords="104,1572,303,1599"/>
+<area shape="rect" id="node11" href="$main_8cpp.html#a69864162453f9299380c3c91be8fdca4" title="getOption" alt="" coords="665,1196,744,1223"/>
+<area shape="rect" id="node12" href="$classErro.html#abfc1e9735b259d88bb97828a23164eb0" title="Permite obter a descricao do Erro. " alt="" coords="657,841,752,868"/>
+<area shape="rect" id="node13" href="$main_8cpp.html#a5e58c15f905db107f320734a18f4e40d" title="displayTitulos" alt="" coords="397,56,499,83"/>
+<area shape="rect" id="node17" href="$main_8cpp.html#a874c5a99e7c57fa9c6bc09580292dab9" title="adicionarUtilizador" alt="" coords="139,765,268,792"/>
+<area shape="rect" id="node20" href="$main_8cpp.html#a633c2853177204cb3a7a8033e5b9497c" title="displayUtilizadores" alt="" coords="382,512,514,539"/>
+<area shape="rect" id="node24" href="$main_8cpp.html#ab36c65bcfd56b6a29bee851e57462ad2" title="pesquisarUtilizador" alt="" coords="137,867,270,893"/>
+<area shape="rect" id="node27" href="$main_8cpp.html#a84916567707f41d606bb5cbdd44d6c17" title="pesquisarJogo" alt="" coords="150,405,257,432"/>
+<area shape="rect" id="node34" href="$main_8cpp.html#a0932ac5f24cb3fdd2a58f8d5bbdc9507" title="displayRankings" alt="" coords="389,1373,507,1400"/>
+<area shape="rect" id="node42" href="$main_8cpp.html#ae1e120878470259b19387b335d21eb69" title="adicionarEmpresa" alt="" coords="140,1019,267,1045"/>
+<area shape="rect" id="node45" href="$main_8cpp.html#ab5d3bc5e7f94dade3058f2afb385c8a4" title="pesquisarEmpresa" alt="" coords="138,1095,269,1121"/>
+<area shape="rect" id="node47" href="$main_8cpp.html#a3a9e67719857d943301b2926cd804e8c" title="displayEmpresas" alt="" coords="387,1221,509,1248"/>
+<area shape="rect" id="node48" href="$main_8cpp.html#ae8e4ad4c7859f965d182b4bfb5e16abc" title="displayAsleepUsers" alt="" coords="379,1272,517,1299"/>
+<area shape="rect" id="node49" href="$classSistema.html#af25036f1b2d4abc30447c45f3c3237b8" title="Guarda todos os utilizadores do sistema em ficheiros, criando novos, se necessario. " alt="" coords="116,1369,291,1396"/>
+<area shape="rect" id="node50" href="$classSistema.html#ada4619fbedcb5a07d807545caebd5c57" title="Guarda todas as empresas do sistema num ficheiro. " alt="" coords="121,1420,286,1447"/>
+<area shape="rect" id="node4" href="$classSistema.html#a00f929e5b2ca1dcc821edb14f9de5a24" title="Le as empresas de um ficheiro. " alt="" coords="357,461,539,488"/>
+<area shape="rect" id="node5" href="$classHome.html#a94aec68b520d98ac38c6794b5771cd53" title="Adiciona uma data ao vetor data_de_atualizacao. " alt="" coords="614,183,795,209"/>
+<area shape="rect" id="node7" href="$classSistema.html#afe05d538e95a0f26d0ddcfd2105de9d3" title="Le um utilizador de um ficheiro. " alt="" coords="351,107,545,133"/>
+<area shape="rect" id="node14" href="$main_8cpp.html#a6afc9271571dfdc7288faf87e9616e7d" title="printDisplayTitulosMenu" alt="" coords="623,5,786,32"/>
+<area shape="rect" id="node15" href="$classSistema.html#abf82916720d1255bba6437abf0094ca6" title="Mostra os titulos do sistema. " alt="" coords="879,81,1037,108"/>
+<area shape="rect" id="node16" href="$classSistema.html#a6dcecc2ca65f6fdedd042c7431d5ea19" title="Mostra os titulos de forma ordenada. " alt="" coords="627,107,783,133"/>
+<area shape="rect" id="node18" href="$classSistema.html#ac120f4aecf81933be110233f8dbf74c6" title="Verifica se o email e valido sintaticamente e verifica a sua existencia, se necessario. " alt="" coords="373,867,523,893"/>
+<area shape="rect" id="node19" href="$classSistema.html#a51beac85364444837cd4cdff0080bad5" title="Adiciona um novo utilizador ao sistema. " alt="" coords="357,664,539,691"/>
+<area shape="rect" id="node21" href="$main_8cpp.html#a3687e2ced7dee82b39fc1ed74674ecd5" title="printDisplayUtilizadoresMenu" alt="" coords="609,512,801,539"/>
+<area shape="rect" id="node22" href="$classSistema.html#ac22188d7bcfb9df24776d67900b9d7fb" title="Mostra os utilizadores do sistema. " alt="" coords="864,512,1052,539"/>
+<area shape="rect" id="node23" href="$classSistema.html#ac3b36e6798c903dd0efd102d7a5dd081" title="Mostra os utilizadores de forma ordenada. " alt="" coords="611,461,798,488"/>
+<area shape="rect" id="node25" href="$classSistema.html#a6f2d2d67cb8464771272e60511045032" title="Pesquisa um utilizador. " alt="" coords="355,816,541,843"/>
+<area shape="rect" id="node26" href="$main_8cpp.html#a41dd1ea1b95901e643be4af34f6dcfbf" title="menuUtilizador" alt="" coords="393,917,503,944"/>
+<area shape="rect" id="node28" href="$classSistema.html#a0fb81a4685bb24024295c89d22d6d719" title="Pesquisa um titulo. " alt="" coords="369,360,527,387"/>
+<area shape="rect" id="node29" href="$classTitulo.html#a0cf99e4a2b522a7acae425593e87efec" title="Adiciona um numero de cliques. " alt="" coords="371,411,525,437"/>
+<area shape="rect" id="node30" href="$classSistema.html#abb768fdc8d4b8290ab4a267fc7a84a39" title="Devolve o banco do sistema. " alt="" coords="381,259,515,285"/>
+<area shape="rect" id="node31" href="$classBanco.html#a0735f07636c578666068a16f6ecccd91" title="Devolve a data atual. " alt="" coords="377,309,519,336"/>
+<area shape="rect" id="node32" href="$classSistema.html#aa91f2955f6b47f4dc0523b86b94c6309" title="Adiciona uma atualizacao a um titulo do sistema. " alt="" coords="351,157,545,184"/>
+<area shape="rect" id="node33" href="$classHome.html#a0ab7279a76525f48cb1b64b8bae98a44" title="Devolve membro dado vetor de datas. " alt="" coords="389,1424,507,1451"/>
+<area shape="rect" id="node35" href="$main_8cpp.html#a3da8cb0d6e5160fb3cf923a352965ff4" title="printRankingMenu" alt="" coords="641,1551,768,1577"/>
+<area shape="rect" id="node36" href="$classSistema.html#afc03af6008df8639b1d1878388f70886" title="Mostra o ranking de popularidade de generos. " alt="" coords="611,1247,798,1273"/>
+<area shape="rect" id="node37" href="$classSistema.html#a922993ab8f9dd2e8eb853edf3172543b" title="Mostra o ranking de popularidade de idades. " alt="" coords="617,1297,793,1324"/>
+<area shape="rect" id="node38" href="$classSistema.html#a6e4c08a6ee3c8f5721e46f64823fd6a3" title="Mostra o ranking de popularidade de plataformas. " alt="" coords="601,1348,808,1375"/>
+<area shape="rect" id="node39" href="$classSistema.html#a6fb78c2cafbf5b6703d126ef43ba43f0" title="Mostra o ranking de titulos por rentabilidade. " alt="" coords="593,1399,816,1425"/>
+<area shape="rect" id="node40" href="$classSistema.html#ab5d9cff098cf2551f1c31d2ba720fb3c" title="Custo meido de uma biblioteca. " alt="" coords="603,1449,806,1476"/>
+<area shape="rect" id="node41" href="$classSistema.html#a588450a81753c22b0454580fde17a7a7" title="Numero medio de titulos nas bibliotecas dos utilizadores do sistema. " alt="" coords="623,1500,786,1527"/>
+<area shape="rect" id="node43" href="$main_8cpp.html#a6c175a1424e435dba38c472eaf2f5535" title="is_digits" alt="" coords="413,1069,483,1096"/>
+<area shape="rect" id="node44" href="$classSistema.html#a41eddc54d36ac140608dd259c085ba88" title="Adiciona uma nova empresa ao sistema. " alt="" coords="359,1019,537,1045"/>
+<area shape="rect" id="node46" href="$classSistema.html#a1f22677c42afd48be088f2eca428dede" title="Pesquisa uma empresa. " alt="" coords="357,1171,539,1197"/>
+</map>

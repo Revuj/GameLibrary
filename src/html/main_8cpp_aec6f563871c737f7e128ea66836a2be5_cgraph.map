@@ -1,0 +1,20 @@
+<map id="ordenaJogosUtilizador" name="ordenaJogosUtilizador">
+<area shape="rect" id="node2" href="$main_8cpp.html#a6afc9271571dfdc7288faf87e9616e7d" title="printDisplayTitulosMenu" alt="" coords="228,81,391,108"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a69864162453f9299380c3c91be8fdca4" title="getOption" alt="" coords="270,132,349,159"/>
+<area shape="rect" id="node4" href="$classErro.html#abfc1e9735b259d88bb97828a23164eb0" title="Permite obter a descricao do Erro. " alt="" coords="262,183,357,209"/>
+<area shape="rect" id="node5" href="$classSistema.html#aade841c0c281c63fe922834e228049cd" title="Ordena os titulos de um utilizador. " alt="" coords="204,233,415,260"/>
+<area shape="rect" id="node6" href="$classUtilizador.html#a6a128859b776bf019b5652ce61f62280" title="Permite obter a biblioteca do utilizador. " alt="" coords="465,5,625,32"/>
+<area shape="rect" id="node7" href="$classBiblioteca.html#a03c1ebf76a4ace4f57000bb99a87bb88" title="Devolve o vetor de titulos. " alt="" coords="473,56,617,83"/>
+<area shape="rect" id="node8" href="$Sistema_8cpp.html#a9ebb751fccefae6ee1c4636c901cf0bc" title="gameIdAscend" alt="" coords="491,107,600,133"/>
+<area shape="rect" id="node10" href="$Sistema_8cpp.html#a5de4e871b807cfbcd024a00f60d18ba1" title="gameIdDescend" alt="" coords="487,157,604,184"/>
+<area shape="rect" id="node11" href="$Sistema_8cpp.html#a4b576dc41b8edeb29c8f84c948c47665" title="gameReleaseAscend" alt="" coords="472,208,619,235"/>
+<area shape="rect" id="node13" href="$Sistema_8cpp.html#af8a401eaa3da373780504f34a1216550" title="gameReleaseDescend" alt="" coords="468,259,623,285"/>
+<area shape="rect" id="node14" href="$Sistema_8cpp.html#a85fca79d7efc04e9982238e38e199154" title="gameAgeAscend" alt="" coords="485,309,606,336"/>
+<area shape="rect" id="node16" href="$Sistema_8cpp.html#a4d0cdff5caed7ad707a1f6926e301a51" title="gameAgeDescend" alt="" coords="481,360,610,387"/>
+<area shape="rect" id="node17" href="$Sistema_8cpp.html#ac71c10d662fb0c03358b94519364a76e" title="gameDeveloperAscend" alt="" coords="467,411,624,437"/>
+<area shape="rect" id="node19" href="$Sistema_8cpp.html#a7ce8e20323381359eed30807d3dadabd" title="gameDeveloperDescend" alt="" coords="463,461,628,488"/>
+<area shape="rect" id="node9" href="$classTitulo.html#af8fed6503c1c528ac3bfdbb182fce0b6" title="Permite obter o identificador do titulo. " alt="" coords="715,145,816,172"/>
+<area shape="rect" id="node12" href="$classTitulo.html#a1cb9b8c0a9dca73d5925922ccc041fa8" title="Permite obter a data de lancamento do titulo. " alt="" coords="676,221,855,248"/>
+<area shape="rect" id="node15" href="$classTitulo.html#a8048db7604abd58892122c810a6794be" title="Permite obter a idade minima do titulo. " alt="" coords="688,335,843,361"/>
+<area shape="rect" id="node18" href="$classTitulo.html#a48d810fe27da41cfb726fb5680a68471" title="Permite obter a empresa do titulo. " alt="" coords="699,436,831,463"/>
+</map>

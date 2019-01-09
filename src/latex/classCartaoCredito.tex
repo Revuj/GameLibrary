@@ -1,0 +1,241 @@
+\hypertarget{classCartaoCredito}{}\section{Cartao\+Credito Class Reference}
+\label{classCartaoCredito}\index{Cartao\+Credito@{Cartao\+Credito}}
+
+
+{\ttfamily \#include $<$Cartao\+Credito.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCartaoCredito_a49b6298290f8307df4a42b15175fb10f}{Cartao\+Credito} (const float saldo=0, const \hyperlink{classData}{Data} \&d1=\hyperlink{classData}{Data}(), const std\+::string iD=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Construtor da classe Cartao de credito. \end{DoxyCompactList}\item 
+float \hyperlink{classCartaoCredito_a5d10788d907961f86779efaecb6a231d}{get\+Saldo} () const
+\begin{DoxyCompactList}\small\item\em devolve o saldo do cartao \end{DoxyCompactList}\item 
+\hyperlink{classData}{Data} \hyperlink{classCartaoCredito_ab28b73bbecc20b5c23348e1172230533}{get\+Data\+De\+Validade} () const
+\begin{DoxyCompactList}\small\item\em Devolve a data de validade do cartao. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classCartaoCredito_ab59d60e4d155e7f29aef888ea3139ee5}{get\+Id} () const
+\begin{DoxyCompactList}\small\item\em Devolve o id(string) do cartao de credito atual. \end{DoxyCompactList}\item 
+void \hyperlink{classCartaoCredito_a52daaab859e37d416c00044ef0fb2f27}{atualiza\+Data\+De\+Validade} ()
+\begin{DoxyCompactList}\small\item\em Atualiza a data de validade para a data atual. \end{DoxyCompactList}\item 
+bool \hyperlink{classCartaoCredito_abf34d4aff89aac4b76d9e15999d85a26}{operator==} (const \hyperlink{classCartaoCredito}{Cartao\+Credito} \&C) const
+\begin{DoxyCompactList}\small\item\em Overload do operador de igualdade. \end{DoxyCompactList}\item 
+void \hyperlink{classCartaoCredito_a03d4e7d9d645737bc3d162daf3555e25}{adiciona\+Quantia} (float quantia)
+\begin{DoxyCompactList}\small\item\em Adiciona uma quantia ao saldo do cartao. \end{DoxyCompactList}\item 
+void \hyperlink{classCartaoCredito_a57d3f8baa86eb9a8f348dc7cbc91ea42}{remove\+Quantia} (float quantia)
+\begin{DoxyCompactList}\small\item\em Remove uma quantia ao saldo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe \hyperlink{classCartaoCredito}{Cartao\+Credito} utilizada na classe \hyperlink{classUtilizador}{Utilizador} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCartaoCredito_a49b6298290f8307df4a42b15175fb10f}\label{classCartaoCredito_a49b6298290f8307df4a42b15175fb10f}} 
+\index{Cartao\+Credito@{Cartao\+Credito}!Cartao\+Credito@{Cartao\+Credito}}
+\index{Cartao\+Credito@{Cartao\+Credito}!Cartao\+Credito@{Cartao\+Credito}}
+\subsubsection{\texorpdfstring{Cartao\+Credito()}{CartaoCredito()}}
+{\footnotesize\ttfamily Cartao\+Credito\+::\+Cartao\+Credito (\begin{DoxyParamCaption}\item[{const float}]{saldo = {\ttfamily 0},  }\item[{const \hyperlink{classData}{Data} \&}]{d1 = {\ttfamily \hyperlink{classData}{Data}()},  }\item[{const std\+::string}]{iD = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe Cartao de credito. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em saldo} & -\/ Saldo a atribuir ao cartao \\
+\hline
+{\em d1} & -\/ \hyperlink{classData}{Data} da validade do Cartao \\
+\hline
+{\em iD} & -\/ Identificador a atribuir ao cartao \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+9 : id(iD) \textcolor{comment}{/* id deve ser diferente de todos os cartoes*/}
+10 \{
+11     this->saldo=saldo;
+12     this->dataDeValidade = d1;
+13 
+14 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCartaoCredito_a03d4e7d9d645737bc3d162daf3555e25}\label{classCartaoCredito_a03d4e7d9d645737bc3d162daf3555e25}} 
+\index{Cartao\+Credito@{Cartao\+Credito}!adiciona\+Quantia@{adiciona\+Quantia}}
+\index{adiciona\+Quantia@{adiciona\+Quantia}!Cartao\+Credito@{Cartao\+Credito}}
+\subsubsection{\texorpdfstring{adiciona\+Quantia()}{adicionaQuantia()}}
+{\footnotesize\ttfamily void Cartao\+Credito\+::adiciona\+Quantia (\begin{DoxyParamCaption}\item[{float}]{quantia }\end{DoxyParamCaption})}
+
+
+
+Adiciona uma quantia ao saldo do cartao. 
+
+
+\begin{DoxyCode}
+45 \{
+46     this->saldo += quantia;
+47 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classCartaoCredito_a52daaab859e37d416c00044ef0fb2f27}\label{classCartaoCredito_a52daaab859e37d416c00044ef0fb2f27}} 
+\index{Cartao\+Credito@{Cartao\+Credito}!atualiza\+Data\+De\+Validade@{atualiza\+Data\+De\+Validade}}
+\index{atualiza\+Data\+De\+Validade@{atualiza\+Data\+De\+Validade}!Cartao\+Credito@{Cartao\+Credito}}
+\subsubsection{\texorpdfstring{atualiza\+Data\+De\+Validade()}{atualizaDataDeValidade()}}
+{\footnotesize\ttfamily void Cartao\+Credito\+::atualiza\+Data\+De\+Validade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Atualiza a data de validade para a data atual. 
+
+
+\begin{DoxyCode}
+28 \{
+29     this->dataDeValidade.\hyperlink{classData_a8d4cfad647b590df436d8260000a2745}{setAno}(this->dataDeValidade.\hyperlink{classData_ae19e0d5af87f94f2809ba52dae69e15b}{getAno}() + 3);
+30 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classCartaoCredito_a52daaab859e37d416c00044ef0fb2f27_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCartaoCredito_a52daaab859e37d416c00044ef0fb2f27_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCartaoCredito_ab28b73bbecc20b5c23348e1172230533}\label{classCartaoCredito_ab28b73bbecc20b5c23348e1172230533}} 
+\index{Cartao\+Credito@{Cartao\+Credito}!get\+Data\+De\+Validade@{get\+Data\+De\+Validade}}
+\index{get\+Data\+De\+Validade@{get\+Data\+De\+Validade}!Cartao\+Credito@{Cartao\+Credito}}
+\subsubsection{\texorpdfstring{get\+Data\+De\+Validade()}{getDataDeValidade()}}
+{\footnotesize\ttfamily \hyperlink{classData}{Data} Cartao\+Credito\+::get\+Data\+De\+Validade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devolve a data de validade do cartao. 
+
+\begin{DoxyReturn}{Returns}
+Retorna a data de validade do cartao 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+23 \{
+24     \textcolor{keywordflow}{return} this->dataDeValidade;
+25 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCartaoCredito_ab28b73bbecc20b5c23348e1172230533_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCartaoCredito_ab59d60e4d155e7f29aef888ea3139ee5}\label{classCartaoCredito_ab59d60e4d155e7f29aef888ea3139ee5}} 
+\index{Cartao\+Credito@{Cartao\+Credito}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!Cartao\+Credito@{Cartao\+Credito}}
+\subsubsection{\texorpdfstring{get\+Id()}{getId()}}
+{\footnotesize\ttfamily std\+::string Cartao\+Credito\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devolve o id(string) do cartao de credito atual. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o identificador do cartao 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+34 \{
+35     \textcolor{keywordflow}{return} this->id;
+36 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCartaoCredito_ab59d60e4d155e7f29aef888ea3139ee5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCartaoCredito_a5d10788d907961f86779efaecb6a231d}\label{classCartaoCredito_a5d10788d907961f86779efaecb6a231d}} 
+\index{Cartao\+Credito@{Cartao\+Credito}!get\+Saldo@{get\+Saldo}}
+\index{get\+Saldo@{get\+Saldo}!Cartao\+Credito@{Cartao\+Credito}}
+\subsubsection{\texorpdfstring{get\+Saldo()}{getSaldo()}}
+{\footnotesize\ttfamily float Cartao\+Credito\+::get\+Saldo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+devolve o saldo do cartao 
+
+\begin{DoxyReturn}{Returns}
+Retorna o saldo do utilizador 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+17 \{
+18     \textcolor{keywordflow}{return} this->saldo;
+19 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classCartaoCredito_a5d10788d907961f86779efaecb6a231d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classCartaoCredito_abf34d4aff89aac4b76d9e15999d85a26}\label{classCartaoCredito_abf34d4aff89aac4b76d9e15999d85a26}} 
+\index{Cartao\+Credito@{Cartao\+Credito}!operator==@{operator==}}
+\index{operator==@{operator==}!Cartao\+Credito@{Cartao\+Credito}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Cartao\+Credito\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classCartaoCredito}{Cartao\+Credito} \&}]{C }\end{DoxyParamCaption}) const}
+
+
+
+Overload do operador de igualdade. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em C} & -\/ cartao de credito a comparar com o objeto atual \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna verdadeiro se os cartoes sao iguais 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+39 \{
+40     \textcolor{keywordflow}{return} (this->\textcolor{keywordtype}{id}== C.id);
+41 
+42 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classCartaoCredito_a57d3f8baa86eb9a8f348dc7cbc91ea42}\label{classCartaoCredito_a57d3f8baa86eb9a8f348dc7cbc91ea42}} 
+\index{Cartao\+Credito@{Cartao\+Credito}!remove\+Quantia@{remove\+Quantia}}
+\index{remove\+Quantia@{remove\+Quantia}!Cartao\+Credito@{Cartao\+Credito}}
+\subsubsection{\texorpdfstring{remove\+Quantia()}{removeQuantia()}}
+{\footnotesize\ttfamily void Cartao\+Credito\+::remove\+Quantia (\begin{DoxyParamCaption}\item[{float}]{quantia }\end{DoxyParamCaption})}
+
+
+
+Remove uma quantia ao saldo. 
+
+
+\begin{DoxyCode}
+50 \{
+51     \textcolor{keywordflow}{if} (this->saldo - quantia >= 0)
+52         this->saldo -= quantia;
+53     \textcolor{keywordflow}{else} \textcolor{keywordflow}{throw} \hyperlink{classSaldoInsuficiente}{SaldoInsuficiente}(\textcolor{stringliteral}{"A quantia "}+std::to\_string(this->saldo)+\textcolor{stringliteral}{" e insuficiente
+      "});
+54 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CartaoCredito_8h}{Cartao\+Credito.\+h}\item 
+\hyperlink{CartaoCredito_8cpp}{Cartao\+Credito.\+cpp}\end{DoxyCompactItemize}

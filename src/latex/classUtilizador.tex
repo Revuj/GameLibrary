@@ -1,0 +1,878 @@
+\hypertarget{classUtilizador}{}\section{Utilizador Class Reference}
+\label{classUtilizador}\index{Utilizador@{Utilizador}}
+
+
+{\ttfamily \#include $<$Utilizador.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUtilizador_ac4d4e41d09c17ea0b1c5bf4bcda4b6a8}{Utilizador} (const std\+::string nome=\char`\"{}\char`\"{}, const std\+::string email=\char`\"{}\char`\"{}, const unsigned idade=0, const std\+::string morada=\char`\"{}\char`\"{}, const \hyperlink{classBiblioteca}{Biblioteca} b=\hyperlink{classBiblioteca}{Biblioteca}())
+\begin{DoxyCompactList}\small\item\em Construtor da classe \hyperlink{classUtilizador}{Utilizador}. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classUtilizador_a82874cffab116aa572f58576511b0e24}{get\+Nome} () const
+\begin{DoxyCompactList}\small\item\em Permite obter o nome do utilizador. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classUtilizador_aea88bb297704762d0cccc909b8c2da54}{get\+Email} () const
+\begin{DoxyCompactList}\small\item\em Permite obter o email do utilizador. \end{DoxyCompactList}\item 
+unsigned \hyperlink{classUtilizador_adff93f098f9512263fcbd1cdadf20855}{get\+Idade} () const
+\begin{DoxyCompactList}\small\item\em Permite obter a idade do utilizador. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classUtilizador_aea27372a36fb8e59d2f3029464d83101}{get\+Morada} () const
+\begin{DoxyCompactList}\small\item\em Permite obter a morada do utilizador. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classCartaoCredito}{Cartao\+Credito} $>$ \hyperlink{classUtilizador_ad0ebe5ff80aa77145ec4b0ce5473102c}{get\+Cc} () const
+\begin{DoxyCompactList}\small\item\em Permite obter o vetor de cartoes de credito do utilizador. \end{DoxyCompactList}\item 
+\hyperlink{classBiblioteca}{Biblioteca} \hyperlink{classUtilizador_a6a128859b776bf019b5652ce61f62280}{get\+Biblioteca} () const
+\begin{DoxyCompactList}\small\item\em Permite obter a biblioteca do utilizador. \end{DoxyCompactList}\item 
+unsigned \hyperlink{classUtilizador_a8c4c3275a56142c31f19c7af78e3c88f}{get\+Months\+Last\+Buy} ()
+\begin{DoxyCompactList}\small\item\em Devolve a diferenca entre a data atual e a data da ultima compra. \end{DoxyCompactList}\item 
+\hyperlink{classData}{Data} \hyperlink{classUtilizador_a68fcb8d8b1ebce49da37439aaa1a7b79}{get\+Data\+Ultima\+Compra} ()
+\begin{DoxyCompactList}\small\item\em Devolve a data da ultima compra. \end{DoxyCompactList}\item 
+void \hyperlink{classUtilizador_ac3c7ff821739e5682a5d06d0868031ac}{set\+Data\+Ultima\+Compra} (std\+::string data)
+\begin{DoxyCompactList}\small\item\em Altera a data da ultima compra. \end{DoxyCompactList}\item 
+bool \hyperlink{classUtilizador_abd73f24d4eb5fa0838af819e8343b1f5}{operator==} (const \hyperlink{classUtilizador}{Utilizador} \&U)
+\begin{DoxyCompactList}\small\item\em Overload do operador de igualdade para a classe \hyperlink{classUtilizador}{Utilizador}. \end{DoxyCompactList}\item 
+bool \hyperlink{classUtilizador_a60b1025ffe94b9f2414f54cc94662cc9}{adiciona\+Cartao\+Credito} (const \hyperlink{classCartaoCredito}{Cartao\+Credito} \&C)
+\begin{DoxyCompactList}\small\item\em Adiciona um cartao de credito caso este ainda nao exista. \end{DoxyCompactList}\item 
+void \hyperlink{classUtilizador_ac08a744b9d9d2aca0bd22c60e0beaa83}{Adiciona\+Titulo} (\hyperlink{classTitulo}{Titulo} $\ast$T, \hyperlink{classCartaoCredito}{Cartao\+Credito} \&c, bool comprar=false)
+\begin{DoxyCompactList}\small\item\em Adiciona um titulo ao utilizador. \end{DoxyCompactList}\item 
+void \hyperlink{classUtilizador_a45ee0a8d988adbd537e2506d80f96cfb}{adiciona\+Wish\+List} (\hyperlink{classTitulo}{Titulo} $\ast$titulo, unsigned interesse)
+\begin{DoxyCompactList}\small\item\em Adiciona um novo titulo a wishlist. \end{DoxyCompactList}\item 
+std\+::priority\+\_\+queue$<$ \hyperlink{classWishedTitle}{Wished\+Title} $>$ \hyperlink{classUtilizador_a8624e9e45e13e592e68164b0d7b2b7cd}{get\+Wish\+List} ()
+\begin{DoxyCompactList}\small\item\em Devolve a wishlist do utilizador. \end{DoxyCompactList}\item 
+bool \hyperlink{classUtilizador_aa47c2fe835a73a23664149ccc7fbc10f}{remove\+Wish\+List} (\hyperlink{classTitulo}{Titulo} $\ast$titulo)
+\begin{DoxyCompactList}\small\item\em Remove um titulo da wishlist. \end{DoxyCompactList}\item 
+\hyperlink{classWishedTitle}{Wished\+Title} \hyperlink{classUtilizador_a9b80c93b8e8f7716e4ab77b2e1b47071}{get\+Games\+Wish\+List} (float min\+Probabilidade)
+\begin{DoxyCompactList}\small\item\em Devolve o primeiro titulo da wishlist com uma probabilidade minima. \end{DoxyCompactList}\item 
+float \hyperlink{classUtilizador_a2fc6ea78068d43766a6bc344a3059f61}{get\+Gastos} () const
+\begin{DoxyCompactList}\small\item\em Calcula o preco total da biblioteca do utilizador. \end{DoxyCompactList}\item 
+void \hyperlink{classUtilizador_a4f3016ff86d68d548f801aa569b854dc}{print\+Publicidade} ()
+\begin{DoxyCompactList}\small\item\em mostra no ecra as publicidades ao utilizador \end{DoxyCompactList}\item 
+void \hyperlink{classUtilizador_a4617169b0764e48f8b95d4d8aa12bf19}{atualiza\+Interesse} (\hyperlink{classTitulo}{Titulo} $\ast$t, unsigned int interesse)
+\begin{DoxyCompactList}\small\item\em Atualiza o interesse, num titulo. \end{DoxyCompactList}\item 
+void \hyperlink{classUtilizador_a82b216e27c9716cce49a7b98d59445cb}{atualiza\+Probabilidades} ()
+\begin{DoxyCompactList}\small\item\em Atualiza as probabilidades de compra para todos os titulos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classUtilizador}{Utilizador} que foi declarado no \hyperlink{classSistema}{Sistema} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtilizador_ac4d4e41d09c17ea0b1c5bf4bcda4b6a8}\label{classUtilizador_ac4d4e41d09c17ea0b1c5bf4bcda4b6a8}} 
+\index{Utilizador@{Utilizador}!Utilizador@{Utilizador}}
+\index{Utilizador@{Utilizador}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{Utilizador()}{Utilizador()}}
+{\footnotesize\ttfamily Utilizador\+::\+Utilizador (\begin{DoxyParamCaption}\item[{const std\+::string}]{nome = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string}]{email = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const unsigned}]{idade = {\ttfamily 0},  }\item[{const std\+::string}]{morada = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const \hyperlink{classBiblioteca}{Biblioteca}}]{b = {\ttfamily \hyperlink{classBiblioteca}{Biblioteca}()} }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe \hyperlink{classUtilizador}{Utilizador}. 
+
+$<$ \hyperlink{classData}{Data} da ultima compra do utilizador 
+\begin{DoxyParams}{Parameters}
+{\em nome} & -\/ Nome atribuido ao utilizador \\
+\hline
+{\em email} & -\/ Email atribuido ao utilizador \\
+\hline
+{\em idade} & -\/ Idade atribuido ao utilizador \\
+\hline
+{\em morada} & -\/ Morada atribuido ao utilizador \\
+\hline
+{\em b} & -\/ \hyperlink{classBiblioteca}{Biblioteca} atribuida ao utilizador \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+12                                                                                                            
+                                        \{
+13     this->nome = nome;
+14     this->email = email;
+15     this->idade = idade;
+16     this->morada = morada;
+17     this->conjuntoTitulos = biblioteca;
+18     this->ultimaCompra = \hyperlink{classData}{Data}(0,0,0);
+19 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtilizador_a60b1025ffe94b9f2414f54cc94662cc9}\label{classUtilizador_a60b1025ffe94b9f2414f54cc94662cc9}} 
+\index{Utilizador@{Utilizador}!adiciona\+Cartao\+Credito@{adiciona\+Cartao\+Credito}}
+\index{adiciona\+Cartao\+Credito@{adiciona\+Cartao\+Credito}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{adiciona\+Cartao\+Credito()}{adicionaCartaoCredito()}}
+{\footnotesize\ttfamily bool Utilizador\+::adiciona\+Cartao\+Credito (\begin{DoxyParamCaption}\item[{const \hyperlink{classCartaoCredito}{Cartao\+Credito} \&}]{C }\end{DoxyParamCaption})}
+
+
+
+Adiciona um cartao de credito caso este ainda nao exista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em C} & -\/ cartao de credito \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna verdadeiro se adicionar o cartao de credito, caso contr�rio retorna falso 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+64 \{
+65     \textcolor{comment}{/*se nao existe, acrescenta*/}
+66     \textcolor{keywordflow}{if}( find(this->cc.begin(),this->cc.end(),C) == cc.end())
+67     \{
+68         this->cc.push\_back(C);
+69         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+70 
+71     \}
+72     \textcolor{keywordflow}{else}
+73         \textcolor{keywordflow}{throw}(\hyperlink{classCartaoJaExistente}{CartaoJaExistente}(\textcolor{stringliteral}{"Cartao com id "} + C.\hyperlink{classCartaoCredito_ab59d60e4d155e7f29aef888ea3139ee5}{getId}() + \textcolor{stringliteral}{" ja existe."}));
+74     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+75 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_a60b1025ffe94b9f2414f54cc94662cc9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_a60b1025ffe94b9f2414f54cc94662cc9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUtilizador_ac08a744b9d9d2aca0bd22c60e0beaa83}\label{classUtilizador_ac08a744b9d9d2aca0bd22c60e0beaa83}} 
+\index{Utilizador@{Utilizador}!Adiciona\+Titulo@{Adiciona\+Titulo}}
+\index{Adiciona\+Titulo@{Adiciona\+Titulo}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{Adiciona\+Titulo()}{AdicionaTitulo()}}
+{\footnotesize\ttfamily void Utilizador\+::\+Adiciona\+Titulo (\begin{DoxyParamCaption}\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{T,  }\item[{\hyperlink{classCartaoCredito}{Cartao\+Credito} \&}]{c,  }\item[{bool}]{comprar = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Adiciona um titulo ao utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & -\/ \hyperlink{classTitulo}{Titulo} a acrescentar \\
+\hline
+{\em c} & -\/ Cartao de credito para efutuar compra \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+79 \{
+80     \hyperlink{classBanco}{Banco} tmp;
+81 
+82 \textcolor{comment}{/* comparar data de valdiade do cartao e a data atual(ver funcoes)*/}
+83     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} & cartao : this->cc)
+84     \{
+85         \textcolor{keywordflow}{if} (cartao == c)
+86         \{
+87             \textcolor{keywordflow}{if} (cartao.getSaldo() >= T->\hyperlink{classTitulo_a93725bdc2e98350e47b54fd76c0fa236}{getPreco}()) \textcolor{comment}{//ver se o saldo para comprar o titulo
+       insuficiente}
+88             \{
+89                 \textcolor{keywordflow}{try}\{
+90                     cartao.removeQuantia(T->\hyperlink{classTitulo_a93725bdc2e98350e47b54fd76c0fa236}{getPreco}()); \textcolor{comment}{//retira dinheiro do cartao}
+91                     this->conjuntoTitulos.\hyperlink{classBiblioteca_af10c9f23d85db8e03ae2e8b9d3e593e1}{adicionaTitulo}(T);
+92                     this->ultimaCompra=tmp.\hyperlink{classBanco_a0735f07636c578666068a16f6ecccd91}{getDataAtual}();
+93                 \}
+94                 \textcolor{keywordflow}{catch}(\hyperlink{classErro}{Erro} & e)\{
+95                     \textcolor{keywordflow}{throw}(e);
+96                 \}
+97                 \textcolor{keywordflow}{return};
+98             \}
+99             \textcolor{keywordflow}{else}
+100                 \textcolor{keywordflow}{throw} \hyperlink{classSaldoInsuficiente}{SaldoInsuficiente}(\textcolor{stringliteral}{"Saldo insuficiente no cartao "} +  c.
+      \hyperlink{classCartaoCredito_ab59d60e4d155e7f29aef888ea3139ee5}{getId}() + \textcolor{stringliteral}{". Saldo: "} + std::to\_string(cartao.getSaldo()));
+101         \}
+102     \}
+103     \textcolor{keywordflow}{throw} \hyperlink{classCartaoInexistente}{CartaoInexistente}(c.\hyperlink{classCartaoCredito_ab59d60e4d155e7f29aef888ea3139ee5}{getId}());
+104 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_ac08a744b9d9d2aca0bd22c60e0beaa83_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_ac08a744b9d9d2aca0bd22c60e0beaa83_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUtilizador_a45ee0a8d988adbd537e2506d80f96cfb}\label{classUtilizador_a45ee0a8d988adbd537e2506d80f96cfb}} 
+\index{Utilizador@{Utilizador}!adiciona\+Wish\+List@{adiciona\+Wish\+List}}
+\index{adiciona\+Wish\+List@{adiciona\+Wish\+List}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{adiciona\+Wish\+List()}{adicionaWishList()}}
+{\footnotesize\ttfamily void Utilizador\+::adiciona\+Wish\+List (\begin{DoxyParamCaption}\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo,  }\item[{unsigned}]{interesse }\end{DoxyParamCaption})}
+
+
+
+Adiciona um novo titulo a wishlist. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em titulo} & -\/ apontador para o titulo a adicionar \\
+\hline
+{\em interesse} & -\/ interesse que o utilizador revela pelo titulo a adicionar \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+106                                                                   \{
+107     \hyperlink{classWishedTitle}{WishedTitle} novo(interesse,0,titulo);
+108     \textcolor{keywordtype}{float} saldo = 0;
+109     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} it : this->cc)\{
+110         saldo += it.getSaldo();
+111     \}
+112     novo.atualizaProbabilidade(saldo);
+113 
+114     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} & t : this->conjuntoTitulos.\hyperlink{classBiblioteca_a03c1ebf76a4ace4f57000bb99a87bb88}{getTitulos}()) \{
+115         \textcolor{keywordflow}{if} (t->getNome() == titulo->\hyperlink{classTitulo_acb79279860b3404c6419697df5f860cb}{getNome}() && t->getPlataforma() == titulo->
+      \hyperlink{classTitulo_a2a57a31d40c5df012b3c6e2451c253dd}{getPlataforma}())
+116             \textcolor{keywordflow}{throw} \hyperlink{classTituloJaAdicionado}{TituloJaAdicionado}(\textcolor{stringliteral}{"O titulo ja foi comprado, logo nao pode ser
+       adicionado a wishlist"});
+117     \}
+118     std::priority\_queue<WishedTitle> copia=this->wishlist;
+119     \textcolor{keywordflow}{while}(!copia.empty())\{
+120         \hyperlink{classWishedTitle}{WishedTitle} topo=copia.top();
+121         \textcolor{keywordflow}{if}(topo.\hyperlink{classWishedTitle_a9ca6e92a26bb2f319a39d5a03b0c42bd}{getTitulo}()->\hyperlink{classTitulo_acb79279860b3404c6419697df5f860cb}{getNome}()==titulo->\hyperlink{classTitulo_acb79279860b3404c6419697df5f860cb}{getNome}() && topo.
+      \hyperlink{classWishedTitle_a9ca6e92a26bb2f319a39d5a03b0c42bd}{getTitulo}()->\hyperlink{classTitulo_a2a57a31d40c5df012b3c6e2451c253dd}{getPlataforma}()==titulo->\hyperlink{classTitulo_a2a57a31d40c5df012b3c6e2451c253dd}{getPlataforma}())
+122             \textcolor{keywordflow}{throw} \hyperlink{classTituloJaAdicionado}{TituloJaAdicionado}(\textcolor{stringliteral}{"O titulo ja foi adicionado"});
+123         copia.pop();
+124     \}
+125     wishlist.push(novo);
+126 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_a45ee0a8d988adbd537e2506d80f96cfb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_a45ee0a8d988adbd537e2506d80f96cfb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUtilizador_a4617169b0764e48f8b95d4d8aa12bf19}\label{classUtilizador_a4617169b0764e48f8b95d4d8aa12bf19}} 
+\index{Utilizador@{Utilizador}!atualiza\+Interesse@{atualiza\+Interesse}}
+\index{atualiza\+Interesse@{atualiza\+Interesse}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{atualiza\+Interesse()}{atualizaInteresse()}}
+{\footnotesize\ttfamily void Utilizador\+::atualiza\+Interesse (\begin{DoxyParamCaption}\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{t,  }\item[{unsigned int}]{interesse }\end{DoxyParamCaption})}
+
+
+
+Atualiza o interesse, num titulo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & -\/ apontador para o titulo a mudar o interesse \\
+\hline
+{\em interesse} & -\/ novo interesse no titulo \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+211                                                                    \{
+212     std::priority\_queue<WishedTitle> copia = wishlist;
+213     \textcolor{keywordtype}{float} saldo=0;
+214     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} cartao:this->cc)\{
+215         saldo+=cartao.getSaldo();
+216     \}
+217     \textcolor{keywordflow}{while} (!wishlist.empty()) wishlist.pop();
+218     \textcolor{keywordflow}{while} (!copia.empty())
+219     \{
+220         \hyperlink{classWishedTitle}{WishedTitle} topo = copia.top();
+221         \textcolor{keywordflow}{if} (topo.\hyperlink{classWishedTitle_a9ca6e92a26bb2f319a39d5a03b0c42bd}{getTitulo}()->\hyperlink{classTitulo_acb79279860b3404c6419697df5f860cb}{getNome}()==t->\hyperlink{classTitulo_acb79279860b3404c6419697df5f860cb}{getNome}() && topo.
+      \hyperlink{classWishedTitle_a9ca6e92a26bb2f319a39d5a03b0c42bd}{getTitulo}()->\hyperlink{classTitulo_a2a57a31d40c5df012b3c6e2451c253dd}{getPlataforma}()==t->\hyperlink{classTitulo_a2a57a31d40c5df012b3c6e2451c253dd}{getPlataforma}())\{
+222             topo.\hyperlink{classWishedTitle_ae81814e2837a03f1bcbc1064da0e652e}{setInteresse}(interesse);
+223             topo.\hyperlink{classWishedTitle_a8be5446371add65ba4de2c69c84cb387}{atualizaProbabilidade}(saldo);
+224         \}
+225 
+226         wishlist.push(topo);
+227         copia.pop();
+228     \}
+229 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_a4617169b0764e48f8b95d4d8aa12bf19_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_a4617169b0764e48f8b95d4d8aa12bf19_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUtilizador_a82b216e27c9716cce49a7b98d59445cb}\label{classUtilizador_a82b216e27c9716cce49a7b98d59445cb}} 
+\index{Utilizador@{Utilizador}!atualiza\+Probabilidades@{atualiza\+Probabilidades}}
+\index{atualiza\+Probabilidades@{atualiza\+Probabilidades}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{atualiza\+Probabilidades()}{atualizaProbabilidades()}}
+{\footnotesize\ttfamily void Utilizador\+::atualiza\+Probabilidades (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Atualiza as probabilidades de compra para todos os titulos. 
+
+
+\begin{DoxyCode}
+231                                        \{
+232     std::priority\_queue<WishedTitle> copia = wishlist;
+233     \textcolor{keywordtype}{float} saldo = 0;
+234     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} it : this->cc)\{
+235         saldo += it.getSaldo();
+236     \}
+237     \textcolor{keywordflow}{while} (!wishlist.empty()) wishlist.pop();
+238     \textcolor{keywordflow}{while} (!copia.empty())
+239     \{
+240         \hyperlink{classWishedTitle}{WishedTitle} topo = copia.top();
+241         topo.\hyperlink{classWishedTitle_a8be5446371add65ba4de2c69c84cb387}{atualizaProbabilidade}(saldo);
+242         wishlist.push(topo);
+243         copia.pop();
+244     \}
+245 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_a82b216e27c9716cce49a7b98d59445cb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_a82b216e27c9716cce49a7b98d59445cb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUtilizador_a6a128859b776bf019b5652ce61f62280}\label{classUtilizador_a6a128859b776bf019b5652ce61f62280}} 
+\index{Utilizador@{Utilizador}!get\+Biblioteca@{get\+Biblioteca}}
+\index{get\+Biblioteca@{get\+Biblioteca}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Biblioteca()}{getBiblioteca()}}
+{\footnotesize\ttfamily \hyperlink{classBiblioteca}{Biblioteca} Utilizador\+::get\+Biblioteca (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter a biblioteca do utilizador. 
+
+\begin{DoxyReturn}{Returns}
+Retorna a biblioteca do utilizador 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+44                                            \{
+45     \textcolor{keywordflow}{return} this->conjuntoTitulos;
+46 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_a6a128859b776bf019b5652ce61f62280_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUtilizador_ad0ebe5ff80aa77145ec4b0ce5473102c}\label{classUtilizador_ad0ebe5ff80aa77145ec4b0ce5473102c}} 
+\index{Utilizador@{Utilizador}!get\+Cc@{get\+Cc}}
+\index{get\+Cc@{get\+Cc}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Cc()}{getCc()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classCartaoCredito}{Cartao\+Credito} $>$ Utilizador\+::get\+Cc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter o vetor de cartoes de credito do utilizador. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o vetor de cartoes de credito do utilizador 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+40                                                  \{
+41     \textcolor{keywordflow}{return} this->cc;
+42 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_ad0ebe5ff80aa77145ec4b0ce5473102c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUtilizador_a68fcb8d8b1ebce49da37439aaa1a7b79}\label{classUtilizador_a68fcb8d8b1ebce49da37439aaa1a7b79}} 
+\index{Utilizador@{Utilizador}!get\+Data\+Ultima\+Compra@{get\+Data\+Ultima\+Compra}}
+\index{get\+Data\+Ultima\+Compra@{get\+Data\+Ultima\+Compra}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Data\+Ultima\+Compra()}{getDataUltimaCompra()}}
+{\footnotesize\ttfamily \hyperlink{classData}{Data} Utilizador\+::get\+Data\+Ultima\+Compra (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devolve a data da ultima compra. 
+
+\begin{DoxyReturn}{Returns}
+Retorna a data da ultima compra 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+86 \{ \textcolor{keywordflow}{return} this->ultimaCompra; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classUtilizador_aea88bb297704762d0cccc909b8c2da54}\label{classUtilizador_aea88bb297704762d0cccc909b8c2da54}} 
+\index{Utilizador@{Utilizador}!get\+Email@{get\+Email}}
+\index{get\+Email@{get\+Email}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Email()}{getEmail()}}
+{\footnotesize\ttfamily std\+::string Utilizador\+::get\+Email (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter o email do utilizador. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o email do utilizador 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+28                                      \{
+29     \textcolor{keywordflow}{return} this->email;
+30 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_aea88bb297704762d0cccc909b8c2da54_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUtilizador_a9b80c93b8e8f7716e4ab77b2e1b47071}\label{classUtilizador_a9b80c93b8e8f7716e4ab77b2e1b47071}} 
+\index{Utilizador@{Utilizador}!get\+Games\+Wish\+List@{get\+Games\+Wish\+List}}
+\index{get\+Games\+Wish\+List@{get\+Games\+Wish\+List}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Games\+Wish\+List()}{getGamesWishList()}}
+{\footnotesize\ttfamily \hyperlink{classWishedTitle}{Wished\+Title} Utilizador\+::get\+Games\+Wish\+List (\begin{DoxyParamCaption}\item[{float}]{min\+Probabilidade }\end{DoxyParamCaption})}
+
+
+
+Devolve o primeiro titulo da wishlist com uma probabilidade minima. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Probabilidade} & -\/ probabilidade minima a considerar na pesquisa de um titulo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna um \hyperlink{classWishedTitle}{Wished\+Title} com probabilidade de compra superior a probabilidade minima 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+149                                                               \{
+150     \textcolor{keywordflow}{if}(!this->wishlist.empty())\{
+151         \textcolor{keywordflow}{if}(wishlist.top().getProbabilidadeCompra()>minProbabilidade)
+152             \textcolor{keywordflow}{return} wishlist.top();
+153         std::priority\_queue<WishedTitle> copia=this->wishlist;
+154         copia.pop();
+155         \textcolor{keywordflow}{while}(!copia.empty())\{
+156             \hyperlink{classWishedTitle}{WishedTitle} topo=copia.top();
+157             \textcolor{keywordflow}{if}(topo.\hyperlink{classWishedTitle_a9076a3f48cb0bbd435908c392e5041a9}{getProbabilidadeCompra}()>minProbabilidade)
+158                 \textcolor{keywordflow}{return} topo;
+159             copia.pop();
+160         \}
+161     \}
+162     \textcolor{keywordflow}{throw} \hyperlink{classTituloInexistente}{TituloInexistente}(\textcolor{stringliteral}{"Nao existe nenhum titulo com probabilidade superior a "} + 
+      std::to\_string(minProbabilidade));
+163 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_a9b80c93b8e8f7716e4ab77b2e1b47071_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_a9b80c93b8e8f7716e4ab77b2e1b47071_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUtilizador_a2fc6ea78068d43766a6bc344a3059f61}\label{classUtilizador_a2fc6ea78068d43766a6bc344a3059f61}} 
+\index{Utilizador@{Utilizador}!get\+Gastos@{get\+Gastos}}
+\index{get\+Gastos@{get\+Gastos}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Gastos()}{getGastos()}}
+{\footnotesize\ttfamily float Utilizador\+::get\+Gastos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Calcula o preco total da biblioteca do utilizador. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o preco total da biblioteca 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+186                                  \{
+187     \textcolor{keywordtype}{float} total=0;
+188     std::vector<Titulo*> titulos=conjuntoTitulos.\hyperlink{classBiblioteca_a03c1ebf76a4ace4f57000bb99a87bb88}{getTitulos}();
+189     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} titulo : titulos)\{
+190         total += titulo->getGastos();
+191         total += titulo->getPreco();
+192     \}
+193     \textcolor{keywordflow}{return} total;
+194 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classUtilizador_a2fc6ea78068d43766a6bc344a3059f61_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_a2fc6ea78068d43766a6bc344a3059f61_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUtilizador_adff93f098f9512263fcbd1cdadf20855}\label{classUtilizador_adff93f098f9512263fcbd1cdadf20855}} 
+\index{Utilizador@{Utilizador}!get\+Idade@{get\+Idade}}
+\index{get\+Idade@{get\+Idade}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Idade()}{getIdade()}}
+{\footnotesize\ttfamily unsigned Utilizador\+::get\+Idade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter a idade do utilizador. 
+
+\begin{DoxyReturn}{Returns}
+Retorna a idade do utilizador 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+32                                     \{
+33     \textcolor{keywordflow}{return} this->idade;
+34 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_adff93f098f9512263fcbd1cdadf20855_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUtilizador_a8c4c3275a56142c31f19c7af78e3c88f}\label{classUtilizador_a8c4c3275a56142c31f19c7af78e3c88f}} 
+\index{Utilizador@{Utilizador}!get\+Months\+Last\+Buy@{get\+Months\+Last\+Buy}}
+\index{get\+Months\+Last\+Buy@{get\+Months\+Last\+Buy}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Months\+Last\+Buy()}{getMonthsLastBuy()}}
+{\footnotesize\ttfamily unsigned Utilizador\+::get\+Months\+Last\+Buy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Devolve a diferenca entre a data atual e a data da ultima compra. 
+
+\begin{DoxyReturn}{Returns}
+Retorna a diferenca entre a data atual e a data da ultima compra 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+48                                      \{
+49     \hyperlink{classBanco}{Banco} tmp;
+50     \hyperlink{classData}{Data} atual=tmp.\hyperlink{classBanco_a0735f07636c578666068a16f6ecccd91}{getDataAtual}();
+51     \textcolor{keywordflow}{if}(this->ultimaCompra == \hyperlink{classData}{Data}(0,0,0))
+52         \textcolor{keywordflow}{return} 0;
+53     \textcolor{keywordflow}{return} (atual.\hyperlink{classData_a495d15dd0d90b595740f6e09fd0a2177}{diferencaEntreDatas}(this->ultimaCompra))/30;
+54 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_a8c4c3275a56142c31f19c7af78e3c88f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_a8c4c3275a56142c31f19c7af78e3c88f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUtilizador_aea27372a36fb8e59d2f3029464d83101}\label{classUtilizador_aea27372a36fb8e59d2f3029464d83101}} 
+\index{Utilizador@{Utilizador}!get\+Morada@{get\+Morada}}
+\index{get\+Morada@{get\+Morada}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Morada()}{getMorada()}}
+{\footnotesize\ttfamily std\+::string Utilizador\+::get\+Morada (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter a morada do utilizador. 
+
+\begin{DoxyReturn}{Returns}
+Retorna string com morada do utilizador 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+36                                       \{
+37     \textcolor{keywordflow}{return} this->morada;
+38 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_aea27372a36fb8e59d2f3029464d83101_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUtilizador_a82874cffab116aa572f58576511b0e24}\label{classUtilizador_a82874cffab116aa572f58576511b0e24}} 
+\index{Utilizador@{Utilizador}!get\+Nome@{get\+Nome}}
+\index{get\+Nome@{get\+Nome}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Nome()}{getNome()}}
+{\footnotesize\ttfamily std\+::string Utilizador\+::get\+Nome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter o nome do utilizador. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o nome do utilizador 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+24                                     \{
+25     \textcolor{keywordflow}{return} this->nome;
+26 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_a82874cffab116aa572f58576511b0e24_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUtilizador_a8624e9e45e13e592e68164b0d7b2b7cd}\label{classUtilizador_a8624e9e45e13e592e68164b0d7b2b7cd}} 
+\index{Utilizador@{Utilizador}!get\+Wish\+List@{get\+Wish\+List}}
+\index{get\+Wish\+List@{get\+Wish\+List}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Wish\+List()}{getWishList()}}
+{\footnotesize\ttfamily std\+::priority\+\_\+queue$<$ \hyperlink{classWishedTitle}{Wished\+Title} $>$ Utilizador\+::get\+Wish\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Devolve a wishlist do utilizador. 
+
+\begin{DoxyReturn}{Returns}
+Retorna a wishlist do utilizador 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+207                                                        \{
+208     \textcolor{keywordflow}{return} this->wishlist;
+209 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_a8624e9e45e13e592e68164b0d7b2b7cd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUtilizador_abd73f24d4eb5fa0838af819e8343b1f5}\label{classUtilizador_abd73f24d4eb5fa0838af819e8343b1f5}} 
+\index{Utilizador@{Utilizador}!operator==@{operator==}}
+\index{operator==@{operator==}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Utilizador\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classUtilizador}{Utilizador} \&}]{U }\end{DoxyParamCaption})}
+
+
+
+Overload do operador de igualdade para a classe \hyperlink{classUtilizador}{Utilizador}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em U} & -\/ \hyperlink{classUtilizador}{Utilizador} a ser comparado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna verdadeiro se os utilizadores forem iguais, caso contr�rio retorna falso 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+57 \{
+58     \textcolor{keywordflow}{return} (this->nome == U.nome) && (this->email == U.email);
+59 
+60 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_abd73f24d4eb5fa0838af819e8343b1f5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUtilizador_a4f3016ff86d68d548f801aa569b854dc}\label{classUtilizador_a4f3016ff86d68d548f801aa569b854dc}} 
+\index{Utilizador@{Utilizador}!print\+Publicidade@{print\+Publicidade}}
+\index{print\+Publicidade@{print\+Publicidade}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{print\+Publicidade()}{printPublicidade()}}
+{\footnotesize\ttfamily void Utilizador\+::print\+Publicidade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+mostra no ecra as publicidades ao utilizador 
+
+
+\begin{DoxyCode}
+196                                  \{
+197     \textcolor{keywordflow}{try} \{
+198         \hyperlink{classWishedTitle}{WishedTitle} t = \hyperlink{classUtilizador_a9b80c93b8e8f7716e4ab77b2e1b47071}{getGamesWishList}(0.5);
+199         std::cout << \textcolor{stringliteral}{"Titulo: "} << t.\hyperlink{classWishedTitle_a9ca6e92a26bb2f319a39d5a03b0c42bd}{getTitulo}()->\hyperlink{classTitulo_acb79279860b3404c6419697df5f860cb}{getNome}() << \textcolor{stringliteral}{"\(\backslash\)n"};
+200         std::cout << \textcolor{stringliteral}{"Preco: "} << t.\hyperlink{classWishedTitle_a9ca6e92a26bb2f319a39d5a03b0c42bd}{getTitulo}()->\hyperlink{classTitulo_a93725bdc2e98350e47b54fd76c0fa236}{getPreco}() << \textcolor{stringliteral}{"\(\backslash\)n"};
+201         std::cout << \textcolor{stringliteral}{"Desconto: "} << t.\hyperlink{classWishedTitle_a9ca6e92a26bb2f319a39d5a03b0c42bd}{getTitulo}()->\hyperlink{classTitulo_ae7df7d468f8220fa32b2772df4c53081}{getDesconto}() << \textcolor{stringliteral}{"\(\backslash\)n"};
+202         t.\hyperlink{classWishedTitle_a9ca6e92a26bb2f319a39d5a03b0c42bd}{getTitulo}()->\hyperlink{classTitulo_a8004d12b8ae0d0746b999a6411df150c}{adicionaAnuncios}(1);
+203     \}
+204     \textcolor{keywordflow}{catch}(\hyperlink{classTituloInexistente}{TituloInexistente} &erro)\{\}
+205 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_a4f3016ff86d68d548f801aa569b854dc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_a4f3016ff86d68d548f801aa569b854dc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUtilizador_aa47c2fe835a73a23664149ccc7fbc10f}\label{classUtilizador_aa47c2fe835a73a23664149ccc7fbc10f}} 
+\index{Utilizador@{Utilizador}!remove\+Wish\+List@{remove\+Wish\+List}}
+\index{remove\+Wish\+List@{remove\+Wish\+List}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{remove\+Wish\+List()}{removeWishList()}}
+{\footnotesize\ttfamily bool Utilizador\+::remove\+Wish\+List (\begin{DoxyParamCaption}\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo }\end{DoxyParamCaption})}
+
+
+
+Remove um titulo da wishlist. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em titulo} & -\/ apontador para o titulo a remover \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna true no caso do titulo existir e for removido, false de outra forma 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+128                                              \{
+129     std::priority\_queue<WishedTitle> copia = wishlist;
+130     \textcolor{keywordtype}{bool} removed=\textcolor{keyword}{false};
+131 
+132     \textcolor{keywordflow}{while} (!wishlist.empty()) wishlist.pop();
+133 
+134     \textcolor{keywordflow}{while} (!copia.empty())
+135     \{
+136         \hyperlink{classWishedTitle}{WishedTitle} topo = copia.top();
+137         \textcolor{keywordflow}{if} (topo.\hyperlink{classWishedTitle_a9ca6e92a26bb2f319a39d5a03b0c42bd}{getTitulo}()->\hyperlink{classTitulo_acb79279860b3404c6419697df5f860cb}{getNome}()==titulo->\hyperlink{classTitulo_acb79279860b3404c6419697df5f860cb}{getNome}() && topo.
+      \hyperlink{classWishedTitle_a9ca6e92a26bb2f319a39d5a03b0c42bd}{getTitulo}()->\hyperlink{classTitulo_a2a57a31d40c5df012b3c6e2451c253dd}{getPlataforma}()==titulo->\hyperlink{classTitulo_a2a57a31d40c5df012b3c6e2451c253dd}{getPlataforma}())\{
+138             copia.pop();
+139             removed=\textcolor{keyword}{true};
+140             \textcolor{keywordflow}{continue};
+141         \}
+142 
+143         wishlist.push(topo);
+144         copia.pop();
+145     \}
+146     \textcolor{keywordflow}{return} removed;
+147 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_aa47c2fe835a73a23664149ccc7fbc10f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_aa47c2fe835a73a23664149ccc7fbc10f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUtilizador_ac3c7ff821739e5682a5d06d0868031ac}\label{classUtilizador_ac3c7ff821739e5682a5d06d0868031ac}} 
+\index{Utilizador@{Utilizador}!set\+Data\+Ultima\+Compra@{set\+Data\+Ultima\+Compra}}
+\index{set\+Data\+Ultima\+Compra@{set\+Data\+Ultima\+Compra}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{set\+Data\+Ultima\+Compra()}{setDataUltimaCompra()}}
+{\footnotesize\ttfamily void Utilizador\+::set\+Data\+Ultima\+Compra (\begin{DoxyParamCaption}\item[{std\+::string}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Altera a data da ultima compra. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & -\/ data nova, da ultima compra \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+92 \{this->ultimaCompra=\hyperlink{classData}{Data}(data);\}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_ac3c7ff821739e5682a5d06d0868031ac_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUtilizador_ac3c7ff821739e5682a5d06d0868031ac_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Utilizador_8h}{Utilizador.\+h}\item 
+\hyperlink{Utilizador_8cpp}{Utilizador.\+cpp}\end{DoxyCompactItemize}

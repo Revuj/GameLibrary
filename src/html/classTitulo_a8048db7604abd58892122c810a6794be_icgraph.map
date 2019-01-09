@@ -1,0 +1,13 @@
+<map id="Titulo::getIdadeMinima" name="Titulo::getIdadeMinima">
+<area shape="rect" id="node2" href="$Sistema_8cpp.html#a85fca79d7efc04e9982238e38e199154" title="gameAgeAscend" alt="" coords="212,31,333,57"/>
+<area shape="rect" id="node10" href="$Sistema_8cpp.html#a4d0cdff5caed7ad707a1f6926e301a51" title="gameAgeDescend" alt="" coords="208,81,337,108"/>
+<area shape="rect" id="node11" href="$classSistema.html#af25036f1b2d4abc30447c45f3c3237b8" title="Guarda todos os utilizadores do sistema em ficheiros, criando novos, se necessario. " alt="" coords="403,183,578,209"/>
+<area shape="rect" id="node12" href="$classSistema.html#ada4619fbedcb5a07d807545caebd5c57" title="Guarda todas as empresas do sistema num ficheiro. " alt="" coords="408,132,573,159"/>
+<area shape="rect" id="node3" href="$classSistema.html#a6dcecc2ca65f6fdedd042c7431d5ea19" title="Mostra os titulos de forma ordenada. " alt="" coords="413,31,569,57"/>
+<area shape="rect" id="node8" href="$classSistema.html#aade841c0c281c63fe922834e228049cd" title="Ordena os titulos de um utilizador. " alt="" coords="385,81,596,108"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a5e58c15f905db107f320734a18f4e40d" title="displayTitulos" alt="" coords="668,5,771,32"/>
+<area shape="rect" id="node7" href="$classSistema.html#a815b07845ef6b03247b239333fe75e28" title="Construtor da class Sistema. " alt="" coords="656,107,783,133"/>
+<area shape="rect" id="node5" href="$classEmpresa.html#aff124b958356c479ab50ddf4cf302193" title="Construtor por default da classe empresa. " alt="" coords="843,5,977,32"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="885,157,935,184"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#aec6f563871c737f7e128ea66836a2be5" title="ordenaJogosUtilizador" alt="" coords="644,56,795,83"/>
+</map>

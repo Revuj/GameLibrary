@@ -1,0 +1,9 @@
+<map id="Sistema::utilizadorJogar" name="Sistema::utilizadorJogar">
+<area shape="rect" id="node2" href="$classUtilizador.html#a6a128859b776bf019b5652ce61f62280" title="Permite obter a biblioteca do utilizador. " alt="" coords="228,5,388,32"/>
+<area shape="rect" id="node3" href="$classBiblioteca.html#a03c1ebf76a4ace4f57000bb99a87bb88" title="Devolve o vetor de titulos. " alt="" coords="236,56,380,83"/>
+<area shape="rect" id="node4" href="$classTitulo.html#acb79279860b3404c6419697df5f860cb" title="Permite obter o nome do titulo. " alt="" coords="251,107,365,133"/>
+<area shape="rect" id="node5" href="$classTitulo.html#a2a57a31d40c5df012b3c6e2451c253dd" title="Permite obter a plataforma do titulo. " alt="" coords="237,157,379,184"/>
+<area shape="rect" id="node6" href="$classOnline.html#aac2ef3483edfaa8426363ebdd542dc38" title="Adicionar estaticas relativas aos habitos de gaming, atualiza os 3 ultimos vetores, cuja ordem � crucial e atualiza horas_totais. " alt="" coords="216,208,400,235"/>
+<area shape="rect" id="node8" href="$classBanco.html#a0735f07636c578666068a16f6ecccd91" title="Devolve a data atual. " alt="" coords="237,259,379,285"/>
+<area shape="rect" id="node7" href="$classOnline.html#a1796bfbb1c3210f26ca8e1cddc61d830" title="Adiciona aos 3 vetores os habitos gaming de uma certa data, funcao a usar em adicionaEstatisticas. " alt="" coords="448,208,603,235"/>
+</map>

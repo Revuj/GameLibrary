@@ -1,0 +1,9 @@
+<map id="gameIdAscend" name="gameIdAscend">
+<area shape="rect" id="node2" href="$classSistema.html#a6dcecc2ca65f6fdedd042c7431d5ea19" title="Mostra os titulos de forma ordenada. " alt="" coords="190,56,346,83"/>
+<area shape="rect" id="node7" href="$classSistema.html#aade841c0c281c63fe922834e228049cd" title="Ordena os titulos de um utilizador. " alt="" coords="163,107,373,133"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a5e58c15f905db107f320734a18f4e40d" title="displayTitulos" alt="" coords="445,31,548,57"/>
+<area shape="rect" id="node6" href="$classSistema.html#a815b07845ef6b03247b239333fe75e28" title="Construtor da class Sistema. " alt="" coords="433,81,560,108"/>
+<area shape="rect" id="node4" href="$classEmpresa.html#aff124b958356c479ab50ddf4cf302193" title="Construtor por default da classe empresa. " alt="" coords="620,5,755,32"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="662,56,713,83"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#aec6f563871c737f7e128ea66836a2be5" title="ordenaJogosUtilizador" alt="" coords="421,132,572,159"/>
+</map>

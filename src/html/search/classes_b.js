@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wishedtitle',['WishedTitle',['../class_wished_title.html',1,'']]]
+  ['wishedtitle',['WishedTitle',['../classWishedTitle.html',1,'']]]
 ];

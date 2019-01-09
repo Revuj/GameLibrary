@@ -1,0 +1,24 @@
+<map id="Erro::getInfo" name="Erro::getInfo">
+<area shape="rect" id="node2" href="$main_8cpp.html#a874c5a99e7c57fa9c6bc09580292dab9" title="adicionarUtilizador" alt="" coords="534,29,663,55"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="716,383,767,410"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#af223924a460aa7610e351d33b9105191" title="adicionarJogo" alt="" coords="172,130,275,157"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a175192136cbe59d60bb80a1cd975fb68" title="menuEmpresa" alt="" coords="361,181,467,207"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#ab5d3bc5e7f94dade3058f2afb385c8a4" title="pesquisarEmpresa" alt="" coords="533,231,664,258"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#ae1e120878470259b19387b335d21eb69" title="adicionarEmpresa" alt="" coords="351,282,477,309"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#a633c2853177204cb3a7a8033e5b9497c" title="displayUtilizadores" alt="" coords="533,333,665,359"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#aec6f563871c737f7e128ea66836a2be5" title="ordenaJogosUtilizador" alt="" coords="148,383,299,410"/>
+<area shape="rect" id="node10" href="$main_8cpp.html#a5e58c15f905db107f320734a18f4e40d" title="displayTitulos" alt="" coords="172,434,275,461"/>
+<area shape="rect" id="node12" href="$main_8cpp.html#a3a9e67719857d943301b2926cd804e8c" title="displayEmpresas" alt="" coords="353,485,475,511"/>
+<area shape="rect" id="node13" href="$main_8cpp.html#ae8e4ad4c7859f965d182b4bfb5e16abc" title="displayAsleepUsers" alt="" coords="529,522,668,549"/>
+<area shape="rect" id="node14" href="$main_8cpp.html#af8f302c02e726f24c5f7ddea9cd7f17d" title="escolheTitulo" alt="" coords="174,637,273,663"/>
+<area shape="rect" id="node15" href="$main_8cpp.html#a41dd1ea1b95901e643be4af34f6dcfbf" title="menuUtilizador" alt="" coords="359,763,469,790"/>
+<area shape="rect" id="node16" href="$main_8cpp.html#ab36c65bcfd56b6a29bee851e57462ad2" title="pesquisarUtilizador" alt="" coords="532,586,665,613"/>
+<area shape="rect" id="node17" href="$main_8cpp.html#a11ccc3a4082cb5f294bc863d50fa803e" title="adiconaWishlist" alt="" coords="166,738,281,765"/>
+<area shape="rect" id="node18" href="$main_8cpp.html#a01a46c12aa32213dc4babb7780904eba" title="removerWishlist" alt="" coords="165,789,281,815"/>
+<area shape="rect" id="node19" href="$main_8cpp.html#aeeed8d2818f5d3d47c30b792b064f1d8" title="alteraInteresse" alt="" coords="169,839,277,866"/>
+<area shape="rect" id="node20" href="$main_8cpp.html#aa59523879399e16bcfde4f06af6ad2ff" title="escolheCc" alt="" coords="181,890,265,917"/>
+<area shape="rect" id="node21" href="$main_8cpp.html#aab039f6f4271b56e9ca2d1264b25f66a" title="utilizadorJoga" alt="" coords="172,941,275,967"/>
+<area shape="rect" id="node22" href="$main_8cpp.html#a84916567707f41d606bb5cbdd44d6c17" title="pesquisarJogo" alt="" coords="361,890,467,917"/>
+<area shape="rect" id="node23" href="$main_8cpp.html#a0932ac5f24cb3fdd2a58f8d5bbdc9507" title="displayRankings" alt="" coords="539,953,658,979"/>
+<area shape="rect" id="node11" href="$classEmpresa.html#aff124b958356c479ab50ddf4cf302193" title="Construtor por default da classe empresa. " alt="" coords="347,434,481,461"/>
+</map>

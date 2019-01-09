@@ -1,0 +1,445 @@
+\hypertarget{classData}{}\section{Data Class Reference}
+\label{classData}\index{Data@{Data}}
+
+
+{\ttfamily \#include $<$Data.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classData_aef12795194c8980d7e9f563f3d9d6c8e}{Data} (unsigned int dia=1, unsigned int mes=1, unsigned int ano=2000)
+\begin{DoxyCompactList}\small\item\em Construtor da classe \hyperlink{classData}{Data}. \end{DoxyCompactList}\item 
+\hyperlink{classData_a972911ca68256147a714d91bba1e4da2}{Data} (std\+::string data)
+\begin{DoxyCompactList}\small\item\em Construtor da classe \hyperlink{classData}{Data} com parametros diferentes. \end{DoxyCompactList}\item 
+\hyperlink{classData}{Data} \& \hyperlink{classData_a3e2c5356bc8d548b75c7d085f7a7c4ee}{set\+Dia} (const unsigned int dia)
+\begin{DoxyCompactList}\small\item\em Altera o dia. \end{DoxyCompactList}\item 
+\hyperlink{classData}{Data} \& \hyperlink{classData_ab15051ae481d89d057b22abc8152584c}{set\+Mes} (const unsigned int mes)
+\begin{DoxyCompactList}\small\item\em Altera o mes. \end{DoxyCompactList}\item 
+\hyperlink{classData}{Data} \& \hyperlink{classData_a8d4cfad647b590df436d8260000a2745}{set\+Ano} (const unsigned int ano)
+\begin{DoxyCompactList}\small\item\em Altera o dia. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classData_a459536c9351759b5697ba25456d9bd70}{get\+Dia} () const
+\begin{DoxyCompactList}\small\item\em Devolve o dia. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classData_ab991d6a069c799930899b39bef9a4662}{get\+Mes} () const
+\begin{DoxyCompactList}\small\item\em Devolve o mes. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classData_ae19e0d5af87f94f2809ba52dae69e15b}{get\+Ano} () const
+\begin{DoxyCompactList}\small\item\em Devolve o ano. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classData_a495d15dd0d90b595740f6e09fd0a2177}{diferenca\+Entre\+Datas} (const \hyperlink{classData}{Data} \&data)
+\begin{DoxyCompactList}\small\item\em Calcula a diferen�a de duas datas, em dias. \end{DoxyCompactList}\item 
+bool \hyperlink{classData_a8c3fdab05b3e81bb7b302b1d4d9a9d1f}{operator$<$=} (const \hyperlink{classData}{Data} \&D1) const
+\begin{DoxyCompactList}\small\item\em Overload do operador $<$= que compara duas data. \end{DoxyCompactList}\item 
+bool \hyperlink{classData_a28b51c511a389cf30b9d1d2da858f3f6}{operator$<$} (const \hyperlink{classData}{Data} \&D1) const
+\begin{DoxyCompactList}\small\item\em Overload do operador $<$ que compara duas data. \end{DoxyCompactList}\item 
+bool \hyperlink{classData_af00bf4efbd3504689f6bc7283378ba5f}{operator==} (const \hyperlink{classData}{Data} \&D1) const
+\begin{DoxyCompactList}\small\item\em overload do operador == que compara duas data \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe data utilizada nos titulos 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classData_aef12795194c8980d7e9f563f3d9d6c8e}\label{classData_aef12795194c8980d7e9f563f3d9d6c8e}} 
+\index{Data@{Data}!Data@{Data}}
+\index{Data@{Data}!Data@{Data}}
+\subsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Data\+::\+Data (\begin{DoxyParamCaption}\item[{unsigned int}]{dia = {\ttfamily 1},  }\item[{unsigned int}]{mes = {\ttfamily 1},  }\item[{unsigned int}]{ano = {\ttfamily 2000} }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe \hyperlink{classData}{Data}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & -\/ dia \\
+\hline
+{\em m} & -\/ mes \\
+\hline
+{\em a} & -\/ ano \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+6                                                                \{
+7 
+8     this->dia = dia;
+9     this->mes = mes;
+10     this->ano = ano;
+11 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classData_a972911ca68256147a714d91bba1e4da2}\label{classData_a972911ca68256147a714d91bba1e4da2}} 
+\index{Data@{Data}!Data@{Data}}
+\index{Data@{Data}!Data@{Data}}
+\subsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Data\+::\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{data }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe \hyperlink{classData}{Data} com parametros diferentes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & -\/ string a ser tranformada em data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+13                          \{
+14 
+15     std::string diaStr = data.substr(0,2);
+16     diaStr.erase(0, std::min(diaStr.find\_first\_not\_of(\textcolor{charliteral}{'0'}), diaStr.size()-1));
+17     this->dia = std::stoul(diaStr, NULL, 0);
+18 
+19     std::string mesStr = data.substr(3,2);
+20         mesStr.erase(0, std::min(mesStr.find\_first\_not\_of(\textcolor{charliteral}{'0'}), mesStr.size()-1));
+21     this->mes = std::stoul( mesStr, NULL, 0);
+22 
+23     this->ano = std::stoul(data.substr(6,4), NULL, 0);
+24 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classData_a495d15dd0d90b595740f6e09fd0a2177}\label{classData_a495d15dd0d90b595740f6e09fd0a2177}} 
+\index{Data@{Data}!diferenca\+Entre\+Datas@{diferenca\+Entre\+Datas}}
+\index{diferenca\+Entre\+Datas@{diferenca\+Entre\+Datas}!Data@{Data}}
+\subsubsection{\texorpdfstring{diferenca\+Entre\+Datas()}{diferencaEntreDatas()}}
+{\footnotesize\ttfamily unsigned int Data\+::diferenca\+Entre\+Datas (\begin{DoxyParamCaption}\item[{const \hyperlink{classData}{Data} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Calcula a diferen�a de duas datas, em dias. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & -\/ data com que se compara o objeto atual \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna a diferenca entre duas datas 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+53                                                         \{
+54 
+55     \textcolor{keyword}{struct }tm data1 = \{0\};
+56 
+57     data1.tm\_year = ano - 1900;
+58     data1.tm\_mon = mes - 1;
+59     data1.tm\_mday = dia;
+60 
+61     \textcolor{keyword}{struct }tm data2 = \{0\};
+62 
+63     data2.tm\_year = data.\hyperlink{classData_ae19e0d5af87f94f2809ba52dae69e15b}{getAno}() - 1900;
+64     data2.tm\_mon = data.\hyperlink{classData_ab991d6a069c799930899b39bef9a4662}{getMes}() - 1;
+65     data2.tm\_mday = data.\hyperlink{classData_a459536c9351759b5697ba25456d9bd70}{getDia}();
+66 
+67     std::time\_t time1 = std::mktime(&data1);
+68     std::time\_t time2 = std::mktime(&data2);
+69 
+70     \textcolor{keyword}{const} \textcolor{keywordtype}{int} seconds\_per\_day = 60*60*24;
+71     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} difference = abs(time1 - time2) / seconds\_per\_day;
+72 
+73     \textcolor{keywordflow}{return} difference;
+74 
+75 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{classData_a495d15dd0d90b595740f6e09fd0a2177_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classData_a495d15dd0d90b595740f6e09fd0a2177_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_ae19e0d5af87f94f2809ba52dae69e15b}\label{classData_ae19e0d5af87f94f2809ba52dae69e15b}} 
+\index{Data@{Data}!get\+Ano@{get\+Ano}}
+\index{get\+Ano@{get\+Ano}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\+Ano()}{getAno()}}
+{\footnotesize\ttfamily unsigned int Data\+::get\+Ano (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devolve o ano. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o ano da data 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+49                                 \{
+50     \textcolor{keywordflow}{return} ano;
+51 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classData_ae19e0d5af87f94f2809ba52dae69e15b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_a459536c9351759b5697ba25456d9bd70}\label{classData_a459536c9351759b5697ba25456d9bd70}} 
+\index{Data@{Data}!get\+Dia@{get\+Dia}}
+\index{get\+Dia@{get\+Dia}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\+Dia()}{getDia()}}
+{\footnotesize\ttfamily unsigned int Data\+::get\+Dia (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devolve o dia. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o dia da data 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+41                                 \{
+42     \textcolor{keywordflow}{return} dia;
+43 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classData_a459536c9351759b5697ba25456d9bd70_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_ab991d6a069c799930899b39bef9a4662}\label{classData_ab991d6a069c799930899b39bef9a4662}} 
+\index{Data@{Data}!get\+Mes@{get\+Mes}}
+\index{get\+Mes@{get\+Mes}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\+Mes()}{getMes()}}
+{\footnotesize\ttfamily unsigned int Data\+::get\+Mes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devolve o mes. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o mes da data 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+45                                 \{
+46     \textcolor{keywordflow}{return} mes;
+47 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classData_ab991d6a069c799930899b39bef9a4662_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_a28b51c511a389cf30b9d1d2da858f3f6}\label{classData_a28b51c511a389cf30b9d1d2da858f3f6}} 
+\index{Data@{Data}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Data@{Data}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Data\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classData}{Data} \&}]{D1 }\end{DoxyParamCaption}) const}
+
+
+
+Overload do operador $<$ que compara duas data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em D1} & -\/ data com que se compara o objeto atual \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+verdade se o objeto for menor que D1 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+93                                          \{
+94 
+95     \textcolor{keywordflow}{if} (ano > D1.ano)
+96         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+97     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ano == D1.ano) \{
+98 
+99         \textcolor{keywordflow}{if} (mes > D1.mes)
+100             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+101         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(mes==D1.mes)\{
+102             \textcolor{keywordflow}{if} (dia >= D1.mes)
+103                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+104         \}
+105 
+106         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+107     \} \textcolor{keywordflow}{else}
+108         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+109 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classData_a8c3fdab05b3e81bb7b302b1d4d9a9d1f}\label{classData_a8c3fdab05b3e81bb7b302b1d4d9a9d1f}} 
+\index{Data@{Data}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Data@{Data}}
+\subsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily bool Data\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classData}{Data} \&}]{D1 }\end{DoxyParamCaption}) const}
+
+
+
+Overload do operador $<$= que compara duas data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em D1} & -\/ data com que se compara o objeto atual \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+verdade se o objeto for menor ou igual que D1 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+77                                           \{
+78 
+79     \textcolor{keywordflow}{if} (ano > D1.ano)
+80         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+81     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ano == D1.ano) \{
+82 
+83         \textcolor{keywordflow}{if} (mes > D1.mes)
+84             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+85         \textcolor{keywordflow}{if} (dia > D1.mes)
+86             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+87 
+88         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+89     \} \textcolor{keywordflow}{else}
+90         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+91 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classData_af00bf4efbd3504689f6bc7283378ba5f}\label{classData_af00bf4efbd3504689f6bc7283378ba5f}} 
+\index{Data@{Data}!operator==@{operator==}}
+\index{operator==@{operator==}!Data@{Data}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Data\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classData}{Data} \&}]{D1 }\end{DoxyParamCaption}) const}
+
+
+
+overload do operador == que compara duas data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em D1} & -\/ data com que se compara o objeto atual \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna verdade se forem iguais 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+111                                             \{
+112     \textcolor{keywordflow}{return} (this->ano == D2.ano) && (this->mes == D2.mes)
+113             && (this->dia == D2.dia);
+114 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classData_a8d4cfad647b590df436d8260000a2745}\label{classData_a8d4cfad647b590df436d8260000a2745}} 
+\index{Data@{Data}!set\+Ano@{set\+Ano}}
+\index{set\+Ano@{set\+Ano}!Data@{Data}}
+\subsubsection{\texorpdfstring{set\+Ano()}{setAno()}}
+{\footnotesize\ttfamily \hyperlink{classData}{Data} \& Data\+::set\+Ano (\begin{DoxyParamCaption}\item[{const unsigned int}]{ano }\end{DoxyParamCaption})}
+
+
+
+Altera o dia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ano} & -\/ Valor a aplicar a ano \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna referencia para \hyperlink{classData}{Data} para fazer chamadas de funcao em sequencia 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+36                                           \{
+37     this->ano = ano;
+38     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+39 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classData_a8d4cfad647b590df436d8260000a2745_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_a3e2c5356bc8d548b75c7d085f7a7c4ee}\label{classData_a3e2c5356bc8d548b75c7d085f7a7c4ee}} 
+\index{Data@{Data}!set\+Dia@{set\+Dia}}
+\index{set\+Dia@{set\+Dia}!Data@{Data}}
+\subsubsection{\texorpdfstring{set\+Dia()}{setDia()}}
+{\footnotesize\ttfamily \hyperlink{classData}{Data} \& Data\+::set\+Dia (\begin{DoxyParamCaption}\item[{const unsigned int}]{dia }\end{DoxyParamCaption})}
+
+
+
+Altera o dia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dia} & -\/ Valor a aplicar a dia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna referencia para \hyperlink{classData}{Data} para fazer chamadas de funcao em sequencia 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+26                                           \{
+27     this->dia = dia;
+28     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+29 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{classData_a3e2c5356bc8d548b75c7d085f7a7c4ee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_ab15051ae481d89d057b22abc8152584c}\label{classData_ab15051ae481d89d057b22abc8152584c}} 
+\index{Data@{Data}!set\+Mes@{set\+Mes}}
+\index{set\+Mes@{set\+Mes}!Data@{Data}}
+\subsubsection{\texorpdfstring{set\+Mes()}{setMes()}}
+{\footnotesize\ttfamily \hyperlink{classData}{Data} \& Data\+::set\+Mes (\begin{DoxyParamCaption}\item[{const unsigned int}]{mes }\end{DoxyParamCaption})}
+
+
+
+Altera o mes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mes} & -\/ Valor a aplicar ao mes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna referencia para \hyperlink{classData}{Data} para fazer chamadas de funcao em sequencia 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+31                                           \{
+32     this->mes = mes;
+33     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+34 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{classData_ab15051ae481d89d057b22abc8152584c_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Data_8h}{Data.\+h}\item 
+\hyperlink{Data_8cpp}{Data.\+cpp}\end{DoxyCompactItemize}

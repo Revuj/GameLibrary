@@ -1,25 +1,9 @@
 var searchData=
 [
-  ['saldo',['saldo',['../class_cartao_credito.html#a2c674ee17ab52017618bf5e3ef9dd3cd',1,'CartaoCredito']]],
-  ['saldoinsuficiente',['SaldoInsuficiente',['../class_saldo_insuficiente.html',1,'SaldoInsuficiente'],['../class_saldo_insuficiente.html#aacd4d88be6fe190105bf122355d72df4',1,'SaldoInsuficiente::SaldoInsuficiente()']]],
-  ['saldoutilizador',['saldoUtilizador',['../class_sistema.html#aabeb8de1cc79bff9ff04d190ac3754d2',1,'Sistema']]],
-  ['saveempresas',['saveEmpresas',['../class_sistema.html#ada4619fbedcb5a07d807545caebd5c57',1,'Sistema']]],
-  ['savetitulos',['saveTitulos',['../class_sistema.html#a07ff0877985ee60035abb90a60c458d8',1,'Sistema']]],
-  ['saveutilizadores',['saveUtilizadores',['../class_sistema.html#af25036f1b2d4abc30447c45f3c3237b8',1,'Sistema']]],
-  ['setano',['setAno',['../class_data.html#a8d4cfad647b590df436d8260000a2745',1,'Data']]],
-  ['setdataatual',['setDataAtual',['../class_banco.html#a227af53b49995242c06d89bb10ffc8ea',1,'Banco']]],
-  ['setdatasjogo',['setDatasJogo',['../class_online.html#a3c0b8d3393271eabfa702629c979fb93',1,'Online']]],
-  ['setdataultimacompra',['setDataUltimaCompra',['../class_utilizador.html#ac3c7ff821739e5682a5d06d0868031ac',1,'Utilizador']]],
-  ['setdia',['setDia',['../class_data.html#a3e2c5356bc8d548b75c7d085f7a7c4ee',1,'Data']]],
-  ['sethistoricopreco',['setHistoricoPreco',['../class_titulo.html#a8ea091928732a5ff5b974e003668a778',1,'Titulo']]],
-  ['setinteresse',['setInteresse',['../class_wished_title.html#ae81814e2837a03f1bcbc1064da0e652e',1,'WishedTitle']]],
-  ['setmes',['setMes',['../class_data.html#ab15051ae481d89d057b22abc8152584c',1,'Data']]],
-  ['setminutosjogo',['setMinutosJogo',['../class_online.html#a71cc818cd9b8020a470efc14f636a9f9',1,'Online']]],
-  ['setpreco',['setPreco',['../class_titulo.html#a08d0b556bebf6863edb62ed5dc19923c',1,'Titulo']]],
-  ['setprobabilidadecompra',['setProbabilidadeCompra',['../class_wished_title.html#aacaf6dfce83390dcc78f0ecd679e1de1',1,'WishedTitle']]],
-  ['showtitulo',['showTitulo',['../class_titulo.html#ab31e1d801062a75abdb10664de23d897',1,'Titulo']]],
-  ['sistema',['Sistema',['../class_sistema.html',1,'Sistema'],['../class_sistema.html#a815b07845ef6b03247b239333fe75e28',1,'Sistema::Sistema()']]],
-  ['sistema_2ecpp',['Sistema.cpp',['../_sistema_8cpp.html',1,'']]],
-  ['sistema_2eh',['Sistema.h',['../_sistema_8h.html',1,'']]],
-  ['subscricaofixa',['subscricaoFixa',['../class_online.html#ada57c60b1e5fb9ce52ddd404d8fba0d8',1,'Online']]]
+  ['tempojogado',['tempoJogado',['../classSistema.html#a871ba21f5de12adb05106f0fcaf9d723',1,'Sistema']]],
+  ['titulo',['Titulo',['../classTitulo.html',1,'Titulo'],['../classTitulo.html#a898faeefdad15c64ae4cdc904a7e6f0e',1,'Titulo::Titulo()']]],
+  ['titulo_2ecpp',['Titulo.cpp',['../Titulo_8cpp.html',1,'']]],
+  ['titulo_2eh',['Titulo.h',['../Titulo_8h.html',1,'']]],
+  ['tituloinexistente',['TituloInexistente',['../classTituloInexistente.html',1,'TituloInexistente'],['../classTituloInexistente.html#a0404090789fc608b5a08027bba811784',1,'TituloInexistente::TituloInexistente()']]],
+  ['titulojaadicionado',['TituloJaAdicionado',['../classTituloJaAdicionado.html',1,'TituloJaAdicionado'],['../classTituloJaAdicionado.html#af041846009d91525ed739142e61ca035',1,'TituloJaAdicionado::TituloJaAdicionado()']]]
 ];

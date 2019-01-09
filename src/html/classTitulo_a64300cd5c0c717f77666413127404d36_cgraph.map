@@ -1,0 +1,9 @@
+<map id="Titulo::adicionaUserHashTable" name="Titulo::adicionaUserHashTable">
+<area shape="rect" id="node2" href="$classUtilizador.html#a8c4c3275a56142c31f19c7af78e3c88f" title="Devolve a diferenca entre a data atual e a data da ultima compra. " alt="" coords="223,31,417,57"/>
+<area shape="rect" id="node8" href="$classUtilizador.html#a8624e9e45e13e592e68164b0d7b2b7cd" title="Devolve a wishlist do utilizador. " alt="" coords="243,81,397,108"/>
+<area shape="rect" id="node3" href="$classBanco.html#a0735f07636c578666068a16f6ecccd91" title="Devolve a data atual. " alt="" coords="483,5,625,32"/>
+<area shape="rect" id="node4" href="$classData.html#a495d15dd0d90b595740f6e09fd0a2177" title="Calcula a diferen�a de duas datas, em dias. " alt="" coords="465,56,643,83"/>
+<area shape="rect" id="node5" href="$classData.html#ae19e0d5af87f94f2809ba52dae69e15b" title="Devolve o ano. " alt="" coords="692,5,791,32"/>
+<area shape="rect" id="node6" href="$classData.html#ab991d6a069c799930899b39bef9a4662" title="Devolve o mes. " alt="" coords="691,56,792,83"/>
+<area shape="rect" id="node7" href="$classData.html#a459536c9351759b5697ba25456d9bd70" title="Devolve o dia. " alt="" coords="693,107,789,133"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Sistema::adicionaEmpresa" name="Sistema::adicionaEmpresa">
+<area shape="rect" id="node2" href="$classEmpresa.html#a99bc2de98a0c0348abb74c93e6e7159e" title="Devolve o nome da empresa. " alt="" coords="232,5,419,32"/>
+<area shape="rect" id="node3" href="$classEmpresa.html#a6ab12452496ccaea5493bd2c67824f09" title="Devolve o NIF da empresa. " alt="" coords="267,56,384,83"/>
+</map>

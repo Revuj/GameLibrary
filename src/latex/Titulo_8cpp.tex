@@ -1,0 +1,90 @@
+\hypertarget{Titulo_8cpp}{}\section{Titulo.\+cpp File Reference}
+\label{Titulo_8cpp}\index{Titulo.\+cpp@{Titulo.\+cpp}}
+{\ttfamily \#include \char`\"{}Titulo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Erro.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}Wished\+Title.\+h\char`\"{}}\newline
+Include dependency graph for Titulo.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Titulo_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{Titulo_8cpp_a5c4bf2394ed7bbc904e9b3e7fbb57b7f}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classHome}{Home} \&h)
+\item 
+std\+::ostream \& \hyperlink{Titulo_8cpp_a10fe5df718547ac1995a26a58083b971}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classOnline}{Online} \&o)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Titulo_8cpp_a5c4bf2394ed7bbc904e9b3e7fbb57b7f}\label{Titulo_8cpp_a5c4bf2394ed7bbc904e9b3e7fbb57b7f}} 
+\index{Titulo.\+cpp@{Titulo.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Titulo.\+cpp@{Titulo.\+cpp}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classHome}{Home} \&}]{h }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+216                                                            \{
+217      h.\hyperlink{classTitulo_ab31e1d801062a75abdb10664de23d897}{showTitulo}(os);
+218 
+219      os << \textcolor{stringliteral}{"Datas de atualizacao: "} << std::endl;
+220 
+221      \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} & data : h.\hyperlink{classHome_a0ab7279a76525f48cb1b64b8bae98a44}{getDatas}())
+222      \{
+223          os << data << \textcolor{stringliteral}{"; "};
+224      \}
+225 
+226      os << std::endl << \textcolor{stringliteral}{"Preco por atualizacao: "};
+227      os << h.\hyperlink{classHome_a52f37198fb17a321dbcac93d1c35b537}{getPrecoAtualizacao}() << \textcolor{stringliteral}{"�"};
+228      \textcolor{keywordflow}{return} os;
+229  \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Titulo_8cpp_a5c4bf2394ed7bbc904e9b3e7fbb57b7f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Titulo_8cpp_a10fe5df718547ac1995a26a58083b971}\label{Titulo_8cpp_a10fe5df718547ac1995a26a58083b971}} 
+\index{Titulo.\+cpp@{Titulo.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Titulo.\+cpp@{Titulo.\+cpp}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classOnline}{Online} \&}]{o }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+335                                                              \{
+336      o.\hyperlink{classTitulo_ab31e1d801062a75abdb10664de23d897}{showTitulo}(os);
+337      os << std::endl;
+338 
+339 
+340      \textcolor{keywordflow}{if} (o.\hyperlink{classOnline_aa222489df5a1e6bcfbf5e01d95178850}{getSubscricao}() == \textcolor{keyword}{true})
+341          os << \textcolor{stringliteral}{"Subscricao Fixa"} << std::endl;
+342      \textcolor{keywordflow}{else}
+343          os << \textcolor{stringliteral}{"Subscricao Variavel"} << std::endl;
+344 
+345      os << \textcolor{stringliteral}{"Preco da Subscricao: "};
+346      os << o.\hyperlink{classOnline_a0f7240aa5582e10579d0719e4fa5d705}{getPrecoSubscricao}();
+347 
+348      \textcolor{keywordflow}{return} os;
+349  \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Titulo_8cpp_a10fe5df718547ac1995a26a58083b971_cgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,7 @@
+<map id="adicionarJogo" name="adicionarJogo">
+<area shape="rect" id="node2" href="$main_8cpp.html#afdd4f73eaf1ae01f9f045850fe275884" title="lerData" alt="" coords="189,5,253,32"/>
+<area shape="rect" id="node3" href="$classErro.html#abfc1e9735b259d88bb97828a23164eb0" title="Permite obter a descricao do Erro. " alt="" coords="174,56,269,83"/>
+<area shape="rect" id="node4" href="$classSistema.html#a1136080a3cf835831bf94908d419ae42" title="Adiciona um novo titulo ao sistema. " alt="" coords="156,107,287,133"/>
+<area shape="rect" id="node5" href="$classTitulo.html#acb79279860b3404c6419697df5f860cb" title="Permite obter o nome do titulo. " alt="" coords="349,81,463,108"/>
+<area shape="rect" id="node6" href="$classTitulo.html#a2a57a31d40c5df012b3c6e2451c253dd" title="Permite obter a plataforma do titulo. " alt="" coords="335,132,477,159"/>
+</map>

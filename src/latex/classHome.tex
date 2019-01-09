@@ -1,0 +1,213 @@
+\hypertarget{classHome}{}\section{Home Class Reference}
+\label{classHome}\index{Home@{Home}}
+
+
+{\ttfamily \#include $<$Titulo.\+h$>$}
+
+
+
+Inheritance diagram for Home\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=123pt]{classHome__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Home\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classHome__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHome_aea37c4a72119815e8e0a83b63f345cc9}{Home} (std\+::string \hyperlink{classTitulo_a8abdf1fc6d4fc14be20bbec247664d83}{nome}, int \hyperlink{classTitulo_a28891078f53fc3317de60ae739514955}{idade\+Minima}, std\+::string \hyperlink{classTitulo_a67761eb7f006453ab0869e4b7c0a9c0b}{plataforma}, float preco, std\+::vector$<$ std\+::string $>$ \hyperlink{classTitulo_a3209265c8534416978ee9891b96c14b2}{generos}, std\+::string \hyperlink{classTitulo_a91510c440dc8583d60d88ea02f4eb1b6}{empresa}, \hyperlink{classData}{Data} \hyperlink{classTitulo_ae540ddf2c607eb0e4de29eb8c0cca7f0}{data\+Lancamento}, unsigned int numero, unsigned int cliques)
+\begin{DoxyCompactList}\small\item\em construtor da classe \hyperlink{classHome}{Home} \end{DoxyCompactList}\item 
+bool \hyperlink{classHome_a94aec68b520d98ac38c6794b5771cd53}{adiciona\+Atualizacao} (const \hyperlink{classData}{Data} \&D)
+\begin{DoxyCompactList}\small\item\em Adiciona uma data ao vetor data\+\_\+de\+\_\+atualizacao. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classHome_a52f37198fb17a321dbcac93d1c35b537}{get\+Preco\+Atualizacao} () const
+\begin{DoxyCompactList}\small\item\em Devolve o preco por atualizacao. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classData}{Data} $>$ \hyperlink{classHome_a0ab7279a76525f48cb1b64b8bae98a44}{get\+Datas} () const
+\begin{DoxyCompactList}\small\item\em Devolve membro dado vetor de datas. \end{DoxyCompactList}\item 
+float \hyperlink{classHome_aff6d69739d404378524a591596b47856}{get\+Gastos} () const
+\begin{DoxyCompactList}\small\item\em Devolve os gastos associados as atualizacoes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classHome}{Home} derivada de \hyperlink{classTitulo}{Titulo} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHome_aea37c4a72119815e8e0a83b63f345cc9}\label{classHome_aea37c4a72119815e8e0a83b63f345cc9}} 
+\index{Home@{Home}!Home@{Home}}
+\index{Home@{Home}!Home@{Home}}
+\subsubsection{\texorpdfstring{Home()}{Home()}}
+{\footnotesize\ttfamily Home\+::\+Home (\begin{DoxyParamCaption}\item[{std\+::string}]{nome,  }\item[{int}]{idade\+Minima,  }\item[{std\+::string}]{plataforma,  }\item[{float}]{preco,  }\item[{std\+::vector$<$ std\+::string $>$}]{generos,  }\item[{std\+::string}]{empresa,  }\item[{\hyperlink{classData}{Data}}]{data\+Lancamento,  }\item[{unsigned int}]{numero,  }\item[{unsigned int}]{cliques }\end{DoxyParamCaption})}
+
+
+
+construtor da classe \hyperlink{classHome}{Home} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & -\/ Nome atribuido ao titulo \\
+\hline
+{\em idade\+Minima} & -\/ Idade minima atribuida ao titulo \\
+\hline
+{\em plataforma} & -\/ Plataforma atribuida ao titulo \\
+\hline
+{\em preco} & -\/ Preco base adicionado ao historico de precos \\
+\hline
+{\em generos} & -\/ Generos atribuidos ao titulo \\
+\hline
+{\em empresa} & -\/ \hyperlink{classEmpresa}{Empresa} atribuida ao titulo \\
+\hline
+{\em data\+Lancamento} & -\/ \hyperlink{classData}{Data} atribuida ao titulo \\
+\hline
+{\em numero} & -\/ Numero de anuncios visualizados \\
+\hline
+{\em cliques} & -\/ Numero de cliques no titulo \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+180                                                                             :
+181         \hyperlink{classTitulo_a898faeefdad15c64ae4cdc904a7e6f0e}{Titulo}(\hyperlink{classTitulo_a8abdf1fc6d4fc14be20bbec247664d83}{nome}, \hyperlink{classTitulo_a28891078f53fc3317de60ae739514955}{idadeMinima}, \hyperlink{classTitulo_a67761eb7f006453ab0869e4b7c0a9c0b}{plataforma},preco, 
+      \hyperlink{classTitulo_a3209265c8534416978ee9891b96c14b2}{generos}, \hyperlink{classTitulo_a91510c440dc8583d60d88ea02f4eb1b6}{empresa},
+182                 dataLancamento, numero, cliques) \{
+183 
+184  \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classHome_a94aec68b520d98ac38c6794b5771cd53}\label{classHome_a94aec68b520d98ac38c6794b5771cd53}} 
+\index{Home@{Home}!adiciona\+Atualizacao@{adiciona\+Atualizacao}}
+\index{adiciona\+Atualizacao@{adiciona\+Atualizacao}!Home@{Home}}
+\subsubsection{\texorpdfstring{adiciona\+Atualizacao()}{adicionaAtualizacao()}}
+{\footnotesize\ttfamily bool Home\+::adiciona\+Atualizacao (\begin{DoxyParamCaption}\item[{const \hyperlink{classData}{Data} \&}]{D }\end{DoxyParamCaption})}
+
+
+
+Adiciona uma data ao vetor data\+\_\+de\+\_\+atualizacao. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em D} & -\/ data em que houve uma atualizacao \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna verdade ou falso se for possivel adicionar ao vetor a data 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+188                                               \{
+189 
+190     \textcolor{keywordflow}{if} (find(this->dataDeAtualizacao.begin(), this->dataDeAtualizacao.end(),
+191             D) != this->dataDeAtualizacao.end())
+192         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+193     \textcolor{keywordflow}{else} \{
+194         this->dataDeAtualizacao.push\_back(D);
+195         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+196     \}
+197 
+198  \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHome_a94aec68b520d98ac38c6794b5771cd53_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHome_a0ab7279a76525f48cb1b64b8bae98a44}\label{classHome_a0ab7279a76525f48cb1b64b8bae98a44}} 
+\index{Home@{Home}!get\+Datas@{get\+Datas}}
+\index{get\+Datas@{get\+Datas}!Home@{Home}}
+\subsubsection{\texorpdfstring{get\+Datas()}{getDatas()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classData}{Data} $>$ Home\+::get\+Datas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devolve membro dado vetor de datas. 
+
+\begin{DoxyReturn}{Returns}
+Retorna vetor de datas de atualizacao 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+210  \{
+211     \textcolor{keywordflow}{return} this->dataDeAtualizacao;
+212  \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHome_a0ab7279a76525f48cb1b64b8bae98a44_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHome_aff6d69739d404378524a591596b47856}\label{classHome_aff6d69739d404378524a591596b47856}} 
+\index{Home@{Home}!get\+Gastos@{get\+Gastos}}
+\index{get\+Gastos@{get\+Gastos}!Home@{Home}}
+\subsubsection{\texorpdfstring{get\+Gastos()}{getGastos()}}
+{\footnotesize\ttfamily float Home\+::get\+Gastos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Devolve os gastos associados as atualizacoes. 
+
+\begin{DoxyReturn}{Returns}
+Retorna os gastos 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classTitulo_a9272448eec05cd9c026c54824bf2e727}{Titulo}.
+
+
+\begin{DoxyCode}
+234  \{
+235     \textcolor{keywordtype}{float} total = dataDeAtualizacao.size()* this->precoAtualizacao;
+236     \textcolor{keywordflow}{return} total;
+237  \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classHome_a52f37198fb17a321dbcac93d1c35b537}\label{classHome_a52f37198fb17a321dbcac93d1c35b537}} 
+\index{Home@{Home}!get\+Preco\+Atualizacao@{get\+Preco\+Atualizacao}}
+\index{get\+Preco\+Atualizacao@{get\+Preco\+Atualizacao}!Home@{Home}}
+\subsubsection{\texorpdfstring{get\+Preco\+Atualizacao()}{getPrecoAtualizacao()}}
+{\footnotesize\ttfamily unsigned int Home\+::get\+Preco\+Atualizacao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devolve o preco por atualizacao. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o membro dato precoatualizacao 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+203  \{
+204     \textcolor{keywordflow}{return} this->precoAtualizacao;
+205  \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{classHome_a52f37198fb17a321dbcac93d1c35b537_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Titulo_8h}{Titulo.\+h}\item 
+\hyperlink{Titulo_8cpp}{Titulo.\+cpp}\end{DoxyCompactItemize}

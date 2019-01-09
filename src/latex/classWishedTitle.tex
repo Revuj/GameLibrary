@@ -1,0 +1,289 @@
+\hypertarget{classWishedTitle}{}\section{Wished\+Title Class Reference}
+\label{classWishedTitle}\index{Wished\+Title@{Wished\+Title}}
+
+
+{\ttfamily \#include $<$Wished\+Title.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classWishedTitle_a27a60af16f94343ee502445e855a5659}{Wished\+Title} (unsigned interesse, float probabilidade, \hyperlink{classTitulo}{Titulo} $\ast$title)
+\begin{DoxyCompactList}\small\item\em Construtor da classe \hyperlink{classWishedTitle}{Wished\+Title}. \end{DoxyCompactList}\item 
+unsigned \hyperlink{classWishedTitle_af436ada1ae78a4ffc8031863c0f21859}{get\+Interesse} () const
+\begin{DoxyCompactList}\small\item\em Devolve o interesse no titulo. \end{DoxyCompactList}\item 
+float \hyperlink{classWishedTitle_a9076a3f48cb0bbd435908c392e5041a9}{get\+Probabilidade\+Compra} () const
+\begin{DoxyCompactList}\small\item\em Devolve a probabilidade de compra do titulo. \end{DoxyCompactList}\item 
+\hyperlink{classTitulo}{Titulo} $\ast$ \hyperlink{classWishedTitle_a9ca6e92a26bb2f319a39d5a03b0c42bd}{get\+Titulo} () const
+\begin{DoxyCompactList}\small\item\em Devolve o titulo. \end{DoxyCompactList}\item 
+void \hyperlink{classWishedTitle_aacaf6dfce83390dcc78f0ecd679e1de1}{set\+Probabilidade\+Compra} (float probabilidade)
+\begin{DoxyCompactList}\small\item\em Alterar a probabilidade de compra do titulo. \end{DoxyCompactList}\item 
+void \hyperlink{classWishedTitle_ae81814e2837a03f1bcbc1064da0e652e}{set\+Interesse} (int interesse)
+\item 
+bool \hyperlink{classWishedTitle_a3acf82b03096f649740573441e1cb343}{operator$<$} (const \hyperlink{classWishedTitle}{Wished\+Title} \&title) const
+\begin{DoxyCompactList}\small\item\em Compara dos objetos da classe \hyperlink{classWishedTitle}{Wished\+Title}. \end{DoxyCompactList}\item 
+void \hyperlink{classWishedTitle_a8be5446371add65ba4de2c69c84cb387}{atualiza\+Probabilidade} (float saldo)
+\begin{DoxyCompactList}\small\item\em Atualiza a probabilidade de compra do \hyperlink{classWishedTitle}{Wished\+Title}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWishedTitle_a27a60af16f94343ee502445e855a5659}\label{classWishedTitle_a27a60af16f94343ee502445e855a5659}} 
+\index{Wished\+Title@{Wished\+Title}!Wished\+Title@{Wished\+Title}}
+\index{Wished\+Title@{Wished\+Title}!Wished\+Title@{Wished\+Title}}
+\subsubsection{\texorpdfstring{Wished\+Title()}{WishedTitle()}}
+{\footnotesize\ttfamily Wished\+Title\+::\+Wished\+Title (\begin{DoxyParamCaption}\item[{unsigned}]{interesse,  }\item[{float}]{probabilidade,  }\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{title }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe \hyperlink{classWishedTitle}{Wished\+Title}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interesse} & -\/ Interesse no titulo, desde 1 a 10 \\
+\hline
+{\em probabilidade} & -\/ Probabilidade de comprar o titulo, entre 0 e 1 \\
+\hline
+{\em title} & -\/ Apontador para um titulo pretendido pelo utilizador \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+4                                                                               \{
+5     \textcolor{keywordflow}{if}(interesse>10)\{
+6         this->interesse=10;
+7     \}
+8     \textcolor{keywordflow}{else} this->interesse=interesse;
+9 
+10     \textcolor{keywordflow}{if}(probabilidade>1)\{
+11         this->probabilidadeCompra=1;
+12     \}
+13     \textcolor{keywordflow}{else} this->probabilidadeCompra=probabilidade;
+14     this->titulo=title;
+15 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classWishedTitle_a8be5446371add65ba4de2c69c84cb387}\label{classWishedTitle_a8be5446371add65ba4de2c69c84cb387}} 
+\index{Wished\+Title@{Wished\+Title}!atualiza\+Probabilidade@{atualiza\+Probabilidade}}
+\index{atualiza\+Probabilidade@{atualiza\+Probabilidade}!Wished\+Title@{Wished\+Title}}
+\subsubsection{\texorpdfstring{atualiza\+Probabilidade()}{atualizaProbabilidade()}}
+{\footnotesize\ttfamily void Wished\+Title\+::atualiza\+Probabilidade (\begin{DoxyParamCaption}\item[{float}]{saldo }\end{DoxyParamCaption})}
+
+
+
+Atualiza a probabilidade de compra do \hyperlink{classWishedTitle}{Wished\+Title}. 
+
+
+\begin{DoxyCode}
+30                                                   \{
+31     \textcolor{keywordtype}{unsigned} anuncios = this->titulo->\hyperlink{classTitulo_ad36afe75694812eabe74af5fe32ad95b}{getAnuncios}(),cliques = this->titulo->
+      \hyperlink{classTitulo_a71d5b5985170de5612ec49c5c955f120}{getCliques}();
+32     this->probabilidadeCompra=(2*this->interesse+30*anuncios/(anuncios +10) + 30 * cliques /(cliques +5) + 
+      saldo/(5*(saldo+this->titulo->\hyperlink{classTitulo_a93725bdc2e98350e47b54fd76c0fa236}{getPreco}())))/100.0;
+33 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWishedTitle_a8be5446371add65ba4de2c69c84cb387_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWishedTitle_a8be5446371add65ba4de2c69c84cb387_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classWishedTitle_af436ada1ae78a4ffc8031863c0f21859}\label{classWishedTitle_af436ada1ae78a4ffc8031863c0f21859}} 
+\index{Wished\+Title@{Wished\+Title}!get\+Interesse@{get\+Interesse}}
+\index{get\+Interesse@{get\+Interesse}!Wished\+Title@{Wished\+Title}}
+\subsubsection{\texorpdfstring{get\+Interesse()}{getInteresse()}}
+{\footnotesize\ttfamily unsigned Wished\+Title\+::get\+Interesse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devolve o interesse no titulo. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um valor entre 1 e 10 correspendente ao interesse no jogo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+25 \{ \textcolor{keywordflow}{return} interesse; \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWishedTitle_af436ada1ae78a4ffc8031863c0f21859_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classWishedTitle_a9076a3f48cb0bbd435908c392e5041a9}\label{classWishedTitle_a9076a3f48cb0bbd435908c392e5041a9}} 
+\index{Wished\+Title@{Wished\+Title}!get\+Probabilidade\+Compra@{get\+Probabilidade\+Compra}}
+\index{get\+Probabilidade\+Compra@{get\+Probabilidade\+Compra}!Wished\+Title@{Wished\+Title}}
+\subsubsection{\texorpdfstring{get\+Probabilidade\+Compra()}{getProbabilidadeCompra()}}
+{\footnotesize\ttfamily float Wished\+Title\+::get\+Probabilidade\+Compra (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devolve a probabilidade de compra do titulo. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um valor entre 0 e 1 correspondente a probabilidade de compra do jogo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+31 \{ \textcolor{keywordflow}{return} probabilidadeCompra; \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWishedTitle_a9076a3f48cb0bbd435908c392e5041a9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classWishedTitle_a9ca6e92a26bb2f319a39d5a03b0c42bd}\label{classWishedTitle_a9ca6e92a26bb2f319a39d5a03b0c42bd}} 
+\index{Wished\+Title@{Wished\+Title}!get\+Titulo@{get\+Titulo}}
+\index{get\+Titulo@{get\+Titulo}!Wished\+Title@{Wished\+Title}}
+\subsubsection{\texorpdfstring{get\+Titulo()}{getTitulo()}}
+{\footnotesize\ttfamily \hyperlink{classTitulo}{Titulo}$\ast$ Wished\+Title\+::get\+Titulo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devolve o titulo. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um apontador para o titulo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+37 \{ \textcolor{keywordflow}{return} titulo;  \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWishedTitle_a9ca6e92a26bb2f319a39d5a03b0c42bd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWishedTitle_a9ca6e92a26bb2f319a39d5a03b0c42bd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classWishedTitle_a3acf82b03096f649740573441e1cb343}\label{classWishedTitle_a3acf82b03096f649740573441e1cb343}} 
+\index{Wished\+Title@{Wished\+Title}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Wished\+Title@{Wished\+Title}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Wished\+Title\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classWishedTitle}{Wished\+Title} \&}]{title }\end{DoxyParamCaption}) const}
+
+
+
+Compara dos objetos da classe \hyperlink{classWishedTitle}{Wished\+Title}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & -\/ \hyperlink{classWishedTitle}{Wished\+Title} a ser comprado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna booleano representado se um objeto tem menos prioridade que outro 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+24                                                           \{
+25     \textcolor{keywordflow}{if} (interesse == title.\hyperlink{classWishedTitle_af436ada1ae78a4ffc8031863c0f21859}{getInteresse}())
+26         \textcolor{keywordflow}{return} probabilidadeCompra < title.\hyperlink{classWishedTitle_a9076a3f48cb0bbd435908c392e5041a9}{getProbabilidadeCompra}();
+27     \textcolor{keywordflow}{return} interesse < title.\hyperlink{classWishedTitle_af436ada1ae78a4ffc8031863c0f21859}{getInteresse}();
+28 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWishedTitle_a3acf82b03096f649740573441e1cb343_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWishedTitle_a3acf82b03096f649740573441e1cb343_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classWishedTitle_ae81814e2837a03f1bcbc1064da0e652e}\label{classWishedTitle_ae81814e2837a03f1bcbc1064da0e652e}} 
+\index{Wished\+Title@{Wished\+Title}!set\+Interesse@{set\+Interesse}}
+\index{set\+Interesse@{set\+Interesse}!Wished\+Title@{Wished\+Title}}
+\subsubsection{\texorpdfstring{set\+Interesse()}{setInteresse()}}
+{\footnotesize\ttfamily void Wished\+Title\+::set\+Interesse (\begin{DoxyParamCaption}\item[{int}]{interesse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}
+45 \{this->interesse = interesse;\}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWishedTitle_ae81814e2837a03f1bcbc1064da0e652e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWishedTitle_ae81814e2837a03f1bcbc1064da0e652e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classWishedTitle_aacaf6dfce83390dcc78f0ecd679e1de1}\label{classWishedTitle_aacaf6dfce83390dcc78f0ecd679e1de1}} 
+\index{Wished\+Title@{Wished\+Title}!set\+Probabilidade\+Compra@{set\+Probabilidade\+Compra}}
+\index{set\+Probabilidade\+Compra@{set\+Probabilidade\+Compra}!Wished\+Title@{Wished\+Title}}
+\subsubsection{\texorpdfstring{set\+Probabilidade\+Compra()}{setProbabilidadeCompra()}}
+{\footnotesize\ttfamily void Wished\+Title\+::set\+Probabilidade\+Compra (\begin{DoxyParamCaption}\item[{float}]{probabilidade }\end{DoxyParamCaption})}
+
+
+
+Alterar a probabilidade de compra do titulo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em probabilidade} & -\/ Nova probabilidade de compra \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+17                                                            \{
+18     \textcolor{keywordflow}{if}(probabilidade>1)\{
+19         this->probabilidadeCompra=1;
+20     \}
+21     \textcolor{keywordflow}{else} this->probabilidadeCompra=probabilidade;
+22 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWishedTitle_aacaf6dfce83390dcc78f0ecd679e1de1_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{WishedTitle_8h}{Wished\+Title.\+h}\item 
+\hyperlink{WishedTitle_8cpp}{Wished\+Title.\+cpp}\end{DoxyCompactItemize}

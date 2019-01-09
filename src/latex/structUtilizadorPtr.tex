@@ -1,0 +1,66 @@
+\hypertarget{structUtilizadorPtr}{}\section{Utilizador\+Ptr Struct Reference}
+\label{structUtilizadorPtr}\index{Utilizador\+Ptr@{Utilizador\+Ptr}}
+
+
+{\ttfamily \#include $<$Titulo.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structUtilizadorPtr_a51b14cea42ccf48388754bb5513f736f}{operator()} (const \hyperlink{classUtilizador}{Utilizador} $\ast$u1) const
+\item 
+bool \hyperlink{structUtilizadorPtr_afdc486a21619e0451d59dd4a9f244866}{operator()} (const \hyperlink{classUtilizador}{Utilizador} $\ast$u1, const \hyperlink{classUtilizador}{Utilizador} $\ast$u2) const
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structUtilizadorPtr_a51b14cea42ccf48388754bb5513f736f}\label{structUtilizadorPtr_a51b14cea42ccf48388754bb5513f736f}} 
+\index{Utilizador\+Ptr@{Utilizador\+Ptr}!operator()@{operator()}}
+\index{operator()@{operator()}!Utilizador\+Ptr@{Utilizador\+Ptr}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Utilizador\+Ptr\+::operator() (\begin{DoxyParamCaption}\item[{const \hyperlink{classUtilizador}{Utilizador} $\ast$}]{u1 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}
+19                                                 \{
+20         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} hash = 5381;
+21         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{char} c : u1->\hyperlink{classUtilizador_aea88bb297704762d0cccc909b8c2da54}{getEmail}()) \{
+22             \textcolor{keywordflow}{if} (c != \textcolor{charliteral}{'@'} && c!= \textcolor{charliteral}{'.'} )
+23                 hash = ((hash << 5) + hash) + c; \textcolor{comment}{/* hash * 33 + c */}
+24         \}
+25         \textcolor{keywordflow}{return} hash;
+26     \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{structUtilizadorPtr_a51b14cea42ccf48388754bb5513f736f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structUtilizadorPtr_afdc486a21619e0451d59dd4a9f244866}\label{structUtilizadorPtr_afdc486a21619e0451d59dd4a9f244866}} 
+\index{Utilizador\+Ptr@{Utilizador\+Ptr}!operator()@{operator()}}
+\index{operator()@{operator()}!Utilizador\+Ptr@{Utilizador\+Ptr}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Utilizador\+Ptr\+::operator() (\begin{DoxyParamCaption}\item[{const \hyperlink{classUtilizador}{Utilizador} $\ast$}]{u1,  }\item[{const \hyperlink{classUtilizador}{Utilizador} $\ast$}]{u2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}
+28                                                                          \{
+29         \textcolor{keywordflow}{return} u1->\hyperlink{classUtilizador_aea88bb297704762d0cccc909b8c2da54}{getEmail}() == u2->\hyperlink{classUtilizador_aea88bb297704762d0cccc909b8c2da54}{getEmail}();
+30     \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{structUtilizadorPtr_afdc486a21619e0451d59dd4a9f244866_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Titulo_8h}{Titulo.\+h}\end{DoxyCompactItemize}

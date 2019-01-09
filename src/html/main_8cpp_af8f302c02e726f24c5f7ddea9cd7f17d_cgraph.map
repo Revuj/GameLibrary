@@ -1,0 +1,22 @@
+<map id="escolheTitulo" name="escolheTitulo">
+<area shape="rect" id="node2" href="$classSistema.html#a0fb81a4685bb24024295c89d22d6d719" title="Pesquisa um titulo. " alt="" coords="171,5,329,32"/>
+<area shape="rect" id="node3" href="$classUtilizador.html#ad0ebe5ff80aa77145ec4b0ce5473102c" title="Permite obter o vetor de cartoes de credito do utilizador. " alt="" coords="190,56,310,83"/>
+<area shape="rect" id="node4" href="$classUtilizador.html#ac08a744b9d9d2aca0bd22c60e0beaa83" title="Adiciona um titulo ao utilizador. " alt="" coords="167,157,333,184"/>
+<area shape="rect" id="node5" href="$classTitulo.html#a93725bdc2e98350e47b54fd76c0fa236" title="Permite obter o preco atual do titulo. " alt="" coords="431,56,545,83"/>
+<area shape="rect" id="node11" href="$classUtilizador.html#aa47c2fe835a73a23664149ccc7fbc10f" title="Remove um titulo da wishlist. " alt="" coords="399,259,577,285"/>
+<area shape="rect" id="node14" href="$classSistema.html#a0d6da6cf391b19d37001dab66c861b93" title="Verifica se a data de um cartao de credito e valida. " alt="" coords="181,259,319,285"/>
+<area shape="rect" id="node20" href="$classSistema.html#a59ff239e4793308c979cccf796a72f23" title="Remove os utilizadores adormecidos dos titulos para uma dada plataforma. " alt="" coords="152,309,348,336"/>
+<area shape="rect" id="node21" href="$classErro.html#abfc1e9735b259d88bb97828a23164eb0" title="Permite obter a descricao do Erro. " alt="" coords="203,360,297,387"/>
+<area shape="rect" id="node6" href="$classBiblioteca.html#af10c9f23d85db8e03ae2e8b9d3e593e1" title="Adicona um titulo a biblioteca. " alt="" coords="405,157,571,184"/>
+<area shape="rect" id="node9" href="$classBanco.html#a0735f07636c578666068a16f6ecccd91" title="Devolve a data atual. " alt="" coords="417,107,559,133"/>
+<area shape="rect" id="node10" href="$classCartaoCredito.html#ab59d60e4d155e7f29aef888ea3139ee5" title="Devolve o id(string) do cartao de credito atual. " alt="" coords="418,208,558,235"/>
+<area shape="rect" id="node7" href="$classTitulo.html#acb79279860b3404c6419697df5f860cb" title="Permite obter o nome do titulo. " alt="" coords="658,157,773,184"/>
+<area shape="rect" id="node8" href="$classTitulo.html#a2a57a31d40c5df012b3c6e2451c253dd" title="Permite obter a plataforma do titulo. " alt="" coords="644,208,787,235"/>
+<area shape="rect" id="node12" href="$classWishedTitle.html#a9ca6e92a26bb2f319a39d5a03b0c42bd" title="Devolve o titulo. " alt="" coords="641,259,790,285"/>
+<area shape="rect" id="node13" href="$classWishedTitle.html#aacaf6dfce83390dcc78f0ecd679e1de1" title="Alterar a probabilidade de compra do titulo. " alt="" coords="851,251,1045,293"/>
+<area shape="rect" id="node15" href="$classBanco.html#ac469cc9db5980081701bf9eb27a7e612" title="Verifica se uma data e valida. " alt="" coords="417,397,559,424"/>
+<area shape="rect" id="node17" href="$classCartaoCredito.html#a52daaab859e37d416c00044ef0fb2f27" title="Atualiza a data de validade para a data atual. " alt="" coords="396,310,580,351"/>
+<area shape="rect" id="node16" href="$classCartaoCredito.html#ab28b73bbecc20b5c23348e1172230533" title="Devolve a data de validade do cartao. " alt="" coords="628,411,803,453"/>
+<area shape="rect" id="node18" href="$classData.html#a8d4cfad647b590df436d8260000a2745" title="Altera o dia. " alt="" coords="666,360,765,387"/>
+<area shape="rect" id="node19" href="$classData.html#ae19e0d5af87f94f2809ba52dae69e15b" title="Devolve o ano. " alt="" coords="666,309,765,336"/>
+</map>

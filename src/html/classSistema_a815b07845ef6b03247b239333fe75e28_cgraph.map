@@ -1,0 +1,51 @@
+<map id="Sistema::Sistema" name="Sistema::Sistema">
+<area shape="rect" id="node2" href="$classSistema.html#aafc86e0f2c3d734fb4c0985f70c27a1a" title="Destrutor da class Sistema. " alt="" coords="224,72,359,99"/>
+<area shape="rect" id="node3" href="$classSistema.html#afe05d538e95a0f26d0ddcfd2105de9d3" title="Le um utilizador de um ficheiro. " alt="" coords="451,173,645,200"/>
+<area shape="rect" id="node11" href="$classSistema.html#a187636be859f6a6dd7427cb781cd11a5" title="Invoca as funcoes necessarias para ler os utilizadores guardados nos ficheiros. " alt="" coords="205,173,377,200"/>
+<area shape="rect" id="node12" href="$classSistema.html#af25036f1b2d4abc30447c45f3c3237b8" title="Guarda todos os utilizadores do sistema em ficheiros, criando novos, se necessario. " alt="" coords="204,376,379,403"/>
+<area shape="rect" id="node13" href="$classSistema.html#a239cd36f933f0ba0bc36e47bd0012af0" title="Le os titulos de um ficheiro. " alt="" coords="210,427,373,453"/>
+<area shape="rect" id="node14" href="$classSistema.html#ac9d9a195c580deea2c9126c91d69353e" title="Invoca as funcoes necessarias para ler os titulos guardados nos ficheiros. " alt="" coords="220,477,363,504"/>
+<area shape="rect" id="node15" href="$classSistema.html#a07ff0877985ee60035abb90a60c458d8" title="Guarda todos os titulos do sistema num ficheiro. " alt="" coords="219,528,364,555"/>
+<area shape="rect" id="node16" href="$classSistema.html#a00f929e5b2ca1dcc821edb14f9de5a24" title="Le as empresas de um ficheiro. " alt="" coords="457,249,639,276"/>
+<area shape="rect" id="node17" href="$classSistema.html#aeffb6968ea519c472e90dfec1a2a072e" title="Invoca as funcoes necessarias para ler as empresas guardadas nos ficheiros. " alt="" coords="210,275,373,301"/>
+<area shape="rect" id="node18" href="$classSistema.html#ada4619fbedcb5a07d807545caebd5c57" title="Guarda todas as empresas do sistema num ficheiro. " alt="" coords="209,579,374,605"/>
+<area shape="rect" id="node19" href="$classSistema.html#a0421323f2c7a5e372b54a40998ed8e69" title="Sistema::validEmail" alt="" coords="479,655,617,681"/>
+<area shape="rect" id="node20" href="$classSistema.html#ac120f4aecf81933be110233f8dbf74c6" title="Verifica se o email e valido sintaticamente e verifica a sua existencia, se necessario. " alt="" coords="216,680,367,707"/>
+<area shape="rect" id="node21" href="$classSistema.html#a43e1d500eca075857b1c96c2e2239d55" title="Simula o &quot;jogar&quot; de um utilizador, incrementando o tempo jogado e guardando uma data do dia em que jo..." alt="" coords="210,731,373,757"/>
+<area shape="rect" id="node22" href="$classSistema.html#aabeb8de1cc79bff9ff04d190ac3754d2" title="Mostra o saldo de um utilizador do sistema. " alt="" coords="209,781,373,808"/>
+<area shape="rect" id="node23" href="$classSistema.html#a871ba21f5de12adb05106f0fcaf9d723" title="Mostra o tempo jogado por um utilizador. " alt="" coords="213,832,369,859"/>
+<area shape="rect" id="node24" href="$classSistema.html#a51beac85364444837cd4cdff0080bad5" title="Adiciona um novo utilizador ao sistema. " alt="" coords="201,883,382,909"/>
+<area shape="rect" id="node25" href="$classSistema.html#a1136080a3cf835831bf94908d419ae42" title="Adiciona um novo titulo ao sistema. " alt="" coords="226,933,357,960"/>
+<area shape="rect" id="node26" href="$classSistema.html#a41eddc54d36ac140608dd259c085ba88" title="Adiciona uma nova empresa ao sistema. " alt="" coords="202,984,381,1011"/>
+<area shape="rect" id="node27" href="$classSistema.html#aa91f2955f6b47f4dc0523b86b94c6309" title="Adiciona uma atualizacao a um titulo do sistema. " alt="" coords="451,325,645,352"/>
+<area shape="rect" id="node28" href="$classSistema.html#ac3b36e6798c903dd0efd102d7a5dd081" title="Mostra os utilizadores de forma ordenada. " alt="" coords="198,1085,385,1112"/>
+<area shape="rect" id="node29" href="$classSistema.html#ac22188d7bcfb9df24776d67900b9d7fb" title="Mostra os utilizadores do sistema. " alt="" coords="454,1060,642,1087"/>
+<area shape="rect" id="node30" href="$classSistema.html#a6dcecc2ca65f6fdedd042c7431d5ea19" title="Mostra os titulos de forma ordenada. " alt="" coords="213,1187,369,1213"/>
+<area shape="rect" id="node31" href="$classSistema.html#abf82916720d1255bba6437abf0094ca6" title="Mostra os titulos do sistema. " alt="" coords="469,1161,627,1188"/>
+<area shape="rect" id="node32" href="$classSistema.html#a6f2d2d67cb8464771272e60511045032" title="Pesquisa um utilizador. " alt="" coords="199,1237,384,1264"/>
+<area shape="rect" id="node33" href="$classSistema.html#a0fb81a4685bb24024295c89d22d6d719" title="Pesquisa um titulo. " alt="" coords="212,1288,371,1315"/>
+<area shape="rect" id="node34" href="$classSistema.html#a1f22677c42afd48be088f2eca428dede" title="Pesquisa uma empresa. " alt="" coords="200,1339,383,1365"/>
+<area shape="rect" id="node35" href="$classSistema.html#aade841c0c281c63fe922834e228049cd" title="Ordena os titulos de um utilizador. " alt="" coords="186,1389,397,1416"/>
+<area shape="rect" id="node36" href="$classSistema.html#a588450a81753c22b0454580fde17a7a7" title="Numero medio de titulos nas bibliotecas dos utilizadores do sistema. " alt="" coords="210,1440,373,1467"/>
+<area shape="rect" id="node37" href="$classSistema.html#ab5d9cff098cf2551f1c31d2ba720fb3c" title="Custo meido de uma biblioteca. " alt="" coords="190,1491,393,1517"/>
+<area shape="rect" id="node38" href="$classSistema.html#afc03af6008df8639b1d1878388f70886" title="Mostra o ranking de popularidade de generos. " alt="" coords="198,1541,385,1568"/>
+<area shape="rect" id="node39" href="$classSistema.html#a6e4c08a6ee3c8f5721e46f64823fd6a3" title="Mostra o ranking de popularidade de plataformas. " alt="" coords="188,1592,395,1619"/>
+<area shape="rect" id="node40" href="$classSistema.html#a922993ab8f9dd2e8eb853edf3172543b" title="Mostra o ranking de popularidade de idades. " alt="" coords="203,1643,379,1669"/>
+<area shape="rect" id="node41" href="$classSistema.html#a6fb78c2cafbf5b6703d126ef43ba43f0" title="Mostra o ranking de titulos por rentabilidade. " alt="" coords="180,1693,403,1720"/>
+<area shape="rect" id="node42" href="$classSistema.html#acb9f4d8c3ee7d1a24f8784c379f660df" title="Devolve os utilizadores do sistema. " alt="" coords="213,1744,369,1771"/>
+<area shape="rect" id="node43" href="$classSistema.html#af870153af417f47e9ef1d53fdadffa3a" title="Devolve os titulos do sistema. " alt="" coords="224,1795,359,1821"/>
+<area shape="rect" id="node44" href="$classSistema.html#a4380aacc310d051a753138477d8e777f" title="Mostra no ecra as empresas consoante o conteudo de s. " alt="" coords="202,1845,381,1872"/>
+<area shape="rect" id="node45" href="$classSistema.html#ac7b28e4e7856327b1553133c39a843d6" title="Devolve as plataformas do sistema. " alt="" coords="208,1896,375,1923"/>
+<area shape="rect" id="node46" href="$classSistema.html#abb768fdc8d4b8290ab4a267fc7a84a39" title="Devolve o banco do sistema. " alt="" coords="225,1947,358,1973"/>
+<area shape="rect" id="node47" href="$classSistema.html#a0d6da6cf391b19d37001dab66c861b93" title="Verifica se a data de um cartao de credito e valida. " alt="" coords="222,1997,361,2024"/>
+<area shape="rect" id="node48" href="$classSistema.html#a265736b1b095448d7343b199a1ade7e5" title="Atualiza os utilizadores adormecidos de todos os utilizadores. " alt="" coords="192,2048,391,2075"/>
+<area shape="rect" id="node49" href="$classSistema.html#a59ff239e4793308c979cccf796a72f23" title="Remove os utilizadores adormecidos dos titulos para uma dada plataforma. " alt="" coords="193,2099,389,2125"/>
+<area shape="rect" id="node50" href="$classSistema.html#a6f73ddef363e2bc3e1c36dcb0d6d6152" title="Mostra no ecra os utilizadores adormecidos consoante o conteudo da string s. " alt="" coords="194,2149,389,2176"/>
+<area shape="rect" id="node4" href="$classBanco.html#a5f36ab07909fc570d158a21e2e6398f5" title="Adiciona um vector de cartoes de credito ao banco. " alt="" coords="693,5,896,32"/>
+<area shape="rect" id="node5" href="$classTitulo.html#a8ea091928732a5ff5b974e003668a778" title="Permite atualizar o historico de precos do titulo. " alt="" coords="711,173,878,200"/>
+<area shape="rect" id="node6" href="$classOnline.html#a3c0b8d3393271eabfa702629c979fb93" title="Altera as datas jogadas. " alt="" coords="721,224,869,251"/>
+<area shape="rect" id="node7" href="$classOnline.html#a71cc818cd9b8020a470efc14f636a9f9" title="Altera os minutos jogados por data. " alt="" coords="715,275,874,301"/>
+<area shape="rect" id="node8" href="$classBiblioteca.html#af10c9f23d85db8e03ae2e8b9d3e593e1" title="Adicona um titulo a biblioteca. " alt="" coords="711,56,878,83"/>
+<area shape="rect" id="node9" href="$classHome.html#a94aec68b520d98ac38c6794b5771cd53" title="Adiciona uma data ao vetor data_de_atualizacao. " alt="" coords="704,325,885,352"/>
+<area shape="rect" id="node10" href="$classUtilizador.html#ac3c7ff821739e5682a5d06d0868031ac" title="Altera a data da ultima compra. " alt="" coords="710,107,879,149"/>
+</map>

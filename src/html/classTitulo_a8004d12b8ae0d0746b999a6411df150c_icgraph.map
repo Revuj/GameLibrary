@@ -1,0 +1,10 @@
+<map id="Titulo::adicionaAnuncios" name="Titulo::adicionaAnuncios">
+<area shape="rect" id="node2" href="$classUtilizador.html#a4f3016ff86d68d548f801aa569b854dc" title="mostra no ecra as publicidades ao utilizador " alt="" coords="217,35,395,61"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a41dd1ea1b95901e643be4af34f6dcfbf" title="menuUtilizador" alt="" coords="473,5,582,32"/>
+<area shape="rect" id="node6" href="$classUtilizador.html#ac3c7ff821739e5682a5d06d0868031ac" title="Altera a data da ultima compra. " alt="" coords="443,57,612,98"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#ab36c65bcfd56b6a29bee851e57462ad2" title="pesquisarUtilizador" alt="" coords="921,5,1054,32"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1159,19,1210,45"/>
+<area shape="rect" id="node7" href="$classSistema.html#afe05d538e95a0f26d0ddcfd2105de9d3" title="Le um utilizador de um ficheiro. " alt="" coords="660,64,853,91"/>
+<area shape="rect" id="node8" href="$classSistema.html#a187636be859f6a6dd7427cb781cd11a5" title="Invoca as funcoes necessarias para ler os utilizadores guardados nos ficheiros. " alt="" coords="901,56,1073,83"/>
+<area shape="rect" id="node9" href="$classSistema.html#a815b07845ef6b03247b239333fe75e28" title="Construtor da class Sistema. " alt="" coords="1121,81,1248,108"/>
+</map>

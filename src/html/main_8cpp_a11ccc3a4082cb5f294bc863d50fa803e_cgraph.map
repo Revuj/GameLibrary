@@ -1,0 +1,14 @@
+<map id="adiconaWishlist" name="adiconaWishlist">
+<area shape="rect" id="node2" href="$classSistema.html#a0fb81a4685bb24024295c89d22d6d719" title="Pesquisa um titulo. " alt="" coords="181,107,339,133"/>
+<area shape="rect" id="node3" href="$classUtilizador.html#a45ee0a8d988adbd537e2506d80f96cfb" title="Adiciona um novo titulo a wishlist. " alt="" coords="168,157,352,184"/>
+<area shape="rect" id="node13" href="$classErro.html#abfc1e9735b259d88bb97828a23164eb0" title="Permite obter a descricao do Erro. " alt="" coords="213,208,307,235"/>
+<area shape="rect" id="node4" href="$classWishedTitle.html#a8be5446371add65ba4de2c69c84cb387" title="Atualiza a probabilidade de compra do WishedTitle. " alt="" coords="400,56,623,83"/>
+<area shape="rect" id="node8" href="$classBiblioteca.html#a03c1ebf76a4ace4f57000bb99a87bb88" title="Devolve o vetor de titulos. " alt="" coords="439,107,583,133"/>
+<area shape="rect" id="node9" href="$classTitulo.html#acb79279860b3404c6419697df5f860cb" title="Permite obter o nome do titulo. " alt="" coords="454,157,569,184"/>
+<area shape="rect" id="node10" href="$classTitulo.html#a2a57a31d40c5df012b3c6e2451c253dd" title="Permite obter a plataforma do titulo. " alt="" coords="440,208,583,235"/>
+<area shape="rect" id="node11" href="$classWishedTitle.html#a9ca6e92a26bb2f319a39d5a03b0c42bd" title="Devolve o titulo. " alt="" coords="437,259,586,285"/>
+<area shape="rect" id="node5" href="$classTitulo.html#ad36afe75694812eabe74af5fe32ad95b" title="Permite obter o numero de anuncios. " alt="" coords="701,5,835,32"/>
+<area shape="rect" id="node6" href="$classTitulo.html#a71d5b5985170de5612ec49c5c955f120" title="Permite obter o numero de cliques. " alt="" coords="706,56,830,83"/>
+<area shape="rect" id="node7" href="$classTitulo.html#a93725bdc2e98350e47b54fd76c0fa236" title="Permite obter o preco atual do titulo. " alt="" coords="711,107,825,133"/>
+<area shape="rect" id="node12" href="$classWishedTitle.html#aacaf6dfce83390dcc78f0ecd679e1de1" title="Alterar a probabilidade de compra do titulo. " alt="" coords="671,251,865,293"/>
+</map>

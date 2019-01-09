@@ -1,0 +1,12 @@
+<map id="Utilizador::getIdade" name="Utilizador::getIdade">
+<area shape="rect" id="node2" href="$Sistema_8cpp.html#ad518f0e0db218f2c049ef1d700caae5f" title="userAgeAscend" alt="" coords="192,60,307,87"/>
+<area shape="rect" id="node7" href="$Sistema_8cpp.html#a02190b2d4dada73645956850b936ad16" title="userAgeDescend" alt="" coords="188,9,311,36"/>
+<area shape="rect" id="node8" href="$Utilizador_8h.html#ac94bede207bc2b6f0bbb33fa77f6e283" title="operator\&lt;\&lt;" alt="" coords="207,111,292,137"/>
+<area shape="rect" id="node3" href="$classSistema.html#ac3b36e6798c903dd0efd102d7a5dd081" title="Mostra os utilizadores de forma ordenada. " alt="" coords="359,31,545,57"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a633c2853177204cb3a7a8033e5b9497c" title="displayUtilizadores" alt="" coords="855,5,987,32"/>
+<area shape="rect" id="node6" href="$classSistema.html#a815b07845ef6b03247b239333fe75e28" title="Construtor da class Sistema. " alt="" coords="1055,107,1181,133"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1093,31,1143,57"/>
+<area shape="rect" id="node9" href="$classUtilizador.html#ac3c7ff821739e5682a5d06d0868031ac" title="Altera a data da ultima compra. " alt="" coords="367,103,537,145"/>
+<area shape="rect" id="node10" href="$classSistema.html#afe05d538e95a0f26d0ddcfd2105de9d3" title="Le um utilizador de um ficheiro. " alt="" coords="593,111,787,137"/>
+<area shape="rect" id="node11" href="$classSistema.html#a187636be859f6a6dd7427cb781cd11a5" title="Invoca as funcoes necessarias para ler os utilizadores guardados nos ficheiros. " alt="" coords="835,107,1007,133"/>
+</map>

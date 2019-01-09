@@ -1,0 +1,352 @@
+\hypertarget{classEmpresa}{}\section{Empresa Class Reference}
+\label{classEmpresa}\index{Empresa@{Empresa}}
+
+
+{\ttfamily \#include $<$Empresa.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEmpresa_aff124b958356c479ab50ddf4cf302193}{Empresa} ()
+\begin{DoxyCompactList}\small\item\em Construtor por default da classe empresa. \end{DoxyCompactList}\item 
+\hyperlink{classEmpresa_a19748f9e5c99292e3cd1489712751271}{Empresa} (std\+::string nome, std\+::string email, std\+::string numero\+Telemovel, std\+::string nif)
+\begin{DoxyCompactList}\small\item\em Construtor da classe empresa. \end{DoxyCompactList}\item 
+void \hyperlink{classEmpresa_a3c6eb96c694dcb6db1e402d6db1c439a}{criar\+Titulo} (\hyperlink{classTitulo}{Titulo} $\ast$t)
+\begin{DoxyCompactList}\small\item\em Adiciona um titulo novo a empresa. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classEmpresa_a99bc2de98a0c0348abb74c93e6e7159e}{get\+Nome\+Empresa} () const
+\begin{DoxyCompactList}\small\item\em Devolve o nome da empresa. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classEmpresa_a49b2b94a54bbc341822f64fc194f98fd}{get\+Numero\+Titulos} () const
+\begin{DoxyCompactList}\small\item\em Devolve o numero de titulos da empresa. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classEmpresa_a6ab12452496ccaea5493bd2c67824f09}{get\+Nif} () const
+\begin{DoxyCompactList}\small\item\em Devolve o N\+IF da empresa. \end{DoxyCompactList}\item 
+\hyperlink{structcontactos}{contactos} \hyperlink{classEmpresa_a19396f860d9b17f94bd262ba093d76eb}{get\+Contactos} () const
+\begin{DoxyCompactList}\small\item\em Devolve os contactos da empresa. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classTitulo}{Titulo} $\ast$ $>$ \hyperlink{classEmpresa_a672f3a89b0e41dd758ab6baf1a8dfbd2}{get\+Titulos} () const
+\begin{DoxyCompactList}\small\item\em Devolve os titulos da empresa. \end{DoxyCompactList}\item 
+void \hyperlink{classEmpresa_af067f4d00a5ceb8816a607164916d2e1}{display\+Titulos} ()
+\begin{DoxyCompactList}\small\item\em Mostra os titulos da empresa no ecra. \end{DoxyCompactList}\item 
+void \hyperlink{classEmpresa_a3e40c710d76874bcfcf4bd83592d4f13}{add\+Numero} ()
+\begin{DoxyCompactList}\small\item\em Incrementa o numero de titulos da empresa. \end{DoxyCompactList}\item 
+bool \hyperlink{classEmpresa_ab643d752365e59fa1d90a41b8a036d6a}{operator$<$} (const \hyperlink{classEmpresa}{Empresa} \&empresa)
+\begin{DoxyCompactList}\small\item\em Overload do operador menor para objetos da classe \hyperlink{classEmpresa}{Empresa}. \end{DoxyCompactList}\item 
+bool \hyperlink{classEmpresa_ad915fb38bc6c73c02fe70c62db1c9f03}{operator==} (const \hyperlink{classEmpresa}{Empresa} \&empresa)
+\begin{DoxyCompactList}\small\item\em Overload do operador igual para objetos da classe \hyperlink{classEmpresa}{Empresa}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEmpresa_aff124b958356c479ab50ddf4cf302193}\label{classEmpresa_aff124b958356c479ab50ddf4cf302193}} 
+\index{Empresa@{Empresa}!Empresa@{Empresa}}
+\index{Empresa@{Empresa}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{Empresa()}{Empresa()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Empresa\+::\+Empresa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor por default da classe empresa. 
+
+
+\begin{DoxyCode}
+26 \{this->numeroTitulos=0;\}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEmpresa_aff124b958356c479ab50ddf4cf302193_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEmpresa_a19748f9e5c99292e3cd1489712751271}\label{classEmpresa_a19748f9e5c99292e3cd1489712751271}} 
+\index{Empresa@{Empresa}!Empresa@{Empresa}}
+\index{Empresa@{Empresa}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{Empresa()}{Empresa()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Empresa\+::\+Empresa (\begin{DoxyParamCaption}\item[{std\+::string}]{nome,  }\item[{std\+::string}]{email,  }\item[{std\+::string}]{numero\+Telemovel,  }\item[{std\+::string}]{nif }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe empresa. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & -\/ nome da empresa \\
+\hline
+{\em email} & -\/ email da empresa \\
+\hline
+{\em numero\+Telemovel} & -\/ numero de telemovel da empresa \\
+\hline
+{\em nif} & -\/ nif da empresa \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+6      :nome(nome),Nif(nif) \{
+7 
+8     this->numeroTitulos=0;
+9     this->contacto.\hyperlink{structcontactos_a86c1ad3bcc23dbb8bf7bb37ae0976242}{email}=email;
+10     this->contacto.\hyperlink{structcontactos_a09e1d4029e1eb91fc9ec76e4b4b6d48a}{numeroTelemovel}=numeroTelemovel;
+11 
+12 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEmpresa_a3e40c710d76874bcfcf4bd83592d4f13}\label{classEmpresa_a3e40c710d76874bcfcf4bd83592d4f13}} 
+\index{Empresa@{Empresa}!add\+Numero@{add\+Numero}}
+\index{add\+Numero@{add\+Numero}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{add\+Numero()}{addNumero()}}
+{\footnotesize\ttfamily void Empresa\+::add\+Numero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Incrementa o numero de titulos da empresa. 
+
+
+\begin{DoxyCode}
+34                         \{
+35     this->numeroTitulos++;
+36 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classEmpresa_a3c6eb96c694dcb6db1e402d6db1c439a}\label{classEmpresa_a3c6eb96c694dcb6db1e402d6db1c439a}} 
+\index{Empresa@{Empresa}!criar\+Titulo@{criar\+Titulo}}
+\index{criar\+Titulo@{criar\+Titulo}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{criar\+Titulo()}{criarTitulo()}}
+{\footnotesize\ttfamily void Empresa\+::criar\+Titulo (\begin{DoxyParamCaption}\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{t }\end{DoxyParamCaption})}
+
+
+
+Adiciona um titulo novo a empresa. 
+
+
+\begin{DoxyCode}
+50                                     \{
+51 
+52     \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} & titles : this->Titulos) \{
+53         \textcolor{keywordflow}{if}(titles==t)
+54             \textcolor{keywordflow}{return};\textcolor{comment}{//throw(EmpresaJaComTitulo(t))}
+55     \}
+56     this->numeroTitulos++;
+57     this->Titulos.push\_back(t);
+58 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEmpresa_a3c6eb96c694dcb6db1e402d6db1c439a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEmpresa_af067f4d00a5ceb8816a607164916d2e1}\label{classEmpresa_af067f4d00a5ceb8816a607164916d2e1}} 
+\index{Empresa@{Empresa}!display\+Titulos@{display\+Titulos}}
+\index{display\+Titulos@{display\+Titulos}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{display\+Titulos()}{displayTitulos()}}
+{\footnotesize\ttfamily void Empresa\+::display\+Titulos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Mostra os titulos da empresa no ecra. 
+
+
+\begin{DoxyCode}
+60                              \{
+61 
+62     \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} & titulo : this->Titulos) \{
+63         std::cout << titulo->getNome() << \textcolor{stringliteral}{", "} << titulo->getEmpresa() << \textcolor{stringliteral}{", "} << titulo->getPlataforma() <
+      < \textcolor{stringliteral}{", "} << titulo->getPreco() << \textcolor{stringliteral}{" euros, (desconto: "} << titulo->getDesconto() << \textcolor{stringliteral}{"% ), "} << titulo->
+      getDataLancamento().getAno() << \textcolor{stringliteral}{", idade minima: "} << titulo->getIdadeMinima() << std::endl;
+64     \}
+65 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEmpresa_af067f4d00a5ceb8816a607164916d2e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEmpresa_a19396f860d9b17f94bd262ba093d76eb}\label{classEmpresa_a19396f860d9b17f94bd262ba093d76eb}} 
+\index{Empresa@{Empresa}!get\+Contactos@{get\+Contactos}}
+\index{get\+Contactos@{get\+Contactos}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{get\+Contactos()}{getContactos()}}
+{\footnotesize\ttfamily \hyperlink{structcontactos}{contactos} Empresa\+::get\+Contactos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devolve os contactos da empresa. 
+
+\begin{DoxyReturn}{Returns}
+Retorna a struct contactos, da empresa 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+26                                      \{
+27     \textcolor{keywordflow}{return} this->contacto;
+28 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEmpresa_a19396f860d9b17f94bd262ba093d76eb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEmpresa_a6ab12452496ccaea5493bd2c67824f09}\label{classEmpresa_a6ab12452496ccaea5493bd2c67824f09}} 
+\index{Empresa@{Empresa}!get\+Nif@{get\+Nif}}
+\index{get\+Nif@{get\+Nif}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{get\+Nif()}{getNif()}}
+{\footnotesize\ttfamily std\+::string Empresa\+::get\+Nif (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devolve o N\+IF da empresa. 
+
+\begin{DoxyReturn}{Returns}
+retorna o N\+IF da empresa 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+22                                \{
+23     \textcolor{keywordflow}{return} this->Nif;
+24 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEmpresa_a6ab12452496ccaea5493bd2c67824f09_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEmpresa_a99bc2de98a0c0348abb74c93e6e7159e}\label{classEmpresa_a99bc2de98a0c0348abb74c93e6e7159e}} 
+\index{Empresa@{Empresa}!get\+Nome\+Empresa@{get\+Nome\+Empresa}}
+\index{get\+Nome\+Empresa@{get\+Nome\+Empresa}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{get\+Nome\+Empresa()}{getNomeEmpresa()}}
+{\footnotesize\ttfamily std\+::string Empresa\+::get\+Nome\+Empresa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devolve o nome da empresa. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o nome da empresa 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+18                                        \{
+19     \textcolor{keywordflow}{return} this->nome;
+20 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEmpresa_a99bc2de98a0c0348abb74c93e6e7159e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEmpresa_a49b2b94a54bbc341822f64fc194f98fd}\label{classEmpresa_a49b2b94a54bbc341822f64fc194f98fd}} 
+\index{Empresa@{Empresa}!get\+Numero\+Titulos@{get\+Numero\+Titulos}}
+\index{get\+Numero\+Titulos@{get\+Numero\+Titulos}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{get\+Numero\+Titulos()}{getNumeroTitulos()}}
+{\footnotesize\ttfamily unsigned int Empresa\+::get\+Numero\+Titulos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devolve o numero de titulos da empresa. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o numero de titulos da empresa 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+14                                             \{
+15     \textcolor{keywordflow}{return} this->numeroTitulos;
+16 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEmpresa_a49b2b94a54bbc341822f64fc194f98fd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEmpresa_a672f3a89b0e41dd758ab6baf1a8dfbd2}\label{classEmpresa_a672f3a89b0e41dd758ab6baf1a8dfbd2}} 
+\index{Empresa@{Empresa}!get\+Titulos@{get\+Titulos}}
+\index{get\+Titulos@{get\+Titulos}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{get\+Titulos()}{getTitulos()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classTitulo}{Titulo} $\ast$ $>$ Empresa\+::get\+Titulos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devolve os titulos da empresa. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o vector com os titulos da empresa 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+30                                             \{
+31     \textcolor{keywordflow}{return} this->Titulos;
+32 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classEmpresa_ab643d752365e59fa1d90a41b8a036d6a}\label{classEmpresa_ab643d752365e59fa1d90a41b8a036d6a}} 
+\index{Empresa@{Empresa}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Empresa\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classEmpresa}{Empresa} \&}]{empresa }\end{DoxyParamCaption})}
+
+
+
+Overload do operador menor para objetos da classe \hyperlink{classEmpresa}{Empresa}. 
+
+
+\begin{DoxyCode}
+38                                                 \{
+39 
+40     \textcolor{keywordflow}{if}(this->numeroTitulos==empresa.\hyperlink{classEmpresa_a49b2b94a54bbc341822f64fc194f98fd}{getNumeroTitulos}())
+41         \textcolor{keywordflow}{return} this->nome < empresa.\hyperlink{classEmpresa_a99bc2de98a0c0348abb74c93e6e7159e}{getNomeEmpresa}();
+42      \textcolor{keywordflow}{else}
+43          \textcolor{keywordflow}{return} this->numeroTitulos< empresa.\hyperlink{classEmpresa_a49b2b94a54bbc341822f64fc194f98fd}{getNumeroTitulos}();
+44 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEmpresa_ab643d752365e59fa1d90a41b8a036d6a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEmpresa_ad915fb38bc6c73c02fe70c62db1c9f03}\label{classEmpresa_ad915fb38bc6c73c02fe70c62db1c9f03}} 
+\index{Empresa@{Empresa}!operator==@{operator==}}
+\index{operator==@{operator==}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Empresa\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classEmpresa}{Empresa} \&}]{empresa }\end{DoxyParamCaption})}
+
+
+
+Overload do operador igual para objetos da classe \hyperlink{classEmpresa}{Empresa}. 
+
+
+\begin{DoxyCode}
+46                                                   \{
+47     \textcolor{keywordflow}{return} this->Nif==empresa.\hyperlink{classEmpresa_a6ab12452496ccaea5493bd2c67824f09}{getNif}();
+48 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{classEmpresa_ad915fb38bc6c73c02fe70c62db1c9f03_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Empresa_8h}{Empresa.\+h}\item 
+\hyperlink{Empresa_8cpp}{Empresa.\+cpp}\end{DoxyCompactItemize}

@@ -1,10 +1,17 @@
 var searchData=
 [
-  ['tempojogado',['tempoJogado',['../class_sistema.html#a871ba21f5de12adb05106f0fcaf9d723',1,'Sistema']]],
-  ['titulo',['Titulo',['../class_titulo.html',1,'Titulo'],['../class_wished_title.html#afd2c4392f474c68763f1e81ee3c30120',1,'WishedTitle::titulo()'],['../class_titulo.html#a898faeefdad15c64ae4cdc904a7e6f0e',1,'Titulo::Titulo()']]],
-  ['titulo_2ecpp',['Titulo.cpp',['../_titulo_8cpp.html',1,'']]],
-  ['titulo_2eh',['Titulo.h',['../_titulo_8h.html',1,'']]],
-  ['tituloinexistente',['TituloInexistente',['../class_titulo_inexistente.html',1,'TituloInexistente'],['../class_titulo_inexistente.html#a0404090789fc608b5a08027bba811784',1,'TituloInexistente::TituloInexistente()']]],
-  ['titulojaadicionado',['TituloJaAdicionado',['../class_titulo_ja_adicionado.html',1,'TituloJaAdicionado'],['../class_titulo_ja_adicionado.html#af041846009d91525ed739142e61ca035',1,'TituloJaAdicionado::TituloJaAdicionado()']]],
-  ['titulos',['titulos',['../class_biblioteca.html#a6aed0a1d07752adc3e74939b2128ed5e',1,'Biblioteca::titulos()'],['../class_sistema.html#a1b412fc420c5592ed2eb111606b7b9d8',1,'Sistema::titulos()'],['../class_empresa.html#a02a71346cff2f286d265ed75e78bef36',1,'Empresa::Titulos()']]]
+  ['userageascend',['userAgeAscend',['../Sistema_8cpp.html#ad518f0e0db218f2c049ef1d700caae5f',1,'Sistema.cpp']]],
+  ['useragedescend',['userAgeDescend',['../Sistema_8cpp.html#a02190b2d4dada73645956850b936ad16',1,'Sistema.cpp']]],
+  ['userhashtable',['UserHashTable',['../Titulo_8h.html#a0996281e9e5d419736dec228200cfdc5',1,'Titulo.h']]],
+  ['usernameascend',['userNameAscend',['../Sistema_8cpp.html#a2cac2b30d054ab23d49adc954779f67d',1,'Sistema.cpp']]],
+  ['usernamedescend',['userNameDescend',['../Sistema_8cpp.html#ac0995133035c1bd2be3a18c95a2eba92',1,'Sistema.cpp']]],
+  ['usernumbergamesascend',['userNumberGamesAscend',['../Sistema_8cpp.html#a55b7ab55cae2d4f6a03844e5cb19d2b8',1,'Sistema.cpp']]],
+  ['usernumbergamesdescend',['userNumberGamesDescend',['../Sistema_8cpp.html#a81e28a299272eebc9771023c1f78ea48',1,'Sistema.cpp']]],
+  ['utilizador',['Utilizador',['../classUtilizador.html',1,'Utilizador'],['../classUtilizador.html#ac4d4e41d09c17ea0b1c5bf4bcda4b6a8',1,'Utilizador::Utilizador()']]],
+  ['utilizador_2ecpp',['Utilizador.cpp',['../Utilizador_8cpp.html',1,'']]],
+  ['utilizador_2eh',['Utilizador.h',['../Utilizador_8h.html',1,'']]],
+  ['utilizadorinexistente',['UtilizadorInexistente',['../classUtilizadorInexistente.html',1,'UtilizadorInexistente'],['../classUtilizadorInexistente.html#a66c90c46c5b2a33fa21fe40eb80cf2f8',1,'UtilizadorInexistente::UtilizadorInexistente()']]],
+  ['utilizadorjoga',['utilizadorJoga',['../main_8cpp.html#aab039f6f4271b56e9ca2d1264b25f66a',1,'main.cpp']]],
+  ['utilizadorjogar',['utilizadorJogar',['../classSistema.html#a43e1d500eca075857b1c96c2e2239d55',1,'Sistema']]],
+  ['utilizadorptr',['UtilizadorPtr',['../structUtilizadorPtr.html',1,'']]]
 ];

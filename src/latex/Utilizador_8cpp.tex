@@ -1,0 +1,68 @@
+\hypertarget{Utilizador_8cpp}{}\section{Utilizador.\+cpp File Reference}
+\label{Utilizador_8cpp}\index{Utilizador.\+cpp@{Utilizador.\+cpp}}
+{\ttfamily \#include \char`\"{}Utilizador.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Titulo.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include \char`\"{}Erro.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}Banco.\+h\char`\"{}}\newline
+Include dependency graph for Utilizador.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Utilizador_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{Utilizador_8cpp_ac94bede207bc2b6f0bbb33fa77f6e283}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classUtilizador}{Utilizador} \&u)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Utilizador_8cpp_ac94bede207bc2b6f0bbb33fa77f6e283}\label{Utilizador_8cpp_ac94bede207bc2b6f0bbb33fa77f6e283}} 
+\index{Utilizador.\+cpp@{Utilizador.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Utilizador.\+cpp@{Utilizador.\+cpp}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classUtilizador}{Utilizador} \&}]{u }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+166 \{
+167     os << \textcolor{stringliteral}{"Nome: "} << u.\hyperlink{classUtilizador_a82874cffab116aa572f58576511b0e24}{getNome}() << std::endl;
+168     os << \textcolor{stringliteral}{"E-mail: "} << u.\hyperlink{classUtilizador_aea88bb297704762d0cccc909b8c2da54}{getEmail}() << std::endl;
+169     os << \textcolor{stringliteral}{"Idade: "} << u.\hyperlink{classUtilizador_adff93f098f9512263fcbd1cdadf20855}{getIdade}() << std::endl;
+170     os << \textcolor{stringliteral}{"Morada: "} << u.\hyperlink{classUtilizador_aea27372a36fb8e59d2f3029464d83101}{getMorada}() << std::endl;
+171 
+172 \textcolor{comment}{//  os << "Cartoes de Credito: " << std::endl;}
+173 \textcolor{comment}{//  for (const auto & cartao : u.getCc())}
+174 \textcolor{comment}{//  \{}
+175 \textcolor{comment}{//      os << cartao.getId() << std::endl;}
+176 \textcolor{comment}{//  \}}
+177 \textcolor{comment}{//}
+178 \textcolor{comment}{//  os << "Jogos na Biblioteca: " << std::endl;}
+179 \textcolor{comment}{//  for (const auto & titulo : u.getBiblioteca().getTitulos())}
+180 \textcolor{comment}{//      \{}
+181 \textcolor{comment}{//          os << "->" << titulo->getNome() << std::endl;}
+182 \textcolor{comment}{//      \}}
+183     \textcolor{keywordflow}{return} os;
+184 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{Utilizador_8cpp_ac94bede207bc2b6f0bbb33fa77f6e283_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Utilizador_8cpp_ac94bede207bc2b6f0bbb33fa77f6e283_icgraph}
+\end{center}
+\end{figure}

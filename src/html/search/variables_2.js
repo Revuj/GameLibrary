@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['cartoesdecredito',['CartoesDeCredito',['../class_banco.html#a45e7c51b2a5e58a357367a49eabd15e5',1,'Banco']]],
-  ['cc',['cc',['../class_utilizador.html#a06fb986d77ace5547f107b6a5ce10c5e',1,'Utilizador']]],
-  ['conjuntotitulos',['conjuntoTitulos',['../class_utilizador.html#a82e5a6ecf4dc5c5fa4397f6f3caa0484',1,'Utilizador']]],
-  ['contacto',['contacto',['../class_empresa.html#ad6e0d3239991fec739d8af4fda632fb9',1,'Empresa']]]
+  ['email',['email',['../structcontactos.html#a86c1ad3bcc23dbb8bf7bb37ae0976242',1,'contactos']]],
+  ['empresa',['empresa',['../classTitulo.html#a91510c440dc8583d60d88ea02f4eb1b6',1,'Titulo']]]
 ];

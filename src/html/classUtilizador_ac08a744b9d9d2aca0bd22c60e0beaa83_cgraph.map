@@ -1,0 +1,8 @@
+<map id="Utilizador::AdicionaTitulo" name="Utilizador::AdicionaTitulo">
+<area shape="rect" id="node2" href="$classTitulo.html#a93725bdc2e98350e47b54fd76c0fa236" title="Permite obter o preco atual do titulo. " alt="" coords="246,5,361,32"/>
+<area shape="rect" id="node3" href="$classBiblioteca.html#af10c9f23d85db8e03ae2e8b9d3e593e1" title="Adicona um titulo a biblioteca. " alt="" coords="220,56,387,83"/>
+<area shape="rect" id="node6" href="$classBanco.html#a0735f07636c578666068a16f6ecccd91" title="Devolve a data atual. " alt="" coords="232,107,375,133"/>
+<area shape="rect" id="node7" href="$classCartaoCredito.html#ab59d60e4d155e7f29aef888ea3139ee5" title="Devolve o id(string) do cartao de credito atual. " alt="" coords="233,157,373,184"/>
+<area shape="rect" id="node4" href="$classTitulo.html#acb79279860b3404c6419697df5f860cb" title="Permite obter o nome do titulo. " alt="" coords="449,31,563,57"/>
+<area shape="rect" id="node5" href="$classTitulo.html#a2a57a31d40c5df012b3c6e2451c253dd" title="Permite obter a plataforma do titulo. " alt="" coords="435,81,577,108"/>
+</map>

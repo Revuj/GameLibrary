@@ -1,0 +1,14 @@
+<map id="Utilizador::atualizaInteresse" name="Utilizador::atualizaInteresse">
+<area shape="rect" id="node2" href="$classWishedTitle.html#a9ca6e92a26bb2f319a39d5a03b0c42bd" title="Devolve o titulo. " alt="" coords="248,13,397,39"/>
+<area shape="rect" id="node4" href="$classTitulo.html#acb79279860b3404c6419697df5f860cb" title="Permite obter o nome do titulo. " alt="" coords="265,63,380,90"/>
+<area shape="rect" id="node5" href="$classTitulo.html#a2a57a31d40c5df012b3c6e2451c253dd" title="Permite obter a plataforma do titulo. " alt="" coords="251,114,394,141"/>
+<area shape="rect" id="node6" href="$classWishedTitle.html#ae81814e2837a03f1bcbc1064da0e652e" title="WishedTitle::setInteresse" alt="" coords="237,165,408,191"/>
+<area shape="rect" id="node10" href="$classWishedTitle.html#a8be5446371add65ba4de2c69c84cb387" title="Atualiza a probabilidade de compra do WishedTitle. " alt="" coords="456,215,679,242"/>
+<area shape="rect" id="node3" href="$classWishedTitle.html#aacaf6dfce83390dcc78f0ecd679e1de1" title="Alterar a probabilidade de compra do titulo. " alt="" coords="470,5,665,47"/>
+<area shape="rect" id="node7" href="$classWishedTitle.html#a3acf82b03096f649740573441e1cb343" title="Compara dos objetos da classe WishedTitle. " alt="" coords="490,131,645,158"/>
+<area shape="rect" id="node8" href="$classWishedTitle.html#af436ada1ae78a4ffc8031863c0f21859" title="Devolve o interesse no titulo. " alt="" coords="739,73,909,99"/>
+<area shape="rect" id="node9" href="$classWishedTitle.html#a9076a3f48cb0bbd435908c392e5041a9" title="Devolve a probabilidade de compra do titulo. " alt="" coords="727,124,921,165"/>
+<area shape="rect" id="node11" href="$classTitulo.html#ad36afe75694812eabe74af5fe32ad95b" title="Permite obter o numero de anuncios. " alt="" coords="757,190,891,217"/>
+<area shape="rect" id="node12" href="$classTitulo.html#a71d5b5985170de5612ec49c5c955f120" title="Permite obter o numero de cliques. " alt="" coords="762,241,886,267"/>
+<area shape="rect" id="node13" href="$classTitulo.html#a93725bdc2e98350e47b54fd76c0fa236" title="Permite obter o preco atual do titulo. " alt="" coords="767,291,881,318"/>
+</map>

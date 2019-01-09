@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['historico_5fpreco',['historico_preco',['../class_titulo.html#aad5a44ca7e83939e8b47f1e11b80eca2',1,'Titulo']]],
-  ['horastotais',['horasTotais',['../class_online.html#ade9f15ffcf5486ce321ce48d40da2520',1,'Online']]]
+  ['nome',['nome',['../classTitulo.html#a8abdf1fc6d4fc14be20bbec247664d83',1,'Titulo']]],
+  ['numeroanuncios',['numeroAnuncios',['../classTitulo.html#a31919af9268f0c6e55b786457d1df586',1,'Titulo']]],
+  ['numerocliques',['numeroCliques',['../classTitulo.html#a7775da325c14a4d76f2d3b0800c28fa3',1,'Titulo']]],
+  ['numerotelemovel',['numeroTelemovel',['../structcontactos.html#a09e1d4029e1eb91fc9ec76e4b4b6d48a',1,'contactos']]]
 ];

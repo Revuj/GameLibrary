@@ -1,0 +1,2483 @@
+\hypertarget{classSistema}{}\section{Sistema Class Reference}
+\label{classSistema}\index{Sistema@{Sistema}}
+
+
+{\ttfamily \#include $<$Sistema.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSistema_a815b07845ef6b03247b239333fe75e28}{Sistema} ()
+\begin{DoxyCompactList}\small\item\em Construtor da class \hyperlink{classSistema}{Sistema}. \end{DoxyCompactList}\item 
+\hyperlink{classSistema_aafc86e0f2c3d734fb4c0985f70c27a1a}{$\sim$\+Sistema} ()
+\begin{DoxyCompactList}\small\item\em Destrutor da class \hyperlink{classSistema}{Sistema}. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_afe05d538e95a0f26d0ddcfd2105de9d3}{read\+File\+Utilizadores} (std\+::ifstream \&file)
+\begin{DoxyCompactList}\small\item\em Le um utilizador de um ficheiro. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_a187636be859f6a6dd7427cb781cd11a5}{read\+Utilizadores} ()
+\begin{DoxyCompactList}\small\item\em Invoca as funcoes necessarias para ler os utilizadores guardados nos ficheiros. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_af25036f1b2d4abc30447c45f3c3237b8}{save\+Utilizadores} () const
+\begin{DoxyCompactList}\small\item\em Guarda todos os utilizadores do sistema em ficheiros, criando novos, se necessario. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_a239cd36f933f0ba0bc36e47bd0012af0}{read\+File\+Titulos} (std\+::ifstream \&file)
+\begin{DoxyCompactList}\small\item\em Le os titulos de um ficheiro. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_ac9d9a195c580deea2c9126c91d69353e}{read\+Titulos} ()
+\begin{DoxyCompactList}\small\item\em Invoca as funcoes necessarias para ler os titulos guardados nos ficheiros. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_a07ff0877985ee60035abb90a60c458d8}{save\+Titulos} () const
+\begin{DoxyCompactList}\small\item\em Guarda todos os titulos do sistema num ficheiro. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_a00f929e5b2ca1dcc821edb14f9de5a24}{read\+File\+Empresas} (std\+::ifstream \&file)
+\begin{DoxyCompactList}\small\item\em Le as empresas de um ficheiro. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_aeffb6968ea519c472e90dfec1a2a072e}{read\+Empresas} ()
+\begin{DoxyCompactList}\small\item\em Invoca as funcoes necessarias para ler as empresas guardadas nos ficheiros. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_ada4619fbedcb5a07d807545caebd5c57}{save\+Empresas} ()
+\begin{DoxyCompactList}\small\item\em Guarda todas as empresas do sistema num ficheiro. \end{DoxyCompactList}\item 
+bool \hyperlink{classSistema_a0421323f2c7a5e372b54a40998ed8e69}{valid\+Email} (const std\+::string email) const
+\item 
+void \hyperlink{classSistema_ac120f4aecf81933be110233f8dbf74c6}{is\+Valid\+Email} (std\+::string \&email, bool checkafter=false) const
+\begin{DoxyCompactList}\small\item\em Verifica se o email e valido sintaticamente e verifica a sua existencia, se necessario. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_a43e1d500eca075857b1c96c2e2239d55}{utilizador\+Jogar} (\hyperlink{classUtilizador}{Utilizador} $\ast$u, \hyperlink{classTitulo}{Titulo} $\ast$t, unsigned int minutos)
+\begin{DoxyCompactList}\small\item\em Simula o \char`\"{}jogar\char`\"{} de um utilizador, incrementando o tempo jogado e guardando uma data do dia em que jogou. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_aabeb8de1cc79bff9ff04d190ac3754d2}{saldo\+Utilizador} (const \hyperlink{classUtilizador}{Utilizador} $\ast$u) const
+\begin{DoxyCompactList}\small\item\em Mostra o saldo de um utilizador do sistema. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_a871ba21f5de12adb05106f0fcaf9d723}{tempo\+Jogado} (const \hyperlink{classUtilizador}{Utilizador} $\ast$u) const
+\begin{DoxyCompactList}\small\item\em Mostra o tempo jogado por um utilizador. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_a51beac85364444837cd4cdff0080bad5}{adiciona\+Utilizador} (\hyperlink{classUtilizador}{Utilizador} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Adiciona um novo utilizador ao sistema. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_a1136080a3cf835831bf94908d419ae42}{add\+Titulo} (\hyperlink{classTitulo}{Titulo} $\ast$titulo, std\+::string empresa)
+\begin{DoxyCompactList}\small\item\em Adiciona um novo titulo ao sistema. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_a41eddc54d36ac140608dd259c085ba88}{adiciona\+Empresa} (\hyperlink{classEmpresa}{Empresa} $\ast$empresa)
+\begin{DoxyCompactList}\small\item\em Adiciona uma nova empresa ao sistema. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_aa91f2955f6b47f4dc0523b86b94c6309}{adiciona\+Atualizacao} (std\+::string nome, std\+::string plataforma, \hyperlink{classData}{Data} data)
+\begin{DoxyCompactList}\small\item\em Adiciona uma atualizacao a um titulo do sistema. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_ac3b36e6798c903dd0efd102d7a5dd081}{ordena\+Utilizadores} (std\+::string tipo, bool ascend)
+\begin{DoxyCompactList}\small\item\em Mostra os utilizadores de forma ordenada. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_a6dcecc2ca65f6fdedd042c7431d5ea19}{ordena\+Titulos} (std\+::string tipo, bool ascend)
+\begin{DoxyCompactList}\small\item\em Mostra os titulos de forma ordenada. \end{DoxyCompactList}\item 
+\hyperlink{classUtilizador}{Utilizador} $\ast$ \hyperlink{classSistema_a6f2d2d67cb8464771272e60511045032}{pesquisa\+Utilizador} (std\+::string nome, std\+::string email)
+\begin{DoxyCompactList}\small\item\em Pesquisa um utilizador. \end{DoxyCompactList}\item 
+\hyperlink{classTitulo}{Titulo} $\ast$ \hyperlink{classSistema_a0fb81a4685bb24024295c89d22d6d719}{pesquisa\+Jogo} (std\+::string nome, std\+::string plataforma) const
+\begin{DoxyCompactList}\small\item\em Pesquisa um titulo. \end{DoxyCompactList}\item 
+\hyperlink{classEmpresa}{Empresa} $\ast$ \hyperlink{classSistema_a1f22677c42afd48be088f2eca428dede}{pesquisa\+Empresa} (std\+::string nome, std\+::string nif) const
+\begin{DoxyCompactList}\small\item\em Pesquisa uma empresa. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classTitulo}{Titulo} $\ast$ $>$ \hyperlink{classSistema_aade841c0c281c63fe922834e228049cd}{ordena\+Titulos\+Utilizador} (const \hyperlink{classUtilizador}{Utilizador} $\ast$u, std\+::string criterio, bool ascend) const
+\begin{DoxyCompactList}\small\item\em Ordena os titulos de um utilizador. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classSistema_a588450a81753c22b0454580fde17a7a7}{nr\+Medio\+Titulos} () const
+\begin{DoxyCompactList}\small\item\em Numero medio de titulos nas bibliotecas dos utilizadores do sistema. \end{DoxyCompactList}\item 
+float \hyperlink{classSistema_ab5d9cff098cf2551f1c31d2ba720fb3c}{custo\+Medio\+Biblioteca} () const
+\begin{DoxyCompactList}\small\item\em Custo meido de uma biblioteca. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_afc03af6008df8639b1d1878388f70886}{ranking\+De\+Generos} () const
+\begin{DoxyCompactList}\small\item\em Mostra o ranking de popularidade de generos. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_a6e4c08a6ee3c8f5721e46f64823fd6a3}{ranking\+De\+Plataformas} () const
+\begin{DoxyCompactList}\small\item\em Mostra o ranking de popularidade de plataformas. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_a922993ab8f9dd2e8eb853edf3172543b}{ranking\+De\+Idades} () const
+\begin{DoxyCompactList}\small\item\em Mostra o ranking de popularidade de idades. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_a6fb78c2cafbf5b6703d126ef43ba43f0}{ranking\+De\+Rentabilidades} () const
+\begin{DoxyCompactList}\small\item\em Mostra o ranking de titulos por rentabilidade. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classUtilizador}{Utilizador} $\ast$ $>$ \hyperlink{classSistema_acb9f4d8c3ee7d1a24f8784c379f660df}{get\+Jogadores} () const
+\begin{DoxyCompactList}\small\item\em Devolve os utilizadores do sistema. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_ac22188d7bcfb9df24776d67900b9d7fb}{display\+Utilizadores} () const
+\begin{DoxyCompactList}\small\item\em Mostra os utilizadores do sistema. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classTitulo}{Titulo} $\ast$ $>$ \hyperlink{classSistema_af870153af417f47e9ef1d53fdadffa3a}{get\+Titulos} () const
+\begin{DoxyCompactList}\small\item\em Devolve os titulos do sistema. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_abf82916720d1255bba6437abf0094ca6}{display\+Titulos} () const
+\begin{DoxyCompactList}\small\item\em Mostra os titulos do sistema. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_a4380aacc310d051a753138477d8e777f}{display\+Empresas} (std\+::string s) const
+\begin{DoxyCompactList}\small\item\em Mostra no ecra as empresas consoante o conteudo de s. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{classSistema_ac7b28e4e7856327b1553133c39a843d6}{get\+Plataformas} () const
+\begin{DoxyCompactList}\small\item\em Devolve as plataformas do sistema. \end{DoxyCompactList}\item 
+\hyperlink{classBanco}{Banco} \hyperlink{classSistema_abb768fdc8d4b8290ab4a267fc7a84a39}{get\+Banco} () const
+\begin{DoxyCompactList}\small\item\em Devolve o banco do sistema. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_a0d6da6cf391b19d37001dab66c861b93}{data\+Valida} (\hyperlink{classCartaoCredito}{Cartao\+Credito} \&D) const
+\begin{DoxyCompactList}\small\item\em Verifica se a data de um cartao de credito e valida. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_a265736b1b095448d7343b199a1ade7e5}{atualiza\+Asleep\+Users} ()
+\begin{DoxyCompactList}\small\item\em Atualiza os utilizadores adormecidos de todos os utilizadores. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_a59ff239e4793308c979cccf796a72f23}{remove\+Asleep\+Users} (std\+::string plataforma, \hyperlink{classUtilizador}{Utilizador} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Remove os utilizadores adormecidos dos titulos para uma dada plataforma. \end{DoxyCompactList}\item 
+void \hyperlink{classSistema_a6f73ddef363e2bc3e1c36dcb0d6d6152}{display\+Asleep\+Users} (std\+::string s)
+\begin{DoxyCompactList}\small\item\em Mostra no ecra os utilizadores adormecidos consoante o conteudo da string s. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe que gere as contas dos utilizadores 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSistema_a815b07845ef6b03247b239333fe75e28}\label{classSistema_a815b07845ef6b03247b239333fe75e28}} 
+\index{Sistema@{Sistema}!Sistema@{Sistema}}
+\index{Sistema@{Sistema}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{Sistema()}{Sistema()}}
+{\footnotesize\ttfamily Sistema\+::\+Sistema (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor da class \hyperlink{classSistema}{Sistema}. 
+
+
+\begin{DoxyCode}
+32 \{\};
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classSistema_a815b07845ef6b03247b239333fe75e28_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_aafc86e0f2c3d734fb4c0985f70c27a1a}\label{classSistema_aafc86e0f2c3d734fb4c0985f70c27a1a}} 
+\index{Sistema@{Sistema}!````~Sistema@{$\sim$\+Sistema}}
+\index{````~Sistema@{$\sim$\+Sistema}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{$\sim$\+Sistema()}{~Sistema()}}
+{\footnotesize\ttfamily Sistema\+::$\sim$\+Sistema (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destrutor da class \hyperlink{classSistema}{Sistema}. 
+
+
+\begin{DoxyCode}
+73                   \{
+74     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} titulo : titulos)
+75         \textcolor{keyword}{delete} titulo;
+76     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} utilizador : this->jogadores)\{
+77         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} t: utilizador->getBiblioteca().getTitulos())
+78             \textcolor{keyword}{delete}(t);
+79         \textcolor{keyword}{delete}(utilizador);
+80     \}
+81     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} empresa:this->empresas)
+82         \textcolor{keyword}{delete}(empresa);
+83 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classSistema_aafc86e0f2c3d734fb4c0985f70c27a1a_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSistema_a1136080a3cf835831bf94908d419ae42}\label{classSistema_a1136080a3cf835831bf94908d419ae42}} 
+\index{Sistema@{Sistema}!add\+Titulo@{add\+Titulo}}
+\index{add\+Titulo@{add\+Titulo}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{add\+Titulo()}{addTitulo()}}
+{\footnotesize\ttfamily void Sistema\+::add\+Titulo (\begin{DoxyParamCaption}\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{titulo,  }\item[{std\+::string}]{empresa }\end{DoxyParamCaption})}
+
+
+
+Adiciona um novo titulo ao sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em titulo} & -\/ apontador para o titulo a ser adicionado \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+848                                                        \{
+849     std::string nome=titulo->\hyperlink{classTitulo_acb79279860b3404c6419697df5f860cb}{getNome}();
+850     std::string plataforma=titulo->\hyperlink{classTitulo_a2a57a31d40c5df012b3c6e2451c253dd}{getPlataforma}();
+851     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const}&i:titulos)\{
+852         \textcolor{keywordflow}{if}(i->getNome()==nome && i->getEmpresa()==empresa && i->getPlataforma()==plataforma)
+853             \textcolor{keywordflow}{throw} \hyperlink{classTituloJaAdicionado}{TituloJaAdicionado}(\textcolor{stringliteral}{"Titulo ja adicionado"});
+854     \}
+855     titulos.push\_back(titulo);
+856     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} e:this->empresas)\{
+857         \textcolor{keywordflow}{if}(e->getNomeEmpresa()==empresa)
+858             e->criarTitulo(titulo);
+859     \}
+860 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{classSistema_a1136080a3cf835831bf94908d419ae42_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a1136080a3cf835831bf94908d419ae42_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_aa91f2955f6b47f4dc0523b86b94c6309}\label{classSistema_aa91f2955f6b47f4dc0523b86b94c6309}} 
+\index{Sistema@{Sistema}!adiciona\+Atualizacao@{adiciona\+Atualizacao}}
+\index{adiciona\+Atualizacao@{adiciona\+Atualizacao}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{adiciona\+Atualizacao()}{adicionaAtualizacao()}}
+{\footnotesize\ttfamily void Sistema\+::adiciona\+Atualizacao (\begin{DoxyParamCaption}\item[{std\+::string}]{nome,  }\item[{std\+::string}]{plataforma,  }\item[{\hyperlink{classData}{Data}}]{data }\end{DoxyParamCaption})}
+
+
+
+Adiciona uma atualizacao a um titulo do sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & -\/ nome do titulo que vai ter uma atualizacao \\
+\hline
+{\em plataforma} & -\/ plataforma do titulo \\
+\hline
+{\em data} & -\/ data da atualizacao \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+870                                                                                     \{
+871 
+872     \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} utilizador: jogadores)\{
+873         std::vector<Titulo*> titulos=utilizador->getBiblioteca().getTitulos();
+874         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} titulo: titulos)\{
+875             \textcolor{keywordflow}{if}(titulo->getNome()==nome && titulo->getPlataforma()==plataforma)\{
+876                 \hyperlink{classHome}{Home}* h=\textcolor{keyword}{dynamic\_cast<}\hyperlink{classHome}{Home}*\textcolor{keyword}{>}(titulo);
+877                 h->\hyperlink{classHome_a94aec68b520d98ac38c6794b5771cd53}{adicionaAtualizacao}(data);
+878             \}
+879         \}
+880     \}
+881 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_aa91f2955f6b47f4dc0523b86b94c6309_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_aa91f2955f6b47f4dc0523b86b94c6309_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a41eddc54d36ac140608dd259c085ba88}\label{classSistema_a41eddc54d36ac140608dd259c085ba88}} 
+\index{Sistema@{Sistema}!adiciona\+Empresa@{adiciona\+Empresa}}
+\index{adiciona\+Empresa@{adiciona\+Empresa}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{adiciona\+Empresa()}{adicionaEmpresa()}}
+{\footnotesize\ttfamily void Sistema\+::adiciona\+Empresa (\begin{DoxyParamCaption}\item[{\hyperlink{classEmpresa}{Empresa} $\ast$}]{empresa }\end{DoxyParamCaption})}
+
+
+
+Adiciona uma nova empresa ao sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em empresa} & -\/ apontador para a empresa a ser adicionada \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+862                                              \{
+863     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} e: this->empresas)\{
+864         \textcolor{keywordflow}{if}(e->getNomeEmpresa()==empresa->\hyperlink{classEmpresa_a99bc2de98a0c0348abb74c93e6e7159e}{getNomeEmpresa}() && e->getNif()==empresa->
+      \hyperlink{classEmpresa_a6ab12452496ccaea5493bd2c67824f09}{getNif}())
+865             \textcolor{keywordflow}{throw} \hyperlink{classEmpresaJaAdicionada}{EmpresaJaAdicionada}(\textcolor{stringliteral}{"Empresa ja adicionada"});
+866     \}
+867     this->empresas.insert(empresa);
+868 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a41eddc54d36ac140608dd259c085ba88_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a41eddc54d36ac140608dd259c085ba88_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a51beac85364444837cd4cdff0080bad5}\label{classSistema_a51beac85364444837cd4cdff0080bad5}} 
+\index{Sistema@{Sistema}!adiciona\+Utilizador@{adiciona\+Utilizador}}
+\index{adiciona\+Utilizador@{adiciona\+Utilizador}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{adiciona\+Utilizador()}{adicionaUtilizador()}}
+{\footnotesize\ttfamily void Sistema\+::adiciona\+Utilizador (\begin{DoxyParamCaption}\item[{\hyperlink{classUtilizador}{Utilizador} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Adiciona um novo utilizador ao sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & -\/ apontador para o utilizador a ser adicionado \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+833                                               \{
+834     this->jogadores.push\_back(u);
+835 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a51beac85364444837cd4cdff0080bad5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a265736b1b095448d7343b199a1ade7e5}\label{classSistema_a265736b1b095448d7343b199a1ade7e5}} 
+\index{Sistema@{Sistema}!atualiza\+Asleep\+Users@{atualiza\+Asleep\+Users}}
+\index{atualiza\+Asleep\+Users@{atualiza\+Asleep\+Users}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{atualiza\+Asleep\+Users()}{atualizaAsleepUsers()}}
+{\footnotesize\ttfamily void Sistema\+::atualiza\+Asleep\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Atualiza os utilizadores adormecidos de todos os utilizadores. 
+
+
+\begin{DoxyCode}
+1223                                  \{
+1224     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} titulo : this->titulos)\{
+1225         titulo->clearAsleepUsers();
+1226         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} utilizador:this->jogadores)
+1227             titulo->adicionaUserHashTable(utilizador);
+1228     \}
+1229 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a265736b1b095448d7343b199a1ade7e5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_ab5d9cff098cf2551f1c31d2ba720fb3c}\label{classSistema_ab5d9cff098cf2551f1c31d2ba720fb3c}} 
+\index{Sistema@{Sistema}!custo\+Medio\+Biblioteca@{custo\+Medio\+Biblioteca}}
+\index{custo\+Medio\+Biblioteca@{custo\+Medio\+Biblioteca}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{custo\+Medio\+Biblioteca()}{custoMedioBiblioteca()}}
+{\footnotesize\ttfamily float Sistema\+::custo\+Medio\+Biblioteca (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Custo meido de uma biblioteca. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o custe medio das bibliotecas dos utilizadores do sistema 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+737                                          \{
+738 
+739     \textcolor{keywordtype}{float} custoTotal = 0;
+740 
+741     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} & utilizador : this->jogadores) \{
+742         custoTotal += utilizador->getGastos();
+743     \}
+744 
+745     custoTotal /= this->jogadores.size(); \textcolor{comment}{/*cada utilizador tem uma biblioteca*/}
+746     \textcolor{keywordflow}{return} custoTotal;
+747 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_ab5d9cff098cf2551f1c31d2ba720fb3c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a0d6da6cf391b19d37001dab66c861b93}\label{classSistema_a0d6da6cf391b19d37001dab66c861b93}} 
+\index{Sistema@{Sistema}!data\+Valida@{data\+Valida}}
+\index{data\+Valida@{data\+Valida}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{data\+Valida()}{dataValida()}}
+{\footnotesize\ttfamily void Sistema\+::data\+Valida (\begin{DoxyParamCaption}\item[{\hyperlink{classCartaoCredito}{Cartao\+Credito} \&}]{D }\end{DoxyParamCaption}) const}
+
+
+
+Verifica se a data de um cartao de credito e valida. 
+
+
+\begin{DoxyCode}
+1141                                                \{
+1142     \textcolor{keywordflow}{if} (!this->banco.\hyperlink{classBanco_ac469cc9db5980081701bf9eb27a7e612}{isDataValida}(D))
+1143     \{
+1144         std::cout << \textcolor{stringliteral}{"O cartao de "}+D.\hyperlink{classCartaoCredito_ab59d60e4d155e7f29aef888ea3139ee5}{getId}()+ \textcolor{stringliteral}{" tem a data invalida"}<<std::endl;
+1145         std::cout << \textcolor{stringliteral}{"A atualizar automaticamente a validade do cartao, extendendo para 3 anos"}<<std::endl;
+1146         D.\hyperlink{classCartaoCredito_a52daaab859e37d416c00044ef0fb2f27}{atualizaDataDeValidade}();
+1147         \}
+1148 
+1149 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a0d6da6cf391b19d37001dab66c861b93_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a0d6da6cf391b19d37001dab66c861b93_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a6f73ddef363e2bc3e1c36dcb0d6d6152}\label{classSistema_a6f73ddef363e2bc3e1c36dcb0d6d6152}} 
+\index{Sistema@{Sistema}!display\+Asleep\+Users@{display\+Asleep\+Users}}
+\index{display\+Asleep\+Users@{display\+Asleep\+Users}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{display\+Asleep\+Users()}{displayAsleepUsers()}}
+{\footnotesize\ttfamily void Sistema\+::display\+Asleep\+Users (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+
+
+Mostra no ecra os utilizadores adormecidos consoante o conteudo da string s. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & -\/ string que define quais utilizadores adormecidos mostrar \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+1239                                            \{
+1240     \textcolor{keywordtype}{bool} exists = \textcolor{keyword}{false};
+1241     \textcolor{keywordflow}{if}(s==\textcolor{stringliteral}{"plataforma"})\{
+1242         std::cout<< \textcolor{stringliteral}{"Insira a plataforma"} << std::endl;
+1243         getline(std::cin,s);
+1244         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} it : this->titulos)\{
+1245             \textcolor{keywordflow}{if}(it->getPlataforma() == s && it->getSleepUsers().size() != 0) \{
+1246                 exists = \textcolor{keyword}{true};
+1247                 it->printAsleepUsers();
+1248             \}
+1249         \}
+1250     \}
+1251     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(s == \textcolor{stringliteral}{"titulo"})\{
+1252         std::string nome,plataforma;
+1253         std::cout<< \textcolor{stringliteral}{"Insira o nome"} << std::endl;
+1254         getline(std::cin,nome);
+1255         std::cout<< \textcolor{stringliteral}{"Insira a plataforma"} << std::endl;
+1256         getline(std::cin,plataforma);
+1257         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} titulo : this->titulos)\{
+1258             \textcolor{keywordflow}{if}(titulo->getNome()==nome && titulo->getPlataforma()==plataforma && titulo->getSleepUsers().
+      size() != 0) \{
+1259                 exists = \textcolor{keyword}{true};
+1260                 titulo->printAsleepUsers();
+1261             \}
+1262         \}
+1263     \}
+1264 
+1265     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(s == \textcolor{stringliteral}{"genero"})\{
+1266         std::cout<< \textcolor{stringliteral}{"Insira o genero"} << std::endl;
+1267         getline(std::cin,s);
+1268         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} titulo : this->titulos)\{
+1269             \textcolor{keyword}{auto} generos = titulo->getGeneros();
+1270             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} genero : generos)\{
+1271                 \textcolor{keywordflow}{if}(genero == s && titulo->getSleepUsers().size() != 0)\{
+1272                     exists = \textcolor{keyword}{true};
+1273                     titulo->printAsleepUsers();
+1274                     \textcolor{keywordflow}{break};
+1275                 \}
+1276             \}
+1277         \}
+1278     \}
+1279     \textcolor{keywordflow}{else} \{
+1280         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} titulo : this->titulos)\{
+1281             titulo->printAsleepUsers();
+1282         \}
+1283         exists = \textcolor{keyword}{true};
+1284     \}
+1285 
+1286     \textcolor{keywordflow}{if} (!exists)
+1287         std::cout << \textcolor{stringliteral}{"Nao existem jogadores adormecidos, segundo o criterio introduzido"} << std::endl;
+1288 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a6f73ddef363e2bc3e1c36dcb0d6d6152_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a4380aacc310d051a753138477d8e777f}\label{classSistema_a4380aacc310d051a753138477d8e777f}} 
+\index{Sistema@{Sistema}!display\+Empresas@{display\+Empresas}}
+\index{display\+Empresas@{display\+Empresas}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{display\+Empresas()}{displayEmpresas()}}
+{\footnotesize\ttfamily void Sistema\+::display\+Empresas (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Mostra no ecra as empresas consoante o conteudo de s. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & -\/ string que define o que sera mostrado no ecra \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+1151                                               \{
+1152     \textcolor{keywordtype}{bool} exists = \textcolor{keyword}{false};
+1153     \textcolor{keywordflow}{if}(s==\textcolor{stringliteral}{"plataforma"})\{
+1154         std::cout<< \textcolor{stringliteral}{"Insira a plataforma"} << std::endl;
+1155         getline(std::cin,s);
+1156         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} it : this->empresas)\{
+1157             std::vector <Titulo*> t = it->getTitulos();
+1158             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} titulo : t)\{
+1159                 \textcolor{keywordflow}{if}(titulo->getPlataforma() == s) \{
+1160                     exists = \textcolor{keyword}{true};
+1161                     std::cout << \textcolor{stringliteral}{"Empresa: "} << it->getNomeEmpresa() << \textcolor{stringliteral}{"; NIF: "}<<it->getNif()  << \textcolor{stringliteral}{";
+       N.º de jogos: "} << it->getNumeroTitulos() <<std::endl;
+1162                     \textcolor{keywordflow}{break};
+1163                 \}
+1164             \}
+1165         \}
+1166     \}
+1167 
+1168     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(s==\textcolor{stringliteral}{"numero"})\{
+1169         std::cout<<\textcolor{stringliteral}{"Insira o numero de titulos"}<<std::endl;
+1170         \textcolor{keywordtype}{int} opt;
+1171         std::cin >> opt;
+1172 
+1173         \textcolor{comment}{// Check if not a number was entered}
+1174         \textcolor{keywordflow}{if} (std::cin.fail()) \{
+1175             \textcolor{comment}{// Clear the cin error flags and the stream content, throw the error}
+1176             std::cin.clear();
+1177             std::cin.ignore(1000, \textcolor{charliteral}{'\(\backslash\)n'});
+1178             \textcolor{keywordflow}{throw}(\hyperlink{classInputInvalido}{InputInvalido}(\textcolor{stringliteral}{"Input Invalido!"}));
+1179         \}
+1180 
+1181         \textcolor{comment}{// Clear the cin stream even if no error occured, to ensure the stream always stays clean}
+1182         std::cin.ignore(1000, \textcolor{charliteral}{'\(\backslash\)n'});
+1183         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} it : this->empresas)\{
+1184             \textcolor{keywordflow}{if}(it->getNumeroTitulos() == (unsigned)opt) \{
+1185                 exists = \textcolor{keyword}{true};
+1186                 std::cout << \textcolor{stringliteral}{"Empresa: "} << it->getNomeEmpresa() << \textcolor{stringliteral}{"; NIF: "}<<it->getNif()  << \textcolor{stringliteral}{"; N.º de
+       jogos: "} << it->getNumeroTitulos() <<std::endl;
+1187             \}
+1188         \}
+1189     \}
+1190 
+1191     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(s==\textcolor{stringliteral}{"genero"})\{
+1192         \textcolor{keywordtype}{bool} leave=\textcolor{keyword}{false};
+1193         std::cout<< \textcolor{stringliteral}{"Insira o genero"} << std::endl;
+1194         getline(std::cin,s);
+1195         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} it : this->empresas)\{
+1196             std::vector <Titulo*> t = it->getTitulos();
+1197             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} titulo : t)\{
+1198                 \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} genero : titulo->getGeneros())
+1199                     \textcolor{keywordflow}{if}(genero == s)\{
+1200                         exists = \textcolor{keyword}{true};
+1201                         std::cout << \textcolor{stringliteral}{"Empresa: "} << it->getNomeEmpresa() << \textcolor{stringliteral}{"; NIF: "}<<it->getNif()  << \textcolor{stringliteral}{";
+       N.º de jogos: "} << it->getNumeroTitulos() <<std::endl;
+1202                         leave=\textcolor{keyword}{true};
+1203                         \textcolor{keywordflow}{break};
+1204                     \}
+1205                 \textcolor{keywordflow}{if}(leave)\{
+1206                     leave=\textcolor{keyword}{false};
+1207                     \textcolor{keywordflow}{break};
+1208                 \}
+1209             \}
+1210         \}
+1211     \}
+1212     \textcolor{keywordflow}{else} \{
+1213         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} it : this->empresas)\{
+1214             std::cout << \textcolor{stringliteral}{"Empresa: "} << it->getNomeEmpresa() << \textcolor{stringliteral}{"; NIF: "}<<it->getNif()  << \textcolor{stringliteral}{"; N.º de jogos:
+       "} << it->getNumeroTitulos() <<std::endl;
+1215         \}
+1216         exists = \textcolor{keyword}{true};
+1217     \}
+1218 
+1219     \textcolor{keywordflow}{if} (!exists)
+1220         std::cout << \textcolor{stringliteral}{"Nao existem empresas segundo o criterio introduzido"} << std::endl;
+1221 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a4380aacc310d051a753138477d8e777f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_abf82916720d1255bba6437abf0094ca6}\label{classSistema_abf82916720d1255bba6437abf0094ca6}} 
+\index{Sistema@{Sistema}!display\+Titulos@{display\+Titulos}}
+\index{display\+Titulos@{display\+Titulos}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{display\+Titulos()}{displayTitulos()}}
+{\footnotesize\ttfamily void Sistema\+::display\+Titulos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Mostra os titulos do sistema. 
+
+
+\begin{DoxyCode}
+1127                                   \{
+1128     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} & titulo : this->titulos)
+1129         std::cout << titulo->getNome() << \textcolor{stringliteral}{", "} << titulo->getEmpresa() << \textcolor{stringliteral}{", "} << titulo->getPlataforma() <
+      < \textcolor{stringliteral}{", "} << titulo->getPreco() << \textcolor{stringliteral}{" euros, (desconto: "} << titulo->getDesconto() << \textcolor{stringliteral}{"% ), "} << titulo->
+      getDataLancamento().getAno() << \textcolor{stringliteral}{", idade minima: "} << titulo->getIdadeMinima() << std::endl;
+1130     std::cout << std::endl<<std::endl;
+1131 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_abf82916720d1255bba6437abf0094ca6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_ac22188d7bcfb9df24776d67900b9d7fb}\label{classSistema_ac22188d7bcfb9df24776d67900b9d7fb}} 
+\index{Sistema@{Sistema}!display\+Utilizadores@{display\+Utilizadores}}
+\index{display\+Utilizadores@{display\+Utilizadores}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{display\+Utilizadores()}{displayUtilizadores()}}
+{\footnotesize\ttfamily void Sistema\+::display\+Utilizadores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Mostra os utilizadores do sistema. 
+
+
+\begin{DoxyCode}
+1117                                        \{
+1118     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} & utilizador : this->jogadores)
+1119         std::cout << utilizador->getNome() << \textcolor{stringliteral}{", "} << utilizador->getIdade() << \textcolor{stringliteral}{", numero de jogo: "} << 
+      utilizador->getBiblioteca().getTitulos().size() << std::endl;
+1120     std::cout<<std::endl<<std::endl;
+1121 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_ac22188d7bcfb9df24776d67900b9d7fb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_abb768fdc8d4b8290ab4a267fc7a84a39}\label{classSistema_abb768fdc8d4b8290ab4a267fc7a84a39}} 
+\index{Sistema@{Sistema}!get\+Banco@{get\+Banco}}
+\index{get\+Banco@{get\+Banco}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{get\+Banco()}{getBanco()}}
+{\footnotesize\ttfamily \hyperlink{classBanco}{Banco} Sistema\+::get\+Banco (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devolve o banco do sistema. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o \hyperlink{classBanco}{Banco} do sstema 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+1137                              \{
+1138     \textcolor{keywordflow}{return} this->banco;
+1139 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_abb768fdc8d4b8290ab4a267fc7a84a39_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_acb9f4d8c3ee7d1a24f8784c379f660df}\label{classSistema_acb9f4d8c3ee7d1a24f8784c379f660df}} 
+\index{Sistema@{Sistema}!get\+Jogadores@{get\+Jogadores}}
+\index{get\+Jogadores@{get\+Jogadores}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{get\+Jogadores()}{getJogadores()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classUtilizador}{Utilizador} $\ast$ $>$ Sistema\+::get\+Jogadores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devolve os utilizadores do sistema. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um vetor de apontadores para os utilizadores do sistema 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+1113                                                   \{
+1114     \textcolor{keywordflow}{return} this->jogadores;
+1115 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classSistema_acb9f4d8c3ee7d1a24f8784c379f660df_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_ac7b28e4e7856327b1553133c39a843d6}\label{classSistema_ac7b28e4e7856327b1553133c39a843d6}} 
+\index{Sistema@{Sistema}!get\+Plataformas@{get\+Plataformas}}
+\index{get\+Plataformas@{get\+Plataformas}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{get\+Plataformas()}{getPlataformas()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Sistema\+::get\+Plataformas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devolve as plataformas do sistema. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um vetor de plataformas do sistema 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+1133                                                   \{
+1134     \textcolor{keywordflow}{return} this->plataformas;
+1135 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classSistema_ac7b28e4e7856327b1553133c39a843d6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_af870153af417f47e9ef1d53fdadffa3a}\label{classSistema_af870153af417f47e9ef1d53fdadffa3a}} 
+\index{Sistema@{Sistema}!get\+Titulos@{get\+Titulos}}
+\index{get\+Titulos@{get\+Titulos}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{get\+Titulos()}{getTitulos()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classTitulo}{Titulo} $\ast$ $>$ Sistema\+::get\+Titulos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devolve os titulos do sistema. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um vetor de apontadores para os titulos do sistema 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+1123                                              \{
+1124     \textcolor{keywordflow}{return} this->titulos;
+1125 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classSistema_af870153af417f47e9ef1d53fdadffa3a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_ac120f4aecf81933be110233f8dbf74c6}\label{classSistema_ac120f4aecf81933be110233f8dbf74c6}} 
+\index{Sistema@{Sistema}!is\+Valid\+Email@{is\+Valid\+Email}}
+\index{is\+Valid\+Email@{is\+Valid\+Email}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{is\+Valid\+Email()}{isValidEmail()}}
+{\footnotesize\ttfamily void Sistema\+::is\+Valid\+Email (\begin{DoxyParamCaption}\item[{std\+::string \&}]{email,  }\item[{bool}]{checkafter = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+
+
+Verifica se o email e valido sintaticamente e verifica a sua existencia, se necessario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & -\/ email a verificar \\
+\hline
+{\em checkafter} & -\/ parametro que especifica a necessidade de verificar a existencia do email \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+760                                                                  \{
+761     \textcolor{keyword}{const} \textcolor{keywordtype}{int} x = 60; \textcolor{comment}{//random size enough to hold contents of array plus one for null terminator}
+762     \textcolor{keywordtype}{char} input[x]; \textcolor{comment}{//array to hold input}
+763     \textcolor{keywordtype}{int} sizeOf; \textcolor{comment}{//holds length of input array}
+764     \textcolor{keywordtype}{char}* ptr = \textcolor{keyword}{nullptr}; \textcolor{comment}{//pointer}
+765     \textcolor{keywordtype}{char}* ptr2 = \textcolor{keyword}{nullptr}; \textcolor{comment}{//pointer}
+766 
+767     std::cout << \textcolor{stringliteral}{"Escreve o teu endereco de email \(\backslash\)n"};
+768     std::cin.getline(input, x);
+769     email = input;
+770     sizeOf = strlen(input);
+771 
+772     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < sizeOf; i++) \{
+773         ptr = strstr(input, \textcolor{stringliteral}{"@"}); \textcolor{comment}{//searches input array for "@" string}
+774         \textcolor{keywordflow}{if} (ptr != \textcolor{keyword}{nullptr}) \{
+775             \textcolor{keywordflow}{break};
+776         \}
+777     \}
+778 
+779     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < sizeOf; i++) \{
+780         ptr2 = strstr(input, \textcolor{stringliteral}{"."}); \textcolor{comment}{//searches input array for "." string}
+781         \textcolor{keywordflow}{if} (ptr2 != \textcolor{keyword}{nullptr} && &ptr2 > &ptr) \{
+782             \textcolor{keywordflow}{break};
+783         \}
+784     \}
+785 
+786     \textcolor{keywordflow}{if} (ptr != \textcolor{keyword}{nullptr}) \textcolor{comment}{//validates input of "@" sign}
+787             \{
+788         \textcolor{keywordflow}{if} (ptr2 != 0 && &ptr2 < &ptr) \{
+789             \textcolor{keywordflow}{if}(!checkafter) \{
+790             \textcolor{keywordflow}{if} (\hyperlink{classSistema_a0421323f2c7a5e372b54a40998ed8e69}{validEmail}(email)) \{
+791                 \textcolor{keywordflow}{return};
+792             \} \textcolor{keywordflow}{else} \{
+793                 \textcolor{keywordflow}{throw}(\hyperlink{classErroEmail}{ErroEmail}(\textcolor{stringliteral}{"Email ja existente.\(\backslash\)n"}));
+794             \}
+795 
+796             \}
+797 
+798         \}
+799 
+800         \textcolor{keywordflow}{else} \{
+801             \textcolor{keywordflow}{throw}(\hyperlink{classErroEmail}{ErroEmail}(\textcolor{stringliteral}{"Falta o . depois de @\(\backslash\)n"}));
+802 
+803         \}
+804     \}
+805 
+806     \textcolor{keywordflow}{else} \{
+807         \textcolor{keywordflow}{throw}(\hyperlink{classErroEmail}{ErroEmail}(\textcolor{stringliteral}{"Falta o simbolo @.\(\backslash\)n"}));
+808     \}
+809 
+810 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classSistema_ac120f4aecf81933be110233f8dbf74c6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_ac120f4aecf81933be110233f8dbf74c6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a588450a81753c22b0454580fde17a7a7}\label{classSistema_a588450a81753c22b0454580fde17a7a7}} 
+\index{Sistema@{Sistema}!nr\+Medio\+Titulos@{nr\+Medio\+Titulos}}
+\index{nr\+Medio\+Titulos@{nr\+Medio\+Titulos}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{nr\+Medio\+Titulos()}{nrMedioTitulos()}}
+{\footnotesize\ttfamily unsigned int Sistema\+::nr\+Medio\+Titulos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Numero medio de titulos nas bibliotecas dos utilizadores do sistema. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o numero medio de titulos 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+722                                           \{
+723 
+724     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nrTotalTitulos = 0;
+725 
+726     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} & utilizador : this->jogadores) \{
+727         nrTotalTitulos += utilizador->getBiblioteca().getTitulos().size();
+728     \}
+729 
+730     \textcolor{keywordtype}{double} media = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(nrTotalTitulos) / this->jogadores.size();
+731 
+732     nrTotalTitulos = media + 0.5;
+733 
+734     \textcolor{keywordflow}{return} nrTotalTitulos;
+735 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a588450a81753c22b0454580fde17a7a7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a6dcecc2ca65f6fdedd042c7431d5ea19}\label{classSistema_a6dcecc2ca65f6fdedd042c7431d5ea19}} 
+\index{Sistema@{Sistema}!ordena\+Titulos@{ordena\+Titulos}}
+\index{ordena\+Titulos@{ordena\+Titulos}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{ordena\+Titulos()}{ordenaTitulos()}}
+{\footnotesize\ttfamily void Sistema\+::ordena\+Titulos (\begin{DoxyParamCaption}\item[{std\+::string}]{tipo,  }\item[{bool}]{ascend }\end{DoxyParamCaption})}
+
+
+
+Mostra os titulos de forma ordenada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tipo} & -\/ especifica o modo como queremos ordenar os titulos \\
+\hline
+{\em ascend} & -\/ especifica se a ordem deve ser crescente ou decrescente \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+909                                                       \{
+910     \textcolor{keywordflow}{if} (tipo == \textcolor{stringliteral}{"id"}) \{
+911             \textcolor{keywordflow}{if} (ascend)
+912                 std::sort(titulos.begin(), titulos.end(), \hyperlink{Sistema_8cpp_a9ebb751fccefae6ee1c4636c901cf0bc}{gameIdAscend});
+913             \textcolor{keywordflow}{else}
+914                 std::sort(titulos.begin(), titulos.end(), \hyperlink{Sistema_8cpp_a5de4e871b807cfbcd024a00f60d18ba1}{gameIdDescend});
+915         \}
+916 
+917     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tipo == \textcolor{stringliteral}{"data"}) \{
+918         \textcolor{keywordflow}{if} (ascend)
+919             std::sort(titulos.begin(), titulos.end(), \hyperlink{Sistema_8cpp_a4b576dc41b8edeb29c8f84c948c47665}{gameReleaseAscend});
+920         \textcolor{keywordflow}{else}
+921             std::sort(titulos.begin(), titulos.end(), \hyperlink{Sistema_8cpp_af8a401eaa3da373780504f34a1216550}{gameReleaseDescend});
+922     \}
+923 
+924     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tipo == \textcolor{stringliteral}{"idade"}) \{
+925         \textcolor{keywordflow}{if} (ascend)
+926             std::sort(titulos.begin(), titulos.end(), \hyperlink{Sistema_8cpp_a85fca79d7efc04e9982238e38e199154}{gameAgeAscend});
+927         \textcolor{keywordflow}{else}
+928             std::sort(titulos.begin(), titulos.end(), \hyperlink{Sistema_8cpp_a4d0cdff5caed7ad707a1f6926e301a51}{gameAgeDescend});
+929     \}
+930     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tipo == \textcolor{stringliteral}{"empresa"}) \{
+931         \textcolor{keywordflow}{if} (ascend)
+932             std::sort(titulos.begin(), titulos.end(),
+933                     \hyperlink{Sistema_8cpp_ac71c10d662fb0c03358b94519364a76e}{gameDeveloperAscend});
+934         \textcolor{keywordflow}{else}
+935             std::sort(titulos.begin(), titulos.end(),
+936                     \hyperlink{Sistema_8cpp_a7ce8e20323381359eed30807d3dadabd}{gameDeveloperDescend});
+937     \}
+938 
+939     \hyperlink{classSistema_abf82916720d1255bba6437abf0094ca6}{displayTitulos}();
+940 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a6dcecc2ca65f6fdedd042c7431d5ea19_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a6dcecc2ca65f6fdedd042c7431d5ea19_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_aade841c0c281c63fe922834e228049cd}\label{classSistema_aade841c0c281c63fe922834e228049cd}} 
+\index{Sistema@{Sistema}!ordena\+Titulos\+Utilizador@{ordena\+Titulos\+Utilizador}}
+\index{ordena\+Titulos\+Utilizador@{ordena\+Titulos\+Utilizador}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{ordena\+Titulos\+Utilizador()}{ordenaTitulosUtilizador()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classTitulo}{Titulo} $\ast$ $>$ Sistema\+::ordena\+Titulos\+Utilizador (\begin{DoxyParamCaption}\item[{const \hyperlink{classUtilizador}{Utilizador} $\ast$}]{u,  }\item[{std\+::string}]{criterio,  }\item[{bool}]{ascend }\end{DoxyParamCaption}) const}
+
+
+
+Ordena os titulos de um utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & -\/ apontador para o utilizador cujos titulos vao ser ordenados \\
+\hline
+{\em ascend} & -\/ especifica se a ordem deve ser crescente ou decrescente \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+969                                                                                                            
+       \{
+970     std::vector<Titulo*> titulos = u->\hyperlink{classUtilizador_a6a128859b776bf019b5652ce61f62280}{getBiblioteca}().\hyperlink{classBiblioteca_a03c1ebf76a4ace4f57000bb99a87bb88}{getTitulos}();
+971 
+972     \textcolor{keywordflow}{if} (criterio == \textcolor{stringliteral}{"id"})
+973     \{
+974         \textcolor{keywordflow}{if} (ascend)
+975             sort(titulos.begin(), titulos.end(), \hyperlink{Sistema_8cpp_a9ebb751fccefae6ee1c4636c901cf0bc}{gameIdAscend});
+976         \textcolor{keywordflow}{else}
+977             sort(titulos.begin(), titulos.end(), \hyperlink{Sistema_8cpp_a5de4e871b807cfbcd024a00f60d18ba1}{gameIdDescend});
+978     \}
+979     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (criterio == \textcolor{stringliteral}{"data"})
+980     \{
+981         \textcolor{keywordflow}{if} (ascend)
+982             sort(titulos.begin(), titulos.end(), \hyperlink{Sistema_8cpp_a4b576dc41b8edeb29c8f84c948c47665}{gameReleaseAscend});
+983         \textcolor{keywordflow}{else}
+984             sort(titulos.begin(), titulos.end(), \hyperlink{Sistema_8cpp_af8a401eaa3da373780504f34a1216550}{gameReleaseDescend});
+985     \}
+986     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (criterio == \textcolor{stringliteral}{"idade"})
+987     \{
+988         \textcolor{keywordflow}{if} (ascend)
+989             sort(titulos.begin(), titulos.end(), \hyperlink{Sistema_8cpp_a85fca79d7efc04e9982238e38e199154}{gameAgeAscend});
+990         \textcolor{keywordflow}{else}
+991             sort(titulos.begin(), titulos.end(), \hyperlink{Sistema_8cpp_a4d0cdff5caed7ad707a1f6926e301a51}{gameAgeDescend});
+992     \}
+993     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (criterio == \textcolor{stringliteral}{"empresa"})
+994     \{
+995         \textcolor{keywordflow}{if} (ascend)
+996             sort(titulos.begin(), titulos.end(), \hyperlink{Sistema_8cpp_ac71c10d662fb0c03358b94519364a76e}{gameDeveloperAscend});
+997         \textcolor{keywordflow}{else}
+998             sort(titulos.begin(), titulos.end(), \hyperlink{Sistema_8cpp_a7ce8e20323381359eed30807d3dadabd}{gameDeveloperDescend});
+999     \}
+1000 
+1001     \textcolor{keywordflow}{return} titulos;
+1002 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_aade841c0c281c63fe922834e228049cd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_aade841c0c281c63fe922834e228049cd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_ac3b36e6798c903dd0efd102d7a5dd081}\label{classSistema_ac3b36e6798c903dd0efd102d7a5dd081}} 
+\index{Sistema@{Sistema}!ordena\+Utilizadores@{ordena\+Utilizadores}}
+\index{ordena\+Utilizadores@{ordena\+Utilizadores}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{ordena\+Utilizadores()}{ordenaUtilizadores()}}
+{\footnotesize\ttfamily void Sistema\+::ordena\+Utilizadores (\begin{DoxyParamCaption}\item[{std\+::string}]{tipo,  }\item[{bool}]{ascend }\end{DoxyParamCaption})}
+
+
+
+Mostra os utilizadores de forma ordenada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tipo} & -\/ especifica o modo como queremos ordenar os utilizadores \\
+\hline
+{\em ascend} & -\/ especifica se a ordem deve ser crescente ou decrescente \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+883                                                             \{
+884     \textcolor{keywordflow}{if} (tipo == \textcolor{stringliteral}{"idade"}) \{
+885         \textcolor{keywordflow}{if} (ascend)
+886             std::sort(jogadores.begin(), jogadores.end(), \hyperlink{Sistema_8cpp_ad518f0e0db218f2c049ef1d700caae5f}{userAgeAscend});
+887         \textcolor{keywordflow}{else}
+888             std::sort(jogadores.begin(), jogadores.end(), \hyperlink{Sistema_8cpp_a02190b2d4dada73645956850b936ad16}{userAgeDescend});
+889     \}
+890 
+891     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tipo == \textcolor{stringliteral}{"nome"}) \{
+892         \textcolor{keywordflow}{if} (ascend)
+893             std::sort(jogadores.begin(), jogadores.end(), \hyperlink{Sistema_8cpp_a2cac2b30d054ab23d49adc954779f67d}{userNameAscend});
+894         \textcolor{keywordflow}{else}
+895             std::sort(jogadores.begin(), jogadores.end(), \hyperlink{Sistema_8cpp_ac0995133035c1bd2be3a18c95a2eba92}{userNameDescend});
+896     \}
+897     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tipo == \textcolor{stringliteral}{"jogos"}) \{
+898         \textcolor{keywordflow}{if} (ascend)
+899             std::sort(jogadores.begin(), jogadores.end(),
+900                     \hyperlink{Sistema_8cpp_a55b7ab55cae2d4f6a03844e5cb19d2b8}{userNumberGamesAscend});
+901         \textcolor{keywordflow}{else}
+902             std::sort(jogadores.begin(), jogadores.end(),
+903                     \hyperlink{Sistema_8cpp_a81e28a299272eebc9771023c1f78ea48}{userNumberGamesDescend});
+904     \}
+905     \hyperlink{classSistema_ac22188d7bcfb9df24776d67900b9d7fb}{displayUtilizadores}();
+906 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_ac3b36e6798c903dd0efd102d7a5dd081_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_ac3b36e6798c903dd0efd102d7a5dd081_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a1f22677c42afd48be088f2eca428dede}\label{classSistema_a1f22677c42afd48be088f2eca428dede}} 
+\index{Sistema@{Sistema}!pesquisa\+Empresa@{pesquisa\+Empresa}}
+\index{pesquisa\+Empresa@{pesquisa\+Empresa}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{pesquisa\+Empresa()}{pesquisaEmpresa()}}
+{\footnotesize\ttfamily \hyperlink{classEmpresa}{Empresa} $\ast$ Sistema\+::pesquisa\+Empresa (\begin{DoxyParamCaption}\item[{std\+::string}]{nome,  }\item[{std\+::string}]{nif }\end{DoxyParamCaption}) const}
+
+
+
+Pesquisa uma empresa. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & -\/ nome da empresa a ser pesquisada \\
+\hline
+{\em nif} & -\/ nif da empresa a ser pesquisada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna um apontador para a empresa, quando esta se encontra no sistema 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+960                                                                    \{
+961     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} empresa: this->empresas)\{
+962         \textcolor{keywordflow}{if}(empresa->getNomeEmpresa()==nome && empresa->getNif()==nif)\{
+963             \textcolor{keywordflow}{return} empresa;
+964         \}
+965     \}
+966     \textcolor{keywordflow}{throw}(\hyperlink{classEmpresaInexistente}{EmpresaInexistente}(\textcolor{stringliteral}{"A empresa de nome "}+nome+\textcolor{stringliteral}{" com nif "}+nif+\textcolor{stringliteral}{" nao existe"}));
+967 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a1f22677c42afd48be088f2eca428dede_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a0fb81a4685bb24024295c89d22d6d719}\label{classSistema_a0fb81a4685bb24024295c89d22d6d719}} 
+\index{Sistema@{Sistema}!pesquisa\+Jogo@{pesquisa\+Jogo}}
+\index{pesquisa\+Jogo@{pesquisa\+Jogo}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{pesquisa\+Jogo()}{pesquisaJogo()}}
+{\footnotesize\ttfamily \hyperlink{classTitulo}{Titulo} $\ast$ Sistema\+::pesquisa\+Jogo (\begin{DoxyParamCaption}\item[{std\+::string}]{nome,  }\item[{std\+::string}]{plataforma }\end{DoxyParamCaption}) const}
+
+
+
+Pesquisa um titulo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & -\/ nome do titulo a ser pesquisado \\
+\hline
+{\em email} & -\/ email do titulo a ser pesquisado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna um apontador para o titulo, quando este se encontra no sistema 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+951                                                                       \{
+952     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} titulo : this->titulos) \{
+953         \textcolor{keywordflow}{if} (titulo->getNome() == nome && titulo->getPlataforma() == plataforma)\{
+954             \textcolor{keywordflow}{return} titulo;
+955         \}
+956     \}
+957     \textcolor{keywordflow}{throw}(\hyperlink{classTituloInexistente}{TituloInexistente}(\textcolor{stringliteral}{"O titulo de nome "} + nome + \textcolor{stringliteral}{" na plataforma "} + plataforma + \textcolor{stringliteral}{
+      " nao existe"}));
+958 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a0fb81a4685bb24024295c89d22d6d719_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a6f2d2d67cb8464771272e60511045032}\label{classSistema_a6f2d2d67cb8464771272e60511045032}} 
+\index{Sistema@{Sistema}!pesquisa\+Utilizador@{pesquisa\+Utilizador}}
+\index{pesquisa\+Utilizador@{pesquisa\+Utilizador}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{pesquisa\+Utilizador()}{pesquisaUtilizador()}}
+{\footnotesize\ttfamily \hyperlink{classUtilizador}{Utilizador} $\ast$ Sistema\+::pesquisa\+Utilizador (\begin{DoxyParamCaption}\item[{std\+::string}]{nome,  }\item[{std\+::string}]{email }\end{DoxyParamCaption})}
+
+
+
+Pesquisa um utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & -\/ nome do utilizador a ser pesquisado \\
+\hline
+{\em email} & -\/ email do utilizador a ser pesquisado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna um apontador para o utilizador, quando este se encontra no sistema 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+942                                                                        \{
+943     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t} i=0;i<jogadores.size();i++) \{
+944         \textcolor{keywordflow}{if} (jogadores[i]->getEmail()==email && jogadores[i]->getNome()==nome)\{
+945             \textcolor{keywordflow}{return} jogadores[i];
+946         \}
+947     \}
+948     \textcolor{keywordflow}{throw}(\hyperlink{classUtilizadorInexistente}{UtilizadorInexistente}(\textcolor{stringliteral}{"O utilizador de nome "}+ nome+ \textcolor{stringliteral}{" e email "}+email+\textcolor{stringliteral}{" nao
+       existe"}));
+949 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a6f2d2d67cb8464771272e60511045032_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_afc03af6008df8639b1d1878388f70886}\label{classSistema_afc03af6008df8639b1d1878388f70886}} 
+\index{Sistema@{Sistema}!ranking\+De\+Generos@{ranking\+De\+Generos}}
+\index{ranking\+De\+Generos@{ranking\+De\+Generos}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{ranking\+De\+Generos()}{rankingDeGeneros()}}
+{\footnotesize\ttfamily void Sistema\+::ranking\+De\+Generos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Mostra o ranking de popularidade de generos. 
+
+
+\begin{DoxyCode}
+1022                                     \{
+1023     std::vector<std::string> generos;
+1024 
+1025     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \textcolor{keyword}{const} & utilizador : this->jogadores) \{
+1026         std::vector<Titulo*> titulos = utilizador->getBiblioteca().getTitulos();
+1027 
+1028         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \textcolor{keyword}{const} & titulo : titulos) \{
+1029             std::vector<std::string> generosVector = titulo->getGeneros();
+1030 
+1031             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \textcolor{keyword}{const} & genero : generosVector) \{
+1032                 generos.push\_back(genero);
+1033             \}
+1034         \}
+1035     \}
+1036 
+1037     \hyperlink{Sistema_8cpp_a9a4d5048551696a97f3dfff84b4d736d}{displayRank}(generos);
+1038 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{classSistema_afc03af6008df8639b1d1878388f70886_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_afc03af6008df8639b1d1878388f70886_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a922993ab8f9dd2e8eb853edf3172543b}\label{classSistema_a922993ab8f9dd2e8eb853edf3172543b}} 
+\index{Sistema@{Sistema}!ranking\+De\+Idades@{ranking\+De\+Idades}}
+\index{ranking\+De\+Idades@{ranking\+De\+Idades}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{ranking\+De\+Idades()}{rankingDeIdades()}}
+{\footnotesize\ttfamily void Sistema\+::ranking\+De\+Idades (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Mostra o ranking de popularidade de idades. 
+
+
+\begin{DoxyCode}
+1054                                    \{
+1055 
+1056     std::vector<std::string> faixasEtarias;
+1057 
+1058     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \textcolor{keyword}{const} & utilizador : this->jogadores) \{
+1059         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idade = utilizador->getIdade();
+1060 
+1061         \textcolor{keywordflow}{if} (idade <= 10)
+1062             faixasEtarias.push\_back(\textcolor{stringliteral}{"0-10"});
+1063         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (idade <= 20)
+1064             faixasEtarias.push\_back(\textcolor{stringliteral}{"11-20"});
+1065         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (idade <= 30)
+1066             faixasEtarias.push\_back(\textcolor{stringliteral}{"21-30"});
+1067         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (idade <= 40)
+1068             faixasEtarias.push\_back(\textcolor{stringliteral}{"31-40"});
+1069         \textcolor{keywordflow}{else}
+1070             faixasEtarias.push\_back(\textcolor{stringliteral}{"40+"});
+1071     \}
+1072 
+1073     \hyperlink{Sistema_8cpp_a9a4d5048551696a97f3dfff84b4d736d}{displayRank}(faixasEtarias);
+1074 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{classSistema_a922993ab8f9dd2e8eb853edf3172543b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a922993ab8f9dd2e8eb853edf3172543b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a6e4c08a6ee3c8f5721e46f64823fd6a3}\label{classSistema_a6e4c08a6ee3c8f5721e46f64823fd6a3}} 
+\index{Sistema@{Sistema}!ranking\+De\+Plataformas@{ranking\+De\+Plataformas}}
+\index{ranking\+De\+Plataformas@{ranking\+De\+Plataformas}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{ranking\+De\+Plataformas()}{rankingDePlataformas()}}
+{\footnotesize\ttfamily void Sistema\+::ranking\+De\+Plataformas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Mostra o ranking de popularidade de plataformas. 
+
+
+\begin{DoxyCode}
+1040                                         \{
+1041     std::vector<std::string> plataformas;
+1042 
+1043     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \textcolor{keyword}{const} & utilizador : this->jogadores) \{
+1044         std::vector<Titulo*> titulos = utilizador->getBiblioteca().getTitulos();
+1045 
+1046         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \textcolor{keyword}{const} & titulo : titulos) \{
+1047             plataformas.push\_back(titulo->getPlataforma());
+1048         \}
+1049     \}
+1050 
+1051     \hyperlink{Sistema_8cpp_a9a4d5048551696a97f3dfff84b4d736d}{displayRank}(plataformas);
+1052 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classSistema_a6e4c08a6ee3c8f5721e46f64823fd6a3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a6e4c08a6ee3c8f5721e46f64823fd6a3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a6fb78c2cafbf5b6703d126ef43ba43f0}\label{classSistema_a6fb78c2cafbf5b6703d126ef43ba43f0}} 
+\index{Sistema@{Sistema}!ranking\+De\+Rentabilidades@{ranking\+De\+Rentabilidades}}
+\index{ranking\+De\+Rentabilidades@{ranking\+De\+Rentabilidades}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{ranking\+De\+Rentabilidades()}{rankingDeRentabilidades()}}
+{\footnotesize\ttfamily void Sistema\+::ranking\+De\+Rentabilidades (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Mostra o ranking de titulos por rentabilidade. 
+
+
+\begin{DoxyCode}
+1087                                            \{
+1088 
+1089     std::vector<std::pair<std::string, float>> rentabilidade;
+1090     \textcolor{keywordtype}{int} pos;
+1091 
+1092     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \textcolor{keyword}{const} & utilizador : this->jogadores) \{
+1093         std::vector<Titulo*> titulos = utilizador->getBiblioteca().getTitulos();
+1094 
+1095         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \textcolor{keyword}{const} & titulo : titulos) \{
+1096             pos = \hyperlink{Sistema_8cpp_a466ff65ea754156e5bfa50747f1015b4}{findPair}(rentabilidade, titulo->getNome());
+1097             \textcolor{keywordflow}{if} (pos == -1) \{
+1098                 rentabilidade.push\_back(
+1099                         std::make\_pair(titulo->getNome(), titulo->getGastos()));
+1100             \} \textcolor{keywordflow}{else} \{
+1101                 rentabilidade[pos].second += titulo->getGastos();
+1102             \}
+1103         \}
+1104     \}
+1105 
+1106     sort(rentabilidade.begin(), rentabilidade.end(), \hyperlink{Sistema_8cpp_a3236be9bb24a1c78a5a87e45410380de}{cmpParJogoRentabilidade});
+1107 
+1108     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \textcolor{keyword}{const} & titulo : rentabilidade) \{
+1109         std::cout << titulo.first << \textcolor{stringliteral}{": "} << titulo.second << std::endl;
+1110     \}
+1111 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a6fb78c2cafbf5b6703d126ef43ba43f0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a6fb78c2cafbf5b6703d126ef43ba43f0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_aeffb6968ea519c472e90dfec1a2a072e}\label{classSistema_aeffb6968ea519c472e90dfec1a2a072e}} 
+\index{Sistema@{Sistema}!read\+Empresas@{read\+Empresas}}
+\index{read\+Empresas@{read\+Empresas}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{read\+Empresas()}{readEmpresas()}}
+{\footnotesize\ttfamily void Sistema\+::read\+Empresas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Invoca as funcoes necessarias para ler as empresas guardadas nos ficheiros. 
+
+
+\begin{DoxyCode}
+601                            \{
+602 
+603     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 1;
+604 
+605     \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{
+606         std::ifstream file;
+607         file.open(\textcolor{stringliteral}{"Empresa"} + std::to\_string(i) + \textcolor{stringliteral}{".txt"});
+608         \textcolor{keywordflow}{if} (!file.fail()) \{
+609             \hyperlink{classSistema_a00f929e5b2ca1dcc821edb14f9de5a24}{readFileEmpresas}(file);
+610             file.close();
+611             i++;
+612         \} \textcolor{keywordflow}{else}
+613             \textcolor{keywordflow}{break};
+614     \}
+615 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_aeffb6968ea519c472e90dfec1a2a072e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classSistema_aeffb6968ea519c472e90dfec1a2a072e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a00f929e5b2ca1dcc821edb14f9de5a24}\label{classSistema_a00f929e5b2ca1dcc821edb14f9de5a24}} 
+\index{Sistema@{Sistema}!read\+File\+Empresas@{read\+File\+Empresas}}
+\index{read\+File\+Empresas@{read\+File\+Empresas}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{read\+File\+Empresas()}{readFileEmpresas()}}
+{\footnotesize\ttfamily void Sistema\+::read\+File\+Empresas (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{file }\end{DoxyParamCaption})}
+
+
+
+Le as empresas de um ficheiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & -\/ ficheiro onde esta contida a informacao de todas as empresas \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+443                                               \{
+444     std::string nome, mail,numeroTelemovel,nif,titulo;
+445     std::stringstream tituloSs;
+446     std::string numeroAnunciosStr;
+447     std::string numeroCliquesStr;
+448     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} numeroAnuncios;
+449     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} numeroCliques;
+450 
+451     getline(f, nome);
+452     getline(f, mail);
+453     getline(f, numeroTelemovel);
+454     getline(f, nif);
+455 
+456     \hyperlink{classEmpresa}{Empresa} *e= \textcolor{keyword}{new} \hyperlink{classEmpresa}{Empresa}(nome,mail,numeroTelemovel,nif);
+457 
+458     \textcolor{keywordflow}{while} (!f.eof()) \{
+459         std::string tipoDeJogo;
+460         std::string nomeDoJogo;
+461         \textcolor{keywordtype}{float} idadeMinima;
+462         std::string plataforma;
+463         \textcolor{keywordtype}{float} preco;
+464         std::string genero = \textcolor{stringliteral}{"."};
+465         std::string empresa;
+466         std::string dataStr;
+467         std::vector<std::string> generos;
+468         std::vector<float> price\_history;
+469         std::string subscricao;
+470         std::string precoSubsStr;
+471 
+472         getline(f, titulo);
+473         \textcolor{keywordflow}{if} (titulo == \textcolor{stringliteral}{""})
+474             \textcolor{keywordflow}{break};
+475 
+476         tituloSs << titulo;
+477 
+478         tituloSs >> tipoDeJogo;
+479 
+480         \textcolor{keywordflow}{if} (tipoDeJogo == \textcolor{stringliteral}{"Online"}) \{
+481             \hyperlink{classOnline}{Online} *ptr;
+482             std::vector<Data> datasJogo;
+483             std::vector<unsigned int> minutosJogados;
+484             tituloSs >> nomeDoJogo >> idadeMinima >> plataforma >> empresa
+485                     >> dataStr >> subscricao >> precoSubsStr;
+486 
+487             \hyperlink{classData}{Data} d(dataStr);
+488 
+489             tituloSs.str(std::string());
+490             tituloSs.clear();
+491 
+492             getline(f, titulo);
+493             tituloSs << titulo;
+494             \textcolor{keywordflow}{while} (tituloSs >> preco) \{
+495                 price\_history.push\_back(preco);
+496             \}
+497 
+498             tituloSs.str(std::string());
+499             tituloSs.clear();
+500 
+501             getline(f, titulo);
+502             tituloSs << titulo;
+503 
+504             \textcolor{keywordflow}{while} (tituloSs >> genero) \{
+505                 generos.push\_back(genero);
+506             \}
+507 
+508             tituloSs.str(std::string());
+509             tituloSs.clear();
+510 
+511             getline(f, numeroAnunciosStr);
+512             numeroAnuncios = std::stoul(numeroAnunciosStr, \textcolor{keyword}{nullptr}, 0);
+513 
+514             getline(f, numeroCliquesStr);
+515             numeroCliques = std::stoul(numeroCliquesStr, \textcolor{keyword}{nullptr}, 0);
+516 
+517             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} precoSubs = std::stof(precoSubsStr);
+518             \textcolor{keywordflow}{if} (subscricao == \textcolor{stringliteral}{"fixa"})
+519                 ptr = \textcolor{keyword}{new} \hyperlink{classOnline}{Online}(nomeDoJogo, idadeMinima, plataforma, 0,
+520                         generos, empresa, d, numeroAnuncios, numeroCliques, \textcolor{keyword}{true}, precoSubs);
+521             \textcolor{keywordflow}{else}
+522                 ptr = \textcolor{keyword}{new} \hyperlink{classOnline}{Online}(nomeDoJogo, idadeMinima, plataforma, 0,
+523                         generos, empresa, d, numeroAnuncios, numeroCliques, \textcolor{keyword}{false}, precoSubs);
+524 
+525             \textcolor{keywordtype}{bool} fim = \textcolor{keyword}{false};
+526             std::string data;
+527             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} minutos;
+528             \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{
+529                 \textcolor{keywordflow}{if} (fim)
+530                     \textcolor{keywordflow}{break};
+531 
+532                 \textcolor{keywordflow}{else} \{
+533                     getline(f, titulo);
+534                     tituloSs << titulo;
+535                     \textcolor{keywordflow}{while} (tituloSs >> data >> minutos) \{
+536                         datasJogo.push\_back(\hyperlink{classData}{Data}(data));
+537                         minutosJogados.push\_back(minutos);
+538                     \}
+539                     fim = \textcolor{keyword}{true};
+540                 \}
+541             \}
+542             ptr->\hyperlink{classTitulo_a8ea091928732a5ff5b974e003668a778}{setHistoricoPreco}(price\_history);
+543             ptr->\hyperlink{classOnline_a3c0b8d3393271eabfa702629c979fb93}{setDatasJogo}(datasJogo);
+544             ptr->\hyperlink{classOnline_a71cc818cd9b8020a470efc14f636a9f9}{setMinutosJogo}(minutosJogados);
+545             e->\hyperlink{classEmpresa_a3c6eb96c694dcb6db1e402d6db1c439a}{criarTitulo}(ptr);
+546             this->titulos.push\_back(ptr);
+547         \} \textcolor{keywordflow}{else} \{
+548             \hyperlink{classHome}{Home} *ptr;
+549             tituloSs >> nomeDoJogo >> idadeMinima >> plataforma >> empresa
+550                     >> dataStr;
+551 
+552             \hyperlink{classData}{Data} d(dataStr);
+553 
+554             tituloSs.str(std::string());
+555             tituloSs.clear();
+556 
+557             getline(f, titulo);
+558             tituloSs << titulo;
+559             \textcolor{keywordflow}{while} (tituloSs >> preco) \{
+560                 price\_history.push\_back(preco);
+561             \}
+562             tituloSs.str(std::string());
+563             tituloSs.clear();
+564 
+565             getline(f, titulo);
+566             tituloSs << titulo;
+567 
+568             \textcolor{keywordflow}{while} (tituloSs >> genero) \{
+569                 generos.push\_back(genero);
+570             \}
+571 
+572             tituloSs.str(std::string());
+573             tituloSs.clear();
+574 
+575             getline(f, numeroAnunciosStr);
+576             numeroAnuncios = std::stoul(numeroAnunciosStr, \textcolor{keyword}{nullptr}, 0);
+577 
+578             getline(f, numeroCliquesStr);
+579             numeroCliques = std::stoul(numeroCliquesStr, \textcolor{keyword}{nullptr}, 0);
+580 
+581             ptr = \textcolor{keyword}{new} \hyperlink{classHome}{Home}(nomeDoJogo, idadeMinima, plataforma, preco, generos,
+582                     empresa, d, numeroAnuncios, numeroCliques);
+583             std::string data;
+584             getline(f, titulo);
+585             tituloSs << titulo;
+586 
+587             \textcolor{keywordflow}{while} (tituloSs >> data) \{
+588                 ptr->\hyperlink{classHome_a94aec68b520d98ac38c6794b5771cd53}{adicionaAtualizacao}(\hyperlink{classData}{Data}(data));
+589             \}
+590             ptr->\hyperlink{classTitulo_a8ea091928732a5ff5b974e003668a778}{setHistoricoPreco}(price\_history);
+591             e->\hyperlink{classEmpresa_a3c6eb96c694dcb6db1e402d6db1c439a}{criarTitulo}(ptr);
+592             this->titulos.push\_back(ptr);
+593         \}
+594         tituloSs.str(std::string());
+595         tituloSs.clear();
+596     \}
+597 
+598     this->empresas.insert(e);
+599 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a00f929e5b2ca1dcc821edb14f9de5a24_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a00f929e5b2ca1dcc821edb14f9de5a24_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a239cd36f933f0ba0bc36e47bd0012af0}\label{classSistema_a239cd36f933f0ba0bc36e47bd0012af0}} 
+\index{Sistema@{Sistema}!read\+File\+Titulos@{read\+File\+Titulos}}
+\index{read\+File\+Titulos@{read\+File\+Titulos}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{read\+File\+Titulos()}{readFileTitulos()}}
+{\footnotesize\ttfamily void Sistema\+::read\+File\+Titulos (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{file }\end{DoxyParamCaption})}
+
+
+
+Le os titulos de um ficheiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & -\/ ficheiro onde esta contida a informacao de todos os titulos \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classSistema_a239cd36f933f0ba0bc36e47bd0012af0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_afe05d538e95a0f26d0ddcfd2105de9d3}\label{classSistema_afe05d538e95a0f26d0ddcfd2105de9d3}} 
+\index{Sistema@{Sistema}!read\+File\+Utilizadores@{read\+File\+Utilizadores}}
+\index{read\+File\+Utilizadores@{read\+File\+Utilizadores}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{read\+File\+Utilizadores()}{readFileUtilizadores()}}
+{\footnotesize\ttfamily void Sistema\+::read\+File\+Utilizadores (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{file }\end{DoxyParamCaption})}
+
+
+
+Le um utilizador de um ficheiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & -\/ ficheiro onde esta contida a informacao sobre o utilizador \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+85                                                   \{
+86     std::string nome, mail, idadeStr, numeroAnunciosStr, numeroCliquesStr, localidade, titulo, cartao, 
+      dataCartao,
+87             idCartao, item, nomeTitulo, plataforma, interesseStr,data;
+88     \textcolor{keywordtype}{float} saldo;
+89     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idade, numeroAnuncios, numeroCliques, interesse;
+90     std::stringstream tituloSs, cartaoSs, itemSs;
+91     std::vector<CartaoCredito> cartoes;
+92 
+93     getline(f, nome);
+94     getline(f, mail);
+95     getline(f, idadeStr);
+96     getline(f, localidade);
+97     getline(f,data);
+98 
+99     getline(f, cartao);
+100 
+101     \textcolor{keywordflow}{while} (cartao != \textcolor{stringliteral}{""}) \{
+102         cartaoSs << cartao;
+103         cartaoSs >> saldo >> dataCartao >> idCartao;
+104         cartoes.push\_back(\hyperlink{classCartaoCredito}{CartaoCredito}(saldo, \hyperlink{classData}{Data}(dataCartao), idCartao));
+105         getline(f, cartao);
+106         cartaoSs.str(std::string());
+107         cartaoSs.clear();
+108     \}
+109 
+110     getline(f, item);
+111 
+112     std::vector<Titulo *> items;
+113     std::vector<unsigned int> interesses;
+114 
+115     \textcolor{keywordflow}{while} (item != \textcolor{stringliteral}{""}) \{
+116         itemSs << item;
+117         itemSs >> nomeTitulo >> plataforma >> interesse;
+118 
+119         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} & titulo : this->titulos) \{
+120             \textcolor{keywordflow}{if} (titulo->getNome() == nomeTitulo && titulo->getPlataforma() == plataforma) \{
+121                 items.push\_back(titulo);
+122                 interesses.push\_back(interesse);
+123                 \textcolor{keywordflow}{break};
+124             \}
+125         \}
+126 
+127         getline(f, item);
+128         itemSs.str(std::string());
+129         itemSs.clear();
+130     \}
+131 
+132     banco.\hyperlink{classBanco_a5f36ab07909fc570d158a21e2e6398f5}{adicionaCartoesCredito}(cartoes);
+133 
+134     idade = std::stoul(idadeStr, NULL, 0);
+135 
+136     \hyperlink{classBiblioteca}{Biblioteca} B;
+137     \textcolor{keywordflow}{while} (!f.eof()) \{
+138         std::string tipoDeJogo;
+139         std::string nomeDoJogo;
+140         \textcolor{keywordtype}{float} idadeMinima;
+141         std::string plataforma;
+142         \textcolor{keywordtype}{float} preco;
+143         std::string genero = \textcolor{stringliteral}{"."};
+144         std::string empresa;
+145         std::string dataStr;
+146         std::vector<std::string> generos;
+147         std::vector<float> price\_history;
+148         std::string subscricao;
+149         std::string precoSubsStr;
+150 
+151         getline(f, titulo);
+152 
+153         tituloSs << titulo;
+154 
+155         tituloSs >> tipoDeJogo;
+156 
+157         \textcolor{keywordflow}{if} (tipoDeJogo == \textcolor{stringliteral}{"Online"}) \{
+158             \hyperlink{classOnline}{Online} *ptr;
+159             std::vector<Data> datasJogo;
+160             std::vector<unsigned int> minutosJogados;
+161             tituloSs >> nomeDoJogo >> idadeMinima >> plataforma >> empresa
+162                     >> dataStr >> subscricao >> precoSubsStr;
+163 
+164             \hyperlink{classData}{Data} d(dataStr);
+165 
+166             tituloSs.str(std::string());
+167             tituloSs.clear();
+168 
+169             getline(f, titulo);
+170             tituloSs << titulo;
+171             \textcolor{keywordflow}{while} (tituloSs >> preco) \{
+172                 price\_history.push\_back(preco);
+173             \}
+174 
+175             tituloSs.str(std::string());
+176             tituloSs.clear();
+177 
+178             getline(f, titulo);
+179             tituloSs << titulo;
+180 
+181             \textcolor{keywordflow}{while} (tituloSs >> genero) \{
+182                 generos.push\_back(genero);
+183             \}
+184 
+185             tituloSs.str(std::string());
+186             tituloSs.clear();
+187 
+188             getline(f, numeroAnunciosStr);
+189             numeroAnuncios = std::stoul(numeroAnunciosStr, \textcolor{keyword}{nullptr}, 0);
+190 
+191             getline(f, numeroCliquesStr);
+192             numeroCliques = std::stoul(numeroCliquesStr, \textcolor{keyword}{nullptr}, 0);
+193 
+194             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} precoSubs = std::stof(precoSubsStr);
+195             \textcolor{keywordflow}{if} (subscricao == \textcolor{stringliteral}{"fixa"})
+196                 ptr = \textcolor{keyword}{new} \hyperlink{classOnline}{Online}(nomeDoJogo, idadeMinima, plataforma, 0,
+197                         generos, empresa, d, numeroAnuncios, numeroCliques, \textcolor{keyword}{true}, precoSubs);
+198             \textcolor{keywordflow}{else}
+199                 ptr = \textcolor{keyword}{new} \hyperlink{classOnline}{Online}(nomeDoJogo, idadeMinima, plataforma, 0,
+200                         generos, empresa, d, numeroAnuncios, numeroCliques, \textcolor{keyword}{false}, precoSubs);
+201 
+202             \textcolor{keywordtype}{bool} fim = \textcolor{keyword}{false};
+203             std::string data;
+204             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} minutos;
+205             \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{
+206                 \textcolor{keywordflow}{if} (fim)
+207                     \textcolor{keywordflow}{break};
+208 
+209                 \textcolor{keywordflow}{else} \{
+210                     getline(f, titulo);
+211                     tituloSs << titulo;
+212                     \textcolor{keywordflow}{while} (tituloSs >> data >> minutos) \{
+213                         datasJogo.push\_back(\hyperlink{classData}{Data}(data));
+214                         minutosJogados.push\_back(minutos);
+215                     \}
+216                     fim = \textcolor{keyword}{true};
+217                 \}
+218             \}
+219             ptr->\hyperlink{classTitulo_a8ea091928732a5ff5b974e003668a778}{setHistoricoPreco}(price\_history);
+220             ptr->\hyperlink{classOnline_a3c0b8d3393271eabfa702629c979fb93}{setDatasJogo}(datasJogo);
+221             ptr->\hyperlink{classOnline_a71cc818cd9b8020a470efc14f636a9f9}{setMinutosJogo}(minutosJogados);
+222             B.\hyperlink{classBiblioteca_af10c9f23d85db8e03ae2e8b9d3e593e1}{adicionaTitulo}(ptr);
+223         \} \textcolor{keywordflow}{else} \{
+224             \hyperlink{classHome}{Home} *ptr;
+225             tituloSs >> nomeDoJogo >> idadeMinima >> plataforma >> empresa
+226                     >> dataStr;
+227 
+228             \hyperlink{classData}{Data} d(dataStr);
+229 
+230             tituloSs.str(std::string());
+231             tituloSs.clear();
+232 
+233             getline(f, titulo);
+234             tituloSs << titulo;
+235             \textcolor{keywordflow}{while} (tituloSs >> preco) \{
+236                 price\_history.push\_back(preco);
+237             \}
+238             tituloSs.str(std::string());
+239             tituloSs.clear();
+240 
+241             getline(f, titulo);
+242             tituloSs << titulo;
+243 
+244             \textcolor{keywordflow}{while} (tituloSs >> genero) \{
+245                 generos.push\_back(genero);
+246             \}
+247 
+248             tituloSs.str(std::string());
+249             tituloSs.clear();
+250 
+251             getline(f, numeroAnunciosStr);
+252             numeroAnuncios = std::stoul(numeroAnunciosStr, \textcolor{keyword}{nullptr}, 0);
+253 
+254             getline(f, numeroCliquesStr);
+255             numeroCliques = std::stoul(numeroCliquesStr, \textcolor{keyword}{nullptr}, 0);
+256 
+257             ptr = \textcolor{keyword}{new} \hyperlink{classHome}{Home}(nomeDoJogo, idadeMinima, plataforma, preco, generos,
+258                     empresa, d, numeroAnuncios, numeroCliques);
+259             std::string data;
+260             getline(f, titulo);
+261             tituloSs << titulo;
+262 
+263             \textcolor{keywordflow}{while} (tituloSs >> data) \{
+264                 ptr->\hyperlink{classHome_a94aec68b520d98ac38c6794b5771cd53}{adicionaAtualizacao}(\hyperlink{classData}{Data}(data));
+265             \}
+266 
+267             B.\hyperlink{classBiblioteca_af10c9f23d85db8e03ae2e8b9d3e593e1}{adicionaTitulo}(ptr);
+268             ptr->\hyperlink{classTitulo_a8ea091928732a5ff5b974e003668a778}{setHistoricoPreco}(price\_history);
+269         \}
+270         tituloSs.str(std::string());
+271         tituloSs.clear();
+272 
+273     \}
+274 
+275     \hyperlink{classUtilizador}{Utilizador} * U = \textcolor{keyword}{new} \hyperlink{classUtilizador}{Utilizador}(nome, mail, idade, localidade, B);
+276 
+277     U->\hyperlink{classUtilizador_ac3c7ff821739e5682a5d06d0868031ac}{setDataUltimaCompra}(data);
+278 
+279     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} & c : cartoes) \{
+280         U->\hyperlink{classUtilizador_a60b1025ffe94b9f2414f54cc94662cc9}{adicionaCartaoCredito}(c);
+281     \}
+282 
+283     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < items.size(); i++) \{
+284         U->\hyperlink{classUtilizador_a45ee0a8d988adbd537e2506d80f96cfb}{adicionaWishList}(items[i], interesses[i]);
+285     \}
+286 
+287     this->jogadores.push\_back(U);
+288 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_afe05d538e95a0f26d0ddcfd2105de9d3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_afe05d538e95a0f26d0ddcfd2105de9d3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_ac9d9a195c580deea2c9126c91d69353e}\label{classSistema_ac9d9a195c580deea2c9126c91d69353e}} 
+\index{Sistema@{Sistema}!read\+Titulos@{read\+Titulos}}
+\index{read\+Titulos@{read\+Titulos}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{read\+Titulos()}{readTitulos()}}
+{\footnotesize\ttfamily void Sistema\+::read\+Titulos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Invoca as funcoes necessarias para ler os titulos guardados nos ficheiros. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classSistema_ac9d9a195c580deea2c9126c91d69353e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a187636be859f6a6dd7427cb781cd11a5}\label{classSistema_a187636be859f6a6dd7427cb781cd11a5}} 
+\index{Sistema@{Sistema}!read\+Utilizadores@{read\+Utilizadores}}
+\index{read\+Utilizadores@{read\+Utilizadores}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{read\+Utilizadores()}{readUtilizadores()}}
+{\footnotesize\ttfamily void Sistema\+::read\+Utilizadores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Invoca as funcoes necessarias para ler os utilizadores guardados nos ficheiros. 
+
+
+\begin{DoxyCode}
+290                                \{
+291 
+292     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 1;
+293 
+294     \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{
+295         std::ifstream file;
+296         file.open(\textcolor{stringliteral}{"Utilizador"} + std::to\_string(i) + \textcolor{stringliteral}{".txt"});
+297         \textcolor{keywordflow}{if} (!file.fail()) \{
+298             \hyperlink{classSistema_afe05d538e95a0f26d0ddcfd2105de9d3}{readFileUtilizadores}(file);
+299             file.close();
+300             i++;
+301         \} \textcolor{keywordflow}{else}
+302             \textcolor{keywordflow}{break};
+303     \}
+304 
+305 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a187636be859f6a6dd7427cb781cd11a5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classSistema_a187636be859f6a6dd7427cb781cd11a5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a59ff239e4793308c979cccf796a72f23}\label{classSistema_a59ff239e4793308c979cccf796a72f23}} 
+\index{Sistema@{Sistema}!remove\+Asleep\+Users@{remove\+Asleep\+Users}}
+\index{remove\+Asleep\+Users@{remove\+Asleep\+Users}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{remove\+Asleep\+Users()}{removeAsleepUsers()}}
+{\footnotesize\ttfamily void Sistema\+::remove\+Asleep\+Users (\begin{DoxyParamCaption}\item[{std\+::string}]{plataforma,  }\item[{\hyperlink{classUtilizador}{Utilizador} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Remove os utilizadores adormecidos dos titulos para uma dada plataforma. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plataforma} & -\/ string que define a plataforma para o qual sÃ£o removidos os utilizaores adormecidos \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+1231                                                                  \{
+1232     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} titulo : this->titulos)\{
+1233         \textcolor{keywordflow}{if}(titulo->getPlataforma() == plataforma)\{
+1234             titulo->removeUserHashTable(u);
+1235         \}
+1236     \}
+1237 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a59ff239e4793308c979cccf796a72f23_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_aabeb8de1cc79bff9ff04d190ac3754d2}\label{classSistema_aabeb8de1cc79bff9ff04d190ac3754d2}} 
+\index{Sistema@{Sistema}!saldo\+Utilizador@{saldo\+Utilizador}}
+\index{saldo\+Utilizador@{saldo\+Utilizador}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{saldo\+Utilizador()}{saldoUtilizador()}}
+{\footnotesize\ttfamily void Sistema\+::saldo\+Utilizador (\begin{DoxyParamCaption}\item[{const \hyperlink{classUtilizador}{Utilizador} $\ast$}]{u }\end{DoxyParamCaption}) const}
+
+
+
+Mostra o saldo de um utilizador do sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & -\/ apontador para o utilizador, cujo saldo vai ser verificado \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+812                                                        \{
+813     \textcolor{keywordtype}{float} saldo = 0;
+814         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} & cartao : u->\hyperlink{classUtilizador_ad0ebe5ff80aa77145ec4b0ce5473102c}{getCc}())
+815             saldo += cartao.getSaldo();
+816     std::cout << \textcolor{stringliteral}{"Saldo: "} << saldo << \textcolor{stringliteral}{" euros"} << std::endl;
+817 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{classSistema_aabeb8de1cc79bff9ff04d190ac3754d2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_aabeb8de1cc79bff9ff04d190ac3754d2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_ada4619fbedcb5a07d807545caebd5c57}\label{classSistema_ada4619fbedcb5a07d807545caebd5c57}} 
+\index{Sistema@{Sistema}!save\+Empresas@{save\+Empresas}}
+\index{save\+Empresas@{save\+Empresas}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{save\+Empresas()}{saveEmpresas()}}
+{\footnotesize\ttfamily void Sistema\+::save\+Empresas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Guarda todas as empresas do sistema num ficheiro. 
+
+
+\begin{DoxyCode}
+618                           \{
+619     \textcolor{keywordtype}{unsigned} i=1;
+620     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} empresa:this->empresas)\{
+621         std::ofstream file(\textcolor{stringliteral}{"Empresa"} + std::to\_string(i) + \textcolor{stringliteral}{".txt"});
+622         i++;
+623         std::string nome=empresa->getNomeEmpresa();
+624         std::string mail=empresa->getContactos().email;
+625         std::string numero=empresa->getContactos().numeroTelemovel;
+626         std::string nif=empresa->getNif();
+627         file << nome << std::endl << mail << std::endl << numero<<std::endl<<nif<<std::endl;
+628 
+629         std::vector<Titulo*> titulos = empresa->getTitulos();
+630 
+631         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < titulos.size(); i++) \{
+632             \hyperlink{classOnline}{Online}* online = \textcolor{keyword}{dynamic\_cast<}\hyperlink{classOnline}{Online}*\textcolor{keyword}{>}(titulos.at(i));
+633             \textcolor{keywordflow}{if} (online != NULL) \{
+634                 std::string tipoDeJogo = \textcolor{stringliteral}{"Online"};
+635                 std::string nomeDoJogo = online->\hyperlink{classTitulo_acb79279860b3404c6419697df5f860cb}{getNome}();
+636                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idadeMinima = online->\hyperlink{classTitulo_a8048db7604abd58892122c810a6794be}{getIdadeMinima}();
+637                 std::string plataforma = online->\hyperlink{classTitulo_a2a57a31d40c5df012b3c6e2451c253dd}{getPlataforma}();
+638                 std::vector<float> preco = online->\hyperlink{classTitulo_ab392d79a55b0ce556e03ad5a2fecad05}{getHistorialPreco}();
+639                 std::vector<std::string> genero = online->\hyperlink{classTitulo_a09992b973f8cfe755f21ff725b2970f0}{getGeneros}();
+640                 std::string empresa = online->\hyperlink{classTitulo_a48d810fe27da41cfb726fb5680a68471}{getEmpresa}();
+641                 \hyperlink{classData}{Data} data = online->\hyperlink{classTitulo_a1cb9b8c0a9dca73d5925922ccc041fa8}{getDataLancamento}();
+642                 std::string subscricao;
+643                 \textcolor{keywordflow}{if} (online->\hyperlink{classOnline_aa222489df5a1e6bcfbf5e01d95178850}{getSubscricao}())
+644                     subscricao = \textcolor{stringliteral}{"fixa"};
+645                 \textcolor{keywordflow}{else}
+646                     subscricao = \textcolor{stringliteral}{"variavel"};
+647                 \textcolor{keywordtype}{float} precoSubs = online->\hyperlink{classOnline_a0f7240aa5582e10579d0719e4fa5d705}{getPrecoSubscricao}();
+648                 std::vector<Data> datasJogo = online->\hyperlink{classOnline_aa6f51a948cb5ffd2c7cbac1f1cd6023f}{getDatasJogo}();
+649                 std::vector<unsigned int> minutosJogados =
+650                         online->\hyperlink{classOnline_a4ab18dfdaa0af23cda8f5268a9968887}{getMinutosJogo}();
+651                 file << tipoDeJogo << \textcolor{stringliteral}{" "} << nomeDoJogo << \textcolor{stringliteral}{" "} << idadeMinima
+652                         << \textcolor{stringliteral}{" "} << plataforma << \textcolor{stringliteral}{" "};
+653 
+654                 file << empresa << \textcolor{stringliteral}{" "} << data << \textcolor{stringliteral}{" "} << subscricao << \textcolor{stringliteral}{" "}
+655                         << precoSubs << std::endl;
+656                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < preco.size(); i++) \{
+657                     \textcolor{keywordflow}{if} (i == preco.size() - 1)
+658                         file << preco[i] << std::endl;
+659                     \textcolor{keywordflow}{else}
+660                         file << preco[i] << \textcolor{stringliteral}{" "};
+661                 \}
+662 
+663                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < genero.size(); i++) \{
+664                     \textcolor{keywordflow}{if} (i == genero.size() - 1)
+665                         file << genero[i] << std::endl;
+666                     \textcolor{keywordflow}{else}
+667                         file << genero[i] << \textcolor{stringliteral}{" "};
+668                 \}
+669 
+670                 file << online->\hyperlink{classTitulo_ad36afe75694812eabe74af5fe32ad95b}{getAnuncios}() << std::endl;
+671                 file << online->\hyperlink{classTitulo_a71d5b5985170de5612ec49c5c955f120}{getCliques}() << std::endl;
+672 
+673                 \textcolor{keywordflow}{if} (i != titulos.size() - 1)
+674                     file << std::endl;
+675             \} \textcolor{keywordflow}{else} \{
+676                 \hyperlink{classHome}{Home}* home = \textcolor{keyword}{dynamic\_cast<}\hyperlink{classHome}{Home}*\textcolor{keyword}{>}(titulos.at(i));
+677                 std::string tipoDeJogo = \textcolor{stringliteral}{"Home"};
+678                 std::string nomeDoJogo = home->\hyperlink{classTitulo_acb79279860b3404c6419697df5f860cb}{getNome}();
+679                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idadeMinima = home->\hyperlink{classTitulo_a8048db7604abd58892122c810a6794be}{getIdadeMinima}();
+680                 std::string plataforma = home->\hyperlink{classTitulo_a2a57a31d40c5df012b3c6e2451c253dd}{getPlataforma}();
+681                 std::vector<float> preco = home->\hyperlink{classTitulo_ab392d79a55b0ce556e03ad5a2fecad05}{getHistorialPreco}();
+682                 std::vector<std::string> genero = home->\hyperlink{classTitulo_a09992b973f8cfe755f21ff725b2970f0}{getGeneros}();
+683                 std::string empresa = home->\hyperlink{classTitulo_a48d810fe27da41cfb726fb5680a68471}{getEmpresa}();
+684                 \hyperlink{classData}{Data} data = home->\hyperlink{classTitulo_a1cb9b8c0a9dca73d5925922ccc041fa8}{getDataLancamento}();
+685                 std::vector<Data> datasAtualizacao = home->\hyperlink{classHome_a0ab7279a76525f48cb1b64b8bae98a44}{getDatas}();
+686                 file << tipoDeJogo << \textcolor{stringliteral}{" "} << nomeDoJogo << \textcolor{stringliteral}{" "} << idadeMinima
+687                         << \textcolor{stringliteral}{" "} << plataforma << \textcolor{stringliteral}{" "} << empresa << \textcolor{stringliteral}{" "} << data
+688                         << std::endl;
+689                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < preco.size(); i++) \{
+690                     \textcolor{keywordflow}{if} (i == preco.size() - 1)
+691                         file << preco[i] << std::endl;
+692                     \textcolor{keywordflow}{else}
+693                         file << preco[i] << \textcolor{stringliteral}{" "};
+694                 \}
+695 
+696                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < genero.size(); i++) \{
+697                     \textcolor{keywordflow}{if} (i == genero.size() - 1)
+698                         file << genero[i] << std::endl;
+699                     \textcolor{keywordflow}{else}
+700                         file << genero[i] << \textcolor{stringliteral}{" "};
+701                 \}
+702 
+703                 file << home->\hyperlink{classTitulo_ad36afe75694812eabe74af5fe32ad95b}{getAnuncios}() << std::endl;
+704                 file << home->\hyperlink{classTitulo_a71d5b5985170de5612ec49c5c955f120}{getCliques}() << std::endl;
+705 
+706                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < datasAtualizacao.size(); i++) \{
+707                     \textcolor{keywordflow}{if} (i == datasAtualizacao.size() - 1)
+708                         file << datasAtualizacao[i];
+709                     \textcolor{keywordflow}{else}
+710                         file << datasAtualizacao[i] << \textcolor{stringliteral}{" "};
+711                 \}
+712 
+713                 \textcolor{keywordflow}{if} (i != titulos.size() - 1)
+714                     file << std::endl;
+715 
+716             \}
+717         \}
+718         file.close();
+719     \}
+720 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classSistema_ada4619fbedcb5a07d807545caebd5c57_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{classSistema_ada4619fbedcb5a07d807545caebd5c57_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a07ff0877985ee60035abb90a60c458d8}\label{classSistema_a07ff0877985ee60035abb90a60c458d8}} 
+\index{Sistema@{Sistema}!save\+Titulos@{save\+Titulos}}
+\index{save\+Titulos@{save\+Titulos}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{save\+Titulos()}{saveTitulos()}}
+{\footnotesize\ttfamily void Sistema\+::save\+Titulos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Guarda todos os titulos do sistema num ficheiro. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{classSistema_a07ff0877985ee60035abb90a60c458d8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_af25036f1b2d4abc30447c45f3c3237b8}\label{classSistema_af25036f1b2d4abc30447c45f3c3237b8}} 
+\index{Sistema@{Sistema}!save\+Utilizadores@{save\+Utilizadores}}
+\index{save\+Utilizadores@{save\+Utilizadores}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{save\+Utilizadores()}{saveUtilizadores()}}
+{\footnotesize\ttfamily void Sistema\+::save\+Utilizadores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Guarda todos os utilizadores do sistema em ficheiros, criando novos, se necessario. 
+
+
+\begin{DoxyCode}
+307                                     \{
+308 
+309     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < jogadores.size(); i++) \{
+310         std::ofstream file(\textcolor{stringliteral}{"Utilizador"} + std::to\_string(i + 1) + \textcolor{stringliteral}{".txt"});
+311         std::string nome = jogadores.at(i)->getNome();
+312         std::string mail = jogadores.at(i)->getEmail();
+313         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idade = jogadores.at(i)->getIdade();
+314         std::string localidade = jogadores.at(i)->getMorada();
+315         \hyperlink{classData}{Data} data = jogadores.at(i)->getDataUltimaCompra();
+316         std::vector<CartaoCredito> cartoes = jogadores.at(i)->getCc();
+317 
+318         file << nome << std::endl << mail << std::endl << idade << std::endl
+319                 << localidade << std::endl << data;
+320         std::vector<Titulo*> titulos =
+321                 jogadores.at(i)->getBiblioteca().getTitulos();
+322 
+323         file << std::endl;
+324         \textcolor{keywordflow}{if} (cartoes.size() != 0) \{
+325             \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} & cartao : cartoes) \{
+326                 file << cartao.getSaldo() << \textcolor{stringliteral}{" "} << cartao.getDataDeValidade()
+327                         << \textcolor{stringliteral}{" "} << cartao.getId() << std::endl;
+328             \}
+329         \}
+330 
+331         file << std::endl;
+332 
+333         std::priority\_queue<WishedTitle> fila = jogadores[i]->getWishList();
+334 
+335         \textcolor{keywordflow}{while} (!fila.empty()) \{
+336             file << fila.top().getTitulo()->getNome() << \textcolor{stringliteral}{" "} << fila.top().getTitulo()->getPlataforma() << \textcolor{stringliteral}{
+      " "} << fila.top().getInteresse() << std::endl;
+337             fila.pop();
+338         \}
+339 
+340         \textcolor{keywordflow}{if} (titulos.size() != 0) \{
+341             file << std::endl;
+342         \}
+343 
+344         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < titulos.size(); i++) \{
+345             \hyperlink{classOnline}{Online}* online = \textcolor{keyword}{dynamic\_cast<}\hyperlink{classOnline}{Online}*\textcolor{keyword}{>}(titulos.at(i));
+346             \textcolor{keywordflow}{if} (online != NULL) \{
+347                 std::string tipoDeJogo = \textcolor{stringliteral}{"Online"};
+348                 std::string nomeDoJogo = online->\hyperlink{classTitulo_acb79279860b3404c6419697df5f860cb}{getNome}();
+349                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idadeMinima = online->\hyperlink{classTitulo_a8048db7604abd58892122c810a6794be}{getIdadeMinima}();
+350                 std::string plataforma = online->\hyperlink{classTitulo_a2a57a31d40c5df012b3c6e2451c253dd}{getPlataforma}();
+351                 std::vector<float> preco = online->\hyperlink{classTitulo_ab392d79a55b0ce556e03ad5a2fecad05}{getHistorialPreco}();
+352                 std::vector<std::string> genero = online->\hyperlink{classTitulo_a09992b973f8cfe755f21ff725b2970f0}{getGeneros}();
+353                 std::string empresa = online->\hyperlink{classTitulo_a48d810fe27da41cfb726fb5680a68471}{getEmpresa}();
+354                 \hyperlink{classData}{Data} data = online->\hyperlink{classTitulo_a1cb9b8c0a9dca73d5925922ccc041fa8}{getDataLancamento}();
+355                 std::string subscricao;
+356                 \textcolor{keywordflow}{if} (online->\hyperlink{classOnline_aa222489df5a1e6bcfbf5e01d95178850}{getSubscricao}())
+357                     subscricao = \textcolor{stringliteral}{"fixa"};
+358                 \textcolor{keywordflow}{else}
+359                     subscricao = \textcolor{stringliteral}{"variavel"};
+360                 \textcolor{keywordtype}{float} precoSubs = online->\hyperlink{classOnline_a0f7240aa5582e10579d0719e4fa5d705}{getPrecoSubscricao}();
+361                 std::vector<Data> datasJogo = online->\hyperlink{classOnline_aa6f51a948cb5ffd2c7cbac1f1cd6023f}{getDatasJogo}();
+362                 std::vector<unsigned int> minutosJogados =
+363                         online->\hyperlink{classOnline_a4ab18dfdaa0af23cda8f5268a9968887}{getMinutosJogo}();
+364                 file << tipoDeJogo << \textcolor{stringliteral}{" "} << nomeDoJogo << \textcolor{stringliteral}{" "} << idadeMinima
+365                         << \textcolor{stringliteral}{" "} << plataforma << \textcolor{stringliteral}{" "};
+366 
+367                 file << empresa << \textcolor{stringliteral}{" "} << data << \textcolor{stringliteral}{" "} << subscricao << \textcolor{stringliteral}{" "}
+368                         << precoSubs << std::endl;
+369                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < preco.size(); i++) \{
+370                     \textcolor{keywordflow}{if} (i == preco.size() - 1)
+371                         file << preco[i] << std::endl;
+372                     \textcolor{keywordflow}{else}
+373                         file << preco[i] << \textcolor{stringliteral}{" "};
+374                 \}
+375 
+376                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < genero.size(); i++) \{
+377                     \textcolor{keywordflow}{if} (i == genero.size() - 1)
+378                         file << genero[i] << std::endl;
+379                     \textcolor{keywordflow}{else}
+380                         file << genero[i] << \textcolor{stringliteral}{" "};
+381                 \}
+382 
+383                 file << online->\hyperlink{classTitulo_ad36afe75694812eabe74af5fe32ad95b}{getAnuncios}() << std::endl;
+384                 file << online->\hyperlink{classTitulo_a71d5b5985170de5612ec49c5c955f120}{getCliques}() << std::endl;
+385 
+386                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < datasJogo.size(); i++) \{
+387                     \textcolor{keywordflow}{if} (i == datasJogo.size() - 1)
+388                         file << datasJogo[i] << \textcolor{stringliteral}{" "} << minutosJogados[i];
+389                     \textcolor{keywordflow}{else}
+390                         file << datasJogo[i] << \textcolor{stringliteral}{" "} << minutosJogados[i] << \textcolor{stringliteral}{" "};
+391                 \}
+392 
+393                 \textcolor{keywordflow}{if} (i != titulos.size() - 1)
+394                     file << std::endl;
+395             \} \textcolor{keywordflow}{else} \{
+396                 \hyperlink{classHome}{Home}* home = \textcolor{keyword}{dynamic\_cast<}\hyperlink{classHome}{Home}*\textcolor{keyword}{>}(titulos.at(i));
+397                 std::string tipoDeJogo = \textcolor{stringliteral}{"Home"};
+398                 std::string nomeDoJogo = home->\hyperlink{classTitulo_acb79279860b3404c6419697df5f860cb}{getNome}();
+399                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idadeMinima = home->\hyperlink{classTitulo_a8048db7604abd58892122c810a6794be}{getIdadeMinima}();
+400                 std::string plataforma = home->\hyperlink{classTitulo_a2a57a31d40c5df012b3c6e2451c253dd}{getPlataforma}();
+401                 std::vector<float> preco = home->\hyperlink{classTitulo_ab392d79a55b0ce556e03ad5a2fecad05}{getHistorialPreco}();
+402                 std::vector<std::string> genero = home->\hyperlink{classTitulo_a09992b973f8cfe755f21ff725b2970f0}{getGeneros}();
+403                 std::string empresa = home->\hyperlink{classTitulo_a48d810fe27da41cfb726fb5680a68471}{getEmpresa}();
+404                 \hyperlink{classData}{Data} data = home->\hyperlink{classTitulo_a1cb9b8c0a9dca73d5925922ccc041fa8}{getDataLancamento}();
+405                 std::vector<Data> datasAtualizacao = home->\hyperlink{classHome_a0ab7279a76525f48cb1b64b8bae98a44}{getDatas}();
+406                 file << tipoDeJogo << \textcolor{stringliteral}{" "} << nomeDoJogo << \textcolor{stringliteral}{" "} << idadeMinima
+407                         << \textcolor{stringliteral}{" "} << plataforma << \textcolor{stringliteral}{" "} << empresa << \textcolor{stringliteral}{" "} << data
+408                         << std::endl;
+409                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < preco.size(); i++) \{
+410                     \textcolor{keywordflow}{if} (i == preco.size() - 1)
+411                         file << preco[i] << std::endl;
+412                     \textcolor{keywordflow}{else}
+413                         file << preco[i] << \textcolor{stringliteral}{" "};
+414                 \}
+415 
+416                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < genero.size(); i++) \{
+417                     \textcolor{keywordflow}{if} (i == genero.size() - 1)
+418                         file << genero[i] << std::endl;
+419                     \textcolor{keywordflow}{else}
+420                         file << genero[i] << \textcolor{stringliteral}{" "};
+421                 \}
+422 
+423                 file << home->\hyperlink{classTitulo_ad36afe75694812eabe74af5fe32ad95b}{getAnuncios}() << std::endl;
+424                 file << home->\hyperlink{classTitulo_a71d5b5985170de5612ec49c5c955f120}{getCliques}() << std::endl;
+425 
+426                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < datasAtualizacao.size(); i++) \{
+427                     \textcolor{keywordflow}{if} (i == datasAtualizacao.size() - 1)
+428                         file << datasAtualizacao[i];
+429                     \textcolor{keywordflow}{else}
+430                         file << datasAtualizacao[i] << \textcolor{stringliteral}{" "};
+431                 \}
+432 
+433                 \textcolor{keywordflow}{if} (i != titulos.size() - 1)
+434                     file << std::endl;
+435 
+436             \}
+437         \}
+438         file.close();
+439     \}
+440 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_af25036f1b2d4abc30447c45f3c3237b8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classSistema_af25036f1b2d4abc30447c45f3c3237b8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a871ba21f5de12adb05106f0fcaf9d723}\label{classSistema_a871ba21f5de12adb05106f0fcaf9d723}} 
+\index{Sistema@{Sistema}!tempo\+Jogado@{tempo\+Jogado}}
+\index{tempo\+Jogado@{tempo\+Jogado}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{tempo\+Jogado()}{tempoJogado()}}
+{\footnotesize\ttfamily void Sistema\+::tempo\+Jogado (\begin{DoxyParamCaption}\item[{const \hyperlink{classUtilizador}{Utilizador} $\ast$}]{u }\end{DoxyParamCaption}) const}
+
+
+
+Mostra o tempo jogado por um utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & -\/ apontador para o utiliziador, cujo tempo jogado vai ser verificado \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+819                                                    \{
+820     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} horas=0;
+821     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} & titulo : u->\hyperlink{classUtilizador_a6a128859b776bf019b5652ce61f62280}{getBiblioteca}().\hyperlink{classBiblioteca_a03c1ebf76a4ace4f57000bb99a87bb88}{getTitulos}())
+822     \{
+823         \hyperlink{classOnline}{Online}* online = \textcolor{keyword}{dynamic\_cast<}\hyperlink{classOnline}{Online}*\textcolor{keyword}{>}(titulo);
+824 
+825         \textcolor{keywordflow}{if} (online != NULL)
+826         \{
+827             horas += online->\hyperlink{classOnline_ad0a23d2f1a2f804479ff346be0fdc686}{getHorasTotais}();
+828         \}
+829     \}
+830     std::cout << \textcolor{stringliteral}{"Horas jogadas: "} << horas << std::endl;
+831 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a871ba21f5de12adb05106f0fcaf9d723_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a871ba21f5de12adb05106f0fcaf9d723_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a43e1d500eca075857b1c96c2e2239d55}\label{classSistema_a43e1d500eca075857b1c96c2e2239d55}} 
+\index{Sistema@{Sistema}!utilizador\+Jogar@{utilizador\+Jogar}}
+\index{utilizador\+Jogar@{utilizador\+Jogar}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{utilizador\+Jogar()}{utilizadorJogar()}}
+{\footnotesize\ttfamily void Sistema\+::utilizador\+Jogar (\begin{DoxyParamCaption}\item[{\hyperlink{classUtilizador}{Utilizador} $\ast$}]{u,  }\item[{\hyperlink{classTitulo}{Titulo} $\ast$}]{t,  }\item[{unsigned int}]{minutos }\end{DoxyParamCaption})}
+
+
+
+Simula o \char`\"{}jogar\char`\"{} de um utilizador, incrementando o tempo jogado e guardando uma data do dia em que jogou. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & -\/ apontador para o utilizador a jogar \\
+\hline
+{\em t} & -\/ apontador para o titulo a ser jogado \\
+\hline
+{\em minutos} & -\/ minutos jogados pelo utilizador \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+837                                                                               \{
+838     \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} titulo : u->\hyperlink{classUtilizador_a6a128859b776bf019b5652ce61f62280}{getBiblioteca}().\hyperlink{classBiblioteca_a03c1ebf76a4ace4f57000bb99a87bb88}{getTitulos}()) \{
+839         \textcolor{keywordflow}{if} (titulo->getNome() == t->\hyperlink{classTitulo_acb79279860b3404c6419697df5f860cb}{getNome}() && titulo->getPlataforma() == t->
+      \hyperlink{classTitulo_a2a57a31d40c5df012b3c6e2451c253dd}{getPlataforma}())
+840         \{
+841             \hyperlink{classOnline}{Online} * o = \textcolor{keyword}{dynamic\_cast<}\hyperlink{classOnline}{Online} *\textcolor{keyword}{>}(titulo);
+842             o->\hyperlink{classOnline_aac2ef3483edfaa8426363ebdd542dc38}{adicionaEstatisticas}(banco.\hyperlink{classBanco_a0735f07636c578666068a16f6ecccd91}{getDataAtual}(), minutos);
+843         \}
+844 
+845     \}
+846 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a43e1d500eca075857b1c96c2e2239d55_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a43e1d500eca075857b1c96c2e2239d55_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSistema_a0421323f2c7a5e372b54a40998ed8e69}\label{classSistema_a0421323f2c7a5e372b54a40998ed8e69}} 
+\index{Sistema@{Sistema}!valid\+Email@{valid\+Email}}
+\index{valid\+Email@{valid\+Email}!Sistema@{Sistema}}
+\subsubsection{\texorpdfstring{valid\+Email()}{validEmail()}}
+{\footnotesize\ttfamily bool Sistema\+::valid\+Email (\begin{DoxyParamCaption}\item[{const std\+::string}]{email }\end{DoxyParamCaption}) const}
+
+Verifica se o email ja existe \begin{DoxyReturn}{Returns}
+Retorna true se o email nao existir, ainda 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+750                                                    \{
+751         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} & utilizador : this->jogadores) \{
+752             \textcolor{keywordflow}{if} (utilizador->getEmail() == email)
+753                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+754         \}
+755 
+756         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+757 
+758  \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a0421323f2c7a5e372b54a40998ed8e69_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Sistema_8h}{Sistema.\+h}\item 
+\hyperlink{Sistema_8cpp}{Sistema.\+cpp}\end{DoxyCompactItemize}

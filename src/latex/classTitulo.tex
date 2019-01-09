@@ -1,0 +1,953 @@
+\hypertarget{classTitulo}{}\section{Titulo Class Reference}
+\label{classTitulo}\index{Titulo@{Titulo}}
+
+
+{\ttfamily \#include $<$Titulo.\+h$>$}
+
+
+
+Inheritance diagram for Titulo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classTitulo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Titulo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classTitulo__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTitulo_a898faeefdad15c64ae4cdc904a7e6f0e}{Titulo} (std\+::string \hyperlink{classTitulo_a8abdf1fc6d4fc14be20bbec247664d83}{nome}, unsigned \hyperlink{classTitulo_a28891078f53fc3317de60ae739514955}{idade\+Minima}, std\+::string \hyperlink{classTitulo_a67761eb7f006453ab0869e4b7c0a9c0b}{plataforma}, float preco, std\+::vector$<$ std\+::string $>$ \hyperlink{classTitulo_a3209265c8534416978ee9891b96c14b2}{generos}, std\+::string \hyperlink{classTitulo_a91510c440dc8583d60d88ea02f4eb1b6}{empresa}, \hyperlink{classData}{Data} \hyperlink{classTitulo_ae540ddf2c607eb0e4de29eb8c0cca7f0}{data\+Lancamento}, unsigned int numero, unsigned int cliques)
+\begin{DoxyCompactList}\small\item\em Construtor da classe \hyperlink{classTitulo}{Titulo}. \end{DoxyCompactList}\item 
+virtual \hyperlink{classTitulo_a9b7513f1c255265a1d6ccff0ead30a8c}{$\sim$\+Titulo} ()
+\begin{DoxyCompactList}\small\item\em Destrutor da classe \hyperlink{classTitulo}{Titulo}. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classTitulo_acb79279860b3404c6419697df5f860cb}{get\+Nome} () const
+\begin{DoxyCompactList}\small\item\em Permite obter o nome do titulo. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTitulo_af8fed6503c1c528ac3bfdbb182fce0b6}{get\+IdU} () const
+\begin{DoxyCompactList}\small\item\em Permite obter o identificador do titulo. \end{DoxyCompactList}\item 
+\hyperlink{classData}{Data} \hyperlink{classTitulo_a1cb9b8c0a9dca73d5925922ccc041fa8}{get\+Data\+Lancamento} () const
+\begin{DoxyCompactList}\small\item\em Permite obter a data de lancamento do titulo. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTitulo_a8048db7604abd58892122c810a6794be}{get\+Idade\+Minima} () const
+\begin{DoxyCompactList}\small\item\em Permite obter a idade minima do titulo. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{classTitulo_a09992b973f8cfe755f21ff725b2970f0}{get\+Generos} () const
+\begin{DoxyCompactList}\small\item\em Permite obter os generos do titulo. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classTitulo_a48d810fe27da41cfb726fb5680a68471}{get\+Empresa} () const
+\begin{DoxyCompactList}\small\item\em Permite obter a empresa do titulo. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classTitulo_a2a57a31d40c5df012b3c6e2451c253dd}{get\+Plataforma} () const
+\begin{DoxyCompactList}\small\item\em Permite obter a plataforma do titulo. \end{DoxyCompactList}\item 
+float \hyperlink{classTitulo_a93725bdc2e98350e47b54fd76c0fa236}{get\+Preco} () const
+\begin{DoxyCompactList}\small\item\em Permite obter o preco atual do titulo. \end{DoxyCompactList}\item 
+float \hyperlink{classTitulo_a5257cbaf35ad018001a7e48678795305}{get\+Preco\+Base} () const
+\begin{DoxyCompactList}\small\item\em Permite obter o preco base do titulo. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \hyperlink{classTitulo_ab392d79a55b0ce556e03ad5a2fecad05}{get\+Historial\+Preco} () const
+\begin{DoxyCompactList}\small\item\em Permite obter o historico de precos do titulo. \end{DoxyCompactList}\item 
+void \hyperlink{classTitulo_a8ea091928732a5ff5b974e003668a778}{set\+Historico\+Preco} (const std\+::vector$<$ float $>$ \&precos)
+\begin{DoxyCompactList}\small\item\em Permite atualizar o historico de precos do titulo. \end{DoxyCompactList}\item 
+float \hyperlink{classTitulo_ae7df7d468f8220fa32b2772df4c53081}{get\+Desconto} () const
+\begin{DoxyCompactList}\small\item\em Permite obter o desconto do titulo em percentagem. \end{DoxyCompactList}\item 
+virtual float \hyperlink{classTitulo_a9272448eec05cd9c026c54824bf2e727}{get\+Gastos} () const =0
+\begin{DoxyCompactList}\small\item\em Metodo puramente virtual que permite obter o gastos num titulo. A implementacao encontra-\/se nas classes derivadas\+: \hyperlink{classHome}{Home} e \hyperlink{classOnline}{Online}. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTitulo_ad36afe75694812eabe74af5fe32ad95b}{get\+Anuncios} () const
+\begin{DoxyCompactList}\small\item\em Permite obter o numero de anuncios. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTitulo_a71d5b5985170de5612ec49c5c955f120}{get\+Cliques} () const
+\begin{DoxyCompactList}\small\item\em Permite obter o numero de cliques. \end{DoxyCompactList}\item 
+void \hyperlink{classTitulo_a08d0b556bebf6863edb62ed5dc19923c}{set\+Preco} (const float preco)
+\begin{DoxyCompactList}\small\item\em Adiciona um novo preco ao historico de precos. \end{DoxyCompactList}\item 
+void \hyperlink{classTitulo_a8004d12b8ae0d0746b999a6411df150c}{adiciona\+Anuncios} (unsigned int numero)
+\begin{DoxyCompactList}\small\item\em Adiciona um numero de anuncios. \end{DoxyCompactList}\item 
+void \hyperlink{classTitulo_a0cf99e4a2b522a7acae425593e87efec}{adiciona\+Cliques} (unsigned int numero)
+\begin{DoxyCompactList}\small\item\em Adiciona um numero de cliques. \end{DoxyCompactList}\item 
+void \hyperlink{classTitulo_a64300cd5c0c717f77666413127404d36}{adiciona\+User\+Hash\+Table} (\hyperlink{classUtilizador}{Utilizador} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Adiciona um utilizador a lista de utilizadores adormecidos. \end{DoxyCompactList}\item 
+void \hyperlink{classTitulo_a66ee2ff7b95cf280a667dc87477a0ae1}{remove\+User\+Hash\+Table} (\hyperlink{classUtilizador}{Utilizador} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Remove um utilizador a lista de utilizadores adormecidos. \end{DoxyCompactList}\item 
+void \hyperlink{classTitulo_ab14d7a11d5b91dec67fb115cfa83d860}{print\+Asleep\+Users} ()
+\begin{DoxyCompactList}\small\item\em Mostra os utilizadores adormecidos no ecra. \end{DoxyCompactList}\item 
+void \hyperlink{classTitulo_aa3c77caaee860b214308cf0d2944b835}{clear\+Asleep\+Users} ()
+\begin{DoxyCompactList}\small\item\em limpa a lista de utilizadores \end{DoxyCompactList}\item 
+\hyperlink{Titulo_8h_a0996281e9e5d419736dec228200cfdc5}{User\+Hash\+Table} \hyperlink{classTitulo_ae38bebc95efb3405d5cd9ca71aa98ab2}{get\+Sleep\+Users} ()
+\begin{DoxyCompactList}\small\item\em Devolve a lista de utilizadores adormecidos. \end{DoxyCompactList}\item 
+std\+::ostream \& \hyperlink{classTitulo_ab31e1d801062a75abdb10664de23d897}{show\+Titulo} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Permite obter o desconto do titulo em percentagem. \end{DoxyCompactList}\item 
+bool \hyperlink{classTitulo_ac0622a3b256910ac87ee900a9be014b6}{operator==} (const \hyperlink{classTitulo}{Titulo} $\ast$T)
+\begin{DoxyCompactList}\small\item\em Verifica se dois titulos sao iguais. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classTitulo_aff7d1cc9accbc0f49c05cdc97c66844c}{IdU}
+\item 
+std\+::string \hyperlink{classTitulo_a8abdf1fc6d4fc14be20bbec247664d83}{nome}
+\item 
+\hyperlink{classData}{Data} \hyperlink{classTitulo_ae540ddf2c607eb0e4de29eb8c0cca7f0}{data\+Lancamento}
+\item 
+unsigned int \hyperlink{classTitulo_a28891078f53fc3317de60ae739514955}{idade\+Minima}
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{classTitulo_a3209265c8534416978ee9891b96c14b2}{generos}
+\item 
+std\+::string \hyperlink{classTitulo_a91510c440dc8583d60d88ea02f4eb1b6}{empresa}
+\item 
+std\+::string \hyperlink{classTitulo_a67761eb7f006453ab0869e4b7c0a9c0b}{plataforma}
+\item 
+std\+::vector$<$ float $>$ \hyperlink{classTitulo_aad5a44ca7e83939e8b47f1e11b80eca2}{historico\+\_\+preco}
+\item 
+unsigned int \hyperlink{classTitulo_a31919af9268f0c6e55b786457d1df586}{numero\+Anuncios}
+\item 
+unsigned int \hyperlink{classTitulo_a7775da325c14a4d76f2d3b0800c28fa3}{numero\+Cliques}
+\item 
+\hyperlink{Titulo_8h_a0996281e9e5d419736dec228200cfdc5}{User\+Hash\+Table} \hyperlink{classTitulo_a84e7b9dc58fbba5f048a57a0878a43e8}{asleep\+Users}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \hyperlink{classTitulo_a54ff099c5e3bfbf23d4326b4acc73263}{Id\+Unico} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classTitulo}{Titulo} que foi declarado no \hyperlink{classSistema}{Sistema} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTitulo_a898faeefdad15c64ae4cdc904a7e6f0e}\label{classTitulo_a898faeefdad15c64ae4cdc904a7e6f0e}} 
+\index{Titulo@{Titulo}!Titulo@{Titulo}}
+\index{Titulo@{Titulo}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{Titulo()}{Titulo()}}
+{\footnotesize\ttfamily Titulo\+::\+Titulo (\begin{DoxyParamCaption}\item[{std\+::string}]{nome,  }\item[{unsigned}]{idade\+Minima,  }\item[{std\+::string}]{plataforma,  }\item[{float}]{preco,  }\item[{std\+::vector$<$ std\+::string $>$}]{generos,  }\item[{std\+::string}]{empresa,  }\item[{\hyperlink{classData}{Data}}]{data\+Lancamento,  }\item[{unsigned int}]{numero,  }\item[{unsigned int}]{cliques }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe \hyperlink{classTitulo}{Titulo}. 
+
+$<$ Lista de utilizadores adormecidos 
+\begin{DoxyParams}{Parameters}
+{\em nome} & -\/ Nome atribuido ao titulo \\
+\hline
+{\em idade\+Minima} & -\/ Idade minima atribuida ao titulo \\
+\hline
+{\em plataforma} & -\/ Plataforma atribuida ao titulo \\
+\hline
+{\em preco} & -\/ Preco base adicionado ao historico de precos \\
+\hline
+{\em generos} & -\/ Generos atribuidos ao titulo \\
+\hline
+{\em empresa} & -\/ \hyperlink{classEmpresa}{Empresa} atribuida ao titulo \\
+\hline
+{\em data\+Lancamento} & -\/ \hyperlink{classData}{Data} atribuida ao titulo \\
+\hline
+{\em numero} & -\/ Numero de anuncios visualizados \\
+\hline
+{\em cliques} & -\/ Numero de cliques no titulo \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+23                                                                         \{
+24 
+25     this->\hyperlink{classTitulo_aff7d1cc9accbc0f49c05cdc97c66844c}{IdU} = \hyperlink{classTitulo_a54ff099c5e3bfbf23d4326b4acc73263}{IdUnico}++;
+26     this->\hyperlink{classTitulo_a8abdf1fc6d4fc14be20bbec247664d83}{nome} = \hyperlink{classTitulo_a8abdf1fc6d4fc14be20bbec247664d83}{nome};
+27     this->\hyperlink{classTitulo_a28891078f53fc3317de60ae739514955}{idadeMinima} = \hyperlink{classTitulo_a28891078f53fc3317de60ae739514955}{idadeMinima};
+28     this->\hyperlink{classTitulo_a3209265c8534416978ee9891b96c14b2}{generos} = \hyperlink{classTitulo_a3209265c8534416978ee9891b96c14b2}{generos};
+29     this->\hyperlink{classTitulo_a91510c440dc8583d60d88ea02f4eb1b6}{empresa} = \hyperlink{classTitulo_a91510c440dc8583d60d88ea02f4eb1b6}{empresa};
+30     this->\hyperlink{classTitulo_a67761eb7f006453ab0869e4b7c0a9c0b}{plataforma} = \hyperlink{classTitulo_a67761eb7f006453ab0869e4b7c0a9c0b}{plataforma};
+31     this->\hyperlink{classTitulo_aad5a44ca7e83939e8b47f1e11b80eca2}{historico\_preco}.push\_back(preco);
+32     this->dataLancamento = \hyperlink{classTitulo_ae540ddf2c607eb0e4de29eb8c0cca7f0}{dataLancamento};
+33     this->\hyperlink{classTitulo_a31919af9268f0c6e55b786457d1df586}{numeroAnuncios} = numero;
+34     this->\hyperlink{classTitulo_a7775da325c14a4d76f2d3b0800c28fa3}{numeroCliques} = cliques;
+35 
+36  \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classTitulo_a9b7513f1c255265a1d6ccff0ead30a8c}\label{classTitulo_a9b7513f1c255265a1d6ccff0ead30a8c}} 
+\index{Titulo@{Titulo}!````~Titulo@{$\sim$\+Titulo}}
+\index{````~Titulo@{$\sim$\+Titulo}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{$\sim$\+Titulo()}{~Titulo()}}
+{\footnotesize\ttfamily Titulo\+::$\sim$\+Titulo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destrutor da classe \hyperlink{classTitulo}{Titulo}. 
+
+
+\begin{DoxyCode}
+38 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTitulo_a8004d12b8ae0d0746b999a6411df150c}\label{classTitulo_a8004d12b8ae0d0746b999a6411df150c}} 
+\index{Titulo@{Titulo}!adiciona\+Anuncios@{adiciona\+Anuncios}}
+\index{adiciona\+Anuncios@{adiciona\+Anuncios}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{adiciona\+Anuncios()}{adicionaAnuncios()}}
+{\footnotesize\ttfamily void Titulo\+::adiciona\+Anuncios (\begin{DoxyParamCaption}\item[{unsigned int}]{numero }\end{DoxyParamCaption})}
+
+
+
+Adiciona um numero de anuncios. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em numero} & -\/ numero de anuncios \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+110                                                   \{
+111      this->\hyperlink{classTitulo_a31919af9268f0c6e55b786457d1df586}{numeroAnuncios} += numero;
+112  \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTitulo_a8004d12b8ae0d0746b999a6411df150c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTitulo_a0cf99e4a2b522a7acae425593e87efec}\label{classTitulo_a0cf99e4a2b522a7acae425593e87efec}} 
+\index{Titulo@{Titulo}!adiciona\+Cliques@{adiciona\+Cliques}}
+\index{adiciona\+Cliques@{adiciona\+Cliques}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{adiciona\+Cliques()}{adicionaCliques()}}
+{\footnotesize\ttfamily void Titulo\+::adiciona\+Cliques (\begin{DoxyParamCaption}\item[{unsigned int}]{numero }\end{DoxyParamCaption})}
+
+
+
+Adiciona um numero de cliques. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em numero} & -\/ numero de cliques \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+114                                                  \{
+115      this->\hyperlink{classTitulo_a7775da325c14a4d76f2d3b0800c28fa3}{numeroCliques} += numero;
+116  \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTitulo_a0cf99e4a2b522a7acae425593e87efec_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTitulo_a64300cd5c0c717f77666413127404d36}\label{classTitulo_a64300cd5c0c717f77666413127404d36}} 
+\index{Titulo@{Titulo}!adiciona\+User\+Hash\+Table@{adiciona\+User\+Hash\+Table}}
+\index{adiciona\+User\+Hash\+Table@{adiciona\+User\+Hash\+Table}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{adiciona\+User\+Hash\+Table()}{adicionaUserHashTable()}}
+{\footnotesize\ttfamily void Titulo\+::adiciona\+User\+Hash\+Table (\begin{DoxyParamCaption}\item[{\hyperlink{classUtilizador}{Utilizador} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Adiciona um utilizador a lista de utilizadores adormecidos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & -\/ apontador para o utilizador a adicionar \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+118                                                 \{
+119      \textcolor{keywordflow}{if}(u->\hyperlink{classUtilizador_a8c4c3275a56142c31f19c7af78e3c88f}{getMonthsLastBuy}() <= 3)
+120          \textcolor{keywordflow}{return};
+121      std::priority\_queue<WishedTitle> wish = u->\hyperlink{classUtilizador_a8624e9e45e13e592e68164b0d7b2b7cd}{getWishList}();
+122      \textcolor{keywordflow}{while}(!wish.empty())\{
+123          \textcolor{keyword}{auto} it = this->\hyperlink{classTitulo_a84e7b9dc58fbba5f048a57a0878a43e8}{asleepUsers}.find(u);
+124          \textcolor{keywordflow}{if}(it == \hyperlink{classTitulo_a84e7b9dc58fbba5f048a57a0878a43e8}{asleepUsers}.end() && wish.top().getTitulo()->getNome() == this->
+      \hyperlink{classTitulo_a8abdf1fc6d4fc14be20bbec247664d83}{nome} && wish.top().getTitulo()->getPlataforma() == this->\hyperlink{classTitulo_a67761eb7f006453ab0869e4b7c0a9c0b}{plataforma} && wish.top().
+      getProbabilidadeCompra()>0.6)\{
+125              \hyperlink{classTitulo_a84e7b9dc58fbba5f048a57a0878a43e8}{asleepUsers}.insert(u);
+126          \}
+127          wish.pop();
+128      \}
+129  \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTitulo_a64300cd5c0c717f77666413127404d36_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTitulo_aa3c77caaee860b214308cf0d2944b835}\label{classTitulo_aa3c77caaee860b214308cf0d2944b835}} 
+\index{Titulo@{Titulo}!clear\+Asleep\+Users@{clear\+Asleep\+Users}}
+\index{clear\+Asleep\+Users@{clear\+Asleep\+Users}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{clear\+Asleep\+Users()}{clearAsleepUsers()}}
+{\footnotesize\ttfamily void Titulo\+::clear\+Asleep\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+limpa a lista de utilizadores 
+
+
+\begin{DoxyCode}
+204 \{ this->\hyperlink{classTitulo_a84e7b9dc58fbba5f048a57a0878a43e8}{asleepUsers}.clear() ;\}
+\end{DoxyCode}
+\mbox{\Hypertarget{classTitulo_ad36afe75694812eabe74af5fe32ad95b}\label{classTitulo_ad36afe75694812eabe74af5fe32ad95b}} 
+\index{Titulo@{Titulo}!get\+Anuncios@{get\+Anuncios}}
+\index{get\+Anuncios@{get\+Anuncios}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{get\+Anuncios()}{getAnuncios()}}
+{\footnotesize\ttfamily unsigned int Titulo\+::get\+Anuncios (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter o numero de anuncios. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o numero de anuncios 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+76                                         \{
+77      \textcolor{keywordflow}{return} this->\hyperlink{classTitulo_a31919af9268f0c6e55b786457d1df586}{numeroAnuncios};
+78  \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTitulo_ad36afe75694812eabe74af5fe32ad95b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTitulo_a71d5b5985170de5612ec49c5c955f120}\label{classTitulo_a71d5b5985170de5612ec49c5c955f120}} 
+\index{Titulo@{Titulo}!get\+Cliques@{get\+Cliques}}
+\index{get\+Cliques@{get\+Cliques}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{get\+Cliques()}{getCliques()}}
+{\footnotesize\ttfamily unsigned int Titulo\+::get\+Cliques (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter o numero de cliques. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o numero de cliques 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+80                                        \{
+81      \textcolor{keywordflow}{return} this->\hyperlink{classTitulo_a7775da325c14a4d76f2d3b0800c28fa3}{numeroCliques};
+82  \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTitulo_a71d5b5985170de5612ec49c5c955f120_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTitulo_a1cb9b8c0a9dca73d5925922ccc041fa8}\label{classTitulo_a1cb9b8c0a9dca73d5925922ccc041fa8}} 
+\index{Titulo@{Titulo}!get\+Data\+Lancamento@{get\+Data\+Lancamento}}
+\index{get\+Data\+Lancamento@{get\+Data\+Lancamento}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{get\+Data\+Lancamento()}{getDataLancamento()}}
+{\footnotesize\ttfamily \hyperlink{classData}{Data} Titulo\+::get\+Data\+Lancamento (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter a data de lancamento do titulo. 
+
+\begin{DoxyReturn}{Returns}
+Retorna a data de lancamento do titulo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+52                                       \{
+53         \textcolor{keywordflow}{return} this->\hyperlink{classTitulo_ae540ddf2c607eb0e4de29eb8c0cca7f0}{dataLancamento};
+54 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTitulo_a1cb9b8c0a9dca73d5925922ccc041fa8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTitulo_ae7df7d468f8220fa32b2772df4c53081}\label{classTitulo_ae7df7d468f8220fa32b2772df4c53081}} 
+\index{Titulo@{Titulo}!get\+Desconto@{get\+Desconto}}
+\index{get\+Desconto@{get\+Desconto}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{get\+Desconto()}{getDesconto()}}
+{\footnotesize\ttfamily float Titulo\+::get\+Desconto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter o desconto do titulo em percentagem. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o desconto do titulo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+93  \{
+94     \textcolor{keywordflow}{return} abs(( 1- \hyperlink{classTitulo_a93725bdc2e98350e47b54fd76c0fa236}{getPreco}() / \hyperlink{classTitulo_a5257cbaf35ad018001a7e48678795305}{getPrecoBase}() )*100); \textcolor{comment}{/*divisao do preco atual com o
+       de lan�amento */}
+95  \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{classTitulo_ae7df7d468f8220fa32b2772df4c53081_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTitulo_ae7df7d468f8220fa32b2772df4c53081_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTitulo_a48d810fe27da41cfb726fb5680a68471}\label{classTitulo_a48d810fe27da41cfb726fb5680a68471}} 
+\index{Titulo@{Titulo}!get\+Empresa@{get\+Empresa}}
+\index{get\+Empresa@{get\+Empresa}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{get\+Empresa()}{getEmpresa()}}
+{\footnotesize\ttfamily std\+::string Titulo\+::get\+Empresa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter a empresa do titulo. 
+
+\begin{DoxyReturn}{Returns}
+Retorna a empresa do titulo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+64                                    \{
+65         \textcolor{keywordflow}{return} this->\hyperlink{classTitulo_a91510c440dc8583d60d88ea02f4eb1b6}{empresa};
+66 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTitulo_a48d810fe27da41cfb726fb5680a68471_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTitulo_a9272448eec05cd9c026c54824bf2e727}\label{classTitulo_a9272448eec05cd9c026c54824bf2e727}} 
+\index{Titulo@{Titulo}!get\+Gastos@{get\+Gastos}}
+\index{get\+Gastos@{get\+Gastos}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{get\+Gastos()}{getGastos()}}
+{\footnotesize\ttfamily virtual float Titulo\+::get\+Gastos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Metodo puramente virtual que permite obter o gastos num titulo. A implementacao encontra-\/se nas classes derivadas\+: \hyperlink{classHome}{Home} e \hyperlink{classOnline}{Online}. 
+
+\begin{DoxyReturn}{Returns}
+Retorna os gastos no titulo consoante o seu tipo 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classOnline_ac3a2197523ee26effcacd9a2a9fe968e}{Online}, and \hyperlink{classHome_aff6d69739d404378524a591596b47856}{Home}.
+
+\mbox{\Hypertarget{classTitulo_a09992b973f8cfe755f21ff725b2970f0}\label{classTitulo_a09992b973f8cfe755f21ff725b2970f0}} 
+\index{Titulo@{Titulo}!get\+Generos@{get\+Generos}}
+\index{get\+Generos@{get\+Generos}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{get\+Generos()}{getGeneros()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Titulo\+::get\+Generos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter os generos do titulo. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um vetor com os generos do titulo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+60                                                \{
+61         \textcolor{keywordflow}{return} this->\hyperlink{classTitulo_a3209265c8534416978ee9891b96c14b2}{generos};
+62 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTitulo_a09992b973f8cfe755f21ff725b2970f0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTitulo_ab392d79a55b0ce556e03ad5a2fecad05}\label{classTitulo_ab392d79a55b0ce556e03ad5a2fecad05}} 
+\index{Titulo@{Titulo}!get\+Historial\+Preco@{get\+Historial\+Preco}}
+\index{get\+Historial\+Preco@{get\+Historial\+Preco}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{get\+Historial\+Preco()}{getHistorialPreco()}}
+{\footnotesize\ttfamily std\+::vector$<$ float $>$ Titulo\+::get\+Historial\+Preco (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter o historico de precos do titulo. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um vetor com todos os precos do titulo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+88                                                  \{
+89      \textcolor{keywordflow}{return} \hyperlink{classTitulo_aad5a44ca7e83939e8b47f1e11b80eca2}{historico\_preco};
+90  \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTitulo_ab392d79a55b0ce556e03ad5a2fecad05_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTitulo_a8048db7604abd58892122c810a6794be}\label{classTitulo_a8048db7604abd58892122c810a6794be}} 
+\index{Titulo@{Titulo}!get\+Idade\+Minima@{get\+Idade\+Minima}}
+\index{get\+Idade\+Minima@{get\+Idade\+Minima}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{get\+Idade\+Minima()}{getIdadeMinima()}}
+{\footnotesize\ttfamily unsigned int Titulo\+::get\+Idade\+Minima (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter a idade minima do titulo. 
+
+\begin{DoxyReturn}{Returns}
+Retorna a idade minima do titulo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+56                                            \{
+57         \textcolor{keywordflow}{return} this->\hyperlink{classTitulo_a28891078f53fc3317de60ae739514955}{idadeMinima};
+58 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTitulo_a8048db7604abd58892122c810a6794be_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTitulo_af8fed6503c1c528ac3bfdbb182fce0b6}\label{classTitulo_af8fed6503c1c528ac3bfdbb182fce0b6}} 
+\index{Titulo@{Titulo}!get\+IdU@{get\+IdU}}
+\index{get\+IdU@{get\+IdU}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{get\+Id\+U()}{getIdU()}}
+{\footnotesize\ttfamily unsigned int Titulo\+::get\+IdU (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter o identificador do titulo. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o identificador do titulo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+48                                  \{
+49         \textcolor{keywordflow}{return} this->\hyperlink{classTitulo_aff7d1cc9accbc0f49c05cdc97c66844c}{IdU};
+50  \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTitulo_af8fed6503c1c528ac3bfdbb182fce0b6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTitulo_acb79279860b3404c6419697df5f860cb}\label{classTitulo_acb79279860b3404c6419697df5f860cb}} 
+\index{Titulo@{Titulo}!get\+Nome@{get\+Nome}}
+\index{get\+Nome@{get\+Nome}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{get\+Nome()}{getNome()}}
+{\footnotesize\ttfamily std\+::string Titulo\+::get\+Nome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter o nome do titulo. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o nome do titulo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+44                                 \{
+45         \textcolor{keywordflow}{return} this->\hyperlink{classTitulo_a8abdf1fc6d4fc14be20bbec247664d83}{nome};
+46  \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTitulo_acb79279860b3404c6419697df5f860cb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTitulo_a2a57a31d40c5df012b3c6e2451c253dd}\label{classTitulo_a2a57a31d40c5df012b3c6e2451c253dd}} 
+\index{Titulo@{Titulo}!get\+Plataforma@{get\+Plataforma}}
+\index{get\+Plataforma@{get\+Plataforma}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{get\+Plataforma()}{getPlataforma()}}
+{\footnotesize\ttfamily std\+::string Titulo\+::get\+Plataforma (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter a plataforma do titulo. 
+
+\begin{DoxyReturn}{Returns}
+Retorna a plataforma do titulo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+68                                       \{
+69      \textcolor{keywordflow}{return} this->\hyperlink{classTitulo_a67761eb7f006453ab0869e4b7c0a9c0b}{plataforma};
+70  \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTitulo_a2a57a31d40c5df012b3c6e2451c253dd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTitulo_a93725bdc2e98350e47b54fd76c0fa236}\label{classTitulo_a93725bdc2e98350e47b54fd76c0fa236}} 
+\index{Titulo@{Titulo}!get\+Preco@{get\+Preco}}
+\index{get\+Preco@{get\+Preco}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{get\+Preco()}{getPreco()}}
+{\footnotesize\ttfamily float Titulo\+::get\+Preco (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter o preco atual do titulo. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o preco atual do titulo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+72                               \{
+73     \textcolor{keywordflow}{return} \hyperlink{classTitulo_aad5a44ca7e83939e8b47f1e11b80eca2}{historico\_preco}.at(\hyperlink{classTitulo_aad5a44ca7e83939e8b47f1e11b80eca2}{historico\_preco}.size()-1);
+74   \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTitulo_a93725bdc2e98350e47b54fd76c0fa236_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTitulo_a5257cbaf35ad018001a7e48678795305}\label{classTitulo_a5257cbaf35ad018001a7e48678795305}} 
+\index{Titulo@{Titulo}!get\+Preco\+Base@{get\+Preco\+Base}}
+\index{get\+Preco\+Base@{get\+Preco\+Base}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{get\+Preco\+Base()}{getPrecoBase()}}
+{\footnotesize\ttfamily float Titulo\+::get\+Preco\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter o preco base do titulo. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o preco base do titulo 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+84                                  \{
+85      \textcolor{keywordflow}{return} \hyperlink{classTitulo_aad5a44ca7e83939e8b47f1e11b80eca2}{historico\_preco}.at(0);
+86  \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTitulo_a5257cbaf35ad018001a7e48678795305_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTitulo_ae38bebc95efb3405d5cd9ca71aa98ab2}\label{classTitulo_ae38bebc95efb3405d5cd9ca71aa98ab2}} 
+\index{Titulo@{Titulo}!get\+Sleep\+Users@{get\+Sleep\+Users}}
+\index{get\+Sleep\+Users@{get\+Sleep\+Users}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{get\+Sleep\+Users()}{getSleepUsers()}}
+{\footnotesize\ttfamily \hyperlink{Titulo_8h_a0996281e9e5d419736dec228200cfdc5}{User\+Hash\+Table} Titulo\+::get\+Sleep\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devolve a lista de utilizadores adormecidos. 
+
+\begin{DoxyReturn}{Returns}
+Retorna a lista de utilizadores adormecidos 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+210 \{ \textcolor{keywordflow}{return} this->\hyperlink{classTitulo_a84e7b9dc58fbba5f048a57a0878a43e8}{asleepUsers}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classTitulo_ac0622a3b256910ac87ee900a9be014b6}\label{classTitulo_ac0622a3b256910ac87ee900a9be014b6}} 
+\index{Titulo@{Titulo}!operator==@{operator==}}
+\index{operator==@{operator==}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Titulo\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classTitulo}{Titulo} $\ast$}]{T }\end{DoxyParamCaption})}
+
+
+
+Verifica se dois titulos sao iguais. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & -\/ titulo com que se vai comparar o objeto atual \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se forem iguais senao falso 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+148                                          \{
+149     \textcolor{keywordflow}{return} (this->\hyperlink{classTitulo_aff7d1cc9accbc0f49c05cdc97c66844c}{IdU} == T->\hyperlink{classTitulo_aff7d1cc9accbc0f49c05cdc97c66844c}{IdU});
+150  \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{classTitulo_ac0622a3b256910ac87ee900a9be014b6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTitulo_ab14d7a11d5b91dec67fb115cfa83d860}\label{classTitulo_ab14d7a11d5b91dec67fb115cfa83d860}} 
+\index{Titulo@{Titulo}!print\+Asleep\+Users@{print\+Asleep\+Users}}
+\index{print\+Asleep\+Users@{print\+Asleep\+Users}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{print\+Asleep\+Users()}{printAsleepUsers()}}
+{\footnotesize\ttfamily void Titulo\+::print\+Asleep\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Mostra os utilizadores adormecidos no ecra. 
+
+
+\begin{DoxyCode}
+139                              \{
+140     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} it: this->\hyperlink{classTitulo_a84e7b9dc58fbba5f048a57a0878a43e8}{asleepUsers})\{
+141         std::cout << (*it)<< std::endl;
+142     \}
+143 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classTitulo_a66ee2ff7b95cf280a667dc87477a0ae1}\label{classTitulo_a66ee2ff7b95cf280a667dc87477a0ae1}} 
+\index{Titulo@{Titulo}!remove\+User\+Hash\+Table@{remove\+User\+Hash\+Table}}
+\index{remove\+User\+Hash\+Table@{remove\+User\+Hash\+Table}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{remove\+User\+Hash\+Table()}{removeUserHashTable()}}
+{\footnotesize\ttfamily void Titulo\+::remove\+User\+Hash\+Table (\begin{DoxyParamCaption}\item[{\hyperlink{classUtilizador}{Utilizador} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Remove um utilizador a lista de utilizadores adormecidos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & -\/ apontador para o utilizador a remover \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+131                                              \{
+132     \textcolor{keyword}{auto} it = this->\hyperlink{classTitulo_a84e7b9dc58fbba5f048a57a0878a43e8}{asleepUsers}.find(u);
+133     \textcolor{keywordflow}{if}(it != \hyperlink{classTitulo_a84e7b9dc58fbba5f048a57a0878a43e8}{asleepUsers}.end())\{
+134         \hyperlink{classTitulo_a84e7b9dc58fbba5f048a57a0878a43e8}{asleepUsers}.erase(u);
+135         std::cout << \textcolor{stringliteral}{"Utilizador removido da tabela da lista de utilizadores adormecidos do titulo "}<<
+      this->\hyperlink{classTitulo_a8abdf1fc6d4fc14be20bbec247664d83}{nome}<<std::endl;
+136     \}
+137 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classTitulo_a8ea091928732a5ff5b974e003668a778}\label{classTitulo_a8ea091928732a5ff5b974e003668a778}} 
+\index{Titulo@{Titulo}!set\+Historico\+Preco@{set\+Historico\+Preco}}
+\index{set\+Historico\+Preco@{set\+Historico\+Preco}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{set\+Historico\+Preco()}{setHistoricoPreco()}}
+{\footnotesize\ttfamily void Titulo\+::set\+Historico\+Preco (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{precos }\end{DoxyParamCaption})}
+
+
+
+Permite atualizar o historico de precos do titulo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em precos} & -\/ vetor com os precos para atribuir ao titulo \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+97                                                               \{
+98      \hyperlink{classTitulo_aad5a44ca7e83939e8b47f1e11b80eca2}{historico\_preco}=precos;
+99  \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTitulo_a8ea091928732a5ff5b974e003668a778_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTitulo_a08d0b556bebf6863edb62ed5dc19923c}\label{classTitulo_a08d0b556bebf6863edb62ed5dc19923c}} 
+\index{Titulo@{Titulo}!set\+Preco@{set\+Preco}}
+\index{set\+Preco@{set\+Preco}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{set\+Preco()}{setPreco()}}
+{\footnotesize\ttfamily void Titulo\+::set\+Preco (\begin{DoxyParamCaption}\item[{const float}]{preco }\end{DoxyParamCaption})}
+
+
+
+Adiciona um novo preco ao historico de precos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em preco} & -\/ preco a adicionar ao historico de precos \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+103                                         \{
+104     \textcolor{keywordflow}{if} (preco <= 0 || preco>=\hyperlink{classTitulo_aad5a44ca7e83939e8b47f1e11b80eca2}{historico\_preco}[\hyperlink{classTitulo_aad5a44ca7e83939e8b47f1e11b80eca2}{historico\_preco}.size()-1])
+105         \textcolor{keywordflow}{throw} \hyperlink{classPrecoInvalido}{PrecoInvalido}(std::to\_string(preco));
+106     \textcolor{keywordflow}{else} \hyperlink{classTitulo_aad5a44ca7e83939e8b47f1e11b80eca2}{historico\_preco}.push\_back(preco);
+107  \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classTitulo_ab31e1d801062a75abdb10664de23d897}\label{classTitulo_ab31e1d801062a75abdb10664de23d897}} 
+\index{Titulo@{Titulo}!show\+Titulo@{show\+Titulo}}
+\index{show\+Titulo@{show\+Titulo}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{show\+Titulo()}{showTitulo()}}
+{\footnotesize\ttfamily std\+::ostream \& Titulo\+::show\+Titulo (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter o desconto do titulo em percentagem. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o desconto do titulo 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em os} & -\/ Stream passada por referencia para a qual sera efetuada a escrita \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+155  \{
+156     os << \textcolor{stringliteral}{"Titulo: "} << this->\hyperlink{classTitulo_a8abdf1fc6d4fc14be20bbec247664d83}{nome} << std::endl;
+157     os << \textcolor{stringliteral}{"Id: "} << this->\hyperlink{classTitulo_aff7d1cc9accbc0f49c05cdc97c66844c}{IdU} << \textcolor{stringliteral}{"/n"};
+158     os << \textcolor{stringliteral}{"Data de Lan�amento: "} << this->\hyperlink{classTitulo_ae540ddf2c607eb0e4de29eb8c0cca7f0}{dataLancamento} << std::endl;
+159     os << \textcolor{stringliteral}{"Idade Minima: "} << this->\hyperlink{classTitulo_a28891078f53fc3317de60ae739514955}{idadeMinima} << \textcolor{stringliteral}{"\(\backslash\)n"};
+160 
+161     os << \textcolor{stringliteral}{"Generos: "};
+162     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} & genero : this->\hyperlink{classTitulo_a3209265c8534416978ee9891b96c14b2}{generos})
+163         os << genero << \textcolor{stringliteral}{";"};
+164 
+165     os << std::endl << \textcolor{stringliteral}{"Preco de Aquisicao: "} << std::endl;
+166     os << \hyperlink{classTitulo_a93725bdc2e98350e47b54fd76c0fa236}{getPreco}()<<\textcolor{stringliteral}{"\(\backslash\)n"};
+167 
+168     os << std::endl << \textcolor{stringliteral}{"Plataformas: "} << std::endl;
+169     os<<\hyperlink{classTitulo_a67761eb7f006453ab0869e4b7c0a9c0b}{plataforma}<<\textcolor{stringliteral}{"\(\backslash\)n"};
+170     \textcolor{keywordflow}{return} os;
+171  \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classTitulo_ab31e1d801062a75abdb10664de23d897_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classTitulo_ab31e1d801062a75abdb10664de23d897_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classTitulo_a84e7b9dc58fbba5f048a57a0878a43e8}\label{classTitulo_a84e7b9dc58fbba5f048a57a0878a43e8}} 
+\index{Titulo@{Titulo}!asleep\+Users@{asleep\+Users}}
+\index{asleep\+Users@{asleep\+Users}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{asleep\+Users}{asleepUsers}}
+{\footnotesize\ttfamily \hyperlink{Titulo_8h_a0996281e9e5d419736dec228200cfdc5}{User\+Hash\+Table} Titulo\+::asleep\+Users\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classTitulo_ae540ddf2c607eb0e4de29eb8c0cca7f0}\label{classTitulo_ae540ddf2c607eb0e4de29eb8c0cca7f0}} 
+\index{Titulo@{Titulo}!data\+Lancamento@{data\+Lancamento}}
+\index{data\+Lancamento@{data\+Lancamento}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{data\+Lancamento}{dataLancamento}}
+{\footnotesize\ttfamily \hyperlink{classData}{Data} Titulo\+::data\+Lancamento\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hyperlink{classData}{Data} de lancamento do titulo \mbox{\Hypertarget{classTitulo_a91510c440dc8583d60d88ea02f4eb1b6}\label{classTitulo_a91510c440dc8583d60d88ea02f4eb1b6}} 
+\index{Titulo@{Titulo}!empresa@{empresa}}
+\index{empresa@{empresa}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{empresa}{empresa}}
+{\footnotesize\ttfamily std\+::string Titulo\+::empresa\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classTitulo_a3209265c8534416978ee9891b96c14b2}\label{classTitulo_a3209265c8534416978ee9891b96c14b2}} 
+\index{Titulo@{Titulo}!generos@{generos}}
+\index{generos@{generos}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{generos}{generos}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Titulo\+::generos\hspace{0.3cm}{\ttfamily [protected]}}
+
+Vetor com os genneros atribuidos ao titulo \mbox{\Hypertarget{classTitulo_aad5a44ca7e83939e8b47f1e11b80eca2}\label{classTitulo_aad5a44ca7e83939e8b47f1e11b80eca2}} 
+\index{Titulo@{Titulo}!historico\+\_\+preco@{historico\+\_\+preco}}
+\index{historico\+\_\+preco@{historico\+\_\+preco}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{historico\+\_\+preco}{historico\_preco}}
+{\footnotesize\ttfamily std\+::vector$<$float$>$ Titulo\+::historico\+\_\+preco\hspace{0.3cm}{\ttfamily [protected]}}
+
+Historico de precos \mbox{\Hypertarget{classTitulo_a28891078f53fc3317de60ae739514955}\label{classTitulo_a28891078f53fc3317de60ae739514955}} 
+\index{Titulo@{Titulo}!idade\+Minima@{idade\+Minima}}
+\index{idade\+Minima@{idade\+Minima}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{idade\+Minima}{idadeMinima}}
+{\footnotesize\ttfamily unsigned int Titulo\+::idade\+Minima\hspace{0.3cm}{\ttfamily [protected]}}
+
+Idade minima necessaria para se jogar o titulo \mbox{\Hypertarget{classTitulo_aff7d1cc9accbc0f49c05cdc97c66844c}\label{classTitulo_aff7d1cc9accbc0f49c05cdc97c66844c}} 
+\index{Titulo@{Titulo}!IdU@{IdU}}
+\index{IdU@{IdU}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{IdU}{IdU}}
+{\footnotesize\ttfamily unsigned int Titulo\+::\+IdU\hspace{0.3cm}{\ttfamily [protected]}}
+
+Identificador do titulo \mbox{\Hypertarget{classTitulo_a54ff099c5e3bfbf23d4326b4acc73263}\label{classTitulo_a54ff099c5e3bfbf23d4326b4acc73263}} 
+\index{Titulo@{Titulo}!Id\+Unico@{Id\+Unico}}
+\index{Id\+Unico@{Id\+Unico}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{Id\+Unico}{IdUnico}}
+{\footnotesize\ttfamily unsigned int Titulo\+::\+Id\+Unico = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Variavel static para defenir o ID do titulo \mbox{\Hypertarget{classTitulo_a8abdf1fc6d4fc14be20bbec247664d83}\label{classTitulo_a8abdf1fc6d4fc14be20bbec247664d83}} 
+\index{Titulo@{Titulo}!nome@{nome}}
+\index{nome@{nome}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{nome}{nome}}
+{\footnotesize\ttfamily std\+::string Titulo\+::nome\hspace{0.3cm}{\ttfamily [protected]}}
+
+Nome do titulo \mbox{\Hypertarget{classTitulo_a31919af9268f0c6e55b786457d1df586}\label{classTitulo_a31919af9268f0c6e55b786457d1df586}} 
+\index{Titulo@{Titulo}!numero\+Anuncios@{numero\+Anuncios}}
+\index{numero\+Anuncios@{numero\+Anuncios}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{numero\+Anuncios}{numeroAnuncios}}
+{\footnotesize\ttfamily unsigned int Titulo\+::numero\+Anuncios\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classTitulo_a7775da325c14a4d76f2d3b0800c28fa3}\label{classTitulo_a7775da325c14a4d76f2d3b0800c28fa3}} 
+\index{Titulo@{Titulo}!numero\+Cliques@{numero\+Cliques}}
+\index{numero\+Cliques@{numero\+Cliques}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{numero\+Cliques}{numeroCliques}}
+{\footnotesize\ttfamily unsigned int Titulo\+::numero\+Cliques\hspace{0.3cm}{\ttfamily [protected]}}
+
+$<$ Numero de anuncios $<$ Numero de cliques \mbox{\Hypertarget{classTitulo_a67761eb7f006453ab0869e4b7c0a9c0b}\label{classTitulo_a67761eb7f006453ab0869e4b7c0a9c0b}} 
+\index{Titulo@{Titulo}!plataforma@{plataforma}}
+\index{plataforma@{plataforma}!Titulo@{Titulo}}
+\subsubsection{\texorpdfstring{plataforma}{plataforma}}
+{\footnotesize\ttfamily std\+::string Titulo\+::plataforma\hspace{0.3cm}{\ttfamily [protected]}}
+
+Plataforma do titulo 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Titulo_8h}{Titulo.\+h}\item 
+\hyperlink{Titulo_8cpp}{Titulo.\+cpp}\end{DoxyCompactItemize}

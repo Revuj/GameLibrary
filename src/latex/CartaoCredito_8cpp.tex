@@ -1,0 +1,43 @@
+\hypertarget{CartaoCredito_8cpp}{}\section{Cartao\+Credito.\+cpp File Reference}
+\label{CartaoCredito_8cpp}\index{Cartao\+Credito.\+cpp@{Cartao\+Credito.\+cpp}}
+{\ttfamily \#include \char`\"{}Cartao\+Credito.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Erro.\+h\char`\"{}}\newline
+Include dependency graph for Cartao\+Credito.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{CartaoCredito_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{CartaoCredito_8cpp_a86e54c41e7171506b28dec300fbbb022}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classCartaoCredito}{Cartao\+Credito} \&cartao)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{CartaoCredito_8cpp_a86e54c41e7171506b28dec300fbbb022}\label{CartaoCredito_8cpp_a86e54c41e7171506b28dec300fbbb022}} 
+\index{Cartao\+Credito.\+cpp@{Cartao\+Credito.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Cartao\+Credito.\+cpp@{Cartao\+Credito.\+cpp}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classCartaoCredito}{Cartao\+Credito} \&}]{cartao }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+57 \{
+58     os << \textcolor{stringliteral}{"Saldo: "} << cartao.\hyperlink{classCartaoCredito_a5d10788d907961f86779efaecb6a231d}{getSaldo}() << std::endl;
+59     os << \textcolor{stringliteral}{"Id: "} << cartao.\hyperlink{classCartaoCredito_ab59d60e4d155e7f29aef888ea3139ee5}{getId}() << std::endl;
+60     os << \textcolor{stringliteral}{"Data de Validade: "} << cartao.\hyperlink{classCartaoCredito_ab28b73bbecc20b5c23348e1172230533}{getDataDeValidade}() << std::endl;
+61     \textcolor{keywordflow}{return} os;
+62 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{CartaoCredito_8cpp_a86e54c41e7171506b28dec300fbbb022_cgraph}
+\end{center}
+\end{figure}

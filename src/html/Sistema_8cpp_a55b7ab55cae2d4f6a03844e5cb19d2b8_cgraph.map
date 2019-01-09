@@ -1,0 +1,4 @@
+<map id="userNumberGamesAscend" name="userNumberGamesAscend">
+<area shape="rect" id="node2" href="$classUtilizador.html#a6a128859b776bf019b5652ce61f62280" title="Permite obter a biblioteca do utilizador. " alt="" coords="232,5,392,32"/>
+<area shape="rect" id="node3" href="$classBiblioteca.html#a03c1ebf76a4ace4f57000bb99a87bb88" title="Devolve o vetor de titulos. " alt="" coords="240,56,384,83"/>
+</map>

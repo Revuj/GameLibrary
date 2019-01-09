@@ -1,0 +1,10 @@
+<map id="pesquisarJogo" name="pesquisarJogo">
+<area shape="rect" id="node2" href="$classSistema.html#a0fb81a4685bb24024295c89d22d6d719" title="Pesquisa um titulo. " alt="" coords="178,5,337,32"/>
+<area shape="rect" id="node3" href="$classTitulo.html#a0cf99e4a2b522a7acae425593e87efec" title="Adiciona um numero de cliques. " alt="" coords="180,56,335,83"/>
+<area shape="rect" id="node4" href="$classHome.html#a94aec68b520d98ac38c6794b5771cd53" title="Adiciona uma data ao vetor data_de_atualizacao. " alt="" coords="403,183,584,209"/>
+<area shape="rect" id="node5" href="$classSistema.html#abb768fdc8d4b8290ab4a267fc7a84a39" title="Devolve o banco do sistema. " alt="" coords="191,157,324,184"/>
+<area shape="rect" id="node6" href="$classBanco.html#a0735f07636c578666068a16f6ecccd91" title="Devolve a data atual. " alt="" coords="186,208,329,235"/>
+<area shape="rect" id="node7" href="$classSistema.html#aa91f2955f6b47f4dc0523b86b94c6309" title="Adiciona uma atualizacao a um titulo do sistema. " alt="" coords="160,259,355,285"/>
+<area shape="rect" id="node8" href="$classHome.html#a0ab7279a76525f48cb1b64b8bae98a44" title="Devolve membro dado vetor de datas. " alt="" coords="198,309,317,336"/>
+<area shape="rect" id="node9" href="$classErro.html#abfc1e9735b259d88bb97828a23164eb0" title="Permite obter a descricao do Erro. " alt="" coords="210,360,305,387"/>
+</map>

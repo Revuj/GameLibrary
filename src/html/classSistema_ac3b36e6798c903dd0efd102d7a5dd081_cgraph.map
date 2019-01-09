@@ -1,0 +1,13 @@
+<map id="Sistema::ordenaUtilizadores" name="Sistema::ordenaUtilizadores">
+<area shape="rect" id="node2" href="$Sistema_8cpp.html#ad518f0e0db218f2c049ef1d700caae5f" title="userAgeAscend" alt="" coords="277,56,391,83"/>
+<area shape="rect" id="node4" href="$Sistema_8cpp.html#a02190b2d4dada73645956850b936ad16" title="userAgeDescend" alt="" coords="273,5,395,32"/>
+<area shape="rect" id="node5" href="$Sistema_8cpp.html#a2cac2b30d054ab23d49adc954779f67d" title="userNameAscend" alt="" coords="271,157,397,184"/>
+<area shape="rect" id="node7" href="$Sistema_8cpp.html#ac0995133035c1bd2be3a18c95a2eba92" title="userNameDescend" alt="" coords="267,107,401,133"/>
+<area shape="rect" id="node8" href="$Sistema_8cpp.html#a55b7ab55cae2d4f6a03844e5cb19d2b8" title="userNumberGamesAscend" alt="" coords="245,259,423,285"/>
+<area shape="rect" id="node11" href="$Sistema_8cpp.html#a81e28a299272eebc9771023c1f78ea48" title="userNumberGamesDescend" alt="" coords="241,208,427,235"/>
+<area shape="rect" id="node12" href="$classSistema.html#ac22188d7bcfb9df24776d67900b9d7fb" title="Mostra os utilizadores do sistema. " alt="" coords="240,309,428,336"/>
+<area shape="rect" id="node3" href="$classUtilizador.html#adff93f098f9512263fcbd1cdadf20855" title="Permite obter a idade do utilizador. " alt="" coords="489,44,623,71"/>
+<area shape="rect" id="node6" href="$classUtilizador.html#a82874cffab116aa572f58576511b0e24" title="Permite obter o nome do utilizador. " alt="" coords="487,120,625,147"/>
+<area shape="rect" id="node9" href="$classUtilizador.html#a6a128859b776bf019b5652ce61f62280" title="Permite obter a biblioteca do utilizador. " alt="" coords="476,208,636,235"/>
+<area shape="rect" id="node10" href="$classBiblioteca.html#a03c1ebf76a4ace4f57000bb99a87bb88" title="Devolve o vetor de titulos. " alt="" coords="484,259,628,285"/>
+</map>

@@ -1,0 +1,123 @@
+\hypertarget{Titulo_8h}{}\section{Titulo.\+h File Reference}
+\label{Titulo_8h}\index{Titulo.\+h@{Titulo.\+h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}Data.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Utilizador.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+set$>$}\newline
+Include dependency graph for Titulo.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Titulo_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Titulo_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structUtilizadorPtr}{Utilizador\+Ptr}
+\item 
+class \hyperlink{classTitulo}{Titulo}
+\item 
+class \hyperlink{classHome}{Home}
+\item 
+class \hyperlink{classOnline}{Online}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::unordered\+\_\+set$<$ \hyperlink{classUtilizador}{Utilizador} $\ast$, \hyperlink{structUtilizadorPtr}{Utilizador\+Ptr}, \hyperlink{structUtilizadorPtr}{Utilizador\+Ptr} $>$ \hyperlink{Titulo_8h_a0996281e9e5d419736dec228200cfdc5}{User\+Hash\+Table}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{Titulo_8h_a5c4bf2394ed7bbc904e9b3e7fbb57b7f}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classHome}{Home} \&h)
+\item 
+std\+::ostream \& \hyperlink{Titulo_8h_a10fe5df718547ac1995a26a58083b971}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classOnline}{Online} \&o)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{Titulo_8h_a0996281e9e5d419736dec228200cfdc5}\label{Titulo_8h_a0996281e9e5d419736dec228200cfdc5}} 
+\index{Titulo.\+h@{Titulo.\+h}!User\+Hash\+Table@{User\+Hash\+Table}}
+\index{User\+Hash\+Table@{User\+Hash\+Table}!Titulo.\+h@{Titulo.\+h}}
+\subsubsection{\texorpdfstring{User\+Hash\+Table}{UserHashTable}}
+{\footnotesize\ttfamily typedef std\+::unordered\+\_\+set$<$\hyperlink{classUtilizador}{Utilizador}$\ast$,\hyperlink{structUtilizadorPtr}{Utilizador\+Ptr},\hyperlink{structUtilizadorPtr}{Utilizador\+Ptr}$>$ \hyperlink{Titulo_8h_a0996281e9e5d419736dec228200cfdc5}{User\+Hash\+Table}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Titulo_8h_a5c4bf2394ed7bbc904e9b3e7fbb57b7f}\label{Titulo_8h_a5c4bf2394ed7bbc904e9b3e7fbb57b7f}} 
+\index{Titulo.\+h@{Titulo.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Titulo.\+h@{Titulo.\+h}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classHome}{Home} \&}]{h }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+216                                                            \{
+217      h.\hyperlink{classTitulo_ab31e1d801062a75abdb10664de23d897}{showTitulo}(os);
+218 
+219      os << \textcolor{stringliteral}{"Datas de atualizacao: "} << std::endl;
+220 
+221      \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} & data : h.\hyperlink{classHome_a0ab7279a76525f48cb1b64b8bae98a44}{getDatas}())
+222      \{
+223          os << data << \textcolor{stringliteral}{"; "};
+224      \}
+225 
+226      os << std::endl << \textcolor{stringliteral}{"Preco por atualizacao: "};
+227      os << h.\hyperlink{classHome_a52f37198fb17a321dbcac93d1c35b537}{getPrecoAtualizacao}() << \textcolor{stringliteral}{"�"};
+228      \textcolor{keywordflow}{return} os;
+229  \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Titulo_8h_a5c4bf2394ed7bbc904e9b3e7fbb57b7f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Titulo_8h_a10fe5df718547ac1995a26a58083b971}\label{Titulo_8h_a10fe5df718547ac1995a26a58083b971}} 
+\index{Titulo.\+h@{Titulo.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Titulo.\+h@{Titulo.\+h}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classOnline}{Online} \&}]{o }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+335                                                              \{
+336      o.\hyperlink{classTitulo_ab31e1d801062a75abdb10664de23d897}{showTitulo}(os);
+337      os << std::endl;
+338 
+339 
+340      \textcolor{keywordflow}{if} (o.\hyperlink{classOnline_aa222489df5a1e6bcfbf5e01d95178850}{getSubscricao}() == \textcolor{keyword}{true})
+341          os << \textcolor{stringliteral}{"Subscricao Fixa"} << std::endl;
+342      \textcolor{keywordflow}{else}
+343          os << \textcolor{stringliteral}{"Subscricao Variavel"} << std::endl;
+344 
+345      os << \textcolor{stringliteral}{"Preco da Subscricao: "};
+346      os << o.\hyperlink{classOnline_a0f7240aa5582e10579d0719e4fa5d705}{getPrecoSubscricao}();
+347 
+348      \textcolor{keywordflow}{return} os;
+349  \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Titulo_8h_a10fe5df718547ac1995a26a58083b971_cgraph}
+\end{center}
+\end{figure}

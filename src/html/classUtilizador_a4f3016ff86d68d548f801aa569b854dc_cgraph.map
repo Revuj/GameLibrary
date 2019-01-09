@@ -1,0 +1,11 @@
+<map id="Utilizador::printPublicidade" name="Utilizador::printPublicidade">
+<area shape="rect" id="node2" href="$classUtilizador.html#a9b80c93b8e8f7716e4ab77b2e1b47071" title="Devolve o primeiro titulo da wishlist com uma probabilidade minima. " alt="" coords="231,17,427,43"/>
+<area shape="rect" id="node4" href="$classWishedTitle.html#a9ca6e92a26bb2f319a39d5a03b0c42bd" title="Devolve o titulo. " alt="" coords="254,74,403,101"/>
+<area shape="rect" id="node6" href="$classTitulo.html#acb79279860b3404c6419697df5f860cb" title="Permite obter o nome do titulo. " alt="" coords="271,125,386,151"/>
+<area shape="rect" id="node7" href="$classTitulo.html#a93725bdc2e98350e47b54fd76c0fa236" title="Permite obter o preco atual do titulo. " alt="" coords="515,175,629,202"/>
+<area shape="rect" id="node8" href="$classTitulo.html#ae7df7d468f8220fa32b2772df4c53081" title="Permite obter o desconto do titulo em percentagem. " alt="" coords="261,226,397,253"/>
+<area shape="rect" id="node10" href="$classTitulo.html#a8004d12b8ae0d0746b999a6411df150c" title="Adiciona um numero de anuncios. " alt="" coords="247,277,411,303"/>
+<area shape="rect" id="node3" href="$classWishedTitle.html#a9076a3f48cb0bbd435908c392e5041a9" title="Devolve a probabilidade de compra do titulo. " alt="" coords="475,5,669,47"/>
+<area shape="rect" id="node5" href="$classWishedTitle.html#aacaf6dfce83390dcc78f0ecd679e1de1" title="Alterar a probabilidade de compra do titulo. " alt="" coords="475,71,669,112"/>
+<area shape="rect" id="node9" href="$classTitulo.html#a5257cbaf35ad018001a7e48678795305" title="Permite obter o preco base do titulo. " alt="" coords="500,226,644,253"/>
+</map>

@@ -1,9 +1,0 @@
-digraph "Banco::adicionaCartaoCredito"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node5 [label="Banco::adicionaCartaoCredito",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="CartaoCredito::getId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cartao_credito.html#ab59d60e4d155e7f29aef888ea3139ee5",tooltip="Devolve o id(string) do cartao de credito atual. "];
-}

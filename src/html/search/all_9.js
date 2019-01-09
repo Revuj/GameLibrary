@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jogadores',['jogadores',['../class_sistema.html#a940c20d39559da85af211390fd952726',1,'Sistema']]]
+  ['lerdata',['lerData',['../main_8cpp.html#afdd4f73eaf1ae01f9f045850fe275884',1,'main.cpp']]]
 ];

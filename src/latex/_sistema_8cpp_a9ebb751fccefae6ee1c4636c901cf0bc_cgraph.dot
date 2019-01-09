@@ -1,9 +1,0 @@
-digraph "gameIdAscend"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node11 [label="gameIdAscend",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
-  Node12 [label="Titulo::getIdU",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#af8fed6503c1c528ac3bfdbb182fce0b6",tooltip="Permite obter o identificador do titulo. "];
-}

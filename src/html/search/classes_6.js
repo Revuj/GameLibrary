@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['online',['Online',['../class_online.html',1,'']]]
+  ['online',['Online',['../classOnline.html',1,'']]]
 ];
