@@ -1,0 +1,39 @@
+Empresa3
+empresa3@gmail.com
+250900222
+333444555
+Home jogo12 8 playstation Empresa3 24/12/2018
+70
+fps
+150
+200
+
+Home jogo13 12 XBOX Empresa3 20/01/2017
+60
+acao aventura
+60
+70
+
+Online jogo14 9 GameCube Empresa3 31/10/2016 fixa 10
+60
+mmo rpg
+100
+80
+
+Online jogo15 8 PC Empresa3 23/11/2017 fixa 10
+70
+desporto luta
+200
+80
+
+Home jogo16 4 Nintendo Empresa3 27/07/2018
+50
+corridas
+150
+90
+
+Online jogo17 9 playstation Empresa3 21/12/2018 variavel 10
+70
+luta
+143
+150

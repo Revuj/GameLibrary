@@ -1,33 +1,33 @@
-empresa2
-empresa2@mail.pt
-920111222
-222333444
-Online online6 9 PC empresa1 08/01/2019 fixa 10
+empresa1
+empresa1@mail.pt
+250111222
+111222333
+Online jogo1 9 PC empresa1 08/01/2019 fixa 10
 60
 fps
-0
-0
-
-Online online7 4 Nintendo empresa1 08/01/2019 variavel 2
-45
-acao aventura
-0
-0
-
-Online online8 4 Nintendo empresa1 08/01/2019 variavel 2
-45
-acao aventura
-0
-0
-
-Online online9 4 SEXMACHINE empresa1 08/01/2019 fixa 69
-100
-sexo
-0
-0
-
-Home home2 49 playstation empresa1 08/01/2019
 30
-raping berlindes
-0
-0
+40
+
+Online jogo2 4 Nintendo empresa1 10/10/2018 variavel 2
+45
+acao aventura
+90
+150
+
+Online jogo3 4 Nintendo empresa1 08/02/2018 variavel 2
+45
+acao aventura
+112
+100
+
+Online jogo4 4 PC empresa1 30/01/2017 fixa 69
+10
+desporto corridas
+50
+112
+
+Home jogo5 49 playstation empresa1 21/02/2018
+30
+acao aventura exploracao plataforma
+14
+20

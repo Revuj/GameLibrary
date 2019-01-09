@@ -863,7 +863,10 @@ void menuEmpresa(Sistema * sistema, Empresa * empresa) {
 				std::cout << "Email: " << empresa->getContactos().email << std::endl;
 			}
 			else if (opt == 3)
-				empresa->displayTitulos();
+				if (empresa->getTitulos().size() > 0)
+					empresa->displayTitulos();
+				else
+					std::cout << "A empresa nao tem nenhum titulo" << std::endl;
 			else
 				break;	// opt = 4, o utilizador quer sair
 		}

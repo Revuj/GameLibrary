@@ -1,0 +1,33 @@
+empresa2
+empresa2@mail.pt
+920111222
+222333444
+Online jogo6 9 PC empresa2 08/01/2019 fixa 10
+60
+fps
+30
+100
+
+Online jogo7 4 Nintendo empresa2 08/04/2016 variavel 2
+45
+acao aventura
+53
+71
+
+Online jogo8 4 Nintendo empresa2 11/04/2017 variavel 2
+45
+acao aventura
+100
+110
+
+Online jogo9 4 GameCube empresa2 08/01/2018 fixa 69
+10
+battleroyale
+206
+100
+
+Home jogo10 49 playstation empresa2 08/01/2019
+30
+rpg
+20
+20

@@ -1,14 +1,25 @@
-Abelha1234
-abelinha@gmail.com
-3
-Colmeia
-09/01/2017
-340 09/01/2022 1100
+Joao
+joao@gmail.com
+19
+Vila Real
+08/01/2017
+1000 09/02/2022 1980011
 
-home1 playstation 1
+jogo7 Nintendo 10
+jogo17 playstation 9
+jogo15 PC 9
+jogo4 PC 9
+jogo1 PC 6
+jogo13 XBOX 3
 
-Online online1 9 PC empresa1 08/01/2019 fixa 10
-60
-fps
-0
-1
+Online jogo2 4 Nintendo empresa1 10/10/2018 variavel 2
+45
+acao aventura
+90
+150
+
+Online jogo3 4 Nintendo empresa1 08/02/2018 variavel 2
+45
+acao aventura
+112
+100

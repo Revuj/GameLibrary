@@ -70,20 +70,20 @@ public:
 
 	/**
 	 * @brief Le as empresas de um ficheiro
-	 * 
+	 *
 	 * @param file - ficheiro onde esta contida a informacao de todas as empresas
 	 */
 	void readFileEmpresas(std::ifstream & file);
 
 	/**
 	 * @brief Invoca as funcoes necessarias para ler as empresas guardadas nos ficheiros
-	 * 
+	 *
 	 */
 	void readEmpresas();
 
 	/**
 	 * @brief Guarda todas as empresas do sistema num ficheiro
-	 * 
+	 *
 	 */
 	void saveEmpresas();
 
@@ -247,7 +247,7 @@ public:
 
 	/**
 	 * @brief Mostra no ecra as empresas consoante o conteudo de s
-	 * 
+	 *
 	 * @param s - string que define o que sera mostrado no ecra
 	 */
 	void displayEmpresas(std::string s) const;
@@ -271,21 +271,21 @@ public:
 
 	/**
 	 * @brief Atualiza os utilizadores adormecidos de todos os utilizadores
-	 * 
+	 *
 	 */
 	void atualizaAsleepUsers();
 
 	/**
 	 * @brief Remove os utilizadores adormecidos dos titulos para uma dada plataforma
-	 * 
-	 * @param plataforma - string que define a plataforma para o qual s√£o removidos os utilizaores adormecidos
-	 * @param u 
+	 *
+	 * @param plataforma - string que define a plataforma para o qual s„o removidos os utilizaores adormecidos
+	 * @param u - utilizador a remover
 	 */
 	void removeAsleepUsers(std::string plataforma,Utilizador *u);
 
 	/**
 	 * @brief Mostra no ecra os utilizadores adormecidos consoante o conteudo da string s
-	 * 
+	 *
 	 * @param s - string que define quais utilizadores adormecidos mostrar
 	 */
 	void displayAsleepUsers(std::string s);

@@ -196,6 +196,7 @@ float Utilizador::getGastos() const{
 void Utilizador::printPublicidade(){
 	try {
 		WishedTitle t = getGamesWishList(0.5);
+		std::cout << "ANUNCIO" << std::endl;
 		std::cout << "Titulo: " << t.getTitulo()->getNome() << "\n";
 		std::cout << "Preco: " << t.getTitulo()->getPreco() << "\n";
 		std::cout << "Desconto: " << t.getTitulo()->getDesconto() << "\n";

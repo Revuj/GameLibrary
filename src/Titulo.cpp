@@ -137,6 +137,8 @@ void Titulo::removeUserHashTable(Utilizador* u){
 }
 
 void Titulo::printAsleepUsers(){
+	if (!this->asleepUsers.empty())
+		std::cout << "Titulo : " << this->nome << std::endl;
 	for(auto it: this->asleepUsers){
 		std::cout << (*it)<< std::endl;
 	}

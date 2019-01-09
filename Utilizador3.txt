@@ -1,0 +1,21 @@
+Vitor
+vitor@gmail.com
+19
+Braga
+09/01/2019
+1340 09/01/2022 122300
+
+jogo9 GameCube 10
+jogo10 playstation 7
+
+Online jogo8 4 Nintendo empresa2 11/04/2017 variavel 2
+45
+acao aventura
+100
+110
+
+Online jogo14 9 GameCube Empresa3 31/10/2016 fixa 10
+60
+mmo rpg
+100
+80

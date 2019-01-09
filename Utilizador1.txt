@@ -1,21 +1,19 @@
-Rafa
-rafa@mail.pt
+Rafael
+rafael@gmail.com
 19
-Porto
-09/01/2018
-0 08/01/2022 1113
-230 08/01/2022 302910
+Vila Real
+09/05/2018
+2955 09/01/2022 1990011
 
-online3 Nintendo 10
+jogo17 playstation 10
+jogo15 PC 9
+jogo4 PC 9
+jogo5 playstation 8
+jogo13 XBOX 2
+jogo12 playstation 1
 
-Home home1 49 playstation empresa1 08/01/2019
-30
-raping berlindes
-0
-0
-
-Online online2 4 Nintendo empresa1 08/01/2019 variavel 2
+Online jogo3 4 Nintendo empresa1 08/02/2018 variavel 2
 45
 acao aventura
-0
-0
+112
+100
