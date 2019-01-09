@@ -4,7 +4,7 @@
 
 void Biblioteca::adicionaTitulo(Titulo * T) {
 	for (size_t i = 0; i < titulos.size(); i++) {
-		if (titulos[i]->getNome() == T->getNome() && titulos[i]->getNome() == T->getNome()) {
+		if (titulos[i]->getNome() == T->getNome() && titulos[i]->getPlataforma() == T->getPlataforma()) {
 			throw TituloJaAdicionado("Jogo ja adicionado");
 		}
 	}

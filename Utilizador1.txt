@@ -1,11 +1,12 @@
 Rafa
 rafa@mail.pt
 19
+Porto
+09/01/2018
+0 08/01/2022 1113
+230 08/01/2022 302910
 
-45 08/01/2022 1113
-320 08/01/2022 302910
-
-online2 Nintendo 10
+online3 Nintendo 10
 
 Home home1 49 playstation empresa1 08/01/2019
 30
@@ -13,14 +14,8 @@ raping berlindes
 0
 0
 
-Online online6 9 PC empresa1 08/01/2019 fixa 10
-60
-fps
+Online online2 4 Nintendo empresa1 08/01/2019 variavel 2
+45
+acao aventura
 0
 0
-
-Online online1 9 PC empresa1 08/01/2019 fixa 10
-60
-fps
-0
-1

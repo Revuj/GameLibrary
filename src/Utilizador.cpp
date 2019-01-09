@@ -45,6 +45,13 @@ Biblioteca Utilizador::getBiblioteca() const {
 	return this->conjuntoTitulos;
 }
 
+unsigned Utilizador::getMonthsLastBuy(){
+	Banco tmp;
+	Data atual=tmp.getDataAtual();
+	if(this->ultimaCompra == Data(0,0,0))
+		return 0;
+	return (atual.diferencaEntreDatas(this->ultimaCompra))/30;
+}
 
 bool Utilizador::operator ==(const Utilizador & U) 
 {
@@ -70,21 +77,22 @@ bool Utilizador::adicionaCartaoCredito(const CartaoCredito & C)
 
 void Utilizador::AdicionaTitulo(Titulo * T, CartaoCredito & c,bool comprar)
 {
-
-	this->conjuntoTitulos.adicionaTitulo(T);
+	Banco tmp;
 
 /* comparar data de valdiade do cartao e a data atual(ver funcoes)*/
 	for (auto & cartao : this->cc)
 	{
 		if (cartao == c)
 		{
-			if (cartao.getSaldo() >= T->getPreco()) //ver se o saldo para comprar o titulo � suficiente
+			if (cartao.getSaldo() >= T->getPreco()) //ver se o saldo para comprar o titulo insuficiente
 			{
 				try{
 					cartao.removeQuantia(T->getPreco()); //retira dinheiro do cartao
+					this->conjuntoTitulos.adicionaTitulo(T);
+					this->ultimaCompra=tmp.getDataAtual();
 				}
 				catch(Erro & e){
-					std::cout<<e.getInfo()<<std::endl;
+					throw(e);
 				}
 				return;
 			}
@@ -161,17 +169,17 @@ std::ostream & operator <<(std::ostream & os, const Utilizador & u)
 	os << "Idade: " << u.getIdade() << std::endl;
 	os << "Morada: " << u.getMorada() << std::endl;
 
-	os << "Cartoes de Credito: " << std::endl;
-	for (const auto & cartao : u.getCc())
-	{
-		os << cartao.getId() << std::endl;
-	}
-
-	os << "Jogos na Biblioteca: " << std::endl;
-	for (const auto & titulo : u.getBiblioteca().getTitulos())
-		{
-			os << "->" << titulo->getNome() << std::endl;
-		}
+//	os << "Cartoes de Credito: " << std::endl;
+//	for (const auto & cartao : u.getCc())
+//	{
+//		os << cartao.getId() << std::endl;
+//	}
+//
+//	os << "Jogos na Biblioteca: " << std::endl;
+//	for (const auto & titulo : u.getBiblioteca().getTitulos())
+//		{
+//			os << "->" << titulo->getNome() << std::endl;
+//		}
 	return os;
 }
 

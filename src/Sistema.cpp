@@ -84,7 +84,7 @@ Sistema::~Sistema() {
 
 void Sistema::readFileUtilizadores(std::ifstream & f) {
 	std::string nome, mail, idadeStr, numeroAnunciosStr, numeroCliquesStr, localidade, titulo, cartao, dataCartao,
-			idCartao, item, nomeTitulo, plataforma, interesseStr;
+			idCartao, item, nomeTitulo, plataforma, interesseStr,data;
 	float saldo;
 	unsigned int idade, numeroAnuncios, numeroCliques, interesse;
 	std::stringstream tituloSs, cartaoSs, itemSs;
@@ -94,6 +94,7 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 	getline(f, mail);
 	getline(f, idadeStr);
 	getline(f, localidade);
+	getline(f,data);
 
 	getline(f, cartao);
 
@@ -273,6 +274,8 @@ void Sistema::readFileUtilizadores(std::ifstream & f) {
 
 	Utilizador * U = new Utilizador(nome, mail, idade, localidade, B);
 
+	U->setDataUltimaCompra(data);
+
 	for (const auto & c : cartoes) {
 		U->adicionaCartaoCredito(c);
 	}
@@ -309,15 +312,16 @@ void Sistema::saveUtilizadores() const{
 		std::string mail = jogadores.at(i)->getEmail();
 		unsigned int idade = jogadores.at(i)->getIdade();
 		std::string localidade = jogadores.at(i)->getMorada();
+		Data data = jogadores.at(i)->getDataUltimaCompra();
 		std::vector<CartaoCredito> cartoes = jogadores.at(i)->getCc();
 
 		file << nome << std::endl << mail << std::endl << idade << std::endl
-				<< localidade;
+				<< localidade << std::endl << data;
 		std::vector<Titulo*> titulos =
 				jogadores.at(i)->getBiblioteca().getTitulos();
 
+		file << std::endl;
 		if (cartoes.size() != 0) {
-			file << std::endl;
 			for (const auto & cartao : cartoes) {
 				file << cartao.getSaldo() << " " << cartao.getDataDeValidade()
 						<< " " << cartao.getId() << std::endl;
@@ -333,7 +337,9 @@ void Sistema::saveUtilizadores() const{
 			fila.pop();
 		}
 
-		file << std::endl;
+		if (titulos.size() != 0) {
+			file << std::endl;
+		}
 
 		for (size_t i = 0; i < titulos.size(); i++) {
 			Online* online = dynamic_cast<Online*>(titulos.at(i));
@@ -945,7 +951,6 @@ Utilizador* Sistema::pesquisaUtilizador(std::string nome, std::string email) {
 Titulo* Sistema::pesquisaJogo(std::string nome,std::string plataforma) const{
 	for(auto titulo : this->titulos) {
 		if (titulo->getNome() == nome && titulo->getPlataforma() == plataforma){
-			std::cout << titulo->getNome() << ", " << titulo->getEmpresa() << ", " << titulo->getPlataforma() << ", " << titulo->getPreco() << " euros, (desconto: " << titulo->getDesconto() << "% ), " << titulo->getDataLancamento().getAno() << ", idade minima: " << titulo->getIdadeMinima() << std::endl;
 			return titulo;
 		}
 	}
@@ -1174,15 +1179,94 @@ void Sistema::displayEmpresas(std::string s) const{
 		// Clear the cin stream even if no error occured, to ensure the stream always stays clean
 		std::cin.ignore(1000, '\n');
 		for(auto it : this->empresas){
-			std::cout << it->getNumeroTitulos() << std::endl;
 			if(it->getNumeroTitulos() == (unsigned)opt)
 				std::cout << it->getNomeEmpresa() << "  "<<it->getNif()<<std::endl;
+		}
+	}
+
+	else if(s=="genero"){
+		bool leave=false;
+		std::cout<< "Insira o genero" << std::endl;
+		getline(std::cin,s);
+		for(auto it : this->empresas){
+			std::vector <Titulo*> t = it->getTitulos();
+			for(auto titulo : t){
+				for(auto genero : titulo->getGeneros())
+					if(genero == s){
+						std::cout << it->getNomeEmpresa() << "  "<<it->getNif()<<std::endl;
+						leave=true;
+						break;
+					}
+				if(leave){
+					leave=false;
+					break;
+				}
+			}
 		}
 	}
 
 	else {
 		for(auto it : this->empresas){
 			std::cout << "Empresa: " << it->getNomeEmpresa() << "; NIF: "<<it->getNif()  << "; N.º de jogos: " << it->getNumeroTitulos() <<std::endl;
+		}
+	}
+}
+
+void Sistema::atualizaAsleepUsers(){
+	for(auto titulo : this->titulos){
+		for (auto utilizador:this->jogadores)
+			titulo->adicionaUserHashTable(utilizador);
+	}
+}
+
+void Sistema::removeAsleepUsers(std::string plataforma,Utilizador *u){
+	for(auto titulo : this->titulos){
+		if(titulo->getPlataforma() == plataforma){
+			titulo->removeUserHashTable(u);
+		}
+	}
+}
+
+void Sistema::displayAsleepUsers(std::string s){
+	if(s=="plataforma"){
+		std::cout<< "Insira a plataforma" << std::endl;
+		getline(std::cin,s);
+		for(auto it : this->titulos){
+			if(it->getPlataforma() == s) {
+				it->printAsleepUsers();
+			}
+		}
+	}
+
+	else if(s == "titulo"){
+		std::string nome,plataforma;
+		std::cout<< "Insira o nome" << std::endl;
+		getline(std::cin,nome);
+		std::cout<< "Insira a plataforma" << std::endl;
+		getline(std::cin,plataforma);
+		for(auto titulo : this->titulos){
+			if(titulo->getNome()==nome && titulo->getPlataforma()==plataforma)
+				titulo->printAsleepUsers();
+		}
+	}
+
+	else if(s == "genero"){
+		std::cout<< "Insira o genero" << std::endl;
+		getline(std::cin,s);
+		for(auto titulo : this->titulos){
+			auto generos = titulo->getGeneros();
+			for(auto genero : generos){
+				if(genero == s){
+					titulo->printAsleepUsers();
+					break;
+				}
+			}
+		}
+	}
+
+	else {
+		for(auto titulo : this->titulos){
+			titulo->printAsleepUsers();
 		}
 	}
 }

@@ -250,6 +250,12 @@ public:
 	 * @brief Verifica se a data de um cartao de credito e valida
 	 */
 	void dataValida( CartaoCredito & D) const;
+
+	void atualizaAsleepUsers();
+
+	void removeAsleepUsers(std::string plataforma,Utilizador *u);
+
+	void displayAsleepUsers(std::string s);
 };
 
 

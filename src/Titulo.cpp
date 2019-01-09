@@ -4,7 +4,7 @@
 #include <cmath>
 #include<string>
 #include <iostream>
-
+#include "WishedTitle.h"
 
 
  /*inicializacao de variaveis static*/
@@ -114,6 +114,36 @@ std::string Titulo::getEmpresa() const {
  void Titulo::adicionaCliques(unsigned int numero) {
 	 this->numeroCliques += numero;
  }
+
+ void Titulo::adicionaUserHashTable(Utilizador *u){
+	 if(u->getMonthsLastBuy() <= 3)
+		 return;
+	 std::priority_queue<WishedTitle> wish = u->getWishList();
+	 while(!wish.empty()){
+		 auto it = this->asleepUsers.find(u);
+		 std::cout << wish.top().getProbabilidadeCompra() << std::endl;
+		 if(it == asleepUsers.end() && wish.top().getTitulo()->getNome() == this->nome && wish.top().getTitulo()->getPlataforma() == this->plataforma && wish.top().getProbabilidadeCompra()>0.6){
+			std::cout << u->getNome() << std::endl;
+			 asleepUsers.insert(u);
+		 }
+		 wish.pop();
+	 }
+ }
+
+void Titulo::removeUserHashTable(Utilizador* u){
+	auto it = this->asleepUsers.find(u);
+	if(it != asleepUsers.end()){
+		asleepUsers.erase(u);
+		std::cout << "Utilizador removido da tabela da lista de utilizadores adormecidos do titulo "<<this->nome<<std::endl;
+	}
+}
+
+void Titulo::printAsleepUsers(){
+	for(auto it: this->asleepUsers){
+		std::cout << (*it)<< std::endl;
+	}
+}
+
  //========================================================================================
  //========================================================================================
  /*se o identificador unico for igual entao trata-se do mesmo titulo*/

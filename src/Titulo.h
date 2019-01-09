@@ -5,8 +5,7 @@
 #include <string>
 #include <vector>
 #include "Data.h"
-
-class Utilizador;
+#include "Utilizador.h"
 
 //segunda parte
 #include <queue>
@@ -178,6 +177,12 @@ public:
 	 * @param numero - numero de cliques
 	 */
 	void adicionaCliques(unsigned int numero);
+
+	void adicionaUserHashTable(Utilizador *u);
+
+	void removeUserHashTable(Utilizador* u);
+
+	void printAsleepUsers();
 
 	/**
 	 * @brief Permite obter o desconto do titulo em percentagem 

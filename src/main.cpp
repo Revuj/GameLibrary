@@ -66,7 +66,17 @@ void printDisplayEmpresasMenu(){
 	std::cout << "1. Visualizacao simples" << std::endl;
 	std::cout << "2. Titulos numa dada plataforma" << std::endl;
 	std::cout << "3. Numero de Titulos" << std::endl;
-	std::cout << "4. Sair" << std::endl << std::endl;
+	std::cout << "4. Titulos com um dado genero" << std::endl;
+	std::cout << "5. Sair" << std::endl << std::endl;
+}
+
+void printDisplayAsleepUsersMenu(){
+		// Draw the options
+	std::cout << "1. Visualizacao simples" << std::endl;
+	std::cout << "2. Para uma dada plataforma" << std::endl;
+	std::cout << "3. Para um dado titulo" << std::endl;
+	std::cout << "4. Para um dado genero" << std::endl;
+	std::cout << "5. Sair" << std::endl << std::endl;
 }
 
 void printMainMenu() {
@@ -80,7 +90,8 @@ void printMainMenu() {
 	std::cout << "7. Adicionar Empresa" << std::endl;
 	std::cout << "8. Pesquisar Empresa" << std::endl;
 	std::cout << "9. Visualizar Empresas" << std::endl;
-	std::cout << "10. Sair" << std::endl << std::endl;
+	std::cout << "10. Visualizar Utilizadores Adormecidos" << std::endl;
+	std::cout << "11. Sair" << std::endl << std::endl;
 }
 
 void printDisplayUtilizadoresMenu() {
@@ -144,6 +155,7 @@ void adicionarUtilizador(Sistema * sistema) {
 
 	std::cout << "Insere a tua idade: ";
 	getline(std::cin, idade);
+	std::cout << "Insere a tua morada: ";
 	getline(std::cin, morada);
 
 	Utilizador *u = new Utilizador(nome, email, std::stoul(idade, NULL, 0), morada);
@@ -507,7 +519,7 @@ void displayEmpresas(Sistema * sistema){
 
 		// Pedir opcao ao utilizador e verificar se nao houve erro de input
 		try {
-			opt = getOption(1, 4);
+			opt = getOption(1, 5);
 		} catch (InputInvalido &e) {
 			std::cout << "\n" << e.getInfo();
 			continue;	// Ir para o proximo loop , pedir nova opcao
@@ -520,6 +532,36 @@ void displayEmpresas(Sistema * sistema){
 		else if(opt==3)
 			sistema->displayEmpresas("numero");
 		else if (opt == 4)
+			sistema->displayEmpresas("genero");
+		else if (opt == 5)
+			return;
+	}
+}
+
+void displayAsleepUsers(Sistema *sistema){
+	int opt;
+
+	// Perguntar ao utilizador o que quer fazer ate este indicar que deseja sair
+	while (true) {
+		printDisplayAsleepUsersMenu();
+
+		// Pedir opcao ao utilizador e verificar se nao houve erro de input
+		try {
+			opt = getOption(1, 5);
+		} catch (InputInvalido &e) {
+			std::cout << "\n" << e.getInfo();
+			continue;	// Ir para o proximo loop , pedir nova opcao
+		}
+
+		if (opt == 1)
+			sistema->displayAsleepUsers("");
+		else if (opt == 2)
+			sistema->displayAsleepUsers("plataforma");
+		else if(opt==3)
+			sistema->displayAsleepUsers("titulo");
+		else if (opt == 4)
+			sistema->displayAsleepUsers("genero");
+		else if (opt == 5)
 			return;
 	}
 }
@@ -546,6 +588,7 @@ void escolheTitulo(Sistema * sistema, Utilizador *u) {
 					u->AdicionaTitulo(t, cartao);
 					u->removeWishList(t);
 					sistema->dataValida(cartao);
+					sistema->removeAsleepUsers(plataforma,u);
 				}
 				catch (TituloJaAdicionado &e) {
 					throw(e);
@@ -590,14 +633,14 @@ void adiconaWishlist(Sistema *sistema, Utilizador *u){
 			Titulo * t = sistema->pesquisaJogo(titulo, plataforma);
 
 			unsigned int interesse;
-			std::cout << std::endl << "Interesse (0 - 10) ";
+			std::cout << std::endl << "Interesse (1 - 10) ";
 			std::cin >> interesse;
 			// Verificar se foi introduzido um numero
-			while (std::cin.fail() || std::cin.eof() || interesse < 0 || interesse > 10) {
+			while (std::cin.fail() || std::cin.eof() || interesse <= 0 || interesse > 10) {
 				std::cin.clear();
 				std::cin.ignore(1000, '\n');
 				std::cout << "Interesse invalido! Introduza novamente." << std::endl;
-				std::cout << std::endl << "Interesse (0 - 10): ";
+				std::cout << std::endl << "Interesse (1 - 10): ";
 				std::cin >> interesse;
 			}
 			std::cin.ignore(1000, '\n');
@@ -674,14 +717,14 @@ void alteraInteresse(Sistema* sistema, Utilizador *u){
 		try {
 			Titulo * t = sistema->pesquisaJogo(titulo, plataforma);
 			unsigned int interesse;
-			std::cout << std::endl << "Interesse (0 - 10) ";
+			std::cout << std::endl << "Interesse (1 - 10) ";
 			std::cin >> interesse;
 			// Verificar se foi introduzido um numero
-			while (std::cin.fail() || std::cin.eof() || interesse < 0 || interesse > 10) {
+			while (std::cin.fail() || std::cin.eof() || interesse <= 0 || interesse > 10) {
 				std::cin.clear();
 				std::cin.ignore(1000, '\n');
 				std::cout << "Interesse invalido! Introduza novamente." << std::endl;
-				std::cout << std::endl << "Interesse (0 - 10): ";
+				std::cout << std::endl << "Interesse (1 - 10): ";
 				std::cin >> interesse;
 			}
 			std::cin.ignore(1000, '\n');
@@ -871,6 +914,7 @@ void pesquisarUtilizador(Sistema * sistema) {
 	std::string s;
 
 	while (true) {
+		sistema->atualizaAsleepUsers();
 
 		while (true) {
 			try {
@@ -1026,15 +1070,17 @@ int main() {
 		it->printPublicidade();
 	}
 
+	sistema->atualizaAsleepUsers();
+
 	int opt;
 
-	// Perguntar ao utilizador o que quer fazer at� este indicar que deseja sair
+	// Perguntar ao utilizador o que quer fazer ate este indicar que deseja sair
 	while (true) {
 		printMainMenu();
 
 		// Pedir opcao ao utilizador e verificar se nao houve erro de input
 		try {
-			opt = getOption(1, 10);
+			opt = getOption(1, 11);
 		} catch (InputInvalido &e) {
 			std::cout << "\n" << e.getInfo();
 			continue;	// Ir para o proximo loop , pedir nova opcao
@@ -1058,6 +1104,8 @@ int main() {
 			pesquisarEmpresa(sistema);
 		else if (opt == 9)
 			displayEmpresas(sistema);
+		else if (opt == 10)
+			displayAsleepUsers(sistema);
 		else {
 			std::cout << "Adeus!" << std::endl;
 			break;

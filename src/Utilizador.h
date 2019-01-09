@@ -5,8 +5,9 @@
 #include <queue>
 #include "CartaoCredito.h"
 #include "Biblioteca.h"
-#include "Titulo.h"
 #include "WishedTitle.h"
+
+class Titulo;
 
 /**
  * Utilizador que foi declarado no Sistema
@@ -70,6 +71,12 @@ public:
 	 * @return Retorna a biblioteca do utilizador
 	 */
 	Biblioteca getBiblioteca() const;
+
+	unsigned getMonthsLastBuy();
+
+	Data getDataUltimaCompra(){ return this->ultimaCompra; }
+
+	void setDataUltimaCompra(std::string data){this->ultimaCompra=Data(data);}
 
 	/**
 	 * @brief Overload do operador de igualdade para a classe Utilizador
