@@ -1,0 +1,39 @@
+digraph "Sistema::ordenaTitulosUtilizador"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node45 [label="Sistema::ordenaTitulosUtilizador",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node45 -> Node46 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node46 [label="Utilizador::getBiblioteca",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_utilizador.html#a6a128859b776bf019b5652ce61f62280",tooltip="Permite obter a biblioteca do utilizador. "];
+  Node45 -> Node47 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node47 [label="Biblioteca::getTitulos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_biblioteca.html#a03c1ebf76a4ace4f57000bb99a87bb88",tooltip="Devolve o vetor de titulos. "];
+  Node45 -> Node48 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node48 [label="gameIdAscend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#a9ebb751fccefae6ee1c4636c901cf0bc"];
+  Node48 -> Node49 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node49 [label="Titulo::getIdU",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#af8fed6503c1c528ac3bfdbb182fce0b6",tooltip="Permite obter o identificador do titulo. "];
+  Node45 -> Node50 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node50 [label="gameIdDescend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#a5de4e871b807cfbcd024a00f60d18ba1"];
+  Node50 -> Node49 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node45 -> Node51 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node51 [label="gameReleaseAscend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#a4b576dc41b8edeb29c8f84c948c47665"];
+  Node51 -> Node52 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node52 [label="Titulo::getDataLancamento",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a1cb9b8c0a9dca73d5925922ccc041fa8",tooltip="Permite obter a data de lancamento do titulo. "];
+  Node45 -> Node53 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node53 [label="gameReleaseDescend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#af8a401eaa3da373780504f34a1216550"];
+  Node53 -> Node52 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node45 -> Node54 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node54 [label="gameAgeAscend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#a85fca79d7efc04e9982238e38e199154"];
+  Node54 -> Node55 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node55 [label="Titulo::getIdadeMinima",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a8048db7604abd58892122c810a6794be",tooltip="Permite obter a idade minima do titulo. "];
+  Node45 -> Node56 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node56 [label="gameAgeDescend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#a4d0cdff5caed7ad707a1f6926e301a51"];
+  Node56 -> Node55 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node45 -> Node57 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node57 [label="gameDeveloperAscend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#ac71c10d662fb0c03358b94519364a76e"];
+  Node57 -> Node58 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node58 [label="Titulo::getEmpresa",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a48d810fe27da41cfb726fb5680a68471",tooltip="Permite obter a empresa do titulo. "];
+  Node45 -> Node59 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node59 [label="gameDeveloperDescend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#a7ce8e20323381359eed30807d3dadabd"];
+  Node59 -> Node58 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

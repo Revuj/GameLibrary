@@ -1,0 +1,29 @@
+digraph "alteraInteresse"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node31 [label="alteraInteresse",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node31 -> Node32 [color="midnightblue",fontsize="10",style="solid"];
+  Node32 [label="Sistema::pesquisaJogo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sistema.html#a0fb81a4685bb24024295c89d22d6d719",tooltip="Pesquisa um titulo. "];
+  Node31 -> Node33 [color="midnightblue",fontsize="10",style="solid"];
+  Node33 [label="Utilizador::atualizaInteresse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_utilizador.html#a4617169b0764e48f8b95d4d8aa12bf19"];
+  Node33 -> Node34 [color="midnightblue",fontsize="10",style="solid"];
+  Node34 [label="WishedTitle::getTitulo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wished_title.html#a9ca6e92a26bb2f319a39d5a03b0c42bd",tooltip="Devolve o titulo. "];
+  Node33 -> Node35 [color="midnightblue",fontsize="10",style="solid"];
+  Node35 [label="Titulo::getNome",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#acb79279860b3404c6419697df5f860cb",tooltip="Permite obter o nome do titulo. "];
+  Node33 -> Node36 [color="midnightblue",fontsize="10",style="solid"];
+  Node36 [label="Titulo::getPlataforma",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a2a57a31d40c5df012b3c6e2451c253dd",tooltip="Permite obter a plataforma do titulo. "];
+  Node33 -> Node37 [color="midnightblue",fontsize="10",style="solid"];
+  Node37 [label="WishedTitle::setInteresse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wished_title.html#ae81814e2837a03f1bcbc1064da0e652e"];
+  Node33 -> Node38 [color="midnightblue",fontsize="10",style="solid"];
+  Node38 [label="WishedTitle::atualizaProbabilidade",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wished_title.html#a8be5446371add65ba4de2c69c84cb387"];
+  Node38 -> Node39 [color="midnightblue",fontsize="10",style="solid"];
+  Node39 [label="Titulo::getAnuncios",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#ad36afe75694812eabe74af5fe32ad95b",tooltip="Permite obter o numero de anuncios. "];
+  Node38 -> Node40 [color="midnightblue",fontsize="10",style="solid"];
+  Node40 [label="Titulo::getCliques",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a71d5b5985170de5612ec49c5c955f120",tooltip="Permite obter o numero de cliques. "];
+  Node38 -> Node41 [color="midnightblue",fontsize="10",style="solid"];
+  Node41 [label="Titulo::getPreco",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a93725bdc2e98350e47b54fd76c0fa236",tooltip="Permite obter o preco atual do titulo. "];
+  Node31 -> Node42 [color="midnightblue",fontsize="10",style="solid"];
+  Node42 [label="Erro::getInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_erro.html#abfc1e9735b259d88bb97828a23164eb0",tooltip="Permite obter a descrição do Erro. "];
+}

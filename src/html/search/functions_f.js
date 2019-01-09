@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['saldoinsuficiente',['SaldoInsuficiente',['../class_saldo_insuficiente.html#aacd4d88be6fe190105bf122355d72df4',1,'SaldoInsuficiente']]],
+  ['saldoutilizador',['saldoUtilizador',['../class_sistema.html#aabeb8de1cc79bff9ff04d190ac3754d2',1,'Sistema']]],
+  ['saveempresas',['saveEmpresas',['../class_sistema.html#ada4619fbedcb5a07d807545caebd5c57',1,'Sistema']]],
+  ['savetitulos',['saveTitulos',['../class_sistema.html#a07ff0877985ee60035abb90a60c458d8',1,'Sistema']]],
+  ['saveutilizadores',['saveUtilizadores',['../class_sistema.html#af25036f1b2d4abc30447c45f3c3237b8',1,'Sistema']]],
+  ['setano',['setAno',['../class_data.html#a8d4cfad647b590df436d8260000a2745',1,'Data']]],
+  ['setdataatual',['setDataAtual',['../class_banco.html#a227af53b49995242c06d89bb10ffc8ea',1,'Banco']]],
+  ['setdatasjogo',['setDatasJogo',['../class_online.html#a3c0b8d3393271eabfa702629c979fb93',1,'Online']]],
+  ['setdataultimacompra',['setDataUltimaCompra',['../class_utilizador.html#ac3c7ff821739e5682a5d06d0868031ac',1,'Utilizador']]],
+  ['setdia',['setDia',['../class_data.html#a3e2c5356bc8d548b75c7d085f7a7c4ee',1,'Data']]],
+  ['sethistoricopreco',['setHistoricoPreco',['../class_titulo.html#a8ea091928732a5ff5b974e003668a778',1,'Titulo']]],
+  ['setinteresse',['setInteresse',['../class_wished_title.html#ae81814e2837a03f1bcbc1064da0e652e',1,'WishedTitle']]],
+  ['setmes',['setMes',['../class_data.html#ab15051ae481d89d057b22abc8152584c',1,'Data']]],
+  ['setminutosjogo',['setMinutosJogo',['../class_online.html#a71cc818cd9b8020a470efc14f636a9f9',1,'Online']]],
+  ['setpreco',['setPreco',['../class_titulo.html#a08d0b556bebf6863edb62ed5dc19923c',1,'Titulo']]],
+  ['setprobabilidadecompra',['setProbabilidadeCompra',['../class_wished_title.html#aacaf6dfce83390dcc78f0ecd679e1de1',1,'WishedTitle']]],
+  ['showtitulo',['showTitulo',['../class_titulo.html#ab31e1d801062a75abdb10664de23d897',1,'Titulo']]],
+  ['sistema',['Sistema',['../class_sistema.html#a815b07845ef6b03247b239333fe75e28',1,'Sistema']]]
+];

@@ -4,21 +4,21 @@
 #include <iostream>
 
 /**
- * Classe Erro utilizada para tratamento de exceções no decorrer do programa.
+ * Classe Erro utilizada para tratamento de excecoes no decorrer do programa.
  */
 class Erro {
 private:
-	const std::string info;		/**< Informação do erro que ocorreu aquando uma exceção */
+	const std::string info;		/**< Informacao do erro que ocorreu aquando uma excecao */
 public:
 	/**
 	 * @brief Construtor da classe Erro
-	 * @param info - Descrição do tipo de erro que aconteceu aquando o lancamento de uma exceção
+	 * @param info - Descricao do tipo de erro que aconteceu aquando o lancamento de uma excecao
 	 */
 	Erro(const std::string &info) : info(info) {}
 
 	/**
-	 * @brief Permite obter a descrição do Erro
-	 * @return Retorna a descrição do Erro
+	 * @brief Permite obter a descricao do Erro
+	 * @return Retorna a descricao do Erro
 	 */
 	const std::string getInfo() const { return info; }
 };
@@ -27,7 +27,7 @@ public:
 //========================================================================================
 
 /**
- * Classe utilizada para lançar exceções do tipo Data Inválida
+ * Classe utilizada para lancar excecoes do tipo Data Invalida
  */
 class DataInvalida : public Erro {
 public:
@@ -140,9 +140,6 @@ public:
 //========================================================================================
 //=======================================================================================
 
-/**
- * Classe utilizada para lan�ar exce��es do tipo Input Inv�lido
- */
 class InputInvalido : public Erro {
 public:
 	/**

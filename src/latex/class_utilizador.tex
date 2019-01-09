@@ -1,0 +1,391 @@
+\hypertarget{class_utilizador}{}\section{Utilizador Class Reference}
+\label{class_utilizador}\index{Utilizador@{Utilizador}}
+
+
+{\ttfamily \#include $<$Utilizador.\+h$>$}
+
+
+
+Collaboration diagram for Utilizador\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_utilizador_ac4d4e41d09c17ea0b1c5bf4bcda4b6a8}{Utilizador}} (const std\+::string \mbox{\hyperlink{class_utilizador_ace8fd0a2f9414413e2966c8366e62b19}{nome}}=\char`\"{}\char`\"{}, const std\+::string \mbox{\hyperlink{class_utilizador_a3663b1ff4632d292c0b3476a960c06a7}{email}}=\char`\"{}\char`\"{}, const unsigned \mbox{\hyperlink{class_utilizador_a6bbed097ba3eeeae71b777b30b478ec2}{idade}}=0, const std\+::string \mbox{\hyperlink{class_utilizador_ab94b7e2f13eb757c2cb98104fc69ac8c}{morada}}=\char`\"{}\char`\"{}, const \mbox{\hyperlink{class_biblioteca}{Biblioteca}} b=\mbox{\hyperlink{class_biblioteca}{Biblioteca}}())
+\begin{DoxyCompactList}\small\item\em Construtor da classe \mbox{\hyperlink{class_utilizador}{Utilizador}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_utilizador_a82874cffab116aa572f58576511b0e24}{get\+Nome}} () const
+\begin{DoxyCompactList}\small\item\em Permite obter o nome do utilizador. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_utilizador_aea88bb297704762d0cccc909b8c2da54}{get\+Email}} () const
+\begin{DoxyCompactList}\small\item\em Permite obter o email do utilizador. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_utilizador_adff93f098f9512263fcbd1cdadf20855}{get\+Idade}} () const
+\begin{DoxyCompactList}\small\item\em Permite obter a idade do utilizador. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_utilizador_aea27372a36fb8e59d2f3029464d83101}{get\+Morada}} () const
+\begin{DoxyCompactList}\small\item\em Permite obter a morada do utilizador. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_cartao_credito}{Cartao\+Credito}} $>$ \mbox{\hyperlink{class_utilizador_ad0ebe5ff80aa77145ec4b0ce5473102c}{get\+Cc}} () const
+\begin{DoxyCompactList}\small\item\em Permite obter o vetor de cartoes de credito do utilizador. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_biblioteca}{Biblioteca}} \mbox{\hyperlink{class_utilizador_a6a128859b776bf019b5652ce61f62280}{get\+Biblioteca}} () const
+\begin{DoxyCompactList}\small\item\em Permite obter a biblioteca do utilizador. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_utilizador_a8c4c3275a56142c31f19c7af78e3c88f}{get\+Months\+Last\+Buy}} ()
+\item 
+\mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_utilizador_a68fcb8d8b1ebce49da37439aaa1a7b79}{get\+Data\+Ultima\+Compra}} ()
+\item 
+void \mbox{\hyperlink{class_utilizador_ac3c7ff821739e5682a5d06d0868031ac}{set\+Data\+Ultima\+Compra}} (std\+::string data)
+\item 
+bool \mbox{\hyperlink{class_utilizador_abd73f24d4eb5fa0838af819e8343b1f5}{operator==}} (const \mbox{\hyperlink{class_utilizador}{Utilizador}} \&U)
+\begin{DoxyCompactList}\small\item\em Overload do operador de igualdade para a classe \mbox{\hyperlink{class_utilizador}{Utilizador}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_utilizador_a60b1025ffe94b9f2414f54cc94662cc9}{adiciona\+Cartao\+Credito}} (const \mbox{\hyperlink{class_cartao_credito}{Cartao\+Credito}} \&C)
+\begin{DoxyCompactList}\small\item\em Adiciona um cartao de credito caso este ainda nao exista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_utilizador_ac08a744b9d9d2aca0bd22c60e0beaa83}{Adiciona\+Titulo}} (\mbox{\hyperlink{class_titulo}{Titulo}} $\ast$T, \mbox{\hyperlink{class_cartao_credito}{Cartao\+Credito}} \&c, bool comprar=false)
+\begin{DoxyCompactList}\small\item\em Adiciona um titulo ao utilizador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_utilizador_a45ee0a8d988adbd537e2506d80f96cfb}{adiciona\+Wish\+List}} (\mbox{\hyperlink{class_titulo}{Titulo}} $\ast$titulo, unsigned interesse)
+\item 
+std\+::priority\+\_\+queue$<$ \mbox{\hyperlink{class_wished_title}{Wished\+Title}} $>$ \mbox{\hyperlink{class_utilizador_a8624e9e45e13e592e68164b0d7b2b7cd}{get\+Wish\+List}} ()
+\item 
+bool \mbox{\hyperlink{class_utilizador_aa47c2fe835a73a23664149ccc7fbc10f}{remove\+Wish\+List}} (\mbox{\hyperlink{class_titulo}{Titulo}} $\ast$titulo)
+\item 
+\mbox{\hyperlink{class_wished_title}{Wished\+Title}} \mbox{\hyperlink{class_utilizador_a9b80c93b8e8f7716e4ab77b2e1b47071}{get\+Games\+Wish\+List}} (float min\+Probabilidade)
+\item 
+float \mbox{\hyperlink{class_utilizador_a2fc6ea78068d43766a6bc344a3059f61}{get\+Gastos}} () const
+\begin{DoxyCompactList}\small\item\em Calcula o preco total da biblioteca do utilizador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_utilizador_a4f3016ff86d68d548f801aa569b854dc}{print\+Publicidade}} ()
+\item 
+void \mbox{\hyperlink{class_utilizador_a4617169b0764e48f8b95d4d8aa12bf19}{atualiza\+Interesse}} (\mbox{\hyperlink{class_titulo}{Titulo}} $\ast$t, unsigned int interesse)
+\item 
+void \mbox{\hyperlink{class_utilizador_a82b216e27c9716cce49a7b98d59445cb}{atualiza\+Probabilidades}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_utilizador_ace8fd0a2f9414413e2966c8366e62b19}{nome}}
+\item 
+std\+::string \mbox{\hyperlink{class_utilizador_a3663b1ff4632d292c0b3476a960c06a7}{email}}
+\item 
+unsigned \mbox{\hyperlink{class_utilizador_a6bbed097ba3eeeae71b777b30b478ec2}{idade}}
+\item 
+std\+::string \mbox{\hyperlink{class_utilizador_ab94b7e2f13eb757c2cb98104fc69ac8c}{morada}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_cartao_credito}{Cartao\+Credito}} $>$ \mbox{\hyperlink{class_utilizador_a06fb986d77ace5547f107b6a5ce10c5e}{cc}}
+\item 
+\mbox{\hyperlink{class_biblioteca}{Biblioteca}} \mbox{\hyperlink{class_utilizador_a82e5a6ecf4dc5c5fa4397f6f3caa0484}{conjunto\+Titulos}}
+\item 
+std\+::priority\+\_\+queue$<$ \mbox{\hyperlink{class_wished_title}{Wished\+Title}} $>$ \mbox{\hyperlink{class_utilizador_a5c315459135b6ec84639951b52bfd551}{wishlist}}
+\begin{DoxyCompactList}\small\item\em Wishlist do utilizador. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_utilizador_acd065552d8fd82a50a3c66f7b67df971}{ultima\+Compra}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_utilizador}{Utilizador}} que foi declarado no \mbox{\hyperlink{class_sistema}{Sistema}} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_utilizador_ac4d4e41d09c17ea0b1c5bf4bcda4b6a8}\label{class_utilizador_ac4d4e41d09c17ea0b1c5bf4bcda4b6a8}} 
+\index{Utilizador@{Utilizador}!Utilizador@{Utilizador}}
+\index{Utilizador@{Utilizador}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{Utilizador()}{Utilizador()}}
+{\footnotesize\ttfamily Utilizador\+::\+Utilizador (\begin{DoxyParamCaption}\item[{const std\+::string}]{nome = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string}]{email = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const unsigned}]{idade = {\ttfamily 0},  }\item[{const std\+::string}]{morada = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const \mbox{\hyperlink{class_biblioteca}{Biblioteca}}}]{b = {\ttfamily \mbox{\hyperlink{class_biblioteca}{Biblioteca}}()} }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe \mbox{\hyperlink{class_utilizador}{Utilizador}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & -\/ Nome atribuido ao utilizador \\
+\hline
+{\em email} & -\/ Email atribuido ao utilizador \\
+\hline
+{\em idade} & -\/ Idade atribuido ao utilizador \\
+\hline
+{\em morada} & -\/ Morada atribuido ao utilizador \\
+\hline
+{\em b} & -\/ \mbox{\hyperlink{class_biblioteca}{Biblioteca}} atribuida ao utilizador \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_utilizador_a60b1025ffe94b9f2414f54cc94662cc9}\label{class_utilizador_a60b1025ffe94b9f2414f54cc94662cc9}} 
+\index{Utilizador@{Utilizador}!adiciona\+Cartao\+Credito@{adiciona\+Cartao\+Credito}}
+\index{adiciona\+Cartao\+Credito@{adiciona\+Cartao\+Credito}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{adiciona\+Cartao\+Credito()}{adicionaCartaoCredito()}}
+{\footnotesize\ttfamily bool Utilizador\+::adiciona\+Cartao\+Credito (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_cartao_credito}{Cartao\+Credito}} \&}]{C }\end{DoxyParamCaption})}
+
+
+
+Adiciona um cartao de credito caso este ainda nao exista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em C} & -\/ cartao de credito \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna verdadeiro se adicionar o cartao de credito, caso contr�rio retorna falso 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{class_utilizador_ac08a744b9d9d2aca0bd22c60e0beaa83}\label{class_utilizador_ac08a744b9d9d2aca0bd22c60e0beaa83}} 
+\index{Utilizador@{Utilizador}!Adiciona\+Titulo@{Adiciona\+Titulo}}
+\index{Adiciona\+Titulo@{Adiciona\+Titulo}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{Adiciona\+Titulo()}{AdicionaTitulo()}}
+{\footnotesize\ttfamily void Utilizador\+::\+Adiciona\+Titulo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_titulo}{Titulo}} $\ast$}]{T,  }\item[{\mbox{\hyperlink{class_cartao_credito}{Cartao\+Credito}} \&}]{c,  }\item[{bool}]{comprar = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Adiciona um titulo ao utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & -\/ \mbox{\hyperlink{class_titulo}{Titulo}} a acrescentar \\
+\hline
+{\em c} & -\/ Cartao de credito para efutuar compra \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_utilizador_a45ee0a8d988adbd537e2506d80f96cfb}\label{class_utilizador_a45ee0a8d988adbd537e2506d80f96cfb}} 
+\index{Utilizador@{Utilizador}!adiciona\+Wish\+List@{adiciona\+Wish\+List}}
+\index{adiciona\+Wish\+List@{adiciona\+Wish\+List}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{adiciona\+Wish\+List()}{adicionaWishList()}}
+{\footnotesize\ttfamily void Utilizador\+::adiciona\+Wish\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_titulo}{Titulo}} $\ast$}]{titulo,  }\item[{unsigned}]{interesse }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_utilizador_a4617169b0764e48f8b95d4d8aa12bf19}\label{class_utilizador_a4617169b0764e48f8b95d4d8aa12bf19}} 
+\index{Utilizador@{Utilizador}!atualiza\+Interesse@{atualiza\+Interesse}}
+\index{atualiza\+Interesse@{atualiza\+Interesse}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{atualiza\+Interesse()}{atualizaInteresse()}}
+{\footnotesize\ttfamily void Utilizador\+::atualiza\+Interesse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_titulo}{Titulo}} $\ast$}]{t,  }\item[{unsigned int}]{interesse }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_utilizador_a82b216e27c9716cce49a7b98d59445cb}\label{class_utilizador_a82b216e27c9716cce49a7b98d59445cb}} 
+\index{Utilizador@{Utilizador}!atualiza\+Probabilidades@{atualiza\+Probabilidades}}
+\index{atualiza\+Probabilidades@{atualiza\+Probabilidades}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{atualiza\+Probabilidades()}{atualizaProbabilidades()}}
+{\footnotesize\ttfamily void Utilizador\+::atualiza\+Probabilidades (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{class_utilizador_a6a128859b776bf019b5652ce61f62280}\label{class_utilizador_a6a128859b776bf019b5652ce61f62280}} 
+\index{Utilizador@{Utilizador}!get\+Biblioteca@{get\+Biblioteca}}
+\index{get\+Biblioteca@{get\+Biblioteca}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Biblioteca()}{getBiblioteca()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_biblioteca}{Biblioteca}} Utilizador\+::get\+Biblioteca (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter a biblioteca do utilizador. 
+
+\begin{DoxyReturn}{Returns}
+Retorna a biblioteca do utilizador 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_utilizador_ad0ebe5ff80aa77145ec4b0ce5473102c}\label{class_utilizador_ad0ebe5ff80aa77145ec4b0ce5473102c}} 
+\index{Utilizador@{Utilizador}!get\+Cc@{get\+Cc}}
+\index{get\+Cc@{get\+Cc}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Cc()}{getCc()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_cartao_credito}{Cartao\+Credito}} $>$ Utilizador\+::get\+Cc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter o vetor de cartoes de credito do utilizador. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o vetor de cartoes de credito do utilizador 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_utilizador_a68fcb8d8b1ebce49da37439aaa1a7b79}\label{class_utilizador_a68fcb8d8b1ebce49da37439aaa1a7b79}} 
+\index{Utilizador@{Utilizador}!get\+Data\+Ultima\+Compra@{get\+Data\+Ultima\+Compra}}
+\index{get\+Data\+Ultima\+Compra@{get\+Data\+Ultima\+Compra}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Data\+Ultima\+Compra()}{getDataUltimaCompra()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_data}{Data}} Utilizador\+::get\+Data\+Ultima\+Compra (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utilizador_aea88bb297704762d0cccc909b8c2da54}\label{class_utilizador_aea88bb297704762d0cccc909b8c2da54}} 
+\index{Utilizador@{Utilizador}!get\+Email@{get\+Email}}
+\index{get\+Email@{get\+Email}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Email()}{getEmail()}}
+{\footnotesize\ttfamily std\+::string Utilizador\+::get\+Email (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter o email do utilizador. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o email do utilizador 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_utilizador_a9b80c93b8e8f7716e4ab77b2e1b47071}\label{class_utilizador_a9b80c93b8e8f7716e4ab77b2e1b47071}} 
+\index{Utilizador@{Utilizador}!get\+Games\+Wish\+List@{get\+Games\+Wish\+List}}
+\index{get\+Games\+Wish\+List@{get\+Games\+Wish\+List}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Games\+Wish\+List()}{getGamesWishList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wished_title}{Wished\+Title}} Utilizador\+::get\+Games\+Wish\+List (\begin{DoxyParamCaption}\item[{float}]{min\+Probabilidade }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{class_utilizador_a2fc6ea78068d43766a6bc344a3059f61}\label{class_utilizador_a2fc6ea78068d43766a6bc344a3059f61}} 
+\index{Utilizador@{Utilizador}!get\+Gastos@{get\+Gastos}}
+\index{get\+Gastos@{get\+Gastos}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Gastos()}{getGastos()}}
+{\footnotesize\ttfamily float Utilizador\+::get\+Gastos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Calcula o preco total da biblioteca do utilizador. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o preco total da biblioteca 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{class_utilizador_adff93f098f9512263fcbd1cdadf20855}\label{class_utilizador_adff93f098f9512263fcbd1cdadf20855}} 
+\index{Utilizador@{Utilizador}!get\+Idade@{get\+Idade}}
+\index{get\+Idade@{get\+Idade}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Idade()}{getIdade()}}
+{\footnotesize\ttfamily unsigned Utilizador\+::get\+Idade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter a idade do utilizador. 
+
+\begin{DoxyReturn}{Returns}
+Retorna a idade do utilizador 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_utilizador_a8c4c3275a56142c31f19c7af78e3c88f}\label{class_utilizador_a8c4c3275a56142c31f19c7af78e3c88f}} 
+\index{Utilizador@{Utilizador}!get\+Months\+Last\+Buy@{get\+Months\+Last\+Buy}}
+\index{get\+Months\+Last\+Buy@{get\+Months\+Last\+Buy}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Months\+Last\+Buy()}{getMonthsLastBuy()}}
+{\footnotesize\ttfamily unsigned Utilizador\+::get\+Months\+Last\+Buy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{class_utilizador_aea27372a36fb8e59d2f3029464d83101}\label{class_utilizador_aea27372a36fb8e59d2f3029464d83101}} 
+\index{Utilizador@{Utilizador}!get\+Morada@{get\+Morada}}
+\index{get\+Morada@{get\+Morada}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Morada()}{getMorada()}}
+{\footnotesize\ttfamily std\+::string Utilizador\+::get\+Morada (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter a morada do utilizador. 
+
+\begin{DoxyReturn}{Returns}
+Retorna string com morada do utilizador 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_utilizador_a82874cffab116aa572f58576511b0e24}\label{class_utilizador_a82874cffab116aa572f58576511b0e24}} 
+\index{Utilizador@{Utilizador}!get\+Nome@{get\+Nome}}
+\index{get\+Nome@{get\+Nome}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Nome()}{getNome()}}
+{\footnotesize\ttfamily std\+::string Utilizador\+::get\+Nome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permite obter o nome do utilizador. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o nome do utilizador 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_utilizador_a8624e9e45e13e592e68164b0d7b2b7cd}\label{class_utilizador_a8624e9e45e13e592e68164b0d7b2b7cd}} 
+\index{Utilizador@{Utilizador}!get\+Wish\+List@{get\+Wish\+List}}
+\index{get\+Wish\+List@{get\+Wish\+List}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{get\+Wish\+List()}{getWishList()}}
+{\footnotesize\ttfamily std\+::priority\+\_\+queue$<$ \mbox{\hyperlink{class_wished_title}{Wished\+Title}} $>$ Utilizador\+::get\+Wish\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_utilizador_abd73f24d4eb5fa0838af819e8343b1f5}\label{class_utilizador_abd73f24d4eb5fa0838af819e8343b1f5}} 
+\index{Utilizador@{Utilizador}!operator==@{operator==}}
+\index{operator==@{operator==}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Utilizador\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_utilizador}{Utilizador}} \&}]{U }\end{DoxyParamCaption})}
+
+
+
+Overload do operador de igualdade para a classe \mbox{\hyperlink{class_utilizador}{Utilizador}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em U} & -\/ \mbox{\hyperlink{class_utilizador}{Utilizador}} a ser comparado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna verdadeiro se os utilizadores forem iguais, caso contr�rio retorna falso 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_utilizador_a4f3016ff86d68d548f801aa569b854dc}\label{class_utilizador_a4f3016ff86d68d548f801aa569b854dc}} 
+\index{Utilizador@{Utilizador}!print\+Publicidade@{print\+Publicidade}}
+\index{print\+Publicidade@{print\+Publicidade}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{print\+Publicidade()}{printPublicidade()}}
+{\footnotesize\ttfamily void Utilizador\+::print\+Publicidade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{class_utilizador_aa47c2fe835a73a23664149ccc7fbc10f}\label{class_utilizador_aa47c2fe835a73a23664149ccc7fbc10f}} 
+\index{Utilizador@{Utilizador}!remove\+Wish\+List@{remove\+Wish\+List}}
+\index{remove\+Wish\+List@{remove\+Wish\+List}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{remove\+Wish\+List()}{removeWishList()}}
+{\footnotesize\ttfamily bool Utilizador\+::remove\+Wish\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_titulo}{Titulo}} $\ast$}]{titulo }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{class_utilizador_ac3c7ff821739e5682a5d06d0868031ac}\label{class_utilizador_ac3c7ff821739e5682a5d06d0868031ac}} 
+\index{Utilizador@{Utilizador}!set\+Data\+Ultima\+Compra@{set\+Data\+Ultima\+Compra}}
+\index{set\+Data\+Ultima\+Compra@{set\+Data\+Ultima\+Compra}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{set\+Data\+Ultima\+Compra()}{setDataUltimaCompra()}}
+{\footnotesize\ttfamily void Utilizador\+::set\+Data\+Ultima\+Compra (\begin{DoxyParamCaption}\item[{std\+::string}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_utilizador_a06fb986d77ace5547f107b6a5ce10c5e}\label{class_utilizador_a06fb986d77ace5547f107b6a5ce10c5e}} 
+\index{Utilizador@{Utilizador}!cc@{cc}}
+\index{cc@{cc}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{cc}{cc}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_cartao_credito}{Cartao\+Credito}}$>$ Utilizador\+::cc\hspace{0.3cm}{\ttfamily [private]}}
+
+Vetor com os cartoes de credito do utilizador \mbox{\Hypertarget{class_utilizador_a82e5a6ecf4dc5c5fa4397f6f3caa0484}\label{class_utilizador_a82e5a6ecf4dc5c5fa4397f6f3caa0484}} 
+\index{Utilizador@{Utilizador}!conjunto\+Titulos@{conjunto\+Titulos}}
+\index{conjunto\+Titulos@{conjunto\+Titulos}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{conjunto\+Titulos}{conjuntoTitulos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_biblioteca}{Biblioteca}} Utilizador\+::conjunto\+Titulos\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\hyperlink{class_biblioteca}{Biblioteca}} com todos os Titulos do utilizador \mbox{\Hypertarget{class_utilizador_a3663b1ff4632d292c0b3476a960c06a7}\label{class_utilizador_a3663b1ff4632d292c0b3476a960c06a7}} 
+\index{Utilizador@{Utilizador}!email@{email}}
+\index{email@{email}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{email}{email}}
+{\footnotesize\ttfamily std\+::string Utilizador\+::email\hspace{0.3cm}{\ttfamily [private]}}
+
+Email do utilizador \mbox{\Hypertarget{class_utilizador_a6bbed097ba3eeeae71b777b30b478ec2}\label{class_utilizador_a6bbed097ba3eeeae71b777b30b478ec2}} 
+\index{Utilizador@{Utilizador}!idade@{idade}}
+\index{idade@{idade}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{idade}{idade}}
+{\footnotesize\ttfamily unsigned Utilizador\+::idade\hspace{0.3cm}{\ttfamily [private]}}
+
+Idade do utilizador \mbox{\Hypertarget{class_utilizador_ab94b7e2f13eb757c2cb98104fc69ac8c}\label{class_utilizador_ab94b7e2f13eb757c2cb98104fc69ac8c}} 
+\index{Utilizador@{Utilizador}!morada@{morada}}
+\index{morada@{morada}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{morada}{morada}}
+{\footnotesize\ttfamily std\+::string Utilizador\+::morada\hspace{0.3cm}{\ttfamily [private]}}
+
+Morada do utilizador \mbox{\Hypertarget{class_utilizador_ace8fd0a2f9414413e2966c8366e62b19}\label{class_utilizador_ace8fd0a2f9414413e2966c8366e62b19}} 
+\index{Utilizador@{Utilizador}!nome@{nome}}
+\index{nome@{nome}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{nome}{nome}}
+{\footnotesize\ttfamily std\+::string Utilizador\+::nome\hspace{0.3cm}{\ttfamily [private]}}
+
+Nome do utilizador \mbox{\Hypertarget{class_utilizador_acd065552d8fd82a50a3c66f7b67df971}\label{class_utilizador_acd065552d8fd82a50a3c66f7b67df971}} 
+\index{Utilizador@{Utilizador}!ultima\+Compra@{ultima\+Compra}}
+\index{ultima\+Compra@{ultima\+Compra}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{ultima\+Compra}{ultimaCompra}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_data}{Data}} Utilizador\+::ultima\+Compra\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_utilizador_a5c315459135b6ec84639951b52bfd551}\label{class_utilizador_a5c315459135b6ec84639951b52bfd551}} 
+\index{Utilizador@{Utilizador}!wishlist@{wishlist}}
+\index{wishlist@{wishlist}!Utilizador@{Utilizador}}
+\subsubsection{\texorpdfstring{wishlist}{wishlist}}
+{\footnotesize\ttfamily std\+::priority\+\_\+queue$<$\mbox{\hyperlink{class_wished_title}{Wished\+Title}}$>$ Utilizador\+::wishlist\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wishlist do utilizador. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_utilizador_8h}{Utilizador.\+h}}\item 
+\mbox{\hyperlink{_utilizador_8cpp}{Utilizador.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,11 @@
+digraph "WishedTitle::operator&lt;"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node8 [label="WishedTitle::operator\<",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="WishedTitle::getInteresse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wished_title.html#af436ada1ae78a4ffc8031863c0f21859",tooltip="Devolve o interesse no titulo. "];
+  Node8 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="WishedTitle::getProbabilidade\lCompra",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wished_title.html#a9076a3f48cb0bbd435908c392e5041a9",tooltip="Devolve a probabilidade de compra do titulo. "];
+}

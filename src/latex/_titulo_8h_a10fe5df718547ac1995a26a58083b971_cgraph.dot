@@ -1,0 +1,15 @@
+digraph "operator&lt;&lt;"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node5 [label="operator\<\<",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Titulo::showTitulo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#ab31e1d801062a75abdb10664de23d897",tooltip="Permite obter o desconto do titulo em percentagem. "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Titulo::getPreco",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a93725bdc2e98350e47b54fd76c0fa236",tooltip="Permite obter o preco atual do titulo. "];
+  Node5 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="Online::getSubscricao",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_online.html#aa222489df5a1e6bcfbf5e01d95178850",tooltip="Devolve o booleano que indica se o jogo tem uma subscricao fixa ou variavel. "];
+  Node5 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="Online::getPrecoSubscricao",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_online.html#a0f7240aa5582e10579d0719e4fa5d705",tooltip="Devolve o preco por subscricao. "];
+}

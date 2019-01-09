@@ -1,0 +1,13 @@
+digraph "Sistema::tempoJogado"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node174 [label="Sistema::tempoJogado",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node174 -> Node175 [color="midnightblue",fontsize="10",style="solid"];
+  Node175 [label="Utilizador::getBiblioteca",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_utilizador.html#a6a128859b776bf019b5652ce61f62280",tooltip="Permite obter a biblioteca do utilizador. "];
+  Node174 -> Node176 [color="midnightblue",fontsize="10",style="solid"];
+  Node176 [label="Biblioteca::getTitulos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_biblioteca.html#a03c1ebf76a4ace4f57000bb99a87bb88",tooltip="Devolve o vetor de titulos. "];
+  Node174 -> Node177 [color="midnightblue",fontsize="10",style="solid"];
+  Node177 [label="Online::getHorasTotais",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_online.html#ad0a23d2f1a2f804479ff346be0fdc686",tooltip="Devolve o numero de horas jogadas, arredondando para cima o membro estatico horas totais..."];
+}

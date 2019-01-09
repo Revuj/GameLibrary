@@ -23,8 +23,8 @@ private:
 	Biblioteca conjuntoTitulos;/**< Biblioteca com todos os Titulos do utilizador */
 
 	/*segunda parte do trabalho*/
-	std::priority_queue<WishedTitle> wishlist; /**< @brief Wishlist do utilizador  */
-	Data ultimaCompra;
+	std::priority_queue<WishedTitle> wishlist; /**< Wishlist do utilizador  */
+	Data ultimaCompra; /** < Data da ultima compra do utilizador */
 public:
 	/**
 	 * @brief Construtor da classe Utilizador
@@ -72,10 +72,23 @@ public:
 	 */
 	Biblioteca getBiblioteca() const;
 
+	/**
+	 * @brief Devolve a diferenca entre a data atual e a data da ultima compra
+	 * @return Retorna a diferenca entre a data atual e a data da ultima compra
+	 */
 	unsigned getMonthsLastBuy();
 
+
+	/**
+	 * @brief Devolve a data da ultima compra
+	 * @return Retorna a data da ultima compra
+	 */
 	Data getDataUltimaCompra(){ return this->ultimaCompra; }
 
+	/**
+	 * @brief Altera a data da ultima compra
+	 * @param data - data nova, da ultima compra
+	 */
 	void setDataUltimaCompra(std::string data){this->ultimaCompra=Data(data);}
 
 	/**
@@ -99,12 +112,31 @@ public:
  	 */
 	void AdicionaTitulo(Titulo * T, CartaoCredito & c,bool comprar=false);
 
+	/**
+	 * @brief Adiciona um novo titulo a wishlist
+	 * @param titulo - apontador para o titulo a adicionar
+	 * @param interesse - interesse que o utilizador revela pelo titulo a adicionar
+	 */
 	void adicionaWishList(Titulo* titulo,unsigned interesse);
 
+	/**
+	 * @brief Devolve a wishlist do utilizador
+	 * @return Retorna a wishlist do utilizador
+	 */
 	std::priority_queue<WishedTitle> getWishList();
 
+	/**
+	 * @brief Remove um titulo da wishlist
+	 * @param titulo - apontador para o titulo a remover
+	 * @return Retorna true no caso do titulo existir e for removido, false de outra forma
+	 */
 	bool removeWishList(Titulo *titulo);
 
+	/**
+	 * @brief Devolve o primeiro titulo da wishlist com uma probabilidade minima
+	 * @param minProbabilidade - probabilidade minima a considerar na pesquisa de um titulo
+	 * @return Retorna um WishedTitle com probabilidade de compra superior a probabilidade minima
+	 */
 	WishedTitle getGamesWishList(float minProbabilidade);
 
 	/**
@@ -113,19 +145,24 @@ public:
 	 */
 	float getGastos() const;
 
+	/**
+	 * @brief mostra no ecra as publicidades ao utilizador
+	 */
 	void printPublicidade();
 
+	/**
+	 * @brief Atualiza o interesse, num titulo
+	 * @param t - apontador para o titulo a mudar o interesse
+	 * @param interesse - novo interesse no titulo
+	 */
 	void atualizaInteresse(Titulo* t, unsigned int interesse);
 
+	/**
+	 * @brief Atualiza as probabilidades de compra para todos os titulos
+	 */
 	void atualizaProbabilidades();
 };
 
-/**
-* @brief Overload do operador de inser��o para a classe Utilizador
-* @param os - Stream passada por refer�ncia para a qual ser� efetuada a escrita
-* @param u - Utilizador a ser enviado para a stream
-* @return Retorna refer�ncia de stream de output
-*/
 std::ostream & operator <<(std::ostream & os, const Utilizador & u);
 
 #endif /* UTILIZADOR_H_ */

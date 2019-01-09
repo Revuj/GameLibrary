@@ -51,6 +51,9 @@ public:
 	*/
 	bool operator<(const WishedTitle &title) const;
 
+	/**
+	 * @brief Atualiza a probabilidade de compra do WishedTitle
+	 */
 	void atualizaProbabilidade(float saldo);
 };
 

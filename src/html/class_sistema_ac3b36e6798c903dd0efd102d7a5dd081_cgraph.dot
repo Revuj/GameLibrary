@@ -1,0 +1,33 @@
+digraph "Sistema::ordenaUtilizadores"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node60 [label="Sistema::ordenaUtilizadores",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node60 -> Node61 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node61 [label="userAgeAscend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#ad518f0e0db218f2c049ef1d700caae5f"];
+  Node61 -> Node62 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node62 [label="Utilizador::getIdade",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_utilizador.html#adff93f098f9512263fcbd1cdadf20855",tooltip="Permite obter a idade do utilizador. "];
+  Node60 -> Node63 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node63 [label="userAgeDescend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#a02190b2d4dada73645956850b936ad16"];
+  Node63 -> Node62 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node60 -> Node64 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node64 [label="userNameAscend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#a2cac2b30d054ab23d49adc954779f67d"];
+  Node64 -> Node65 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node65 [label="Utilizador::getNome",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_utilizador.html#a82874cffab116aa572f58576511b0e24",tooltip="Permite obter o nome do utilizador. "];
+  Node60 -> Node66 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node66 [label="userNameDescend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#ac0995133035c1bd2be3a18c95a2eba92"];
+  Node66 -> Node65 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node60 -> Node67 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node67 [label="userNumberGamesAscend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#a55b7ab55cae2d4f6a03844e5cb19d2b8"];
+  Node67 -> Node68 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node68 [label="Utilizador::getBiblioteca",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_utilizador.html#a6a128859b776bf019b5652ce61f62280",tooltip="Permite obter a biblioteca do utilizador. "];
+  Node67 -> Node69 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node69 [label="Biblioteca::getTitulos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_biblioteca.html#a03c1ebf76a4ace4f57000bb99a87bb88",tooltip="Devolve o vetor de titulos. "];
+  Node60 -> Node70 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node70 [label="userNumberGamesDescend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#a81e28a299272eebc9771023c1f78ea48"];
+  Node70 -> Node68 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node70 -> Node69 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node60 -> Node71 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node71 [label="Sistema::displayUtilizadores",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sistema.html#ac22188d7bcfb9df24776d67900b9d7fb",tooltip="Mostra os utilizadores do sistema. "];
+}

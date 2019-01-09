@@ -48,7 +48,7 @@ protected:
 	std::vector<float> historico_preco;/**< Historico de precos */
 	unsigned int numeroAnuncios; /** < Numero de anuncios */
 	unsigned int numeroCliques /** < Numero de cliques */;
-	UserHashTable asleepUsers;
+	UserHashTable asleepUsers; /** < Lista de utilizadores adormecidos */
 public:
 	/**
 	 * @brief Construtor da classe Titulo
@@ -59,6 +59,8 @@ public:
 	 * @param generos - Generos atribuidos ao titulo
 	 * @param empresa - Empresa atribuida ao titulo
 	 * @param dataLancamento - Data atribuida ao titulo
+	 * @param numero - Numero de anuncios visualizados
+	 * @param cliques - Numero de cliques no titulo
 	 */
 	Titulo(std::string nome, unsigned idadeMinima,
 			std::string plataforma,float preco,
@@ -143,7 +145,7 @@ public:
 	float getDesconto() const;
 
 	/**
-	 * @brief Método puramente virtual que permite obter o gastos num titulo. A implementação encontra-se nas classes derivadas: Home e Online
+	 * @brief Metodo puramente virtual que permite obter o gastos num titulo. A implementacao encontra-se nas classes derivadas: Home e Online
 	 * @return Retorna os gastos no titulo consoante o seu tipo 
 	 */
 	virtual float getGastos() const = 0;
@@ -178,20 +180,39 @@ public:
 	 */
 	void adicionaCliques(unsigned int numero);
 
+	/**
+	 * @brief Adiciona um utilizador a lista de utilizadores adormecidos
+	 * @param u - apontador para o utilizador a adicionar
+	 */
 	void adicionaUserHashTable(Utilizador *u);
 
+
+	/**
+	 * @brief Remove um utilizador a lista de utilizadores adormecidos
+	 * @param u - apontador para o utilizador a remover
+	 */
 	void removeUserHashTable(Utilizador* u);
 
+	/**
+	 * @brief Mostra os utilizadores adormecidos no ecra
+	 */
 	void printAsleepUsers();
 
+	/**
+	 * @brief limpa a lista de utilizadores
+	 */
 	void clearAsleepUsers() { this->asleepUsers.clear() ;}
 
+	/**
+	 * @brief Devolve a lista de utilizadores adormecidos
+	 * @return Retorna a lista de utilizadores adormecidos
+	 */
 	UserHashTable getSleepUsers() { return this->asleepUsers; }
 
 	/**
 	 * @brief Permite obter o desconto do titulo em percentagem 
 	 * @return Retorna o desconto do titulo
-	 * @param os - Stream passada por referência para a qual será efetuada a escrita
+	 * @param os - Stream passada por referencia para a qual sera efetuada a escrita
 	 */
 	std::ostream & showTitulo(std::ostream & os) const;
 
@@ -223,6 +244,8 @@ public:
 	 * @param generos - Generos atribuidos ao titulo
 	 * @param empresa - Empresa atribuida ao titulo
 	 * @param dataLancamento - Data atribuida ao titulo
+	 * @param numero - Numero de anuncios visualizados
+	 * @param cliques - Numero de cliques no titulo
 	 */
 	Home(std::string nome, int idadeMinima,
 				std::string plataforma,float preco,
@@ -280,6 +303,8 @@ public:
 	 * @param dataLancamento - Data atribuida ao titulo
 	 * @param subs - Subscricao fixa ou variavel
 	 * @param - Preco da subscricao escolhida
+	 * @param numero - Numero de anuncios visualizados
+	 * @param cliques - Numero de cliques no titulo
 	 */
 	Online(std::string nome, int idadeMinima,
 				std::string plataforma,float preco,

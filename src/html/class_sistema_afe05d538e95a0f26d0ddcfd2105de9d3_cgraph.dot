@@ -1,0 +1,48 @@
+digraph "Sistema::readFileUtilizadores"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node98 [label="Sistema::readFileUtilizadores",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node98 -> Node99 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node99 [label="Banco::adicionaCartoesCredito",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_banco.html#a5f36ab07909fc570d158a21e2e6398f5",tooltip="Adiciona um vector de cartoes de credito ao banco. "];
+  Node99 -> Node100 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node100 [label="Banco::adicionaCartaoCredito",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_banco.html#a2ac1bb3c6a742743bcbb6dd0a312d74d",tooltip="Adiciona um cartao de credito ao banco. "];
+  Node100 -> Node101 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node101 [label="CartaoCredito::getId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cartao_credito.html#ab59d60e4d155e7f29aef888ea3139ee5",tooltip="Devolve o id(string) do cartao de credito atual. "];
+  Node98 -> Node102 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node102 [label="Titulo::setHistoricoPreco",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a8ea091928732a5ff5b974e003668a778",tooltip="Permite atualizar o historico de precos do titulo. "];
+  Node98 -> Node103 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node103 [label="Online::setDatasJogo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_online.html#a3c0b8d3393271eabfa702629c979fb93",tooltip="Altera as datas jogadas. "];
+  Node98 -> Node104 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node104 [label="Online::setMinutosJogo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_online.html#a71cc818cd9b8020a470efc14f636a9f9",tooltip="Altera os minutos jogados por data. "];
+  Node98 -> Node105 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node105 [label="Biblioteca::adicionaTitulo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_biblioteca.html#af10c9f23d85db8e03ae2e8b9d3e593e1",tooltip="Adicona um titulo a biblioteca. "];
+  Node105 -> Node106 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node106 [label="Titulo::getNome",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#acb79279860b3404c6419697df5f860cb",tooltip="Permite obter o nome do titulo. "];
+  Node105 -> Node107 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node107 [label="Titulo::getPlataforma",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a2a57a31d40c5df012b3c6e2451c253dd",tooltip="Permite obter a plataforma do titulo. "];
+  Node98 -> Node108 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node108 [label="Home::adicionaAtualizacao",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_home.html#a94aec68b520d98ac38c6794b5771cd53",tooltip="Adiciona uma data ao vetor data_de_atualizacao. "];
+  Node98 -> Node109 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node109 [label="Utilizador::setDataUltima\lCompra",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_utilizador.html#ac3c7ff821739e5682a5d06d0868031ac"];
+  Node98 -> Node110 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node110 [label="Utilizador::adicionaCartao\lCredito",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_utilizador.html#a60b1025ffe94b9f2414f54cc94662cc9",tooltip="Adiciona um cartao de credito caso este ainda nao exista. "];
+  Node110 -> Node101 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node98 -> Node111 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node111 [label="Utilizador::adicionaWishList",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_utilizador.html#a45ee0a8d988adbd537e2506d80f96cfb"];
+  Node111 -> Node112 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node112 [label="WishedTitle::atualizaProbabilidade",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wished_title.html#a8be5446371add65ba4de2c69c84cb387"];
+  Node112 -> Node113 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node113 [label="Titulo::getAnuncios",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#ad36afe75694812eabe74af5fe32ad95b",tooltip="Permite obter o numero de anuncios. "];
+  Node112 -> Node114 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node114 [label="Titulo::getCliques",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a71d5b5985170de5612ec49c5c955f120",tooltip="Permite obter o numero de cliques. "];
+  Node112 -> Node115 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node115 [label="Titulo::getPreco",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a93725bdc2e98350e47b54fd76c0fa236",tooltip="Permite obter o preco atual do titulo. "];
+  Node111 -> Node116 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node116 [label="Biblioteca::getTitulos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_biblioteca.html#a03c1ebf76a4ace4f57000bb99a87bb88",tooltip="Devolve o vetor de titulos. "];
+  Node111 -> Node106 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node111 -> Node107 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node111 -> Node117 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node117 [label="WishedTitle::getTitulo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wished_title.html#a9ca6e92a26bb2f319a39d5a03b0c42bd",tooltip="Devolve o titulo. "];
+}

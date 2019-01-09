@@ -1,0 +1,171 @@
+\hypertarget{class_empresa}{}\section{Empresa Class Reference}
+\label{class_empresa}\index{Empresa@{Empresa}}
+
+
+{\ttfamily \#include $<$Empresa.\+h$>$}
+
+
+
+Collaboration diagram for Empresa\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_empresa_aff124b958356c479ab50ddf4cf302193}{Empresa}} ()
+\item 
+\mbox{\hyperlink{class_empresa_a19748f9e5c99292e3cd1489712751271}{Empresa}} (std\+::string \mbox{\hyperlink{class_empresa_affa32f93b722be794531dbfb26cb19b3}{nome}}, std\+::string email, std\+::string numero\+Telemovel, std\+::string nif)
+\item 
+std\+::string \mbox{\hyperlink{class_empresa_a99bc2de98a0c0348abb74c93e6e7159e}{get\+Nome\+Empresa}} () const
+\item 
+unsigned int \mbox{\hyperlink{class_empresa_a49b2b94a54bbc341822f64fc194f98fd}{get\+Numero\+Titulos}} () const
+\item 
+std\+::string \mbox{\hyperlink{class_empresa_a6ab12452496ccaea5493bd2c67824f09}{get\+Nif}} () const
+\item 
+\mbox{\hyperlink{structcontactos}{contactos}} \mbox{\hyperlink{class_empresa_a19396f860d9b17f94bd262ba093d76eb}{get\+Contactos}} () const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_titulo}{Titulo}} $\ast$ $>$ \mbox{\hyperlink{class_empresa_a672f3a89b0e41dd758ab6baf1a8dfbd2}{get\+Titulos}} () const
+\item 
+void \mbox{\hyperlink{class_empresa_af067f4d00a5ceb8816a607164916d2e1}{display\+Titulos}} ()
+\item 
+void \mbox{\hyperlink{class_empresa_a3e40c710d76874bcfcf4bd83592d4f13}{add\+Numero}} ()
+\item 
+bool \mbox{\hyperlink{class_empresa_ab643d752365e59fa1d90a41b8a036d6a}{operator$<$}} (const \mbox{\hyperlink{class_empresa}{Empresa}} \&empresa)
+\item 
+bool \mbox{\hyperlink{class_empresa_ad915fb38bc6c73c02fe70c62db1c9f03}{operator==}} (const \mbox{\hyperlink{class_empresa}{Empresa}} \&empresa)
+\item 
+void \mbox{\hyperlink{class_empresa_a3c6eb96c694dcb6db1e402d6db1c439a}{criar\+Titulo}} (\mbox{\hyperlink{class_titulo}{Titulo}} $\ast$t)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_empresa_affa32f93b722be794531dbfb26cb19b3}{nome}}
+\item 
+unsigned int \mbox{\hyperlink{class_empresa_a375bf18365e4a52cc16ca5cdab7c8c5f}{numero\+Titulos}}
+\item 
+\mbox{\hyperlink{structcontactos}{contactos}} \mbox{\hyperlink{class_empresa_ad6e0d3239991fec739d8af4fda632fb9}{contacto}}
+\item 
+std\+::string \mbox{\hyperlink{class_empresa_aac18efdd86c506c27a191fb0569b7b23}{Nif}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_titulo}{Titulo}} $\ast$ $>$ \mbox{\hyperlink{class_empresa_a02a71346cff2f286d265ed75e78bef36}{Titulos}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_empresa_aff124b958356c479ab50ddf4cf302193}\label{class_empresa_aff124b958356c479ab50ddf4cf302193}} 
+\index{Empresa@{Empresa}!Empresa@{Empresa}}
+\index{Empresa@{Empresa}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{Empresa()}{Empresa()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Empresa\+::\+Empresa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_empresa_a19748f9e5c99292e3cd1489712751271}\label{class_empresa_a19748f9e5c99292e3cd1489712751271}} 
+\index{Empresa@{Empresa}!Empresa@{Empresa}}
+\index{Empresa@{Empresa}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{Empresa()}{Empresa()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Empresa\+::\+Empresa (\begin{DoxyParamCaption}\item[{std\+::string}]{nome,  }\item[{std\+::string}]{email,  }\item[{std\+::string}]{numero\+Telemovel,  }\item[{std\+::string}]{nif }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_empresa_a3e40c710d76874bcfcf4bd83592d4f13}\label{class_empresa_a3e40c710d76874bcfcf4bd83592d4f13}} 
+\index{Empresa@{Empresa}!add\+Numero@{add\+Numero}}
+\index{add\+Numero@{add\+Numero}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{add\+Numero()}{addNumero()}}
+{\footnotesize\ttfamily void Empresa\+::add\+Numero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_empresa_a3c6eb96c694dcb6db1e402d6db1c439a}\label{class_empresa_a3c6eb96c694dcb6db1e402d6db1c439a}} 
+\index{Empresa@{Empresa}!criar\+Titulo@{criar\+Titulo}}
+\index{criar\+Titulo@{criar\+Titulo}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{criar\+Titulo()}{criarTitulo()}}
+{\footnotesize\ttfamily void Empresa\+::criar\+Titulo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_titulo}{Titulo}} $\ast$}]{t }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_empresa_af067f4d00a5ceb8816a607164916d2e1}\label{class_empresa_af067f4d00a5ceb8816a607164916d2e1}} 
+\index{Empresa@{Empresa}!display\+Titulos@{display\+Titulos}}
+\index{display\+Titulos@{display\+Titulos}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{display\+Titulos()}{displayTitulos()}}
+{\footnotesize\ttfamily void Empresa\+::display\+Titulos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_empresa_a19396f860d9b17f94bd262ba093d76eb}\label{class_empresa_a19396f860d9b17f94bd262ba093d76eb}} 
+\index{Empresa@{Empresa}!get\+Contactos@{get\+Contactos}}
+\index{get\+Contactos@{get\+Contactos}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{get\+Contactos()}{getContactos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcontactos}{contactos}} Empresa\+::get\+Contactos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_empresa_a6ab12452496ccaea5493bd2c67824f09}\label{class_empresa_a6ab12452496ccaea5493bd2c67824f09}} 
+\index{Empresa@{Empresa}!get\+Nif@{get\+Nif}}
+\index{get\+Nif@{get\+Nif}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{get\+Nif()}{getNif()}}
+{\footnotesize\ttfamily std\+::string Empresa\+::get\+Nif (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_empresa_a99bc2de98a0c0348abb74c93e6e7159e}\label{class_empresa_a99bc2de98a0c0348abb74c93e6e7159e}} 
+\index{Empresa@{Empresa}!get\+Nome\+Empresa@{get\+Nome\+Empresa}}
+\index{get\+Nome\+Empresa@{get\+Nome\+Empresa}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{get\+Nome\+Empresa()}{getNomeEmpresa()}}
+{\footnotesize\ttfamily std\+::string Empresa\+::get\+Nome\+Empresa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_empresa_a49b2b94a54bbc341822f64fc194f98fd}\label{class_empresa_a49b2b94a54bbc341822f64fc194f98fd}} 
+\index{Empresa@{Empresa}!get\+Numero\+Titulos@{get\+Numero\+Titulos}}
+\index{get\+Numero\+Titulos@{get\+Numero\+Titulos}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{get\+Numero\+Titulos()}{getNumeroTitulos()}}
+{\footnotesize\ttfamily unsigned int Empresa\+::get\+Numero\+Titulos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_empresa_a672f3a89b0e41dd758ab6baf1a8dfbd2}\label{class_empresa_a672f3a89b0e41dd758ab6baf1a8dfbd2}} 
+\index{Empresa@{Empresa}!get\+Titulos@{get\+Titulos}}
+\index{get\+Titulos@{get\+Titulos}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{get\+Titulos()}{getTitulos()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_titulo}{Titulo}} $\ast$ $>$ Empresa\+::get\+Titulos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_empresa_ab643d752365e59fa1d90a41b8a036d6a}\label{class_empresa_ab643d752365e59fa1d90a41b8a036d6a}} 
+\index{Empresa@{Empresa}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Empresa\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_empresa}{Empresa}} \&}]{empresa }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{class_empresa_ad915fb38bc6c73c02fe70c62db1c9f03}\label{class_empresa_ad915fb38bc6c73c02fe70c62db1c9f03}} 
+\index{Empresa@{Empresa}!operator==@{operator==}}
+\index{operator==@{operator==}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Empresa\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_empresa}{Empresa}} \&}]{empresa }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 2
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_empresa_ad6e0d3239991fec739d8af4fda632fb9}\label{class_empresa_ad6e0d3239991fec739d8af4fda632fb9}} 
+\index{Empresa@{Empresa}!contacto@{contacto}}
+\index{contacto@{contacto}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{contacto}{contacto}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcontactos}{contactos}} Empresa\+::contacto\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_empresa_aac18efdd86c506c27a191fb0569b7b23}\label{class_empresa_aac18efdd86c506c27a191fb0569b7b23}} 
+\index{Empresa@{Empresa}!Nif@{Nif}}
+\index{Nif@{Nif}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{Nif}{Nif}}
+{\footnotesize\ttfamily std\+::string Empresa\+::\+Nif\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_empresa_affa32f93b722be794531dbfb26cb19b3}\label{class_empresa_affa32f93b722be794531dbfb26cb19b3}} 
+\index{Empresa@{Empresa}!nome@{nome}}
+\index{nome@{nome}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{nome}{nome}}
+{\footnotesize\ttfamily std\+::string Empresa\+::nome\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_empresa_a375bf18365e4a52cc16ca5cdab7c8c5f}\label{class_empresa_a375bf18365e4a52cc16ca5cdab7c8c5f}} 
+\index{Empresa@{Empresa}!numero\+Titulos@{numero\+Titulos}}
+\index{numero\+Titulos@{numero\+Titulos}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{numero\+Titulos}{numeroTitulos}}
+{\footnotesize\ttfamily unsigned int Empresa\+::numero\+Titulos\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_empresa_a02a71346cff2f286d265ed75e78bef36}\label{class_empresa_a02a71346cff2f286d265ed75e78bef36}} 
+\index{Empresa@{Empresa}!Titulos@{Titulos}}
+\index{Titulos@{Titulos}!Empresa@{Empresa}}
+\subsubsection{\texorpdfstring{Titulos}{Titulos}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_titulo}{Titulo}}$\ast$$>$ Empresa\+::\+Titulos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_empresa_8h}{Empresa.\+h}}\item 
+\mbox{\hyperlink{_empresa_8cpp}{Empresa.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,24 @@
+digraph "pesquisarJogo"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node372 [label="pesquisarJogo",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node372 -> Node373 [color="midnightblue",fontsize="10",style="solid"];
+  Node373 [label="Sistema::pesquisaJogo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sistema.html#a0fb81a4685bb24024295c89d22d6d719",tooltip="Pesquisa um titulo. "];
+  Node372 -> Node374 [color="midnightblue",fontsize="10",style="solid"];
+  Node374 [label="Titulo::adicionaCliques",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a0cf99e4a2b522a7acae425593e87efec",tooltip="Adiciona um numero de cliques. "];
+  Node372 -> Node375 [color="midnightblue",fontsize="10",style="solid"];
+  Node375 [label="Home::adicionaAtualizacao",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_home.html#a94aec68b520d98ac38c6794b5771cd53",tooltip="Adiciona uma data ao vetor data_de_atualizacao. "];
+  Node372 -> Node376 [color="midnightblue",fontsize="10",style="solid"];
+  Node376 [label="Sistema::getBanco",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sistema.html#abb768fdc8d4b8290ab4a267fc7a84a39",tooltip="Devolve o banco do sistema. "];
+  Node372 -> Node377 [color="midnightblue",fontsize="10",style="solid"];
+  Node377 [label="Banco::getDataAtual",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_banco.html#a0735f07636c578666068a16f6ecccd91",tooltip="Devolve a data atual. "];
+  Node372 -> Node378 [color="midnightblue",fontsize="10",style="solid"];
+  Node378 [label="Sistema::adicionaAtualizacao",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sistema.html#aa91f2955f6b47f4dc0523b86b94c6309",tooltip="Adiciona uma atualizacao a um titulo do sistema. "];
+  Node378 -> Node375 [color="midnightblue",fontsize="10",style="solid"];
+  Node372 -> Node379 [color="midnightblue",fontsize="10",style="solid"];
+  Node379 [label="Home::getDatas",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_home.html#a0ab7279a76525f48cb1b64b8bae98a44",tooltip="Devolve membro dado vetor de datas. "];
+  Node372 -> Node380 [color="midnightblue",fontsize="10",style="solid"];
+  Node380 [label="Erro::getInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_erro.html#abfc1e9735b259d88bb97828a23164eb0",tooltip="Permite obter a descrição do Erro. "];
+}

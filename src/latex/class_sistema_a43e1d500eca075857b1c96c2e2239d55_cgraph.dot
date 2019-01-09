@@ -1,0 +1,21 @@
+digraph "Sistema::utilizadorJogar"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node178 [label="Sistema::utilizadorJogar",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node178 -> Node179 [color="midnightblue",fontsize="10",style="solid"];
+  Node179 [label="Utilizador::getBiblioteca",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_utilizador.html#a6a128859b776bf019b5652ce61f62280",tooltip="Permite obter a biblioteca do utilizador. "];
+  Node178 -> Node180 [color="midnightblue",fontsize="10",style="solid"];
+  Node180 [label="Biblioteca::getTitulos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_biblioteca.html#a03c1ebf76a4ace4f57000bb99a87bb88",tooltip="Devolve o vetor de titulos. "];
+  Node178 -> Node181 [color="midnightblue",fontsize="10",style="solid"];
+  Node181 [label="Titulo::getNome",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#acb79279860b3404c6419697df5f860cb",tooltip="Permite obter o nome do titulo. "];
+  Node178 -> Node182 [color="midnightblue",fontsize="10",style="solid"];
+  Node182 [label="Titulo::getPlataforma",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a2a57a31d40c5df012b3c6e2451c253dd",tooltip="Permite obter a plataforma do titulo. "];
+  Node178 -> Node183 [color="midnightblue",fontsize="10",style="solid"];
+  Node183 [label="Online::adicionaEstatisticas",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_online.html#aac2ef3483edfaa8426363ebdd542dc38",tooltip="Adicionar estaticas relativas aos habitos de gaming, atualiza os 3 ultimos vetores, cuja ordem � crucial e atualiza horas_totais. "];
+  Node183 -> Node184 [color="midnightblue",fontsize="10",style="solid"];
+  Node184 [label="Online::atualizaEstAux",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_online.html#a1796bfbb1c3210f26ca8e1cddc61d830",tooltip="Adiciona aos 3 vetores os habitos gaming de uma certa data, funcao a usar em adicionaEstatisticas. "];
+  Node178 -> Node185 [color="midnightblue",fontsize="10",style="solid"];
+  Node185 [label="Banco::getDataAtual",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_banco.html#a0735f07636c578666068a16f6ecccd91",tooltip="Devolve a data atual. "];
+}

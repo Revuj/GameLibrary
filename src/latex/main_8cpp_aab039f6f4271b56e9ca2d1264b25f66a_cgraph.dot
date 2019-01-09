@@ -1,0 +1,27 @@
+digraph "utilizadorJoga"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node451 [label="utilizadorJoga",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node451 -> Node452 [color="midnightblue",fontsize="10",style="solid"];
+  Node452 [label="Sistema::pesquisaJogo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sistema.html#a0fb81a4685bb24024295c89d22d6d719",tooltip="Pesquisa um titulo. "];
+  Node451 -> Node453 [color="midnightblue",fontsize="10",style="solid"];
+  Node453 [label="Erro::getInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_erro.html#abfc1e9735b259d88bb97828a23164eb0",tooltip="Permite obter a descrição do Erro. "];
+  Node451 -> Node454 [color="midnightblue",fontsize="10",style="solid"];
+  Node454 [label="Sistema::utilizadorJogar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sistema.html#a43e1d500eca075857b1c96c2e2239d55",tooltip="Simula o \"jogar\" de um utilizador, incrementando o tempo jogado e guardando uma data do dia em que jo..."];
+  Node454 -> Node455 [color="midnightblue",fontsize="10",style="solid"];
+  Node455 [label="Utilizador::getBiblioteca",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_utilizador.html#a6a128859b776bf019b5652ce61f62280",tooltip="Permite obter a biblioteca do utilizador. "];
+  Node454 -> Node456 [color="midnightblue",fontsize="10",style="solid"];
+  Node456 [label="Biblioteca::getTitulos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_biblioteca.html#a03c1ebf76a4ace4f57000bb99a87bb88",tooltip="Devolve o vetor de titulos. "];
+  Node454 -> Node457 [color="midnightblue",fontsize="10",style="solid"];
+  Node457 [label="Titulo::getNome",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#acb79279860b3404c6419697df5f860cb",tooltip="Permite obter o nome do titulo. "];
+  Node454 -> Node458 [color="midnightblue",fontsize="10",style="solid"];
+  Node458 [label="Titulo::getPlataforma",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a2a57a31d40c5df012b3c6e2451c253dd",tooltip="Permite obter a plataforma do titulo. "];
+  Node454 -> Node459 [color="midnightblue",fontsize="10",style="solid"];
+  Node459 [label="Online::adicionaEstatisticas",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_online.html#aac2ef3483edfaa8426363ebdd542dc38",tooltip="Adicionar estaticas relativas aos habitos de gaming, atualiza os 3 ultimos vetores, cuja ordem � crucial e atualiza horas_totais. "];
+  Node459 -> Node460 [color="midnightblue",fontsize="10",style="solid"];
+  Node460 [label="Online::atualizaEstAux",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_online.html#a1796bfbb1c3210f26ca8e1cddc61d830",tooltip="Adiciona aos 3 vetores os habitos gaming de uma certa data, funcao a usar em adicionaEstatisticas. "];
+  Node454 -> Node461 [color="midnightblue",fontsize="10",style="solid"];
+  Node461 [label="Banco::getDataAtual",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_banco.html#a0735f07636c578666068a16f6ecccd91",tooltip="Devolve a data atual. "];
+}

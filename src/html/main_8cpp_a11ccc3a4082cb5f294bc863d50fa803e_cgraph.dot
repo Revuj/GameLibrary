@@ -1,0 +1,29 @@
+digraph "adiconaWishlist"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node19 [label="adiconaWishlist",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node19 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="Sistema::pesquisaJogo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sistema.html#a0fb81a4685bb24024295c89d22d6d719",tooltip="Pesquisa um titulo. "];
+  Node19 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="Utilizador::adicionaWishList",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_utilizador.html#a45ee0a8d988adbd537e2506d80f96cfb"];
+  Node21 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="WishedTitle::atualizaProbabilidade",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wished_title.html#a8be5446371add65ba4de2c69c84cb387"];
+  Node22 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="Titulo::getAnuncios",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#ad36afe75694812eabe74af5fe32ad95b",tooltip="Permite obter o numero de anuncios. "];
+  Node22 -> Node24 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 [label="Titulo::getCliques",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a71d5b5985170de5612ec49c5c955f120",tooltip="Permite obter o numero de cliques. "];
+  Node22 -> Node25 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 [label="Titulo::getPreco",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a93725bdc2e98350e47b54fd76c0fa236",tooltip="Permite obter o preco atual do titulo. "];
+  Node21 -> Node26 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node26 [label="Biblioteca::getTitulos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_biblioteca.html#a03c1ebf76a4ace4f57000bb99a87bb88",tooltip="Devolve o vetor de titulos. "];
+  Node21 -> Node27 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node27 [label="Titulo::getNome",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#acb79279860b3404c6419697df5f860cb",tooltip="Permite obter o nome do titulo. "];
+  Node21 -> Node28 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node28 [label="Titulo::getPlataforma",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a2a57a31d40c5df012b3c6e2451c253dd",tooltip="Permite obter a plataforma do titulo. "];
+  Node21 -> Node29 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node29 [label="WishedTitle::getTitulo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wished_title.html#a9ca6e92a26bb2f319a39d5a03b0c42bd",tooltip="Devolve o titulo. "];
+  Node19 -> Node30 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node30 [label="Erro::getInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_erro.html#abfc1e9735b259d88bb97828a23164eb0",tooltip="Permite obter a descrição do Erro. "];
+}

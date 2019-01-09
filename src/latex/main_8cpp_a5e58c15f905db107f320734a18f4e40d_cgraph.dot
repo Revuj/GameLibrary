@@ -1,0 +1,46 @@
+digraph "displayTitulos"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node66 [label="displayTitulos",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node66 -> Node67 [color="midnightblue",fontsize="10",style="solid"];
+  Node67 [label="printDisplayTitulosMenu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a6afc9271571dfdc7288faf87e9616e7d"];
+  Node66 -> Node68 [color="midnightblue",fontsize="10",style="solid"];
+  Node68 [label="getOption",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a69864162453f9299380c3c91be8fdca4"];
+  Node66 -> Node69 [color="midnightblue",fontsize="10",style="solid"];
+  Node69 [label="Erro::getInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_erro.html#abfc1e9735b259d88bb97828a23164eb0",tooltip="Permite obter a descrição do Erro. "];
+  Node66 -> Node70 [color="midnightblue",fontsize="10",style="solid"];
+  Node70 [label="Sistema::displayTitulos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sistema.html#abf82916720d1255bba6437abf0094ca6",tooltip="Mostra os titulos do sistema. "];
+  Node66 -> Node71 [color="midnightblue",fontsize="10",style="solid"];
+  Node71 [label="Sistema::ordenaTitulos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sistema.html#a6dcecc2ca65f6fdedd042c7431d5ea19",tooltip="Mostra os titulos de forma ordenada. "];
+  Node71 -> Node72 [color="midnightblue",fontsize="10",style="solid"];
+  Node72 [label="gameIdAscend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#a9ebb751fccefae6ee1c4636c901cf0bc"];
+  Node72 -> Node73 [color="midnightblue",fontsize="10",style="solid"];
+  Node73 [label="Titulo::getIdU",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#af8fed6503c1c528ac3bfdbb182fce0b6",tooltip="Permite obter o identificador do titulo. "];
+  Node71 -> Node74 [color="midnightblue",fontsize="10",style="solid"];
+  Node74 [label="gameIdDescend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#a5de4e871b807cfbcd024a00f60d18ba1"];
+  Node74 -> Node73 [color="midnightblue",fontsize="10",style="solid"];
+  Node71 -> Node75 [color="midnightblue",fontsize="10",style="solid"];
+  Node75 [label="gameReleaseAscend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#a4b576dc41b8edeb29c8f84c948c47665"];
+  Node75 -> Node76 [color="midnightblue",fontsize="10",style="solid"];
+  Node76 [label="Titulo::getDataLancamento",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a1cb9b8c0a9dca73d5925922ccc041fa8",tooltip="Permite obter a data de lancamento do titulo. "];
+  Node71 -> Node77 [color="midnightblue",fontsize="10",style="solid"];
+  Node77 [label="gameReleaseDescend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#af8a401eaa3da373780504f34a1216550"];
+  Node77 -> Node76 [color="midnightblue",fontsize="10",style="solid"];
+  Node71 -> Node78 [color="midnightblue",fontsize="10",style="solid"];
+  Node78 [label="gameAgeAscend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#a85fca79d7efc04e9982238e38e199154"];
+  Node78 -> Node79 [color="midnightblue",fontsize="10",style="solid"];
+  Node79 [label="Titulo::getIdadeMinima",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a8048db7604abd58892122c810a6794be",tooltip="Permite obter a idade minima do titulo. "];
+  Node71 -> Node80 [color="midnightblue",fontsize="10",style="solid"];
+  Node80 [label="gameAgeDescend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#a4d0cdff5caed7ad707a1f6926e301a51"];
+  Node80 -> Node79 [color="midnightblue",fontsize="10",style="solid"];
+  Node71 -> Node81 [color="midnightblue",fontsize="10",style="solid"];
+  Node81 [label="gameDeveloperAscend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#ac71c10d662fb0c03358b94519364a76e"];
+  Node81 -> Node82 [color="midnightblue",fontsize="10",style="solid"];
+  Node82 [label="Titulo::getEmpresa",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_titulo.html#a48d810fe27da41cfb726fb5680a68471",tooltip="Permite obter a empresa do titulo. "];
+  Node71 -> Node83 [color="midnightblue",fontsize="10",style="solid"];
+  Node83 [label="gameDeveloperDescend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sistema_8cpp.html#a7ce8e20323381359eed30807d3dadabd"];
+  Node83 -> Node82 [color="midnightblue",fontsize="10",style="solid"];
+  Node71 -> Node70 [color="midnightblue",fontsize="10",style="solid"];
+}
