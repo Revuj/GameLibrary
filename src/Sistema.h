@@ -23,8 +23,8 @@ private:
 	std::vector <Utilizador *> jogadores; /**< Conjunto de utilizadores do sistema */
 	std::vector <Titulo *> titulos; /**< Conjunto de titulos disponiveis */
 	std::vector <std::string> plataformas; /**< Plataformas onde os titulos estao disponiveis */
-	Banco banco;
-	BSTEmpresa empresas;
+	Banco banco; /**< Banco para gerir cartoes de credito no sistema */
+	BSTEmpresa empresas; /**< Conjunto de empresas disponiveis */
 public:
 	/**
 	 * @brief Construtor da class Sistema
@@ -48,13 +48,13 @@ public:
 	void readUtilizadores();
 
 	/**
-	 * Guarda todos os utilizadores do sistema em ficheiros, criando novos, se necessario
+	 * @brief Guarda todos os utilizadores do sistema em ficheiros, criando novos, se necessario
 	 */
 	void saveUtilizadores() const;
 
 	/**
 	 * @brief Le os titulos de um ficheiro
-	 * @param file - ficheiro onde esta contida a informacao todos os titulos
+	 * @param file - ficheiro onde esta contida a informacao de todos os titulos
 	 */
 	void readFileTitulos(std:: ifstream & file);
 
@@ -68,10 +68,23 @@ public:
 	 */
 	void saveTitulos() const;
 
-	void readFileEmpresas(std:: ifstream & file);
+	/**
+	 * @brief Le as empresas de um ficheiro
+	 * 
+	 * @param file - ficheiro onde esta contida a informacao de todas as empresas
+	 */
+	void readFileEmpresas(std::ifstream & file);
 
+	/**
+	 * @brief Invoca as funcoes necessarias para ler as empresas guardadas nos ficheiros
+	 * 
+	 */
 	void readEmpresas();
 
+	/**
+	 * @brief Guarda todas as empresas do sistema num ficheiro
+	 * 
+	 */
 	void saveEmpresas();
 
 	/**
@@ -232,6 +245,11 @@ public:
 	 */
 	void displayTitulos() const;
 
+	/**
+	 * @brief Mostra no ecra as empresas consoante o conteudo de s
+	 * 
+	 * @param s - string que define o que sera mostrado no ecra
+	 */
 	void displayEmpresas(std::string s) const;
 
 	/**
@@ -251,10 +269,25 @@ public:
 	 */
 	void dataValida( CartaoCredito & D) const;
 
+	/**
+	 * @brief Atualiza os utilizadores adormecidos de todos os utilizadores
+	 * 
+	 */
 	void atualizaAsleepUsers();
 
+	/**
+	 * @brief Remove os utilizadores adormecidos dos titulos para uma dada plataforma
+	 * 
+	 * @param plataforma - string que define a plataforma para o qual são removidos os utilizaores adormecidos
+	 * @param u 
+	 */
 	void removeAsleepUsers(std::string plataforma,Utilizador *u);
 
+	/**
+	 * @brief Mostra no ecra os utilizadores adormecidos consoante o conteudo da string s
+	 * 
+	 * @param s - string que define quais utilizadores adormecidos mostrar
+	 */
 	void displayAsleepUsers(std::string s);
 };
 
