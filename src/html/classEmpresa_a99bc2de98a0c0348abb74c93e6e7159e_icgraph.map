@@ -1,6 +1,6 @@
 <map id="Empresa::getNomeEmpresa" name="Empresa::getNomeEmpresa">
 <area shape="rect" id="node2" href="$classEmpresa.html#ab643d752365e59fa1d90a41b8a036d6a" title="Overload do operador menor para objetos da classe Empresa. " alt="" coords="261,5,398,32"/>
-<area shape="rect" id="node3" href="$structEmpresasComp.html#a65f437399b6aa939ee84611a69ee0ad0" title="EmpresasComp::operator()" alt="" coords="240,56,419,83"/>
+<area shape="rect" id="node3" href="$structEmpresasComp.html#a65f437399b6aa939ee84611a69ee0ad0" title="Comparador para Empresas. " alt="" coords="240,56,419,83"/>
 <area shape="rect" id="node4" href="$main_8cpp.html#a175192136cbe59d60bb80a1cd975fb68" title="menuEmpresa" alt="" coords="276,107,383,133"/>
 <area shape="rect" id="node7" href="$classSistema.html#a41eddc54d36ac140608dd259c085ba88" title="Adiciona uma nova empresa ao sistema. " alt="" coords="240,157,419,184"/>
 <area shape="rect" id="node5" href="$main_8cpp.html#ab5d3bc5e7f94dade3058f2afb385c8a4" title="pesquisarEmpresa" alt="" coords="467,107,597,133"/>

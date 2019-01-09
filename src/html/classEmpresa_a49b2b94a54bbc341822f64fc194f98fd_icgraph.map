@@ -1,4 +1,4 @@
 <map id="Empresa::getNumeroTitulos" name="Empresa::getNumeroTitulos">
 <area shape="rect" id="node2" href="$classEmpresa.html#ab643d752365e59fa1d90a41b8a036d6a" title="Overload do operador menor para objetos da classe Empresa. " alt="" coords="259,5,397,32"/>
-<area shape="rect" id="node3" href="$structEmpresasComp.html#a65f437399b6aa939ee84611a69ee0ad0" title="EmpresasComp::operator()" alt="" coords="239,56,417,83"/>
+<area shape="rect" id="node3" href="$structEmpresasComp.html#a65f437399b6aa939ee84611a69ee0ad0" title="Comparador para Empresas. " alt="" coords="239,56,417,83"/>
 </map>

@@ -5,18 +5,18 @@
 #include <vector>
 class Titulo;
 typedef struct {
-	std::string email;
-	std::string numeroTelemovel;
+	std::string email; /**< Email da Empresa */
+	std::string numeroTelemovel; /**< Numero de telemovel da empresa */
 } contactos;
 
 
 class Empresa {
 private:
-	std::string nome;
-	unsigned int numeroTitulos;
-	contactos contacto;
-	std::string Nif;
-	std::vector<Titulo*> Titulos;
+	std::string nome; /**< Nome da empresa*/
+	unsigned int numeroTitulos; /**< Numero de titulos da empresa */
+	contactos contacto; /**< Contactos da empresa */
+	std::string Nif; /**< NIF da empresa */
+	std::vector<Titulo*> Titulos; /**< Titulos criados pela empresa*/
 
 
 public:
@@ -91,6 +91,14 @@ public:
 
 struct EmpresasComp
 {
+	/**
+	 * @brief Comparador para Empresas
+	 * 
+	 * @param empresa1 
+	 * @param empresa2 
+	 * @return true - caso a empresa1 seja menor que empresa2
+	 * @return false - caso a empresa2 seja menor que empresa1
+	 */
 	bool operator()(Empresa *empresa1,  Empresa *empresa2) const
 	{
 		if (empresa1->getNumeroTitulos() == empresa2->getNumeroTitulos())

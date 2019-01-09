@@ -8,7 +8,7 @@
 \begin{DoxyCompactItemize}
 \item 
 bool \hyperlink{structEmpresasComp_a65f437399b6aa939ee84611a69ee0ad0}{operator()} (\hyperlink{classEmpresa}{Empresa} $\ast$empresa1, \hyperlink{classEmpresa}{Empresa} $\ast$empresa2) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Comparador para Empresas. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Member Function Documentation}
@@ -19,15 +19,31 @@ bool \hyperlink{structEmpresasComp_a65f437399b6aa939ee84611a69ee0ad0}{operator()
 {\footnotesize\ttfamily bool Empresas\+Comp\+::operator() (\begin{DoxyParamCaption}\item[{\hyperlink{classEmpresa}{Empresa} $\ast$}]{empresa1,  }\item[{\hyperlink{classEmpresa}{Empresa} $\ast$}]{empresa2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
+
+Comparador para Empresas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em empresa1} & \\
+\hline
+{\em empresa2} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true -\/ caso a empresa1 seja menor que empresa2 
+
+false -\/ caso a empresa2 seja menor que empresa1 
+\end{DoxyReturn}
+
 \begin{DoxyCode}
-95     \{
-96         \textcolor{keywordflow}{if} (empresa1->\hyperlink{classEmpresa_a49b2b94a54bbc341822f64fc194f98fd}{getNumeroTitulos}() == empresa2->
+103     \{
+104         \textcolor{keywordflow}{if} (empresa1->\hyperlink{classEmpresa_a49b2b94a54bbc341822f64fc194f98fd}{getNumeroTitulos}() == empresa2->
       \hyperlink{classEmpresa_a49b2b94a54bbc341822f64fc194f98fd}{getNumeroTitulos}())
-97             \textcolor{keywordflow}{return} empresa1->\hyperlink{classEmpresa_a99bc2de98a0c0348abb74c93e6e7159e}{getNomeEmpresa}() < empresa2->
+105             \textcolor{keywordflow}{return} empresa1->\hyperlink{classEmpresa_a99bc2de98a0c0348abb74c93e6e7159e}{getNomeEmpresa}() < empresa2->
       \hyperlink{classEmpresa_a99bc2de98a0c0348abb74c93e6e7159e}{getNomeEmpresa}();
-98         \textcolor{keywordflow}{return} empresa1->\hyperlink{classEmpresa_a49b2b94a54bbc341822f64fc194f98fd}{getNumeroTitulos}() < empresa2->
+106         \textcolor{keywordflow}{return} empresa1->\hyperlink{classEmpresa_a49b2b94a54bbc341822f64fc194f98fd}{getNumeroTitulos}() < empresa2->
       \hyperlink{classEmpresa_a49b2b94a54bbc341822f64fc194f98fd}{getNumeroTitulos}();
-99     \}
+107     \}
 \end{DoxyCode}
 Here is the call graph for this function\+:
 \nopagebreak

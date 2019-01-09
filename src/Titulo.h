@@ -16,6 +16,12 @@
 /* ------------------------------------------------*/
 
 struct UtilizadorPtr{
+	/**
+	 * @brief Hash Function
+	 * 
+	 * @param u1 - Utilizador
+	 * @return int - hash value
+	 */
 	int operator()(const Utilizador * u1) const {
 		unsigned long hash = 5381;
 		for (char c : u1->getEmail()) {
@@ -25,6 +31,12 @@ struct UtilizadorPtr{
 	    return hash;
 	}
 
+	/**
+	 * @brief Operador de igualdade para teste de colisoes 
+	 * 
+	 * @param u1 - Utilizador
+	 * @param u2 - Utilizador 
+	 */
 	bool operator() (const Utilizador * u1, const Utilizador * u2) const {
 		return u1->getEmail() == u2->getEmail();
 	}

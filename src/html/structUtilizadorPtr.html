@@ -71,8 +71,10 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a51b14cea42ccf48388754bb5513f736f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUtilizadorPtr.html#a51b14cea42ccf48388754bb5513f736f">operator()</a> (const <a class="el" href="classUtilizador.html">Utilizador</a> *u1) const</td></tr>
+<tr class="memdesc:a51b14cea42ccf48388754bb5513f736f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash Function.  <a href="#a51b14cea42ccf48388754bb5513f736f">More...</a><br /></td></tr>
 <tr class="separator:a51b14cea42ccf48388754bb5513f736f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdc486a21619e0451d59dd4a9f244866"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUtilizadorPtr.html#afdc486a21619e0451d59dd4a9f244866">operator()</a> (const <a class="el" href="classUtilizador.html">Utilizador</a> *u1, const <a class="el" href="classUtilizador.html">Utilizador</a> *u2) const</td></tr>
+<tr class="memdesc:afdc486a21619e0451d59dd4a9f244866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operador de igualdade para teste de colisoes.  <a href="#afdc486a21619e0451d59dd4a9f244866">More...</a><br /></td></tr>
 <tr class="separator:afdc486a21619e0451d59dd4a9f244866"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -99,7 +101,16 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                                {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> hash = 5381;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">char</span> c : u1-&gt;<a class="code" href="classUtilizador.html#aea88bb297704762d0cccc909b8c2da54">getEmail</a>()) {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">if</span> (c != <span class="charliteral">&#39;@&#39;</span> &amp;&amp; c!= <span class="charliteral">&#39;.&#39;</span> )</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                hash = ((hash &lt;&lt; 5) + hash) + c; <span class="comment">/* hash * 33 + c */</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span> hash;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div><div class="ttc" id="classUtilizador_html_aea88bb297704762d0cccc909b8c2da54"><div class="ttname"><a href="classUtilizador.html#aea88bb297704762d0cccc909b8c2da54">Utilizador::getEmail</a></div><div class="ttdeci">std::string getEmail() const</div><div class="ttdoc">Permite obter o email do utilizador. </div><div class="ttdef"><b>Definition:</b> Utilizador.cpp:28</div></div>
+
+<p>Hash Function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">u1</td><td>- <a class="el" href="classUtilizador.html">Utilizador</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int - hash value </dd></dl>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                                {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> hash = 5381;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">char</span> c : u1-&gt;<a class="code" href="classUtilizador.html#aea88bb297704762d0cccc909b8c2da54">getEmail</a>()) {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">if</span> (c != <span class="charliteral">&#39;@&#39;</span> &amp;&amp; c!= <span class="charliteral">&#39;.&#39;</span> )</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                hash = ((hash &lt;&lt; 5) + hash) + c; <span class="comment">/* hash * 33 + c */</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span> hash;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div><div class="ttc" id="classUtilizador_html_aea88bb297704762d0cccc909b8c2da54"><div class="ttname"><a href="classUtilizador.html#aea88bb297704762d0cccc909b8c2da54">Utilizador::getEmail</a></div><div class="ttdeci">std::string getEmail() const</div><div class="ttdoc">Permite obter o email do utilizador. </div><div class="ttdef"><b>Definition:</b> Utilizador.cpp:28</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -144,7 +155,16 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                                                         {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">return</span> u1-&gt;<a class="code" href="classUtilizador.html#aea88bb297704762d0cccc909b8c2da54">getEmail</a>() == u2-&gt;<a class="code" href="classUtilizador.html#aea88bb297704762d0cccc909b8c2da54">getEmail</a>();</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div><div class="ttc" id="classUtilizador_html_aea88bb297704762d0cccc909b8c2da54"><div class="ttname"><a href="classUtilizador.html#aea88bb297704762d0cccc909b8c2da54">Utilizador::getEmail</a></div><div class="ttdeci">std::string getEmail() const</div><div class="ttdoc">Permite obter o email do utilizador. </div><div class="ttdef"><b>Definition:</b> Utilizador.cpp:28</div></div>
+
+<p>Operador de igualdade para teste de colisoes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">u1</td><td>- <a class="el" href="classUtilizador.html">Utilizador</a> </td></tr>
+    <tr><td class="paramname">u2</td><td>- <a class="el" href="classUtilizador.html">Utilizador</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                                                         {</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> u1-&gt;<a class="code" href="classUtilizador.html#aea88bb297704762d0cccc909b8c2da54">getEmail</a>() == u2-&gt;<a class="code" href="classUtilizador.html#aea88bb297704762d0cccc909b8c2da54">getEmail</a>();</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div><div class="ttc" id="classUtilizador_html_aea88bb297704762d0cccc909b8c2da54"><div class="ttname"><a href="classUtilizador.html#aea88bb297704762d0cccc909b8c2da54">Utilizador::getEmail</a></div><div class="ttdeci">std::string getEmail() const</div><div class="ttdoc">Permite obter o email do utilizador. </div><div class="ttdef"><b>Definition:</b> Utilizador.cpp:28</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
