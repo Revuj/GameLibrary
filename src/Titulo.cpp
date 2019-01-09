@@ -121,9 +121,7 @@ std::string Titulo::getEmpresa() const {
 	 std::priority_queue<WishedTitle> wish = u->getWishList();
 	 while(!wish.empty()){
 		 auto it = this->asleepUsers.find(u);
-		 std::cout << wish.top().getProbabilidadeCompra() << std::endl;
 		 if(it == asleepUsers.end() && wish.top().getTitulo()->getNome() == this->nome && wish.top().getTitulo()->getPlataforma() == this->plataforma && wish.top().getProbabilidadeCompra()>0.6){
-			std::cout << u->getNome() << std::endl;
 			 asleepUsers.insert(u);
 		 }
 		 wish.pop();

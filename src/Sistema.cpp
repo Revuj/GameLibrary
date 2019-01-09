@@ -1149,6 +1149,7 @@ void Sistema::dataValida(CartaoCredito & D) const{
 }
 
 void Sistema::displayEmpresas(std::string s) const{
+	bool exists = false;
 	if(s=="plataforma"){
 		std::cout<< "Insira a plataforma" << std::endl;
 		getline(std::cin,s);
@@ -1156,7 +1157,8 @@ void Sistema::displayEmpresas(std::string s) const{
 			std::vector <Titulo*> t = it->getTitulos();
 			for(auto titulo : t){
 				if(titulo->getPlataforma() == s) {
-					std::cout << it->getNomeEmpresa() << "  "<<it->getNif()<<std::endl;
+					exists = true;
+					std::cout << "Empresa: " << it->getNomeEmpresa() << "; NIF: "<<it->getNif()  << "; N.º de jogos: " << it->getNumeroTitulos() <<std::endl;
 					break;
 				}
 			}
@@ -1179,8 +1181,10 @@ void Sistema::displayEmpresas(std::string s) const{
 		// Clear the cin stream even if no error occured, to ensure the stream always stays clean
 		std::cin.ignore(1000, '\n');
 		for(auto it : this->empresas){
-			if(it->getNumeroTitulos() == (unsigned)opt)
-				std::cout << it->getNomeEmpresa() << "  "<<it->getNif()<<std::endl;
+			if(it->getNumeroTitulos() == (unsigned)opt) {
+				exists = true;
+				std::cout << "Empresa: " << it->getNomeEmpresa() << "; NIF: "<<it->getNif()  << "; N.º de jogos: " << it->getNumeroTitulos() <<std::endl;
+			}
 		}
 	}
 
@@ -1193,7 +1197,8 @@ void Sistema::displayEmpresas(std::string s) const{
 			for(auto titulo : t){
 				for(auto genero : titulo->getGeneros())
 					if(genero == s){
-						std::cout << it->getNomeEmpresa() << "  "<<it->getNif()<<std::endl;
+						exists = true;
+						std::cout << "Empresa: " << it->getNomeEmpresa() << "; NIF: "<<it->getNif()  << "; N.º de jogos: " << it->getNumeroTitulos() <<std::endl;
 						leave=true;
 						break;
 					}
@@ -1204,16 +1209,20 @@ void Sistema::displayEmpresas(std::string s) const{
 			}
 		}
 	}
-
 	else {
 		for(auto it : this->empresas){
 			std::cout << "Empresa: " << it->getNomeEmpresa() << "; NIF: "<<it->getNif()  << "; N.º de jogos: " << it->getNumeroTitulos() <<std::endl;
 		}
+		exists = true;
 	}
+
+	if (!exists)
+		std::cout << "Nao existem empresas segundo o criterio introduzido" << std::endl;
 }
 
 void Sistema::atualizaAsleepUsers(){
 	for(auto titulo : this->titulos){
+		titulo->clearAsleepUsers();
 		for (auto utilizador:this->jogadores)
 			titulo->adicionaUserHashTable(utilizador);
 	}
@@ -1228,16 +1237,17 @@ void Sistema::removeAsleepUsers(std::string plataforma,Utilizador *u){
 }
 
 void Sistema::displayAsleepUsers(std::string s){
+	bool exists = false;
 	if(s=="plataforma"){
 		std::cout<< "Insira a plataforma" << std::endl;
 		getline(std::cin,s);
 		for(auto it : this->titulos){
-			if(it->getPlataforma() == s) {
+			if(it->getPlataforma() == s && it->getSleepUsers().size() != 0) {
+				exists = true;
 				it->printAsleepUsers();
 			}
 		}
 	}
-
 	else if(s == "titulo"){
 		std::string nome,plataforma;
 		std::cout<< "Insira o nome" << std::endl;
@@ -1245,8 +1255,10 @@ void Sistema::displayAsleepUsers(std::string s){
 		std::cout<< "Insira a plataforma" << std::endl;
 		getline(std::cin,plataforma);
 		for(auto titulo : this->titulos){
-			if(titulo->getNome()==nome && titulo->getPlataforma()==plataforma)
+			if(titulo->getNome()==nome && titulo->getPlataforma()==plataforma && titulo->getSleepUsers().size() != 0) {
+				exists = true;
 				titulo->printAsleepUsers();
+			}
 		}
 	}
 
@@ -1256,17 +1268,21 @@ void Sistema::displayAsleepUsers(std::string s){
 		for(auto titulo : this->titulos){
 			auto generos = titulo->getGeneros();
 			for(auto genero : generos){
-				if(genero == s){
+				if(genero == s && titulo->getSleepUsers().size() != 0){
+					exists = true;
 					titulo->printAsleepUsers();
 					break;
 				}
 			}
 		}
 	}
-
 	else {
 		for(auto titulo : this->titulos){
 			titulo->printAsleepUsers();
 		}
+		exists = true;
 	}
+
+	if (!exists)
+		std::cout << "Nao existem jogadores adormecidos, segundo o criterio introduzido" << std::endl;
 }

@@ -17,7 +17,7 @@ acao aventura
 Online online3 4 Nintendo empresa1 08/01/2019 variavel 2
 45
 acao aventura
-97
+110
 100
 
 Online online4 4 SEXMACHINE empresa1 08/01/2019 fixa 69
@@ -29,5 +29,5 @@ sexo
 Home home1 49 playstation empresa1 08/01/2019
 30
 raping berlindes
-70
-200
+14
+20

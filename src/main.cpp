@@ -306,7 +306,7 @@ void adicionarJogo(Sistema * sistema, std::string nomeEmpresa) {
 		try {
 			sistema->addTitulo(home,nomeEmpresa);
 		} catch (TituloJaAdicionado &e) {
-			std::cout << e.getInfo();
+			std::cout << e.getInfo() << std::endl;
 		}
 
 	} else if (tipo == "Online") {
@@ -914,7 +914,6 @@ void pesquisarUtilizador(Sistema * sistema) {
 	std::string s;
 
 	while (true) {
-		sistema->atualizaAsleepUsers();
 
 		while (true) {
 			try {
@@ -1011,7 +1010,7 @@ void pesquisarEmpresa(Sistema * sistema){
 			menuEmpresa(sistema, empresa);
 		}
 	} catch (EmpresaInexistente &e) {
-		std::cout << "\n" << e.getInfo();
+		std::cout << std::endl << e.getInfo() << std::endl;
 		return;
 	}
 
@@ -1038,7 +1037,7 @@ void displayRankings(Sistema * sistema) {
 		try {
 			opt = getOption(1, 7);
 		} catch (InputInvalido &e) {
-			std::cout << "\n" << e.getInfo();
+			std::cout << std::endl << e.getInfo() << std::endl;
 			continue;
 		}
 
@@ -1070,13 +1069,13 @@ int main() {
 		it->printPublicidade();
 	}
 
-	sistema->atualizaAsleepUsers();
-
 	int opt;
 
 	// Perguntar ao utilizador o que quer fazer ate este indicar que deseja sair
 	while (true) {
 		printMainMenu();
+
+		sistema->atualizaAsleepUsers();
 
 		// Pedir opcao ao utilizador e verificar se nao houve erro de input
 		try {

@@ -184,6 +184,10 @@ public:
 
 	void printAsleepUsers();
 
+	void clearAsleepUsers() { this->asleepUsers.clear() ;}
+
+	UserHashTable getSleepUsers() { return this->asleepUsers; }
+
 	/**
 	 * @brief Permite obter o desconto do titulo em percentagem 
 	 * @return Retorna o desconto do titulo
